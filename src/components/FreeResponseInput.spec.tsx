@@ -1,6 +1,5 @@
 import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 import renderer from 'react-test-renderer';
-// import { answerContent } from '../test/fixtures';
 
 describe('Free Response Input', () => {
   let props: FreeResponseProps;
