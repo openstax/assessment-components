@@ -1,5 +1,4 @@
 import { Answer, ChosenAnswer, ID } from '../src/types';
-import { isString, trimStart, trimEnd } from 'lodash';
 
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
@@ -25,10 +24,8 @@ export const isAnswerChecked = (answer: Answer, chosenAnswer?: ChosenAnswer) =>
   Boolean((chosenAnswer || []).find( a => a == answer.id));
 
 export function countWords(text: string) {
-  if(!isString(text)) return 0;
-
-  let trimmedText = trimStart(text);
-  trimmedText = trimEnd(trimmedText);
+  if(typeof text.valueOf() !== "string") return 0;
+  const trimmedText = text.trim();
   //https://css-tricks.com/build-word-counter-app/
   const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
   if(!words) return 0;

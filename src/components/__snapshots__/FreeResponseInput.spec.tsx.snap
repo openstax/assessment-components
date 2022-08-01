@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Free Response Input matches snapshot 1`] = `
+<div
+  className="sc-bczRLJ goEvZo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <textarea
+      aria-label="question response text box"
+      className="sc-dkzDqf loLWrQ"
+      data-test-id="free-response-box"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      value=""
+    />
+    <div
+      className="sc-gsnTZi RJiQN"
+    >
+      <div />
+      <div>
+        <span>
+          0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input renders last submitted text 1`] = `
+<div
+  className="sc-bczRLJ goEvZo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <textarea
+      aria-label="question response text box"
+      className="sc-dkzDqf loLWrQ"
+      data-test-id="free-response-box"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      value=""
+    />
+    <div
+      className="sc-gsnTZi RJiQN"
+    >
+      <div>
+        <span
+          className="last-submitted"
+        >
+          Last submitted on July 26 at 4:00 pm
+        </span>
+      </div>
+      <div>
+        <span>
+          0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
