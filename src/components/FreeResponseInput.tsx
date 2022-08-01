@@ -23,7 +23,7 @@ const TextAreaErrorStyle = css`
   background-color: #f5e9ea;
 `;
 
-const InfoRow = styled.div<{hasSubmitted: boolean}>`
+const InfoRow = styled.div`
   margin: 8px 0;
   display: flex;
   justify-content: space-between;
@@ -108,7 +108,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               aria-label="question response text box"
               readOnly={isReadOnly}
           />
-          <InfoRow hasSubmitted={!!lastSubmitted}>
+          <InfoRow>
               <div>
                   {lastSubmitted && props.submittedComponent}
                   {isDisplayingNudge && props.nudgeComponent}
