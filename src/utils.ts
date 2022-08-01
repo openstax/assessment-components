@@ -24,7 +24,6 @@ export const isAnswerChecked = (answer: Answer, chosenAnswer?: ChosenAnswer) =>
   Boolean((chosenAnswer || []).find( a => a == answer.id));
 
 export function countWords(text: string) {
-  if(typeof text.valueOf() !== "string") return 0;
   const trimmedText = text.trim();
   //https://css-tricks.com/build-word-counter-app/
   const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);

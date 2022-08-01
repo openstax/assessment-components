@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Free Response Input does not setResponse if read-only 1`] = `
+<div
+  className="sc-bczRLJ goEvZo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <textarea
+      aria-label="question response text box"
+      className="sc-dkzDqf brPzWs"
+      data-test-id="free-response-box"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={true}
+      value=""
+    />
+    <div
+      className="sc-gsnTZi RJiQN"
+    >
+      <div />
+      <div>
+        <span>
+          0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Free Response Input matches snapshot 1`] = `
 <div
   className="sc-bczRLJ goEvZo"
@@ -14,6 +46,7 @@ exports[`Free Response Input matches snapshot 1`] = `
       data-test-id="free-response-box"
       onChange={[Function]}
       placeholder="Enter your response..."
+      readOnly={false}
       value=""
     />
     <div
@@ -45,6 +78,7 @@ exports[`Free Response Input renders last submitted text 1`] = `
       data-test-id="free-response-box"
       onChange={[Function]}
       placeholder="Enter your response..."
+      readOnly={false}
       value=""
     />
     <div
@@ -60,6 +94,77 @@ exports[`Free Response Input renders last submitted text 1`] = `
       <div>
         <span>
           0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input renders word limit error 1`] = `
+<div
+  className="sc-bczRLJ goEvZo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <textarea
+      aria-label="question response text box"
+      className="sc-dkzDqf loLWrQ"
+      data-test-id="free-response-box"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={false}
+      value="response has more than five words"
+    />
+    <div
+      className="sc-gsnTZi RJiQN"
+    >
+      <div />
+      <div>
+        <span>
+          6
+           words
+        </span>
+        <span
+          className="word-limit-error-info"
+        >
+          Maximum 
+          5
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input sets initialResponse 1`] = `
+<div
+  className="sc-bczRLJ goEvZo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <textarea
+      aria-label="question response text box"
+      className="sc-dkzDqf loLWrQ"
+      data-test-id="free-response-box"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={false}
+      value="foo"
+    />
+    <div
+      className="sc-gsnTZi RJiQN"
+    >
+      <div />
+      <div>
+        <span>
+          1
            words
         </span>
       </div>

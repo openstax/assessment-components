@@ -68,10 +68,10 @@ TextArea.displayName = 'TextArea';
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    isReadOnly = false,
-    isDisplayingNudge = false,
-    lastSubmitted = '',
-    wordLimit = 5,
+    isReadOnly,
+    isDisplayingNudge,
+    lastSubmitted,
+    wordLimit,
   } = props;
 
   const [initialResponse, setInitialResponse] = React.useState('');
@@ -82,6 +82,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const response = props.isDisplayingNudge ? retriedResponse : initialResponse
 
   const setResponse = (e: any) => {
+    console.log('set response - ', props.isDisplayingNudge, props.isReadOnly)
     if (isReadOnly) {
         e.preventDefault();
         return;
@@ -106,6 +107,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               data-test-id="free-response-box"
               placeholder="Enter your response..."
               aria-label="question response text box"
+              readOnly={isReadOnly}
           />
           <InfoRow hasSubmitted={!!lastSubmitted}>
               <div>
@@ -130,8 +132,6 @@ FreeResponseInput.defaultProps = {
   isDisplayingNudge: false,
   lastSubmitted: '',
   wordLimit: 100,
-  nudgeComponent: () => null,
-  submittedComponent: () => null,
 }
 
 FreeResponseInput.displayName = 'OSFreeResponse';
