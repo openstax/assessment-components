@@ -19,7 +19,6 @@ export interface ExerciseQuestionProps {
   is_completed: boolean;
   correct_answer_id: ID;
   incorrectAnswerId: ID;
-  multiPartGroup: any;
   answerId: ID;
   attempts_remaining: number;
   published_comments: string;

@@ -34,7 +34,6 @@ describe('ExerciseQuestion', () => {
       is_completed: false,
       correct_answer_id: '',
       incorrectAnswerId: '',
-      multiPartGroup: [],
       answerId: '',
       attempts_remaining: 2,
       published_comments: '',
