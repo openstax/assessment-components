@@ -81,7 +81,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 
   const response = props.isDisplayingNudge ? retriedResponse : initialResponse
 
-  const setResponse = (e: any) => {
+  const setResponse = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     console.log('set response - ', props.isDisplayingNudge, props.isReadOnly)
     if (isReadOnly) {
         e.preventDefault();
