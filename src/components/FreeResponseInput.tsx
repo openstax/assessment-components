@@ -9,6 +9,7 @@ export interface FreeResponseProps {
   leftInfoComponent?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   defaultValue: string;
+  isOverWordLimit?: boolean;
 }
 
 const TextAreaErrorStyle = css`
@@ -50,15 +51,14 @@ const TextArea = styled.textarea<FreeResponseProps>`
   padding: 0.5em;
   border: 1px solid ${colors.palette.neutral};
   color: ${colors.palette.neutralDark};
-  ${props => isOverWordLimit(props.wordLimit, props.defaultValue) && TextAreaErrorStyle};
-  ${props => isOverWordLimit(props.wordLimit, props.defaultValue) && css`
+  ${props => props.isOverWordLimit && TextAreaErrorStyle};
+  ${props => props.isOverWordLimit && css`
     border: 2px solid ${colors.palette.danger};
   `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
 TextArea.displayName = 'TextArea';
 
-const isOverWordLimit = (limit: number, str: string) => countWords(str) > limit;
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
@@ -67,10 +67,13 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     wordLimit,
   } = props;
 
+  const isOverWordLimit = countWords(defaultValue) > wordLimit;
+
   return (
     <>
       <TextArea
           {...props}
+          isOverWordLimit={isOverWordLimit}
           data-test-id="free-response-box"
           placeholder="Enter your response..."
           aria-label="question response text box"
@@ -79,7 +82,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           {leftInfoComponent}
           <div>
               <span>{countWords(defaultValue)} words</span>
-              {isOverWordLimit(wordLimit, defaultValue) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+              {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
           </div>
       </InfoRow>
     </>
