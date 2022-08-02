@@ -18,11 +18,11 @@ describe('AnswersTable', () => {
         answers: [{
           id: '1',
           correctness: undefined,
-          content_html: 'A'
+          content_html: 'True'
         }, {
             id: '2',
             correctness: undefined,
-            content_html: 'B'
+            content_html: 'False'
         }],
       },
       type: 'student',
@@ -101,5 +101,13 @@ describe('AnswersTable', () => {
       <AnswersTable {...props} question={{...props.question, id: ''}} type={type} />
     );
     expect(tree.root.findAllByType(Answer).map((a) => a.props['type'])).toEqual([type, type]);
+  });
+
+  it('sorts by given ID order', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props} answerIdOrder={['2', '1']} />
+    );
+    expect(tree.root.findAllByType(Answer).map((a) => a.props.answer.id)).toEqual(['2', '1']);
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -11,12 +11,12 @@ const props: AnswersTableProps = {
         id: '1',
         correctness: '1.0',
         isCorrect: false,
-        content_html: 'A'
+        content_html: 'True'
       }, {
         id: '2',
         correctness: '1.0',
         isCorrect: false,
-        content_html: 'B'
+        content_html: 'False'
       },
     ],
   },
@@ -35,3 +35,4 @@ const props: AnswersTableProps = {
 export const Default = () => <AnswersTable {...props} />;
 export const Checked = () => <AnswersTable {...props} answer_id='1'  />;
 export const CorrectAnswerFeedback = () => <AnswersTable {...props} answer_id='1' correct_answer_id='1' correct_answer_feedback_html="Feedback" hasCorrectAnswer={true}  />;
+export const Ordered = () => <AnswersTable {...props} answerIdOrder={['2', '1']} />;
