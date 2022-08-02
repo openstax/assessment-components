@@ -89,10 +89,4 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 );
 }
 
-FreeResponseInput.defaultProps = {
-  readOnly: false,
-  wordLimit: 100,
-  defaultValue: '',
-}
-
 FreeResponseInput.displayName = 'OSFreeResponse';
