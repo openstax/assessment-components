@@ -15,11 +15,6 @@ export interface FreeResponseProps {
   defaultValue: string;
 }
 
-const StyledFreeResponse = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const TextAreaErrorStyle = css`
   background-color: #f5e9ea;
 `;
@@ -78,29 +73,25 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   } = props;
 
   return (
-    <StyledFreeResponse
-      data-test-id="student-free-response"
-    >
-      <div className="step-card-body">
-          <TextArea
-              {...props}
-              data-test-id="free-response-box"
-              placeholder="Enter your response..."
-              aria-label="question response text box"
-          />
-          <InfoRow>
-              <div>
-                  {lastSubmitted && props.submittedComponent}
-                  {isDisplayingNudge && props.nudgeComponent}
-              </div>
+    <>
+      <TextArea
+          {...props}
+          data-test-id="free-response-box"
+          placeholder="Enter your response..."
+          aria-label="question response text box"
+      />
+      <InfoRow>
+          <div>
+              {lastSubmitted && props.submittedComponent}
+              {isDisplayingNudge && props.nudgeComponent}
+          </div>
 
-              <div>
-                  <span>{countWords(defaultValue)} words</span>
-                  {isOverWordLimit(wordLimit, defaultValue) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
-              </div>
-          </InfoRow>
-      </div>
-  </StyledFreeResponse>
+          <div>
+              <span>{countWords(defaultValue)} words</span>
+              {isOverWordLimit(wordLimit, defaultValue) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+          </div>
+      </InfoRow>
+    </>
 );
 }
 
