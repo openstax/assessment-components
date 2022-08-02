@@ -19,4 +19,4 @@ const props: FreeResponseProps = {
 
 export const Default = () => <FreeResponseInput {...props} />;
 export const OverWordLimit = () => <FreeResponseInput {...props} defaultValue={'response goes over the word limit'} />;
-export const Submitted = () => <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />;
+export const HasLeftComponent = () => <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />;
