@@ -70,6 +70,37 @@ exports[`Free Response Input renders last submitted text 1`] = `
 </div>
 `;
 
+exports[`Free Response Input renders leftInfoComponent component 1`] = `
+Array [
+  <textarea
+    aria-label="question response text box"
+    className="sc-gsnTZi cUWBkT"
+    data-test-id="free-response-box"
+    defaultValue=""
+    onChange={[Function]}
+    placeholder="Enter your response..."
+    readOnly={false}
+  />,
+  <div
+    className="sc-bczRLJ dXOJIg"
+  >
+    <div>
+      <span
+        className="last-submitted"
+      >
+        Last submitted on July 26 at 4:00 pm
+      </span>
+    </div>
+    <div>
+      <span>
+        0
+         words
+      </span>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Free Response Input renders word limit error 1`] = `
 <div
   className="sc-bczRLJ goEvZo"

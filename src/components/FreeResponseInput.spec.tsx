@@ -9,14 +9,16 @@ describe('Free Response Input', () => {
     props.defaultValue = event.target.value
   };
 
+  const leftInfoComponent = (
+    <div>
+        <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>
+    </div>
+    );
+
   beforeEach(() => {
     props = {
-      isErrored: false,
-      isDisplayingNudge: false,
       readOnly: false,
-      lastSubmitted: '',
       wordLimit: 5,
-      submittedComponent: <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>,
       onChange: updateValue,
       defaultValue: '',
     };
@@ -29,16 +31,16 @@ describe('Free Response Input', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders last submitted text', () => {
+  it('renders leftInfoComponent component', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} lastSubmitted={'2015-10-06T11:59:00.000Z'} />
+      <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('renders word limit error', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} isDisplayingNudge={true} isErrored={true} defaultValue={'response has more than five words'} />
+      <FreeResponseInput {...props} defaultValue={'response has more than five words'} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

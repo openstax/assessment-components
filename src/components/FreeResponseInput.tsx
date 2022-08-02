@@ -4,13 +4,9 @@ import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 
 export interface FreeResponseProps {
-  isErrored: boolean;
-  isDisplayingNudge: boolean;
   readOnly: boolean;
-  lastSubmitted: string;
   wordLimit: number;
-  nudgeComponent?: ReactNode;
-  submittedComponent?: ReactNode;
+  leftInfoComponent?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   defaultValue: string;
 }
@@ -19,10 +15,10 @@ const TextAreaErrorStyle = css`
   background-color: #f5e9ea;
 `;
 
-const InfoRow = styled.div`
+const InfoRow = styled.div<{hasLeftComponent: boolean}>`
   margin: 8px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => props.hasLeftComponent ? 'space-between' : 'flex-end'};
   line-height: 1.6rem;
 
   .word-limit-error-info {
@@ -67,8 +63,7 @@ const isOverWordLimit = (limit: number, str: string) => countWords(str) > limit;
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     defaultValue,
-    isDisplayingNudge,
-    lastSubmitted,
+    leftInfoComponent,
     wordLimit,
   } = props;
 
@@ -80,12 +75,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           placeholder="Enter your response..."
           aria-label="question response text box"
       />
-      <InfoRow>
-          <div>
-              {lastSubmitted && props.submittedComponent}
-              {isDisplayingNudge && props.nudgeComponent}
-          </div>
-
+      <InfoRow hasLeftComponent={!!leftInfoComponent}>
+          {leftInfoComponent}
           <div>
               <span>{countWords(defaultValue)} words</span>
               {isOverWordLimit(wordLimit, defaultValue) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
@@ -96,12 +87,9 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 }
 
 FreeResponseInput.defaultProps = {
-  isErrored: false,
-  defaultValue: '',
-  isDisplayingNudge: false,
-  lastSubmitted: '',
-  wordLimit: 100,
   readOnly: false,
+  wordLimit: 100,
+  defaultValue: '',
 }
 
 FreeResponseInput.displayName = 'OSFreeResponse';
