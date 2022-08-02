@@ -18,9 +18,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -130,6 +127,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -168,9 +166,6 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -280,6 +275,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -316,9 +312,6 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -428,6 +421,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -464,9 +458,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -576,6 +567,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -621,9 +613,6 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -733,6 +722,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -771,9 +761,6 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -863,6 +850,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -903,6 +891,159 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
 </div>
 `;
 
+exports[`ExerciseQuestion renders free response 1`] = `
+<div
+  data-test-id="student-exercise-question"
+>
+  <div
+    className="sc-bczRLJ bKRYCW openstax-question step-card-body"
+    data-question-number={1}
+    data-test-id="question"
+  >
+    <div
+      className="question-stem"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Is this a question?",
+        }
+      }
+      data-question-number={1}
+    />
+    <div
+      className="free-response"
+    >
+      A free response
+    </div>
+    <div
+      className="answers-table"
+    >
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer disabled"
+          role="region"
+        >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={true}
+            id="1-option-0"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-0"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Choice a:"
+                className="answer-letter"
+                data-test-id="answer-choice-a"
+                disabled={true}
+                onClick={[Function]}
+              >
+                a
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "True",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer disabled"
+          role="region"
+        >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={true}
+            id="1-option-1"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-1"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Choice b:"
+                className="answer-letter"
+                data-test-id="answer-choice-b"
+                disabled={true}
+                onClick={[Function]}
+              >
+                b
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "False",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-gsnTZi cfqehf"
+  >
+    <div
+      className="points"
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+      <span
+        className="attempts-left"
+      />
+    </div>
+    <div
+      className="controls"
+    >
+      <button
+        className="sc-dkzDqf fVVaSh"
+        data-test-id="continue-btn"
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ExerciseQuestion renders no attempts remaining 1`] = `
 <div
   data-test-id="student-exercise-question"
@@ -921,9 +1062,6 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -1033,6 +1171,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"
@@ -1071,9 +1210,6 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       }
       data-question-number={1}
     />
-    <span>
-      FreeResponseReview @TODO
-    </span>
     <div
       className="answers-table"
     >
@@ -1183,6 +1319,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     >
       <strong>
         Points: 
+        1.0
       </strong>
       <span
         className="attempts-left"

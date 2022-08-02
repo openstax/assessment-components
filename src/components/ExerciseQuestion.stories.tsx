@@ -43,7 +43,7 @@ const props = {
   is_completed: false,
   multiPartGroup: null,
   answerId: '',
-  available_points: '1.0',
+  available_points: '1.0' as const,
   attempts_remaining: 2,
   published_comments: '',
   detailedSolution: '',
@@ -55,6 +55,10 @@ const props = {
 };
 
 export const Default = () => <ExerciseQuestion {...props} />;
+export const FreeResponseEntered = () =>
+  <ExerciseQuestion {...props}
+    free_response="In this free response, I will..."
+  />;
 export const MultipleAttemptsAllLeft = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}

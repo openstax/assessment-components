@@ -44,7 +44,7 @@ describe('ExerciseQuestion', () => {
       attempt_number: 0,
       apiIsPending: false,
       displaySolution: false,
-      available_points: '',
+      available_points: '1.0',
       exercise_uid: '',
     }
   });
@@ -142,6 +142,15 @@ describe('ExerciseQuestion', () => {
         needsSaved={false}
         detailedSolution='A detailed solution'
         published_comments='Teacher feedback'
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders free response', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props}
+        free_response='A free response'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

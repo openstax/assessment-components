@@ -30,3 +30,5 @@ export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student'
 export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
+
+export type availablePoints = `${number}.${number}`;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ID, Question as QuestionType, Task } from "../types";
+import { availablePoints, ID, Question as QuestionType, Task } from "../types";
 import { Content } from "./Content";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
@@ -29,8 +29,9 @@ export interface ExerciseQuestionProps {
   attempt_number: number;
   apiIsPending: boolean;
   displaySolution: boolean;
-  available_points: string;
+  available_points: availablePoints;
   exercise_uid: string;
+  free_response?: string;
 }
 
 // @TODO
@@ -80,13 +81,22 @@ const NextButton = (props: {
   );
 }
 
+const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free_response">) => {
+  if (!free_response) { return null; }
+  return (
+    <>
+      <div className="free-response">{free_response}</div>
+    </>
+  );
+}
+
 export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points
+    displaySolution, available_points, free_response
   } = props;
 
   return (
@@ -106,9 +116,9 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         className="step-card-body"
         hideAnswers={false}
         displayFormats={false}
-    displaySolution={displaySolution}
+        displaySolution={displaySolution}
       >
-        <span>FreeResponseReview @TODO</span>
+        <FreeResponseReview free_response={free_response} />
       </Question>
       <StepCardFooter>
         <div className="points">
