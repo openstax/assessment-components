@@ -12,10 +12,10 @@ exports[`Free Response Input matches snapshot 1`] = `
       aria-label="question response text box"
       className="sc-dkzDqf brPzWs"
       data-test-id="free-response-box"
+      defaultValue=""
       onChange={[Function]}
       placeholder="Enter your response..."
       readOnly={true}
-      value=""
     />
     <div
       className="sc-gsnTZi RJiQN"
@@ -44,10 +44,10 @@ exports[`Free Response Input renders last submitted text 1`] = `
       aria-label="question response text box"
       className="sc-dkzDqf loLWrQ"
       data-test-id="free-response-box"
+      defaultValue=""
       onChange={[Function]}
       placeholder="Enter your response..."
       readOnly={false}
-      value=""
     />
     <div
       className="sc-gsnTZi RJiQN"
@@ -82,10 +82,10 @@ exports[`Free Response Input renders word limit error 1`] = `
       aria-label="question response text box"
       className="sc-dkzDqf iLsrhj"
       data-test-id="free-response-box"
+      defaultValue="response has more than five words"
       onChange={[Function]}
       placeholder="Enter your response..."
       readOnly={false}
-      value="response has more than five words"
     />
     <div
       className="sc-gsnTZi RJiQN"

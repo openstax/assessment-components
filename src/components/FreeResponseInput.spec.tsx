@@ -6,21 +6,19 @@ describe('Free Response Input', () => {
   let props: FreeResponseProps;
 
   const updateValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    console.log('input: ', event.target.value)
-    props.value = event.target.value
+    props.defaultValue = event.target.value
   };
 
   beforeEach(() => {
     props = {
       isErrored: false,
-      showWarning: false,
       isDisplayingNudge: false,
       readOnly: false,
       lastSubmitted: '',
       wordLimit: 5,
       submittedComponent: <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>,
-      changeHandler: updateValue,
-      value: '',
+      onChange: updateValue,
+      defaultValue: '',
     };
   });
 
@@ -40,7 +38,7 @@ describe('Free Response Input', () => {
 
   it('renders word limit error', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} isDisplayingNudge={true} isErrored={true} showWarning={true} value={'response has more than five words'} />
+      <FreeResponseInput {...props} isDisplayingNudge={true} isErrored={true} defaultValue={'response has more than five words'} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

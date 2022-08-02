@@ -5,15 +5,14 @@ import { colors } from '../theme';
 
 export interface FreeResponseProps {
   isErrored: boolean;
-  showWarning: boolean;
   isDisplayingNudge: boolean;
   readOnly: boolean;
   lastSubmitted: string;
   wordLimit: number;
   nudgeComponent?: ReactNode;
   submittedComponent?: ReactNode;
-  changeHandler: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  defaultValue: string;
 }
 
 const StyledFreeResponse = styled.div`
@@ -60,24 +59,23 @@ const TextArea = styled.textarea<FreeResponseProps>`
   padding: 0.5em;
   border: 1px solid ${colors.palette.neutral};
   color: ${colors.palette.neutralDark};
-  ${props => props.isErrored && TextAreaErrorStyle};
-  ${props => props.showWarning && css`
+  ${props => isOverWordLimit(props.wordLimit, props.defaultValue) && TextAreaErrorStyle};
+  ${props => isOverWordLimit(props.wordLimit, props.defaultValue) && css`
     border: 2px solid ${colors.palette.danger};
   `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
 TextArea.displayName = 'TextArea';
 
+const isOverWordLimit = (limit: number, str: string) => countWords(str) > limit;
+
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    value,
+    defaultValue,
     isDisplayingNudge,
     lastSubmitted,
     wordLimit,
-    changeHandler,
   } = props;
-
-  const isOverWordLimit = (limit: number) => countWords(value) > limit;
 
   return (
     <StyledFreeResponse
@@ -86,7 +84,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       <div className="step-card-body">
           <TextArea
               {...props}
-              onChange={changeHandler}
               data-test-id="free-response-box"
               placeholder="Enter your response..."
               aria-label="question response text box"
@@ -98,8 +95,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               </div>
 
               <div>
-                  <span>{countWords(value)} words</span>
-                  {isOverWordLimit(wordLimit) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+                  <span>{countWords(defaultValue)} words</span>
+                  {isOverWordLimit(wordLimit, defaultValue) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
               </div>
           </InfoRow>
       </div>
@@ -109,8 +106,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 
 FreeResponseInput.defaultProps = {
   isErrored: false,
-  showWarning: false,
-  value: '',
+  defaultValue: '',
   isDisplayingNudge: false,
   lastSubmitted: '',
   wordLimit: 100,
