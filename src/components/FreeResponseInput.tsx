@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
@@ -6,12 +6,14 @@ import { colors } from '../theme';
 export interface FreeResponseProps {
   isErrored: boolean;
   showWarning: boolean;
-  isReadOnly: boolean;
   isDisplayingNudge: boolean;
+  readOnly: boolean;
   lastSubmitted: string;
   wordLimit: number;
   nudgeComponent?: ReactNode;
   submittedComponent?: ReactNode;
+  changeHandler: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  value: string;
 }
 
 const StyledFreeResponse = styled.div`
@@ -68,31 +70,14 @@ TextArea.displayName = 'TextArea';
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    isReadOnly,
+    value,
     isDisplayingNudge,
     lastSubmitted,
     wordLimit,
+    changeHandler,
   } = props;
 
-  const [initialResponse, setInitialResponse] = React.useState('');
-  const [retriedResponse, setRetriedResponse] = React.useState('');
-
-  const isOverWordLimit = (limit: number) => countWords(response) > limit;
-
-  const response = props.isDisplayingNudge ? retriedResponse : initialResponse
-
-  const setResponse = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (isReadOnly) {
-        e.preventDefault();
-        return;
-    }
-    if (props.isDisplayingNudge) {
-        setRetriedResponse(e.target?.value);
-    } else {
-        setInitialResponse(e.target?.value);
-    }
-  }
-
+  const isOverWordLimit = (limit: number) => countWords(value) > limit;
 
   return (
     <StyledFreeResponse
@@ -101,12 +86,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       <div className="step-card-body">
           <TextArea
               {...props}
-              value={response}
-              onChange={setResponse}
+              onChange={changeHandler}
               data-test-id="free-response-box"
               placeholder="Enter your response..."
               aria-label="question response text box"
-              readOnly={isReadOnly}
           />
           <InfoRow>
               <div>
@@ -115,7 +98,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               </div>
 
               <div>
-                  <span>{countWords(response)} words</span>
+                  <span>{countWords(value)} words</span>
                   {isOverWordLimit(wordLimit) && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
               </div>
           </InfoRow>
@@ -127,10 +110,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 FreeResponseInput.defaultProps = {
   isErrored: false,
   showWarning: false,
-  isReadOnly: false,
+  value: '',
   isDisplayingNudge: false,
   lastSubmitted: '',
   wordLimit: 100,
+  readOnly: false,
 }
 
 FreeResponseInput.displayName = 'OSFreeResponse';

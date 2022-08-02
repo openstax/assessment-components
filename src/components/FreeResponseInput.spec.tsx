@@ -1,24 +1,32 @@
 import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 import renderer from 'react-test-renderer';
+import React from 'react';
 
 describe('Free Response Input', () => {
   let props: FreeResponseProps;
+
+  const updateValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    console.log('input: ', event.target.value)
+    props.value = event.target.value
+  };
 
   beforeEach(() => {
     props = {
       isErrored: false,
       showWarning: false,
-      isReadOnly: false,
       isDisplayingNudge: false,
+      readOnly: false,
       lastSubmitted: '',
       wordLimit: 5,
-      submittedComponent: <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>
+      submittedComponent: <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>,
+      changeHandler: updateValue,
+      value: '',
     };
   });
 
   it('matches snapshot', () => {
      const tree = renderer.create(
-       <FreeResponseInput {...props} />
+       <FreeResponseInput {...props} readOnly={true} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -32,41 +40,8 @@ describe('Free Response Input', () => {
 
   it('renders word limit error', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} isDisplayingNudge={true} />
-    );
-    expect(tree.root.findByProps({ 'data-test-id': 'free-response-box' }).props.value).toEqual('');
-
-    const event = { target: { value: 'response has more than five words' }, preventDefault: jest.fn() };
-    renderer.act(() => {
-      tree.root.findByProps({ 'data-test-id': 'free-response-box' }).props.onChange(event);
-    });
-
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-
-  it('does not setResponse if read-only', () => {
-    const tree = renderer.create(
-      <FreeResponseInput {...props} isReadOnly={true} />
-   );
-
-   const event = { target: { value: 'foo' }, preventDefault: jest.fn() };
-   renderer.act(() => {
-     tree.root.findByProps({ 'data-test-id': 'free-response-box' }).props.onChange(event);
-   });
-
-   expect(tree.toJSON()).toMatchSnapshot();
-  });
-
-  it('sets initialResponse', () => {
-    const tree = renderer.create(
-      <FreeResponseInput {...props} />
-   );
-
-   const event = { target: { value: 'foo' }, preventDefault: jest.fn() };
-   renderer.act(() => {
-     tree.root.findByProps({ 'data-test-id': 'free-response-box' }).props.onChange(event);
-   });
-
-   expect(tree.toJSON()).toMatchSnapshot();
+      <FreeResponseInput {...props} isDisplayingNudge={true} isErrored={true} showWarning={true} value={'response has more than five words'} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
