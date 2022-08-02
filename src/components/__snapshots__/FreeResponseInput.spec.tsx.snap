@@ -1,73 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Free Response Input matches snapshot 1`] = `
-<div
-  className="sc-bczRLJ goEvZo"
-  data-test-id="student-free-response"
->
+Array [
+  <textarea
+    aria-label="question response text box"
+    className="sc-gsnTZi ssWhn"
+    data-test-id="free-response-box"
+    defaultValue=""
+    onChange={[Function]}
+    placeholder="Enter your response..."
+    readOnly={true}
+  />,
   <div
-    className="step-card-body"
+    className="sc-bczRLJ dAfkAa"
   >
-    <textarea
-      aria-label="question response text box"
-      className="sc-dkzDqf brPzWs"
-      data-test-id="free-response-box"
-      defaultValue=""
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      readOnly={true}
-    />
-    <div
-      className="sc-gsnTZi RJiQN"
-    >
-      <div />
-      <div>
-        <span>
-          0
-           words
-        </span>
-      </div>
+    <div>
+      <span>
+        0
+         words
+      </span>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Free Response Input renders last submitted text 1`] = `
-<div
-  className="sc-bczRLJ goEvZo"
-  data-test-id="student-free-response"
->
-  <div
-    className="step-card-body"
-  >
-    <textarea
-      aria-label="question response text box"
-      className="sc-dkzDqf loLWrQ"
-      data-test-id="free-response-box"
-      defaultValue=""
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      readOnly={false}
-    />
-    <div
-      className="sc-gsnTZi RJiQN"
-    >
-      <div>
-        <span
-          className="last-submitted"
-        >
-          Last submitted on July 26 at 4:00 pm
-        </span>
-      </div>
-      <div>
-        <span>
-          0
-           words
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input renders leftInfoComponent component 1`] = `
@@ -102,40 +56,32 @@ Array [
 `;
 
 exports[`Free Response Input renders word limit error 1`] = `
-<div
-  className="sc-bczRLJ goEvZo"
-  data-test-id="student-free-response"
->
+Array [
+  <textarea
+    aria-label="question response text box"
+    className="sc-gsnTZi eksWbk"
+    data-test-id="free-response-box"
+    defaultValue="response has more than five words"
+    onChange={[Function]}
+    placeholder="Enter your response..."
+    readOnly={false}
+  />,
   <div
-    className="step-card-body"
+    className="sc-bczRLJ dAfkAa"
   >
-    <textarea
-      aria-label="question response text box"
-      className="sc-dkzDqf iLsrhj"
-      data-test-id="free-response-box"
-      defaultValue="response has more than five words"
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      readOnly={false}
-    />
-    <div
-      className="sc-gsnTZi RJiQN"
-    >
-      <div />
-      <div>
-        <span>
-          6
-           words
-        </span>
-        <span
-          className="word-limit-error-info"
-        >
-          Maximum 
-          5
-           words
-        </span>
-      </div>
+    <div>
+      <span>
+        6
+         words
+      </span>
+      <span
+        className="word-limit-error-info"
+      >
+        Maximum 
+        5
+         words
+      </span>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
