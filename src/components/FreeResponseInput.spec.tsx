@@ -40,7 +40,7 @@ describe('Free Response Input', () => {
 
   it('renders word limit error', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} defaultValue={'response has more than five words'} />
+      <FreeResponseInput {...props} defaultValue='response has more than five words' />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
