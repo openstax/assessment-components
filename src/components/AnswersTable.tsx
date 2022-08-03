@@ -21,6 +21,7 @@ export interface AnswersTableProps {
   choicesEnabled?: boolean;
   onKeyPress?: () => void;
   contentRenderer?: JSX.Element;
+  instructions?: JSX.Element;
 }
 
 export const AnswersTable = (props: AnswersTableProps) => {
@@ -29,14 +30,13 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
     incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html,
-    show_all_feedback = false, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder
+    show_all_feedback = false, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
   } = props;
   if (hideAnswers) { return null; }
 
   const { id } = question;
 
   const feedback: { index: number, html: string }[] = [];
-  const instructions = undefined;
 
   const chosenAnswer = [answer_id];
 

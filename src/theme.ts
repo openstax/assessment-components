@@ -1,25 +1,25 @@
 import { css } from 'styled-components';
 
 const palette = {
-  red: "rgb(202, 32, 38)",
-  green: "rgb(119, 175, 66)",
-  lightGreen: "rgb(139, 199, 83)",
-  paleYellow: "rgb(255, 255, 187)",
-  teal: "rgb(13, 192, 222)",
-  blue: "rgb(0, 125, 164)",
-  lightBlue: "rgb(52, 189, 216)",
-  neutralLightBlue: "rgb(13, 192, 220)",
-  tangerine: "rgb(255, 189, 62)",
-  white: "rgb(255, 255, 255)",
-  neutralLightest: "rgb(249, 249, 249)", // nearly white
-  neutralBright: "rgb(245, 245, 245)", // bright gray
-  neutralLighter: "rgb(241, 241, 241)", // light gray
-  neutralLight: "rgb(229, 229, 229)", // light gray
-  neutralMedium: "rgb(160, 160, 160)", // light gray
-  neutral: "rgb(129, 129, 129)", // gray
-  neutralDark: "rgb(95, 97, 99)", // dark gray
-  neutralDarker: "rgb(66, 66, 66)", // very dark gray
-  black: "rgb(0, 0, 0)",
+  red: "#ca2026",
+  green: "#77af42",
+  lightGreen: "#8bc753",
+  paleYellow: "#ffffbb",
+  teal: "#0dc0de",
+  blue: "#007da4",
+  lightBlue: "#34bdd8",
+  neutralLightBlue: "#0dc0dc",
+  tangerine: "#ffbd3e",
+  white: "#ffffff",
+  neutralLightest: "#f9f9f9", // nearly white
+  neutralBright: "#f5f5f5", // bright gray
+  neutralLighter: "#f1f1f1", // light gray
+  neutralLight: "#e5e5e5", // light gray
+  neutralMedium: "#a0a0a0", // light gray
+  neutral: "#818181", // gray
+  neutralDark: "#5f6163", // dark gray
+  neutralDarker: "#424242", // very dark gray
+  black: "#000000",
   orange: "#D4450C"
 };
 
