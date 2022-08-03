@@ -3,7 +3,6 @@
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
   className="sc-bczRLJ GYCnw openstax-question"
-
   data-question-number={1}
   data-test-id="question"
 >
