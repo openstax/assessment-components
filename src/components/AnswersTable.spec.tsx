@@ -110,4 +110,13 @@ describe('AnswersTable', () => {
     expect(tree.root.findAllByType(Answer).map((a) => a.props.answer.id)).toEqual(['2', '1']);
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders instructions', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        instructions={<b>Instructions</b>}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
