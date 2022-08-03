@@ -26,6 +26,15 @@ export type Answer = {
   feedback_html?: string;
 };
 
+export type Step = {
+  type: 'exercise';
+  task: Task;
+  uid: any;
+  id: any;
+  was_manually_graded: boolean;
+  available_points: availablePoints;
+}
+
 export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
 export type ChosenAnswer = (ID | undefined)[];
 

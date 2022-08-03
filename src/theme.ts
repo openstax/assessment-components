@@ -1,6 +1,8 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 const palette = {
+  white: "#ffffff",
+  black: "#000000",
   red: "#ca2026",
   green: "#77af42",
   lightGreen: "#8bc753",
@@ -10,7 +12,9 @@ const palette = {
   lightBlue: "#34bdd8",
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
-  white: "#ffffff",
+  gray: "#5e5e5e",
+  pale: "#d5d5d5",
+  light: "#e4e4e4",
   neutralLightest: "#f9f9f9", // nearly white
   neutralBright: "#f5f5f5", // bright gray
   neutralLighter: "#f1f1f1", // light gray
@@ -19,8 +23,6 @@ const palette = {
   neutral: "#818181", // gray
   neutralDark: "#5f6163", // dark gray
   neutralDarker: "#424242", // very dark gray
-  black: "#000000",
-  pale: "#d5d5d5",
 };
 
 export const colors = {
@@ -48,6 +50,9 @@ export const colors = {
         borderColor: "rgba(0, 0, 0, 0.2)",
       },
     },
+  },
+  card: {
+    background: "#daf3f8",
   },
   freeResponse: {
     color: palette.neutralDark,
@@ -82,15 +87,40 @@ export const BREAKPOINTS = {
   mobile: 600,
   tablet: 999,
   desktop: 1000,
+  large: 1600,
 };
 
-const desktopQuery = `(min-width: ${BREAKPOINTS.desktop}px)`;
 export const breakpoints = {
-  desktop: (style: FlattenSimpleInterpolation) => css`
-    @media screen and ${desktopQuery} {
-      ${style}
-    }
-  `,
+  mobile(...args: Parameters<typeof css>) {
+    return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
+  },
+  tablet(...args: Parameters<typeof css>) {
+    return css`@media(max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
+  },
+  desktop(...args: Parameters<typeof css>) {
+    return css`@media(min-width: ${BREAKPOINTS.desktop}px) { ${css(...args)} }`;
+  },
+  large(...args: Parameters<typeof css>) {
+    return css`@media(min-width: ${BREAKPOINTS.large}px) { ${css(...args)} }`;
+  },
+  only: {
+    mobile(...args: Parameters<typeof css>) {
+      return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
+    },
+    tablet(...args: Parameters<typeof css>) {
+      return css`@media(min-width: ${BREAKPOINTS.mobile + 1}px) and (max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
+    },
+    desktop(...args: Parameters<typeof css>) {
+      return css`@media(min-width: ${BREAKPOINTS.desktop}px) and (max-width: ${BREAKPOINTS.large - 1}px) { ${css(...args)} }`;
+    },
+    large(...args: Parameters<typeof css>) {
+      return css`@media(min-width: ${BREAKPOINTS.large}px) { ${css(...args)} }`;
+    },
+  },
+  margins: {
+    mobile: '8px',
+    tablet: '24px',
+  },
 };
 
 export const transitions = {
