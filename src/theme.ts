@@ -23,6 +23,7 @@ const palette = {
   neutralDark: "#5f6163", // dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
+  orange: "#D4450C"
 };
 
 export const colors = {
@@ -50,6 +51,11 @@ export const colors = {
         borderColor: "rgba(0, 0, 0, 0.2)",
       },
     },
+  },
+  button: {
+    background: palette.orange,
+    backgroundHover: "#E74B0D",
+    backgroundActive: "#C5400B"
   },
   freeResponse: {
     color: palette.neutralDark,
