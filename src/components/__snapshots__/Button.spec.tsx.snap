@@ -2,7 +2,7 @@
 
 exports[`Button isWaiting state matches snapshot 1`] = `
 <button
-  className="sc-bczRLJ dTkVjt"
+  className="sc-bczRLJ fLTvYy"
   disabled={true}
 >
   Submitting...
@@ -11,7 +11,7 @@ exports[`Button isWaiting state matches snapshot 1`] = `
 
 exports[`Button matches snapshot 1`] = `
 <button
-  className="sc-bczRLJ dTkVjt"
+  className="sc-bczRLJ fLTvYy"
 >
   Click Me
 </button>
