@@ -32,7 +32,6 @@ describe('Question', () => {
       hideAnswers: false,
       hidePreambles: false,
       displayFormats: false,
-      processHtmlAndMath: false,
       className: '',
       questionNumber: 1,
       displaySolution: false,
