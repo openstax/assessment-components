@@ -42,7 +42,7 @@ interface WaitingButtonProps extends React.ComponentPropsWithoutRef<'button'> {
 
 const Button = (props: ButtonProps | WaitingButtonProps) => {
   const { disabled, isWaiting, waitingText, children, ...otherProps } = props;
-  console.log(isWaiting, disabled);
+
   return (
     <StyledButton {...otherProps} disabled={isWaiting || disabled}>{(isWaiting && waitingText) || children}</StyledButton>
   );
