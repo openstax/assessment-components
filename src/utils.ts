@@ -22,3 +22,11 @@ export const isAnswerIncorrect = function(answer: Answer, incorrectAnswerId?: ID
 
 export const isAnswerChecked = (answer: Answer, chosenAnswer?: ChosenAnswer) =>
   Boolean((chosenAnswer || []).find( a => a == answer.id));
+
+export function countWords(text: string) {
+  const trimmedText = text.trim();
+  //https://css-tricks.com/build-word-counter-app/
+  const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
+  if(!words) return 0;
+  return words.length;
+}
