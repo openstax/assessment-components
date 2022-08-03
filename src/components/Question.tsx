@@ -320,7 +320,7 @@ export const Question = (props: QuestionProps) => {
 interface QuestionHtmlProps {
   html?: string;
   type: string;
-  hidden: QuestionProps['hidePreambles'];
+  hidden: boolean
   questionNumber?: QuestionProps['questionNumber'];
 }
 

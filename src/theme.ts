@@ -2,6 +2,7 @@ import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 const palette = {
   red: "#ca2026",
+  danger: "#c2002f", // dark red
   green: "#77af42",
   lightGreen: "#8bc753",
   paleYellow: "#ffffbb",
@@ -12,15 +13,18 @@ const palette = {
   tangerine: "#ffbd3e",
   white: "#ffffff",
   neutralLightest: "#f9f9f9", // nearly white
+  neutralCool: "#f6f7f8", // cool bright gray
   neutralBright: "#f5f5f5", // bright gray
   neutralLighter: "#f1f1f1", // light gray
   neutralLight: "#e5e5e5", // light gray
   neutralMedium: "#a0a0a0", // light gray
   neutral: "#818181", // gray
+  neutralThin: "#6f6f6f", // medium gray
   neutralDark: "#5f6163", // dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
   pale: "#d5d5d5",
+  orange: "#D4450C"
 };
 
 export const colors = {
@@ -48,6 +52,11 @@ export const colors = {
         borderColor: "rgba(0, 0, 0, 0.2)",
       },
     },
+  },
+  button: {
+    background: palette.orange,
+    backgroundHover: "#E74B0D",
+    backgroundActive: "#C5400B"
   },
   freeResponse: {
     color: palette.neutralDark,
