@@ -326,7 +326,7 @@ interface QuestionHtmlProps {
   questionNumber?: QuestionProps['questionNumber'];
 }
 
-const QuestionHtml = (props: QuestionHtmlProps) => {
+export const QuestionHtml = (props: QuestionHtmlProps) => {
   const { html = '', type, hidden, questionNumber } = props;
   if (hidden === true || !(html.length > 0)) { return null; }
 

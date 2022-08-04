@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 const palette = {
   red: "#ca2026",
@@ -17,6 +17,7 @@ const palette = {
   neutralBright: "#f5f5f5", // bright gray
   neutralLighter: "#f1f1f1", // light gray
   neutralLight: "#e5e5e5", // light gray
+  neutralPale: '#d5d5d5', // light gray
   neutralMedium: "#a0a0a0", // light gray
   neutral: "#818181", // gray
   neutralThin: "#6f6f6f", // medium gray
@@ -86,9 +87,22 @@ export const layouts = {
   },
 };
 
+export const BREAKPOINTS = {
+  mobile: 600,
+  tablet: 999,
+  desktop: 1000,
+};
+
+const desktopQuery = `(min-width: ${BREAKPOINTS.desktop}px)`;
+
 export const breakpoints = {
   mobile: "600px",
   tabletCollapse: "999px",
+  desktop: (style: FlattenSimpleInterpolation) => css`
+    @media screen and ${desktopQuery} {
+      ${style}
+    }
+  `,
 };
 
 export const transitions = {

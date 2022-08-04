@@ -15,6 +15,23 @@ const props: FreeResponseProps = {
   wordLimit: 5,
   defaultValue: '',
   onChange: updateValue,
+  questionNumber: 1,
+  question: {
+    id: '1',
+    stem_html: 'Is this a question?',
+    collaborator_solutions: [],
+    formats: [],
+    stimulus_html: '',
+    answers: [{
+      id: '1',
+      correctness: undefined,
+      content_html: 'True',
+    }, {
+      id: '2',
+      correctness: undefined,
+      content_html: 'False',
+    }],
+  },
 };
 
 export const Default = () => <FreeResponseInput {...props} />;
