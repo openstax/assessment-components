@@ -261,7 +261,15 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 `;
 LoadingCard.displayName = 'LoadingCard';
 
-export interface StepCardProps extends Pick<TaskStepCardProps, 'questionNumber' | 'numberOfQuestions'> {
+interface SharedProps {
+  questionNumber: number;
+  numberOfQuestions: number;
+  leftHeaderChildren?: ReactNode;
+  rightHeaderChildren?: ReactNode;
+  headerTitleChildren?: ReactNode;
+}
+
+export interface StepCardProps extends SharedProps {
   unpadded: boolean;
   className?: string;
   children?: ReactNode;
@@ -270,9 +278,6 @@ export interface StepCardProps extends Pick<TaskStepCardProps, 'questionNumber' 
   exerciseId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
-  leftHeaderChildren?: ReactNode;
-  rightHeaderChildren?: ReactNode;
-  headerTitleChildren?: ReactNode;
 }
 
 const StepCard = ({
@@ -318,12 +323,10 @@ const StepCard = ({
   )
 };
 
-export interface TaskStepCardProps {
+export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   step: Step;
-  questionNumber: number;
-  numberOfQuestions: number;
 }
 
 const TaskStepCard = ({

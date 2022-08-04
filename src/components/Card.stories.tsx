@@ -17,3 +17,12 @@ const props: TaskStepCardProps = {
 };
 
 export const Default = () => <TaskStepCard {...props}><ExerciseQuestion /></TaskStepCard>;
+export const CustomComponents = () =>
+  <TaskStepCard
+    {...props}
+    leftHeaderChildren={<button>◀</button>}
+    rightHeaderChildren={<>Two-step ℹ️ <button>▶</button></>}
+    headerTitleChildren="🔒"
+  >
+    <ExerciseQuestion />
+  </TaskStepCard>;
