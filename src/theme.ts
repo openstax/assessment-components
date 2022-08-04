@@ -13,7 +13,7 @@ const palette = {
   tangerine: "#ffbd3e",
   gray: "#5e5e5e",
   pale: "#d5d5d5",
-  light: "#e4e4e4",  
+  light: "#e4e4e4",
   white: "#ffffff",
   neutralLightest: "#f9f9f9", // nearly white
   neutralCool: "#f6f7f8", // cool bright gray
@@ -109,21 +109,12 @@ export const breakpoints = {
   desktop(...args: Parameters<typeof css>) {
     return css`@media(min-width: ${BREAKPOINTS.desktop}px) { ${css(...args)} }`;
   },
-  large(...args: Parameters<typeof css>) {
-    return css`@media(min-width: ${BREAKPOINTS.large}px) { ${css(...args)} }`;
-  },
   only: {
     mobile(...args: Parameters<typeof css>) {
       return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
     },
     tablet(...args: Parameters<typeof css>) {
       return css`@media(min-width: ${BREAKPOINTS.mobile + 1}px) and (max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
-    },
-    desktop(...args: Parameters<typeof css>) {
-      return css`@media(min-width: ${BREAKPOINTS.desktop}px) and (max-width: ${BREAKPOINTS.large - 1}px) { ${css(...args)} }`;
-    },
-    large(...args: Parameters<typeof css>) {
-      return css`@media(min-width: ${BREAKPOINTS.large}px) { ${css(...args)} }`;
     },
   },
   margins: {

@@ -120,7 +120,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -268,7 +268,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -414,7 +414,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -560,7 +560,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -715,7 +715,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -843,7 +843,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -1016,7 +1016,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -1164,7 +1164,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"
@@ -1312,7 +1312,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-gsnTZi cfqehf"
+    className="sc-gsnTZi dKIboo"
   >
     <div
       className="points"

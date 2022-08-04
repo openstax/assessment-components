@@ -31,7 +31,6 @@ export type Step = {
   task: Task;
   uid: any;
   id: any;
-  was_manually_graded: boolean;
   available_points: availablePoints;
 }
 

@@ -22,8 +22,7 @@ export const InnerStepCard = styled.div`
   `}
 `;
 
-export
-const OuterStepCard = styled.div`
+export const OuterStepCard = styled.div`
   padding: 2rem;
 
   ${breakpoints.tablet`
@@ -262,16 +261,14 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 `;
 LoadingCard.displayName = 'LoadingCard';
 
-interface StepCardProps extends Pick<TaskStepCardProps, 'questionNumber' | 'numberOfQuestions'> {
+export interface StepCardProps extends Pick<TaskStepCardProps, 'questionNumber' | 'numberOfQuestions'> {
   unpadded: boolean;
-  className: string;
-  children: ReactNode;
+  className?: string;
+  children?: ReactNode;
   stepType: Step['type'];
   availablePoints: availablePoints;
   exerciseId?: string;
   multipartBadge?: ReactNode;
-  //typeBadge: ReactNode;
-  //wasGraded: boolean;
   isHomework: boolean;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
@@ -322,16 +319,11 @@ const StepCard = ({
 };
 
 export interface TaskStepCardProps {
-  className: string;
+  className?: string;
   children?: ReactNode;
   step: Step;
   questionNumber: number;
   numberOfQuestions: number;
-  // goBackward: () => void;
-  // goForward: () => void;
-  // canGoBackward: boolean;
-  // canGoForward: boolean;
-  // isClosed: boolean;
 }
 
 const TaskStepCard = ({
@@ -340,24 +332,14 @@ const TaskStepCard = ({
   numberOfQuestions,
   children,
   className,
-  //goBackward,
-  //canGoBackward,
-  //goForward,
-  //canGoForward,
-  //isClosed,
-  ...otherProps }: TaskStepCardProps) =>
+  ...otherProps
+}: TaskStepCardProps) =>
 (<StepCard {...otherProps}
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  //goBackward={goBackward}
-  //canGoBackward={canGoBackward}
-  //goForward={goForward}
-  //canGoForward={canGoForward}
   stepType={step.type}
   isHomework={step.task.type === 'homework'}
-  //wasGraded={step.was_manually_graded}
-  //isClosed={isClosed}
   data-task-step-id={step.id}
   availablePoints={step.available_points}
   className={cn(`${step.type}-step`, className)}
@@ -367,6 +349,5 @@ const TaskStepCard = ({
 </StepCard>);
 
 TaskStepCard.displayName = 'TaskStepCard';
-
 
 export { StepCard, TaskStepCard, LoadingCard };
