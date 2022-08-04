@@ -38,7 +38,7 @@ describe('Question', () => {
       context: '',
       feedback_html: '',
       onChange: () => null,
-      correct_answer_feedback_html: 'Feedback'
+      correct_answer_feedback_html: 'Feedback',
     }
   });
 

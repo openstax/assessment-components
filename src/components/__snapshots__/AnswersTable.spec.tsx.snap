@@ -323,6 +323,112 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
 </div>
 `;
 
+exports[`AnswersTable renders instructions 1`] = `
+<div
+  className="answers-table"
+>
+  <b>
+    Instructions
+  </b>
+  <div
+    className="openstax-answer"
+  >
+    <section
+      className="answers-answer disabled"
+      role="region"
+    >
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-0"
+        name="1-options"
+        onChange={[MockFunction]}
+        type="radio"
+      />
+      <label
+        className="answer-label"
+        htmlFor="1-option-0"
+      >
+        <span
+          className="answer-letter-wrapper"
+        >
+          <button
+            aria-label="Choice a:"
+            className="answer-letter"
+            data-test-id="answer-choice-a"
+            disabled={true}
+            onClick={[MockFunction]}
+          >
+            a
+          </button>
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <span
+            className="answer-content"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "True",
+              }
+            }
+          />
+        </div>
+      </label>
+    </section>
+  </div>
+  <div
+    className="openstax-answer"
+  >
+    <section
+      className="answers-answer disabled"
+      role="region"
+    >
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-1"
+        name="1-options"
+        onChange={[MockFunction]}
+        type="radio"
+      />
+      <label
+        className="answer-label"
+        htmlFor="1-option-1"
+      >
+        <span
+          className="answer-letter-wrapper"
+        >
+          <button
+            aria-label="Choice b:"
+            className="answer-letter"
+            data-test-id="answer-choice-b"
+            disabled={true}
+            onClick={[MockFunction]}
+          >
+            b
+          </button>
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <span
+            className="answer-content"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "False",
+              }
+            }
+          />
+        </div>
+      </label>
+    </section>
+  </div>
+</div>
+`;
+
 exports[`AnswersTable sorts by given ID order 1`] = `
 <div
   className="answers-table"
