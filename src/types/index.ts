@@ -1,3 +1,8 @@
+export type Task = {
+  is_deleted: boolean;
+  type?: 'homework';
+};
+
 type CollaboratorSolution = {
   content_html: string;
 };
@@ -9,6 +14,7 @@ export type Question = {
   formats?: string[];
   stimulus_html: string;
   answers: Answer[];
+  is_answer_order_important: boolean;
 };
 
 export type Answer = {
@@ -24,3 +30,5 @@ export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student'
 export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
+
+export type availablePoints = `${number}.${number}`;
