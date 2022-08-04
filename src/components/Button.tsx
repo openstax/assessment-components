@@ -31,18 +31,20 @@ const StyledButton = styled.button`
   }
 `;
 
-interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   isWaiting?: never;
   waitingText?: never;
 }
-interface WaitingButtonProps extends React.HTMLProps<HTMLButtonElement> {
+interface WaitingButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   isWaiting: boolean;
   waitingText: string;
 }
 
-const Button = ({ disabled, isWaiting, waitingText, children }: ButtonProps | WaitingButtonProps) => {
+const Button = (props: ButtonProps | WaitingButtonProps) => {
+  const { disabled, isWaiting, waitingText, children, ...otherProps } = props;
+
   return (
-    <StyledButton disabled={isWaiting || disabled}>{(isWaiting && waitingText) || children}</StyledButton>
+    <StyledButton {...otherProps} disabled={isWaiting || disabled}>{(isWaiting && waitingText) || children}</StyledButton>
   );
 }
 

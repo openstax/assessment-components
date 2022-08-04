@@ -24,6 +24,7 @@ const palette = {
   neutralDark: "#5f6163", // dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
+  pale: "#d5d5d5",
   orange: "#D4450C"
 };
 
@@ -96,8 +97,6 @@ export const BREAKPOINTS = {
 const desktopQuery = `(min-width: ${BREAKPOINTS.desktop}px)`;
 
 export const breakpoints = {
-  mobile: "600px",
-  tabletCollapse: "999px",
   desktop: (style: FlattenSimpleInterpolation) => css`
     @media screen and ${desktopQuery} {
       ${style}
@@ -166,11 +165,11 @@ export const mixins = {
     }
     &::before {
      ${mixins.answerCorrectText()}
-      @media screen and (max-width: ${breakpoints.tabletCollapse}) {
+      @media screen and (max-width: ${BREAKPOINTS.tablet}px) {
         display: none;
       }
     }
-    @media screen and (max-width:  ${breakpoints.tabletCollapse}) {
+    @media screen and (max-width:  ${BREAKPOINTS.tablet}px) {
       .answer-letter-wrapper {
         display: flex;
         flex-direction: column;
