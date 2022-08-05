@@ -31,4 +31,4 @@ export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
 
-export type availablePoints = `${number}.${number}`;
+export type AvailablePoints = `${number}.${number}`;
