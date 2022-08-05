@@ -1,4 +1,4 @@
-import { availablePoints, ID, Question as QuestionType, Task } from "../types";
+import { AvailablePoints, ID, Question as QuestionType, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
 import { Question } from './Question';
@@ -29,7 +29,7 @@ export interface ExerciseQuestionProps {
   attempt_number: number;
   apiIsPending: boolean;
   displaySolution: boolean;
-  available_points: availablePoints;
+  available_points: AvailablePoints;
   exercise_uid: string;
   free_response?: string;
 }
