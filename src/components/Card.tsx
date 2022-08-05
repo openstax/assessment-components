@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { breakpoints, colors } from "../theme";
-import { availablePoints, Step } from "../types";
+import { AvailablePoints, Step } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
 
@@ -274,7 +274,7 @@ export interface StepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   stepType: Step['type'];
-  availablePoints: availablePoints;
+  availablePoints: AvailablePoints;
   exerciseId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;

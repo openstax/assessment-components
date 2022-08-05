@@ -31,7 +31,7 @@ export type Step = {
   task: Task;
   uid: ExerciseUid;
   id: number;
-  available_points: availablePoints;
+  available_points: AvailablePoints;
 }
 
 export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
