@@ -2,12 +2,15 @@ import type { GlobalProvider } from "@ladle/react";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-export const Provider: GlobalProvider = ({ children, globalState }) => {
-  const Wrapper = styled.div`
-    font-family: sans-serif;
-    padding: 4rem;
-  `;
+const Wrapper = styled.div`
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #424242;
+`;
 
+export const Provider: GlobalProvider = ({ children }) => {
   useEffect(() => {
     const style = document.createElement('style');
     style.innerText = 'html { font-size: 10px }';
