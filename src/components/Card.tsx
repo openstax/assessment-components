@@ -322,6 +322,7 @@ const StepCard = ({
     </OuterStepCard>
   )
 };
+StepCard.displayName = 'OSStepCard';
 
 export interface TaskStepCardProps extends SharedProps {
   className?: string;
@@ -351,6 +352,6 @@ const TaskStepCard = ({
   {children}
 </StepCard>);
 
-TaskStepCard.displayName = 'TaskStepCard';
+TaskStepCard.displayName = 'OSTaskStepCard';
 
 export { StepCard, TaskStepCard, LoadingCard };
