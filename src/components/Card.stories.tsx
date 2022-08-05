@@ -9,7 +9,7 @@ const props: TaskStepCardProps = {
       type: 'homework' as const
     },
     uid: '1234@1',
-    id: '1',
+    id: 1,
     available_points: '1.0',
   },
   questionNumber: 1,

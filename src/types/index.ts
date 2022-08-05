@@ -29,8 +29,8 @@ export type Answer = {
 export type Step = {
   type: 'exercise';
   task: Task;
-  uid: any;
-  id: any;
+  uid: ExerciseUid;
+  id: number;
   available_points: availablePoints;
 }
 
@@ -38,5 +38,6 @@ export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student'
 export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
+type ExerciseUid = `${number}@${number}`;
 
 export type availablePoints = `${number}.${number}`;

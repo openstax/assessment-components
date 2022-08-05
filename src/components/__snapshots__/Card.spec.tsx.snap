@@ -57,7 +57,7 @@ exports[`StepCard matches snapshot 1`] = `
 exports[`TaskStepCard matches snapshot 1`] = `
 <div
   className="sc-gsnTZi kTXtGE"
-  data-task-step-id="1"
+  data-task-step-id={1}
 >
   <div
     className="sc-bczRLJ hctMxl exercise-step"
