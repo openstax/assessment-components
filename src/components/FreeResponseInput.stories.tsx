@@ -14,8 +14,8 @@ const props: FreeResponseProps = {
   readOnly: false,
   wordLimit: 5,
   defaultValue: '',
-  cancelHandler: () => {},
-  saveHandler: () => {},
+  cancelHandler: () => null,
+  saveHandler: () => null,
   onChange: updateValue,
   questionNumber: 1,
   question: {
