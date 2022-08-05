@@ -1,20 +1,27 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
 import { breakpoints, colors } from '../theme';
-import { Question, AvailablePoints } from 'src/types';
+import { AvailablePoints, Question as QuestionType } from 'src/types';
 import { QuestionHtml } from './Question';
+import Button from './Button';
 
 export interface FreeResponseProps {
   readOnly: boolean;
   wordLimit: number;
-  leftInfoComponent?: ReactNode;
+  infoRowChildren?: ReactNode;
+  pointsChildren?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  cancelHandler: MouseEventHandler;
+  saveHandler: MouseEventHandler;
   defaultValue: string;
   isOverWordLimit?: boolean;
+  isSubmitDisabled: boolean;
   questionNumber: number,
-  question: Question,
-  available_points: AvailablePoints,
+  question: QuestionType,
+  availablePoints: AvailablePoints,
+  textHasChanged: boolean;
+  submitBtnLabel: string;
 }
 
 const TextAreaErrorStyle = css`
@@ -32,10 +39,10 @@ const SyledQuestionStem = styled.div`
   position: relative;
 `;
 
-const InfoRow = styled.div<{hasLeftComponent: boolean}>`
+const InfoRow = styled.div<{hasChildren: boolean}>`
   margin: 8px 0;
   display: flex;
-  justify-content: ${props => props.hasLeftComponent ? 'space-between' : 'flex-end'};
+  justify-content: ${props => props.hasChildren ? 'space-between' : 'flex-end'};
   line-height: 1.6rem;
 
   .word-limit-error-info {
@@ -77,7 +84,7 @@ TextArea.displayName = 'TextArea';
 
 export const StepCardFooter = styled.div`
     padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    border-top: 1px solid ${colors.palette.neutralPale};
+    border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -130,21 +137,33 @@ export const StepCardFooter = styled.div`
     `}
 `;
 
+const ButtonLg = styled(Button)`
+  align-self: flex-end;
+  margin: 4rem;
+  float: right;
+`;
+
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    available_points,
+    availablePoints,
+    cancelHandler,
     defaultValue,
-    leftInfoComponent,
+    infoRowChildren,
+    isSubmitDisabled,
+    pointsChildren,
     question,
     questionNumber,
+    saveHandler,
+    submitBtnLabel,
+    textHasChanged,
     wordLimit,
   } = props;
 
   const isOverWordLimit = countWords(defaultValue) > wordLimit;
 
   const questionProps = {};
-  if (questionNumber) { props['data-question-number'] = questionNumber; }
+  if (questionNumber) { questionProps['data-question-number'] = questionNumber; }
 
   return (
     <StyledFreeResponse data-test-id="student-free-response">
@@ -161,8 +180,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           placeholder="Enter your response..."
           aria-label="question response text box"
         />
-        <InfoRow hasLeftComponent={!!leftInfoComponent}>
-            {leftInfoComponent}
+        <InfoRow hasChildren={!!infoRowChildren}>
+            {infoRowChildren}
             <div>
                 <span>{countWords(defaultValue)} words</span>
                 {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
@@ -171,19 +190,23 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       </div>
       <StepCardFooter>
         <div className="points">
-            <strong>Points: {available_points}</strong>
-            {/* <WRQStatus step={step} /> */}
+            <strong>Points: {availablePoints}</strong>
+            {pointsChildren}
         </div>
         <div className="controls">
-            <RevertButton size="lg" ux={ux} />
-            <Button
-                size="lg"
-                data-test-id="submit-answer-btn"
-                disabled={ux.isSubmitDisabled}
-                onClick={this.onSave}
-            >
-                {ux.submitBtnLabel}
-            </Button>
+          <Button
+            disabled={!textHasChanged}
+            onClick={cancelHandler}
+          >
+            Cancel
+          </Button>
+          <ButtonLg
+              data-test-id="submit-answer-btn"
+              disabled={isSubmitDisabled}
+              onClick={saveHandler}
+          >
+              {submitBtnLabel}
+          </ButtonLg>
         </div>
       </StepCardFooter>
     </StyledFreeResponse>

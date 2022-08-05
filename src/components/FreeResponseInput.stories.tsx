@@ -14,6 +14,8 @@ const props: FreeResponseProps = {
   readOnly: false,
   wordLimit: 5,
   defaultValue: '',
+  cancelHandler: () => {},
+  saveHandler: () => {},
   onChange: updateValue,
   questionNumber: 1,
   question: {
@@ -31,9 +33,15 @@ const props: FreeResponseProps = {
       correctness: undefined,
       content_html: 'False',
     }],
+    is_answer_order_important: false,
   },
+  availablePoints: '1.0' as const,
+  pointsChildren: <></>,
+  isSubmitDisabled: false,
+  textHasChanged: false,
+  submitBtnLabel: 'Next',
 };
 
 export const Default = () => <FreeResponseInput {...props} />;
 export const OverWordLimit = () => <FreeResponseInput {...props} defaultValue='response goes over the word limit' />;
-export const HasLeftComponent = () => <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />;
+export const HasLeftComponent = () => <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />;

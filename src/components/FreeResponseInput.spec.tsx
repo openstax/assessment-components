@@ -21,6 +21,30 @@ describe('Free Response Input', () => {
       wordLimit: 5,
       onChange: updateValue,
       defaultValue: '',
+      cancelHandler: () => {},
+      saveHandler: () => {},
+      availablePoints: '1.0' as const,
+      isSubmitDisabled: false,
+      textHasChanged: false,
+      submitBtnLabel: 'Next',
+      questionNumber: 1,
+      question: {
+        id: '1',
+        stem_html: 'Is this a question?',
+        collaborator_solutions: [],
+        formats: [],
+        stimulus_html: '',
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: 'True',
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: 'False',
+        }],
+        is_answer_order_important: false,
+      },
     };
   });
 
@@ -33,7 +57,7 @@ describe('Free Response Input', () => {
 
   it('renders leftInfoComponent component', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />
+      <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
