@@ -101,6 +101,7 @@ describe('ExerciseQuestion', () => {
         incorrectAnswerId='2'
         canAnswer={true}
         needsSaved={true}
+        answerId='1'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -114,6 +115,7 @@ describe('ExerciseQuestion', () => {
         canAnswer={true}
         needsSaved={true}
         attempt_number={1}
+        answerId='1'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

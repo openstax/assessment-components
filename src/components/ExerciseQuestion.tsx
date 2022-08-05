@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { availablePoints, ID, Question as QuestionType, Task } from "../types";
+import Button from "./Button";
 import { Content } from "./Content";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
@@ -34,13 +34,6 @@ export interface ExerciseQuestionProps {
   free_response?: string;
 }
 
-// @TODO
-const Button = styled.button`
-`;
-const AsyncButton = (props: any) => {
-  return <Button>{props.children}</Button>;
-}
-
 const AttemptsRemaining = ({ count }: { count: number }) => {
   return (
     <div>{count} attempt{count === 1 ? '' : 's'} left</div>
@@ -58,16 +51,16 @@ const PublishedComments = ({ published_comments }: { published_comments: string 
 }
 
 const SaveButton = (props: {
-  disabled: boolean, isWaiting: boolean, onAnswerSave: ExerciseQuestionProps['onAnswerSave'],
-  attempt_number: number
-}) => (
-  <AsyncButton
-    waitingText="Saving…"
+  disabled: boolean, isWaiting: boolean, attempt_number: number
+} & React.ComponentPropsWithoutRef<'button'>) => (
+  <Button
     {...props}
+    waitingText="Saving…"
+    isWaiting={props.isWaiting}
     data-test-id="submit-answer-btn"
   >
     {props.attempt_number == 0 ? 'Submit' : 'Re-submit'}
-  </AsyncButton>
+  </Button>
 );
 
 const NextButton = (props: {
@@ -137,7 +130,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
              disabled={apiIsPending || !answerId}
              isWaiting={apiIsPending}
              attempt_number={attempt_number}
-             onAnswerSave={onAnswerSave}
+             onClick={onAnswerSave}
             /> :
             <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
         </div>
