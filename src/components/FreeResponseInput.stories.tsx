@@ -43,5 +43,6 @@ const props: FreeResponseProps = {
 };
 
 export const Default = () => <FreeResponseInput {...props} />;
-export const OverWordLimit = () => <FreeResponseInput {...props} defaultValue='response goes over the word limit' />;
-export const HasLeftComponent = () => <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />;
+export const OverWordLimit = () => <FreeResponseInput {...props} textHasChanged={true}  defaultValue='response goes over the word limit' />;
+export const SubmittedDate = () => <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />;
+

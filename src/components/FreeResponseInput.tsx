@@ -89,6 +89,17 @@ const SubmitBtn = styled(Button)`
   float: right;
 `;
 
+const RevertButton = (props: {
+  disabled: boolean
+} & React.ComponentPropsWithoutRef<'button'>) => (
+  <Button
+    {...props}
+
+  >
+    Cancel
+  </Button>
+);
+
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
@@ -135,19 +146,14 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       </div>
       <StepCardFooter>
         <div className="points">
-            <strong>Points: {availablePoints}</strong>
-            {pointsChildren}
+          <strong>Points: {availablePoints}</strong>
+          {pointsChildren}
         </div>
         <div className="controls">
-          <Button
-            disabled={!textHasChanged}
-            onClick={cancelHandler}
-          >
-            Cancel
-          </Button>
+          <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
           <SubmitBtn
               data-test-id="submit-answer-btn"
-              disabled={isSubmitDisabled}
+              disabled={isSubmitDisabled || isOverWordLimit}
               onClick={saveHandler}
           >
               {submitBtnLabel}
