@@ -92,10 +92,7 @@ const SubmitBtn = styled(Button)`
 const RevertButton = (props: {
   disabled: boolean
 } & React.ComponentPropsWithoutRef<'button'>) => (
-  <Button
-    {...props}
-
-  >
+  <Button {...props}>
     Cancel
   </Button>
 );
