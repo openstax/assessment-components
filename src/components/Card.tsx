@@ -30,11 +30,6 @@ export const OuterStepCard = styled.div`
   `}
 `;
 
-const LoadingCard = styled(InnerStepCard)`
-  min-width: 960px;
-  padding: 2rem;
-`;
-
 const StepCardHeader = styled.div`
   display: flex;
   align-items: center;
@@ -259,7 +254,6 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
 `;
-LoadingCard.displayName = 'LoadingCard';
 
 interface SharedProps {
   questionNumber: number;
@@ -354,4 +348,4 @@ const TaskStepCard = ({
 
 TaskStepCard.displayName = 'OSTaskStepCard';
 
-export { StepCard, TaskStepCard, LoadingCard };
+export { StepCard, TaskStepCard };
