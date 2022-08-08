@@ -94,7 +94,6 @@ export const BREAKPOINTS = {
 };
 
 const desktopQuery = `(min-width: ${BREAKPOINTS.desktop}px)`;
-
 export const breakpoints = {
   desktop: (style: FlattenSimpleInterpolation) => css`
     @media screen and ${desktopQuery} {
