@@ -1,4 +1,4 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css } from 'styled-components';
 
 const palette = {
   red: "#ca2026",
@@ -11,6 +11,9 @@ const palette = {
   lightBlue: "#34bdd8",
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
+  gray: "#5e5e5e",
+  pale: "#d5d5d5",
+  light: "#e4e4e4",
   white: "#ffffff",
   neutralLightest: "#f9f9f9", // nearly white
   neutralCool: "#f6f7f8", // cool bright gray
@@ -23,7 +26,6 @@ const palette = {
   neutralDark: "#5f6163", // dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
-  pale: "#d5d5d5",
   orange: "#D4450C"
 };
 
@@ -52,6 +54,9 @@ export const colors = {
         borderColor: "rgba(0, 0, 0, 0.2)",
       },
     },
+  },
+  card: {
+    background: "#daf3f8",
   },
   button: {
     background: palette.orange,
@@ -91,15 +96,31 @@ export const BREAKPOINTS = {
   mobile: 600,
   tablet: 999,
   desktop: 1000,
+  large: 1600,
 };
 
-const desktopQuery = `(min-width: ${BREAKPOINTS.desktop}px)`;
 export const breakpoints = {
-  desktop: (style: FlattenSimpleInterpolation) => css`
-    @media screen and ${desktopQuery} {
-      ${style}
-    }
-  `,
+  mobile(...args: Parameters<typeof css>) {
+    return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
+  },
+  tablet(...args: Parameters<typeof css>) {
+    return css`@media(max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
+  },
+  desktop(...args: Parameters<typeof css>) {
+    return css`@media(min-width: ${BREAKPOINTS.desktop}px) { ${css(...args)} }`;
+  },
+  only: {
+    mobile(...args: Parameters<typeof css>) {
+      return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
+    },
+    tablet(...args: Parameters<typeof css>) {
+      return css`@media(min-width: ${BREAKPOINTS.mobile + 1}px) and (max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
+    },
+  },
+  margins: {
+    mobile: '8px',
+    tablet: '24px',
+  },
 };
 
 export const transitions = {

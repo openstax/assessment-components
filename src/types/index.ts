@@ -26,9 +26,19 @@ export type Answer = {
   feedback_html?: string;
 };
 
+export type Step = {
+  type: 'exercise';
+  task: Task;
+  uid: ExerciseUid;
+  id: number;
+  available_points: AvailablePoints;
+}
+
 export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
 export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
+
+type ExerciseUid = `${number}@${number}`;
 
 export type AvailablePoints = `${number}.${number}`;
