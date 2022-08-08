@@ -16,7 +16,6 @@ export interface FreeResponseProps {
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
   saveHandler: MouseEventHandler<HTMLButtonElement>;
   defaultValue: string;
-  isOverWordLimit?: boolean;
   isSubmitDisabled: boolean;
   questionNumber: number,
   question: QuestionType,
@@ -66,7 +65,7 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
   color: ${colors.palette.neutralThin};
 `;
 
-const TextArea = styled.textarea<FreeResponseProps>`
+const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
   display: block;
   width: 100%;
   min-height: 10.5em;
