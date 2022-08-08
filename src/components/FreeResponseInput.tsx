@@ -13,8 +13,8 @@ export interface FreeResponseProps {
   infoRowChildren?: ReactNode;
   pointsChildren?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  cancelHandler: MouseEventHandler;
-  saveHandler: MouseEventHandler;
+  cancelHandler: MouseEventHandler<HTMLButtonElement>;
+  saveHandler: MouseEventHandler<HTMLButtonElement>;
   defaultValue: string;
   isOverWordLimit?: boolean;
   isSubmitDisabled: boolean;
