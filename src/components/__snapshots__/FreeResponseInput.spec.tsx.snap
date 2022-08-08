@@ -11,7 +11,16 @@ exports[`Free Response Input matches snapshot 1`] = `
     <div
       className="sc-eCYdqJ kNpfqr"
       data-question-number={1}
-    />
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
+    </div>
     <textarea
       aria-label="question response text box"
       className="sc-gKXOVf hIMSip"
@@ -77,7 +86,16 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     <div
       className="sc-eCYdqJ kNpfqr"
       data-question-number={1}
-    />
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
+    </div>
     <textarea
       aria-label="question response text box"
       className="sc-gKXOVf detAWt"
@@ -150,7 +168,16 @@ exports[`Free Response Input renders word limit error 1`] = `
     <div
       className="sc-eCYdqJ kNpfqr"
       data-question-number={1}
-    />
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
+    </div>
     <textarea
       aria-label="question response text box"
       className="sc-gKXOVf ddoRVS"

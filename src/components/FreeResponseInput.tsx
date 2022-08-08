@@ -127,7 +127,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       <div className="step-card-body">
         <SyledQuestionStem {...questionProps}>
             {question.stem_html &&
-          <QuestionHtml type="stem" html={question.stem_html} hidden={true} />}
+          <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
         </SyledQuestionStem>
         <TextArea
           {...props}
