@@ -1,25 +1,48 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
+import { AvailablePoints, Question as QuestionType } from 'src/types';
+import { QuestionHtml } from './Question';
+import Button from './Button';
+import { StepCardFooter } from './StepCardFooter';
 
 export interface FreeResponseProps {
   readOnly: boolean;
   wordLimit: number;
-  leftInfoComponent?: ReactNode;
+  infoRowChildren?: ReactNode;
+  pointsChildren?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  cancelHandler: MouseEventHandler<HTMLButtonElement>;
+  saveHandler: MouseEventHandler<HTMLButtonElement>;
   defaultValue: string;
-  isOverWordLimit?: boolean;
+  isSubmitDisabled: boolean;
+  questionNumber: number,
+  question: QuestionType,
+  availablePoints: AvailablePoints,
+  textHasChanged: boolean;
+  submitBtnLabel: string;
 }
 
 const TextAreaErrorStyle = css`
   background-color: #f5e9ea;
 `;
 
-const InfoRow = styled.div<{hasLeftComponent: boolean}>`
+const StyledFreeResponse = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SyledQuestionStem = styled.div`
+  font-size: 2rem;
+  line-height: 1.68em;
+  position: relative;
+`;
+
+const InfoRow = styled.div<{hasChildren: boolean}>`
   margin: 8px 0;
   display: flex;
-  justify-content: ${props => props.hasLeftComponent ? 'space-between' : 'flex-end'};
+  justify-content: ${props => props.hasChildren ? 'space-between' : 'flex-end'};
   line-height: 1.6rem;
 
   .word-limit-error-info {
@@ -42,7 +65,7 @@ const InfoRow = styled.div<{hasLeftComponent: boolean}>`
   color: ${colors.palette.neutralThin};
 `;
 
-const TextArea = styled.textarea<FreeResponseProps>`
+const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
   display: block;
   width: 100%;
   min-height: 10.5em;
@@ -59,33 +82,81 @@ const TextArea = styled.textarea<FreeResponseProps>`
 `;
 TextArea.displayName = 'TextArea';
 
+const SubmitBtn = styled(Button)`
+  align-self: flex-end;
+  margin: 4rem;
+  float: right;
+`;
+
+const RevertButton = (props: {
+  disabled: boolean
+} & React.ComponentPropsWithoutRef<'button'>) => (
+  <Button {...props}>
+    Cancel
+  </Button>
+);
+
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
+    availablePoints,
+    cancelHandler,
     defaultValue,
-    leftInfoComponent,
+    infoRowChildren,
+    isSubmitDisabled,
+    pointsChildren,
+    question,
+    questionNumber,
+    saveHandler,
+    submitBtnLabel,
+    textHasChanged,
     wordLimit,
   } = props;
 
   const isOverWordLimit = countWords(defaultValue) > wordLimit;
 
+  const questionProps = {};
+  if (questionNumber) { questionProps['data-question-number'] = questionNumber; }
+
   return (
-    <>
-      <TextArea
+    <StyledFreeResponse data-test-id="student-free-response">
+      <div className="step-card-body">
+        <SyledQuestionStem {...questionProps}>
+            {question.stem_html &&
+          <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
+        </SyledQuestionStem>
+        <TextArea
           {...props}
           isOverWordLimit={isOverWordLimit}
           data-test-id="free-response-box"
           placeholder="Enter your response..."
           aria-label="question response text box"
-      />
-      <InfoRow hasLeftComponent={!!leftInfoComponent}>
-          {leftInfoComponent}
-          <div>
-              <span>{countWords(defaultValue)} words</span>
-              {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
-          </div>
-      </InfoRow>
-    </>
+        />
+        <InfoRow hasChildren={!!infoRowChildren}>
+            {infoRowChildren}
+            <div>
+                <span>{countWords(defaultValue)} words</span>
+                {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+            </div>
+        </InfoRow>
+      </div>
+      <StepCardFooter>
+        <div className="points">
+          <strong>Points: {availablePoints}</strong>
+          {pointsChildren}
+        </div>
+        <div className="controls">
+          <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
+          <SubmitBtn
+              data-test-id="submit-answer-btn"
+              disabled={isSubmitDisabled || isOverWordLimit}
+              onClick={saveHandler}
+          >
+              {submitBtnLabel}
+          </SubmitBtn>
+        </div>
+      </StepCardFooter>
+    </StyledFreeResponse>
 );
 }
 

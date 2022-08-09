@@ -14,9 +14,35 @@ const props: FreeResponseProps = {
   readOnly: false,
   wordLimit: 5,
   defaultValue: '',
+  cancelHandler: () => null,
+  saveHandler: () => null,
   onChange: updateValue,
+  questionNumber: 1,
+  question: {
+    id: '1',
+    stem_html: 'Is this a question?',
+    collaborator_solutions: [],
+    formats: [],
+    stimulus_html: '',
+    answers: [{
+      id: '1',
+      correctness: undefined,
+      content_html: 'True',
+    }, {
+      id: '2',
+      correctness: undefined,
+      content_html: 'False',
+    }],
+    is_answer_order_important: false,
+  },
+  availablePoints: '1.0' as const,
+  pointsChildren: <></>,
+  isSubmitDisabled: false,
+  textHasChanged: false,
+  submitBtnLabel: 'Next',
 };
 
 export const Default = () => <FreeResponseInput {...props} />;
-export const OverWordLimit = () => <FreeResponseInput {...props} defaultValue='response goes over the word limit' />;
-export const HasLeftComponent = () => <FreeResponseInput {...props} leftInfoComponent={leftInfoComponent} />;
+export const OverWordLimit = () => <FreeResponseInput {...props} textHasChanged={true}  defaultValue='response goes over the word limit' />;
+export const SubmittedDate = () => <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />;
+

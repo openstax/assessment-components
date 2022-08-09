@@ -1,87 +1,240 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Free Response Input matches snapshot 1`] = `
-Array [
-  <textarea
-    aria-label="question response text box"
-    className="sc-gsnTZi ssWhn"
-    data-test-id="free-response-box"
-    defaultValue=""
-    onChange={[Function]}
-    placeholder="Enter your response..."
-    readOnly={true}
-  />,
+<div
+  className="sc-hKMtZM cfGbOi"
+  data-test-id="student-free-response"
+>
   <div
-    className="sc-bczRLJ dAfkAa"
+    className="step-card-body"
   >
-    <div>
-      <span>
-        0
-         words
-      </span>
+    <div
+      className="sc-eCYdqJ kNpfqr"
+      data-question-number={1}
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
     </div>
-  </div>,
-]
+    <textarea
+      aria-label="question response text box"
+      className="sc-gKXOVf hIMSip"
+      data-test-id="free-response-box"
+      defaultValue=""
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={true}
+    />
+    <div
+      className="sc-jSMfEi jaTerL"
+    >
+      <div>
+        <span>
+          0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf ceTCMv"
+  >
+    <div
+      className="points"
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
+    <div
+      className="controls"
+    >
+      <button
+        className="sc-gsnTZi gAYofE"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        data-test-id="submit-answer-btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Free Response Input renders leftInfoComponent component 1`] = `
-Array [
-  <textarea
-    aria-label="question response text box"
-    className="sc-gsnTZi cUWBkT"
-    data-test-id="free-response-box"
-    defaultValue=""
-    onChange={[Function]}
-    placeholder="Enter your response..."
-    readOnly={false}
-  />,
+<div
+  className="sc-hKMtZM cfGbOi"
+  data-test-id="student-free-response"
+>
   <div
-    className="sc-bczRLJ dXOJIg"
+    className="step-card-body"
   >
-    <div>
-      <span
-        className="last-submitted"
+    <div
+      className="sc-eCYdqJ kNpfqr"
+      data-question-number={1}
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
+    </div>
+    <textarea
+      aria-label="question response text box"
+      className="sc-gKXOVf detAWt"
+      data-test-id="free-response-box"
+      defaultValue=""
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={false}
+    />
+    <div
+      className="sc-jSMfEi liFeRt"
+    >
+      <div>
+        <span
+          className="last-submitted"
+        >
+          Last submitted on July 26 at 4:00 pm
+        </span>
+      </div>
+      <div>
+        <span>
+          0
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf ceTCMv"
+  >
+    <div
+      className="points"
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
+    <div
+      className="controls"
+    >
+      <button
+        className="sc-gsnTZi gAYofE"
+        disabled={true}
+        onClick={[Function]}
       >
-        Last submitted on July 26 at 4:00 pm
-      </span>
+        Cancel
+      </button>
+      <button
+        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        data-test-id="submit-answer-btn"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Next
+      </button>
     </div>
-    <div>
-      <span>
-        0
-         words
-      </span>
-    </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`Free Response Input renders word limit error 1`] = `
-Array [
-  <textarea
-    aria-label="question response text box"
-    className="sc-gsnTZi eksWbk"
-    data-test-id="free-response-box"
-    defaultValue="response has more than five words"
-    onChange={[Function]}
-    placeholder="Enter your response..."
-    readOnly={false}
-  />,
+<div
+  className="sc-hKMtZM cfGbOi"
+  data-test-id="student-free-response"
+>
   <div
-    className="sc-bczRLJ dAfkAa"
+    className="step-card-body"
   >
-    <div>
-      <span>
-        6
-         words
-      </span>
-      <span
-        className="word-limit-error-info"
-      >
-        Maximum 
-        5
-         words
-      </span>
+    <div
+      className="sc-eCYdqJ kNpfqr"
+      data-question-number={1}
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+      />
     </div>
-  </div>,
-]
+    <textarea
+      aria-label="question response text box"
+      className="sc-gKXOVf ddoRVS"
+      data-test-id="free-response-box"
+      defaultValue="response has more than five words"
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      readOnly={false}
+    />
+    <div
+      className="sc-jSMfEi jaTerL"
+    >
+      <div>
+        <span>
+          6
+           words
+        </span>
+        <span
+          className="word-limit-error-info"
+        >
+          Maximum 
+          5
+           words
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf ceTCMv"
+  >
+    <div
+      className="points"
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
+    <div
+      className="controls"
+    >
+      <button
+        className="sc-gsnTZi gAYofE"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        data-test-id="submit-answer-btn"
+        disabled={true}
+        onClick={[Function]}
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
 `;
