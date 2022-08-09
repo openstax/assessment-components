@@ -4,8 +4,11 @@ import styled from "styled-components";
 import { startMathJax, typesetMath } from './mathjax';
 
 const Wrapper = styled.div`
-  font-family: sans-serif;
-  padding: 4rem;
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #424242;
 `;
 
 export const Provider: GlobalProvider = ({ children }) => {
