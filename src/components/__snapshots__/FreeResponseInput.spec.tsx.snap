@@ -31,7 +31,7 @@ exports[`Free Response Input matches snapshot 1`] = `
       readOnly={true}
     />
     <div
-      className="sc-jSMfEi fvWYAX"
+      className="sc-jSMfEi jaTerL"
     >
       <div>
         <span>
@@ -106,7 +106,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
       readOnly={false}
     />
     <div
-      className="sc-jSMfEi bkDcPB"
+      className="sc-jSMfEi liFeRt"
     >
       <div>
         <span
@@ -188,7 +188,7 @@ exports[`Free Response Input renders word limit error 1`] = `
       readOnly={false}
     />
     <div
-      className="sc-jSMfEi fvWYAX"
+      className="sc-jSMfEi jaTerL"
     >
       <div>
         <span>
