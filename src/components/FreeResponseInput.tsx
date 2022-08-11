@@ -65,7 +65,7 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
   color: ${colors.palette.neutralThin};
 `;
 
-const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
+export const FreeResponseTextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
   display: block;
   width: 100%;
   min-height: 10.5em;
@@ -80,7 +80,7 @@ const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>
   `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
-TextArea.displayName = 'TextArea';
+FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
 
 const SubmitBtn = styled(Button)`
   align-self: flex-end;
@@ -125,7 +125,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             {question.stem_html &&
           <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
         </SyledQuestionStem>
-        <TextArea
+        <FreeResponseTextArea
           {...props}
           isOverWordLimit={isOverWordLimit}
           data-test-id="free-response-box"
