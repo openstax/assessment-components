@@ -46,7 +46,7 @@ exports[`StepCard matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-eCYdqJ iPiQTB"
+      className="sc-eCYdqJ clmklG"
     >
       Question content
     </div>
@@ -102,7 +102,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-eCYdqJ gLvmwj"
+      className="sc-eCYdqJ iiWgsA"
     />
   </div>
 </div>
