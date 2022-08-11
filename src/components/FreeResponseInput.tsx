@@ -65,7 +65,7 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
   color: ${colors.palette.neutralThin};
 `;
 
-const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
+export const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
   display: block;
   width: 100%;
   min-height: 10.5em;
@@ -80,7 +80,7 @@ const TextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>
   `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
-TextArea.displayName = 'TextArea';
+TextArea.displayName = 'OSTextArea';
 
 const SubmitBtn = styled(Button)`
   align-self: flex-end;
