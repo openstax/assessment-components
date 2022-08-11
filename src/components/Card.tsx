@@ -246,7 +246,7 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 
     ${breakpoints.mobile`
         .openstax-exercise-badges svg {
-            margin-right: ${breakpoints.margins.mobile.length};
+            margin-right: ${breakpoints.margins.mobile};
         }
     `}
 
