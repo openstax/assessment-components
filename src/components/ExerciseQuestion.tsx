@@ -113,7 +113,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
-      <StepCardFooter>
+      <StepCardFooter className="step-card-footer">
         <div className="points">
           <strong>Points: {available_points}</strong>
           <span className="attempts-left">
