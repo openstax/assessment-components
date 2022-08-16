@@ -1,7 +1,6 @@
 import puppeteer from 'puppeteer';
-// import argv from 'yargs';
-// import path from 'path';
 import serve from "@ladle/react/serve";
+// import argv from 'yargs';
 
 const generatePDF = async() => {
   await serve();
@@ -11,22 +10,23 @@ const generatePDF = async() => {
   });
   const page = await browser.newPage();
 
-  await page.goto('http://localhost:61000/?mode=preview&story=print--default');    
+  await page.goto('http://localhost:61001/?mode=preview&story=print--default', {
+    waitUntil: 'networkidle2',
+  });
 
   await page.pdf({
     path: './pdfs/test.pdf',
     format: 'letter',
     margin: {
-          top: "80px",
-          left: "80px",
-          right: "80px",
-          bottom: "80px"
+      top: "80px",
+      left: "80px",
+      right: "80px",
+      bottom: "80px",
     },
     printBackground: true,
-  });    
+  });
   
-  await browser.close(); 
-
+  await browser.close();
 }
 
 generatePDF();
