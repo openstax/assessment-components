@@ -38,7 +38,7 @@
       ],
       "typeRoots": [ "./types", "node_modules/@types" ],
     },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "script/generate-pdf.js"],
   "exclude": [
     "node_modules",
     "dist"
