@@ -1,8 +1,10 @@
 import puppeteer from 'puppeteer';
-import serve from "@ladle/react/serve";
-// import argv from 'yargs';
+import serve from '@ladle/react/serve';
+
+const pdfPath = process.argv[2]
 
 const generatePDF = async() => {
+  // start up ladle
   await serve();
 
   const browser = await puppeteer.launch({
@@ -15,8 +17,8 @@ const generatePDF = async() => {
   });
 
   await page.pdf({
-    path: './pdfs/test.pdf',
-    format: 'letter',
+    path: pdfPath,
+    format: 'A4',
     margin: {
       top: "80px",
       left: "80px",
@@ -27,6 +29,11 @@ const generatePDF = async() => {
   });
   
   await browser.close();
+  process.exit(0);
 }
 
-generatePDF();
+generatePDF()
+  .catch((e) => {
+    console.error('an error has prevented the pdf from saving', e);
+    process.exit(1);
+  });
