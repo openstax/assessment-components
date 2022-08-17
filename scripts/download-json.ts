@@ -18,9 +18,7 @@ import fetch from 'node-fetch';
   const token = spliceOption('-t');
 
   if (process.argv.length < 3) {
-    console.error(
-      `Usage: ${process.argv[0]} ${process.argv[1]} [-o exercises.json] [-t token] <query>`
-    );
+    console.error('Usage: yarn run-download-json [-o exercises.json] [-t token] <query>');
     process.exit(1);
   }
 
