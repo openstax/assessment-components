@@ -74,10 +74,15 @@ const cardProps: TaskStepCardProps = {
   numberOfQuestions: 1
 };
 
-const props = data.map((question) => getQuestionProps(question));
+const allProps = data.map((question) => getQuestionProps(question));
 
-export const Default = () => props.map((questionProps, i) => (
-  <StyledTaskStepCard {...cardProps} questionNumber={i + 1} step={{...cardProps.step, uid: questionProps.question.id}}>
+export const Default = () => allProps.map((questionProps, i) => (
+  <StyledTaskStepCard
+    {...cardProps}
+    questionNumber={i + 1}
+    numberOfQuestions={allProps.length}
+    step={{...cardProps.step, uid: questionProps.question.id}}
+  >
     <ExerciseQuestion {...questionProps} />
   </StyledTaskStepCard>
 ));
