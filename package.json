@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "source": "src/index.ts",
-  "type": "module",
   "typings": "dist/index.d.ts",
   "exports": {
     "require": "./dist/index.js",
@@ -16,6 +15,7 @@
     "build": "microbundle",
     "dev": "microbundle watch --no-compress",
     "download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false && node dist/scripts/download-json.js",
+    "generate-pdf": "microbundle scripts/generate-pdf.ts -o dist/scripts/generate-pdf.js --target node --sourcemap true && node dist/scripts/generate-pdf.js",
     "test": "jest --coverage .",
     "lint": "eslint src/*ts"
   },
