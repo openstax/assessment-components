@@ -13,8 +13,10 @@
   "unpkg": "./dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
+    "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false",
     "dev": "microbundle watch --no-compress",
-    "download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false && node dist/scripts/download-json.js",
+    "download-json": "yarn build-download-json && yarn run-download-json",
+    "run-download-json": "node dist/scripts/download-json.js",
     "test": "jest --coverage .",
     "lint": "eslint src/*ts"
   },
