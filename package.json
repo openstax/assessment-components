@@ -17,7 +17,7 @@
     "dev": "microbundle watch --no-compress",
     "download-json": "yarn build-download-json && yarn run-download-json",
     "run-download-json": "node dist/scripts/download-json.js",
-    "generate-pdf": "microbundle scripts/generate-pdf.ts -o dist/scripts/generate-pdf.js --target node --sourcemap true && node dist/scripts/generate-pdf.js",
+    "generate-pdf": "microbundle scripts/generate-pdf.ts -o dist/scripts/generate-pdf.js --target node --format cjs --sourcemap false && node dist/scripts/generate-pdf.js",
     "test": "jest --coverage .",
     "lint": "eslint src/*ts"
   },
