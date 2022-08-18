@@ -23,6 +23,7 @@ const generatePDF = async() => {
       right: "80px",
       bottom: "80px",
     },
+    scale: 0.8,
     printBackground: true,
   });
 
