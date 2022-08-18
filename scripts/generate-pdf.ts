@@ -12,7 +12,7 @@ const generatePDF = async() => {
   });
   const page = await browser.newPage();
 
-  await page.goto('http://localhost:61001/?mode=preview&story=print--default', {
+  await page.goto('http://localhost:61000/?mode=preview&story=print--default', {
     waitUntil: 'networkidle2',
   });
 
