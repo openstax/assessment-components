@@ -1,7 +1,7 @@
 import { Question } from '../../src/types';
 import { TaskStepCard, TaskStepCardProps } from './Card';
 import { ExerciseQuestion } from './ExerciseQuestion';
-import data from '../../fixtures/questions.json';
+import data from '../../exercises.json';
 import styled from 'styled-components';
 
 type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
@@ -74,7 +74,8 @@ const cardProps: TaskStepCardProps = {
   numberOfQuestions: 1
 };
 
-const allProps = data.map((question) => getQuestionProps(question));
+const questions = data.map((exercise) => exercise.questions).flat();
+const allProps = questions.map((question) => getQuestionProps(question));
 
 export const Default = () => allProps.map((questionProps, i) => (
   <StyledTaskStepCard
