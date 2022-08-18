@@ -10,6 +10,7 @@ const StyledTaskStepCard = styled(TaskStepCard)`
   .step-card-footer {
     display: none;
   }
+  break-inside: avoid;
 `;
 
 const getQuestionProps = (question: Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>) => {

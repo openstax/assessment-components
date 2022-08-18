@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import { chromium } from '@playwright/test';
 import serve from '@ladle/react/serve';
 
 const pdfPath = process.argv[2] || 'exercises.pdf'
@@ -7,15 +7,13 @@ const generatePDF = async() => {
   // start up ladle
   await serve();
 
-  const browser = await puppeteer.launch({
-    headless: true,
-  });
-  const page = await browser.newPage();
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
-  await page.goto('http://localhost:61000/?mode=preview&story=print--default', {
-    waitUntil: 'networkidle2',
-  });
-
+  await page.goto('http://localhost:61000/?mode=preview&story=print--default');
+  await page.waitForLoadState('networkidle')
+  await page.emulateMedia({ media: 'screen' });
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -25,9 +23,10 @@ const generatePDF = async() => {
       right: "80px",
       bottom: "80px",
     },
+    scale: 0.8,
     printBackground: true,
   });
-  
+
   await browser.close();
   process.exit(0);
 }
