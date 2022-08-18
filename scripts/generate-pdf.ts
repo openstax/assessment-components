@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import serve from '@ladle/react/serve';
 
-const pdfPath = process.argv[2]
+const pdfPath = process.argv[2] || 'exercises.pdf'
 
 const generatePDF = async() => {
   // start up ladle
