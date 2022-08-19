@@ -95,7 +95,7 @@ export const Default = () =>
     const allProps = exercise.questions.map((question: ApiQuestion) => getQuestionProps(question));
     return (
     <ExerciseWrapper>
-      <ExerciseHeading key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
+      <ExerciseHeading className="exercise-id" key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
       {allProps.map((questionProps, i) => (
         <StyledTaskStepCard
           {...cardProps}
