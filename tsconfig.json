@@ -35,6 +35,7 @@
       "noEmit": true,
       "types": [
         "@types/jest",
+        "@types/node",
       ],
       "typeRoots": [ "./types", "node_modules/@types" ],
     },
