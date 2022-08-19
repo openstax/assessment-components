@@ -26,7 +26,9 @@ const ExerciseHeading = styled.h2`
   font-weight: normal;
 `;
 
-const getQuestionProps = (question: Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>) => {
+type PrintQuestion = Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>;
+
+const getQuestionProps = (question: PrintQuestion) => {
   return {
     question: {
       id: question['uid'],
@@ -90,7 +92,7 @@ const cardProps: TaskStepCardProps = {
 
 export const Default = () => 
   data.map((exercise, i) => {
-    const allProps = exercise.questions.map((question: any) => getQuestionProps(question));
+    const allProps = exercise.questions.map((question: PrintQuestion) => getQuestionProps(question));
     return (
     <ExerciseWrapper>
       <ExerciseHeading key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
