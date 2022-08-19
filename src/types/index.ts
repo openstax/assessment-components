@@ -19,7 +19,7 @@ export type Question = {
 
 export type Answer = {
   id: ID;
-  correctness: string | null | undefined;
+  correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;
   selected_count?: number;

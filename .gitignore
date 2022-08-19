@@ -3,6 +3,7 @@
 /.log
 /coverage
 exercises.json
+exercises.pdf
 yarn-error.log
 npm-debug.log
 .DS_Store

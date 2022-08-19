@@ -269,7 +269,7 @@ export interface StepCardProps extends SharedProps {
   children?: ReactNode;
   stepType: Step['type'];
   availablePoints: AvailablePoints;
-  exerciseId?: string;
+  questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
 }
@@ -283,7 +283,7 @@ const StepCard = ({
   unpadded,
   className,
   children,
-  exerciseId,
+  questionId,
   multipartBadge,
   leftHeaderChildren,
   rightHeaderChildren,
@@ -302,7 +302,7 @@ const StepCard = ({
                 <span>Question {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
-                <span className="exercise-id">ID: {exerciseId}</span>
+                <span className="question-id">ID: {questionId}</span>
               </div>
             </div>
             <div>
@@ -341,7 +341,7 @@ const TaskStepCard = ({
   data-task-step-id={step.id}
   availablePoints={step.available_points}
   className={cn(`${step.type}-step`, className)}
-  exerciseId={step.uid}
+  questionId={step.uid}
 >
   {children}
 </StepCard>);
