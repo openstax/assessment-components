@@ -11,6 +11,19 @@ const StyledTaskStepCard = styled(TaskStepCard)`
     display: none;
   }
   break-inside: avoid;
+
+  .separator {
+    display: inherit;
+  }
+`;
+
+const ExerciseWrapper = styled.div`
+  break-inside: avoid;
+`;
+
+const ExerciseHeading = styled.h2`
+  font-size: 1.8rem;
+  font-weight: normal;
 `;
 
 const getQuestionProps = (question: Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>) => {
@@ -75,16 +88,21 @@ const cardProps: TaskStepCardProps = {
   numberOfQuestions: 1
 };
 
-const questions = data.map((exercise) => exercise.questions).flat();
-const allProps = questions.map((question) => getQuestionProps(question));
-
-export const Default = () => allProps.map((questionProps, i) => (
-  <StyledTaskStepCard
-    {...cardProps}
-    questionNumber={i + 1}
-    numberOfQuestions={allProps.length}
-    step={{...cardProps.step, uid: questionProps.question.id}}
-  >
-    <ExerciseQuestion {...questionProps} />
-  </StyledTaskStepCard>
-));
+export const Default = () => 
+  data.map((exercise, i) => {
+    const allProps = exercise.questions.map((question: any) => getQuestionProps(question));
+    return (
+    <ExerciseWrapper>
+      <ExerciseHeading key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
+      {allProps.map((questionProps, i) => (
+        <StyledTaskStepCard
+          {...cardProps}
+          questionNumber={i + 1}
+          numberOfQuestions={allProps.length}
+          step={{...cardProps.step, uid: questionProps.question.id}}
+        >
+          <ExerciseQuestion {...questionProps} />
+        </StyledTaskStepCard>
+      ))}
+    </ExerciseWrapper>    
+  )});

@@ -14,13 +14,13 @@ const StyledQuestion = styled.div`
     margin-bottom: 1rem;
     .header {
       display: inline;
-      float: left;
       margin-right: 0.5rem;
       color: #5e6062;
       font-weight: bold;
       flex-basis: 0;
     }
     .solution {
+      display: inline;
       color: #6f6f6f;
     }
   }
