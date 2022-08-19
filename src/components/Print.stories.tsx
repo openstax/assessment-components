@@ -26,7 +26,9 @@ const ExerciseHeading = styled.h2`
   font-weight: normal;
 `;
 
-const getQuestionProps = (question: Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>) => {
+type ApiQuestion = Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>;
+
+const getQuestionProps = (question: ApiQuestion) => {
   return {
     question: {
       id: question['uid'],
@@ -88,9 +90,9 @@ const cardProps: TaskStepCardProps = {
   numberOfQuestions: 1
 };
 
-export const Default = () => 
+export const Default = () =>
   data.map((exercise, i) => {
-    const allProps = exercise.questions.map((question: any) => getQuestionProps(question));
+    const allProps = exercise.questions.map((question: ApiQuestion) => getQuestionProps(question));
     return (
     <ExerciseWrapper>
       <ExerciseHeading key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
@@ -104,5 +106,5 @@ export const Default = () =>
           <ExerciseQuestion {...questionProps} />
         </StyledTaskStepCard>
       ))}
-    </ExerciseWrapper>    
+    </ExerciseWrapper>
   )});
