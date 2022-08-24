@@ -1,4 +1,4 @@
-import{s as L,c as Q,a as p,j as r}from"./index.45218507.js";import{c as t,l as e,m as n,t as W}from"./theme.ff5fe94c.js";import{A as F}from"./AnswersTable.8ac182dc.js";import{C as f}from"./Feedback.5612deb1.js";const H=L.div`
+import{s as L,c as Q,a as p,j as r}from"./index.24c6a407.js";import{c as t,l as e,m as n,t as W}from"./theme.ed682944.js";import{A as F}from"./AnswersTable.41b08fad.js";import{C as f}from"./Feedback.eb2426ed.js";const H=L.div`
 &.openstax-question {
   font-size: 2rem;
 
