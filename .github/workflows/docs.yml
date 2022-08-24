@@ -17,8 +17,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: Setup and build docs
       - run: |
           yarn
+          cp fixtures/exercises.json exercises.json
           yarn ladle build
 
       - name: Deploy to GitHub Pages
