@@ -1,0 +1,299 @@
+{
+  "about": {
+    "homepage": "https://www.ladle.dev",
+    "github": "https://github.com/tajo/ladle",
+    "version": 1
+  },
+  "stories": {
+    "answer--default": {
+      "name": "Default",
+      "levels": [
+        "Answer"
+      ],
+      "locStart": 22,
+      "locEnd": 22,
+      "filePath": "src/components/Answer.stories.tsx",
+      "meta": {}
+    },
+    "answer--checked": {
+      "name": "Checked",
+      "levels": [
+        "Answer"
+      ],
+      "locStart": 23,
+      "locEnd": 23,
+      "filePath": "src/components/Answer.stories.tsx",
+      "meta": {}
+    },
+    "answer--correct": {
+      "name": "Correct",
+      "levels": [
+        "Answer"
+      ],
+      "locStart": 24,
+      "locEnd": 24,
+      "filePath": "src/components/Answer.stories.tsx",
+      "meta": {}
+    },
+    "answer--incorrect": {
+      "name": "Incorrect",
+      "levels": [
+        "Answer"
+      ],
+      "locStart": 25,
+      "locEnd": 25,
+      "filePath": "src/components/Answer.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--default": {
+      "name": "Default",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 35,
+      "locEnd": 35,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--checked": {
+      "name": "Checked",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 36,
+      "locEnd": 36,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--correct-answer-feedback": {
+      "name": "Correct answer feedback",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 37,
+      "locEnd": 37,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--ordered": {
+      "name": "Ordered",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 38,
+      "locEnd": 38,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--instructions": {
+      "name": "Instructions",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 39,
+      "locEnd": 39,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "button--default": {
+      "name": "Default",
+      "levels": [
+        "Button"
+      ],
+      "locStart": 3,
+      "locEnd": 3,
+      "filePath": "src/components/Button.stories.tsx",
+      "meta": {}
+    },
+    "button--disabled": {
+      "name": "Disabled",
+      "levels": [
+        "Button"
+      ],
+      "locStart": 4,
+      "locEnd": 4,
+      "filePath": "src/components/Button.stories.tsx",
+      "meta": {}
+    },
+    "button--waiting": {
+      "name": "Waiting",
+      "levels": [
+        "Button"
+      ],
+      "locStart": 5,
+      "locEnd": 5,
+      "filePath": "src/components/Button.stories.tsx",
+      "meta": {}
+    },
+    "card--default": {
+      "name": "Default",
+      "levels": [
+        "Card"
+      ],
+      "locStart": 19,
+      "locEnd": 19,
+      "filePath": "src/components/Card.stories.tsx",
+      "meta": {}
+    },
+    "card--custom-components": {
+      "name": "Custom components",
+      "levels": [
+        "Card"
+      ],
+      "locStart": 20,
+      "locEnd": 28,
+      "filePath": "src/components/Card.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--default": {
+      "name": "Default",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 57,
+      "locEnd": 57,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--free-response-entered": {
+      "name": "Free response entered",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 58,
+      "locEnd": 61,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--multiple-attempts-all-left": {
+      "name": "Multiple attempts all left",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 62,
+      "locEnd": 67,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--multiple-attempts-one-left": {
+      "name": "Multiple attempts one left",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 68,
+      "locEnd": 77,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--multiple-attempts-none-left": {
+      "name": "Multiple attempts none left",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 78,
+      "locEnd": 88,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "feedback--default": {
+      "name": "Default",
+      "levels": [
+        "Feedback"
+      ],
+      "locStart": 3,
+      "locEnd": 3,
+      "filePath": "src/components/Feedback.stories.tsx",
+      "meta": {}
+    },
+    "free-response-input--default": {
+      "name": "Default",
+      "levels": [
+        "Free response input"
+      ],
+      "locStart": 45,
+      "locEnd": 45,
+      "filePath": "src/components/FreeResponseInput.stories.tsx",
+      "meta": {}
+    },
+    "free-response-input--over-word-limit": {
+      "name": "Over word limit",
+      "levels": [
+        "Free response input"
+      ],
+      "locStart": 46,
+      "locEnd": 46,
+      "filePath": "src/components/FreeResponseInput.stories.tsx",
+      "meta": {}
+    },
+    "free-response-input--submitted-date": {
+      "name": "Submitted date",
+      "levels": [
+        "Free response input"
+      ],
+      "locStart": 47,
+      "locEnd": 47,
+      "filePath": "src/components/FreeResponseInput.stories.tsx",
+      "meta": {}
+    },
+    "print--default": {
+      "name": "Default",
+      "levels": [
+        "Print"
+      ],
+      "locStart": 93,
+      "locEnd": 110,
+      "filePath": "src/components/Print.stories.tsx",
+      "meta": {}
+    },
+    "question--default": {
+      "name": "Default",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 48,
+      "locEnd": 48,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    },
+    "question--checked": {
+      "name": "Checked",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 49,
+      "locEnd": 49,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    },
+    "question--correct": {
+      "name": "Correct",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 50,
+      "locEnd": 50,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    },
+    "question--incorrect": {
+      "name": "Incorrect",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 51,
+      "locEnd": 51,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    },
+    "question--math": {
+      "name": "Math",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 52,
+      "locEnd": 52,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    }
+  }
+}
