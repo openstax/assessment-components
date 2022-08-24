@@ -1,4 +1,4 @@
-name: Build and deploy docs
+name: Docs
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '16'
       - run: |
-          yarn clean
+          yarn
           yarn ladle build
 
       - name: Deploy to GitHub Pages
