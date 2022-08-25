@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - ladle-gh-pages
 
 jobs:
   build:
