@@ -1,8 +1,8 @@
 import { colors } from "../theme";
 import styled from "styled-components";
 
-const StyledButton = styled.button`
-  background-color: ${colors.button.background};
+const StyledButton = styled.button<{secondary?: boolean}>`
+  background-color: ${props => props.secondary ? colors.buttonSecondary.background : colors.button.background};
   color: ${colors.palette.white};
   font-size: 1.6rem;
   font-weight: 700;
@@ -33,6 +33,7 @@ const StyledButton = styled.button`
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   isWaiting?: never;
+  secondary?: boolean;
   waitingText?: never;
 }
 interface WaitingButtonProps extends React.ComponentPropsWithoutRef<'button'> {

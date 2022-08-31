@@ -38,7 +38,8 @@ const props: FreeResponseProps = {
   availablePoints: '1.0' as const,
   pointsChildren: <></>,
   isSubmitDisabled: false,
-  textHasChanged: false,
+  textHasChanged: true,
+  canRevert: true,
   submitBtnLabel: 'Next',
 };
 

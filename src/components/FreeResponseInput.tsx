@@ -21,6 +21,7 @@ export interface FreeResponseProps {
   question: QuestionType,
   availablePoints: AvailablePoints,
   textHasChanged: boolean;
+  canRevert: boolean;
   submitBtnLabel: string;
 }
 
@@ -79,6 +80,9 @@ export const FreeResponseTextArea = styled.textarea<{isOverWordLimit: boolean} &
     border: 2px solid ${colors.palette.danger};
   `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
+  font-family: inherit;
+  font-size: 1.8rem;
+  line-height: 3rem;
 `;
 FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
 
@@ -89,18 +93,31 @@ const SubmitBtn = styled(Button)`
 `;
 
 const RevertButton = (props: {
-  disabled: boolean
-} & React.ComponentPropsWithoutRef<'button'>) => (
-  <Button {...props}>
-    Cancel
-  </Button>
-);
+  canRevert: boolean,
+  textHasChanged: boolean,
+} & React.ComponentPropsWithoutRef<'button'>) => {
+  if (!props.textHasChanged || !props.canRevert) {
+      return null;
+  }
+
+  return (
+      <Button
+        {...props}
+        disabled={!props.textHasChanged}
+        secondary
+      >
+          Cancel
+      </Button>
+  );
+};
+
 
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     availablePoints,
     cancelHandler,
+    canRevert,
     defaultValue,
     infoRowChildren,
     isSubmitDisabled,
@@ -146,7 +163,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           {pointsChildren}
         </div>
         <div className="controls">
-          <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
+          <RevertButton 
+            textHasChanged={textHasChanged}
+            canRevert={canRevert}
+            onClick={cancelHandler} 
+          />
           <SubmitBtn
               data-test-id="submit-answer-btn"
               disabled={isSubmitDisabled || isOverWordLimit}

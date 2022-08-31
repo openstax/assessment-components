@@ -63,6 +63,9 @@ export const colors = {
     backgroundHover: "#E74B0D",
     backgroundActive: "#C5400B"
   },
+  buttonSecondary: {
+    background: "#6c757d",
+  },
   freeResponse: {
     color: palette.neutralDark,
     background: palette.neutralLighter,
