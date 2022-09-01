@@ -67,6 +67,9 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
 
 export const FreeResponseTextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
   display: block;
+  font-family: inherit;
+  font-size: 1.8rem;
+  line-height: 3rem;
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -81,12 +84,6 @@ export const FreeResponseTextArea = styled.textarea<{isOverWordLimit: boolean} &
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
 FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
-
-const SubmitBtn = styled(Button)`
-  align-self: flex-end;
-  margin: 4rem;
-  float: right;
-`;
 
 const RevertButton = (props: {
   disabled: boolean
@@ -147,13 +144,13 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
         </div>
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
-          <SubmitBtn
+          <Button
               data-test-id="submit-answer-btn"
               disabled={isSubmitDisabled || isOverWordLimit}
               onClick={saveHandler}
           >
               {submitBtnLabel}
-          </SubmitBtn>
+          </Button>
         </div>
       </StepCardFooter>
     </StyledFreeResponse>
