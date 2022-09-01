@@ -56,7 +56,7 @@ export const Exercise = ({
   >
     <Preamble exercise={exercise} />
 
-    {(exercise.questions || []).map((q) =>
+    {exercise.questions.map((q) =>
       <ExerciseQuestion
         {...props}
         {...step}
@@ -69,7 +69,6 @@ export const Exercise = ({
         canUpdateCurrentStep={canAnswer}
         displaySolution={true}
         answerId={step.answer_id}
-
       />
     )}
   </StyledTaskStepCard>

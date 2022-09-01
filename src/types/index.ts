@@ -30,7 +30,6 @@ export type Step = {
   uid: ExerciseUid;
   id: number;
   available_points: AvailablePoints;
-
   preview: string;
   is_completed: boolean;
   answer_id?: ID;
