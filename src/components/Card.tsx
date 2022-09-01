@@ -159,7 +159,6 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 
     .step-card-body {
         padding: var(--step-card-padding-top) var(--step-card-padding-side);
-        border: 1px purple solid;
     }
 
     & + div .step-card-body {
