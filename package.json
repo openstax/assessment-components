@@ -1,5 +1,5 @@
 {
-  "name": "@openstax/assignment-components",
+  "name": "@openstax/assessment-components",
   "version": "0.0.0",
   "license": "MIT",
   "source": "src/index.ts",
@@ -28,7 +28,7 @@
     "styled-components": "*"
   },
   "devDependencies": {
-    "@ladle/react": "^1.3.0",
+    "@ladle/react": "^2.1.2",
     "@playwright/test": "^1.25.0",
     "@types/jest": "^28.1.4",
     "@types/node": "^18.7.5",
