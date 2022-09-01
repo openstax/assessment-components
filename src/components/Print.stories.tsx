@@ -12,18 +12,21 @@ const StyledTaskStepCard = styled(TaskStepCard)`
   }
   break-inside: avoid;
 
-  .separator {
+  .separator, .exercise-id {
     display: inherit;
+  }
+
+  .exercise-id {
+    height: auto;
+  }
+
+  .answer-letter-wrapper::after {
+    content: '' !important;
   }
 `;
 
 const ExerciseWrapper = styled.div`
   break-inside: avoid;
-`;
-
-const ExerciseHeading = styled.h2`
-  font-size: 1.8rem;
-  font-weight: normal;
 `;
 
 type ApiQuestion = Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>;
@@ -91,17 +94,16 @@ const cardProps: TaskStepCardProps = {
 };
 
 export const Default = () =>
-  data.map((exercise, i) => {
+  data.map((exercise) => {
     const allProps = exercise.questions.map((question: ApiQuestion) => getQuestionProps(question));
     return (
     <ExerciseWrapper>
-      <ExerciseHeading className="exercise-id" key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
       {allProps.map((questionProps, i) => (
         <StyledTaskStepCard
           {...cardProps}
           questionNumber={i + 1}
           numberOfQuestions={allProps.length}
-          step={{...cardProps.step, uid: questionProps.question.id}}
+          step={{...cardProps.step, uid: exercise.uid}}
         >
           <ExerciseQuestion {...questionProps} />
         </StyledTaskStepCard>
