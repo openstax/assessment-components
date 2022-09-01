@@ -2,19 +2,6 @@ import { colors, breakpoints } from "../theme";
 import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
-    --step-card-padding-top: 48px;
-    --step-card-padding-side: 140px;
-
-    ${breakpoints.only.tablet`
-        --step-card-padding-top: ${breakpoints.margins.tablet};
-        --step-card-padding-side: ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.only.mobile`
-        --step-card-padding-top: calc(${breakpoints.margins.mobile} * 2);
-        --step-card-padding-side: ${breakpoints.margins.mobile};
-    `}
-
     padding: var(--step-card-padding-top) var(--step-card-padding-side);
     border-top: 1px solid ${colors.palette.pale};
     display: flex;

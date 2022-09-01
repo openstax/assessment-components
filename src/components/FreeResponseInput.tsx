@@ -1,7 +1,7 @@
 import { MouseEventHandler, ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
-import { colors } from '../theme';
+import { colors, breakpoints } from '../theme';
 import { AvailablePoints, Question as QuestionType } from 'src/types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
@@ -29,8 +29,25 @@ const TextAreaErrorStyle = css`
 `;
 
 const StyledFreeResponse = styled.div`
+  --step-card-padding-top: 48px;
+  --step-card-padding-side: 140px;
+
+  ${breakpoints.only.tablet`
+      --step-card-padding-top: ${breakpoints.margins.tablet};
+      --step-card-padding-side: ${breakpoints.margins.tablet};
+  `}
+
+  ${breakpoints.only.mobile`
+      --step-card-padding-top: calc(${breakpoints.margins.mobile} * 2);
+      --step-card-padding-side: ${breakpoints.margins.mobile};
+  `}
+
   display: flex;
   flex-direction: column;
+
+  .step-card-body {
+    padding: var(--step-card-padding-top) var(--step-card-padding-side);
+  }
 `;
 
 const SyledQuestionStem = styled.div`
