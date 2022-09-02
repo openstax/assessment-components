@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mixins, colors, layouts, transitions } from '../theme';
+import { mixins, colors, layouts, transitions, breakpoints } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { ID, Question as QuestionType, Task } from 'src/types';
@@ -7,6 +7,18 @@ import { ReactNode } from 'react';
 import { Content } from './Content';
 
 const StyledQuestion = styled.div`
+&.step-card-body {
+  padding: 48px 140px;
+
+  ${breakpoints.tablet`
+    padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
+  `}
+
+  ${breakpoints.mobile`
+    padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
+  `}
+}
+
 &.openstax-question {
   font-size: 2rem;
 
