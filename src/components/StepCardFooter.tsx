@@ -2,20 +2,7 @@ import { colors, breakpoints } from "../theme";
 import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
-    --step-card-padding-top: 48px;
-    --step-card-padding-side: 140px;
-
-    ${breakpoints.only.tablet`
-        --step-card-padding-top: ${breakpoints.margins.tablet};
-        --step-card-padding-side: ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.only.mobile`
-        --step-card-padding-top: calc(${breakpoints.margins.mobile} * 2);
-        --step-card-padding-side: ${breakpoints.margins.mobile};
-    `}
-
-    padding: var(--step-card-padding-top) var(--step-card-padding-side);
+    padding: 48px 140px;
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +38,7 @@ export const StepCardFooter = styled.div`
     }
 
     ${breakpoints.desktop`
-        padding: 32px var(--step-card-padding-side);
+        padding: 32px 140px;
         flex-wrap: nowrap;
 
         .points {
@@ -66,5 +53,13 @@ export const StepCardFooter = styled.div`
                 margin: 0 0 0 0.8rem;
             }
         }
+    `}
+
+    ${breakpoints.tablet`
+        padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
+    `}
+
+    ${breakpoints.mobile`
+        padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
     `}
 `;

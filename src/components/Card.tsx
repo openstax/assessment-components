@@ -143,61 +143,55 @@ const StepCardHeader = styled.div`
 StepCardHeader.displayName = 'StepCardHeader';
 
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
-    --step-card-padding-top: 48px;
-    --step-card-padding-side: 140px;
+  .step-card-body {
+    padding: 48px 140px;
 
-    ${breakpoints.only.tablet`
-        --step-card-padding-top: ${breakpoints.margins.tablet};
-        --step-card-padding-side: ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.only.mobile`
-        --step-card-padding-top: calc(${breakpoints.margins.mobile} * 2);
-        --step-card-padding-side: ${breakpoints.margins.mobile};
-    `}
-
-
-    .step-card-body {
-        padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    }
-
-    & + div .step-card-body {
-        padding-top: 0;
-    }
-
-    &.exercise-context, &.exercise-stimulus, &.exercise-stem {
-        padding-bottom: 0;
-    }
-
-    ${breakpoints.only.mobile`
-        && .question-feedback {
-            margin-left: 0;
-
-           .arrow { margin-left: 12px; }
-        }
-    `}
-
-    .reading-step & {
-        padding: 0;
-    }
-
-    ${breakpoints.desktop`
-        .video-step &, .interactive-step & {
-            .openstax-exercise-badges {
-              margin-right: 3.8rem;
-            }
-        }
+    ${breakpoints.tablet`
+      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
     `}
 
     ${breakpoints.mobile`
-        .openstax-exercise-badges svg {
-            margin-right: ${breakpoints.margins.mobile};
-        }
+      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
     `}
+  }
 
-    &&& {
-        .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
-    }
+  & + div .step-card-body {
+      padding-top: 0;
+  }
+
+  &.exercise-context, &.exercise-stimulus, &.exercise-stem {
+      padding-bottom: 0;
+  }
+
+  ${breakpoints.only.mobile`
+      && .question-feedback {
+          margin-left: 0;
+
+          .arrow { margin-left: 12px; }
+      }
+  `}
+
+  .reading-step & {
+      padding: 0;
+  }
+
+  ${breakpoints.desktop`
+      .video-step &, .interactive-step & {
+          .openstax-exercise-badges {
+            margin-right: 3.8rem;
+          }
+      }
+  `}
+
+  ${breakpoints.mobile`
+      .openstax-exercise-badges svg {
+          margin-right: ${breakpoints.margins.mobile};
+      }
+  `}
+
+  &&& {
+      .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
+  }
 `;
 
 interface SharedProps {
