@@ -155,43 +155,43 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
     `}
   }
 
-  & + div .step-card-body {
-      padding-top: 0;
-  }
+    & + div .step-card-body {
+        padding-top: 0;
+    }
 
-  &.exercise-context, &.exercise-stimulus, &.exercise-stem {
-      padding-bottom: 0;
-  }
+    &.exercise-context, &.exercise-stimulus, &.exercise-stem {
+        padding-bottom: 0;
+    }
 
-  ${breakpoints.only.mobile`
-      && .question-feedback {
-          margin-left: 0;
+    ${breakpoints.only.mobile`
+        && .question-feedback {
+            margin-left: 0;
 
-          .arrow { margin-left: 12px; }
-      }
-  `}
+           .arrow { margin-left: 12px; }
+        }
+    `}
 
-  .reading-step & {
-      padding: 0;
-  }
+    .reading-step & {
+        padding: 0;
+    }
 
-  ${breakpoints.desktop`
-      .video-step &, .interactive-step & {
-          .openstax-exercise-badges {
-            margin-right: 3.8rem;
-          }
-      }
-  `}
+    ${breakpoints.desktop`
+        .video-step &, .interactive-step & {
+            .openstax-exercise-badges {
+              margin-right: 3.8rem;
+            }
+        }
+    `}
 
-  ${breakpoints.mobile`
-      .openstax-exercise-badges svg {
-          margin-right: ${breakpoints.margins.mobile};
-      }
-  `}
+    ${breakpoints.mobile`
+        .openstax-exercise-badges svg {
+            margin-right: ${breakpoints.margins.mobile};
+        }
+    `}
 
-  &&& {
-      .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
-  }
+    &&& {
+        .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
+    }
 `;
 
 interface SharedProps {
