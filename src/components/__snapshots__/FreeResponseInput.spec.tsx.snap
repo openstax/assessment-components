@@ -2,7 +2,7 @@
 
 exports[`Free Response Input matches snapshot 1`] = `
 <div
-  className="sc-hKMtZM cfGbOi"
+  className="sc-hKMtZM fqYFAo"
   data-test-id="student-free-response"
 >
   <div
@@ -23,7 +23,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-gKXOVf hIMSip"
+      className="sc-gKXOVf fOUCwc"
       data-test-id="free-response-box"
       defaultValue=""
       onChange={[Function]}
@@ -42,7 +42,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf ceTCMv"
+    className="sc-dkzDqf hRAMYn"
   >
     <div
       className="points"
@@ -63,7 +63,7 @@ exports[`Free Response Input matches snapshot 1`] = `
         Cancel
       </button>
       <button
-        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        className="sc-gsnTZi gAYofE"
         data-test-id="submit-answer-btn"
         disabled={false}
         onClick={[Function]}
@@ -77,7 +77,7 @@ exports[`Free Response Input matches snapshot 1`] = `
 
 exports[`Free Response Input renders leftInfoComponent component 1`] = `
 <div
-  className="sc-hKMtZM cfGbOi"
+  className="sc-hKMtZM fqYFAo"
   data-test-id="student-free-response"
 >
   <div
@@ -98,7 +98,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-gKXOVf detAWt"
+      className="sc-gKXOVf koeiMo"
       data-test-id="free-response-box"
       defaultValue=""
       onChange={[Function]}
@@ -124,7 +124,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf ceTCMv"
+    className="sc-dkzDqf hRAMYn"
   >
     <div
       className="points"
@@ -145,7 +145,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
         Cancel
       </button>
       <button
-        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        className="sc-gsnTZi gAYofE"
         data-test-id="submit-answer-btn"
         disabled={false}
         onClick={[Function]}
@@ -159,7 +159,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
 
 exports[`Free Response Input renders word limit error 1`] = `
 <div
-  className="sc-hKMtZM cfGbOi"
+  className="sc-hKMtZM fqYFAo"
   data-test-id="student-free-response"
 >
   <div
@@ -180,7 +180,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-gKXOVf ddoRVS"
+      className="sc-gKXOVf feyTiT"
       data-test-id="free-response-box"
       defaultValue="response has more than five words"
       onChange={[Function]}
@@ -206,7 +206,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf ceTCMv"
+    className="sc-dkzDqf hRAMYn"
   >
     <div
       className="points"
@@ -227,7 +227,7 @@ exports[`Free Response Input renders word limit error 1`] = `
         Cancel
       </button>
       <button
-        className="sc-gsnTZi gAYofE sc-iBkjds kHMRzk"
+        className="sc-gsnTZi gAYofE"
         data-test-id="submit-answer-btn"
         disabled={true}
         onClick={[Function]}
