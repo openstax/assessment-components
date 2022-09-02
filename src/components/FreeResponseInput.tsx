@@ -1,7 +1,7 @@
 import { MouseEventHandler, ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
-import { colors, breakpoints } from '../theme';
+import { colors, mixins } from '../theme';
 import { AvailablePoints, Question as QuestionType } from 'src/types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
@@ -33,15 +33,7 @@ const StyledFreeResponse = styled.div`
   flex-direction: column;
 
   .step-card-body {
-    padding: 48px 140px;
-
-    ${breakpoints.tablet`
-      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.mobile`
-      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
-    `}
+    ${mixins.stepCardPadding()}
   }
 `;
 

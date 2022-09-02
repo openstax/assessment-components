@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { breakpoints, colors } from "../theme";
+import { breakpoints, colors, mixins } from "../theme";
 import { AvailablePoints, Step } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
@@ -144,15 +144,7 @@ StepCardHeader.displayName = 'StepCardHeader';
 
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
   .step-card-body {
-    padding: 48px 140px;
-
-    ${breakpoints.tablet`
-      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.mobile`
-      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
-    `}
+    ${mixins.stepCardPadding()}
   }
 
     & + div .step-card-body {

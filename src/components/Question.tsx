@@ -8,15 +8,7 @@ import { Content } from './Content';
 
 const StyledQuestion = styled.div`
 &.step-card-body {
-  padding: 48px 140px;
-
-  ${breakpoints.tablet`
-    padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-  `}
-
-  ${breakpoints.mobile`
-    padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
-  `}
+  ${mixins.stepCardPadding()};
 }
 
 &.openstax-question {

@@ -1,8 +1,8 @@
-import { colors, breakpoints } from "../theme";
+import { colors, breakpoints, mixins } from "../theme";
 import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
-    padding: 48px 140px;
+    ${mixins.stepCardPadding()}
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
@@ -53,13 +53,5 @@ export const StepCardFooter = styled.div`
                 margin: 0 0 0 0.8rem;
             }
         }
-    `}
-
-    ${breakpoints.tablet`
-        padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.mobile`
-        padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
     `}
 `;

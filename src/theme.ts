@@ -216,6 +216,17 @@ export const mixins = {
     white-space: normal;
     line-break: auto;
   `,
+  stepCardPadding: () => css`
+    padding: 48px 140px;
+
+    ${breakpoints.tablet`
+      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
+    `}
+
+    ${breakpoints.mobile`
+      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
+    `}
+  `,
 };
 
 const theme = {
