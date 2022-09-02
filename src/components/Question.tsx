@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mixins, colors, layouts, transitions, breakpoints } from '../theme';
+import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { ID, Question as QuestionType, Task } from 'src/types';

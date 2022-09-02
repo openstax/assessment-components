@@ -113,9 +113,6 @@ export const breakpoints = {
     mobile(...args: Parameters<typeof css>) {
       return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
     },
-    tablet(...args: Parameters<typeof css>) {
-      return css`@media(min-width: ${BREAKPOINTS.mobile + 1}px) and (max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
-    },
   },
   margins: {
     mobile: '8px',
