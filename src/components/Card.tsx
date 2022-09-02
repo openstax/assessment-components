@@ -219,7 +219,7 @@ const StepCard = ({
   stepType,
   isHomework,
   availablePoints,
-  unpadded,
+  unpadded, // currently does nothing; may need to restore if this causes tutor stepcard regression
   className,
   children,
   questionId,
