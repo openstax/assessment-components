@@ -1,6 +1,6 @@
-import{c as t,b as e}from"./theme.188cdec6.js";import{s as o}from"./index.20515251.js";const p=o.div`
-    padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    border-top: 1px solid ${t.palette.pale};
+import{m as t,c as e,b as o}from"./theme.a1cdc73e.js";import{s as r}from"./index.bb0e31a3.js";const s=r.div`
+    ${t.stepCardPadding()}
+    border-top: 1px solid ${e.palette.pale};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -34,8 +34,8 @@ import{c as t,b as e}from"./theme.188cdec6.js";import{s as o}from"./index.205152
         }
     }
 
-    ${e.desktop`
-        padding: 32px var(--step-card-padding-side);
+    ${o.desktop`
+        padding: 32px 140px;
         flex-wrap: nowrap;
 
         .points {
@@ -51,4 +51,4 @@ import{c as t,b as e}from"./theme.188cdec6.js";import{s as o}from"./index.205152
             }
         }
     `}
-`;export{p as S};
+`;export{s as S};

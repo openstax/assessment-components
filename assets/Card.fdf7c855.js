@@ -1,4 +1,4 @@
-import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as t}from"./index.20515251.js";const $=a.div`
+import{c as l,b as e,m as $}from"./theme.a1cdc73e.js";import{s as t,j as p,c as k,a as i}from"./index.bb0e31a3.js";const w=t.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@ import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as 
   min-height: 400px;
   border-radius: 0.25rem;
   margin: 0 auto 5rem auto;
-  border: 1px solid ${n.palette.light};
+  border: 1px solid ${l.palette.light};
   border-radius: 0.25rem;
   background-color: white;
 
@@ -14,18 +14,18 @@ import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as 
     max-width: 1000px;
     min-width: 750px;
   `}
-`,k=a.div`
+`,S=t.div`
   padding: 2rem;
 
   ${e.tablet`
     padding: 0;
   `}
-`,c=a.div`
+`,m=t.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${n.card.background};
+  background: ${l.card.background};
   font-size: 1.8rem;
   line-height: 3rem;
 
@@ -59,7 +59,7 @@ import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as 
   }
 
   button {
-    color: ${n.palette.gray};
+    color: ${l.palette.gray};
   }
 
   .openstax-exercise-badges {
@@ -129,77 +129,10 @@ import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as 
           margin-right: ${e.margins.mobile};
       }
   `}
-`;c.displayName="StepCardHeader";a.div`
-    padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    border-top: 1px solid ${n.palette.pale};
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 1.4rem;
-    line-height: 2rem;
-
-    > * {
-        flex-grow: 1;
-    }
-
-    button {
-        width: 160px;
-        height: 48px;
-    }
-
-    .points {
-        margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
-        .attempts-left {
-            color: #F36B32;
-        }
-    }
-
-    .controls {
-        display: flex;
-        flex-flow: column wrap-reverse;
-        margin-left: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
-        button + button {
-            margin: 0.8rem 0 0 0;
-        }
-    }
-
-    ${e.desktop`
-        padding: 32px var(--step-card-padding-side);
-        flex-wrap: nowrap;
-
-        .points {
-            max-width: 400px;
-        }
-
-        .controls {
-            flex-flow: row;
-            justify-content: flex-end;
-
-            button + button {
-                margin: 0 0 0 0.8rem;
-            }
-        }
-    `}
-`;const S=a.div`
-    --step-card-padding-top: 48px;
-    --step-card-padding-side: 140px;
-
-    ${e.only.tablet`
-        --step-card-padding-top: ${e.margins.tablet};
-        --step-card-padding-side: ${e.margins.tablet};
-    `}
-
-    ${e.only.mobile`
-        --step-card-padding-top: calc(${e.margins.mobile} * 2);
-        --step-card-padding-side: ${e.margins.mobile};
-    `}
-
-
-    ${i=>i.unpadded?".step-card-body":"&"} {
-        padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    }
+`;m.displayName="StepCardHeader";const C=t.div`
+  .step-card-body {
+    ${$.stepCardPadding()}
+  }
 
     & + div .step-card-body {
         padding-top: 0;
@@ -238,4 +171,4 @@ import{c as n,b as e}from"./theme.188cdec6.js";import{s as a,j as l,c as y,a as 
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`,m=({questionNumber:i,numberOfQuestions:s,stepType:o,isHomework:r,availablePoints:d,unpadded:p,className:g,children:x,questionId:h,multipartBadge:b,leftHeaderChildren:u,rightHeaderChildren:f,headerTitleChildren:v,...w})=>t(k,{...w,children:[b,t($,{className:g,children:[i&&r&&o==="exercise"&&t(c,{children:[t("div",{children:[u,t("div",{className:"question-info",children:[v,t("span",{children:["Question ",i]}),t("span",{className:"num-questions",children:["\xA0/ ",s]}),l("span",{className:"separator",children:"|"}),t("span",{className:"question-id",children:["ID: ",h]})]})]}),t("div",{children:[t("div",{className:"points",children:[d," Points"]}),f]})]}),l(S,{unpadded:p,children:x})]})]});m.displayName="OSStepCard";const q=({step:i,questionNumber:s,numberOfQuestions:o,children:r,className:d,...p})=>l(m,{...p,unpadded:!0,questionNumber:s,numberOfQuestions:o,stepType:i.type,isHomework:i.task.type==="homework","data-task-step-id":i.id,availablePoints:i.available_points,className:y(`${i.type}-step`,d),questionId:i.uid,children:r});q.displayName="OSTaskStepCard";export{q as T};
+`,c=({questionNumber:a,numberOfQuestions:n,stepType:s,isHomework:o,availablePoints:r,unpadded:d,className:g,children:h,questionId:x,multipartBadge:b,leftHeaderChildren:u,rightHeaderChildren:f,headerTitleChildren:v,...y})=>i(S,{...y,children:[b,i(w,{className:g,children:[a&&o&&s==="exercise"&&i(m,{children:[i("div",{children:[u,i("div",{className:"question-info",children:[v,i("span",{children:["Question ",a]}),i("span",{className:"num-questions",children:["\xA0/ ",n]}),p("span",{className:"separator",children:"|"}),i("span",{className:"question-id",children:["ID: ",x]})]})]}),i("div",{children:[i("div",{className:"points",children:[r," Points"]}),f]})]}),p(C,{unpadded:d,children:h})]})]});c.displayName="OSStepCard";const q=({step:a,questionNumber:n,numberOfQuestions:s,children:o,className:r,...d})=>p(c,{...d,unpadded:!0,questionNumber:n,numberOfQuestions:s,stepType:a.type,isHomework:a.task.type==="homework","data-task-step-id":a.id,availablePoints:a.available_points,className:k(`${a.type}-step`,r),questionId:a.uid,children:o});q.displayName="OSTaskStepCard";export{q as T};
