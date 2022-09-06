@@ -7,6 +7,10 @@ import { ReactNode } from 'react';
 import { Content } from './Content';
 
 const StyledQuestion = styled.div`
+&.step-card-body {
+  ${mixins.stepCardPadding()};
+}
+
 &.openstax-question {
   font-size: 2rem;
 

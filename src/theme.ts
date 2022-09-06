@@ -113,9 +113,6 @@ export const breakpoints = {
     mobile(...args: Parameters<typeof css>) {
       return css`@media(max-width: ${BREAKPOINTS.mobile}px) { ${css(...args)} }`;
     },
-    tablet(...args: Parameters<typeof css>) {
-      return css`@media(min-width: ${BREAKPOINTS.mobile + 1}px) and (max-width: ${BREAKPOINTS.tablet}px) { ${css(...args)} }`;
-    },
   },
   margins: {
     mobile: '8px',
@@ -215,6 +212,17 @@ export const mixins = {
     word-spacing: normal;
     white-space: normal;
     line-break: auto;
+  `,
+  stepCardPadding: () => css`
+    padding: 48px 140px;
+
+    ${breakpoints.tablet`
+      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
+    `}
+
+    ${breakpoints.mobile`
+      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
+    `}
   `,
 };
 
