@@ -67,14 +67,6 @@ exports[`Exercise matches snapshot 1`] = `
         }
       />
       <div
-        className="step-card-body exercise-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<i>Stem HTML</i>",
-          }
-        }
-      />
-      <div
         data-test-id="student-exercise-question"
       >
         <div

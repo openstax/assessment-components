@@ -1,4 +1,4 @@
-import { AvailablePoints, ID, Question as QuestionType, Task } from "../types";
+import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
 import { Question } from './Question';
@@ -6,8 +6,8 @@ import { StepCardFooter } from "./StepCardFooter";
 
 export interface ExerciseQuestionProps {
   task?: Task;
-  question: QuestionType;
-  answer_id_order?: ID[]; // @TODO harmonize these props with Exercise
+  question: ExerciseQuestionData;
+  answer_id_order?: ID[];
   questionNumber: number;
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;

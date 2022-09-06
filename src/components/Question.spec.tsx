@@ -75,7 +75,7 @@ describe('Question', () => {
   });
 
   it('defaults formats', () => {
-    props.question.formats = undefined;
+    (props as any).question.formats = undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
     const tree = renderer.create(
       <Question {...props} displayFormats={true} />
     ).toJSON();
@@ -100,7 +100,7 @@ describe('Question', () => {
     expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).toContain('has-correct-answer'); // Possible bug here?
 
     tree = renderer.create(
-      <Question {...props} task={{ is_deleted: false, type: undefined }}  />
+      <Question {...props} task={{ is_deleted: false, type: undefined }} />
     );
     expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).not.toContain('has-correct-answer');
   });
@@ -108,6 +108,14 @@ describe('Question', () => {
   it('defaults QuestionHtml html', () => {
     const tree = renderer.create(
       <Question {...props} context={undefined} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('defaults collaborator_solutions', () => {
+    props.question.collaborator_solutions = undefined;
+    const tree = renderer.create(
+      <Question {...props} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

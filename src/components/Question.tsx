@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
-import { ID, Question as QuestionType, Task } from 'src/types';
+import { ID, ExerciseQuestionData, Task } from 'src/types';
 import { ReactNode } from 'react';
 import { Content } from './Content';
 
@@ -225,7 +225,7 @@ const StyledQuestion = styled.div`
 `;
 
 export interface QuestionProps {
-  question: QuestionType,
+  question: ExerciseQuestionData,
   answer_id?: ID;
   task?: Task | null,
   correct_answer_id: ID | null;
@@ -255,7 +255,7 @@ export const Question = (props: QuestionProps) => {
     question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber, context, task, hidePreambles
   } = props;
 
-  const { stem_html, collaborator_solutions, formats, stimulus_html } = question;
+  const { stem_html, formats, stimulus_html } = question;
 
   const hasCorrectAnswer = !!correct_answer_id;
   const hasIncorrectAnswer = !!incorrectAnswerId;
@@ -263,17 +263,20 @@ export const Question = (props: QuestionProps) => {
   const taskIsDeleted = (task != null ? task.is_deleted : undefined)
   const taskIsHomework = ((task != null ? task.type : undefined) === 'homework');
 
+  const collaborator_solutions = question.collaborator_solutions || [];
+
   const classes = classnames('openstax-question', className, {
     'has-correct-answer': hasCorrectAnswer && !(taskIsDeleted && taskIsHomework),
     'has-incorrect-answer': hasIncorrectAnswer,
   });
 
   const hasSolution = () => {
-    const { question, displaySolution } = props;
-    const { collaborator_solutions } = question;
+    const { displaySolution } = props;
 
     return (
-      displaySolution && collaborator_solutions.find(s => s['content_html'] !== undefined)
+      displaySolution &&
+      collaborator_solutions &&
+      collaborator_solutions.find(s => s['content_html'] !== undefined)
     );
   };
 
@@ -338,7 +341,7 @@ export const QuestionHtml = (props: QuestionHtmlProps) => {
   );
 };
 
-const FormatsListing = ({ formats = [] }: { formats: QuestionType['formats'] }) => {
+const FormatsListing = ({ formats = [] }: { formats: ExerciseQuestionData['formats'] }) => {
   return (
     <div className="formats-listing">
       <div className="header">Formats:</div>
