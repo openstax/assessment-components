@@ -80,7 +80,6 @@ export type Step = {
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
-  content?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   incorrectAnswerId: ID;
 }
 
