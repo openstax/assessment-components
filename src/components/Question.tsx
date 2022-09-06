@@ -255,15 +255,13 @@ export const Question = (props: QuestionProps) => {
     question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber, context, task, hidePreambles
   } = props;
 
-  const { stem_html, formats, stimulus_html } = question;
+  const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
 
   const hasCorrectAnswer = !!correct_answer_id;
   const hasIncorrectAnswer = !!incorrectAnswerId;
 
   const taskIsDeleted = (task != null ? task.is_deleted : undefined)
   const taskIsHomework = ((task != null ? task.type : undefined) === 'homework');
-
-  const collaborator_solutions = question.collaborator_solutions || [];
 
   const classes = classnames('openstax-question', className, {
     'has-correct-answer': hasCorrectAnswer && !(taskIsDeleted && taskIsHomework),
@@ -272,6 +270,7 @@ export const Question = (props: QuestionProps) => {
 
   const hasSolution = () => {
     const { displaySolution } = props;
+    const { collaborator_solutions = [] } = question;
 
     return (
       displaySolution &&
