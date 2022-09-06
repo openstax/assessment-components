@@ -55,7 +55,8 @@ export const Default = () =>
     return (
       <ExerciseWrapper>
         <ExerciseHeading className="exercise-id" key={i}>Exercise ID: {exercise.uid}</ExerciseHeading>
-        <Exercise canAnswer={true}
+        <Exercise
+          canAnswer={true}
           needsSaved={true}
           hasMultipleAttempts={false}
           onAnswerChange={() => undefined}
