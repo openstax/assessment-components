@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { breakpoints, colors } from "../theme";
+import { breakpoints, colors, mixins } from "../theme";
 import { AvailablePoints, Step } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
@@ -142,79 +142,10 @@ const StepCardHeader = styled.div`
 `;
 StepCardHeader.displayName = 'StepCardHeader';
 
-export const StepCardFooter = styled.div`
-    padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    border-top: 1px solid ${colors.palette.pale};
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 1.4rem;
-    line-height: 2rem;
-
-    > * {
-        flex-grow: 1;
-    }
-
-    button {
-        width: 160px;
-        height: 48px;
-    }
-
-    .points {
-        margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
-        .attempts-left {
-            color: #F36B32;
-        }
-    }
-
-    .controls {
-        display: flex;
-        flex-flow: column wrap-reverse;
-        margin-left: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
-        button + button {
-            margin: 0.8rem 0 0 0;
-        }
-    }
-
-    ${breakpoints.desktop`
-        padding: 32px var(--step-card-padding-side);
-        flex-wrap: nowrap;
-
-        .points {
-            max-width: 400px;
-        }
-
-        .controls {
-            flex-flow: row;
-            justify-content: flex-end;
-
-            button + button {
-                margin: 0 0 0 0.8rem;
-            }
-        }
-    `}
-`;
-
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
-    --step-card-padding-top: 48px;
-    --step-card-padding-side: 140px;
-
-    ${breakpoints.only.tablet`
-        --step-card-padding-top: ${breakpoints.margins.tablet};
-        --step-card-padding-side: ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.only.mobile`
-        --step-card-padding-top: calc(${breakpoints.margins.mobile} * 2);
-        --step-card-padding-side: ${breakpoints.margins.mobile};
-    `}
-
-
-    ${props => props.unpadded ? '.step-card-body' : '&'} {
-        padding: var(--step-card-padding-top) var(--step-card-padding-side);
-    }
+  .step-card-body {
+    ${mixins.stepCardPadding()}
+  }
 
     & + div .step-card-body {
         padding-top: 0;
@@ -280,7 +211,7 @@ const StepCard = ({
   stepType,
   isHomework,
   availablePoints,
-  unpadded,
+  unpadded, // currently does nothing; may need to restore if this causes tutor stepcard regression
   className,
   children,
   questionId,

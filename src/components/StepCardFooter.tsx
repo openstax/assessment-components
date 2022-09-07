@@ -1,8 +1,8 @@
-import { colors, breakpoints } from "../theme";
+import { colors, breakpoints, mixins } from "../theme";
 import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
-    padding: var(--step-card-padding-top) var(--step-card-padding-side);
+    ${mixins.stepCardPadding()}
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
@@ -38,7 +38,7 @@ export const StepCardFooter = styled.div`
     }
 
     ${breakpoints.desktop`
-        padding: 32px var(--step-card-padding-side);
+        padding: 32px 140px;
         flex-wrap: nowrap;
 
         .points {
