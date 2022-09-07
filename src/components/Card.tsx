@@ -230,7 +230,7 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>Question {questionNumber}</span>
+                <span>Exercise {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
                 <span className="exercise-id">ID: {exerciseId}</span>

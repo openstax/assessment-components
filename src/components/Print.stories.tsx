@@ -6,10 +6,13 @@ import { Exercise } from './Exercise';
 const ExerciseWrapper = styled.div`
   break-inside: avoid;
 
+  .step-card-body {
+    padding: 24px 48px !important;
+  }
+
   .step-card-footer {
     display: none;
   }
-  break-inside: avoid;
 
   .separator, .exercise-id {
     display: inherit;
@@ -53,8 +56,10 @@ const step: Step = {
 
 const exercises = data as ExerciseData[];
 
-export const Default = () =>
-  exercises.map(((exercise, i) => {
+export const Default = () => (
+  <>
+  <h2>Assessment for </h2>
+  {exercises.map(((exercise, i) => {
     return (
       <ExerciseWrapper>
         <Exercise
@@ -69,9 +74,10 @@ export const Default = () =>
           apiIsPending={false}
           available_points={'1.0'}
           exercise={exercise}
-          step={step}
+          step={{...step, uid: exercise.uid}}
           questionNumber={i + 1}
           numberOfQuestions={exercises.length} />
       </ExerciseWrapper>
     )
-  }));
+  }))}
+  </>);
