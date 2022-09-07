@@ -253,6 +253,8 @@ export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   step: Step;
+  questionNumber: number;
+  numberOfQuestions: number;
 }
 
 const TaskStepCard = ({

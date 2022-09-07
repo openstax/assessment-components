@@ -2,7 +2,7 @@ import { MouseEventHandler, ReactNode } from 'react';
 import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
-import { AvailablePoints, Question as QuestionType } from 'src/types';
+import { AvailablePoints, ExerciseQuestionData } from 'src/types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
@@ -18,7 +18,7 @@ export interface FreeResponseProps {
   defaultValue: string;
   isSubmitDisabled: boolean;
   questionNumber: number,
-  question: QuestionType,
+  question: ExerciseQuestionData,
   availablePoints: AvailablePoints,
   textHasChanged: boolean;
   submitBtnLabel: string;
@@ -43,7 +43,7 @@ const SyledQuestionStem = styled.div`
   position: relative;
 `;
 
-const InfoRow = styled.div<{hasChildren: boolean}>`
+const InfoRow = styled.div<{ hasChildren: boolean }>`
   margin: 8px 0;
   display: flex;
   justify-content: ${props => props.hasChildren ? 'space-between' : 'flex-end'};
@@ -52,7 +52,7 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
   .word-limit-error-info {
     color: ${colors.palette.danger};
   }
-  
+
   div > span {
     font-size: 12px;
     line-height: 16px;
@@ -69,7 +69,7 @@ const InfoRow = styled.div<{hasChildren: boolean}>`
   color: ${colors.palette.neutralThin};
 `;
 
-export const FreeResponseTextArea = styled.textarea<{isOverWordLimit: boolean} & FreeResponseProps>`
+export const FreeResponseTextArea = styled.textarea<{ isOverWordLimit: boolean } & FreeResponseProps>`
   display: block;
   font-family: inherit;
   font-size: 1.8rem;
@@ -123,8 +123,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
         <SyledQuestionStem {...questionProps}>
-            {question.stem_html &&
-          <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
+          {question.stem_html &&
+            <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
         </SyledQuestionStem>
         <FreeResponseTextArea
           {...props}
@@ -134,11 +134,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           aria-label="question response text box"
         />
         <InfoRow hasChildren={!!infoRowChildren}>
-            {infoRowChildren}
-            <div>
-                <span>{countWords(defaultValue)} words</span>
-                {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
-            </div>
+          {infoRowChildren}
+          <div>
+            <span>{countWords(defaultValue)} words</span>
+            {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+          </div>
         </InfoRow>
       </div>
       <StepCardFooter>
@@ -149,16 +149,16 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
           <Button
-              data-test-id="submit-answer-btn"
-              disabled={isSubmitDisabled || isOverWordLimit}
-              onClick={saveHandler}
+            data-test-id="submit-answer-btn"
+            disabled={isSubmitDisabled || isOverWordLimit}
+            onClick={saveHandler}
           >
-              {submitBtnLabel}
+            {submitBtnLabel}
           </Button>
         </div>
       </StepCardFooter>
     </StyledFreeResponse>
-);
+  );
 }
 
 FreeResponseInput.displayName = 'OSFreeResponse';

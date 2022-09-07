@@ -1,10 +1,10 @@
 import { defaultAnswerType } from "../constants";
-import { Answer as AnswerType, AnswerDisplayType, ID, Question } from "src/types";
+import { Answer as AnswerType, AnswerDisplayType, ID, ExerciseQuestionData } from "src/types";
 import { Answer } from "./Answer";
 import { Feedback } from "./Feedback";
 
 export interface AnswersTableProps {
-  question: Question;
+  question: ExerciseQuestionData;
   type?: AnswerDisplayType;
   answer_id?: ID;
   correct_answer_id?: ID | null;

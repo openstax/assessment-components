@@ -19,6 +19,7 @@ const props: AnswersTableProps = {
         content_html: 'False'
       },
     ],
+    is_answer_order_important: false,
   },
   answer_id: '',
   feedback_html: '',
@@ -33,7 +34,7 @@ const props: AnswersTableProps = {
 };
 
 export const Default = () => <AnswersTable {...props} />;
-export const Checked = () => <AnswersTable {...props} answer_id='1'  />;
-export const CorrectAnswerFeedback = () => <AnswersTable {...props} answer_id='1' correct_answer_id='1' correct_answer_feedback_html="Feedback" hasCorrectAnswer={true}  />;
+export const Checked = () => <AnswersTable {...props} answer_id='1' />;
+export const CorrectAnswerFeedback = () => <AnswersTable {...props} answer_id='1' correct_answer_id='1' correct_answer_feedback_html="Feedback" hasCorrectAnswer={true} />;
 export const Ordered = () => <AnswersTable {...props} answerIdOrder={['2', '1']} />;
 export const Instructions = () => <AnswersTable {...props} instructions={<b>Instructions</b>} />;
