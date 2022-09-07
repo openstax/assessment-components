@@ -50,8 +50,8 @@
       "levels": [
         "Answers table"
       ],
-      "locStart": 35,
-      "locEnd": 35,
+      "locStart": 36,
+      "locEnd": 36,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -60,8 +60,8 @@
       "levels": [
         "Answers table"
       ],
-      "locStart": 36,
-      "locEnd": 36,
+      "locStart": 37,
+      "locEnd": 37,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -70,8 +70,8 @@
       "levels": [
         "Answers table"
       ],
-      "locStart": 37,
-      "locEnd": 37,
+      "locStart": 38,
+      "locEnd": 38,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -80,8 +80,8 @@
       "levels": [
         "Answers table"
       ],
-      "locStart": 38,
-      "locEnd": 38,
+      "locStart": 39,
+      "locEnd": 39,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -90,8 +90,8 @@
       "levels": [
         "Answers table"
       ],
-      "locStart": 39,
-      "locEnd": 39,
+      "locStart": 40,
+      "locEnd": 40,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -130,8 +130,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 19,
-      "locEnd": 19,
+      "locStart": 35,
+      "locEnd": 35,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -140,9 +140,19 @@
       "levels": [
         "Card"
       ],
-      "locStart": 20,
-      "locEnd": 28,
+      "locStart": 36,
+      "locEnd": 44,
       "filePath": "src/components/Card.stories.tsx",
+      "meta": {}
+    },
+    "exercise--default": {
+      "name": "Default",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 78,
+      "locEnd": 78,
+      "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
     "exercise-question--default": {
@@ -240,8 +250,8 @@
       "levels": [
         "Print"
       ],
-      "locStart": 93,
-      "locEnd": 110,
+      "locStart": 53,
+      "locEnd": 75,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },

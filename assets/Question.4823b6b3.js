@@ -1,4 +1,4 @@
-import{s as L,c as Q,a as p,j as r}from"./index.bb0e31a3.js";import{m as t,c as n,l as e,t as W}from"./theme.a1cdc73e.js";import{A as F}from"./AnswersTable.e186c65a.js";import{C as g}from"./Feedback.04a3babb.js";const H=L.div`
+import{s as j,c as L,a as p,j as r}from"./index.e09ebc67.js";import{m as t,c as n,l as e,t as Q}from"./theme.9ba42df4.js";import{A as W}from"./AnswersTable.f86bd81d.js";import{C as f}from"./Feedback.2fba4ff5.js";const F=j.div`
 &.step-card-body {
   ${t.stepCardPadding()};
 }
@@ -100,7 +100,7 @@ import{s as L,c as Q,a as p,j as r}from"./index.bb0e31a3.js";import{m as t,c as 
       padding: ${e.answer.verticalSpacing} 0 0 0;
       margin: 0;
 
-      transition: color ${W.answer};
+      transition: color ${Q.answer};
     }
 
     // a selectable answer
@@ -218,4 +218,4 @@ import{s as L,c as Q,a as p,j as r}from"./index.bb0e31a3.js";import{m as t,c as 
     padding: 10px 0;
   }
 }
-`,E=a=>{let o,s;const{question:l,correct_answer_id:c,incorrectAnswerId:f,exercise_uid:m,className:$,questionNumber:b,context:x,task:i,hidePreambles:d}=a,{stem_html:k,collaborator_solutions:v,formats:y,stimulus_html:q}=l,u=!!c,S=!!f,z=i!=null?i.is_deleted:void 0,C=(i!=null?i.type:void 0)==="homework",N=Q("openstax-question",$,{"has-correct-answer":u&&!(z&&C),"has-incorrect-answer":S}),_=()=>{const{question:w,displaySolution:A}=a,{collaborator_solutions:I}=w;return A&&I.find(j=>j.content_html!==void 0)};return m!=null&&(o=r("div",{className:"exercise-uid",children:m})),_()&&(s=p("div",{className:"detailed-solution",children:[r("div",{className:"header",children:"Detailed solution:"}),r(g,{className:"solution",block:!0,html:v.map(w=>w.content_html).join("")})]})),p(H,{className:N,"data-question-number":b,"data-test-id":"question",children:[r(h,{type:"context",html:x,hidden:d}),r(h,{type:"stimulus",html:q,hidden:d}),r(h,{type:"stem",html:k,hidden:d,questionNumber:b}),a.children,r(F,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:u}),s,a.displayFormats?r(B,{formats:y}):void 0,o]})},h=a=>{const{html:o="",type:s,hidden:l,questionNumber:c}=a;return l===!0||!(o.length>0)?null:r(g,{html:o,"data-question-number":c,className:`question-${s}`,block:!0})},B=({formats:a=[]})=>p("div",{className:"formats-listing",children:[r("div",{className:"header",children:"Formats:"}),a.map((o,s)=>r("span",{children:o},s))]});export{E as Q,h as a};
+`,U=a=>{let o,s;const{question:i,correct_answer_id:c,incorrectAnswerId:$,exercise_uid:m,className:x,questionNumber:b,context:k,task:l,hidePreambles:d}=a,{stem_html:v,collaborator_solutions:y=[],formats:S,stimulus_html:q}=i,u=!!c,z=!!$,C=l!=null?l.is_deleted:void 0,N=(l!=null?l.type:void 0)==="homework",_=L("openstax-question",x,{"has-correct-answer":u&&!(C&&N),"has-incorrect-answer":z}),A=()=>{const{displaySolution:w}=a,{collaborator_solutions:g=[]}=i;return w&&g&&g.find(I=>I.content_html!==void 0)};return m!=null&&(o=r("div",{className:"exercise-uid",children:m})),A()&&(s=p("div",{className:"detailed-solution",children:[r("div",{className:"header",children:"Detailed solution:"}),r(f,{className:"solution",block:!0,html:y.map(w=>w.content_html).join("")})]})),p(F,{className:_,"data-question-number":b,"data-test-id":"question",children:[r(h,{type:"context",html:k,hidden:d}),r(h,{type:"stimulus",html:q,hidden:d}),r(h,{type:"stem",html:v,hidden:d,questionNumber:b}),a.children,r(W,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:u}),s,a.displayFormats?r(H,{formats:S}):void 0,o]})},h=a=>{const{html:o="",type:s,hidden:i,questionNumber:c}=a;return i===!0||!(o.length>0)?null:r(f,{html:o,"data-question-number":c,className:`question-${s}`,block:!0})},H=({formats:a=[]})=>p("div",{className:"formats-listing",children:[r("div",{className:"header",children:"Formats:"}),a.map((o,s)=>r("span",{children:o},s))]});export{U as Q,h as a};
