@@ -86,7 +86,6 @@ export type Step = {
   attempt_number: number;
   solution?: Solution;
   incorrectAnswerId: ID;
-<<<<<<< HEAD
 }
 
 interface Solution {
@@ -94,15 +93,6 @@ interface Solution {
   solution_type: string;
 }
 
-=======
-}
-
-interface Solution {
-  content_html: string;
-  solution_type: string;
-}
-
->>>>>>> main
 export type Task = {
   is_deleted: boolean;
   type?: 'homework';
