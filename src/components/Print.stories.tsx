@@ -1,4 +1,4 @@
-import { ExerciseData, Step } from '../../src/types';
+import { ExerciseData, ExerciseQueryData, Step } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -54,11 +54,11 @@ const step: Step = {
   incorrectAnswerId: 0
 };
 
-const exercises = data as ExerciseData[];
+const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
 export const Default = () => (
   <>
-  <h2>Assessment for </h2>
+  <h2>Exercises for {data.title}</h2>
   {exercises.map(((exercise, i) => {
     return (
       <ExerciseWrapper>

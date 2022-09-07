@@ -28,6 +28,11 @@ export interface ExerciseQuestionData {
   collaborator_solutions?: CollaboratorSolution[];
 }
 
+export interface ExerciseQueryData {
+  title: string;
+  exercises: ExerciseData[];
+}
+
 export interface ExerciseData {
   tags: string[];
   uuid: string;

@@ -14,7 +14,7 @@ import fetch from 'node-fetch';
     }
   }) as ((flag: string, defaultValue: string) => string) & ((flag: string) => string | undefined)
 
-  const filename = spliceOption('-o', 'exercises.json');
+  const filename = spliceOption('-o');
   const token = spliceOption('-t');
 
   if (process.argv.length < 3) {
@@ -48,11 +48,11 @@ import fetch from 'node-fetch';
     console.log(`Progress: ${exercises.length}/${total_count}`);
   }
 
-  writeFile(filename, JSON.stringify(exercises), (err) => {
+  writeFile('exercises.json', JSON.stringify({title: filename, exercises}), (err) => {
     if (err)
       console.error(err);
     else {
-      console.log(`${exercises.length} exercises written to ${filename}`);
+      console.log(`${exercises.length} exercises written to exercises.json`);
     }
   });
 })();
