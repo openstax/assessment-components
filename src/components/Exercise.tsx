@@ -35,7 +35,6 @@ export interface ExerciseProps {
   onAnswerChange: () => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  canUpdateCurrentStep: boolean;
   attempt_number: number;
   apiIsPending: boolean;
   available_points: AvailablePoints;

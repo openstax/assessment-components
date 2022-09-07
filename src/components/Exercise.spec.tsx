@@ -48,7 +48,6 @@ describe('Exercise', () => {
       available_points: '1.0' as const,
       canAnswer: false,
       needsSaved: false,
-      canUpdateCurrentStep: false,
       attempt_number: 0,
       apiIsPending: false,
       step: {

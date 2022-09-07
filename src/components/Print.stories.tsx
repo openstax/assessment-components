@@ -62,7 +62,6 @@ export const Default = () =>
           onAnswerChange={() => undefined}
           onAnswerSave={() => undefined}
           onNextStep={() => undefined}
-          canUpdateCurrentStep={true}
           attempt_number={0}
           apiIsPending={false}
           available_points={'1.0'}

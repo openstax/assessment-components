@@ -70,7 +70,6 @@ export const MultipleAttemptsOneLeft = () =>
     hasMultipleAttempts={true}
     canAnswer={true}
     needsSaved={false}
-    canUpdateCurrentStep={true}
     attempts_remaining={1}
     attempt_number={1}
     incorrectAnswerId='2'
@@ -81,7 +80,6 @@ export const MultipleAttemptsNoneLeft = () =>
     choicesEnabled={false}
     canAnswer={false}
     needsSaved={false}
-    canUpdateCurrentStep={false}
     attempts_remaining={0}
     attempt_number={2}
     incorrectAnswerId='2'
