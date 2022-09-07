@@ -22,6 +22,10 @@ const ExerciseWrapper = styled.div`
     height: auto;
   }
 
+  .exercise-step {
+    min-height: auto;
+  }
+
   .answer-letter-wrapper::after {
     content: '' !important;
   }

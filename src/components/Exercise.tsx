@@ -63,7 +63,7 @@ export const Exercise = ({
         canAnswer={canAnswer}
         needsSaved={needsSaved}
         canUpdateCurrentStep={canAnswer}
-        displaySolution={true}
+        displaySolution={false}
         answerId={step.answer_id}
       />
     )}
