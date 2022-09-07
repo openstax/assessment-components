@@ -29,7 +29,7 @@ export interface ExerciseQuestionData {
 }
 
 export interface ExerciseQueryData {
-  title: string;
+  title?: string;
   exercises: ExerciseData[];
 }
 

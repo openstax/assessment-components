@@ -62,7 +62,7 @@ const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
 export const Default = () => (
   <>
-  <h2>Exercises for {data.title}</h2>
+  {data.title && <h2>Exercises for {data.title}</h2>}
   {exercises.map(((exercise, i) => {
     return (
       <ExerciseWrapper>
