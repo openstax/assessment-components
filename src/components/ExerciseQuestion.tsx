@@ -1,4 +1,4 @@
-import { AvailablePoints, ID, Question as QuestionType, Task } from "../types";
+import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
 import { Question } from './Question';
@@ -6,7 +6,7 @@ import { StepCardFooter } from "./StepCardFooter";
 
 export interface ExerciseQuestionProps {
   task?: Task;
-  question: QuestionType;
+  question: ExerciseQuestionData;
   answer_id_order?: ID[];
   questionNumber: number;
   choicesEnabled: boolean;
@@ -19,10 +19,10 @@ export interface ExerciseQuestionProps {
   is_completed: boolean;
   correct_answer_id: ID;
   incorrectAnswerId: ID;
-  answerId: ID;
+  answerId?: ID;
   attempts_remaining: number;
-  published_comments: string;
-  detailedSolution: string;
+  published_comments?: string;
+  detailedSolution?: string;
   canAnswer: boolean;
   needsSaved: boolean;
   canUpdateCurrentStep: boolean;
@@ -40,7 +40,7 @@ const AttemptsRemaining = ({ count }: { count: number }) => {
   );
 }
 
-const PublishedComments = ({ published_comments }: { published_comments: string }) => {
+const PublishedComments = ({ published_comments }: { published_comments?: string }) => {
   if (!published_comments) { return null; }
 
   return (
@@ -127,10 +127,10 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         <div className="controls">
           {canAnswer && needsSaved ?
             <SaveButton
-             disabled={apiIsPending || !answerId}
-             isWaiting={apiIsPending}
-             attempt_number={attempt_number}
-             onClick={onAnswerSave}
+              disabled={apiIsPending || !answerId}
+              isWaiting={apiIsPending}
+              attempt_number={attempt_number}
+              onClick={onAnswerSave}
             /> :
             <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
         </div>

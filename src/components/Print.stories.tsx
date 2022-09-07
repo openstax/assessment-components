@@ -1,12 +1,11 @@
-import { Question } from '../../src/types';
-import { TaskStepCard, TaskStepCardProps } from './Card';
-import { ExerciseQuestion } from './ExerciseQuestion';
+import { ExerciseData, Step } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
+import { Exercise } from './Exercise';
 
-type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
+const ExerciseWrapper = styled.div`
+  break-inside: avoid;
 
-const StyledTaskStepCard = styled(TaskStepCard)`
   .step-card-footer {
     display: none;
   }
@@ -25,88 +24,54 @@ const StyledTaskStepCard = styled(TaskStepCard)`
   }
 `;
 
-const ExerciseWrapper = styled.div`
-  break-inside: avoid;
-`;
-
-type ApiQuestion = Optional<Question, 'collaborator_solutions' | 'id' | 'stimulus_html' | 'is_answer_order_important'>;
-
-const getQuestionProps = (question: ApiQuestion) => {
-  return {
-    question: {
-      id: question['uid'],
-      collaborator_solutions: [],
-      stimulus_html: '',
-      is_answer_order_important: false,
-      type: 'teacher-preview',
-      ...question
-    },
-    task: {
-      is_deleted: false,
-      type: 'homework' as const
-    },
-    correct_answer_id: '1',
-    incorrectAnswerId: '',
-    hideAnswers: false,
-    hidePreambles: false,
-    exercise_uid: '',
-    displayFormats: false,
-    className: '',
-    questionNumber: 1,
-    displaySolution: true,
-    context: '',
-    feedback_html: '',
-    correct_answer_feedback_html: '',
-    onChange: () => null,
-    choicesEnabled: true,
-    hasMultipleAttempts: false,
-    onAnswerChange: () => null,
-    onAnswerSave: () => null,
-    onNextStep: () => null,
-    is_completed: true,
-    multiPartGroup: null,
-    answerId: '',
-    available_points: '1.0' as const,
-    attempts_remaining: 2,
-    published_comments: '',
-    detailedSolution: '',
-    canAnswer: false,
-    needsSaved: false,
-    canUpdateCurrentStep: false,
-    attempt_number: 0,
-    apiIsPending: false
-  }
-};
-
-const cardProps: TaskStepCardProps = {
-  step: {
-    type: 'exercise' as const,
-    task: {
-      is_deleted: false,
-      type: 'homework' as const
-    },
-    uid: '1234@4',
-    id: 1,
-    available_points: '1.0',
+const step: Step = {
+  type: 'exercise' as const,
+  task: {
+    is_deleted: false,
+    type: 'homework' as const
   },
-  questionNumber: 1,
-  numberOfQuestions: 1
+  uid: '1234@4',
+  id: 1,
+  available_points: '1.0',
+  preview: 'Preview content',
+  is_completed: false,
+  answer_id_order: ['1', '2'],
+  answer_id: '1',
+  free_response: '',
+  last_completed_at: new Date(),
+  feedback_html: '',
+  correct_answer_id: '',
+  correct_answer_feedback_html: '',
+  external_url: '',
+  can_be_updated: false,
+  is_feedback_available: true,
+  exercise_id: '1',
+  attempts_remaining: 0,
+  attempt_number: 1,
+  incorrectAnswerId: 0
 };
+
+const exercises = data as ExerciseData[];
 
 export const Default = () =>
-  data.map((exercise) => {
-    const allProps = exercise.questions.map((question: ApiQuestion) => getQuestionProps(question));
+  exercises.map(((exercise, i) => {
     return (
-    <ExerciseWrapper>
-      {allProps.map((questionProps, i) => (
-        <StyledTaskStepCard
-          {...cardProps}
+      <ExerciseWrapper>
+        <Exercise
+          canAnswer={true}
+          needsSaved={true}
+          hasMultipleAttempts={false}
+          onAnswerChange={() => undefined}
+          onAnswerSave={() => undefined}
+          onNextStep={() => undefined}
+          canUpdateCurrentStep={true}
+          attempt_number={0}
+          apiIsPending={false}
+          available_points={'1.0'}
+          exercise={exercise}
+          step={step}
           questionNumber={i + 1}
-          numberOfQuestions={allProps.length}
-          step={{...cardProps.step, uid: exercise.uid}}
-        >
-          <ExerciseQuestion {...questionProps} />
-        </StyledTaskStepCard>
-      ))}
-    </ExerciseWrapper>
-  )});
+          numberOfQuestions={exercises.length} />
+      </ExerciseWrapper>
+    )
+  }));

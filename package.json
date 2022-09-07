@@ -21,7 +21,8 @@
     "download-json-to-pdf": "yarn download-json",
     "postdownload-json-to-pdf": "yarn generate-pdf",
     "test": "jest --coverage .",
-    "lint": "eslint src/*ts"
+    "lint": "eslint src/*ts",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "*",

@@ -21,7 +21,7 @@ export interface AnswerProps {
   correctIncorrectIcon?: ReactNode,
   radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
-  show_all_feedback: boolean;
+  show_all_feedback?: boolean;
 }
 
 export const Answer = (props: AnswerProps) => {
