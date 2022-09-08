@@ -261,7 +261,7 @@ export const Question = (props: QuestionProps) => {
 
   const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
 
-  const hasCorrectAnswer = !!correct_answer_id;
+  const hasCorrectAnswer = true;
   const hasIncorrectAnswer = !!incorrectAnswerId;
 
   const taskIsDeleted = (task != null ? task.is_deleted : undefined)
