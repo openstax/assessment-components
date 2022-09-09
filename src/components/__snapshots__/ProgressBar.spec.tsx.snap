@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar matches snapshot 1`] = `
+<div
+  className="sc-dkzDqf cOomSk"
+>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi ehJyFd"
+      onClick={[Function]}
+    >
+      1
+    </button>
+  </span>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi iaAHRE"
+      onClick={[Function]}
+    >
+      2
+    </button>
+  </span>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi ehJyFd"
+      onClick={[Function]}
+    >
+      3
+    </button>
+  </span>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi cmDKvw"
+      onClick={[Function]}
+    >
+      4
+    </button>
+  </span>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi eUMPoF"
+      onClick={[Function]}
+    >
+      5
+    </button>
+  </span>
+  <span
+    className="sc-bczRLJ jWccEi"
+  >
+    <button
+      className="sc-gsnTZi eUMPoF"
+      onClick={[Function]}
+    >
+      6
+    </button>
+  </span>
+</div>
+`;
+
+exports[`ProgressBarItem matches snapshot 1`] = `
+<span
+  className="sc-bczRLJ jWccEi"
+>
+  <button
+    className="sc-gsnTZi iaAHRE"
+    onClick={[Function]}
+  >
+    4
+  </button>
+</span>
+`;

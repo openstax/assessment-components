@@ -70,31 +70,31 @@ const ProgressBarWrapper = styled.div`
   `}
 `;
 
-interface ProgressBarProps {
+export interface ProgressBarProps {
   steps: {variant: ProgressBarItemVariant}[];
   activeIndex: number | null;
   goToStep: (index: number) => void;
 }
 
-interface ProgressBarItemProps {
-  value: number;
+export interface ProgressBarItemProps {
+  index: number;
   variant: ProgressBarItemVariant;
   goToStep: (index: number) => void;
 }
 
 export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isActive' | 'isInactive' | null;
 
-const ProgressBarItem = ({value, variant, goToStep}: ProgressBarItemProps  ) => (
+export const ProgressBarItem = ({index, variant, goToStep}: ProgressBarItemProps  ) => (
   <StyledItemWrapper>
-    <StyledItem variant={variant} onClick={() => goToStep(value - 1)}>{value}</StyledItem>
+    <StyledItem variant={variant} onClick={() => goToStep(index)}>{index + 1}</StyledItem>
   </StyledItemWrapper>
 );
 
 const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <ProgressBarWrapper>
   {steps.map((step, index) => <ProgressBarItem
     key={index}
-    value={index + 1}
-    variant={step.variant || (index === activeIndex ? 'isActive' : 'isInactive')}
+    index={index}
+    variant={index === activeIndex ? 'isActive' : step.variant}
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;

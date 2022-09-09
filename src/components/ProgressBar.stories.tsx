@@ -1,35 +1,36 @@
-import ProgressBar, { ProgressBarItemVariant } from './ProgressBar';
+import ProgressBar, { ProgressBarProps } from './ProgressBar';
 
-const goToStep = (index: number) => {
-  console.log(index);
+const props: ProgressBarProps = {
+  activeIndex: 0,
+  goToStep: (index: number) => console.log(index),
+  steps: [
+    {
+      variant: 'isIncorrect',
+    },
+    {
+      variant: 'isCorrect',
+    },
+    {
+      variant: 'isIncorrect',
+    },
+    {
+      variant: 'isIncorrect',
+    },
+    {
+      variant: null,
+    },
+    {
+      variant: null,
+    },
+    {
+      variant: null,
+    },
+    {
+      variant: null,
+    }
+  ],
 }
 
-const steps: {variant: ProgressBarItemVariant}[] = [
-  {
-    variant: 'isIncorrect',
-  },
-  {
-    variant: 'isCorrect',
-  },
-  {
-    variant: 'isIncorrect',
-  },
-  {
-    variant: 'isIncorrect',
-  },
-  {
-    variant: null,
-  },
-  {
-    variant: null,
-  },
-  {
-    variant: null,
-  },
-  {
-    variant: null,
-  }
-]; 
-
-export const Default = () => <ProgressBar steps={steps.map((i) => i = {variant: null})} activeIndex={0} goToStep={goToStep} />;
-export const InProgress = () => <ProgressBar steps={steps} activeIndex={4} goToStep={goToStep} />;
+export const Default = () => <ProgressBar {...props} steps={props.steps.map((step) => step = {variant: null})} />;
+export const InProgress = () => <ProgressBar {...props} activeIndex={4} />;
+export const NavigatedBack = () => <ProgressBar {...props} activeIndex={2} />;
