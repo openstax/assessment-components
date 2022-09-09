@@ -93,7 +93,7 @@ export interface ProgressBarItemProps {
   goToStep: (index: number) => void;
 }
 
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isActive' | 'isInactive' | null;
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isActive' | null;
 
 export const ProgressBarItem = ({index, variant, goToStep}: ProgressBarItemProps  ) => (
   <StyledItemWrapper>
