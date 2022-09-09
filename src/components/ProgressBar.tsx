@@ -1,6 +1,16 @@
 import styled, { css } from 'styled-components';
 import { colors, breakpoints } from '../theme';
 
+const ProgressBarWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 3.2rem;
+  ${breakpoints.mobile`
+    margin: 1rem;
+  `}
+`;
+
 const StyledItemWrapper = styled.span`
   display: flex;
   align-items: center;
@@ -27,6 +37,35 @@ const StyledItemWrapper = styled.span`
   `}
 `;
 
+const handleVariant = (variant: ProgressBarItemVariant) => {
+  switch (variant) {
+    case 'isCorrect':
+      return css`
+        color: ${colors.palette.white};
+        background-color: rgba(99, 165, 36, 0.6);
+        border-color: ${colors.palette.darkGreen};
+      `;
+    case 'isIncorrect':
+      return css`
+        color: ${colors.palette.white};
+        background-color: ${colors.palette.lightRed};
+        border-color: ${colors.palette.darkRed};
+      `;
+    case 'isActive':
+      return css`
+        color: ${colors.palette.darkGray};
+        background-color: ${colors.palette.white};
+        border-color: ${colors.palette.darkGray};
+      `
+    default:
+      return css`
+        color: ${colors.palette.darkGray};
+        background-color: ${colors.palette.neutralLight};
+        border-color: ${colors.palette.neutralLight};
+      `;
+  }
+};
+
 const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
   display: flex;
   justify-content: center;
@@ -34,40 +73,12 @@ const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
-  background-color: ${colors.palette.neutralLight};
-  border: 1px solid ${colors.palette.neutralLight};
-  color: ${colors.palette.darkGray};
+  border-width: 1px;
+  border-style: solid;
   margin: 0 0.3rem;
   font-weight: bold;
   cursor: pointer;
-
-  ${props => props.variant === 'isCorrect' && css`
-    color: ${colors.palette.white};
-    background-color: rgba(99, 165, 36, 0.6);
-    border-color: ${colors.palette.darkGreen};
-  `}
-
-  ${props => props.variant === 'isIncorrect' && css`
-    color: ${colors.palette.white};
-    background-color: ${colors.palette.lightRed};
-    border-color: ${colors.palette.darkRed};
-  `}
-
-  ${props => props.variant === 'isActive' && css`
-    color: ${colors.palette.darkGray};
-    background-color: ${colors.palette.white};
-    border-color: ${colors.palette.darkGray};
-  `}
-`;
-
-const ProgressBarWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin: 3.2rem;
-  ${breakpoints.mobile`
-    margin: 1rem;
-  `}
+  ${props => handleVariant(props.variant)}
 `;
 
 export interface ProgressBarProps {
