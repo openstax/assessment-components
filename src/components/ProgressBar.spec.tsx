@@ -1,5 +1,7 @@
-import ProgressBar, { ProgressBarItem, ProgressBarProps, ProgressBarItemProps } from './ProgressBar';
+import ProgressBar, { ProgressBarItemVariant, ProgressBarProps } from './ProgressBar';
 import renderer from 'react-test-renderer';
+
+const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null];
 
 describe('ProgressBar', () => {
   let props: ProgressBarProps;
@@ -8,26 +10,7 @@ describe('ProgressBar', () => {
     props = {
       activeIndex: 3,
       goToStep: () => null,
-      steps: [
-        {
-          variant: 'isIncorrect',
-        },
-        {
-          variant: 'isCorrect',
-        },
-        {
-          variant: 'isIncorrect',
-        },
-        {
-          variant: null,
-        },
-        {
-          variant: null,
-        },
-        {
-          variant: null,
-        },
-      ]
+      steps: variants.map((variant) => ({variant})),
     }
   });
 
