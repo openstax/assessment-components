@@ -2,63 +2,63 @@
 
 exports[`ProgressBar matches snapshot 1`] = `
 <div
-  className="sc-dkzDqf cOomSk"
+  className="sc-bczRLJ dXvzZN"
 >
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi dyIueX"
+      className="sc-dkzDqf foXBfg"
       onClick={[Function]}
     >
       1
     </button>
   </span>
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi eNZpIS"
+      className="sc-dkzDqf ccTDRt"
       onClick={[Function]}
     >
       2
     </button>
   </span>
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi dyIueX"
+      className="sc-dkzDqf foXBfg"
       onClick={[Function]}
     >
       3
     </button>
   </span>
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi gYaJti"
+      className="sc-dkzDqf ctNjqF"
       onClick={[Function]}
     >
       4
     </button>
   </span>
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi bYOryg"
+      className="sc-dkzDqf gqyeVb"
       onClick={[Function]}
     >
       5
     </button>
   </span>
   <span
-    className="sc-bczRLJ jWccEi"
+    className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-gsnTZi bYOryg"
+      className="sc-dkzDqf gqyeVb"
       onClick={[Function]}
     >
       6

@@ -66,7 +66,7 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
   }
 };
 
-const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
+export const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
   display: flex;
   justify-content: center;
   align-items: center;
