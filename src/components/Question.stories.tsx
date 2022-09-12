@@ -32,7 +32,6 @@ const props: QuestionProps = {
   questionNumber: 1,
   displaySolution: false,
   context: '',
-  feedback_html: '',
   onChange: () => null,
   correct_answer_feedback_html: 'Feedback',
 };

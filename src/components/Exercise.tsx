@@ -39,10 +39,11 @@ export interface ExerciseProps {
   attempt_number: number;
   apiIsPending: boolean;
   available_points: AvailablePoints;
+  displaySolution: boolean;
 }
 
 export const Exercise = ({
-  numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props
+  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props
 }: ExerciseProps) => (
   <StyledTaskStepCard
     step={step}
@@ -63,7 +64,7 @@ export const Exercise = ({
         canAnswer={canAnswer}
         needsSaved={needsSaved}
         canUpdateCurrentStep={canAnswer}
-        displaySolution={false}
+        displaySolution={!!displaySolution}
         answerId={step.answer_id}
       />
     )}

@@ -14,7 +14,6 @@ export interface ExerciseQuestionProps {
   onAnswerChange: () => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
   correct_answer_id: ID;
@@ -85,7 +84,7 @@ const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free
 
 export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   const {
-    question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
+    question, task, answer_id_order, onAnswerChange, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
@@ -102,7 +101,6 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         answer_id={answerId}
         questionNumber={questionNumber}
         onChange={onAnswerChange}
-        feedback_html={feedback_html}
         correct_answer_feedback_html={correct_answer_feedback_html}
         correct_answer_id={is_completed ? correct_answer_id : null}
         incorrectAnswerId={incorrectAnswerId}

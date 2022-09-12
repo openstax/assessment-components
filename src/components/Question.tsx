@@ -244,7 +244,6 @@ export interface QuestionProps {
   context?: string;
   correct_answer_feedback_html?: string;
   contentRenderer?: JSX.Element;
-  feedback_html: string;
   onChange: () => void;
   show_all_feedback?: boolean;
   children?: ReactNode;
