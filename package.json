@@ -2,13 +2,16 @@
   "name": "@openstax/assessment-components",
   "version": "0.0.0",
   "license": "MIT",
-  "type": "module",
   "source": "./src/index.ts",
   "types": "./dist/src/index.d.ts",
   "exports": {
     "require": "./dist/index.js",
     "default": "./dist/index.modern.js"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
@@ -27,6 +30,7 @@
   },
   "peerDependencies": {
     "react": "*",
+    "react-dom": "*",
     "styled-components": "*"
   },
   "devDependencies": {
