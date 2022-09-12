@@ -4,7 +4,7 @@ const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncor
 
 const props: ProgressBarProps = {
   activeIndex: 0,
-  goToStep: (index: number) => console.log(index),
+  goToStep: (index: number, {}) => console.log(index),
   steps: variants.map((variant) => ({variant})),
 }
 

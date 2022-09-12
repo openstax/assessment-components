@@ -81,21 +81,26 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
 export interface ProgressBarProps {
   steps: {variant: ProgressBarItemVariant}[];
   activeIndex: number | null;
-  goToStep: (index: number) => void;
+  goToStep: <T>(index: number, step: T) => void;
 }
 
 export interface ProgressBarItemProps {
   index: number;
   isActive: boolean;
-  variant: ProgressBarItemVariant;
-  goToStep: (index: number) => void;
+  goToStep: (index: number, step: Step) => void;
+  step: Step;
 }
 
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isActive' | null;
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | null;
 
-export const ProgressBarItem = ({index, isActive, variant, goToStep}: ProgressBarItemProps  ) =>
+interface Step {
+  [key: string]: any;
+  variant: ProgressBarItemVariant;
+};
+
+export const ProgressBarItem = ({index, isActive, step, goToStep}: ProgressBarItemProps  ) =>
   <StyledItemWrapper>
-    <StyledItem variant={variant} isActive={isActive} onClick={() => goToStep(index)}>{index + 1}</StyledItem>
+    <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>{index + 1}</StyledItem>
   </StyledItemWrapper>;
 
 const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <ProgressBarWrapper>
@@ -103,7 +108,7 @@ const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <Pro
     key={index}
     index={index}
     isActive={index === activeIndex}
-    variant={step.variant}
+    step={step}
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
