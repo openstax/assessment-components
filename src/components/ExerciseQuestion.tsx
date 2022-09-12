@@ -36,7 +36,7 @@ export interface ExerciseQuestionProps {
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
   return (
-    <div>{count} attempt{count === 1 ? '' : 's'} left</div>
+    <div className="attempts-left">{count} attempt{count === 1 ? '' : 's'} left</div>
   );
 }
 
@@ -116,11 +116,9 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
       <StepCardFooter className="step-card-footer">
         <div className="points">
           <strong>Points: {available_points}</strong>
-          <span className="attempts-left">
-            {hasMultipleAttempts &&
-              attempts_remaining > 0 &&
-              <AttemptsRemaining count={attempts_remaining} />}
-          </span>
+          {hasMultipleAttempts &&
+            attempts_remaining > 0 &&
+            <AttemptsRemaining count={attempts_remaining} />}
           <PublishedComments published_comments={published_comments} />
           {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
         </div>

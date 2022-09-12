@@ -129,9 +129,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -278,9 +275,6 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -428,9 +422,6 @@ exports[`ExerciseQuestion renders Save button 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -578,16 +569,14 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
         Points: 
         1.0
       </strong>
-      <span
+      <div
         className="attempts-left"
       >
-        <div>
-          2
-           attempt
-          s
-           left
-        </div>
-      </span>
+        2
+         attempt
+        s
+         left
+      </div>
       
     </div>
     <div
@@ -734,9 +723,6 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -863,9 +849,6 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       <div>
         <strong>
           Feedback:
@@ -1036,9 +1019,6 @@ exports[`ExerciseQuestion renders free response 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -1185,9 +1165,6 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
         Points: 
         1.0
       </strong>
-      <span
-        className="attempts-left"
-      />
       
     </div>
     <div
@@ -1334,16 +1311,14 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
         Points: 
         1.0
       </strong>
-      <span
+      <div
         className="attempts-left"
       >
-        <div>
-          1
-           attempt
-          
-           left
-        </div>
-      </span>
+        1
+         attempt
+        
+         left
+      </div>
       
     </div>
     <div
