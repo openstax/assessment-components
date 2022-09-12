@@ -2,9 +2,12 @@ import { css } from 'styled-components';
 
 const palette = {
   red: "#ca2026",
-  danger: "#c2002f", // dark red
+  danger: "#c2002f",
+  darkRed: "#c22032",
+  lightRed: "#e298a0",
   green: "#77af42",
   lightGreen: "#8bc753",
+  darkGreen: "#63a524",
   paleYellow: "#ffffbb",
   teal: "#0dc0de",
   blue: "#007da4",
@@ -12,6 +15,7 @@ const palette = {
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
   gray: "#5e5e5e",
+  darkGray: "#757575",
   pale: "#d5d5d5",
   light: "#e4e4e4",
   white: "#ffffff",
