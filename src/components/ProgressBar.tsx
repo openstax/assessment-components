@@ -37,36 +37,33 @@ const StyledItemWrapper = styled.span`
   `}
 `;
 
-const handleVariant = (variant: ProgressBarItemVariant) => {
+const handleVariant = (variant: ProgressBarItemVariant, isActive: boolean) => {
   switch (variant) {
     case 'isCorrect':
       return css`
         color: ${colors.palette.white};
         background-color: rgba(99, 165, 36, 0.6);
         border-color: ${colors.palette.darkGreen};
+        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
       `;
     case 'isIncorrect':
       return css`
         color: ${colors.palette.white};
         background-color: ${colors.palette.lightRed};
         border-color: ${colors.palette.darkRed};
+        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
       `;
-    case 'isActive':
-      return css`
-        color: ${colors.palette.darkGray};
-        background-color: ${colors.palette.white};
-        border-color: ${colors.palette.darkGray};
-      `
     default:
       return css`
         color: ${colors.palette.darkGray};
-        background-color: ${colors.palette.neutralLight};
-        border-color: ${colors.palette.neutralLight};
+        background-color: ${isActive ? colors.palette.white : colors.palette.neutralLight};
+        border-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
+        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
       `;
   }
 };
 
-export const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
+export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isActive: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +75,7 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant }>`
   margin: 0 0.3rem;
   font-weight: bold;
   cursor: pointer;
-  ${props => handleVariant(props.variant)}
+  ${props => handleVariant(props.variant, props.isActive)}
 `;
 
 export interface ProgressBarProps {
@@ -89,23 +86,24 @@ export interface ProgressBarProps {
 
 export interface ProgressBarItemProps {
   index: number;
+  isActive: boolean;
   variant: ProgressBarItemVariant;
   goToStep: (index: number) => void;
 }
 
 export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isActive' | null;
 
-export const ProgressBarItem = ({index, variant, goToStep}: ProgressBarItemProps  ) => (
+export const ProgressBarItem = ({index, isActive, variant, goToStep}: ProgressBarItemProps  ) =>
   <StyledItemWrapper>
-    <StyledItem variant={variant} onClick={() => goToStep(index)}>{index + 1}</StyledItem>
-  </StyledItemWrapper>
-);
+    <StyledItem variant={variant} isActive={isActive} onClick={() => goToStep(index)}>{index + 1}</StyledItem>
+  </StyledItemWrapper>;
 
 const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <ProgressBarWrapper>
   {steps.map((step, index) => <ProgressBarItem
     key={index}
     index={index}
-    variant={step.variant || (index === activeIndex ? 'isActive' : null)}
+    isActive={index === activeIndex}
+    variant={step.variant}
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
