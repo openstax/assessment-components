@@ -105,7 +105,7 @@ const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <Pro
   {steps.map((step, index) => <ProgressBarItem
     key={index}
     index={index}
-    variant={index === activeIndex ? 'isActive' : step.variant}
+    variant={step.variant || (index === activeIndex ? 'isActive' : null)}
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;

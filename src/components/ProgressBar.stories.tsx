@@ -10,4 +10,4 @@ const props: ProgressBarProps = {
 
 export const Default = () => <ProgressBar {...props} steps={props.steps.map((step) => Object.assign({}, step, {variant: null}))} />;
 export const InProgress = () => <ProgressBar {...props} activeIndex={4} />;
-export const NavigatedBack = () => <ProgressBar {...props} activeIndex={2} />;
+export const Review = () => <ProgressBar {...props} activeIndex={2} />;
