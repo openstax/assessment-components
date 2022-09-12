@@ -255,6 +255,36 @@
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
+    "progress-bar--default": {
+      "name": "Default",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 11,
+      "locEnd": 11,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
+    "progress-bar--in-progress": {
+      "name": "In progress",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 12,
+      "locEnd": 12,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
+    "progress-bar--review": {
+      "name": "Review",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 13,
+      "locEnd": 13,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
     "question--default": {
       "name": "Default",
       "levels": [
