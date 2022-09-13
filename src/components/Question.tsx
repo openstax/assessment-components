@@ -244,6 +244,7 @@ export interface QuestionProps {
   context?: string;
   correct_answer_feedback_html?: string;
   contentRenderer?: JSX.Element;
+  feedback_html: string;
   onChange: () => void;
   show_all_feedback?: boolean;
   children?: ReactNode;
@@ -260,7 +261,7 @@ export const Question = (props: QuestionProps) => {
 
   const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
 
-  const hasCorrectAnswer = true;
+  const hasCorrectAnswer = !!correct_answer_id;
   const hasIncorrectAnswer = !!incorrectAnswerId;
 
   const taskIsDeleted = (task != null ? task.is_deleted : undefined)

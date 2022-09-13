@@ -96,7 +96,7 @@ export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | null;
 interface Step {
   [key: string]: any;
   variant: ProgressBarItemVariant;
-};
+}
 
 export const ProgressBarItem = ({index, isActive, step, goToStep}: ProgressBarItemProps  ) =>
   <StyledItemWrapper>
