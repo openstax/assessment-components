@@ -1,494 +1,4 @@
-import { jsx, jsxs, Fragment } from 'react/jsx-runtime.js';
-import cn from 'classnames';
-import React, { createElement } from 'react';
-import styled, { css } from 'styled-components';
-
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
-const MAX_CORRECTNESS = '1.0';
-const isAnswerCorrect = function isAnswerCorrect(answer, correctAnswerId) {
-  // if answer does not have an id, check the isCorrect property.
-  if (!(answer.id || correctAnswerId)) {
-    return answer.isCorrect;
-  }
-
-  let isCorrect = answer.id === correctAnswerId;
-
-  if (answer.correctness != null) {
-    isCorrect = answer.correctness === MAX_CORRECTNESS;
-  }
-
-  return isCorrect;
-};
-const isAnswerIncorrect = function isAnswerIncorrect(answer, incorrectAnswerId) {
-  // Allow multiple attempts to show incorrectness without the correct_answer_id
-  return answer.id === incorrectAnswerId;
-};
-const isAnswerChecked = (answer, chosenAnswer) => Boolean((chosenAnswer || []).find(a => a == answer.id));
-function countWords(text) {
-  const trimmedText = text.trim(); //https://css-tricks.com/build-word-counter-app/
-
-  const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
-  if (!words) return 0;
-  return words.length;
-}
-
-function _extends() {
-  _extends = Object.assign ? Object.assign.bind() : function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-  return _extends.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-const _excluded$3 = ["html", "component", "block"];
-const Content = _ref => {
-  let {
-    html,
-    component,
-    block = false
-  } = _ref,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
-
-  if (component !== undefined) {
-    return /*#__PURE__*/React.cloneElement(component, _extends({
-      html
-    }, props));
-  }
-
-  if (block) {
-    return jsx("div", _extends({
-      dangerouslySetInnerHTML: {
-        __html: html
-      }
-    }, props));
-  } else {
-    return jsx("span", _extends({
-      dangerouslySetInnerHTML: {
-        __html: html
-      }
-    }, props));
-  }
-};
-
-const SimpleFeedback = props => jsx("aside", {
-  children: jsx(Content, {
-    component: props.contentRenderer,
-    className: cn('question-feedback-content', 'has-html', props.className),
-    html: props.children,
-    block: true
-  })
-});
-
-const Feedback = props => {
-  const position = props.position || 'bottom';
-  const wrapperClasses = cn('question-feedback', position);
-  return jsxs("aside", {
-    className: wrapperClasses,
-    children: [jsx("div", {
-      className: "arrow",
-      "aria-label": "Answer Feedback"
-    }), jsx(SimpleFeedback, _extends({}, props, {
-      children: props.children
-    }))]
-  });
-};
-
-const Answer = props => {
-  const {
-    type,
-    iter,
-    answer,
-    disabled,
-    onKeyPress,
-    qid,
-    chosenAnswer,
-    correctAnswerId,
-    incorrectAnswerId,
-    hasCorrectAnswer,
-    answered_count,
-    contentRenderer,
-    show_all_feedback
-  } = props;
-  let body, feedback, selectedCount;
-  const isChecked = isAnswerChecked(answer, chosenAnswer);
-  const isCorrect = isAnswerCorrect(answer, correctAnswerId);
-  const isIncorrect = isAnswerIncorrect(answer, incorrectAnswerId);
-
-  const correctIncorrectIcon = jsx("div", {
-    className: "correct-incorrect",
-    children: isCorrect && props.correctIncorrectIcon
-  });
-
-  const classes = cn('answers-answer', {
-    'disabled': disabled,
-    'answer-checked': isChecked,
-    'answer-correct': isCorrect && type !== 'student-mpp',
-    'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId)
-  });
-  let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`; // somewhat misleading - this means that there is a correct answer,
-  // not necessarily that this answer is correct
-
-  if (hasCorrectAnswer) {
-    ariaLabel += `(${isCorrect ? 'Correct' : 'Incorrect'} Answer)`;
-  }
-
-  ariaLabel += ':';
-  let onChangeAnswer, radioBox;
-
-  if (!hasCorrectAnswer && type !== 'teacher-review' && type !== 'teacher-preview' && type !== 'student-mpp') {
-    ({
-      onChangeAnswer
-    } = props);
-  }
-
-  if (onChangeAnswer) {
-    radioBox = jsx("input", {
-      type: "radio",
-      className: "answer-input-box",
-      checked: isChecked,
-      id: `${qid}-option-${iter}`,
-      name: `${qid}-options`,
-      onChange: onChangeAnswer,
-      disabled: disabled
-    });
-  }
-
-  if (show_all_feedback && answer.feedback_html) {
-    feedback = jsx(SimpleFeedback, {
-      contentRenderer: contentRenderer,
-      children: answer.feedback_html
-    }, "question-mc-feedback");
-  }
-
-  if (type === 'teacher-review') {
-    let percent = 0;
-
-    if (answer.selected_count && answered_count) {
-      percent = Math.round(answer.selected_count / answered_count * 100);
-    }
-
-    selectedCount = jsx("span", {
-      className: "selected-count",
-      "data-percent": `${percent}`,
-      children: answer.selected_count
-    });
-    body = jsxs("div", {
-      className: "review-wrapper",
-      children: [jsxs("div", {
-        className: cn('review-count', {
-          'green': isCorrect,
-          'red': !isCorrect
-        }),
-        children: [selectedCount, jsx("span", {
-          className: cn('letter', {
-            'green': isCorrect,
-            'red': !isCorrect
-          }),
-          children: ALPHABET[iter]
-        })]
-      }), jsxs("div", {
-        className: "answer-answer",
-        children: [jsx(Content, {
-          className: "answer-content",
-          component: contentRenderer,
-          html: answer.content_html
-        }), feedback]
-      })]
-    });
-  } else {
-    body = jsxs(Fragment, {
-      children: [type === 'teacher-preview' && correctIncorrectIcon, selectedCount, radioBox, jsxs("label", {
-        onKeyPress: onKeyPress,
-        htmlFor: `${qid}-option-${iter}`,
-        className: "answer-label",
-        children: [jsx("span", {
-          className: "answer-letter-wrapper",
-          children: jsx("button", {
-            onClick: onChangeAnswer,
-            "aria-label": ariaLabel,
-            className: "answer-letter",
-            disabled: disabled || isIncorrect,
-            "data-test-id": `answer-choice-${ALPHABET[iter]}`,
-            children: ALPHABET[iter]
-          })
-        }), jsxs("div", {
-          className: "answer-answer",
-          children: [jsx(Content, {
-            className: "answer-content",
-            component: contentRenderer,
-            html: answer.content_html
-          }), feedback]
-        })]
-      })]
-    });
-  }
-
-  return jsx("div", {
-    className: "openstax-answer",
-    children: jsx("section", {
-      role: "region",
-      className: classes,
-      children: body
-    })
-  });
-};
-Answer.displayName = 'OSAnswer';
-
-const defaultAnswerType = 'student';
-
-const AnswersTable = props => {
-  let idCounter = 0;
-  const {
-    question,
-    hideAnswers,
-    type = defaultAnswerType,
-    answered_count,
-    choicesEnabled,
-    correct_answer_id,
-    incorrectAnswerId,
-    answer_id,
-    feedback_html,
-    correct_answer_feedback_html,
-    show_all_feedback = false,
-    hasCorrectAnswer,
-    onChangeAnswer,
-    onKeyPress,
-    answerIdOrder,
-    instructions
-  } = props;
-
-  if (hideAnswers) {
-    return null;
-  }
-
-  const {
-    id
-  } = question;
-  const feedback = [];
-  const chosenAnswer = [answer_id];
-
-  const sortedAnswersByIdOrder = idOrder => {
-    const {
-      answers
-    } = question;
-    return answers.slice().sort((a, b) => idOrder.indexOf(a.id) - idOrder.indexOf(b.id));
-  };
-
-  const questionAnswerProps = {
-    qid: id || `auto-${idCounter++}`,
-    correctAnswerId: correct_answer_id,
-    incorrectAnswerId,
-    hasCorrectAnswer,
-    chosenAnswer,
-    onChangeAnswer: onChangeAnswer,
-    type,
-    answered_count,
-    disabled: !choicesEnabled,
-    show_all_feedback,
-    onKeyPress
-  };
-  const answers = answerIdOrder ? sortedAnswersByIdOrder(answerIdOrder) : question.answers;
-  const answersHtml = answers.map((answer, i) => {
-    const additionalProps = {
-      answer,
-      iter: i,
-      key: `${questionAnswerProps.qid}-option-${i}`
-    };
-    const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
-
-    if (answer.id === incorrectAnswerId && feedback_html) {
-      feedback.push({
-        index: i,
-        html: feedback_html
-      });
-    } else if (answer.id === correct_answer_id && correct_answer_feedback_html) {
-      feedback.push({
-        index: i,
-        html: correct_answer_feedback_html
-      });
-    }
-
-    return jsx(Answer, _extends({}, answerProps));
-  });
-  feedback.forEach((item, i) => {
-    const spliceIndex = item.index + i + 1;
-    answersHtml.splice(spliceIndex, 0, jsx(Feedback, {
-      contentRenderer: props.contentRenderer,
-      children: item.html
-    }, spliceIndex));
-  });
-  return jsxs("div", {
-    className: "answers-table",
-    children: [instructions, answersHtml]
-  });
-};
-
-let _$6 = t => t,
-    _t$6,
-    _t2$3,
-    _t3$2,
-    _t4$2,
-    _t5$2,
-    _t6$2,
-    _t7$1,
-    _t8$1,
-    _t9$1,
-    _t10$1,
-    _t11$1,
-    _t12$1,
-    _t13;
-const palette = {
-  red: "#ca2026",
-  danger: "#c2002f",
-  darkRed: "#c22032",
-  lightRed: "#e298a0",
-  green: "#77af42",
-  lightGreen: "#8bc753",
-  darkGreen: "#63a524",
-  paleYellow: "#ffffbb",
-  teal: "#0dc0de",
-  blue: "#007da4",
-  lightBlue: "#34bdd8",
-  neutralLightBlue: "#0dc0dc",
-  tangerine: "#ffbd3e",
-  gray: "#5e5e5e",
-  darkGray: "#757575",
-  pale: "#d5d5d5",
-  light: "#e4e4e4",
-  white: "#ffffff",
-  neutralLightest: "#f9f9f9",
-  neutralCool: "#f6f7f8",
-  neutralBright: "#f5f5f5",
-  neutralLighter: "#f1f1f1",
-  neutralLight: "#e5e5e5",
-  neutralMedium: "#a0a0a0",
-  neutral: "#818181",
-  neutralThin: "#6f6f6f",
-  neutralDark: "#5f6163",
-  neutralDarker: "#424242",
-  black: "#000000",
-  orange: "#D4450C"
-};
-const colors = {
-  palette: palette,
-  answer: {
-    color: palette.lightBlue,
-    correct: {
-      color: palette.green,
-      background: "#77af42"
-    },
-    incorrect: {
-      color: palette.red,
-      background: palette.red
-    },
-    checked: palette.lightBlue,
-    hover: palette.neutralDark,
-    label: {
-      color: palette.neutralMedium,
-      colorHover: palette.neutralDark,
-      colorSelected: palette.lightBlue
-    },
-    feedback: {
-      arrowOuterColor: "rgba(0, 0, 0, 0.25)",
-      popover: {
-        borderColor: "rgba(0, 0, 0, 0.2)"
-      }
-    }
-  },
-  card: {
-    background: "#daf3f8"
-  },
-  button: {
-    background: palette.orange,
-    backgroundHover: "#E74B0D",
-    backgroundActive: "#C5400B"
-  },
-  freeResponse: {
-    color: palette.neutralDark,
-    background: palette.neutralLighter
-  }
-};
-const layouts = {
-  answer: {
-    verticalSpacing: "1.5rem",
-    horizontalSpacing: "1rem",
-    horizontalBuffer: "2.5rem",
-    bubbleSize: "4rem",
-    labelSpacing: "6.5rem",
-    feedback: {
-      arrow: {
-        width: "20px",
-        height: "15px"
-      },
-      popover: {
-        horizontalSpacing: "2rem",
-        verticalSpacing: "2rem",
-        horizontalBuffer: "4rem",
-        borderWidth: "1px",
-        maxWidth: "370px"
-      }
-    }
-  }
-};
-const BREAKPOINTS = {
-  mobile: 600,
-  tablet: 999,
-  desktop: 1000,
-  large: 1600
-};
-const breakpoints = {
-  mobile(...args) {
-    return css(_t$6 || (_t$6 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.mobile, css(...args));
-  },
-
-  tablet(...args) {
-    return css(_t2$3 || (_t2$3 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.tablet, css(...args));
-  },
-
-  desktop(...args) {
-    return css(_t3$2 || (_t3$2 = _$6`@media(min-width: ${0}px) { ${0} }`), BREAKPOINTS.desktop, css(...args));
-  },
-
-  only: {
-    mobile(...args) {
-      return css(_t4$2 || (_t4$2 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.mobile, css(...args));
-    }
-
-  },
-  margins: {
-    mobile: '8px',
-    tablet: '24px'
-  }
-};
-const transitions = {
-  answer: "0.1s ease-in-out"
-};
-const mixins = {
-  answer: () => css(_t5$2 || (_t5$2 = _$6`
+import{jsx as e,jsxs as r,Fragment as t}from"react/jsx-runtime";import n from"classnames";import a,{createElement as o}from"react";import i,{css as s}from"styled-components";const l="abcdefghijklmnopqrstuvwxyz",d=function(e,r){return e.id===r};function c(e){const r=e.trim().match(/\b[-?(\w+)?]+\b/gi);return r?r.length:0}function m(){return m=Object.assign?Object.assign.bind():function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e},m.apply(this,arguments)}function p(e,r){if(null==e)return{};var t,n,a={},o=Object.keys(e);for(n=0;n<o.length;n++)r.indexOf(t=o[n])>=0||(a[t]=e[t]);return a}const h=["html","component","block"],u=r=>{let{html:t,component:n,block:o=!1}=r,i=p(r,h);return void 0!==n?a.cloneElement(n,m({html:t},i)):e(o?"div":"span",m({dangerouslySetInnerHTML:{__html:t}},i))},b=r=>e("aside",{children:e(u,{component:r.contentRenderer,className:n("question-feedback-content","has-html",r.className),html:r.children,block:!0})}),w=t=>{const a=n("question-feedback",t.position||"bottom");return r("aside",{className:a,children:[e("div",{className:"arrow","aria-label":"Answer Feedback"}),e(b,m({},t,{children:t.children}))]})},g=a=>{const{type:o,iter:i,answer:s,disabled:c,onKeyPress:m,qid:p,chosenAnswer:h,correctAnswerId:w,incorrectAnswerId:g,hasCorrectAnswer:f,answered_count:x,contentRenderer:$,show_all_feedback:k}=a;let v,y,N;const C=((e,r)=>Boolean((r||[]).find(r=>r==e.id)))(s,h),_=function(e,r){if(!e.id&&!r)return e.isCorrect;let t=e.id===r;return null!=e.correctness&&(t="1.0"===e.correctness),t}(s,w),q=d(s,g),S=e("div",{className:"correct-incorrect",children:_&&a.correctIncorrectIcon}),A=n("answers-answer",{disabled:c,"answer-checked":C,"answer-correct":_&&"student-mpp"!==o,"answer-incorrect":g&&d(s,g)});let O,I,H=`${C?"Selected ":""}Choice ${l[i]}`;if(f&&(H+=`(${_?"Correct":"Incorrect"} Answer)`),H+=":",f||"teacher-review"===o||"teacher-preview"===o||"student-mpp"===o||({onChangeAnswer:O}=a),O&&(I=e("input",{type:"radio",className:"answer-input-box",checked:C,id:`${p}-option-${i}`,name:`${p}-options`,onChange:O,disabled:c})),k&&s.feedback_html&&(y=e(b,{contentRenderer:$,children:s.feedback_html},"question-mc-feedback")),"teacher-review"===o){let t=0;s.selected_count&&x&&(t=Math.round(s.selected_count/x*100)),N=e("span",{className:"selected-count","data-percent":`${t}`,children:s.selected_count}),v=r("div",{className:"review-wrapper",children:[r("div",{className:n("review-count",{green:_,red:!_}),children:[N,e("span",{className:n("letter",{green:_,red:!_}),children:l[i]})]}),r("div",{className:"answer-answer",children:[e(u,{className:"answer-content",component:$,html:s.content_html}),y]})]})}else v=r(t,{children:["teacher-preview"===o&&S,N,I,r("label",{onKeyPress:m,htmlFor:`${p}-option-${i}`,className:"answer-label",children:[e("span",{className:"answer-letter-wrapper",children:e("button",{onClick:O,"aria-label":H,className:"answer-letter",disabled:c||q,"data-test-id":`answer-choice-${l[i]}`,children:l[i]})}),r("div",{className:"answer-answer",children:[e(u,{className:"answer-content",component:$,html:s.content_html}),y]})]})]});return e("div",{className:"openstax-answer",children:e("section",{role:"region",className:A,children:v})})};g.displayName="OSAnswer";const f="student",x=t=>{let n=0;const{question:a,hideAnswers:o,type:i=f,answered_count:s,choicesEnabled:l,correct_answer_id:d,incorrectAnswerId:c,answer_id:p,feedback_html:h,correct_answer_feedback_html:u,show_all_feedback:b=!1,hasCorrectAnswer:x,onChangeAnswer:$,onKeyPress:k,answerIdOrder:v,instructions:y}=t;if(o)return null;const{id:N}=a,C=[],_={qid:N||"auto-"+n++,correctAnswerId:d,incorrectAnswerId:c,hasCorrectAnswer:x,chosenAnswer:[p],onChangeAnswer:$,type:i,answered_count:s,disabled:!l,show_all_feedback:b,onKeyPress:k},q=(v?(e=>{const{answers:r}=a;return r.slice().sort((r,t)=>e.indexOf(r.id)-e.indexOf(t.id))})(v):a.answers).map((r,t)=>{const n=Object.assign({},{answer:r,iter:t,key:`${_.qid}-option-${t}`},_);return r.id===c&&h?C.push({index:t,html:h}):r.id===d&&u&&C.push({index:t,html:u}),e(g,m({},n))});return C.forEach((r,n)=>{const a=r.index+n+1;q.splice(a,0,e(w,{contentRenderer:t.contentRenderer,children:r.html},a))}),r("div",{className:"answers-table",children:[y,q]})};let $,k,v,y,N,C,_,q,S,A,O,I,H,P=e=>e;const T={red:"#ca2026",danger:"#c2002f",darkRed:"#c22032",lightRed:"#e298a0",green:"#77af42",lightGreen:"#8bc753",darkGreen:"#63a524",paleYellow:"#ffffbb",teal:"#0dc0de",blue:"#007da4",lightBlue:"#34bdd8",neutralLightBlue:"#0dc0dc",tangerine:"#ffbd3e",gray:"#5e5e5e",darkGray:"#757575",pale:"#d5d5d5",light:"#e4e4e4",white:"#ffffff",neutralLightest:"#f9f9f9",neutralCool:"#f6f7f8",neutralBright:"#f5f5f5",neutralLighter:"#f1f1f1",neutralLight:"#e5e5e5",neutralMedium:"#a0a0a0",neutral:"#818181",neutralThin:"#6f6f6f",neutralDark:"#5f6163",neutralDarker:"#424242",black:"#000000",orange:"#D4450C"},z={palette:T,answer:{color:T.lightBlue,correct:{color:T.green,background:"#77af42"},incorrect:{color:T.red,background:T.red},checked:T.lightBlue,hover:T.neutralDark,label:{color:T.neutralMedium,colorHover:T.neutralDark,colorSelected:T.lightBlue},feedback:{arrowOuterColor:"rgba(0, 0, 0, 0.25)",popover:{borderColor:"rgba(0, 0, 0, 0.2)"}}},card:{background:"#daf3f8"},button:{background:T.orange,backgroundHover:"#E74B0D",backgroundActive:"#C5400B"},freeResponse:{color:T.neutralDark,background:T.neutralLighter}},j=(...e)=>s($||($=P`@media(max-width: ${0}px) { ${0} }`),600,s(...e)),B=(...e)=>s(k||(k=P`@media(max-width: ${0}px) { ${0} }`),999,s(...e)),L=(...e)=>s(v||(v=P`@media(min-width: ${0}px) { ${0} }`),1e3,s(...e)),R={answer:()=>s(N||(N=P`
     .answer-label {
       display: flex;
     }
@@ -506,28 +16,19 @@ const mixins = {
       transition: color ${0}, border-color ${0}, background-color ${0};
       background-color: ${0};
     }
-  `), colors.answer.label.color, layouts.answer.bubbleSize, layouts.answer.bubbleSize, layouts.answer.bubbleSize, layouts.answer.bubbleSize, layouts.answer.bubbleSize, colors.answer.label.colorHover, transitions.answer, transitions.answer, transitions.answer, colors.palette.white),
-  answerColor: values => css(_t6$2 || (_t6$2 = _$6`
+  `),z.answer.label.color,"4rem","4rem","4rem","4rem","4rem",z.answer.label.colorHover,"0.1s ease-in-out","0.1s ease-in-out","0.1s ease-in-out",z.palette.white),answerColor:e=>s(C||(C=P`
     color: ${0};
     .answer-letter {
        border-color: ${0};
        background-color: ${0};
        color: ${0};
     }
-  `), values.color, values.color, values.background, colors.palette.white),
-  answerChecked: () => mixins.answerColor({
-    color: colors.answer.checked,
-    background: colors.answer.checked
-  }),
-  answerCorrect: () => mixins.answerColor(colors.answer.correct),
-  answerIncorrect: () => mixins.answerColor(colors.answer.incorrect),
-  answerHover: () => css(_t7$1 || (_t7$1 = _$6`
+  `),e.color,e.color,e.background,z.palette.white),answerChecked:()=>R.answerColor({color:z.answer.checked,background:z.answer.checked}),answerCorrect:()=>R.answerColor(z.answer.correct),answerIncorrect:()=>R.answerColor(z.answer.incorrect),answerHover:()=>s(_||(_=P`
     color: ${0};
     .answer-letter {
       border-color: ${0};
     }
-  `), colors.answer.label.colorHover, colors.answer.label.colorSelected),
-  answerCorrectText: () => css(_t8$1 || (_t8$1 = _$6`
+  `),z.answer.label.colorHover,z.answer.label.colorSelected),answerCorrectText:()=>s(q||(q=P`
     content: 'correct answer';
     color: ${0};
     margin-left: calc(-1.25 * ${0});
@@ -538,8 +39,7 @@ const mixins = {
     // http://caniuse.com/#feat=rem -- rem ignored in pseudo elements
     line-height: 1em;
     margin-top: 0.8rem;
-  `), colors.answer.label.color, layouts.answer.bubbleSize, layouts.answer.bubbleSize),
-  answerCorrectAnswer: () => css(_t9$1 || (_t9$1 = _$6`
+  `),z.answer.label.color,"4rem","4rem"),answerCorrectAnswer:()=>s(S||(S=P`
     color: ${0};
     .answer-letter {
       border-color: ${0};
@@ -562,8 +62,7 @@ const mixins = {
         }
       }
     }
-  `), colors.answer.correct.color, colors.answer.correct.color, colors.answer.correct.color, mixins.answerCorrectText(), BREAKPOINTS.tablet, BREAKPOINTS.tablet, mixins.answerCorrectText()),
-  resetText: () => css(_t10$1 || (_t10$1 = _$6`
+  `),z.answer.correct.color,z.answer.correct.color,z.answer.correct.color,R.answerCorrectText(),999,999,R.answerCorrectText()),resetText:()=>s(A||(A=P`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
@@ -578,23 +77,17 @@ const mixins = {
     word-spacing: normal;
     white-space: normal;
     line-break: auto;
-  `)),
-  stepCardPadding: () => css(_t11$1 || (_t11$1 = _$6`
+  `)),stepCardPadding:()=>s(O||(O=P`
     padding: 48px 140px;
 
     ${0}
 
     ${0}
-  `), breakpoints.tablet(_t12$1 || (_t12$1 = _$6`
+  `),B(I||(I=P`
       padding: ${0} ${0};
-    `), breakpoints.margins.tablet, breakpoints.margins.tablet), breakpoints.mobile(_t13 || (_t13 = _$6`
+    `),"24px","24px"),j(H||(H=P`
       padding: calc(${0} * 2) ${0};
-    `), breakpoints.margins.mobile, breakpoints.margins.mobile))
-};
-
-let _$5 = t => t,
-    _t$5;
-const StyledQuestion = styled.div(_t$5 || (_t$5 = _$5`
+    `),"8px","8px"))};let D;const E=i.div(D||(D=(e=>e)`
 &.step-card-body {
   ${0};
 }
@@ -814,130 +307,7 @@ const StyledQuestion = styled.div(_t$5 || (_t$5 = _$5`
     padding: 10px 0;
   }
 }
-`), mixins.stepCardPadding(), colors.palette.neutral, colors.palette.neutralLightBlue, layouts.answer.horizontalSpacing, layouts.answer.horizontalBuffer, layouts.answer.verticalSpacing, layouts.answer.horizontalSpacing, layouts.answer.verticalSpacing, layouts.answer.horizontalSpacing, colors.palette.neutralLighter, colors.palette.neutralLightest, mixins.answer(), layouts.answer.horizontalSpacing, layouts.answer.verticalSpacing, transitions.answer, mixins.answerHover(), mixins.answerChecked(), mixins.answerChecked(), mixins.answerIncorrect(), mixins.answerCorrect(), mixins.answerCorrectAnswer(), mixins.answerIncorrect(), mixins.resetText(), layouts.answer.feedback.popover.borderWidth, colors.answer.feedback.popover.borderColor, colors.palette.white, layouts.answer.feedback.popover.maxWidth, layouts.answer.feedback.arrow.height, layouts.answer.horizontalSpacing, layouts.answer.horizontalSpacing, colors.palette.neutral, layouts.answer.feedback.arrow.width, layouts.answer.feedback.arrow.height, layouts.answer.feedback.arrow.height, layouts.answer.feedback.popover.borderWidth, layouts.answer.feedback.arrow.width, layouts.answer.feedback.arrow.height, layouts.answer.feedback.arrow.width, colors.answer.feedback.popover.borderColor, layouts.answer.feedback.popover.borderWidth, colors.palette.white, layouts.answer.feedback.popover.verticalSpacing, layouts.answer.feedback.popover.horizontalSpacing);
-const Question = props => {
-  let exerciseUid, solution;
-  const {
-    question,
-    correct_answer_id,
-    incorrectAnswerId,
-    exercise_uid,
-    className,
-    questionNumber,
-    context,
-    task,
-    hidePreambles
-  } = props;
-  const {
-    stem_html,
-    collaborator_solutions = [],
-    formats,
-    stimulus_html
-  } = question;
-  const hasCorrectAnswer = !!correct_answer_id;
-  const hasIncorrectAnswer = !!incorrectAnswerId;
-  const taskIsDeleted = task != null ? task.is_deleted : undefined;
-  const taskIsHomework = (task != null ? task.type : undefined) === 'homework';
-  const classes = cn('openstax-question', className, {
-    'has-correct-answer': hasCorrectAnswer && !(taskIsDeleted && taskIsHomework),
-    'has-incorrect-answer': hasIncorrectAnswer
-  });
-
-  const hasSolution = () => {
-    const {
-      displaySolution
-    } = props;
-    const {
-      collaborator_solutions = []
-    } = question;
-    return displaySolution && collaborator_solutions && collaborator_solutions.find(s => s['content_html'] !== undefined);
-  };
-
-  if (exercise_uid != null) {
-    exerciseUid = jsx("div", {
-      className: "exercise-uid",
-      children: exercise_uid
-    });
-  }
-
-  if (hasSolution()) {
-    solution = jsxs("div", {
-      className: "detailed-solution",
-      children: [jsx("div", {
-        className: "header",
-        children: "Detailed solution:"
-      }), jsx(Content, {
-        className: "solution",
-        block: true,
-        html: collaborator_solutions.map(s => s['content_html']).join('')
-      })]
-    });
-  }
-
-  return jsxs(StyledQuestion, {
-    className: classes,
-    "data-question-number": questionNumber,
-    "data-test-id": "question",
-    children: [jsx(QuestionHtml, {
-      type: "context",
-      html: context,
-      hidden: hidePreambles
-    }), jsx(QuestionHtml, {
-      type: "stimulus",
-      html: stimulus_html,
-      hidden: hidePreambles
-    }), jsx(QuestionHtml, {
-      type: "stem",
-      html: stem_html,
-      hidden: hidePreambles,
-      questionNumber: questionNumber
-    }), props.children, jsx(AnswersTable, _extends({}, props, {
-      onChangeAnswer: props.onChange,
-      hasCorrectAnswer: hasCorrectAnswer
-    })), solution, props.displayFormats ? jsx(FormatsListing, {
-      formats: formats
-    }) : undefined, exerciseUid]
-  });
-};
-const QuestionHtml = props => {
-  const {
-    html = '',
-    type,
-    hidden,
-    questionNumber
-  } = props;
-
-  if (hidden === true || !(html.length > 0)) {
-    return null;
-  }
-
-  return jsx(Content, {
-    html: html,
-    "data-question-number": questionNumber,
-    className: `question-${type}`,
-    block: true
-  });
-};
-
-const FormatsListing = ({
-  formats: _formats = []
-}) => {
-  return jsxs("div", {
-    className: "formats-listing",
-    children: [jsx("div", {
-      className: "header",
-      children: "Formats:"
-    }), _formats.map((format, i) => jsx("span", {
-      children: format
-    }, i))]
-  });
-};
-
-const _excluded$2 = ["disabled", "isWaiting", "waitingText", "children"];
-
-let _$4 = t => t,
-    _t$4;
-const StyledButton = styled.button(_t$4 || (_t$4 = _$4`
+`),R.stepCardPadding(),z.palette.neutral,z.palette.neutralLightBlue,"1rem","2.5rem","1.5rem","1rem","1.5rem","1rem",z.palette.neutralLighter,z.palette.neutralLightest,R.answer(),"1rem","1.5rem","0.1s ease-in-out",R.answerHover(),R.answerChecked(),R.answerChecked(),R.answerIncorrect(),R.answerCorrect(),R.answerCorrectAnswer(),R.answerIncorrect(),R.resetText(),"1px",z.answer.feedback.popover.borderColor,z.palette.white,"370px","15px","1rem","1rem",z.palette.neutral,"20px","15px","15px","1px","20px","15px","20px",z.answer.feedback.popover.borderColor,"1px",z.palette.white,"2rem","2rem"),F=t=>{let a,o;const{question:i,correct_answer_id:s,incorrectAnswerId:l,exercise_uid:d,className:c,questionNumber:p,context:h,task:b,hidePreambles:w}=t,{stem_html:g,collaborator_solutions:f=[],formats:$,stimulus_html:k}=i,v=!!s,y=n("openstax-question",c,{"has-correct-answer":v&&!((null!=b?b.is_deleted:void 0)&&"homework"===(null!=b?b.type:void 0)),"has-incorrect-answer":!!l});return null!=d&&(a=e("div",{className:"exercise-uid",children:d})),(()=>{const{displaySolution:e}=t,{collaborator_solutions:r=[]}=i;return e&&r&&r.find(e=>void 0!==e.content_html)})()&&(o=r("div",{className:"detailed-solution",children:[e("div",{className:"header",children:"Detailed solution:"}),e(u,{className:"solution",block:!0,html:f.map(e=>e.content_html).join("")})]})),r(E,{className:y,"data-question-number":p,"data-test-id":"question",children:[e(Q,{type:"context",html:h,hidden:w}),e(Q,{type:"stimulus",html:k,hidden:w}),e(Q,{type:"stem",html:g,hidden:w,questionNumber:p}),t.children,e(x,m({},t,{onChangeAnswer:t.onChange,hasCorrectAnswer:v})),o,t.displayFormats?e(W,{formats:$}):void 0,a]})},Q=r=>{const{html:t="",type:n,hidden:a,questionNumber:o}=r;return!0!==a&&t.length>0?e(u,{html:t,"data-question-number":o,className:`question-${n}`,block:!0}):null},W=({formats:t=[]})=>r("div",{className:"formats-listing",children:[e("div",{className:"header",children:"Formats:"}),t.map((r,t)=>e("span",{children:r},t))]}),M=["disabled","isWaiting","waitingText","children"];let U;const K=i.button(U||(U=(e=>e)`
   background-color: ${0};
   color: ${0};
   font-size: 1.6rem;
@@ -965,27 +335,7 @@ const StyledButton = styled.button(_t$4 || (_t$4 = _$4`
   &:disabled {
     opacity: 0.4;
   }
-`), colors.button.background, colors.palette.white, colors.button.backgroundHover, colors.button.backgroundActive);
-
-const Button = props => {
-  const {
-    disabled,
-    isWaiting,
-    waitingText,
-    children
-  } = props,
-        otherProps = _objectWithoutPropertiesLoose(props, _excluded$2);
-
-  return jsx(StyledButton, _extends({}, otherProps, {
-    disabled: isWaiting || disabled,
-    children: isWaiting && waitingText || children
-  }));
-};
-
-let _$3 = t => t,
-    _t$3,
-    _t2$2;
-const StepCardFooter = styled.div(_t$3 || (_t$3 = _$3`
+`),z.button.background,z.palette.white,z.button.backgroundHover,z.button.backgroundActive),G=r=>{const{disabled:t,isWaiting:n,waitingText:a,children:o}=r,i=p(r,M);return e(K,m({},i,{disabled:n||t,children:n&&a||o}))};let V,Y,J=e=>e;const X=i.div(V||(V=J`
     ${0}
     border-top: 1px solid ${0};
     display: flex;
@@ -1022,7 +372,7 @@ const StepCardFooter = styled.div(_t$3 || (_t$3 = _$3`
     }
 
     ${0}
-`), mixins.stepCardPadding(), colors.palette.pale, breakpoints.desktop(_t2$2 || (_t2$2 = _$3`
+`),R.stepCardPadding(),z.palette.pale,L(Y||(Y=J`
         padding: 32px 140px;
         flex-wrap: nowrap;
 
@@ -1038,32 +388,20 @@ const StepCardFooter = styled.div(_t$3 || (_t$3 = _$3`
                 margin: 0 0 0 0.8rem;
             }
         }
-    `)));
-
-let _$2 = t => t,
-    _t$2,
-    _t2$1,
-    _t3$1,
-    _t4$1,
-    _t5$1,
-    _t6$1;
-const TextAreaErrorStyle = css(_t$2 || (_t$2 = _$2`
+    `)));let Z,ee,re,te,ne,ae,oe=e=>e;const ie=s(Z||(Z=oe`
   background-color: #f5e9ea;
-`));
-const StyledFreeResponse = styled.div(_t2$1 || (_t2$1 = _$2`
+`)),se=i.div(ee||(ee=oe`
   display: flex;
   flex-direction: column;
 
   .step-card-body {
     ${0}
   }
-`), mixins.stepCardPadding());
-const SyledQuestionStem = styled.div(_t3$1 || (_t3$1 = _$2`
+`),R.stepCardPadding()),le=i.div(re||(re=oe`
   font-size: 2rem;
   line-height: 1.68em;
   position: relative;
-`));
-const InfoRow = styled.div(_t4$1 || (_t4$1 = _$2`
+`)),de=i.div(te||(te=oe`
   margin: 8px 0;
   display: flex;
   justify-content: ${0};
@@ -1087,8 +425,7 @@ const InfoRow = styled.div(_t4$1 || (_t4$1 = _$2`
   }
 
   color: ${0};
-`), props => props.hasChildren ? 'space-between' : 'flex-end', colors.palette.danger, colors.palette.neutralThin);
-const FreeResponseTextArea = styled.textarea(_t5$1 || (_t5$1 = _$2`
+`),e=>e.hasChildren?"space-between":"flex-end",z.palette.danger,z.palette.neutralThin),ce=i.textarea(ne||(ne=oe`
   display: block;
   font-family: inherit;
   font-size: 1.8rem;
@@ -1103,103 +440,9 @@ const FreeResponseTextArea = styled.textarea(_t5$1 || (_t5$1 = _$2`
   ${0};
   ${0}
   background-color: ${0};
-`), colors.palette.neutral, colors.palette.neutralDark, props => props.isOverWordLimit && TextAreaErrorStyle, props => props.isOverWordLimit && css(_t6$1 || (_t6$1 = _$2`
+`),z.palette.neutral,z.palette.neutralDark,e=>e.isOverWordLimit&&ie,e=>e.isOverWordLimit&&s(ae||(ae=oe`
     border: 2px solid ${0};
-  `), colors.palette.danger), props => props.readOnly && colors.palette.neutralCool);
-FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
-
-const RevertButton = props => jsx(Button, _extends({}, props, {
-  children: "Cancel"
-}));
-
-const FreeResponseInput = props => {
-  const {
-    availablePoints,
-    cancelHandler,
-    defaultValue,
-    infoRowChildren,
-    isSubmitDisabled,
-    pointsChildren,
-    question,
-    questionNumber,
-    saveHandler,
-    submitBtnLabel,
-    textHasChanged,
-    wordLimit
-  } = props;
-  const isOverWordLimit = countWords(defaultValue) > wordLimit;
-  const questionProps = {};
-
-  if (questionNumber) {
-    questionProps['data-question-number'] = questionNumber;
-  }
-
-  return jsxs(StyledFreeResponse, {
-    "data-test-id": "student-free-response",
-    children: [jsxs("div", {
-      className: "step-card-body",
-      children: [jsx(SyledQuestionStem, _extends({}, questionProps, {
-        children: question.stem_html && jsx(QuestionHtml, {
-          type: "stem",
-          html: question.stem_html,
-          hidden: false
-        })
-      })), jsx(FreeResponseTextArea, _extends({}, props, {
-        isOverWordLimit: isOverWordLimit,
-        "data-test-id": "free-response-box",
-        placeholder: "Enter your response...",
-        "aria-label": "question response text box"
-      })), jsxs(InfoRow, {
-        hasChildren: !!infoRowChildren,
-        children: [infoRowChildren, jsxs("div", {
-          children: [jsxs("span", {
-            children: [countWords(defaultValue), " words"]
-          }), isOverWordLimit && jsxs("span", {
-            className: "word-limit-error-info",
-            children: ["Maximum ", wordLimit, " words"]
-          })]
-        })]
-      })]
-    }), jsxs(StepCardFooter, {
-      children: [jsxs("div", {
-        className: "points",
-        children: [jsxs("strong", {
-          children: ["Points: ", availablePoints]
-        }), pointsChildren]
-      }), jsxs("div", {
-        className: "controls",
-        children: [jsx(RevertButton, {
-          disabled: !textHasChanged,
-          onClick: cancelHandler
-        }), jsx(Button, {
-          "data-test-id": "submit-answer-btn",
-          disabled: isSubmitDisabled || isOverWordLimit,
-          onClick: saveHandler,
-          children: submitBtnLabel
-        })]
-      })]
-    })]
-  });
-};
-FreeResponseInput.displayName = 'OSFreeResponse';
-
-const _excluded$1 = ["questionNumber", "numberOfQuestions", "stepType", "isHomework", "availablePoints", "unpadded", "className", "children", "questionId", "multipartBadge", "leftHeaderChildren", "rightHeaderChildren", "headerTitleChildren"],
-      _excluded2 = ["step", "questionNumber", "numberOfQuestions", "children", "className"];
-
-let _$1 = t => t,
-    _t$1,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6,
-    _t7,
-    _t8,
-    _t9,
-    _t10,
-    _t11,
-    _t12;
-const InnerStepCard = styled.div(_t$1 || (_t$1 = _$1`
+  `),z.palette.danger),e=>e.readOnly&&z.palette.neutralCool);ce.displayName="OSFreeResponseTextArea";const me=r=>e(G,m({},r,{children:"Cancel"})),pe=t=>{const{availablePoints:n,cancelHandler:a,defaultValue:o,infoRowChildren:i,isSubmitDisabled:s,pointsChildren:l,question:d,questionNumber:p,saveHandler:h,submitBtnLabel:u,textHasChanged:b,wordLimit:w}=t,g=c(o)>w,f={};return p&&(f["data-question-number"]=p),r(se,{"data-test-id":"student-free-response",children:[r("div",{className:"step-card-body",children:[e(le,m({},f,{children:d.stem_html&&e(Q,{type:"stem",html:d.stem_html,hidden:!1})})),e(ce,m({},t,{isOverWordLimit:g,"data-test-id":"free-response-box",placeholder:"Enter your response...","aria-label":"question response text box"})),r(de,{hasChildren:!!i,children:[i,r("div",{children:[r("span",{children:[c(o)," words"]}),g&&r("span",{className:"word-limit-error-info",children:["Maximum ",w," words"]})]})]})]}),r(X,{children:[r("div",{className:"points",children:[r("strong",{children:["Points: ",n]}),l]}),r("div",{className:"controls",children:[e(me,{disabled:!b,onClick:a}),e(G,{"data-test-id":"submit-answer-btn",disabled:s||g,onClick:h,children:u})]})]})]})};pe.displayName="OSFreeResponse";const he=["questionNumber","numberOfQuestions","stepType","isHomework","availablePoints","unpadded","className","children","questionId","multipartBadge","leftHeaderChildren","rightHeaderChildren","headerTitleChildren"],ue=["step","questionNumber","numberOfQuestions","children","className"];let be,we,ge,fe,xe,$e,ke,ve,ye,Ne,Ce,_e,qe=e=>e;const Se=i.div(be||(be=qe`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1212,18 +455,16 @@ const InnerStepCard = styled.div(_t$1 || (_t$1 = _$1`
   background-color: white;
 
   ${0}
-`), colors.palette.light, breakpoints.desktop(_t2 || (_t2 = _$1`
+`),z.palette.light,L(we||(we=qe`
     max-width: 1000px;
     min-width: 750px;
-  `)));
-const OuterStepCard = styled.div(_t3 || (_t3 = _$1`
+  `))),Ae=i.div(ge||(ge=qe`
   padding: 2rem;
 
   ${0}
-`), breakpoints.tablet(_t4 || (_t4 = _$1`
+`),B(fe||(fe=qe`
     padding: 0;
-  `)));
-const StepCardHeader = styled.div(_t5 || (_t5 = _$1`
+  `))),Oe=i.div(xe||(xe=qe`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1286,14 +527,14 @@ const StepCardHeader = styled.div(_t5 || (_t5 = _$1`
     ${0}
 
   ${0}
-`), colors.card.background, colors.palette.gray, breakpoints.desktop(_t6 || (_t6 = _$1`
+`),z.card.background,z.palette.gray,L($e||($e=qe`
       button.ox-icon-angle-left, button.ox-icon-angle-right {
           display: none;
       }
       .separator {
           display: inherit;
       }
-  `)), breakpoints.tablet(_t7 || (_t7 = _$1`
+  `)),B(ke||(ke=qe`
         font-size: 1.6rem;
         line-height: 2.5rem;
 
@@ -1321,7 +562,7 @@ const StepCardHeader = styled.div(_t5 || (_t5 = _$1`
         button[class^='ox-icon-angle']:hover {
             box-shadow: none;
         }
-  `), breakpoints.margins.tablet, breakpoints.margins.tablet), breakpoints.mobile(_t8 || (_t8 = _$1`
+  `),"24px","24px"),j(ve||(ve=qe`
       font-size: 1.4rem;
       line-height: 2rem;
       padding: 10px 8px;
@@ -1332,9 +573,7 @@ const StepCardHeader = styled.div(_t5 || (_t5 = _$1`
       button.ox-icon-angle-left {
           margin-right: ${0};
       }
-  `), breakpoints.margins.mobile, breakpoints.margins.mobile));
-StepCardHeader.displayName = 'StepCardHeader';
-const StepCardQuestion = styled.div(_t9 || (_t9 = _$1`
+  `),"8px","8px"));Oe.displayName="StepCardHeader";const Ie=i.div(ye||(ye=qe`
   .step-card-body {
     ${0}
   }
@@ -1360,299 +599,24 @@ const StepCardQuestion = styled.div(_t9 || (_t9 = _$1`
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`), mixins.stepCardPadding(), breakpoints.only.mobile(_t10 || (_t10 = _$1`
+`),R.stepCardPadding(),((...e)=>s(y||(y=P`@media(max-width: ${0}px) { ${0} }`),600,s(...e)))(Ne||(Ne=qe`
         && .question-feedback {
             margin-left: 0;
 
            .arrow { margin-left: 12px; }
         }
-    `)), breakpoints.desktop(_t11 || (_t11 = _$1`
+    `)),L(Ce||(Ce=qe`
         .video-step &, .interactive-step & {
             .openstax-exercise-badges {
               margin-right: 3.8rem;
             }
         }
-    `)), breakpoints.mobile(_t12 || (_t12 = _$1`
+    `)),j(_e||(_e=qe`
         .openstax-exercise-badges svg {
             margin-right: ${0};
         }
-    `), breakpoints.margins.mobile));
-
-const StepCard = _ref => {
-  let {
-    questionNumber,
-    numberOfQuestions,
-    stepType,
-    isHomework,
-    availablePoints,
-    unpadded,
-    // currently does nothing; may need to restore if this causes tutor stepcard regression
-    className,
-    children,
-    questionId,
-    multipartBadge,
-    leftHeaderChildren,
-    rightHeaderChildren,
-    headerTitleChildren
-  } = _ref,
-      otherProps = _objectWithoutPropertiesLoose(_ref, _excluded$1);
-
-  return jsxs(OuterStepCard, _extends({}, otherProps, {
-    children: [multipartBadge, jsxs(InnerStepCard, {
-      className: className,
-      children: [questionNumber && isHomework && stepType === 'exercise' && jsxs(StepCardHeader, {
-        children: [jsxs("div", {
-          children: [leftHeaderChildren, jsxs("div", {
-            className: "question-info",
-            children: [headerTitleChildren, jsxs("span", {
-              children: ["Question ", questionNumber]
-            }), jsxs("span", {
-              className: "num-questions",
-              children: ["\u00A0/ ", numberOfQuestions]
-            }), jsx("span", {
-              className: "separator",
-              children: "|"
-            }), jsxs("span", {
-              className: "question-id",
-              children: ["ID: ", questionId]
-            })]
-          })]
-        }), jsxs("div", {
-          children: [jsxs("div", {
-            className: "points",
-            children: [availablePoints, " Points"]
-          }), rightHeaderChildren]
-        })]
-      }), jsx(StepCardQuestion, {
-        unpadded: unpadded,
-        children: children
-      })]
-    })]
-  }));
-};
-
-StepCard.displayName = 'OSStepCard';
-
-const TaskStepCard = _ref2 => {
-  let {
-    step,
-    questionNumber,
-    numberOfQuestions,
-    children,
-    className
-  } = _ref2,
-      otherProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-
-  return jsx(StepCard, _extends({}, otherProps, {
-    unpadded: true,
-    questionNumber: questionNumber,
-    numberOfQuestions: numberOfQuestions,
-    stepType: step.type,
-    isHomework: step.task.type === 'homework',
-    "data-task-step-id": step.id,
-    availablePoints: step.available_points,
-    className: cn(`${step.type}-step`, className),
-    questionId: step.uid,
-    children: children
-  }));
-};
-
-TaskStepCard.displayName = 'OSTaskStepCard';
-
-const AttemptsRemaining = ({
-  count
-}) => {
-  return jsxs("div", {
-    children: [count, " attempt", count === 1 ? '' : 's', " left"]
-  });
-};
-
-const PublishedComments = ({
-  published_comments
-}) => {
-  if (!published_comments) {
-    return null;
-  }
-
-  return jsxs("div", {
-    children: [jsx("strong", {
-      children: "Feedback:"
-    }), " ", published_comments]
-  });
-};
-
-const SaveButton = props => jsx(Button, _extends({}, props, {
-  waitingText: "Saving\u2026",
-  isWaiting: props.isWaiting,
-  "data-test-id": "submit-answer-btn",
-  children: props.attempt_number == 0 ? 'Submit' : 'Re-submit'
-}));
-
-const NextButton = props => {
-  return jsx(Button, {
-    onClick: props.onNextStep,
-    "data-test-id": "continue-btn",
-    children: props.canUpdateCurrentStep ? 'Continue' : 'Next'
-  });
-};
-
-const FreeResponseReview = ({
-  free_response
-}) => {
-  if (!free_response) {
-    return null;
-  }
-
-  return jsx(Fragment, {
-    children: jsx("div", {
-      className: "free-response",
-      children: free_response
-    })
-  });
-};
-
-const ExerciseQuestion = props => {
-  const {
-    question,
-    task,
-    answer_id_order,
-    onAnswerChange,
-    feedback_html,
-    correct_answer_feedback_html,
-    is_completed,
-    correct_answer_id,
-    incorrectAnswerId,
-    choicesEnabled,
-    questionNumber,
-    answerId,
-    hasMultipleAttempts,
-    attempts_remaining,
-    published_comments,
-    detailedSolution,
-    canAnswer,
-    needsSaved,
-    attempt_number,
-    apiIsPending,
-    onAnswerSave,
-    onNextStep,
-    canUpdateCurrentStep,
-    displaySolution,
-    available_points,
-    free_response
-  } = props;
-  return jsxs("div", {
-    "data-test-id": "student-exercise-question",
-    children: [jsx(Question, {
-      task: task,
-      question: question,
-      answerIdOrder: answer_id_order,
-      choicesEnabled: choicesEnabled,
-      answer_id: answerId,
-      questionNumber: questionNumber,
-      onChange: onAnswerChange,
-      feedback_html: feedback_html,
-      correct_answer_feedback_html: correct_answer_feedback_html,
-      correct_answer_id: is_completed ? correct_answer_id : null,
-      incorrectAnswerId: incorrectAnswerId,
-      className: "step-card-body",
-      hideAnswers: false,
-      displayFormats: false,
-      displaySolution: displaySolution,
-      children: jsx(FreeResponseReview, {
-        free_response: free_response
-      })
-    }), jsxs(StepCardFooter, {
-      className: "step-card-footer",
-      children: [jsxs("div", {
-        className: "points",
-        children: [jsxs("strong", {
-          children: ["Points: ", available_points]
-        }), jsx("span", {
-          className: "attempts-left",
-          children: hasMultipleAttempts && attempts_remaining > 0 && jsx(AttemptsRemaining, {
-            count: attempts_remaining
-          })
-        }), jsx(PublishedComments, {
-          published_comments: published_comments
-        }), detailedSolution && jsxs("div", {
-          children: [jsx("strong", {
-            children: "Detailed solution:"
-          }), " ", jsx(Content, {
-            html: detailedSolution
-          })]
-        })]
-      }), jsx("div", {
-        className: "controls",
-        children: canAnswer && needsSaved ? jsx(SaveButton, {
-          disabled: apiIsPending || !answerId,
-          isWaiting: apiIsPending,
-          attempt_number: attempt_number,
-          onClick: onAnswerSave
-        }) : jsx(NextButton, {
-          onNextStep: onNextStep,
-          canUpdateCurrentStep: canUpdateCurrentStep
-        })
-      })]
-    })]
-  });
-};
-
-const _excluded = ["numberOfQuestions", "questionNumber", "step", "exercise", "canAnswer", "needsSaved"];
-
-let _ = t => t,
-    _t;
-const StyledTaskStepCard = styled(TaskStepCard)(_t || (_t = _`
+    `),"8px")),He=t=>{let{questionNumber:n,numberOfQuestions:a,stepType:o,isHomework:i,availablePoints:s,unpadded:l,className:d,children:c,questionId:h,multipartBadge:u,leftHeaderChildren:b,rightHeaderChildren:w,headerTitleChildren:g}=t,f=p(t,he);return r(Ae,m({},f,{children:[u,r(Se,{className:d,children:[n&&i&&"exercise"===o&&r(Oe,{children:[r("div",{children:[b,r("div",{className:"question-info",children:[g,r("span",{children:["Question ",n]}),r("span",{className:"num-questions",children:[" / ",a]}),e("span",{className:"separator",children:"|"}),r("span",{className:"question-id",children:["ID: ",h]})]})]}),r("div",{children:[r("div",{className:"points",children:[s," Points"]}),w]})]}),e(Ie,{unpadded:l,children:c})]})]}))};He.displayName="OSStepCard";const Pe=r=>{let{step:t,questionNumber:a,numberOfQuestions:o,children:i,className:s}=r,l=p(r,ue);return e(He,m({},l,{unpadded:!0,questionNumber:a,numberOfQuestions:o,stepType:t.type,isHomework:"homework"===t.task.type,"data-task-step-id":t.id,availablePoints:t.available_points,className:n(`${t.type}-step`,s),questionId:t.uid,children:i}))};Pe.displayName="OSTaskStepCard";const Te=({count:e})=>r("div",{children:[e," attempt",1===e?"":"s"," left"]}),ze=({published_comments:t})=>t?r("div",{children:[e("strong",{children:"Feedback:"})," ",t]}):null,je=r=>e(G,m({},r,{waitingText:"Saving…",isWaiting:r.isWaiting,"data-test-id":"submit-answer-btn",children:0==r.attempt_number?"Submit":"Re-submit"})),Be=r=>e(G,{onClick:r.onNextStep,"data-test-id":"continue-btn",children:r.canUpdateCurrentStep?"Continue":"Next"}),Le=({free_response:r})=>r?e(t,{children:e("div",{className:"free-response",children:r})}):null,Re=t=>{const{question:n,task:a,answer_id_order:o,onAnswerChange:i,feedback_html:s,correct_answer_feedback_html:l,is_completed:d,correct_answer_id:c,incorrectAnswerId:m,choicesEnabled:p,questionNumber:h,answerId:b,hasMultipleAttempts:w,attempts_remaining:g,published_comments:f,detailedSolution:x,canAnswer:$,needsSaved:k,attempt_number:v,apiIsPending:y,onAnswerSave:N,onNextStep:C,canUpdateCurrentStep:_,displaySolution:q,available_points:S,free_response:A}=t;return r("div",{"data-test-id":"student-exercise-question",children:[e(F,{task:a,question:n,answerIdOrder:o,choicesEnabled:p,answer_id:b,questionNumber:h,onChange:i,feedback_html:s,correct_answer_feedback_html:l,correct_answer_id:d?c:null,incorrectAnswerId:m,className:"step-card-body",hideAnswers:!1,displayFormats:!1,displaySolution:q,children:e(Le,{free_response:A})}),r(X,{className:"step-card-footer",children:[r("div",{className:"points",children:[r("strong",{children:["Points: ",S]}),e("span",{className:"attempts-left",children:w&&g>0&&e(Te,{count:g})}),e(ze,{published_comments:f}),x&&r("div",{children:[e("strong",{children:"Detailed solution:"})," ",e(u,{html:x})]})]}),e("div",{className:"controls",children:$&&k?e(je,{disabled:y||!b,isWaiting:y,attempt_number:v,onClick:N}):e(Be,{onNextStep:C,canUpdateCurrentStep:_})})]})]})},De=["numberOfQuestions","questionNumber","step","exercise","canAnswer","needsSaved"];let Ee;const Fe=i(Pe)(Ee||(Ee=(e=>e)`
   font-size: 1.8rem;
   line-height: 3rem;
-`));
-
-const Preamble = ({
-  exercise
-}) => {
-  return jsxs(Fragment, {
-    children: [exercise.context && jsx(Content, {
-      className: "step-card-body exercise-context",
-      block: true,
-      html: exercise.context
-    }), exercise.stimulus_html && jsx(Content, {
-      className: "step-card-body exercise-stimulus",
-      block: true,
-      html: exercise.stimulus_html
-    })]
-  });
-};
-
-const Exercise = _ref => {
-  let {
-    numberOfQuestions,
-    questionNumber,
-    step,
-    exercise,
-    canAnswer,
-    needsSaved
-  } = _ref,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded);
-
-  return jsxs(StyledTaskStepCard, {
-    step: step,
-    questionNumber: questionNumber,
-    numberOfQuestions: numberOfQuestions,
-    children: [jsx(Preamble, {
-      exercise: exercise
-    }), exercise.questions.map(q => /*#__PURE__*/createElement(ExerciseQuestion, _extends({}, props, step, {
-      exercise_uid: exercise.uid,
-      key: q.id,
-      question: q,
-      questionNumber: questionNumber,
-      choicesEnabled: canAnswer,
-      canAnswer: canAnswer,
-      needsSaved: needsSaved,
-      canUpdateCurrentStep: canAnswer,
-      displaySolution: true,
-      answerId: step.answer_id
-    })))]
-  });
-};
-
-export { Answer, AnswersTable, Exercise, FreeResponseInput, FreeResponseTextArea, InnerStepCard, OuterStepCard, Question, QuestionHtml, StepCard, TaskStepCard };
+`)),Qe=({exercise:n})=>r(t,{children:[n.context&&e(u,{className:"step-card-body exercise-context",block:!0,html:n.context}),n.stimulus_html&&e(u,{className:"step-card-body exercise-stimulus",block:!0,html:n.stimulus_html})]}),We=t=>{let{numberOfQuestions:n,questionNumber:a,step:i,exercise:s,canAnswer:l,needsSaved:d}=t,c=p(t,De);return r(Fe,{step:i,questionNumber:a,numberOfQuestions:n,children:[e(Qe,{exercise:s}),s.questions.map(e=>o(Re,m({},c,i,{exercise_uid:s.uid,key:e.id,question:e,questionNumber:a,choicesEnabled:l,canAnswer:l,needsSaved:d,canUpdateCurrentStep:l,displaySolution:!0,answerId:i.answer_id})))]})};export{g as Answer,x as AnswersTable,We as Exercise,pe as FreeResponseInput,ce as FreeResponseTextArea,Se as InnerStepCard,Ae as OuterStepCard,F as Question,Q as QuestionHtml,He as StepCard,Pe as TaskStepCard};
 //# sourceMappingURL=index.modern.mjs.map
