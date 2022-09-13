@@ -185,6 +185,9 @@ exports[`Exercise matches snapshot 1`] = `
               Points: 
               1.0
             </strong>
+            <span
+              className="attempts-left"
+            />
           </div>
           <div
             className="controls"
