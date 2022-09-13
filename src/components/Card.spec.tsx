@@ -35,7 +35,7 @@ describe('TaskStepCard', () => {
   });
 
   it('can optionally provide task', () => {
-    let tree = renderer.create(
+    const tree = renderer.create(
       <TaskStepCard {...props} step={{ ...props.step, task: { is_deleted: false, type: 'homework' } }} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
