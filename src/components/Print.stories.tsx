@@ -26,8 +26,16 @@ const ExerciseWrapper = styled.div`
     min-height: auto;
   }
 
-  .answer-letter-wrapper::after {
-    content: '' !important;
+  .question-feedback {
+    box-shadow: none !important;
+  }
+
+  .openstax-answer {
+    break-inside: avoid;
+
+    .answer-letter-wrapper::after {
+      content: '' !important;
+    }
   }
 `;
 
@@ -67,6 +75,7 @@ export const Default = () => (
     return (
       <ExerciseWrapper>
         <Exercise
+          displaySolution={true}
           canAnswer={true}
           needsSaved={true}
           hasMultipleAttempts={false}
