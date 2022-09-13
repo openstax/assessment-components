@@ -4,20 +4,21 @@
   "license": "MIT",
   "source": "./src/index.ts",
   "types": "./dist/src/index.d.ts",
+  "type": "module",
   "exports": {
-    "require": "./dist/index.js",
+    "require": "./dist/index.cjs",
     "default": "./dist/index.modern.mjs"
   },
   "files": [
     "dist",
     "src"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
-    "dist": "rm -rf ./dist && microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx --format modern,cjs --css inline --compress false && sed -i '' 's/jsx-runtime/jsx-runtime.js/g' ./dist/index.modern.mjs",
+    "dist": "rm -rf ./dist && microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx --format modern,cjs,module,umd --css inline --compress false && sed -i '' 's/jsx-runtime/jsx-runtime.js/g' ./dist/index.modern.mjs",
     "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false",
     "dev": "microbundle watch --no-compress",
     "download-json": "yarn build-download-json && yarn run-download-json",

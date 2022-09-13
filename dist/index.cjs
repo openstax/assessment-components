@@ -1021,4 +1021,4 @@ var Exercise = function Exercise(_ref2) {
 };
 
 export { Answer, AnswersTable, Exercise, FreeResponseInput, FreeResponseTextArea, InnerStepCard, OuterStepCard, Question, QuestionHtml, StepCard, TaskStepCard };
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.cjs.map
