@@ -269,11 +269,11 @@ const TaskStepCard = ({
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={step.type}
-  isHomework={step.task.type === 'homework'}
+  stepType={step.type || 'exercise'}
+  isHomework={step.task === undefined || step.task?.type === 'homework'}
   data-task-step-id={step.id}
   availablePoints={step.available_points}
-  className={cn(`${step.type}-step`, className)}
+  className={cn(`${(step.type || 'exercise')}-step`, className)}
   questionId={step.uid}
 >
   {children}

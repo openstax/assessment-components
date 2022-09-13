@@ -57,12 +57,12 @@ export type Answer = {
 };
 
 export type Step = {
-  type: 'exercise';
-  task: Task;
+  type?: 'exercise';
+  task?: Task;
   uid: ExerciseUid;
   id: number;
   available_points: AvailablePoints;
-  preview: string;
+  preview?: string;
   is_completed: boolean;
   answer_id?: ID;
   answer_id_order: ID[];
@@ -70,18 +70,18 @@ export type Step = {
   feedback_html: '';
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
-  last_completed_at: Date;
+  last_completed_at?: Date;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  external_url: '';
+  external_url?: '';
   formats?: ExerciseFormat[];
-  can_be_updated: boolean;
+  can_be_updated?: boolean;
   is_feedback_available: boolean;
-  exercise_id: ID
+  exercise_id?: ID
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
   incorrectAnswerId: ID;
-}
+};
 
 interface Solution {
   content_html: string;

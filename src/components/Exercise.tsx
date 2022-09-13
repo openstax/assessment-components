@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { AvailablePoints, ExerciseData, ID, Step } from 'src/types';
+import { ExerciseData, ID, Step } from 'src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
@@ -35,10 +35,7 @@ export interface ExerciseProps {
   onAnswerChange: () => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  canUpdateCurrentStep: boolean;
-  attempt_number: number;
   apiIsPending: boolean;
-  available_points: AvailablePoints;
 }
 
 export const Exercise = ({
