@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar matches snapshot 1`] = `
+<div
+  className="sc-bczRLJ dXvzZN"
+>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf hEOYzr"
+      onClick={[Function]}
+    >
+      1
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf fhmysy"
+      onClick={[Function]}
+    >
+      2
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf hEOYzr"
+      onClick={[Function]}
+    >
+      3
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf frBFav"
+      onClick={[Function]}
+    >
+      4
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf SlZPU"
+      onClick={[Function]}
+    >
+      5
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf SlZPU"
+      onClick={[Function]}
+    >
+      6
+    </button>
+  </span>
+</div>
+`;
