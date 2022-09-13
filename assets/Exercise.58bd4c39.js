@@ -1,4 +1,4 @@
-import{s as c,a as l,j as r,r as u,F as p}from"./index.6f8b1925.js";import{C as i}from"./Feedback.3c626d9c.js";import{T as h}from"./Card.f6e4404e.js";import{E as x}from"./ExerciseQuestion.dde14e0d.js";const y=c(h)`
+import{s as c,a as l,j as r,r as u,F as p}from"./index.5e439e57.js";import{C as i}from"./Feedback.237a938e.js";import{T as h}from"./Card.d7a92b0b.js";import{E as x}from"./ExerciseQuestion.6fd3225c.js";const y=c(h)`
   font-size: 1.8rem;
   line-height: 3rem;
 `,E=({exercise:t})=>l(p,{children:[t.context&&r(i,{className:"step-card-body exercise-context",block:!0,html:t.context}),t.stimulus_html&&r(i,{className:"step-card-body exercise-stimulus",block:!0,html:t.stimulus_html})]}),S=({numberOfQuestions:t,questionNumber:o,step:e,exercise:s,canAnswer:a,needsSaved:n,...d})=>l(y,{step:e,questionNumber:o,numberOfQuestions:t,children:[r(E,{exercise:s}),s.questions.map(m=>u.exports.createElement(x,{...d,...e,exercise_uid:s.uid,key:m.id,question:m,questionNumber:o,choicesEnabled:a,canAnswer:a,needsSaved:n,canUpdateCurrentStep:a,displaySolution:!0,answerId:e.answer_id}))]});export{S as E};
