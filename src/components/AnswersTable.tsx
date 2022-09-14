@@ -67,11 +67,16 @@ export const AnswersTable = (props: AnswersTableProps) => {
       = { answer, iter: i, key: `${questionAnswerProps.qid}-option-${i}` };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
 
+    console.log('show all feedback: ', show_all_feedback)
+
     if (answer.id === incorrectAnswerId && feedback_html) {
       feedback.push({ index: i, html: feedback_html })
     } else if (correct_answer_feedback_html) {
       feedback.push({ index: i, html: correct_answer_feedback_html })
     }
+    // } else if (show_all_feedback && answer.feedback_html) {
+    //   feedback.push({ index: i, html: answer.feedback_html })
+    // }
 
     return (
       <Answer {...answerProps} />

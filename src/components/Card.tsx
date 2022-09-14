@@ -198,8 +198,8 @@ export interface StepCardProps extends SharedProps {
   unpadded: boolean;
   className?: string;
   children?: ReactNode;
-  stepType: Step['type'];
-  availablePoints: AvailablePoints;
+  stepType?: Step['type'];
+  availablePoints?: AvailablePoints;
   exerciseId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
@@ -252,7 +252,7 @@ StepCard.displayName = 'OSStepCard';
 export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
-  step: Step;
+  step?: Step;
   questionNumber: number;
   numberOfQuestions: number;
 }
@@ -269,12 +269,12 @@ const TaskStepCard = ({
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={step.type}
-  isHomework={step.task.type === 'homework'}
-  data-task-step-id={step.id}
-  availablePoints={step.available_points}
-  className={cn(`${step.type}-step`, className)}
-  exerciseId={step.uid}
+  stepType={step?.type}
+  isHomework={step?.task.type === 'homework'}
+  data-task-step-id={step?.id}
+  availablePoints={step?.available_points}
+  className={cn(`${step?.type}-step`, className)}
+  exerciseId={step?.uid}
 >
   {children}
 </StepCard>);

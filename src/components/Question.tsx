@@ -43,6 +43,16 @@ const StyledQuestion = styled.div`
     margin-bottom: 20px;
     font-size: 17px;
     line-height: 25px;
+
+    .question-feedback-content {
+      display: none;
+      margin-top: 0.5rem;
+      margin-bottom: 5px;
+      color: $openstax-neutral;
+      margin-left: 0;
+      font-size: 14px;
+      line-height: 2rem;
+    }
   }
 
   .instructions {
