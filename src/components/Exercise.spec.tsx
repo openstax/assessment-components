@@ -87,8 +87,7 @@ describe('Exercise', () => {
         attempt_number: 1,
         incorrectAnswerId: 0
       },
-      numberOfQuestions: 1,
-      exerciseAnswers,
+      numberOfQuestions: 1
   }});
 
   it('matches snapshot', () => {
@@ -97,5 +96,12 @@ describe('Exercise', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('matches snapshot with answer state', () => {
+    const tree = renderer.create(
+      <Exercise {...props} exerciseAnswers={exerciseAnswers} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 
 });
