@@ -94,7 +94,7 @@ export interface ProgressBarItemProps {
 export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | null;
 
 interface Step {
-  [key: string]: any;
+  [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   variant: ProgressBarItemVariant;
 }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { AvailablePoints, ExerciseData, ID, Step } from 'src/types';
+import { AvailablePoints, ExerciseAnswerState, ExerciseData, ID, Step } from 'src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
@@ -41,7 +41,7 @@ export interface ExerciseProps {
   available_points: AvailablePoints;
   displaySolution: boolean;
   show_all_feedback?: boolean;
-  exerciseAnswers: any;
+  exerciseAnswers: {[key: string]: ExerciseAnswerState};
 }
 
 export const Exercise = ({
@@ -58,6 +58,7 @@ export const Exercise = ({
       <ExerciseQuestion
         {...props}
         {...step}
+        {...exerciseAnswers[q.id]}
         exercise_uid={exercise.uid}
         key={q.id}
         question={q}
@@ -68,7 +69,6 @@ export const Exercise = ({
         canUpdateCurrentStep={canAnswer}
         displaySolution={!!displaySolution}
         answerId={step?.answer_id}
-        correct_answer_id={exerciseAnswers[q.id]}
       />
     )}
   </StyledTaskStepCard>

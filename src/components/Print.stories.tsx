@@ -1,4 +1,4 @@
-import { ExerciseData, ExerciseQueryData, ID, Step } from '../../src/types';
+import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, ID } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -41,17 +41,19 @@ const ExerciseWrapper = styled.div`
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
+const formatAnswerData = (questions: ExerciseQuestionData[]): {id: ID, correct_answer_id?: ID}[] =>
+  questions.map(
+    (q) => ({id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id)})
+  );
+
 export const Default = () => (
   <>
   {data.title && <h2>Exercises for {data.title}</h2>}
   {exercises.map(((exercise, i) => {
-    const correctAnswers: {id: ID, correct_answer_id?: ID}[] = exercise.questions.map(
-      (q) => ({id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id)})
-    );
-    const exerciseAnswers = correctAnswers.reduce((acc, a) => {
-      let {id, correct_answer_id} = a;
-      return {...acc, [id]: {correct_answer_id}};
-  }, {});
+    const exerciseAnswers = formatAnswerData(exercise.questions).reduce((acc, answer) => {
+      const {id, correct_answer_id} = answer;
+      return {...acc, [id]: {correct_answer_id, is_completed: true, attempts_remaining: 0}};
+    }, {});
     // figure out different feedback styles
 
     return (

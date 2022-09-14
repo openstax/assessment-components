@@ -14,11 +14,11 @@ export interface ExerciseQuestionProps {
   onAnswerChange: () => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  feedback_html: string;
-  correct_answer_feedback_html: string;
+  feedback_html?: string;
+  correct_answer_feedback_html?: string;
   is_completed: boolean;
   correct_answer_id: ID;
-  incorrectAnswerId: ID;
+  incorrectAnswerId?: ID;
   answerId?: ID;
   attempts_remaining: number;
   published_comments?: string;
@@ -86,8 +86,8 @@ const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free
 
 export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   const {
-    question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
-    is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
+    question, task, answer_id_order, onAnswerChange, feedback_html = '', correct_answer_feedback_html,
+    is_completed, correct_answer_id, incorrectAnswerId = '', choicesEnabled, questionNumber,
     answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback
