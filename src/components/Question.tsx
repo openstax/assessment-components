@@ -242,7 +242,7 @@ export interface QuestionProps {
   questionNumber: number;
   displaySolution: boolean;
   context?: string;
-  correct_answer_feedback_html: string;
+  correct_answer_feedback_html?: string;
   contentRenderer?: JSX.Element;
   feedback_html: string;
   onChange: () => void;

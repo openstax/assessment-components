@@ -28,7 +28,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-dkzDqf hEOYzr"
+      className="sc-dkzDqf iRxYOq"
       onClick={[Function]}
     >
       3
@@ -38,7 +38,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-dkzDqf iRxYOq"
+      className="sc-dkzDqf SlZPU"
       onClick={[Function]}
     >
       4
@@ -52,16 +52,6 @@ exports[`ProgressBar matches snapshot 1`] = `
       onClick={[Function]}
     >
       5
-    </button>
-  </span>
-  <span
-    className="sc-gsnTZi eMJLCs"
-  >
-    <button
-      className="sc-dkzDqf SlZPU"
-      onClick={[Function]}
-    >
-      6
     </button>
   </span>
 </div>
@@ -105,7 +95,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-dkzDqf hEOYzr"
+      className="sc-dkzDqf frBFav"
       onClick={[Function]}
     >
       4
@@ -115,20 +105,10 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi eMJLCs"
   >
     <button
-      className="sc-dkzDqf frBFav"
-      onClick={[Function]}
-    >
-      5
-    </button>
-  </span>
-  <span
-    className="sc-gsnTZi eMJLCs"
-  >
-    <button
       className="sc-dkzDqf SlZPU"
       onClick={[Function]}
     >
-      6
+      5
     </button>
   </span>
 </div>
