@@ -235,7 +235,7 @@ const StepCard = ({
                 <span>{questionId ? 'Question' : 'Exercise'} {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
-                <span className="exercise-id">ID: {questionId || exerciseId}</span>
+                <span className={questionId ? 'question-id' : 'exercise-id'}>ID: {questionId || exerciseId}</span>
               </div>
             </div>
             <div>

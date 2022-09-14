@@ -41,10 +41,8 @@ const ExerciseWrapper = styled.div`
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
-const formatAnswerData = (questions: ExerciseQuestionData[]): {id: ID, correct_answer_id?: ID}[] =>
-  questions.map(
-    (q) => ({id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id)})
-  );
+const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
+    {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id)}));
 
 export const Default = () => (
   <>
@@ -54,7 +52,6 @@ export const Default = () => (
       const {id, correct_answer_id} = answer;
       return {...acc, [id]: {correct_answer_id, is_completed: true, attempts_remaining: 0}};
     }, {});
-    // figure out different feedback styles
 
     return (
       <ExerciseWrapper>
