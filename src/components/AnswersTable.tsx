@@ -71,9 +71,6 @@ export const AnswersTable = (props: AnswersTableProps) => {
     } else if (answer.id === correct_answer_id && correct_answer_feedback_html) {
       feedback.push({ index: i, html: correct_answer_feedback_html })
     }
-    // } else if (show_all_feedback && answer.feedback_html) {
-    //   feedback.push({ index: i, html: answer.feedback_html })
-    // }
 
     return (
       <Answer {...answerProps} />

@@ -200,6 +200,7 @@ export interface StepCardProps extends SharedProps {
   children?: ReactNode;
   stepType?: Step['type'];
   availablePoints?: AvailablePoints;
+  questionId?: string;
   exerciseId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
@@ -214,6 +215,7 @@ const StepCard = ({
   unpadded, // currently does nothing; may need to restore if this causes tutor stepcard regression
   className,
   children,
+  questionId,
   exerciseId,
   multipartBadge,
   leftHeaderChildren,
@@ -230,10 +232,10 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>Exercise {questionNumber}</span>
+                <span>{!!questionId ? 'Question' : 'Exercise'} {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
-                <span className="exercise-id">ID: {exerciseId}</span>
+                <span className="exercise-id">ID: {questionId || exerciseId}</span>
               </div>
             </div>
             <div>
@@ -269,11 +271,11 @@ const TaskStepCard = ({
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={step?.type}
-  isHomework={step?.task.type === 'homework'}
+  stepType={step?.type || 'exercise'}
+  isHomework={step?.task === undefined || step?.task.type === 'homework'}
   data-task-step-id={step?.id}
   availablePoints={step?.available_points}
-  className={cn(`${step?.type}-step`, className)}
+  className={cn(`${step?.type || 'exercise'}-step`, className)}
   exerciseId={step?.uid}
 >
   {children}

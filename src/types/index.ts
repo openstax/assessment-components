@@ -70,7 +70,7 @@ export type Answer = {
 export type Step = {
   type: 'exercise';
   task: Task;
-  uid: string;
+  uid: ExerciseUid;
   id: number;
   available_points: AvailablePoints;
   preview: string;

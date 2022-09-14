@@ -48,7 +48,7 @@ const StyledQuestion = styled.div`
       display: none;
       margin-top: 0.5rem;
       margin-bottom: 5px;
-      color: $openstax-neutral;
+      color: ${colors.palette.neutralFeedback};
       margin-left: 0;
       font-size: 14px;
       line-height: 2rem;

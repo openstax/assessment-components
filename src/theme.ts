@@ -28,6 +28,7 @@ const palette = {
   neutral: "#818181", // gray
   neutralThin: "#6f6f6f", // medium gray
   neutralDark: "#5f6163", // dark gray
+  neutralFeedback: "#555", // another dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
   orange: "#D4450C"
