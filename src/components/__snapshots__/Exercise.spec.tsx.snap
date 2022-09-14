@@ -16,7 +16,8 @@ exports[`Exercise matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Exercise
+             
             1
           </span>
           <span
@@ -31,7 +32,7 @@ exports[`Exercise matches snapshot 1`] = `
             |
           </span>
           <span
-            className="question-id"
+            className="exercise-id"
           >
             ID: 
             1234@4
