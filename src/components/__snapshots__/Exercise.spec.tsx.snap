@@ -87,7 +87,7 @@ exports[`Exercise matches snapshot 1`] = `
               >
                 <label
                   className="answer-label"
-                  htmlFor="1234-option-0"
+                  htmlFor="1234@5-option-0"
                 >
                   <span
                     className="answer-letter-wrapper"
@@ -125,7 +125,7 @@ exports[`Exercise matches snapshot 1`] = `
               >
                 <label
                   className="answer-label"
-                  htmlFor="1234-option-1"
+                  htmlFor="1234@5-option-1"
                 >
                   <span
                     className="answer-letter-wrapper"

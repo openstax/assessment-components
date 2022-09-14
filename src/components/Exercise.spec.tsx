@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { ExerciseAnswerState } from 'src/types';
 
 const exerciseAnswers: {[key: string]: ExerciseAnswerState} = {
-  1234: {
+  '1234@5': {
     correct_answer_id: '1',
     is_completed: true,
     attempts_remaining: 0,
@@ -32,7 +32,7 @@ describe('Exercise', () => {
         solutions_are_public: false,
         versions: [1],
         questions: [{
-          id: '1234',
+          id: '1234@5',
           collaborator_solutions: [],
           formats: ['true-false'],
           stimulus_html: '',
