@@ -42,15 +42,17 @@ export interface ExerciseProps {
   displaySolution: boolean;
   show_all_feedback?: boolean;
   exerciseAnswers?: {ID: ExerciseAnswerState};
+  exerciseId?: ID;
 }
 
 export const Exercise = ({
-  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, exerciseAnswers, ...props
+  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, exerciseAnswers, exerciseId, ...props
 }: ExerciseProps) => (
   <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={numberOfQuestions}
+    exerciseId={exerciseId}
   >
     <Preamble exercise={exercise} />
 

@@ -71,6 +71,7 @@ export const Default = () => (
           exerciseAnswers={exerciseAnswers}
           questionNumber={i + 1}
           numberOfQuestions={exercises.length} 
+          exerciseId={exercise.uid}
           show_all_feedback={true} />
       </ExerciseWrapper>
     )

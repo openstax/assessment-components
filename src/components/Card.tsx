@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { breakpoints, colors, mixins } from "../theme";
-import { AvailablePoints, Step } from "../types";
+import { AvailablePoints, ID, Step } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
 
@@ -201,7 +201,7 @@ export interface StepCardProps extends SharedProps {
   stepType?: Step['type'];
   availablePoints?: AvailablePoints;
   questionId?: string;
-  exerciseId?: string;
+  exerciseId?: ID;
   multipartBadge?: ReactNode;
   isHomework: boolean;
 }
@@ -257,6 +257,7 @@ export interface TaskStepCardProps extends SharedProps {
   step?: Step;
   questionNumber: number;
   numberOfQuestions: number;
+  exerciseId?: ID;
 }
 
 const TaskStepCard = ({
@@ -265,6 +266,7 @@ const TaskStepCard = ({
   numberOfQuestions,
   children,
   className,
+  exerciseId,
   ...otherProps
 }: TaskStepCardProps) =>
 (<StepCard {...otherProps}
@@ -276,7 +278,8 @@ const TaskStepCard = ({
   data-task-step-id={step?.id}
   availablePoints={step?.available_points}
   className={cn(`${step?.type || 'exercise'}-step`, className)}
-  exerciseId={step?.uid}
+  questionId={step?.uid}
+  exerciseId={exerciseId}
 >
   {children}
 </StepCard>);
