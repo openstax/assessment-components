@@ -1,4 +1,4 @@
-import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, ID } from '../../src/types';
+import { ExerciseData, ExerciseQueryData, ExerciseQuestionData } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
