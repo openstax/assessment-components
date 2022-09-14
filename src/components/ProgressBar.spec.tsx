@@ -1,7 +1,7 @@
 import ProgressBar, { ProgressBarItem, ProgressBarItemVariant, ProgressBarProps, StyledItem } from './ProgressBar';
 import renderer from 'react-test-renderer';
 
-const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null];
+const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null];
 
 describe('ProgressBar', () => {
   let props: ProgressBarProps;

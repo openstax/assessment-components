@@ -88,7 +88,8 @@ describe('Exercise', () => {
         incorrectAnswerId: 0
       },
       numberOfQuestions: 1
-  }});
+    }
+  });
 
   it('matches snapshot', () => {
     const tree = renderer.create(
@@ -103,5 +104,4 @@ describe('Exercise', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   })
-
 });
