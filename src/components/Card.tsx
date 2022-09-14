@@ -254,7 +254,7 @@ StepCard.displayName = 'OSStepCard';
 export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
-  : Step;
+  step: Step;
   questionNumber: number;
   numberOfQuestions: number;
   exerciseId?: ID;
@@ -273,11 +273,11 @@ const TaskStepCard = ({
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={step.type || 'exercise'}
+  stepType={step.type}
   isHomework={step.task === undefined || step.task.type === 'homework'}
   data-task-step-id={step.id}
   availablePoints={step.available_points}
-  className={cn(`${step.type || 'exercise'}-step`, className)}
+  className={cn(`${step.type}-step`, className)}
   questionId={step.uid}
   exerciseId={exerciseId}
 >

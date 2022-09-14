@@ -69,7 +69,7 @@ const step: Step = {
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
-    {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id)}));
+    {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || '')}));
 
 export const Default = () => (
   <>
@@ -78,7 +78,7 @@ export const Default = () => (
     const exerciseAnswers = formatAnswerData(exercise.questions).reduce((acc, answer) => {
       const {id, correct_answer_id} = answer;
       return {...acc, [id]: {correct_answer_id, is_completed: true, attempts_remaining: 0}};
-    }, {} as {ID: ExerciseAnswerState});
+    }, {} as {[key: string]: ExerciseAnswerState});
 
     return (
       <ExerciseWrapper>

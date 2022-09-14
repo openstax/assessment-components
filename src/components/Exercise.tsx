@@ -41,7 +41,7 @@ export interface ExerciseProps {
   available_points: AvailablePoints;
   displaySolution: boolean;
   show_all_feedback?: boolean;
-  exerciseAnswers?: {ID: ExerciseAnswerState};
+  exerciseAnswers?: {[key: string]: ExerciseAnswerState};
   exerciseId?: ID;
 }
 

@@ -71,7 +71,7 @@ exports[`Exercise matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+          className="sc-jSMfEi kWGKid openstax-question step-card-body has-correct-answer"
           data-question-number={1}
           data-test-id="question"
         >
@@ -82,31 +82,21 @@ exports[`Exercise matches snapshot 1`] = `
               className="openstax-answer"
             >
               <section
-                className="answers-answer disabled answer-checked"
+                className="answers-answer disabled answer-checked answer-correct"
                 role="region"
               >
-                <input
-                  checked={true}
-                  className="answer-input-box"
-                  disabled={true}
-                  id="1234@5-option-0"
-                  name="1234@5-options"
-                  onChange={[Function]}
-                  type="radio"
-                />
                 <label
                   className="answer-label"
-                  htmlFor="1234@5-option-0"
+                  htmlFor="1234-option-0"
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
-                      aria-label="Selected Choice a:"
+                      aria-label="Selected Choice a(Correct Answer):"
                       className="answer-letter"
                       data-test-id="answer-choice-a"
                       disabled={true}
-                      onClick={[Function]}
                     >
                       a
                     </button>
@@ -133,28 +123,18 @@ exports[`Exercise matches snapshot 1`] = `
                 className="answers-answer disabled"
                 role="region"
               >
-                <input
-                  checked={false}
-                  className="answer-input-box"
-                  disabled={true}
-                  id="1234@5-option-1"
-                  name="1234@5-options"
-                  onChange={[Function]}
-                  type="radio"
-                />
                 <label
                   className="answer-label"
-                  htmlFor="1234@5-option-1"
+                  htmlFor="1234-option-1"
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
-                      aria-label="Choice b:"
+                      aria-label="Choice b(Incorrect Answer):"
                       className="answer-letter"
                       data-test-id="answer-choice-b"
                       disabled={true}
-                      onClick={[Function]}
                     >
                       b
                     </button>

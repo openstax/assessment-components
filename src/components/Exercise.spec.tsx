@@ -1,5 +1,14 @@
 import { Exercise, ExerciseProps } from './Exercise';
 import renderer from 'react-test-renderer';
+import { ExerciseAnswerState } from 'src/types';
+
+const exerciseAnswers: {[key: string]: ExerciseAnswerState} = {
+  1234: {
+    correct_answer_id: '1',
+    is_completed: true,
+    attempts_remaining: 0,
+  },
+};
 
 describe('Exercise', () => {
   let props: ExerciseProps;
@@ -23,7 +32,7 @@ describe('Exercise', () => {
         solutions_are_public: false,
         versions: [1],
         questions: [{
-          id: '1234@5',
+          id: '1234',
           collaborator_solutions: [],
           formats: ['true-false'],
           stimulus_html: '',
@@ -78,9 +87,9 @@ describe('Exercise', () => {
         attempt_number: 1,
         incorrectAnswerId: 0
       },
-      numberOfQuestions: 1
-    }
-  });
+      numberOfQuestions: 1,
+      exerciseAnswers,
+  }});
 
   it('matches snapshot', () => {
     const tree = renderer.create(
