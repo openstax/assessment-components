@@ -19,10 +19,10 @@
   "scripts": {
     "build": "microbundle",
     "dist": "rm -rf ./dist && microbundle && sed -i '' 's/jsx-runtime/jsx-runtime.js/g' ./dist/index.modern.mjs",
-    "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false",
+    "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.cjs --target node --format cjs --sourcemap false",
     "dev": "microbundle watch --no-compress",
     "download-json": "yarn build-download-json && yarn run-download-json",
-    "run-download-json": "node dist/scripts/download-json.js",
+    "run-download-json": "node dist/scripts/download-json.cjs",
     "generate-pdf": "rollup scripts/generate-pdf.ts -o dist/scripts/generate-pdf.mjs && node dist/scripts/generate-pdf.mjs",
     "download-json-to-pdf": "yarn download-json",
     "postdownload-json-to-pdf": "yarn generate-pdf",
