@@ -41,7 +41,7 @@ export interface ExerciseProps {
   available_points: AvailablePoints;
   displaySolution: boolean;
   show_all_feedback?: boolean;
-  exerciseAnswers: {[key: string]: ExerciseAnswerState};
+  exerciseAnswers?: {ID: ExerciseAnswerState};
 }
 
 export const Exercise = ({
@@ -58,7 +58,7 @@ export const Exercise = ({
       <ExerciseQuestion
         {...props}
         {...step}
-        {...exerciseAnswers[q.id]}
+        {...exerciseAnswers && exerciseAnswers[q.id]}
         exercise_uid={exercise.uid}
         key={q.id}
         question={q}

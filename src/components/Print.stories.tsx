@@ -1,4 +1,4 @@
-import { ExerciseData, ExerciseQueryData, ExerciseQuestionData } from '../../src/types';
+import { ExerciseAnswerState, ExerciseData, ExerciseQueryData, ExerciseQuestionData } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -51,7 +51,7 @@ export const Default = () => (
     const exerciseAnswers = formatAnswerData(exercise.questions).reduce((acc, answer) => {
       const {id, correct_answer_id} = answer;
       return {...acc, [id]: {correct_answer_id, is_completed: true, attempts_remaining: 0}};
-    }, {});
+    }, {} as {ID: ExerciseAnswerState});
 
     return (
       <ExerciseWrapper>
