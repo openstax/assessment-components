@@ -25,7 +25,7 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
 
 export interface ExerciseProps {
   exercise: ExerciseData;
-  step?: Step;
+  step: Step;
   numberOfQuestions: number;
   questionNumber: number;
   canAnswer: boolean;
@@ -70,7 +70,7 @@ export const Exercise = ({
         needsSaved={needsSaved}
         canUpdateCurrentStep={canAnswer}
         displaySolution={!!displaySolution}
-        answerId={step?.answer_id}
+        answerId={step.answer_id}
       />
     )}
   </StyledTaskStepCard>
