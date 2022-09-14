@@ -46,13 +46,13 @@ export interface ExerciseProps {
 }
 
 export const Exercise = ({
-  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, exerciseAnswers, exerciseId, ...props
+  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, exerciseAnswers, ...props
 }: ExerciseProps) => (
   <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={numberOfQuestions}
-    exerciseId={exerciseId}
+    exerciseId={exercise.uid}
   >
     <Preamble exercise={exercise} />
 
