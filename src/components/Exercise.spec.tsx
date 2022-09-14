@@ -40,6 +40,8 @@ describe('Exercise', () => {
           }],
         }],
       },
+      displaySolution: false,
+      exerciseAnswers: {},
       questionNumber: 1,
       hasMultipleAttempts: false,
       onAnswerChange: () => null,
