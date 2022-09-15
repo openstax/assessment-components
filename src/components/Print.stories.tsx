@@ -1,4 +1,4 @@
-import { ExerciseData, Step } from '../../src/types';
+import { ExerciseData, StepWithData } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -21,7 +21,7 @@ const ExerciseHeading = styled.h2`
   font-weight: normal;
 `;
 
-const step: Step = {
+const step: StepWithData = {
   uid: '1234@4',
   id: 1,
   available_points: '1.0',

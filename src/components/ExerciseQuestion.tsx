@@ -19,7 +19,8 @@ export interface ExerciseQuestionProps {
   is_completed: boolean;
   correct_answer_id: ID;
   incorrectAnswerId: ID;
-  answerId?: ID;
+  answer_id?: ID;
+  answerId?: ID; // TODO: keep backwards compat. with tutor?
   attempts_remaining: number;
   published_comments?: string;
   detailedSolution?: string;
@@ -87,7 +88,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
-    answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
+    answer_id, answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response
   } = props;
@@ -99,7 +100,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         question={question}
         answerIdOrder={answer_id_order}
         choicesEnabled={choicesEnabled}
-        answer_id={answerId}
+        answer_id={answer_id || answerId}
         questionNumber={questionNumber}
         onChange={onAnswerChange}
         feedback_html={feedback_html}
@@ -127,7 +128,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         <div className="controls">
           {canAnswer && needsSaved ?
             <SaveButton
-              disabled={apiIsPending || !answerId}
+              disabled={apiIsPending || !answer_id}
               isWaiting={apiIsPending}
               attempt_number={attempt_number}
               onClick={onAnswerSave}

@@ -1,8 +1,8 @@
-import { Exercise, ExerciseProps } from './Exercise';
+import { Exercise, ExerciseWithStepDataProps } from './Exercise';
 import renderer from 'react-test-renderer';
 
 describe('Exercise', () => {
-  let props: ExerciseProps;
+  let props: ExerciseWithStepDataProps;
 
   beforeEach(() => {
     props = {

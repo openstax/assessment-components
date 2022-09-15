@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { ExerciseData, ID, Step } from 'src/types';
+import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from 'src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
@@ -23,9 +23,9 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   );
 };
 
-export interface ExerciseProps {
+interface ExerciseBaseProps {
+  step: StepBase;
   exercise: ExerciseData;
-  step: Step;
   numberOfQuestions: number;
   questionNumber: number;
   canAnswer: boolean;
@@ -38,9 +38,17 @@ export interface ExerciseProps {
   apiIsPending: boolean;
 }
 
+export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
+  step: StepWithData;
+}
+
+export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
+  questionStates: { [key: ID]: QuestionState };
+}
+
 export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props
-}: ExerciseProps) => (
+}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
   <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
@@ -48,21 +56,25 @@ export const Exercise = ({
   >
     <Preamble exercise={exercise} />
 
-    {exercise.questions.map((q) =>
-      <ExerciseQuestion
-        {...props}
-        {...step}
-        exercise_uid={exercise.uid}
-        key={q.id}
-        question={q}
-        questionNumber={questionNumber}
-        choicesEnabled={canAnswer}
-        canAnswer={canAnswer}
-        needsSaved={needsSaved}
-        canUpdateCurrentStep={canAnswer}
-        displaySolution={true}
-        answerId={step.answer_id}
-      />
+    {exercise.questions.map((q) => {
+      const state = props['questionStates'] && props['questionStates'][q.id];
+      return (
+        <ExerciseQuestion
+          {...props}
+          {...step}
+          {...state}
+          exercise_uid={exercise.uid}
+          key={q.id}
+          question={q}
+          questionNumber={questionNumber}
+          choicesEnabled={canAnswer}
+          canAnswer={canAnswer}
+          needsSaved={needsSaved}
+          canUpdateCurrentStep={canAnswer}
+          displaySolution={true}
+        />
+      )
+    }
     )}
   </StyledTaskStepCard>
 );

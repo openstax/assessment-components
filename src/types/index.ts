@@ -56,16 +56,19 @@ export type Answer = {
   feedback_html?: string;
 };
 
-export type Step = {
+export type StepBase = {
+  id: number; // could be id from tutor backend, could be index from assessments?
+  uid: ExerciseUid;
+  available_points: AvailablePoints;
+};
+
+export type StepWithData = StepBase & {
   type?: 'exercise';
   task?: Task;
-  uid: ExerciseUid;
-  id: number;
-  available_points: AvailablePoints;
   preview?: string;
   is_completed: boolean;
   answer_id?: ID;
-  answer_id_order: ID[];
+  answer_id_order?: ID[];
   free_response: '';
   feedback_html: '';
   correct_answer_id: ID;
@@ -75,8 +78,27 @@ export type Step = {
   external_url?: '';
   formats?: ExerciseFormat[];
   can_be_updated?: boolean;
+  is_feedback_available?: boolean;
+  exercise_id?: ID;
+  attempts_remaining?: number;
+  attempt_number?: number;
+  solution?: Solution;
+  incorrectAnswerId?: ID;
+};
+
+export type QuestionState = {
+  available_points: AvailablePoints;
+  is_completed: boolean;
+  answer_id?: ID;
+  answer_id_order: ID[];
+  free_response: '';
+  feedback_html: '';
+  correct_answer_id: ID;
+  correct_answer_feedback_html: string;
+  response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  formats?: ExerciseFormat[];
+  can_be_updated?: boolean;
   is_feedback_available: boolean;
-  exercise_id?: ID
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
