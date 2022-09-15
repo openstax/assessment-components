@@ -62,7 +62,7 @@ export const Default = () => (
     free_response: 'Free response',
     feedback_html: 'Feedback',
     correct_answer_id: '1',
-    correct_answer_feedback_html: 'Feedback for the correct answer',
+    correct_answer_feedback_html: '',
     attempts_remaining: 0,
     attempt_number: 1,
     incorrectAnswerId: 0
@@ -86,7 +86,8 @@ export const Default = () => (
           step={step}
           questionNumber={i + 1}
           numberOfQuestions={exercises.length}
-          questionStates={questionStates} />
+          questionStates={questionStates} 
+          show_all_feedback={true} />
       </ExerciseWrapper>
     )
   }))}

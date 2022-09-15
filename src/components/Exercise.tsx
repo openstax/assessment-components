@@ -36,6 +36,7 @@ interface ExerciseBaseProps {
   onAnswerSave: () => void;
   onNextStep: () => void;
   apiIsPending: boolean;
+  show_all_feedback?: boolean;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -47,7 +48,7 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 }
 
 export const Exercise = ({
-  numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props
+  numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, show_all_feedback, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
   <StyledTaskStepCard
     step={step}
@@ -73,6 +74,7 @@ export const Exercise = ({
           canUpdateCurrentStep={canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
+          show_all_feedback={show_all_feedback}
         />
       )
     }
