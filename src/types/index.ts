@@ -11,12 +11,6 @@ export interface ExerciseAnswerData {
   isCorrect?: boolean;
 }
 
-export interface ExerciseAnswerState {
-  correct_answer_id: ID;
-  is_completed: boolean;
-  attempts_remaining: number;
-}
-
 export interface ExerciseTagData {
   id: ID;
   type: string;

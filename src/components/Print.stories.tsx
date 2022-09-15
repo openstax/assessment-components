@@ -1,4 +1,4 @@
-import { ExerciseAnswerState, ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../../src/types';
+import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -70,7 +70,7 @@ export const Default = () => (
     const questionStates = formatAnswerData(exercise.questions).reduce((acc, answer) => {
       const {id, correct_answer_id} = answer;
       return {...acc, [id]: {...questionStateFields, correct_answer_id}};
-    }, {} as {[key: string]: ExerciseAnswerState});
+    }, {});
 
     return (
       <ExerciseWrapper>

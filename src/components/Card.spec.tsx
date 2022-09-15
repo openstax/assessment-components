@@ -23,7 +23,8 @@ describe('TaskStepCard', () => {
         incorrectAnswerId: 0
       },
       questionNumber: 1,
-      numberOfQuestions: 1
+      numberOfQuestions: 1,
+      wrapsExercise: true,
     }
   });
 
