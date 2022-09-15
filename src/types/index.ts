@@ -59,7 +59,7 @@ export type Answer = {
 export type StepBase = {
   id: number; // could be id from tutor backend, could be index from assessments?
   uid: ExerciseUid;
-  available_points: AvailablePoints;
+  available_points?: AvailablePoints;
 };
 
 export type StepWithData = StepBase & {
@@ -92,7 +92,7 @@ export type QuestionState = {
   answer_id?: ID;
   answer_id_order: ID[];
   free_response: string;
-  feedback_html: string;
+  feedback_html: string; // Really only incorrect answer
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any

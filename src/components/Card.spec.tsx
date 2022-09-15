@@ -40,6 +40,13 @@ describe('TaskStepCard', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('can optionally provide type', () => {
+    const tree = renderer.create(
+      <TaskStepCard {...props} step={{ ...props.step, type: 'exercise' }} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
 
 describe('StepCard', () => {

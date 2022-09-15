@@ -199,7 +199,7 @@ export interface StepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   stepType: StepWithData['type'];
-  availablePoints: AvailablePoints;
+  availablePoints?: AvailablePoints;
   questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
@@ -237,7 +237,7 @@ const StepCard = ({
               </div>
             </div>
             <div>
-              <div className="points">{availablePoints} Points</div>
+              {availablePoints && <div className="points">{availablePoints} Points</div>}
               {rightHeaderChildren}
             </div>
           </StepCardHeader>
@@ -273,7 +273,7 @@ const TaskStepCard = ({
   isHomework={'task' in step ? (step.task === undefined || step.task.type === 'homework') : true}
   data-task-step-id={step.id}
   availablePoints={step.available_points}
-  className={cn(`${('type' in step ? (step.type || 'exercise') : 'exercise')}-step`, className)}
+  className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
 >
   {children}

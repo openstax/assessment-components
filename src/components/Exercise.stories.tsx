@@ -169,7 +169,7 @@ export const IncorrectWithFeedbackAndSolution = () => {
       attempts_remaining: 0,
       attempt_number: 1,
       incorrectAnswerId: '2',
-      solution: { content_html: 'A detailed solution', solution_type: '' }
+      solution: { content_html: 'A detailed solution', solution_type: 'detailed' }
     }
   };
   return <Exercise {...props} />;

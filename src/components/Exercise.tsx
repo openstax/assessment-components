@@ -57,12 +57,10 @@ export const Exercise = ({
     <Preamble exercise={exercise} />
 
     {exercise.questions.map((q) => {
-      const state = props['questionStates'] && props['questionStates'][q.id];
-      const detailedSolution = step['detailedSolution'] || (state['solution'] && state['solution']['content_html'])
+      const state = { ...('feedback_html' in step ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
           {...props}
-          {...step}
           {...state}
           exercise_uid={exercise.uid}
           key={q.id}
@@ -73,7 +71,7 @@ export const Exercise = ({
           needsSaved={needsSaved}
           canUpdateCurrentStep={canAnswer}
           displaySolution={true}
-          detailedSolution={detailedSolution}
+          detailedSolution={state.solution?.content_html}
         />
       )
     }
