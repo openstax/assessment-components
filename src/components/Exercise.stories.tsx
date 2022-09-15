@@ -121,7 +121,6 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
       feedback_html: '',
       correct_answer_id: '',
       correct_answer_feedback_html: '',
-      is_feedback_available: true,
       attempts_remaining: 0,
       attempt_number: 1,
       incorrectAnswerId: 0
@@ -131,3 +130,47 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
 
 export const Default = () => <Exercise {...exerciseWithQuestionStatesProps} />;
 export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps} />;
+export const CompleteWithFeedback = () => {
+  const props: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps,
+
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: ['1', '2'],
+        answer_id: '1',
+        free_response: 'Free response',
+        feedback_html: 'Feedback',
+        correct_answer_id: '1',
+        correct_answer_feedback_html: 'Feedback for the correct answer',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0
+      }
+    }
+  };
+
+  return <Exercise {...props} />;
+};
+
+export const IncorrectWithFeedbackAndSolution = () => {
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps };
+  props.questionStates = {
+    '1': {
+      available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: '2',
+      free_response: 'Free response',
+      feedback_html: 'Feedback for the incorrect answer',
+      correct_answer_id: '1',
+      correct_answer_feedback_html: 'Feedback for the correct answer',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: '2',
+      solution: { content_html: 'A detailed solution', solution_type: '' }
+    }
+  };
+  return <Exercise {...props} />;
+};

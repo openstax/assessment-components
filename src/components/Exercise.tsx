@@ -58,6 +58,7 @@ export const Exercise = ({
 
     {exercise.questions.map((q) => {
       const state = props['questionStates'] && props['questionStates'][q.id];
+      const detailedSolution = step['detailedSolution'] || (state['solution'] && state['solution']['content_html'])
       return (
         <ExerciseQuestion
           {...props}
@@ -72,6 +73,7 @@ export const Exercise = ({
           needsSaved={needsSaved}
           canUpdateCurrentStep={canAnswer}
           displaySolution={true}
+          detailedSolution={detailedSolution}
         />
       )
     }

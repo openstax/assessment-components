@@ -69,8 +69,8 @@ export type StepWithData = StepBase & {
   is_completed: boolean;
   answer_id?: ID;
   answer_id_order?: ID[];
-  free_response: '';
-  feedback_html: '';
+  free_response: string;
+  feedback_html: string;
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
   last_completed_at?: Date;
@@ -91,23 +91,21 @@ export type QuestionState = {
   is_completed: boolean;
   answer_id?: ID;
   answer_id_order: ID[];
-  free_response: '';
-  feedback_html: '';
+  free_response: string;
+  feedback_html: string;
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   formats?: ExerciseFormat[];
-  can_be_updated?: boolean;
-  is_feedback_available: boolean;
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
   incorrectAnswerId: ID;
 };
 
-interface Solution {
+export interface Solution {
   content_html: string;
-  solution_type: string;
+  solution_type: 'detailed';
 }
 
 export type Task = {
