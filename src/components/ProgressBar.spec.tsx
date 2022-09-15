@@ -31,7 +31,7 @@ describe('ProgressBar', () => {
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
-      <ProgressBarItem isActive={true} index={3} step={{variant: 'isCorrect'}} goToStep={mockEv} />
+      <ProgressBarItem isActive={true} index={3} variant='isCorrect' goToStep={mockEv} />
     );
 
     renderer.act(() => {

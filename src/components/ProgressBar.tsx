@@ -87,20 +87,15 @@ export interface ProgressBarProps {
 export interface ProgressBarItemProps {
   index: number;
   isActive: boolean;
-  goToStep: (index: number, step: Step) => void;
-  step: Step;
+  variant: ProgressBarItemVariant;
+  goToStep: <T>(index: number, step?: T) => void;
 }
 
 export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | null;
 
-interface Step {
-  [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  variant: ProgressBarItemVariant;
-}
-
-export const ProgressBarItem = ({index, isActive, step, goToStep}: ProgressBarItemProps  ) =>
+export const ProgressBarItem = ({index, isActive, variant, goToStep}: ProgressBarItemProps  ) =>
   <StyledItemWrapper>
-    <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>{index + 1}</StyledItem>
+    <StyledItem variant={variant} isActive={isActive} onClick={() => goToStep(index)}>{index + 1}</StyledItem>
   </StyledItemWrapper>;
 
 const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <ProgressBarWrapper>
@@ -108,7 +103,7 @@ const ProgressBar = ({ steps, activeIndex, goToStep }: ProgressBarProps) => <Pro
     key={index}
     index={index}
     isActive={index === activeIndex}
-    step={step}
+    variant={step.variant}
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
