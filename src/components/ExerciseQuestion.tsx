@@ -20,7 +20,6 @@ export interface ExerciseQuestionProps {
   correct_answer_id: ID;
   incorrectAnswerId: ID;
   answer_id?: ID;
-  answerId?: ID; // TODO: keep backwards compat. with tutor?
   attempts_remaining: number;
   published_comments?: string;
   detailedSolution?: string;
@@ -88,7 +87,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
-    answer_id, answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
+    answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response
   } = props;
@@ -100,7 +99,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         question={question}
         answerIdOrder={answer_id_order}
         choicesEnabled={choicesEnabled}
-        answer_id={answer_id || answerId}
+        answer_id={answer_id}
         questionNumber={questionNumber}
         onChange={onAnswerChange}
         feedback_html={feedback_html}

@@ -112,7 +112,7 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
     available_points: '1.0',
   },
   questionStates: {
-    '1234@5': {
+    '1': {
       available_points: '1.0',
       is_completed: false,
       answer_id_order: ['1', '2'],
