@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Exercise matches snapshot 1`] = `
+exports[`Exercise using step data matches snapshot 1`] = `
 <div
   className="sc-gsnTZi kTXtGE"
   data-task-step-id={1}
@@ -208,7 +208,11 @@ exports[`Exercise matches snapshot 1`] = `
 </div>
 `;
 
+<<<<<<< HEAD
 exports[`Exercise matches snapshot with answer state data 1`] = `
+=======
+exports[`Exercise with question state data matches snapshot 1`] = `
+>>>>>>> deprecated-props
 <div
   className="sc-gsnTZi kTXtGE"
   data-task-step-id={1}
@@ -224,8 +228,12 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
           className="question-info"
         >
           <span>
+<<<<<<< HEAD
             Question
              
+=======
+            Question 
+>>>>>>> deprecated-props
             1
           </span>
           <span
@@ -243,7 +251,11 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
             className="question-id"
           >
             ID: 
+<<<<<<< HEAD
             1234@4
+=======
+            1234@5
+>>>>>>> deprecated-props
           </span>
         </div>
       </div>
@@ -279,7 +291,11 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
+<<<<<<< HEAD
           className="sc-jSMfEi kWGKid openstax-question step-card-body has-correct-answer"
+=======
+          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+>>>>>>> deprecated-props
           data-question-number={1}
           data-test-id="question"
         >
@@ -290,21 +306,47 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
               className="openstax-answer"
             >
               <section
+<<<<<<< HEAD
                 className="answers-answer disabled answer-checked answer-correct"
                 role="region"
               >
                 <label
                   className="answer-label"
                   htmlFor="1234@5-option-0"
+=======
+                className="answers-answer disabled answer-checked"
+                role="region"
+              >
+                <input
+                  checked={true}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-0"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-0"
+>>>>>>> deprecated-props
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
+<<<<<<< HEAD
                       aria-label="Selected Choice a(Correct Answer):"
                       className="answer-letter"
                       data-test-id="answer-choice-a"
                       disabled={true}
+=======
+                      aria-label="Selected Choice a:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-a"
+                      disabled={true}
+                      onClick={[Function]}
+>>>>>>> deprecated-props
                     >
                       a
                     </button>
@@ -331,18 +373,41 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
                 className="answers-answer disabled"
                 role="region"
               >
+<<<<<<< HEAD
                 <label
                   className="answer-label"
                   htmlFor="1234@5-option-1"
+=======
+                <input
+                  checked={false}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-1"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-1"
+>>>>>>> deprecated-props
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
+<<<<<<< HEAD
                       aria-label="Choice b(Incorrect Answer):"
                       className="answer-letter"
                       data-test-id="answer-choice-b"
                       disabled={true}
+=======
+                      aria-label="Choice b:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-b"
+                      disabled={true}
+                      onClick={[Function]}
+>>>>>>> deprecated-props
                     >
                       b
                     </button>
@@ -395,3 +460,226 @@ exports[`Exercise matches snapshot with answer state data 1`] = `
   </div>
 </div>
 `;
+<<<<<<< HEAD
+=======
+
+exports[`Exercise with question state data shows a detailed solution 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds Alzlt"
+  >
+    <div
+      className="sc-dkzDqf ifUCJL"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 
+            1
+          </span>
+          <span
+            className="num-questions"
+          >
+             / 
+            1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@5
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM grRsJk"
+    >
+      <div
+        className="step-card-body exercise-context"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Context",
+          }
+        }
+      />
+      <div
+        className="step-card-body exercise-stimulus"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<b>Stimulus HTML</b>",
+          }
+        }
+      />
+      <div
+        data-test-id="student-exercise-question"
+      >
+        <div
+          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+          data-question-number={1}
+          data-test-id="question"
+        >
+          <div
+            className="answers-table"
+          >
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled answer-checked"
+                role="region"
+              >
+                <input
+                  checked={true}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-0"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-0"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Selected Choice a:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-a"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      a
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "True",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled"
+                role="region"
+              >
+                <input
+                  checked={false}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-1"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-1"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Choice b:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-b"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      b
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "False",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-gKXOVf kGsBya step-card-footer"
+        >
+          <div
+            className="points"
+          >
+            <strong>
+              Points: 
+              1.0
+            </strong>
+            <span
+              className="attempts-left"
+            />
+            <div>
+              <strong>
+                Detailed solution:
+              </strong>
+               
+              <span
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Detailed solution",
+                  }
+                }
+              />
+            </div>
+          </div>
+          <div
+            className="controls"
+          >
+            <button
+              className="sc-eCYdqJ dqiaKp"
+              data-test-id="continue-btn"
+              onClick={[Function]}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+>>>>>>> deprecated-props

@@ -42,7 +42,7 @@ const props = {
   onNextStep: () => null,
   is_completed: false,
   multiPartGroup: null,
-  answerId: '',
+  answer_id: '',
   available_points: '1.0' as const,
   attempts_remaining: 2,
   published_comments: '',

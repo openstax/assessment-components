@@ -55,6 +55,114 @@ exports[`StepCard matches snapshot 1`] = `
 </div>
 `;
 
+exports[`TaskStepCard can optionally provide task 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step"
+  >
+    <div
+      className="sc-dkzDqf ifUCJL"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 
+            1
+          </span>
+          <span
+            className="num-questions"
+          >
+             / 
+            1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@1
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM grRsJk"
+    />
+  </div>
+</div>
+`;
+
+exports[`TaskStepCard can optionally provide type 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step"
+  >
+    <div
+      className="sc-dkzDqf ifUCJL"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 
+            1
+          </span>
+          <span
+            className="num-questions"
+          >
+             / 
+            1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@1
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM grRsJk"
+    />
+  </div>
+</div>
+`;
+
 exports[`TaskStepCard matches snapshot 1`] = `
 <div
   className="sc-gsnTZi kTXtGE"

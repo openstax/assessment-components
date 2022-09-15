@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { AvailablePoints, ExerciseAnswerState, ExerciseData, ID, Step } from 'src/types';
+import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
@@ -23,9 +23,9 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   );
 };
 
-export interface ExerciseProps {
+interface ExerciseBaseProps {
+  step: StepBase;
   exercise: ExerciseData;
-  step: Step;
   numberOfQuestions: number;
   questionNumber: number;
   canAnswer: boolean;
@@ -35,19 +35,20 @@ export interface ExerciseProps {
   onAnswerChange: () => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  canUpdateCurrentStep: boolean;
-  attempt_number: number;
   apiIsPending: boolean;
-  available_points: AvailablePoints;
-  displaySolution: boolean;
-  show_all_feedback?: boolean;
-  exerciseAnswers?: {[key: string]: ExerciseAnswerState};
-  exerciseId?: ID;
+}
+
+export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
+  step: StepWithData;
+}
+
+export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
+  questionStates: { [key: ID]: QuestionState };
 }
 
 export const Exercise = ({
-  displaySolution, numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, exerciseAnswers, ...props
-}: ExerciseProps) => (
+  numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props
+}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
   <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
@@ -56,22 +57,25 @@ export const Exercise = ({
   >
     <Preamble exercise={exercise} />
 
-    {exercise.questions.map((q) =>
-      <ExerciseQuestion
-        {...props}
-        {...step}
-        {...exerciseAnswers && exerciseAnswers[q.id]}
-        exercise_uid={exercise.uid}
-        key={q.id}
-        question={q}
-        questionNumber={questionNumber}
-        choicesEnabled={canAnswer}
-        canAnswer={canAnswer}
-        needsSaved={needsSaved}
-        canUpdateCurrentStep={canAnswer}
-        displaySolution={displaySolution}
-        answerId={step.answer_id}
-      />
+    {exercise.questions.map((q) => {
+      const state = { ...('feedback_html' in step ? step : props['questionStates'][q.id]) };
+      return (
+        <ExerciseQuestion
+          {...props}
+          {...state}
+          exercise_uid={exercise.uid}
+          key={q.id}
+          question={q}
+          questionNumber={questionNumber}
+          choicesEnabled={canAnswer}
+          canAnswer={canAnswer}
+          needsSaved={needsSaved}
+          canUpdateCurrentStep={canAnswer}
+          displaySolution={true}
+          detailedSolution={state.solution?.content_html}
+        />
+      )
+    }
     )}
   </StyledTaskStepCard>
 );
