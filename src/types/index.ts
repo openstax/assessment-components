@@ -56,36 +56,56 @@ export type Answer = {
   feedback_html?: string;
 };
 
-export type Step = {
-  type: 'exercise';
-  task: Task;
+export type StepBase = {
+  id: number; // could be id from tutor backend, could be index from assessments?
   uid: ExerciseUid;
-  id: number;
+  available_points?: AvailablePoints;
+};
+
+export type StepWithData = StepBase & {
+  type?: 'exercise';
+  task?: Task;
+  preview?: string;
+  is_completed: boolean;
+  answer_id?: ID;
+  answer_id_order?: ID[];
+  free_response: string;
+  feedback_html: string;
+  correct_answer_id: ID;
+  correct_answer_feedback_html: string;
+  last_completed_at?: Date;
+  response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  external_url?: '';
+  formats?: ExerciseFormat[];
+  can_be_updated?: boolean;
+  is_feedback_available?: boolean;
+  exercise_id?: ID;
+  attempts_remaining?: number;
+  attempt_number?: number;
+  solution?: Solution;
+  incorrectAnswerId?: ID;
+};
+
+export type QuestionState = {
   available_points: AvailablePoints;
-  preview: string;
   is_completed: boolean;
   answer_id?: ID;
   answer_id_order: ID[];
-  free_response: '';
-  feedback_html: '';
+  free_response: string;
+  feedback_html: string; // Really only incorrect answer
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
-  last_completed_at: Date;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  external_url: '';
   formats?: ExerciseFormat[];
-  can_be_updated: boolean;
-  is_feedback_available: boolean;
-  exercise_id: ID
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
   incorrectAnswerId: ID;
-}
+};
 
-interface Solution {
+export interface Solution {
   content_html: string;
-  solution_type: string;
+  solution_type: 'detailed';
 }
 
 export type Task = {
