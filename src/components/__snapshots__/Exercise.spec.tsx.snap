@@ -224,7 +224,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Question
+            Exercise
              
             1
           </span>
@@ -432,7 +432,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           className="question-info"
         >
           <span>
-            Question
+            Exercise
              
             1
           </span>
