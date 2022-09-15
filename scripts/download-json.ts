@@ -14,11 +14,11 @@ import fetch from 'node-fetch';
     }
   }) as ((flag: string, defaultValue: string) => string) & ((flag: string) => string | undefined)
 
-  const filename = spliceOption('-o');
+  const title = spliceOption('-o');
   const token = spliceOption('-t');
 
   if (process.argv.length < 3) {
-    console.error('Usage: yarn run-download-json [-o exercises.json] [-t token] <query>');
+    console.error('Usage: yarn run-download-json [-o "Anatomy & Physiology 2e Section 1.6"] [-t token] <query>');
     process.exit(1);
   }
 
@@ -48,7 +48,7 @@ import fetch from 'node-fetch';
     console.log(`Progress: ${exercises.length}/${total_count}`);
   }
 
-  writeFile('exercises.json', JSON.stringify({title: filename, exercises}), (err) => {
+  writeFile('exercises.json', JSON.stringify({title, exercises}), (err) => {
     if (err)
       console.error(err);
     else {
