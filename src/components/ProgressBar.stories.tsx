@@ -2,9 +2,9 @@ import ProgressBar, { ProgressBarItemVariant, ProgressBarProps } from './Progres
 
 const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', 'isIncorrect', null, null, null, null];
 
-const props: ProgressBarProps = {
+const props: ProgressBarProps<{variant: ProgressBarItemVariant}> = {
   activeIndex: 0,
-  goToStep: (index: number) => console.log(index),
+  goToStep: (index: number, step) => console.log(index, step),
   steps: variants.map((variant) => ({variant})),
 }
 
