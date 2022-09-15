@@ -5,7 +5,7 @@ const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncor
 const props: ProgressBarProps = {
   activeIndex: 0,
   /* eslint-disable-next-line no-empty-pattern */
-  goToStep: (index: number, {}) => console.log(index),
+  goToStep: (index: number) => console.log(index),
   steps: variants.map((variant) => ({variant})),
 }
 

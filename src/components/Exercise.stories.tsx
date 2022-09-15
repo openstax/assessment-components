@@ -72,9 +72,8 @@ const props: ExerciseProps = {
     attempt_number: 1,
     incorrectAnswerId: 0
   },
-  numberOfQuestions: 1,
   displaySolution: false,
-  exerciseAnswers: {},
+  numberOfQuestions: 1
 }
 
 export const Default = () => <Exercise {...props} />
