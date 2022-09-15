@@ -98,7 +98,7 @@ describe('Exercise', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('matches snapshot with answer state', () => {
+  it('matches snapshot with answer state data', () => {
     const tree = renderer.create(
       <Exercise {...props} exerciseAnswers={exerciseAnswers} />
     ).toJSON();

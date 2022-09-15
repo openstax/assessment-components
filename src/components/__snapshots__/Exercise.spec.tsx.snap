@@ -208,7 +208,7 @@ exports[`Exercise matches snapshot 1`] = `
 </div>
 `;
 
-exports[`Exercise matches snapshot with answer state 1`] = `
+exports[`Exercise matches snapshot with answer state data 1`] = `
 <div
   className="sc-gsnTZi kTXtGE"
   data-task-step-id={1}
