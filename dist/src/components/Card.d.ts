@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { AvailablePoints, Step } from "../types";
+import { AvailablePoints, StepBase, StepWithData } from "../types";
 export declare const InnerStepCard: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const OuterStepCard: import("styled-components").StyledComponent<"div", any, {}, never>;
 interface SharedProps {
@@ -13,8 +13,8 @@ export interface StepCardProps extends SharedProps {
     unpadded: boolean;
     className?: string;
     children?: ReactNode;
-    stepType: Step['type'];
-    availablePoints: AvailablePoints;
+    stepType: StepWithData['type'];
+    availablePoints?: AvailablePoints;
     questionId?: string;
     multipartBadge?: ReactNode;
     isHomework: boolean;
@@ -26,7 +26,7 @@ declare const StepCard: {
 export interface TaskStepCardProps extends SharedProps {
     className?: string;
     children?: ReactNode;
-    step: Step;
+    step: StepBase | StepWithData;
     questionNumber: number;
     numberOfQuestions: number;
 }

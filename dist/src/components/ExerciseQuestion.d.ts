@@ -14,7 +14,7 @@ export interface ExerciseQuestionProps {
     is_completed: boolean;
     correct_answer_id: ID;
     incorrectAnswerId: ID;
-    answerId?: ID;
+    answer_id?: ID;
     attempts_remaining: number;
     published_comments?: string;
     detailedSolution?: string;

@@ -50,35 +50,53 @@ export declare type Answer = {
     selected_count?: number;
     feedback_html?: string;
 };
-export declare type Step = {
-    type: 'exercise';
-    task: Task;
-    uid: ExerciseUid;
+export declare type StepBase = {
     id: number;
+    uid: ExerciseUid;
+    available_points?: AvailablePoints;
+};
+export declare type StepWithData = StepBase & {
+    type?: 'exercise';
+    task?: Task;
+    preview?: string;
+    is_completed: boolean;
+    answer_id?: ID;
+    answer_id_order?: ID[];
+    free_response: string;
+    feedback_html: string;
+    correct_answer_id: ID;
+    correct_answer_feedback_html: string;
+    last_completed_at?: Date;
+    response_validation?: any;
+    external_url?: '';
+    formats?: ExerciseFormat[];
+    can_be_updated?: boolean;
+    is_feedback_available?: boolean;
+    exercise_id?: ID;
+    attempts_remaining?: number;
+    attempt_number?: number;
+    solution?: Solution;
+    incorrectAnswerId?: ID;
+};
+export declare type QuestionState = {
     available_points: AvailablePoints;
-    preview: string;
     is_completed: boolean;
     answer_id?: ID;
     answer_id_order: ID[];
-    free_response: '';
-    feedback_html: '';
+    free_response: string;
+    feedback_html: string;
     correct_answer_id: ID;
     correct_answer_feedback_html: string;
-    last_completed_at: Date;
     response_validation?: any;
-    external_url: '';
     formats?: ExerciseFormat[];
-    can_be_updated: boolean;
-    is_feedback_available: boolean;
-    exercise_id: ID;
     attempts_remaining: number;
     attempt_number: number;
     solution?: Solution;
     incorrectAnswerId: ID;
 };
-interface Solution {
+export interface Solution {
     content_html: string;
-    solution_type: string;
+    solution_type: 'detailed';
 }
 export declare type Task = {
     is_deleted: boolean;

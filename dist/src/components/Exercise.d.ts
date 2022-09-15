@@ -1,7 +1,7 @@
-import { AvailablePoints, ExerciseData, ID, Step } from 'src/types';
-export interface ExerciseProps {
+import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from 'src/types';
+interface ExerciseBaseProps {
+    step: StepBase;
     exercise: ExerciseData;
-    step: Step;
     numberOfQuestions: number;
     questionNumber: number;
     canAnswer: boolean;
@@ -11,9 +11,15 @@ export interface ExerciseProps {
     onAnswerChange: () => void;
     onAnswerSave: () => void;
     onNextStep: () => void;
-    canUpdateCurrentStep: boolean;
-    attempt_number: number;
     apiIsPending: boolean;
-    available_points: AvailablePoints;
 }
-export declare const Exercise: ({ numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props }: ExerciseProps) => JSX.Element;
+export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
+    step: StepWithData;
+}
+export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
+    questionStates: {
+        [key: ID]: QuestionState;
+    };
+}
+export declare const Exercise: ({ numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, ...props }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => JSX.Element;
+export {};
