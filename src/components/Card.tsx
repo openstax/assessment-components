@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { breakpoints, colors, mixins } from "../theme";
-import { AvailablePoints, ID, StepBase, StepWithData } from "../types";
+import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
 
@@ -201,9 +201,9 @@ export interface StepCardProps extends SharedProps {
   stepType: StepWithData['type'];
   availablePoints?: AvailablePoints;
   questionId?: string;
-  exerciseId?: ID;
   multipartBadge?: ReactNode;
   isHomework: boolean;
+  wrapsExercise: boolean;
 }
 
 const StepCard = ({
@@ -216,11 +216,11 @@ const StepCard = ({
   className,
   children,
   questionId,
-  exerciseId,
   multipartBadge,
   leftHeaderChildren,
   rightHeaderChildren,
   headerTitleChildren,
+  wrapsExercise,
   ...otherProps }: StepCardProps) => {
   return (
     <OuterStepCard {...otherProps}>
@@ -232,10 +232,10 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>{questionId ? 'Question' : 'Exercise'} {questionNumber}</span>
+                <span>{wrapsExercise ? 'Exercise' : 'Question'} {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
-                <span className={questionId ? 'question-id' : 'exercise-id'}>ID: {questionId || exerciseId}</span>
+                <span className="question-id">ID: {questionId}</span>
               </div>
             </div>
             <div>
@@ -257,7 +257,7 @@ export interface TaskStepCardProps extends SharedProps {
   step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;
-  exerciseId?: ID;
+  wrapsExercise: boolean;
 }
 
 const TaskStepCard = ({
@@ -266,7 +266,6 @@ const TaskStepCard = ({
   numberOfQuestions,
   children,
   className,
-  exerciseId,
   ...otherProps
 }: TaskStepCardProps) =>
 (<StepCard {...otherProps}
@@ -279,7 +278,6 @@ const TaskStepCard = ({
   availablePoints={step.available_points}
   className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
-  exerciseId={exerciseId}
 >
   {children}
 </StepCard>);

@@ -54,7 +54,7 @@ export const Exercise = ({
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={numberOfQuestions}
-    exerciseId={exercise.uid}
+    wrapsExercise={!('feedback_html' in step)}
   >
     <Preamble exercise={exercise} />
 
