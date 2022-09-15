@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null];
 
 describe('ProgressBar', () => {
-  let props: ProgressBarProps;
+  let props: ProgressBarProps<{variant: ProgressBarItemVariant}>;
 
   beforeEach(() => {
     props = {
@@ -31,7 +31,7 @@ describe('ProgressBar', () => {
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
-      <ProgressBarItem isActive={true} index={3} variant={'isCorrect'} goToStep={mockEv} />
+      <ProgressBarItem isActive={true} index={3} step={{variant: 'isCorrect'} }goToStep={mockEv} />
     );
 
     renderer.act(() => {
