@@ -4,3 +4,4 @@ export * from './components/Question';
 export * from './components/FreeResponseInput';
 export * from './components/Card';
 export * from './components/Exercise';
+export * from './components/ProgressBar';
