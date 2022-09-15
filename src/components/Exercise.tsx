@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from 'src/types';
+import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
