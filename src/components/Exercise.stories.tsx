@@ -59,7 +59,6 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
     attempt_number: 1,
     incorrectAnswerId: 0
   },
-  displaySolution: false,
   numberOfQuestions: 1
 }
 

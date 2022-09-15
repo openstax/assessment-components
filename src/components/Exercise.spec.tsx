@@ -1,14 +1,5 @@
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
 import renderer from 'react-test-renderer';
-import { ExerciseAnswerState } from 'src/types';
-
-const exerciseAnswers: {[key: string]: ExerciseAnswerState} = {
-  '1234@5': {
-    correct_answer_id: '1',
-    is_completed: true,
-    attempts_remaining: 0,
-  },
-};
 
 describe('Exercise', () => {
   describe('using step data', () => {

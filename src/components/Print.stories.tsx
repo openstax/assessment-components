@@ -1,4 +1,4 @@
-import { ExerciseAnswerState, ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepWithData } from '../../src/types';
+import { ExerciseAnswerState, ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -39,23 +39,6 @@ const ExerciseWrapper = styled.div`
   }
 `;
 
-const step: StepWithData = {
-  uid: '1234@4',
-  id: 1,
-  available_points: '1.0',
-  is_completed: false,
-  answer_id_order: ['1', '2'],
-  answer_id: '1',
-  free_response: '',
-  feedback_html: '',
-  correct_answer_id: '',
-  correct_answer_feedback_html: '',
-  is_feedback_available: true,
-  attempts_remaining: 0,
-  attempt_number: 1,
-  incorrectAnswerId: 0
-};
-
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
@@ -65,9 +48,28 @@ export const Default = () => (
   <>
   {data.title && <h2>Exercises for {data.title}</h2>}
   {exercises.map(((exercise, i) => {
-    const exerciseAnswers = formatAnswerData(exercise.questions).reduce((acc, answer) => {
+
+  const step: StepBase = {
+    id: 1,
+    uid: exercise.uid,
+    available_points: '1.0',
+  };
+
+  const questionStateFields = {
+    available_points: '1.0',
+    is_completed: true,
+    answer_id: '1',
+    free_response: 'Free response',
+    feedback_html: 'Feedback',
+    correct_answer_id: '1',
+    correct_answer_feedback_html: 'Feedback for the correct answer',
+    attempts_remaining: 0,
+    attempt_number: 1,
+    incorrectAnswerId: 0
+  }
+    const questionStates = formatAnswerData(exercise.questions).reduce((acc, answer) => {
       const {id, correct_answer_id} = answer;
-      return {...acc, [id]: {correct_answer_id, is_completed: true, attempts_remaining: 0}};
+      return {...acc, [id]: {...questionStateFields, correct_answer_id}};
     }, {} as {[key: string]: ExerciseAnswerState});
 
     return (
@@ -83,8 +85,8 @@ export const Default = () => (
           exercise={exercise}
           step={step}
           questionNumber={i + 1}
-          numberOfQuestions={exercises.length} 
-          show_all_feedback={true} />
+          numberOfQuestions={exercises.length}
+          questionStates={questionStates} />
       </ExerciseWrapper>
     )
   }))}

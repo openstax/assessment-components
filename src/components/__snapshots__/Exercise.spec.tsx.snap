@@ -208,11 +208,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
 </div>
 `;
 
-<<<<<<< HEAD
-exports[`Exercise matches snapshot with answer state data 1`] = `
-=======
 exports[`Exercise with question state data matches snapshot 1`] = `
->>>>>>> deprecated-props
 <div
   className="sc-gsnTZi kTXtGE"
   data-task-step-id={1}
@@ -228,12 +224,8 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-<<<<<<< HEAD
             Question
              
-=======
-            Question 
->>>>>>> deprecated-props
             1
           </span>
           <span
@@ -251,11 +243,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             className="question-id"
           >
             ID: 
-<<<<<<< HEAD
-            1234@4
-=======
             1234@5
->>>>>>> deprecated-props
           </span>
         </div>
       </div>
@@ -291,11 +279,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-<<<<<<< HEAD
-          className="sc-jSMfEi kWGKid openstax-question step-card-body has-correct-answer"
-=======
           className="sc-jSMfEi kWGKid openstax-question step-card-body"
->>>>>>> deprecated-props
           data-question-number={1}
           data-test-id="question"
         >
@@ -306,14 +290,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               className="openstax-answer"
             >
               <section
-<<<<<<< HEAD
-                className="answers-answer disabled answer-checked answer-correct"
-                role="region"
-              >
-                <label
-                  className="answer-label"
-                  htmlFor="1234@5-option-0"
-=======
                 className="answers-answer disabled answer-checked"
                 role="region"
               >
@@ -329,24 +305,16 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 <label
                   className="answer-label"
                   htmlFor="1-option-0"
->>>>>>> deprecated-props
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
-<<<<<<< HEAD
-                      aria-label="Selected Choice a(Correct Answer):"
-                      className="answer-letter"
-                      data-test-id="answer-choice-a"
-                      disabled={true}
-=======
                       aria-label="Selected Choice a:"
                       className="answer-letter"
                       data-test-id="answer-choice-a"
                       disabled={true}
                       onClick={[Function]}
->>>>>>> deprecated-props
                     >
                       a
                     </button>
@@ -373,11 +341,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 className="answers-answer disabled"
                 role="region"
               >
-<<<<<<< HEAD
-                <label
-                  className="answer-label"
-                  htmlFor="1234@5-option-1"
-=======
                 <input
                   checked={false}
                   className="answer-input-box"
@@ -390,24 +353,16 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 <label
                   className="answer-label"
                   htmlFor="1-option-1"
->>>>>>> deprecated-props
                 >
                   <span
                     className="answer-letter-wrapper"
                   >
                     <button
-<<<<<<< HEAD
-                      aria-label="Choice b(Incorrect Answer):"
-                      className="answer-letter"
-                      data-test-id="answer-choice-b"
-                      disabled={true}
-=======
                       aria-label="Choice b:"
                       className="answer-letter"
                       data-test-id="answer-choice-b"
                       disabled={true}
                       onClick={[Function]}
->>>>>>> deprecated-props
                     >
                       b
                     </button>
@@ -460,8 +415,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   </div>
 </div>
 `;
-<<<<<<< HEAD
-=======
 
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 <div
@@ -479,7 +432,8 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Question
+             
             1
           </span>
           <span
@@ -682,4 +636,3 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   </div>
 </div>
 `;
->>>>>>> deprecated-props
