@@ -107,5 +107,3 @@ export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
-
-ProgressBar.displayName = 'OSProgressBar';
