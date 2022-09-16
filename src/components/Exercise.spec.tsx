@@ -123,8 +123,6 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
-        canAnswer: false,
-        needsSaved: false,
         apiIsPending: false,
         step: {
           id: 1,
@@ -143,7 +141,9 @@ describe('Exercise', () => {
             correct_answer_feedback_html: '',
             attempts_remaining: 0,
             attempt_number: 1,
-            incorrectAnswerId: 0
+            incorrectAnswerId: 0,
+            canAnswer: false,
+            needsSaved: false
           }
         },
       };
