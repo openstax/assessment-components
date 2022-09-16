@@ -107,3 +107,4 @@ export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
+
