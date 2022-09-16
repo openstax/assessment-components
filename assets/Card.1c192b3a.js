@@ -1,4 +1,4 @@
-import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as k,a as i}from"./index.5e439e57.js";const w=t.div`
+import{c as l,b as i,m as k}from"./theme.a2288646.js";import{s as n,j as p,c as $,a as t}from"./index.89f9a85b.js";const w=n.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,17 +10,17 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
   border-radius: 0.25rem;
   background-color: white;
 
-  ${e.desktop`
+  ${i.desktop`
     max-width: 1000px;
     min-width: 750px;
   `}
-`,S=t.div`
+`,S=n.div`
   padding: 2rem;
 
-  ${e.tablet`
+  ${i.tablet`
     padding: 0;
   `}
-`,m=t.div`
+`,m=n.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,7 +73,7 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
       }
   }
 
-  ${e.desktop`
+  ${i.desktop`
       button.ox-icon-angle-left, button.ox-icon-angle-right {
           display: none;
       }
@@ -87,7 +87,7 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
     2. Show the number of questions.
     3. Override box-shadow of icons when turned into a button.
     */
-    ${e.tablet`
+    ${i.tablet`
         font-size: 1.6rem;
         line-height: 2.5rem;
 
@@ -96,10 +96,10 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
             margin: 0;
         }
         button.ox-icon-angle-left {
-            margin-right: ${e.margins.tablet};
+            margin-right: ${i.margins.tablet};
         }
         button.ox-icon-angle-right {
-            margin-left: ${e.margins.tablet};
+            margin-left: ${i.margins.tablet};
         }
         .openstax-exercise-badges svg {
             display: none;
@@ -117,21 +117,21 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
         }
   `}
 
-  ${e.mobile`
+  ${i.mobile`
       font-size: 1.4rem;
       line-height: 2rem;
       padding: 10px 8px;
 
       button.ox-icon-angle-left {
-          margin-right: ${e.margins.mobile};
+          margin-right: ${i.margins.mobile};
       }
       button.ox-icon-angle-left {
-          margin-right: ${e.margins.mobile};
+          margin-right: ${i.margins.mobile};
       }
   `}
-`;m.displayName="StepCardHeader";const C=t.div`
+`;m.displayName="StepCardHeader";const C=n.div`
   .step-card-body {
-    ${$.stepCardPadding()}
+    ${k.stepCardPadding()}
   }
 
     & + div .step-card-body {
@@ -142,7 +142,7 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
         padding-bottom: 0;
     }
 
-    ${e.only.mobile`
+    ${i.only.mobile`
         && .question-feedback {
             margin-left: 0;
 
@@ -154,7 +154,7 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
         padding: 0;
     }
 
-    ${e.desktop`
+    ${i.desktop`
         .video-step &, .interactive-step & {
             .openstax-exercise-badges {
               margin-right: 3.8rem;
@@ -162,13 +162,13 @@ import{c as l,b as e,m as $}from"./theme.63109520.js";import{s as t,j as p,c as 
         }
     `}
 
-    ${e.mobile`
+    ${i.mobile`
         .openstax-exercise-badges svg {
-            margin-right: ${e.margins.mobile};
+            margin-right: ${i.margins.mobile};
         }
     `}
 
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`,c=({questionNumber:a,numberOfQuestions:n,stepType:s,isHomework:o,availablePoints:r,unpadded:d,className:g,children:h,questionId:x,multipartBadge:b,leftHeaderChildren:u,rightHeaderChildren:f,headerTitleChildren:v,...y})=>i(S,{...y,children:[b,i(w,{className:g,children:[a&&o&&s==="exercise"&&i(m,{children:[i("div",{children:[u,i("div",{className:"question-info",children:[v,i("span",{children:["Question ",a]}),i("span",{className:"num-questions",children:["\xA0/ ",n]}),p("span",{className:"separator",children:"|"}),i("span",{className:"question-id",children:["ID: ",x]})]})]}),i("div",{children:[i("div",{className:"points",children:[r," Points"]}),f]})]}),p(C,{unpadded:d,children:h})]})]});c.displayName="OSStepCard";const q=({step:a,questionNumber:n,numberOfQuestions:s,children:o,className:r,...d})=>p(c,{...d,unpadded:!0,questionNumber:n,numberOfQuestions:s,stepType:a.type,isHomework:a.task.type==="homework","data-task-step-id":a.id,availablePoints:a.available_points,className:k(`${a.type}-step`,r),questionId:a.uid,children:o});q.displayName="OSTaskStepCard";export{q as T};
+`,c=({questionNumber:e,numberOfQuestions:s,stepType:o,isHomework:r,availablePoints:a,unpadded:d,className:g,children:x,questionId:h,multipartBadge:u,leftHeaderChildren:b,rightHeaderChildren:f,headerTitleChildren:y,...v})=>t(S,{...v,children:[u,t(w,{className:g,children:[e&&r&&o==="exercise"&&t(m,{children:[t("div",{children:[b,t("div",{className:"question-info",children:[y,t("span",{children:["Question ",e]}),t("span",{className:"num-questions",children:["\xA0/ ",s]}),p("span",{className:"separator",children:"|"}),t("span",{className:"question-id",children:["ID: ",h]})]})]}),t("div",{children:[a&&t("div",{className:"points",children:[a," Points"]}),f]})]}),p(C,{unpadded:d,children:x})]})]});c.displayName="OSStepCard";const q=({step:e,questionNumber:s,numberOfQuestions:o,children:r,className:a,...d})=>p(c,{...d,unpadded:!0,questionNumber:s,numberOfQuestions:o,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,availablePoints:e.available_points,className:$(`${"type"in e?e.type:"exercise"}-step`,a),questionId:e.uid,children:r});q.displayName="OSTaskStepCard";export{q as T};

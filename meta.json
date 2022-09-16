@@ -130,8 +130,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 35,
-      "locEnd": 35,
+      "locStart": 25,
+      "locEnd": 25,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -140,8 +140,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 36,
-      "locEnd": 44,
+      "locStart": 26,
+      "locEnd": 34,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -150,8 +150,38 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 78,
-      "locEnd": 78,
+      "locStart": 131,
+      "locEnd": 131,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--deprecated-step-data": {
+      "name": "Deprecated step data",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 132,
+      "locEnd": 132,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--complete-with-feedback": {
+      "name": "Complete with feedback",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 133,
+      "locEnd": 155,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--incorrect-with-feedback-and-solution": {
+      "name": "Incorrect with feedback and solution",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 157,
+      "locEnd": 176,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -250,8 +280,8 @@
       "levels": [
         "Print"
       ],
-      "locStart": 53,
-      "locEnd": 75,
+      "locStart": 43,
+      "locEnd": 62,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
