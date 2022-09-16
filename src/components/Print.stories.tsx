@@ -1,4 +1,4 @@
-import { ExerciseData, Step } from '../../src/types';
+import { ExerciseData, StepWithData } from '../../src/types';
 import data from '../../exercises.json';
 import styled from 'styled-components';
 import { Exercise } from './Exercise';
@@ -21,34 +21,24 @@ const ExerciseHeading = styled.h2`
   font-weight: normal;
 `;
 
-const step: Step = {
-  type: 'exercise' as const,
-  task: {
-    is_deleted: false,
-    type: 'homework' as const
-  },
+const step: StepWithData = {
   uid: '1234@4',
   id: 1,
   available_points: '1.0',
-  preview: 'Preview content',
   is_completed: false,
   answer_id_order: ['1', '2'],
   answer_id: '1',
   free_response: '',
-  last_completed_at: new Date(),
   feedback_html: '',
   correct_answer_id: '',
   correct_answer_feedback_html: '',
-  external_url: '',
-  can_be_updated: false,
   is_feedback_available: true,
-  exercise_id: '1',
   attempts_remaining: 0,
   attempt_number: 1,
   incorrectAnswerId: 0
 };
 
-const exercises = data as ExerciseData[];
+const exercises = data as unknown as ExerciseData[];
 
 export const Default = () =>
   exercises.map(((exercise, i) => {
@@ -62,10 +52,7 @@ export const Default = () =>
           onAnswerChange={() => undefined}
           onAnswerSave={() => undefined}
           onNextStep={() => undefined}
-          canUpdateCurrentStep={true}
-          attempt_number={0}
           apiIsPending={false}
-          available_points={'1.0'}
           exercise={exercise}
           step={step}
           questionNumber={i}

@@ -51,7 +51,7 @@ describe('Question', () => {
 
   it('renders solutions', () => {
     props.question.collaborator_solutions = [
-      { content_html: 'Content HTML' }
+      { content_html: 'Content HTML', solution_type: 'detailed' }
     ];
     const tree = renderer.create(
       <Question {...props} displaySolution={true} />
