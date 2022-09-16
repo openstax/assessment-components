@@ -114,7 +114,7 @@ export type QuestionState = {
 export interface Solution {
   images?: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
   content_html: string;
-  solution_type: 'detailed';
+  solution_type: string;
 }
 
 export type Task = {

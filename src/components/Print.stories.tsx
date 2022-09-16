@@ -44,51 +44,52 @@ const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
     {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || '')}));
 
+const questionStateFields = {
+  available_points: '1.0',
+  is_completed: true,
+  answer_id: '1',
+  free_response: 'Free response',
+  feedback_html: 'Feedback',
+  correct_answer_id: '1',
+  correct_answer_feedback_html: '',
+  attempts_remaining: 0,
+  attempt_number: 1,
+  incorrectAnswerId: 0
+}
+
 export const Default = () => (
   <>
-  {data.title && <h2>Exercises for {data.title}</h2>}
-  {exercises.map(((exercise, i) => {
+    {data.title && <h2>Exercises for {data.title}</h2>}
+    {exercises.map(((exercise, i) => {
 
-  const step: StepBase = {
-    id: 1,
-    uid: exercise.uid,
-    available_points: '1.0',
-  };
+      const step: StepBase = {
+        id: 1,
+        uid: exercise.uid,
+        available_points: '1.0',
+      };
 
-  const questionStateFields = {
-    available_points: '1.0',
-    is_completed: true,
-    answer_id: '1',
-    free_response: 'Free response',
-    feedback_html: 'Feedback',
-    correct_answer_id: '1',
-    correct_answer_feedback_html: '',
-    attempts_remaining: 0,
-    attempt_number: 1,
-    incorrectAnswerId: 0
-  }
-    const questionStates = formatAnswerData(exercise.questions).reduce((acc, answer) => {
-      const {id, correct_answer_id} = answer;
-      return {...acc, [id]: {...questionStateFields, correct_answer_id}};
-    }, {});
+      const questionStates = formatAnswerData(exercise.questions).reduce((acc, answer) => {
+        const {id, correct_answer_id} = answer;
+        return {...acc, [id]: {...questionStateFields, correct_answer_id}};
+      }, {});
 
-    return (
-      <ExerciseWrapper>
-        <Exercise
-          canAnswer={true}
-          needsSaved={true}
-          hasMultipleAttempts={false}
-          onAnswerChange={() => undefined}
-          onAnswerSave={() => undefined}
-          onNextStep={() => undefined}
-          apiIsPending={false}
-          exercise={exercise}
-          step={step}
-          questionNumber={i + 1}
-          numberOfQuestions={exercises.length}
-          questionStates={questionStates} 
-          show_all_feedback={true} />
-      </ExerciseWrapper>
-    )
+      return (
+        <ExerciseWrapper>
+          <Exercise
+            canAnswer={true}
+            needsSaved={true}
+            hasMultipleAttempts={false}
+            onAnswerChange={() => undefined}
+            onAnswerSave={() => undefined}
+            onNextStep={() => undefined}
+            apiIsPending={false}
+            exercise={exercise}
+            step={step}
+            questionNumber={i + 1}
+            numberOfQuestions={exercises.length}
+            questionStates={questionStates} 
+            show_all_feedback={true} />
+        </ExerciseWrapper>
+      )
   }))}
   </>);
