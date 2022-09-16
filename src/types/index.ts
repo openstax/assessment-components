@@ -24,8 +24,11 @@ export interface ExerciseQuestionData {
   stimulus_html: string;
   stem_html: string;
   answers: ExerciseAnswerData[];
-  formats: ExerciseFormat[];
-  collaborator_solutions?: CollaboratorSolution[];
+  hints?: string[];
+  formats: string[];
+  combo_choices?: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+  collaborator_solutions?: Solution[];
+  community_solutions?: Solution[];
 }
 
 export interface ExerciseData {
@@ -34,7 +37,7 @@ export interface ExerciseData {
   group_uuid: string;
   number: ID;
   version: number;
-  uid: ExerciseUid;
+  uid: string;
   published_at: string;
   authors: ExercisePersonData[];
   copyright_holders: ExercisePersonData[];
@@ -58,7 +61,7 @@ export type Answer = {
 
 export type StepBase = {
   id: number; // could be id from tutor backend, could be index from assessments?
-  uid: ExerciseUid;
+  uid: string;
   available_points?: AvailablePoints;
 };
 
@@ -76,7 +79,7 @@ export type StepWithData = StepBase & {
   last_completed_at?: Date;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
   external_url?: '';
-  formats?: ExerciseFormat[];
+  formats?: string[];
   can_be_updated?: boolean;
   is_feedback_available?: boolean;
   exercise_id?: ID;
@@ -96,7 +99,7 @@ export type QuestionState = {
   correct_answer_id: ID;
   correct_answer_feedback_html: string;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  formats?: ExerciseFormat[];
+  formats?: string[];
   attempts_remaining: number;
   attempt_number: number;
   solution?: Solution;
@@ -104,8 +107,9 @@ export type QuestionState = {
 };
 
 export interface Solution {
+  images?: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
   content_html: string;
-  solution_type: 'detailed';
+  solution_type: string;
 }
 
 export type Task = {
@@ -113,16 +117,9 @@ export type Task = {
   type?: 'homework';
 };
 
-type CollaboratorSolution = {
-  content_html: string;
-};
-
 export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
 export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
-
-type ExerciseUid = `${number}@${number}`;
-type ExerciseFormat = 'multiple-choice' | 'free-response' | 'true-false';
 
 export type AvailablePoints = `${number}.${number}`;

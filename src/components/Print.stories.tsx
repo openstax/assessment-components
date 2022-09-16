@@ -38,7 +38,7 @@ const step: StepWithData = {
   incorrectAnswerId: 0
 };
 
-const exercises = data as ExerciseData[];
+const exercises = data as unknown as ExerciseData[];
 
 export const Default = () =>
   exercises.map(((exercise, i) => {
