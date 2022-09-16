@@ -41,6 +41,7 @@ const ExerciseWrapper = styled.div`
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
+// placeholder until exercise data contains correct answer IDs
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
     {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || '')}));
 
