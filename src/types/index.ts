@@ -31,6 +31,11 @@ export interface ExerciseQuestionData {
   community_solutions?: Solution[];
 }
 
+export interface ExerciseQueryData {
+  title?: string;
+  exercises: ExerciseData[];
+}
+
 export interface ExerciseData {
   tags: string[];
   uuid: string;

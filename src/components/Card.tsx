@@ -203,6 +203,7 @@ export interface StepCardProps extends SharedProps {
   questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
+  wrapsExercise: boolean;
 }
 
 const StepCard = ({
@@ -219,6 +220,7 @@ const StepCard = ({
   leftHeaderChildren,
   rightHeaderChildren,
   headerTitleChildren,
+  wrapsExercise,
   ...otherProps }: StepCardProps) => {
   return (
     <OuterStepCard {...otherProps}>
@@ -230,7 +232,7 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>Question {questionNumber}</span>
+                <span>{wrapsExercise ? 'Exercise' : 'Question'} {questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
@@ -255,6 +257,7 @@ export interface TaskStepCardProps extends SharedProps {
   step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;
+  wrapsExercise: boolean;
 }
 
 const TaskStepCard = ({

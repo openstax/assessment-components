@@ -32,6 +32,7 @@ export interface ExerciseQuestionProps {
   available_points: AvailablePoints;
   exercise_uid: string;
   free_response?: string;
+  show_all_feedback?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -89,7 +90,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response
+    displaySolution, available_points, free_response, show_all_feedback
   } = props;
 
   return (
@@ -110,6 +111,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         hideAnswers={false}
         displayFormats={false}
         displaySolution={displaySolution}
+        show_all_feedback={show_all_feedback}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>

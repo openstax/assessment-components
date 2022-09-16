@@ -15,7 +15,8 @@ exports[`StepCard matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Exercise
+             
             1
           </span>
           <span
@@ -70,7 +71,8 @@ exports[`TaskStepCard can optionally provide task 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Exercise
+             
             1
           </span>
           <span
@@ -124,7 +126,8 @@ exports[`TaskStepCard can optionally provide type 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Exercise
+             
             1
           </span>
           <span
@@ -178,7 +181,8 @@ exports[`TaskStepCard matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Question 
+            Exercise
+             
             1
           </span>
           <span

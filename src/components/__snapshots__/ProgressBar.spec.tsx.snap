@@ -28,6 +28,73 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi eMJLCs"
   >
     <button
+      className="sc-dkzDqf iRxYOq"
+      onClick={[Function]}
+    >
+      3
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf SlZPU"
+      onClick={[Function]}
+    >
+      4
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf SlZPU"
+      onClick={[Function]}
+    >
+      5
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf SlZPU"
+      onClick={[Function]}
+    >
+      6
+    </button>
+  </span>
+</div>
+`;
+
+exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
+<div
+  className="sc-bczRLJ dXvzZN"
+>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf hEOYzr"
+      onClick={[Function]}
+    >
+      1
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
+      className="sc-dkzDqf fhmysy"
+      onClick={[Function]}
+    >
+      2
+    </button>
+  </span>
+  <span
+    className="sc-gsnTZi eMJLCs"
+  >
+    <button
       className="sc-dkzDqf hEOYzr"
       onClick={[Function]}
     >
