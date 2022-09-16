@@ -130,8 +130,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 25,
-      "locEnd": 25,
+      "locStart": 26,
+      "locEnd": 26,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -140,8 +140,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 26,
-      "locEnd": 34,
+      "locStart": 27,
+      "locEnd": 35,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -280,8 +280,8 @@
       "levels": [
         "Print"
       ],
-      "locStart": 43,
-      "locEnd": 62,
+      "locStart": 60,
+      "locEnd": 96,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
