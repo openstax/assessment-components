@@ -48,9 +48,8 @@ const questionStateFields = {
   available_points: '1.0',
   is_completed: true,
   answer_id: '1',
-  free_response: 'Free response',
-  feedback_html: 'Feedback',
-  correct_answer_id: '1',
+  free_response: '',
+  feedback_html: '',
   correct_answer_feedback_html: '',
   attempts_remaining: 0,
   attempt_number: 1,
@@ -74,8 +73,9 @@ export const Default = () => (
       }, {});
 
       return (
-        <ExerciseWrapper>
+        <ExerciseWrapper key={exercise.uid}>
           <Exercise
+            key={exercise.uid}
             canAnswer={true}
             needsSaved={true}
             hasMultipleAttempts={false}
