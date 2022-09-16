@@ -98,7 +98,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({in
     <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>{index + 1}</StyledItem>
   </StyledItemWrapper>;
 
-const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
+export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
   {steps.map((step, index) => <ProgressBarItem
     key={index}
     index={index}
@@ -108,4 +108,4 @@ const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activ
   />)}
 </ProgressBarWrapper>;
 
-export default ProgressBar;
+ProgressBar.displayName = 'OSProgressBar';
