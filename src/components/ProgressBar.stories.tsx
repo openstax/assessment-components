@@ -1,4 +1,4 @@
-import ProgressBar, { ProgressBarItemVariant, ProgressBarProps } from './ProgressBar';
+import { ProgressBar, ProgressBarItemVariant, ProgressBarProps } from './ProgressBar';
 
 const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', 'isIncorrect', null, null, null, null];
 
