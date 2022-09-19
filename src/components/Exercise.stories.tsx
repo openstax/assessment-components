@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
+import { ID } from '../types';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -103,8 +105,6 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
-  canAnswer: false,
-  needsSaved: false,
   apiIsPending: false,
   step: {
     id: 1,
@@ -122,13 +122,26 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
       correct_answer_id: '',
       correct_answer_feedback_html: '',
       attempts_remaining: 0,
-      attempt_number: 1,
-      incorrectAnswerId: 0
+      attempt_number: 0,
+      incorrectAnswerId: 0,
+      canAnswer: true,
+      needsSaved: true
     }
   },
 };
 
-export const Default = () => <Exercise {...exerciseWithQuestionStatesProps} />;
+export const Default = () => {
+  const [selectedAnswerId, setSelectedAnswerId] = useState<ID>(0);
+  const [apiIsPending, setApiIsPending] = useState(false)
+  exerciseWithQuestionStatesProps.questionStates['1'].answer_id = selectedAnswerId;
+  exerciseWithQuestionStatesProps.apiIsPending = apiIsPending;
+  return (
+    <Exercise
+      {...exerciseWithQuestionStatesProps}
+      onAnswerChange={(a) => setSelectedAnswerId(a.id)}
+      onAnswerSave={() => setApiIsPending(true)}
+    />)
+};
 export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps} />;
 export const CompleteWithFeedback = () => {
   const props: ExerciseWithQuestionStatesProps = {
@@ -146,7 +159,9 @@ export const CompleteWithFeedback = () => {
         correct_answer_feedback_html: 'Feedback for the correct answer',
         attempts_remaining: 0,
         attempt_number: 1,
-        incorrectAnswerId: 0
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: false
       }
     }
   };
@@ -169,7 +184,9 @@ export const IncorrectWithFeedbackAndSolution = () => {
       attempts_remaining: 0,
       attempt_number: 1,
       incorrectAnswerId: '2',
-      solution: { content_html: 'A detailed solution', solution_type: 'detailed' }
+      solution: { content_html: 'A detailed solution', solution_type: 'detailed' },
+      canAnswer: true,
+      needsSaved: false
     }
   };
   return <Exercise {...props} />;

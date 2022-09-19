@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
-import { ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
+import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
@@ -28,11 +28,9 @@ interface ExerciseBaseProps {
   exercise: ExerciseData;
   numberOfQuestions: number;
   questionNumber: number;
-  canAnswer: boolean;
-  needsSaved: boolean;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
-  onAnswerChange: () => void;
+  onAnswerChange: (answer: Answer) => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
   apiIsPending: boolean;
@@ -41,6 +39,8 @@ interface ExerciseBaseProps {
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
   step: StepWithData;
+  canAnswer: boolean;
+  needsSaved: boolean;
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
@@ -48,7 +48,7 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 }
 
 export const Exercise = ({
-  numberOfQuestions, questionNumber, step, exercise, canAnswer, needsSaved, show_all_feedback, ...props
+  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
   <StyledTaskStepCard
     step={step}
@@ -68,10 +68,8 @@ export const Exercise = ({
           key={q.id}
           question={q}
           questionNumber={questionNumber}
-          choicesEnabled={canAnswer}
-          canAnswer={canAnswer}
-          needsSaved={needsSaved}
-          canUpdateCurrentStep={canAnswer}
+          choicesEnabled={state.canAnswer}
+          canUpdateCurrentStep={state.canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}

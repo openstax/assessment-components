@@ -794,6 +794,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                 className="answer-letter"
                 data-test-id="answer-choice-a"
                 disabled={true}
+                onClick={[Function]}
               >
                 a
               </button>
@@ -832,6 +833,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                 className="answer-letter"
                 data-test-id="answer-choice-b"
                 disabled={true}
+                onClick={[Function]}
               >
                 b
               </button>

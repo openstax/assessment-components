@@ -135,6 +135,7 @@ exports[`Answer renders a correct answer 1`] = `
           className="answer-letter"
           data-test-id="answer-choice-b"
           disabled={true}
+          onClick={[Function]}
         >
           b
         </button>
@@ -182,6 +183,7 @@ exports[`Answer renders an incorrect answer 1`] = `
           className="answer-letter"
           data-test-id="answer-choice-b"
           disabled={true}
+          onClick={[Function]}
         >
           b
         </button>
@@ -303,6 +305,7 @@ exports[`Answer renders teacher preview 1`] = `
           className="answer-letter"
           data-test-id="answer-choice-b"
           disabled={false}
+          onClick={[Function]}
         >
           b
         </button>

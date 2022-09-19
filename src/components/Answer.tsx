@@ -11,7 +11,7 @@ export interface AnswerProps {
   qid: ID;
   type: 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
   hasCorrectAnswer?: boolean;
-  onChangeAnswer: () => void;
+  onChangeAnswer?: (answer: AnswerType) => void;
   disabled: boolean;
   chosenAnswer: ChosenAnswer;
   correctAnswerId?: ID | null;
@@ -68,7 +68,9 @@ export const Answer = (props: AnswerProps) => {
   }
   ariaLabel += ':';
 
-  let onChangeAnswer, radioBox;
+  let onChangeAnswer: AnswerProps['onChangeAnswer'], radioBox;
+
+  const onChange = () => onChangeAnswer && onChangeAnswer({ ...answer, question_id: qid });
 
   if (!hasCorrectAnswer
     && (type !== 'teacher-review')
@@ -85,7 +87,7 @@ export const Answer = (props: AnswerProps) => {
         checked={isChecked}
         id={`${qid}-option-${iter}`}
         name={`${qid}-options`}
-        onChange={onChangeAnswer}
+        onChange={onChange}
         disabled={disabled}
       />
     );
@@ -140,7 +142,7 @@ export const Answer = (props: AnswerProps) => {
           className="answer-label">
           <span className="answer-letter-wrapper">
             <button
-              onClick={onChangeAnswer}
+              onClick={onChange}
               aria-label={ariaLabel}
               className="answer-letter"
               disabled={disabled || isIncorrect}
