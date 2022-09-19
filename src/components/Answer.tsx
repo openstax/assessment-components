@@ -11,7 +11,7 @@ export interface AnswerProps {
   qid: ID;
   type: 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
   hasCorrectAnswer?: boolean;
-  onChangeAnswer?: (answer: AnswerType) => void;
+  onChangeAnswer?: (answer: AnswerType & { question_id: ID }) => void;
   disabled: boolean;
   chosenAnswer: ChosenAnswer;
   correctAnswerId?: ID | null;

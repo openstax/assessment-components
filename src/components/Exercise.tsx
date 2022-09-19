@@ -30,7 +30,7 @@ interface ExerciseBaseProps {
   questionNumber: number;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
-  onAnswerChange: (answer: Answer) => void;
+  onAnswerChange: (answer: Answer & { question_id: ID }) => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
   apiIsPending: boolean;
