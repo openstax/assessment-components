@@ -70,7 +70,7 @@ export const Answer = (props: AnswerProps) => {
 
   let onChangeAnswer: AnswerProps['onChangeAnswer'], radioBox;
 
-  const onChange = () => onChangeAnswer && onChangeAnswer({ ...answer, question_id: qid });
+  const onChange = () => onChangeAnswer && onChangeAnswer(answer);
 
   if (!hasCorrectAnswer
     && (type !== 'teacher-review')
