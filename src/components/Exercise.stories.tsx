@@ -106,7 +106,6 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
-  canUpdateCurrentStep: true,
   step: {
     id: 1,
     uid: '1234@5',
@@ -141,13 +140,14 @@ export const Default = () => {
     <Exercise
       {...exerciseWithQuestionStatesProps}
       onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
-        console.log('question_id', a.question_id, 'answer_id', a.id);
         setSelectedAnswerId(a.id)
       }}
       onAnswerSave={() => setApiIsPending(true)}
     />)
 };
+
 export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps} />;
+
 export const CompleteWithFeedback = () => {
   const props: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps,
@@ -165,7 +165,7 @@ export const CompleteWithFeedback = () => {
         attempts_remaining: 0,
         attempt_number: 1,
         incorrectAnswerId: 0,
-        canAnswer: true,
+        canAnswer: false,
         needsSaved: false,
         apiIsPending: false
       }

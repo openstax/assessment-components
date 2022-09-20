@@ -101,7 +101,7 @@ describe('Exercise', () => {
           solutions_are_public: false,
           versions: [1],
           questions: [{
-            id: '1',
+            id: 1,
             collaborator_solutions: [],
             formats: ['true-false'],
             stimulus_html: '',
@@ -124,7 +124,6 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
-        canUpdateCurrentStep: false,
         step: {
           id: 1,
           uid: '1234@5',
@@ -154,8 +153,9 @@ describe('Exercise', () => {
     it('matches snapshot', () => {
       const tree = renderer.create(
         <Exercise {...props} />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      );
+      expect(tree.toJSON()).toMatchSnapshot();
+      expect(tree.root.findByProps({ "data-test-id": "continue-btn" }).props['children']).toContain('Next');
     });
 
     it('shows a detailed solution', () => {
@@ -164,6 +164,47 @@ describe('Exercise', () => {
         <Exercise {...props} />
       ).toJSON();
       expect(tree).toMatchSnapshot();
+    });
+
+    it('shows a continue button when completed if there is another question', () => {
+      props.exercise.questions.push({
+        id: 2,
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: '',
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: 'True',
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: 'False',
+        }]
+      });
+      props.questionStates['1'] = { ...props.questionStates['1'], is_completed: true, canAnswer: false };
+      props.questionStates['2'] = {
+        available_points: '1.0',
+        is_completed: false,
+        answer_id_order: ['1', '2'],
+        answer_id: 1,
+        free_response: '',
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false
+      }
+      const tree = renderer.create(
+        <Exercise {...props} />
+      )
+      expect(tree.root.findAllByProps({ "data-test-id": "continue-btn" })[0].props['children']).toContain('Continue');
     });
   });
 });
