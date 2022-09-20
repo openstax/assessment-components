@@ -9,7 +9,6 @@ interface ExerciseBaseProps {
     onAnswerSave: () => void;
     onNextStep: () => void;
     show_all_feedback?: boolean;
-    canUpdateCurrentStep: boolean;
 }
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
     step: StepWithData;
@@ -17,6 +16,7 @@ export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
     needsSaved: boolean;
     apiIsPending: boolean;
     onAnswerChange: (answer: Answer) => void;
+    canUpdateCurrentStep: boolean;
 }
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
     questionStates: {
