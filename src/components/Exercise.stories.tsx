@@ -141,7 +141,6 @@ export const Default = () => {
     <Exercise
       {...exerciseWithQuestionStatesProps}
       onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
-        console.log('question_id', a.question_id, 'answer_id', a.id);
         setSelectedAnswerId(a.id)
       }}
       onAnswerSave={() => setApiIsPending(true)}
