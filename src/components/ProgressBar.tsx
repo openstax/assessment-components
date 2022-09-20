@@ -5,10 +5,7 @@ const ProgressBarWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 3.2rem;
-  ${breakpoints.mobile`
-    margin: 1rem;
-  `}
+  padding: 2rem;
 `;
 
 const StyledItemWrapper = styled.span`
