@@ -30,21 +30,23 @@ interface ExerciseBaseProps {
   questionNumber: number;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
-  onAnswerChange: (answer: Answer) => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
   apiIsPending: boolean;
   show_all_feedback?: boolean;
+  canUpdateCurrentStep: boolean;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
   step: StepWithData;
   canAnswer: boolean;
   needsSaved: boolean;
+  onAnswerChange: (answer: Answer) => void;
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   questionStates: { [key: ID]: QuestionState };
+  onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
 export const Exercise = ({
@@ -69,7 +71,6 @@ export const Exercise = ({
           question={q}
           questionNumber={questionNumber}
           choicesEnabled={state.canAnswer}
-          canUpdateCurrentStep={state.canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}

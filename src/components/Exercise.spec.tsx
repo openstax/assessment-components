@@ -50,6 +50,7 @@ describe('Exercise', () => {
         canAnswer: false,
         needsSaved: false,
         apiIsPending: false,
+        canUpdateCurrentStep: false,
         step: {
           uid: '1234@4',
           id: 1,
@@ -124,6 +125,7 @@ describe('Exercise', () => {
         onAnswerSave: () => null,
         onNextStep: () => null,
         apiIsPending: false,
+        canUpdateCurrentStep: false,
         step: {
           id: 1,
           uid: '1234@5',
@@ -134,7 +136,7 @@ describe('Exercise', () => {
             available_points: '1.0',
             is_completed: false,
             answer_id_order: ['1', '2'],
-            answer_id: '1',
+            answer_id: 1,
             free_response: '',
             feedback_html: '',
             correct_answer_id: '',
