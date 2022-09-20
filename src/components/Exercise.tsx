@@ -33,7 +33,6 @@ interface ExerciseBaseProps {
   onAnswerSave: () => void;
   onNextStep: () => void;
   show_all_feedback?: boolean;
-  canUpdateCurrentStep: boolean;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -42,6 +41,7 @@ export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
   needsSaved: boolean;
   apiIsPending: boolean;
   onAnswerChange: (answer: Answer) => void;
+  canUpdateCurrentStep: boolean;
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
@@ -60,8 +60,9 @@ export const Exercise = ({
   >
     <Preamble exercise={exercise} />
 
-    {exercise.questions.map((q) => {
-      const state = { ...('feedback_html' in step ? step : props['questionStates'][q.id]) };
+    {exercise.questions.map((q, i) => {
+      const legacyStepRender = 'feedback_html' in step;
+      const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
           {...props}
@@ -74,6 +75,12 @@ export const Exercise = ({
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}
+          canUpdateCurrentStep={
+            // misleading prop name, we want to show a continue button for completed questions
+            // that aren't the last question, which requires this prop to be true
+            'canUpdateCurrentStep' in props ?
+              props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+          }
         />
       )
     }
