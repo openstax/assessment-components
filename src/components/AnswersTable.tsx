@@ -63,10 +63,14 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const answersHtml = answers.map((answer, i) => {
     const additionalProps: { answer: AnswerType, iter: number, key: string }
-      = { answer: {...answer, question_id: parseInt(question.id.toString(), 10) },
-          iter: i,
-          key: `${questionAnswerProps.qid}-option-${i}`
-        };
+      = {
+        answer: {
+          ...answer,
+          question_id: typeof question.id === 'string' ? parseInt(question.id, 10) : question.id
+         },
+      iter: i,
+      key: `${questionAnswerProps.qid}-option-${i}`
+    };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
 
     if (answer.id === incorrectAnswerId && feedback_html) {
