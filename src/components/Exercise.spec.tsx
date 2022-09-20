@@ -189,7 +189,6 @@ describe('Exercise', () => {
         available_points: '1.0',
         is_completed: false,
         answer_id_order: ['1', '2'],
-        answer_id: 1,
         free_response: '',
         feedback_html: '',
         correct_answer_id: '',
@@ -197,7 +196,7 @@ describe('Exercise', () => {
         attempts_remaining: 0,
         attempt_number: 1,
         incorrectAnswerId: 0,
-        canAnswer: false,
+        canAnswer: true,
         needsSaved: false,
         apiIsPending: false
       }
