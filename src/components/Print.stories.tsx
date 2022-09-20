@@ -84,11 +84,12 @@ export const Default = () => (
             onAnswerSave={() => undefined}
             onNextStep={() => undefined}
             apiIsPending={false}
+            canUpdateCurrentStep={false}
             exercise={exercise}
             step={step}
             questionNumber={i + 1}
             numberOfQuestions={exercises.length}
-            questionStates={questionStates} 
+            questionStates={questionStates}
             show_all_feedback={true} />
         </ExerciseWrapper>
       )

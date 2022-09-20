@@ -7,6 +7,7 @@ describe('isAnswerCorrect', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',
@@ -45,6 +46,7 @@ describe('isAnswerIncorrect', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',
@@ -64,6 +66,7 @@ describe('isAnswerChecked', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',

@@ -9,7 +9,7 @@ describe('AnswersTable', () => {
   beforeEach(() => {
     props = {
       question: {
-        id: '1',
+        id: 1,
         stem_html: '',
         collaborator_solutions: [],
         formats: [],
@@ -118,5 +118,13 @@ describe('AnswersTable', () => {
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('casts question id to a number', () => {
+    props.question.id = '1';
+    const tree = renderer.create(
+      <AnswersTable {...props} />
+    );
+    expect(tree.root.findAllByType(Answer)[0].props.answer.question_id).toEqual(1);
   });
 });
