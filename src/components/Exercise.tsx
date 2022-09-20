@@ -32,7 +32,6 @@ interface ExerciseBaseProps {
   hasMultipleAttempts: boolean;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  apiIsPending: boolean;
   show_all_feedback?: boolean;
   canUpdateCurrentStep: boolean;
 }
@@ -41,6 +40,7 @@ export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
   step: StepWithData;
   canAnswer: boolean;
   needsSaved: boolean;
+  apiIsPending: boolean;
   onAnswerChange: (answer: Answer) => void;
 }
 

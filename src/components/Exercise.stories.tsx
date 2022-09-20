@@ -255,7 +255,6 @@ export const TwoStepHalfComplete = () => {
     onAnswerChange: () => null,
     onAnswerSave: () => null,
     onNextStep: () => null,
-    apiIsPending: false,
     canUpdateCurrentStep: true,
     step: {
       id: 1,
@@ -276,7 +275,8 @@ export const TwoStepHalfComplete = () => {
         attempt_number: 0,
         incorrectAnswerId: 0,
         canAnswer: false,
-        needsSaved: false
+        needsSaved: false,
+        apiIsPending: true
       },
       '2': {
         available_points: '1.0',
@@ -291,7 +291,8 @@ export const TwoStepHalfComplete = () => {
         attempt_number: 0,
         incorrectAnswerId: 0,
         canAnswer: true,
-        needsSaved: true
+        needsSaved: true,
+        apiIsPending: false
       }
     }
   };

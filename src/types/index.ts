@@ -112,6 +112,7 @@ export type QuestionState = {
   incorrectAnswerId: ID;
   canAnswer: boolean;
   needsSaved: boolean;
+  apiIsPending: boolean;
 };
 
 export interface Solution {

@@ -124,7 +124,6 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
-        apiIsPending: false,
         canUpdateCurrentStep: false,
         step: {
           id: 1,
@@ -145,7 +144,8 @@ describe('Exercise', () => {
             attempt_number: 1,
             incorrectAnswerId: 0,
             canAnswer: false,
-            needsSaved: false
+            needsSaved: false,
+            apiIsPending: false
           }
         },
       };
