@@ -106,7 +106,6 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
-  apiIsPending: false,
   canUpdateCurrentStep: true,
   step: {
     id: 1,
@@ -127,7 +126,8 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
       attempt_number: 0,
       incorrectAnswerId: 0,
       canAnswer: true,
-      needsSaved: true
+      needsSaved: true,
+      apiIsPending: false
     }
   },
 };
@@ -136,7 +136,7 @@ export const Default = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)
   exerciseWithQuestionStatesProps.questionStates['1'].answer_id = selectedAnswerId;
-  exerciseWithQuestionStatesProps.apiIsPending = apiIsPending;
+  exerciseWithQuestionStatesProps.questionStates['1'].apiIsPending = apiIsPending;
   return (
     <Exercise
       {...exerciseWithQuestionStatesProps}
@@ -166,7 +166,8 @@ export const CompleteWithFeedback = () => {
         attempt_number: 1,
         incorrectAnswerId: 0,
         canAnswer: true,
-        needsSaved: false
+        needsSaved: false,
+        apiIsPending: false
       }
     }
   };
@@ -191,7 +192,8 @@ export const IncorrectWithFeedbackAndSolution = () => {
       incorrectAnswerId: '2',
       solution: { content_html: 'A detailed solution', solution_type: 'detailed' },
       canAnswer: true,
-      needsSaved: false
+      needsSaved: false,
+      apiIsPending: false
     }
   };
   return <Exercise {...props} />;
@@ -276,7 +278,7 @@ export const TwoStepHalfComplete = () => {
         incorrectAnswerId: 0,
         canAnswer: false,
         needsSaved: false,
-        apiIsPending: true
+        apiIsPending: false
       },
       '2': {
         available_points: '1.0',
