@@ -185,13 +185,13 @@
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
-    "exercise--two-step-half-complete": {
-      "name": "Two step half complete",
+    "exercise--multi-part-half-complete": {
+      "name": "Multi part half complete",
       "levels": [
         "Exercise"
       ],
       "locStart": 202,
-      "locEnd": 303,
+      "locEnd": 302,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
