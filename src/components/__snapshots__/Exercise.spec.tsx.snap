@@ -47,7 +47,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM grRsJk"
+      className="sc-hKMtZM ccxEBR"
     >
       <div
         className="step-card-body exercise-context"
@@ -175,7 +175,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kUyHoE step-card-footer"
+          className="sc-gKXOVf frqrWQ step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -257,7 +257,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM grRsJk"
+      className="sc-hKMtZM ccxEBR"
     >
       <div
         className="step-card-body exercise-context"
@@ -385,7 +385,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kUyHoE step-card-footer"
+          className="sc-gKXOVf frqrWQ step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -467,7 +467,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM grRsJk"
+      className="sc-hKMtZM ccxEBR"
     >
       <div
         className="step-card-body exercise-context"
@@ -595,7 +595,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kUyHoE step-card-footer"
+          className="sc-gKXOVf frqrWQ step-card-footer"
         >
           <div
             className="step-card-footer-inner"
