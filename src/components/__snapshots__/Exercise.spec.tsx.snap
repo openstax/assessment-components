@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+          className="sc-jSMfEi dlMRRl openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -175,29 +175,33 @@ exports[`Exercise using step data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kGsBya step-card-footer"
+          className="sc-gKXOVf kUyHoE step-card-footer"
         >
           <div
-            className="points"
+            className="step-card-footer-inner"
           >
-            <strong>
-              Points: 
-              1.0
-            </strong>
-            <span
-              className="attempts-left"
-            />
-          </div>
-          <div
-            className="controls"
-          >
-            <button
-              className="sc-eCYdqJ dqiaKp"
-              data-test-id="continue-btn"
-              onClick={[Function]}
+            <div
+              className="points"
             >
-              Next
-            </button>
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-eCYdqJ dqiaKp"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -275,7 +279,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+          className="sc-jSMfEi dlMRRl openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -381,29 +385,33 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kGsBya step-card-footer"
+          className="sc-gKXOVf kUyHoE step-card-footer"
         >
           <div
-            className="points"
+            className="step-card-footer-inner"
           >
-            <strong>
-              Points: 
-              1.0
-            </strong>
-            <span
-              className="attempts-left"
-            />
-          </div>
-          <div
-            className="controls"
-          >
-            <button
-              className="sc-eCYdqJ dqiaKp"
-              data-test-id="continue-btn"
-              onClick={[Function]}
+            <div
+              className="points"
             >
-              Next
-            </button>
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-eCYdqJ dqiaKp"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -481,7 +489,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi kWGKid openstax-question step-card-body"
+          className="sc-jSMfEi dlMRRl openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -587,42 +595,46 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf kGsBya step-card-footer"
+          className="sc-gKXOVf kUyHoE step-card-footer"
         >
           <div
-            className="points"
+            className="step-card-footer-inner"
           >
-            <strong>
-              Points: 
-              1.0
-            </strong>
-            <span
-              className="attempts-left"
-            />
-            <div>
-              <strong>
-                Detailed solution:
-              </strong>
-               
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Detailed solution",
-                  }
-                }
-              />
-            </div>
-          </div>
-          <div
-            className="controls"
-          >
-            <button
-              className="sc-eCYdqJ dqiaKp"
-              data-test-id="continue-btn"
-              onClick={[Function]}
+            <div
+              className="points"
             >
-              Next
-            </button>
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+              <div>
+                <strong>
+                  Detailed solution:
+                </strong>
+                 
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "Detailed solution",
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-eCYdqJ dqiaKp"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
