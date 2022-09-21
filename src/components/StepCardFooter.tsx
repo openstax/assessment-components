@@ -20,7 +20,7 @@ export const StepCardFooter = styled.div`
 
     .step-card-footer-inner {
         border-top: 1px solid ${colors.palette.pale};
-        padding-top: 3.2rem;
+        padding-top: 32px;
     }
 
     .points {
