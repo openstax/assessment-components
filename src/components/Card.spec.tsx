@@ -24,7 +24,6 @@ describe('TaskStepCard', () => {
       },
       questionNumber: 1,
       numberOfQuestions: 1,
-      wrapsExercise: true,
     }
   });
 
@@ -61,7 +60,6 @@ describe('StepCard', () => {
       isHomework: true,
       questionNumber: 1,
       numberOfQuestions: 1,
-      wrapsExercise: true,
     }
   });
 
