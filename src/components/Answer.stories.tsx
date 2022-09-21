@@ -4,6 +4,7 @@ const props: AnswerProps = {
   iter: 0,
   answer: {
     id: '1',
+    question_id: 1,
     correctness: null,
     isCorrect: true,
     content_html: 'Anwer',

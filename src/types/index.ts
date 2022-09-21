@@ -57,7 +57,7 @@ export interface ExerciseData {
 
 export type Answer = {
   id: ID;
-  question_id?: ID;
+  question_id: number;
   correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;
@@ -98,7 +98,7 @@ export type StepWithData = StepBase & {
 export type QuestionState = {
   available_points: AvailablePoints;
   is_completed: boolean;
-  answer_id?: ID;
+  answer_id?: number;
   answer_id_order: ID[];
   free_response: string;
   feedback_html: string; // Really only incorrect answer
@@ -112,6 +112,7 @@ export type QuestionState = {
   incorrectAnswerId: ID;
   canAnswer: boolean;
   needsSaved: boolean;
+  apiIsPending: boolean;
 };
 
 export interface Solution {

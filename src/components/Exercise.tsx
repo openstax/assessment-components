@@ -30,10 +30,8 @@ interface ExerciseBaseProps {
   questionNumber: number;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
-  onAnswerChange: (answer: Answer) => void;
   onAnswerSave: () => void;
   onNextStep: () => void;
-  apiIsPending: boolean;
   show_all_feedback?: boolean;
 }
 
@@ -41,10 +39,14 @@ export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
   step: StepWithData;
   canAnswer: boolean;
   needsSaved: boolean;
+  apiIsPending: boolean;
+  onAnswerChange: (answer: Answer) => void;
+  canUpdateCurrentStep: boolean;
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   questionStates: { [key: ID]: QuestionState };
+  onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
 export const Exercise = ({
@@ -58,8 +60,9 @@ export const Exercise = ({
   >
     <Preamble exercise={exercise} />
 
-    {exercise.questions.map((q) => {
-      const state = { ...('feedback_html' in step ? step : props['questionStates'][q.id]) };
+    {exercise.questions.map((q, i) => {
+      const legacyStepRender = 'feedback_html' in step;
+      const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
           {...props}
@@ -69,10 +72,15 @@ export const Exercise = ({
           question={q}
           questionNumber={questionNumber}
           choicesEnabled={state.canAnswer}
-          canUpdateCurrentStep={state.canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}
+          canUpdateCurrentStep={
+            // misleading prop name, we want to show a continue button for completed questions
+            // that aren't the last question, which requires this prop to be true
+            'canUpdateCurrentStep' in props ?
+              props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+          }
         />
       )
     }
