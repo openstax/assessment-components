@@ -16,9 +16,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Question
-             
-            1
+            Question 1
           </span>
           <span
             className="num-questions"
@@ -224,9 +222,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           className="question-info"
         >
           <span>
-            Exercise
-             
-            1
+            Question 1
           </span>
           <span
             className="num-questions"
@@ -432,9 +428,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           className="question-info"
         >
           <span>
-            Exercise
-             
-            1
+            Question 1
           </span>
           <span
             className="num-questions"

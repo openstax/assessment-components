@@ -1,4 +1,4 @@
-import { Children, ReactNode } from "react";
+import { ReactNode } from "react";
 import { breakpoints, colors, mixins } from "../theme";
 import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
