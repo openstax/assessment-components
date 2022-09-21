@@ -96,7 +96,7 @@ export const Default = () => (
             questionNumber={firstQuestionNumByExercise[exercise.uuid]}
             numberOfQuestions={exercises.length}
             questionStates={questionStates}
-            show_all_feedback={false} />
+            show_all_feedback={true} />
         </ExerciseWrapper>
       )
   }))}
