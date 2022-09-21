@@ -6,6 +6,9 @@ const ProgressBarWrapper = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 2rem;
+  ${breakpoints.mobile`
+    padding: 0;
+  `}
 `;
 
 const StyledItemWrapper = styled.span`
