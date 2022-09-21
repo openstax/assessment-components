@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
     ${mixins.stepCardPadding()}
-    border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -17,6 +16,11 @@ export const StepCardFooter = styled.div`
     button {
         width: 160px;
         height: 48px;
+    }
+
+    .step-card-footer-inner {
+        border-top: 1px solid ${colors.palette.pale};
+        padding-top: 3.2rem;
     }
 
     .points {
@@ -38,7 +42,7 @@ export const StepCardFooter = styled.div`
     }
 
     ${breakpoints.desktop`
-        padding: 32px 140px;
+        padding: 0 140px 32px 140px;
         flex-wrap: nowrap;
 
         .points {

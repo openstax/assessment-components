@@ -12,6 +12,7 @@ const StyledQuestion = styled.div`
 }
 
 &.openstax-question {
+  border-top: 1px solid ${colors.palette.pale};
   font-size: 2rem;
 
   .detailed-solution {

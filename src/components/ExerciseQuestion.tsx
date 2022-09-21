@@ -116,25 +116,27 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         <FreeResponseReview free_response={free_response} />
       </Question>
       <StepCardFooter className="step-card-footer">
-        <div className="points">
-          <strong>Points: {available_points}</strong>
-          <span className="attempts-left">
-            {hasMultipleAttempts &&
-              attempts_remaining > 0 &&
-              <AttemptsRemaining count={attempts_remaining} />}
-          </span>
-          <PublishedComments published_comments={published_comments} />
-          {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
-        </div>
-        <div className="controls">
-          {canAnswer && needsSaved ?
-            <SaveButton
-              disabled={apiIsPending || !answer_id}
-              isWaiting={apiIsPending}
-              attempt_number={attempt_number}
-              onClick={onAnswerSave}
-            /> :
-            <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+        <div className="step-card-footer-inner">
+          <div className="points">
+            <strong>Points: {available_points}</strong>
+            <span className="attempts-left">
+              {hasMultipleAttempts &&
+                attempts_remaining > 0 &&
+                <AttemptsRemaining count={attempts_remaining} />}
+            </span>
+            <PublishedComments published_comments={published_comments} />
+            {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+          </div>
+          <div className="controls">
+            {canAnswer && needsSaved ?
+              <SaveButton
+                disabled={apiIsPending || !answer_id}
+                isWaiting={apiIsPending}
+                attempt_number={attempt_number}
+                onClick={onAnswerSave}
+              /> :
+              <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+          </div>
         </div>
       </StepCardFooter>
     </div>
