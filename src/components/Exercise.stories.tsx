@@ -199,7 +199,7 @@ export const IncorrectWithFeedbackAndSolution = () => {
   return <Exercise {...props} />;
 };
 
-export const TwoStepHalfComplete = () => {
+export const MultiPartHalfComplete = () => {
   const props: ExerciseWithQuestionStatesProps = {
     exercise: {
       uid: '1@1',
@@ -257,7 +257,6 @@ export const TwoStepHalfComplete = () => {
     onAnswerChange: () => null,
     onAnswerSave: () => null,
     onNextStep: () => null,
-    canUpdateCurrentStep: true,
     step: {
       id: 1,
       uid: '1234@5',
