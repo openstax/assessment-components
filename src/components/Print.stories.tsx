@@ -89,7 +89,7 @@ export const Default = () => (
             questionNumber={i + 1}
             numberOfQuestions={exercises.length}
             questionStates={questionStates} 
-            show_all_feedback={true} /> {/* need to handle differently for assessment UI? */}
+            show_all_feedback={true} />
         </ExerciseWrapper>
       )
   }))}
