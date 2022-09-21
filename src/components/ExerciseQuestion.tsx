@@ -8,7 +8,7 @@ export interface ExerciseQuestionProps {
   task?: Task;
   question: ExerciseQuestionData;
   answer_id_order?: ID[];
-  questionNumber: string;
+  questionNumber: number;
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;

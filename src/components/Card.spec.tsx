@@ -22,7 +22,7 @@ describe('TaskStepCard', () => {
         attempt_number: 1,
         incorrectAnswerId: 0
       },
-      questionNumber: '1',
+      questionNumber: 1,
       numberOfQuestions: 1,
       wrapsExercise: true,
     }
@@ -59,7 +59,7 @@ describe('StepCard', () => {
       stepType: 'exercise' as const,
       availablePoints: '1.0',
       isHomework: true,
-      questionNumber: '1',
+      questionNumber: 1,
       numberOfQuestions: 1,
       wrapsExercise: true,
     }

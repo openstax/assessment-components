@@ -239,7 +239,7 @@ export interface QuestionProps {
   exercise_uid?: string;
   displayFormats: boolean,
   className: string;
-  questionNumber: string;
+  questionNumber: number;
   displaySolution: boolean;
   context?: string;
   correct_answer_feedback_html?: string;

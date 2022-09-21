@@ -40,7 +40,12 @@ const ExerciseWrapper = styled.div`
 `;
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
-let questionCounter = 0;
+
+const firstQuestionNumByExercise = exercises.reduce((acc, ex) => ({
+    ...acc,
+    [ex.uuid]: acc.questionCounter + 1,
+    questionCounter: acc.questionCounter + ex.questions.length
+  }), {questionCounter: 0});
 
 // placeholder until exercise data contains correct answer IDs
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
@@ -63,10 +68,6 @@ export const Default = () => (
     {data.title && <h2>Exercises for {data.title}</h2>}
     {exercises.map(((exercise) => {
 
-      const firstQuestionNumber = questionCounter + 1;
-      const numExerciseQuestions = exercise.questions.length;
-      questionCounter += numExerciseQuestions;
-
       const step: StepBase = {
         id: 1,
         uid: exercise.uid,
@@ -77,10 +78,6 @@ export const Default = () => (
         const {id, correct_answer_id} = answer;
         return {...acc, [id]: {...questionStateFields, correct_answer_id}};
       }, {});
-
-      const questionNumber = numExerciseQuestions > 1
-        ? `${firstQuestionNumber.toString()} - ${(firstQuestionNumber + numExerciseQuestions - 1).toString()}`
-        : firstQuestionNumber.toString();
 
       return (
         <ExerciseWrapper key={exercise.uid}>
@@ -96,7 +93,7 @@ export const Default = () => (
             canUpdateCurrentStep={false}
             exercise={exercise}
             step={step}
-            questionNumber={questionNumber}
+            questionNumber={firstQuestionNumByExercise[exercise.uuid]}
             numberOfQuestions={exercises.length}
             questionStates={questionStates}
             show_all_feedback={false} />

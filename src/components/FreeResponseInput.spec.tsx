@@ -27,7 +27,7 @@ describe('Free Response Input', () => {
       isSubmitDisabled: false,
       textHasChanged: false,
       submitBtnLabel: 'Next',
-      questionNumber: '1',
+      questionNumber: 1,
       question: {
         id: '1',
         stem_html: 'Is this a question?',

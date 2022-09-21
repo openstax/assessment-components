@@ -27,7 +27,7 @@ interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
-  questionNumber: string;
+  questionNumber: number;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: () => void;
@@ -51,17 +51,18 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 
 export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, ...props
-}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
-  <StyledTaskStepCard
+}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
+  const legacyStepRender = 'feedback_html' in step;
+
+  return (<StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
-    numberOfQuestions={numberOfQuestions}
-    wrapsExercise={!('feedback_html' in step)}
+    numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
+    wrapsExercise={!legacyStepRender}
   >
     <Preamble exercise={exercise} />
 
     {exercise.questions.map((q, i) => {
-      const legacyStepRender = 'feedback_html' in step;
       const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
@@ -86,4 +87,4 @@ export const Exercise = ({
     }
     )}
   </StyledTaskStepCard>
-);
+)};

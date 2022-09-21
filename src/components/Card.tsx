@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { Children, ReactNode } from "react";
 import { breakpoints, colors, mixins } from "../theme";
 import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
@@ -187,7 +187,7 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 `;
 
 interface SharedProps {
-  questionNumber: string;
+  questionNumber: number;
   numberOfQuestions: number;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
@@ -222,6 +222,11 @@ const StepCard = ({
   headerTitleChildren,
   wrapsExercise,
   ...otherProps }: StepCardProps) => {
+
+  const formattedQuestionNumber = numberOfQuestions > 1
+    ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
+    : `Question ${questionNumber}`;
+
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
@@ -232,7 +237,7 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>Question {wrapsExercise ? questionNumber : questionNumber}</span>
+                <span>{formattedQuestionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
@@ -255,7 +260,7 @@ export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   step: StepBase | StepWithData;
-  questionNumber: string;
+  questionNumber: number;
   numberOfQuestions: number;
   wrapsExercise: boolean;
 }
