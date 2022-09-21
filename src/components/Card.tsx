@@ -187,7 +187,7 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 `;
 
 interface SharedProps {
-  questionNumber: number;
+  questionNumber: string;
   numberOfQuestions: number;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
@@ -232,7 +232,7 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>{wrapsExercise ? 'Exercise' : 'Question'} {questionNumber}</span>
+                <span>Question {wrapsExercise ? questionNumber : questionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
@@ -255,7 +255,7 @@ export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
   step: StepBase | StepWithData;
-  questionNumber: number;
+  questionNumber: string;
   numberOfQuestions: number;
   wrapsExercise: boolean;
 }

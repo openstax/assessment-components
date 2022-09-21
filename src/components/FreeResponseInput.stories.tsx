@@ -17,7 +17,7 @@ const props: FreeResponseProps = {
   cancelHandler: () => null,
   saveHandler: () => null,
   onChange: updateValue,
-  questionNumber: 1,
+  questionNumber: '1',
   question: {
     id: '1',
     stem_html: 'Is this a question?',

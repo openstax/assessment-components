@@ -33,7 +33,7 @@ describe('Question', () => {
       hidePreambles: false,
       displayFormats: false,
       className: '',
-      questionNumber: 1,
+      questionNumber: '1',
       displaySolution: false,
       context: '',
       feedback_html: '',

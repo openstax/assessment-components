@@ -17,7 +17,7 @@ export interface FreeResponseProps {
   saveHandler: MouseEventHandler<HTMLButtonElement>;
   defaultValue: string;
   isSubmitDisabled: boolean;
-  questionNumber: number,
+  questionNumber: string,
   question: ExerciseQuestionData,
   availablePoints: AvailablePoints,
   textHasChanged: boolean;

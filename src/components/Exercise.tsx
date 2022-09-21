@@ -27,7 +27,7 @@ interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
-  questionNumber: number;
+  questionNumber: string;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: () => void;

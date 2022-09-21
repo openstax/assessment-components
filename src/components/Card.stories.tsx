@@ -18,7 +18,7 @@ const props: TaskStepCardProps = {
     attempt_number: 1,
     incorrectAnswerId: 0
   },
-  questionNumber: 1,
+  questionNumber: '1',
   numberOfQuestions: 1,
   wrapsExercise: false
 };

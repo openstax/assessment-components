@@ -23,7 +23,7 @@ describe('ExerciseQuestion', () => {
         }],
         is_answer_order_important: false,
       },
-      questionNumber: 1,
+      questionNumber: '1',
       choicesEnabled: false,
       hasMultipleAttempts: false,
       onAnswerChange: () => null,
