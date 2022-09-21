@@ -1,10 +1,10 @@
-import{s as m,C as c,j as t}from"./index.e2799ff8.js";import{b as p,c as o}from"./theme.0827f765.js";var a="/home/runner/work/assessment-components/assessment-components/src/components/ProgressBar.tsx";const b=m.div`
+import{s as m,C as c,j as t}from"./index.e58d5257.js";import{b as p,c as o}from"./theme.81e7c5b1.js";var a="/home/runner/work/assessment-components/assessment-components/src/components/ProgressBar.tsx";const b=m.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 3.2rem;
+  padding: 2rem;
   ${p.mobile`
-    margin: 1rem;
+    padding: 0;
   `}
 `,f=m.span`
   display: flex;
