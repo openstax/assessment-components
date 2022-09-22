@@ -33,6 +33,7 @@ interface ExerciseBaseProps {
   onAnswerSave: () => void;
   onNextStep: () => void;
   show_all_feedback?: boolean;
+  scrollToQuestion?: number;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
