@@ -132,7 +132,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
               disabled={apiIsPending || !answer_id}
               isWaiting={apiIsPending}
               attempt_number={attempt_number}
-              onClick={onAnswerSave}
+              onClick={() => onAnswerSave(question.id)}
             /> :
             <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
         </div>
