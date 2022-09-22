@@ -158,15 +158,6 @@ describe('ExerciseQuestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders free response', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        free_response='A free response'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('converts question id as a number when saving', () => {
     const mockFn = jest.fn();
 
