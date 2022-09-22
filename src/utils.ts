@@ -30,3 +30,5 @@ export function countWords(text: string) {
   if(!words) return 0;
   return words.length;
 }
+
+export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
