@@ -23,14 +23,14 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   );
 };
 
-interface ExerciseBaseProps {
+export interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
   questionNumber: number;
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
-  onAnswerSave: () => void;
+  onAnswerSave: (question_id: number) => void;
   onNextStep: () => void;
   show_all_feedback?: boolean;
 }

@@ -1,4 +1,4 @@
-import { ExerciseQuestion, ExerciseQuestionProps } from './ExerciseQuestion';
+import { ExerciseQuestion, ExerciseQuestionProps, SaveButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
 
 describe('ExerciseQuestion', () => {
@@ -156,5 +156,23 @@ describe('ExerciseQuestion', () => {
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('converts question id as a number when saving', () => {
+    const mockFn = jest.fn();
+
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        needsSaved={true}
+        canAnswer={true}
+        onAnswerSave={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(SaveButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalledWith(1);
   });
 });

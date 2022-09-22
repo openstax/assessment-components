@@ -1,6 +1,8 @@
+import { numberfyId } from "../../src/utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
+import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
 
@@ -12,7 +14,7 @@ export interface ExerciseQuestionProps {
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;
-  onAnswerSave: () => void;
+  onAnswerSave: ExerciseBaseProps['onAnswerSave'];
   onNextStep: () => void;
   feedback_html: string;
   correct_answer_feedback_html: string;
@@ -51,7 +53,7 @@ const PublishedComments = ({ published_comments }: { published_comments?: string
   );
 }
 
-const SaveButton = (props: {
+export const SaveButton = (props: {
   disabled: boolean, isWaiting: boolean, attempt_number: number
 } & React.ComponentPropsWithoutRef<'button'>) => (
   <Button
@@ -132,7 +134,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
               disabled={apiIsPending || !answer_id}
               isWaiting={apiIsPending}
               attempt_number={attempt_number}
-              onClick={onAnswerSave}
+              onClick={() => onAnswerSave(numberfyId(question.id))}
             /> :
             <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
         </div>
