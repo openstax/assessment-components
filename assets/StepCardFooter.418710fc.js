@@ -1,6 +1,5 @@
-import{m as t,c as e,b as o}from"./theme.c6d36cb7.js";import{s as r}from"./index.a88a1882.js";const s=r.div`
+import{m as t,c as e,b as o}from"./theme.4290cf00.js";import{s as p}from"./index.601b57fb.js";const n=p.div`
     ${t.stepCardPadding()}
-    border-top: 1px solid ${e.palette.pale};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -14,6 +13,11 @@ import{m as t,c as e,b as o}from"./theme.c6d36cb7.js";import{s as r}from"./index
     button {
         width: 160px;
         height: 48px;
+    }
+
+    .step-card-footer-inner {
+        border-top: 1px solid ${e.palette.pale};
+        padding-top: 32px;
     }
 
     .points {
@@ -35,7 +39,7 @@ import{m as t,c as e,b as o}from"./theme.c6d36cb7.js";import{s as r}from"./index
     }
 
     ${o.desktop`
-        padding: 32px 140px;
+        padding: 0 140px 32px 140px;
         flex-wrap: nowrap;
 
         .points {
@@ -51,4 +55,4 @@ import{m as t,c as e,b as o}from"./theme.c6d36cb7.js";import{s as r}from"./index
             }
         }
     `}
-`;export{s as S};
+`;export{n as S};

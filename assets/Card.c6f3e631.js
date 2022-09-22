@@ -1,4 +1,4 @@
-import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as $}from"./index.a88a1882.js";var n="/home/runner/work/assessment-components/assessment-components/src/components/Card.tsx";const w=a.div`
+import{c as m,b as o,m as $}from"./theme.4290cf00.js";import{s as t,j as i,c as k}from"./index.601b57fb.js";var n="/home/runner/work/assessment-components/assessment-components/src/components/Card.tsx";const w=t.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,7 +6,7 @@ import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as 
   min-height: 400px;
   border-radius: 0.25rem;
   margin: 0 auto 5rem auto;
-  border: 1px solid ${l.palette.light};
+  border: 1px solid ${m.palette.light};
   border-radius: 0.25rem;
   background-color: white;
 
@@ -14,18 +14,18 @@ import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as 
     max-width: 1000px;
     min-width: 750px;
   `}
-`,S=a.div`
+`,S=t.div`
   padding: 2rem;
 
   ${o.tablet`
     padding: 0;
   `}
-`,u=a.div`
+`,c=t.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${l.card.background};
+  background: ${m.card.background};
   font-size: 1.8rem;
   line-height: 3rem;
 
@@ -59,7 +59,7 @@ import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as 
   }
 
   button {
-    color: ${l.palette.gray};
+    color: ${m.palette.gray};
   }
 
   .openstax-exercise-badges {
@@ -129,9 +129,15 @@ import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as 
           margin-right: ${o.margins.mobile};
       }
   `}
-`;u.displayName="StepCardHeader";const C=a.div`
+`;c.displayName="StepCardHeader";const C=t.div`
   .step-card-body {
-    ${k.stepCardPadding()}
+    ${$.stepCardPadding()}
+
+    &.exercise-stimulus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
     & + div .step-card-body {
@@ -171,4 +177,4 @@ import{c as l,b as o,m as k}from"./theme.c6d36cb7.js";import{s as a,j as i,c as 
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`,c=({questionNumber:e,numberOfQuestions:t,stepType:s,isHomework:d,availablePoints:r,unpadded:m,className:p,children:b,questionId:g,multipartBadge:x,leftHeaderChildren:h,rightHeaderChildren:v,headerTitleChildren:N,wrapsExercise:f,...y})=>i(S,{...y,children:[x,i(w,{className:p,children:[e&&d&&s==="exercise"&&i(u,{children:[i("div",{children:[h,i("div",{className:"question-info",children:[N,i("span",{children:[f?"Exercise":"Question"," ",e]},void 0,!0,{fileName:n,lineNumber:235,columnNumber:17},void 0),i("span",{className:"num-questions",children:["\xA0/ ",t]},void 0,!0,{fileName:n,lineNumber:236,columnNumber:17},void 0),i("span",{className:"separator",children:"|"},void 0,!1,{fileName:n,lineNumber:237,columnNumber:17},void 0),i("span",{className:"question-id",children:["ID: ",g]},void 0,!0,{fileName:n,lineNumber:238,columnNumber:17},void 0)]},void 0,!0,{fileName:n,lineNumber:233,columnNumber:15},void 0)]},void 0,!0,{fileName:n,lineNumber:231,columnNumber:13},void 0),i("div",{children:[r&&i("div",{className:"points",children:[r," Points"]},void 0,!0,{fileName:n,lineNumber:242,columnNumber:35},void 0),v]},void 0,!0,{fileName:n,lineNumber:241,columnNumber:13},void 0)]},void 0,!0,{fileName:n,lineNumber:230,columnNumber:11},void 0),i(C,{unpadded:m,children:b},void 0,!1,{fileName:n,lineNumber:247,columnNumber:9},void 0)]},void 0,!0,{fileName:n,lineNumber:228,columnNumber:7},void 0)]},void 0,!0,{fileName:n,lineNumber:226,columnNumber:5},void 0);c.displayName="OSStepCard";const q=({step:e,questionNumber:t,numberOfQuestions:s,children:d,className:r,...m})=>i(c,{...m,unpadded:!0,questionNumber:t,numberOfQuestions:s,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,availablePoints:e.available_points,className:$(`${"type"in e?e.type:"exercise"}-step`,r),questionId:e.uid,children:d},void 0,!1,{fileName:n,lineNumber:271,columnNumber:2},void 0);q.displayName="OSTaskStepCard";export{q as T};
+`,u=({questionNumber:e,numberOfQuestions:a,stepType:s,isHomework:d,availablePoints:r,unpadded:l,className:p,children:g,questionId:b,multipartBadge:x,leftHeaderChildren:h,rightHeaderChildren:v,headerTitleChildren:N,...f})=>{const y=a>1?`Questions ${e} - ${e+a-1}`:`Question ${e}`;return i(S,{...f,children:[x,i(w,{className:p,children:[e&&d&&s==="exercise"&&i(c,{children:[i("div",{children:[h,i("div",{className:"question-info",children:[N,i("span",{children:y},void 0,!1,{fileName:n,lineNumber:244,columnNumber:17},void 0),i("span",{className:"num-questions",children:["\xA0/ ",a]},void 0,!0,{fileName:n,lineNumber:245,columnNumber:17},void 0),i("span",{className:"separator",children:"|"},void 0,!1,{fileName:n,lineNumber:246,columnNumber:17},void 0),i("span",{className:"question-id",children:["ID: ",b]},void 0,!0,{fileName:n,lineNumber:247,columnNumber:17},void 0)]},void 0,!0,{fileName:n,lineNumber:242,columnNumber:15},void 0)]},void 0,!0,{fileName:n,lineNumber:240,columnNumber:13},void 0),i("div",{children:[r&&i("div",{className:"points",children:[r," Points"]},void 0,!0,{fileName:n,lineNumber:251,columnNumber:35},void 0),v]},void 0,!0,{fileName:n,lineNumber:250,columnNumber:13},void 0)]},void 0,!0,{fileName:n,lineNumber:239,columnNumber:11},void 0),i(C,{unpadded:l,children:g},void 0,!1,{fileName:n,lineNumber:256,columnNumber:9},void 0)]},void 0,!0,{fileName:n,lineNumber:237,columnNumber:7},void 0)]},void 0,!0,{fileName:n,lineNumber:235,columnNumber:5},void 0)};u.displayName="OSStepCard";const q=({step:e,questionNumber:a,numberOfQuestions:s,children:d,className:r,...l})=>i(u,{...l,unpadded:!0,questionNumber:a,numberOfQuestions:s,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,availablePoints:e.available_points,className:k(`${"type"in e?e.type:"exercise"}-step`,r),questionId:e.uid,children:d},void 0,!1,{fileName:n,lineNumber:279,columnNumber:2},void 0);q.displayName="OSTaskStepCard";export{q as T};
