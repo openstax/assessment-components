@@ -33,6 +33,7 @@ export interface ExerciseBaseProps {
   onAnswerSave: (question_id: number) => void;
   onNextStep: () => void;
   show_all_feedback?: boolean;
+  scrollToQuestion?: number;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -51,17 +52,17 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 
 export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, ...props
-}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => (
-  <StyledTaskStepCard
+}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
+  const legacyStepRender = 'feedback_html' in step;
+
+  return (<StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
-    numberOfQuestions={numberOfQuestions}
-    wrapsExercise={!('feedback_html' in step)}
+    numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
   >
     <Preamble exercise={exercise} />
 
     {exercise.questions.map((q, i) => {
-      const legacyStepRender = 'feedback_html' in step;
       const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
@@ -86,4 +87,4 @@ export const Exercise = ({
     }
     )}
   </StyledTaskStepCard>
-);
+)};

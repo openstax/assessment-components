@@ -41,6 +41,12 @@ const ExerciseWrapper = styled.div`
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
+const firstQuestionNumByExercise = exercises.reduce((acc, ex) => ({
+    ...acc,
+    [ex.uuid]: acc.questionCounter + 1,
+    questionCounter: acc.questionCounter + ex.questions.length
+  }), {questionCounter: 0});
+
 // placeholder until exercise data contains correct answer IDs
 const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
     {id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || '')}));
@@ -60,7 +66,7 @@ const questionStateFields = {
 export const Default = () => (
   <>
     {data.title && <h2>Exercises for {data.title}</h2>}
-    {exercises.map(((exercise, i) => {
+    {exercises.map(((exercise) => {
 
       const step: StepBase = {
         id: 1,
@@ -87,7 +93,7 @@ export const Default = () => (
             canUpdateCurrentStep={false}
             exercise={exercise}
             step={step}
-            questionNumber={i + 1}
+            questionNumber={firstQuestionNumByExercise[exercise.uuid]}
             numberOfQuestions={exercises.length}
             questionStates={questionStates}
             show_all_feedback={true} />

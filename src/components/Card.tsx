@@ -145,6 +145,12 @@ StepCardHeader.displayName = 'StepCardHeader';
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
   .step-card-body {
     ${mixins.stepCardPadding()}
+
+    &.exercise-stimulus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
     & + div .step-card-body {
@@ -203,7 +209,6 @@ export interface StepCardProps extends SharedProps {
   questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
-  wrapsExercise: boolean;
 }
 
 const StepCard = ({
@@ -220,8 +225,12 @@ const StepCard = ({
   leftHeaderChildren,
   rightHeaderChildren,
   headerTitleChildren,
-  wrapsExercise,
   ...otherProps }: StepCardProps) => {
+
+  const formattedQuestionNumber = numberOfQuestions > 1
+    ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
+    : `Question ${questionNumber}`;
+
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
@@ -232,7 +241,7 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>{wrapsExercise ? 'Exercise' : 'Question'} {questionNumber}</span>
+                <span>{formattedQuestionNumber}</span>
                 <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
@@ -257,7 +266,6 @@ export interface TaskStepCardProps extends SharedProps {
   step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;
-  wrapsExercise: boolean;
 }
 
 const TaskStepCard = ({
