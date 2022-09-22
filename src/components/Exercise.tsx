@@ -23,7 +23,7 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   );
 };
 
-interface ExerciseBaseProps {
+export interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
