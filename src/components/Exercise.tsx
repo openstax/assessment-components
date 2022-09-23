@@ -62,7 +62,7 @@ export const Exercise = ({
     if (el) {
       scrollToElement(el);
     }
-  }, [scrollToQuestion]);
+  }, [scrollToQuestion, exercise]);
 
   return (<StyledTaskStepCard
     step={step}
