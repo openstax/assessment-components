@@ -1,8 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 import { Content } from './Content';
 import { TaskStepCard } from './Card';
 import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { ExerciseQuestion } from './ExerciseQuestion';
+import scrollToElement from 'scroll-to-element';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -27,7 +29,7 @@ export interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
-  questionNumber: number;
+  questionNumber: number; // for multipart questions this is the first question number
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
@@ -51,9 +53,16 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 }
 
 export const Exercise = ({
-  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, ...props
+  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
+
+  React.useEffect(() => {
+    const el = document.querySelector(`.openstax-question[data-question-number="${scrollToQuestion}"]`)
+    if (el) {
+      scrollToElement(el);
+    }
+  }, [scrollToQuestion]);
 
   return (<StyledTaskStepCard
     step={step}
@@ -71,7 +80,7 @@ export const Exercise = ({
           exercise_uid={exercise.uid}
           key={q.id}
           question={q}
-          questionNumber={questionNumber}
+          questionNumber={questionNumber + i}
           choicesEnabled={state.canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
