@@ -69,4 +69,11 @@ describe('StepCard', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('matches snapshot with more than one question', () => {
+    const tree = renderer.create(
+      <StepCard {...props} numberOfQuestions={3}>Question content</StepCard>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

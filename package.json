@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "jest-environment-jsdom": "^29.0.3",
     "scroll-to-element": "^2.0.3"
   }
 }
