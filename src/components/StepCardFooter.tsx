@@ -21,6 +21,8 @@ export const StepCardFooter = styled.div`
     .step-card-footer-inner {
         border-top: 1px solid ${colors.palette.pale};
         padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .points {

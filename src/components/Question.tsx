@@ -100,6 +100,7 @@ const StyledQuestion = styled.div`
     .answer-letter {
       text-align: center;
       padding: 0;
+      font-size: 1.4rem;
     }
 
 
