@@ -1,11 +1,11 @@
-import{s as Q,c as j,j as r}from"./index.601b57fb.js";import{m as n,c as t,l as e,t as F}from"./theme.4290cf00.js";import{A as L}from"./AnswersTable.50eb00be.js";import{C as g}from"./Feedback.35542f87.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/Question.tsx";const W=Q.div`
+import{s as Q,c as j,j as r}from"./index.080314d8.js";import{m as n,c as t,l as e,t as F}from"./theme.10bc8b56.js";import{A as L}from"./AnswersTable.fa092ae0.js";import{C as g}from"./Feedback.8ceb1ab6.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/Question.tsx";const W=Q.div`
 &.step-card-body {
   ${n.stepCardPadding()};
 }
 
 &.openstax-question {
   border-top: 1px solid ${t.palette.pale};
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   .detailed-solution {
     margin-bottom: 1rem;
@@ -34,8 +34,8 @@ import{s as Q,c as j,j as r}from"./index.601b57fb.js";import{m as n,c as t,l as 
 
   .answers-table {
     margin-bottom: 20px;
-    font-size: 17px;
-    line-height: 25px;
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 
   .instructions {
