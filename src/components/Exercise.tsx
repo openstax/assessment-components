@@ -29,7 +29,7 @@ export interface ExerciseBaseProps {
   step: StepBase;
   exercise: ExerciseData;
   numberOfQuestions: number;
-  questionNumber: number;
+  questionNumber: number; // for multipart questions this is the first question number
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
@@ -80,7 +80,7 @@ export const Exercise = ({
           exercise_uid={exercise.uid}
           key={q.id}
           question={q}
-          questionNumber={questionNumber}
+          questionNumber={questionNumber + i}
           choicesEnabled={state.canAnswer}
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
