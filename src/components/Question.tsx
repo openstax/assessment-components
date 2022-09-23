@@ -101,6 +101,9 @@ const StyledQuestion = styled.div`
       text-align: center;
       padding: 0;
       font-size: 1.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
