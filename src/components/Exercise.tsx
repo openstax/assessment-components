@@ -56,11 +56,6 @@ export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
-  
-
-  const handleScroll = () => {
-    //
-  }
 
   React.useEffect(() => {
     if (typeof document === 'undefined') {
@@ -71,18 +66,6 @@ export const Exercise = ({
       scrollToElement(el);
     }
   }, [scrollToQuestion, exercise]);
-
-  React.useEffect(() => {
-    if (typeof document === 'undefined' || exercise.questions.length >= 1) {
-      return;
-    }
-    document.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => {
-      document?.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (<StyledTaskStepCard
     step={step}

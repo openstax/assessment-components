@@ -68,11 +68,9 @@ export const SaveButton = (props: {
 
 const NextButton = (props: {
   canUpdateCurrentStep: boolean,
-  onNextStep: ExerciseQuestionProps['onNextStep'],
-  currentQuestionNumber: number,
-}) => {
+} & React.ComponentPropsWithoutRef<'button'>) => {
   return (
-    <Button onClick={props.onNextStep(currentQuestionNumber)} data-test-id="continue-btn">
+    <Button data-test-id="continue-btn">
       {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
     </Button>
   );
@@ -138,7 +136,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
                 attempt_number={attempt_number}
                 onClick={() => onAnswerSave(numberfyId(question.id))}
               /> :
-              <NextButton onNextStep={onNextStep} currentQuestionNumber={questionNumber} canUpdateCurrentStep={canUpdateCurrentStep} />}
+              <NextButton onClick={() => onNextStep(questionNumber)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
       </StepCardFooter>
