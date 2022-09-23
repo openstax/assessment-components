@@ -184,9 +184,8 @@ const StyledQuestion = styled.div`
       max-width: ${layouts.answer.feedback.popover.maxWidth};
       margin: calc(${layouts.answer.feedback.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-      color: ${colors.palette.neutral};
+      color: ${colors.palette.neutralThin};
       font-size: 1.4rem;
-      font-style: italic;
 
       .arrow {
         position: absolute;
