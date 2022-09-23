@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi nxcEz openstax-question step-card-body"
+          className="sc-jSMfEi eUguVo openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -279,7 +279,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi nxcEz openstax-question step-card-body"
+          className="sc-jSMfEi eUguVo openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -489,7 +489,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi nxcEz openstax-question step-card-body"
+          className="sc-jSMfEi eUguVo openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
