@@ -8,6 +8,7 @@ export const StepCardFooter = styled.div`
     justify-content: space-between;
     font-size: 1.4rem;
     line-height: 2rem;
+    background: ${colors.card.body.background};
 
     > * {
         flex-grow: 1;

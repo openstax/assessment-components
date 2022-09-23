@@ -42,7 +42,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf lbvshh"
+    className="sc-dkzDqf lBvQC"
   >
     <div
       className="points"
@@ -124,7 +124,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf lbvshh"
+    className="sc-dkzDqf lBvQC"
   >
     <div
       className="points"
@@ -206,7 +206,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf lbvshh"
+    className="sc-dkzDqf lBvQC"
   >
     <div
       className="points"

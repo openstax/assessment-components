@@ -175,7 +175,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf edDqCo step-card-footer"
+          className="sc-gKXOVf gWibAH step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -385,7 +385,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf edDqCo step-card-footer"
+          className="sc-gKXOVf gWibAH step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -595,7 +595,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf edDqCo step-card-footer"
+          className="sc-gKXOVf gWibAH step-card-footer"
         >
           <div
             className="step-card-footer-inner"
