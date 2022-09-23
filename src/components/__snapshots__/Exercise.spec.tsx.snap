@@ -6,10 +6,10 @@ exports[`Exercise using step data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds Alzlt"
+    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf ifUCJL"
+      className="sc-dkzDqf lhgxWk"
     >
       <div>
         <div
@@ -47,7 +47,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM ccxEBR"
+      className="sc-hKMtZM EWshI"
     >
       <div
         className="step-card-body exercise-context"
@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi cJTgkj openstax-question step-card-body"
+          className="sc-jSMfEi nxcEz openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -175,7 +175,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf frqrWQ step-card-footer"
+          className="sc-gKXOVf edDqCo step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -216,10 +216,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds Alzlt"
+    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf ifUCJL"
+      className="sc-dkzDqf lhgxWk"
     >
       <div>
         <div
@@ -257,7 +257,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM ccxEBR"
+      className="sc-hKMtZM EWshI"
     >
       <div
         className="step-card-body exercise-context"
@@ -279,7 +279,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi cJTgkj openstax-question step-card-body"
+          className="sc-jSMfEi nxcEz openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -385,7 +385,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf frqrWQ step-card-footer"
+          className="sc-gKXOVf edDqCo step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -426,10 +426,10 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds Alzlt"
+    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf ifUCJL"
+      className="sc-dkzDqf lhgxWk"
     >
       <div>
         <div
@@ -467,7 +467,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM ccxEBR"
+      className="sc-hKMtZM EWshI"
     >
       <div
         className="step-card-body exercise-context"
@@ -489,7 +489,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi cJTgkj openstax-question step-card-body"
+          className="sc-jSMfEi nxcEz openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -595,7 +595,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf frqrWQ step-card-footer"
+          className="sc-gKXOVf edDqCo step-card-footer"
         >
           <div
             className="step-card-footer-inner"
