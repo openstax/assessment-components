@@ -49,7 +49,7 @@ export const colors = {
     checked: palette.lightBlue,
     hover: palette.neutralDark,
     label: {
-      color: palette.neutralMedium,
+      color: palette.neutral,
       colorHover: palette.neutralDark,
       colorSelected: palette.lightBlue,
     },
@@ -61,7 +61,12 @@ export const colors = {
     },
   },
   card: {
-    background: "#daf3f8",
+    header: {
+     background: "#daf3f8"
+    },
+    body: {
+      background: "#fdfdfd"
+    }
   },
   button: {
     background: palette.orange,
@@ -76,19 +81,19 @@ export const colors = {
 
 export const layouts = {
   answer: {
-    verticalSpacing: "1.5rem",
+    verticalSpacing: "1rem",
     horizontalSpacing: "1rem",
     horizontalBuffer: "2.5rem",
-    bubbleSize: "4rem",
+    bubbleSize: "2.4rem",
     labelSpacing: "6.5rem",
     feedback: {
       arrow: {
-        width: "20px",
-        height: "15px",
+        width: "16px",
+        height: "8px",
       },
       popover: {
-        horizontalSpacing: "2rem",
-        verticalSpacing: "2rem",
+        horizontalSpacing: "1.1rem",
+        verticalSpacing: "0.9rem",
         horizontalBuffer: "4rem",
         borderWidth: "1px",
         maxWidth: "370px",
@@ -169,14 +174,11 @@ export const mixins = {
   answerCorrectText: () => css`
     content: 'correct answer';
     color: ${colors.answer.label.color};
-    margin-left: calc(-1.25 * ${layouts.answer.bubbleSize});
-    width: calc(1.25 * ${layouts.answer.bubbleSize});
+    margin-left: calc(-3 * ${layouts.answer.bubbleSize});
+    width: calc(3 * ${layouts.answer.bubbleSize});
     text-align: center;
     font-size: 1.2rem;
-    // em used here for line-height for compatibility with IE
-    // http://caniuse.com/#feat=rem -- rem ignored in pseudo elements
-    line-height: 1em;
-    margin-top: 0.8rem;
+    line-height: 1.2rem;
   `,
   answerCorrectAnswer: () => css`
     color: ${colors.answer.correct.color};
@@ -197,7 +199,7 @@ export const mixins = {
         &::after {
           ${mixins.answerCorrectText()}
           width: ${layouts.answer.bubbleSize} !important;
-          margin-left: 0;
+          margin-left: calc(-${layouts.answer.bubbleSize} / 3.3);
         }
       }
     }
