@@ -9,7 +9,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
     className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf lhgxWk"
+      className="sc-dkzDqf cGtPsv"
     >
       <div>
         <div
@@ -219,7 +219,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf lhgxWk"
+      className="sc-dkzDqf cGtPsv"
     >
       <div>
         <div
@@ -429,7 +429,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
   >
     <div
-      className="sc-dkzDqf lhgxWk"
+      className="sc-dkzDqf cGtPsv"
     >
       <div>
         <div

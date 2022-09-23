@@ -38,10 +38,11 @@ const StepCardHeader = styled.div`
   background: ${colors.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
+  letter-spacing: -0.72px;
 
   div {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
 
   div.question-info {
