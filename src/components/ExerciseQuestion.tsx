@@ -15,7 +15,7 @@ export interface ExerciseQuestionProps {
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
-  onNextStep: () => void;
+  onNextStep: ExerciseBaseProps['onNextStep'];
   feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
@@ -68,10 +68,11 @@ export const SaveButton = (props: {
 
 const NextButton = (props: {
   canUpdateCurrentStep: boolean,
-  onNextStep: ExerciseQuestionProps['onNextStep']
+  onNextStep: ExerciseQuestionProps['onNextStep'],
+  currentQuestionNumber: number,
 }) => {
   return (
-    <Button onClick={props.onNextStep} data-test-id="continue-btn">
+    <Button onClick={props.onNextStep(currentQuestionNumber)} data-test-id="continue-btn">
       {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
     </Button>
   );
@@ -137,7 +138,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
                 attempt_number={attempt_number}
                 onClick={() => onAnswerSave(numberfyId(question.id))}
               /> :
-              <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+              <NextButton onNextStep={onNextStep} currentQuestionNumber={questionNumber} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
       </StepCardFooter>

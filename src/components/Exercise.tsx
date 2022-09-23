@@ -33,7 +33,7 @@ export interface ExerciseBaseProps {
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
-  onNextStep: () => void;
+  onNextStep: (i: number) => void;
   show_all_feedback?: boolean;
   scrollToQuestion?: number;
 }
@@ -56,13 +56,33 @@ export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
+  
+
+  const handleScroll = () => {
+    //
+  }
 
   React.useEffect(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
     const el = document.querySelector(`.openstax-question[data-question-number="${scrollToQuestion}"]`)
     if (el) {
       scrollToElement(el);
     }
   }, [scrollToQuestion, exercise]);
+
+  React.useEffect(() => {
+    if (typeof document === 'undefined' || exercise.questions.length >= 1) {
+      return;
+    }
+    document.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      document?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (<StyledTaskStepCard
     step={step}
