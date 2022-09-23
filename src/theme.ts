@@ -196,7 +196,7 @@ export const mixins = {
         flex-direction: column;
         &::after {
           ${mixins.answerCorrectText()}
-          width: $openstax-answer-bubble-size !important;
+          width: ${layouts.answer.bubbleSize} !important;
           margin-left: 0;
         }
       }

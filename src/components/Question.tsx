@@ -13,7 +13,7 @@ const StyledQuestion = styled.div`
 
 &.openstax-question {
   border-top: 1px solid ${colors.palette.pale};
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   .detailed-solution {
     margin-bottom: 1rem;
@@ -42,8 +42,8 @@ const StyledQuestion = styled.div`
 
   .answers-table {
     margin-bottom: 20px;
-    font-size: 17px;
-    line-height: 25px;
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 
   .instructions {
