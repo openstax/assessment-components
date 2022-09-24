@@ -77,6 +77,7 @@ describe('Exercise', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+  });
 
   describe('with question state data', () => {
     let props: ExerciseWithQuestionStatesProps;
