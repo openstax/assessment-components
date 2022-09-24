@@ -6,7 +6,7 @@ describe('Exercise', () => {
 
     let props: ExerciseWithStepDataProps;
 
-    beforeEach(() => {
+    beforeEach(() => {  
       props = {
         exercise: {
           uid: '1@1',
@@ -68,7 +68,6 @@ describe('Exercise', () => {
           incorrectAnswerId: 0
         },
         numberOfQuestions: 1,
-        scrollToQuestion: 1,
       }
     });
 
@@ -78,19 +77,6 @@ describe('Exercise', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
-
-    it('scrolls to question', () => {
-      const spyScroll = jest.spyOn(window, 'scrollTo');
-
-      renderer.create(
-        <Exercise {...props} />
-      );
-  
-      /* eslint-disable-next-line @typescript-eslint/no-empty-function */
-      renderer.act(() => {});
-      expect(spyScroll).toHaveBeenCalledTimes(1);
-    })
-  });
 
   describe('with question state data', () => {
     let props: ExerciseWithQuestionStatesProps;
