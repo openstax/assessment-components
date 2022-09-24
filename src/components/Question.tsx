@@ -3,7 +3,7 @@ import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { ID, ExerciseQuestionData, Task } from 'src/types';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
 const StyledQuestion = styled.div`
@@ -253,7 +253,7 @@ export interface QuestionProps {
   choicesEnabled?: boolean;
 }
 
-export const Question = (props: QuestionProps) => {
+export const Question = React.forwardRef((props: QuestionProps, ref) => {
   let exerciseUid, solution;
 
   const {
@@ -306,7 +306,7 @@ export const Question = (props: QuestionProps) => {
   }
 
   return (
-    <StyledQuestion className={classes} data-question-number={questionNumber} data-test-id="question">
+    <StyledQuestion ref={ref as React.RefObject<HTMLDivElement>} className={classes} data-question-number={questionNumber} data-test-id="question">
       <QuestionHtml type="context" html={context} hidden={hidePreambles} />
       <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
       <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
@@ -322,7 +322,7 @@ export const Question = (props: QuestionProps) => {
       {exerciseUid}
     </StyledQuestion>
   );
-}
+});
 
 interface QuestionHtmlProps {
   html?: string;

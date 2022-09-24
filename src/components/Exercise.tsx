@@ -33,7 +33,7 @@ export interface ExerciseBaseProps {
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
-  onNextStep: (i: number) => void;
+  onNextStep: (currentQuestionNumber: number) => void;
   show_all_feedback?: boolean;
   scrollToQuestion?: number;
 }
@@ -56,12 +56,10 @@ export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
+  const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
 
   React.useEffect(() => {
-    if (typeof document === 'undefined') {
-      return;
-    }
-    const el = document.querySelector(`.openstax-question[data-question-number="${scrollToQuestion}"]`)
+    const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
     if (el) {
       scrollToElement(el);
     }
@@ -80,6 +78,7 @@ export const Exercise = ({
         <ExerciseQuestion
           {...props}
           {...state}
+          ref={(el: HTMLDivElement) => questionsRef.current[questionNumber] = el}
           exercise_uid={exercise.uid}
           key={q.id}
           question={q}
