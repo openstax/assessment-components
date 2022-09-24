@@ -6,7 +6,7 @@ describe('Exercise', () => {
 
     let props: ExerciseWithStepDataProps;
 
-    beforeEach(() => {  
+    beforeEach(() => {
       props = {
         exercise: {
           uid: '1@1',
@@ -67,7 +67,7 @@ describe('Exercise', () => {
           attempt_number: 1,
           incorrectAnswerId: 0
         },
-        numberOfQuestions: 1,
+        numberOfQuestions: 1
       }
     });
 
