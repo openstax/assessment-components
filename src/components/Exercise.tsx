@@ -8,7 +8,7 @@ import scrollToElement from 'scroll-to-element';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
-  line-height: 3rem;
+  line-height: 2.8rem;
 `;
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
