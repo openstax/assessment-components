@@ -86,7 +86,7 @@ const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free
   );
 }
 
-export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref) => {
+export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
