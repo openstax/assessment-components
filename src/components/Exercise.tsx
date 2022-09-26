@@ -61,7 +61,6 @@ export const Exercise = ({
   React.useEffect(() => {
     const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
     if (el) {
-      console.log('element: ', el, scrollToQuestion)
       scrollToElement(el);
     }
   }, [scrollToQuestion, exercise]);
