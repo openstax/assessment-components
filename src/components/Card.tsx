@@ -35,18 +35,22 @@ const StepCardHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${colors.card.background};
+  background: ${colors.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
+  letter-spacing: -0.72px;
 
   div {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
 
   div.question-info {
     font-weight: bold;
 
+    .question-id {
+      font-weight: normal;
+    }
     .ox-icon-lock {
         margin-right: 1rem;
     }
@@ -61,7 +65,7 @@ const StepCardHeader = styled.div`
   }
 
   .separator {
-      margin: 0 1rem;
+      margin: 0 0.4rem;
   }
 
   .exercise-id {
@@ -145,6 +149,8 @@ StepCardHeader.displayName = 'StepCardHeader';
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
   .step-card-body {
     ${mixins.stepCardPadding()}
+
+    background: ${colors.card.body.background};
 
     &.exercise-stimulus {
       display: flex;
