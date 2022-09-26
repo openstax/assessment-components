@@ -1,10 +1,11 @@
-import{m as t,c as e,b as o}from"./theme.fe607f2e.js";import{s as p}from"./index.69682a9e.js";const n=p.div`
+import{m as t,c as e,b as o}from"./theme.44edd156.js";import{s as r}from"./index.2d5eb968.js";const n=r.div`
     ${t.stepCardPadding()}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 1.4rem;
     line-height: 2rem;
+    background: ${e.card.body.background};
 
     > * {
         flex-grow: 1;
@@ -18,6 +19,8 @@ import{m as t,c as e,b as o}from"./theme.fe607f2e.js";import{s as p}from"./index
     .step-card-footer-inner {
         border-top: 1px solid ${e.palette.pale};
         padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .points {

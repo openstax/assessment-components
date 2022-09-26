@@ -1,4 +1,4 @@
-import{s as Q,c as j,j as r}from"./index.69682a9e.js";import{m as n,c as t,l as e,t as F}from"./theme.fe607f2e.js";import{A as L}from"./AnswersTable.6af2fe44.js";import{C as g}from"./Feedback.aa5260c5.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/Question.tsx";const W=Q.div`
+import{s as j,c as Q,j as r}from"./index.2d5eb968.js";import{m as n,c as t,l as e,t as F}from"./theme.44edd156.js";import{A as L}from"./AnswersTable.f33233dc.js";import{C as g}from"./Feedback.650922f5.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/Question.tsx";const W=j.div`
 &.step-card-body {
   ${n.stepCardPadding()};
 }
@@ -92,6 +92,10 @@ import{s as Q,c as j,j as r}from"./index.69682a9e.js";import{m as n,c as t,l as 
     .answer-letter {
       text-align: center;
       padding: 0;
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
@@ -172,20 +176,18 @@ import{s as Q,c as j,j as r}from"./index.69682a9e.js";import{m as n,c as t,l as 
       border: ${e.answer.feedback.popover.borderWidth} solid ${t.answer.feedback.popover.borderColor};
       background-color: ${t.palette.white};
       background-clip: padding-box;
-      border-radius: 0.3rem;
       max-width: ${e.answer.feedback.popover.maxWidth};
-      margin: calc(${e.answer.feedback.arrow.height} - 5px) 0 ${e.answer.horizontalSpacing} calc(-1 * (2 * ${e.answer.horizontalSpacing}));
-      box-shadow: 10px 0px 10px rgba(0, 0, 0, .25);
-      color: ${t.palette.neutral};
+      margin: calc(${e.answer.feedback.arrow.height} - 14px) 0 ${e.answer.horizontalSpacing} 8px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      color: ${t.palette.neutralThin};
       font-size: 1.4rem;
-      font-style: italic;
 
       .arrow {
         position: absolute;
         display: block;
         width: ${e.answer.feedback.arrow.width};
         height: ${e.answer.feedback.arrow.height};
-        margin-left: 30px;
+        margin-left: 3px;
         top: calc((${e.answer.feedback.arrow.height} + ${e.answer.feedback.popover.borderWidth}) * -1);
 
         &::before,
@@ -216,7 +218,7 @@ import{s as Q,c as j,j as r}from"./index.69682a9e.js";import{m as n,c as t,l as 
   .openstax-answer {
     border-top: 1px solid #d5d5d5;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 6px 8px;
   }
 }
-`,E=a=>{let i,s;const{question:l,correct_answer_id:d,incorrectAnswerId:v,exercise_uid:w,className:N,questionNumber:p,context:$,task:c,hidePreambles:m}=a,{stem_html:x,collaborator_solutions:k=[],formats:y,stimulus_html:S}=l,h=!!d,q=!!v,z=c!=null?c.is_deleted:void 0,C=(c!=null?c.type:void 0)==="homework",_=j("openstax-question",N,{"has-correct-answer":h&&!(z&&C),"has-incorrect-answer":q}),A=()=>{const{displaySolution:u}=a,{collaborator_solutions:f=[]}=l;return u&&f&&f.find(I=>I.content_html!==void 0)};return w!=null&&(i=r("div",{className:"exercise-uid",children:w},void 0,!1,{fileName:o,lineNumber:289,columnNumber:7},void 0)),A()&&(s=r("div",{className:"detailed-solution",children:[r("div",{className:"header",children:"Detailed solution:"},void 0,!1,{fileName:o,lineNumber:298,columnNumber:9},void 0),r(g,{className:"solution",block:!0,html:k.map(u=>u.content_html).join("")},void 0,!1,{fileName:o,lineNumber:301,columnNumber:9},void 0)]},void 0,!0,{fileName:o,lineNumber:297,columnNumber:7},void 0)),r(W,{className:_,"data-question-number":p,"data-test-id":"question",children:[r(b,{type:"context",html:$,hidden:m},void 0,!1,{fileName:o,lineNumber:310,columnNumber:7},void 0),r(b,{type:"stimulus",html:S,hidden:m},void 0,!1,{fileName:o,lineNumber:311,columnNumber:7},void 0),r(b,{type:"stem",html:x,hidden:m,questionNumber:p},void 0,!1,{fileName:o,lineNumber:312,columnNumber:7},void 0),a.children,r(L,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:h},void 0,!1,{fileName:o,lineNumber:315,columnNumber:7},void 0),s,a.displayFormats?r(D,{formats:y},void 0,!1,{fileName:o,lineNumber:321,columnNumber:31},void 0):void 0,i]},void 0,!0,{fileName:o,lineNumber:309,columnNumber:5},void 0)},b=a=>{const{html:i="",type:s,hidden:l,questionNumber:d}=a;return l===!0||!(i.length>0)?null:r(g,{html:i,"data-question-number":d,className:`question-${s}`,block:!0},void 0,!1,{fileName:o,lineNumber:339,columnNumber:5},void 0)},D=({formats:a=[]})=>r("div",{className:"formats-listing",children:[r("div",{className:"header",children:"Formats:"},void 0,!1,{fileName:o,lineNumber:351,columnNumber:7},void 0),a.map((i,s)=>r("span",{children:i},s,!1,{fileName:o,lineNumber:352,columnNumber:35},void 0))]},void 0,!0,{fileName:o,lineNumber:350,columnNumber:5},void 0);export{E as Q,b as a};
+`,E=a=>{let i,s;const{question:l,correct_answer_id:d,incorrectAnswerId:v,exercise_uid:w,className:N,questionNumber:p,context:x,task:c,hidePreambles:m}=a,{stem_html:$,collaborator_solutions:k=[],formats:y,stimulus_html:q}=l,h=!!d,z=!!v,S=c!=null?c.is_deleted:void 0,C=(c!=null?c.type:void 0)==="homework",_=Q("openstax-question",N,{"has-correct-answer":h&&!(S&&C),"has-incorrect-answer":z}),A=()=>{const{displaySolution:u}=a,{collaborator_solutions:f=[]}=l;return u&&f&&f.find(I=>I.content_html!==void 0)};return w!=null&&(i=r("div",{className:"exercise-uid",children:w},void 0,!1,{fileName:o,lineNumber:291,columnNumber:7},void 0)),A()&&(s=r("div",{className:"detailed-solution",children:[r("div",{className:"header",children:"Detailed solution:"},void 0,!1,{fileName:o,lineNumber:300,columnNumber:9},void 0),r(g,{className:"solution",block:!0,html:k.map(u=>u.content_html).join("")},void 0,!1,{fileName:o,lineNumber:303,columnNumber:9},void 0)]},void 0,!0,{fileName:o,lineNumber:299,columnNumber:7},void 0)),r(W,{className:_,"data-question-number":p,"data-test-id":"question",children:[r(b,{type:"context",html:x,hidden:m},void 0,!1,{fileName:o,lineNumber:312,columnNumber:7},void 0),r(b,{type:"stimulus",html:q,hidden:m},void 0,!1,{fileName:o,lineNumber:313,columnNumber:7},void 0),r(b,{type:"stem",html:$,hidden:m,questionNumber:p},void 0,!1,{fileName:o,lineNumber:314,columnNumber:7},void 0),a.children,r(L,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:h},void 0,!1,{fileName:o,lineNumber:317,columnNumber:7},void 0),s,a.displayFormats?r(D,{formats:y},void 0,!1,{fileName:o,lineNumber:323,columnNumber:31},void 0):void 0,i]},void 0,!0,{fileName:o,lineNumber:311,columnNumber:5},void 0)},b=a=>{const{html:i="",type:s,hidden:l,questionNumber:d}=a;return l===!0||!(i.length>0)?null:r(g,{html:i,"data-question-number":d,className:`question-${s}`,block:!0},void 0,!1,{fileName:o,lineNumber:341,columnNumber:5},void 0)},D=({formats:a=[]})=>r("div",{className:"formats-listing",children:[r("div",{className:"header",children:"Formats:"},void 0,!1,{fileName:o,lineNumber:353,columnNumber:7},void 0),a.map((i,s)=>r("span",{children:i},s,!1,{fileName:o,lineNumber:354,columnNumber:35},void 0))]},void 0,!0,{fileName:o,lineNumber:352,columnNumber:5},void 0);export{E as Q,b as a};
