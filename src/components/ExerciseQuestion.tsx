@@ -1,5 +1,5 @@
 import { numberfyId } from "../../src/utils";
-import { AvailablePoints, ID, ExerciseQuestionData, Task, FeedbackStyle } from "../types";
+import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
 import { ExerciseBaseProps } from "./Exercise";
@@ -35,7 +35,7 @@ export interface ExerciseQuestionProps {
   exercise_uid: string;
   free_response?: string;
   show_all_feedback?: boolean;
-  feedbackStyle?: FeedbackStyle;
+  tableFeedbackEnabled?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -93,7 +93,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, show_all_feedback, feedbackStyle
+    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
   return (
@@ -115,7 +115,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         displayFormats={false}
         displaySolution={displaySolution}
         show_all_feedback={show_all_feedback}
-        feedbackStyle={feedbackStyle}
+        tableFeedbackEnabled={tableFeedbackEnabled}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>

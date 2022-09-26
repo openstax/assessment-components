@@ -92,7 +92,7 @@ describe('AnswersTable', () => {
         incorrectAnswerId="1"
         feedback_html="Feedback"
         show_all_feedback={true}
-        feedbackStyle="bubble"
+        tableFeedbackEnabled={true}
         question={{...props.question, answers}}
       />
     ).toJSON();

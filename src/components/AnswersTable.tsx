@@ -1,5 +1,5 @@
 import { defaultAnswerType } from "../constants";
-import { Answer as AnswerType, AnswerDisplayType, ID, ExerciseQuestionData, FeedbackStyle } from "src/types";
+import { Answer as AnswerType, AnswerDisplayType, ID, ExerciseQuestionData } from "src/types";
 import { Answer } from "./Answer";
 import { Feedback } from "./Feedback";
 
@@ -14,7 +14,7 @@ export interface AnswersTableProps {
   correct_answer_feedback_html?: string;
   answered_count?: number;
   show_all_feedback?: boolean;
-  feedbackStyle?: FeedbackStyle;
+  tableFeedbackEnabled?: boolean;
   onChangeAnswer: () => void;
   hideAnswers: boolean;
   hasCorrectAnswer?: boolean;
@@ -31,7 +31,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
     incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html,
-    show_all_feedback = false, feedbackStyle, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
+    show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
   } = props;
   if (hideAnswers) { return null; }
 
@@ -57,7 +57,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     answered_count,
     disabled: !choicesEnabled,
     show_all_feedback,
-    feedbackStyle,
+    tableFeedbackEnabled,
     onKeyPress
   };
 
@@ -75,7 +75,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
 
-    if (show_all_feedback && answer.feedback_html && feedbackStyle === 'bubble') {
+    if (show_all_feedback && answer.feedback_html && tableFeedbackEnabled) {
       feedback.push({ index: i, html: answer.feedback_html })
     } else if (answer.id === incorrectAnswerId && feedback_html) {
       feedback.push({ index: i, html: feedback_html })
