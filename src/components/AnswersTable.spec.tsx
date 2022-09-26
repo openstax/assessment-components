@@ -73,6 +73,18 @@ describe('AnswersTable', () => {
   });
 
   it('renders all feedback', () => {
+    const answers = [{
+      id: '1',
+      correctness: undefined,
+      content_html: 'True',
+      feedback_html: 'Answer level feedback',
+    }, {
+      id: '2',
+      correctness: undefined,
+      content_html: 'False',
+      feedback_html: 'Answer level feedback'
+    }];
+
     const tree = renderer.create(
       <AnswersTable {...props}
         answer_id="1"
@@ -81,6 +93,7 @@ describe('AnswersTable', () => {
         feedback_html="Feedback"
         show_all_feedback={true}
         feedbackStyle="bubble"
+        question={{...props.question, answers}}
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
