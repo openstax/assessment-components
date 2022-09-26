@@ -162,7 +162,6 @@ describe('Exercise', () => {
       const tree = renderer.create(
         <Exercise {...props} />
       );
-      renderer.act(() => {});
       expect(tree.toJSON()).toMatchSnapshot();
       expect(tree.root.findByProps({ "data-test-id": "continue-btn" }).props['children']).toContain('Next');
     });
