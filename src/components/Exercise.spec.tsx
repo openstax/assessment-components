@@ -1,5 +1,6 @@
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
 import renderer from 'react-test-renderer';
+import React from 'react';
 
 describe('Exercise', () => {
   describe('using step data', () => {
@@ -83,6 +84,12 @@ describe('Exercise', () => {
     let props: ExerciseWithQuestionStatesProps;
 
     beforeEach(() => {
+      const ref = { current: null };
+      Object.defineProperty(ref, 'current', {
+        get: jest.fn(() => [null, 'element'])
+      });
+      jest.spyOn(React, "useRef").mockReturnValue(ref);
+
       props = {
         exercise: {
           uid: '1@1',
@@ -120,6 +127,7 @@ describe('Exercise', () => {
         },
         questionNumber: 1,
         numberOfQuestions: 1,
+        scrollToQuestion: 1,
         hasMultipleAttempts: false,
         onAnswerChange: () => null,
         onAnswerSave: () => null,
@@ -154,6 +162,7 @@ describe('Exercise', () => {
       const tree = renderer.create(
         <Exercise {...props} />
       );
+      renderer.act(() => {});
       expect(tree.toJSON()).toMatchSnapshot();
       expect(tree.root.findByProps({ "data-test-id": "continue-btn" }).props['children']).toContain('Next');
     });
