@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { ReactNode } from 'react';
 import { ALPHABET, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from '../utils';
-import { Answer as AnswerType, ChosenAnswer, ID } from '../types';
+import { Answer as AnswerType, ChosenAnswer, FeedbackStyle, ID } from '../types';
 import { Content } from './Content';
 import { SimpleFeedback } from './Feedback';
 
@@ -22,6 +22,7 @@ export interface AnswerProps {
   radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
   show_all_feedback?: boolean;
+  feedbackStyle?: FeedbackStyle;
 }
 
 export const Answer = (props: AnswerProps) => {
@@ -38,7 +39,8 @@ export const Answer = (props: AnswerProps) => {
     hasCorrectAnswer,
     answered_count,
     contentRenderer,
-    show_all_feedback
+    show_all_feedback,
+    feedbackStyle,
   } = props;
 
   let body, feedback, selectedCount;
@@ -93,7 +95,7 @@ export const Answer = (props: AnswerProps) => {
     );
   }
 
-  if (show_all_feedback && answer.feedback_html) {
+  if (show_all_feedback && answer.feedback_html && feedbackStyle !== 'bubble') {
     feedback = (
       <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
         {answer.feedback_html}

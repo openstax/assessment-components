@@ -85,6 +85,7 @@ export const Exercise = ({
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}
+          feedbackStyle={legacyStepRender && show_all_feedback ? 'simple' : (show_all_feedback ? 'bubble' : null)}
           canUpdateCurrentStep={
             // misleading prop name, we want to show a continue button for completed questions
             // that aren't the last question, which requires this prop to be true

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
-import { ID, ExerciseQuestionData, Task } from 'src/types';
+import { ID, ExerciseQuestionData, Task, FeedbackStyle } from 'src/types';
 import { ReactNode } from 'react';
 import { Content } from './Content';
 
@@ -248,6 +248,7 @@ export interface QuestionProps {
   feedback_html: string;
   onChange: () => void;
   show_all_feedback?: boolean;
+  feedbackStyle?: FeedbackStyle;
   children?: ReactNode;
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;

@@ -72,6 +72,20 @@ describe('AnswersTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders all feedback', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        answer_id="1"
+        correct_answer_id="2"
+        incorrectAnswerId="1"
+        feedback_html="Feedback"
+        show_all_feedback={true}
+        feedbackStyle="bubble"
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('hides answers', () => {
     const tree = renderer.create(
       <AnswersTable {...props} hideAnswers={true} />

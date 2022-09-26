@@ -132,3 +132,5 @@ export type ChosenAnswer = (ID | undefined)[];
 export type ID = string | number;
 
 export type AvailablePoints = `${number}.${number}`;
+
+export type FeedbackStyle = 'simple' | 'bubble';
