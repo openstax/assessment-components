@@ -100,6 +100,10 @@ const StyledQuestion = styled.div`
     .answer-letter {
       text-align: center;
       padding: 0;
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
@@ -180,20 +184,18 @@ const StyledQuestion = styled.div`
       border: ${layouts.answer.feedback.popover.borderWidth} solid ${colors.answer.feedback.popover.borderColor};
       background-color: ${colors.palette.white};
       background-clip: padding-box;
-      border-radius: 0.3rem;
       max-width: ${layouts.answer.feedback.popover.maxWidth};
-      margin: calc(${layouts.answer.feedback.arrow.height} - 5px) 0 ${layouts.answer.horizontalSpacing} calc(-1 * (2 * ${layouts.answer.horizontalSpacing}));
-      box-shadow: 10px 0px 10px rgba(0, 0, 0, .25);
-      color: ${colors.palette.neutral};
+      margin: calc(${layouts.answer.feedback.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+      color: ${colors.palette.neutralThin};
       font-size: 1.4rem;
-      font-style: italic;
 
       .arrow {
         position: absolute;
         display: block;
         width: ${layouts.answer.feedback.arrow.width};
         height: ${layouts.answer.feedback.arrow.height};
-        margin-left: 30px;
+        margin-left: 3px;
         top: calc((${layouts.answer.feedback.arrow.height} + ${layouts.answer.feedback.popover.borderWidth}) * -1);
 
         &::before,
@@ -224,7 +226,7 @@ const StyledQuestion = styled.div`
   .openstax-answer {
     border-top: 1px solid #d5d5d5;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 6px 8px;
   }
 }
 `;

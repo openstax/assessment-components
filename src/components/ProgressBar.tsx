@@ -73,6 +73,7 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   border-width: 1px;
   border-style: solid;
   margin: 0 0.3rem;
+  font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
   ${props => handleVariant(props.variant, props.isActive)}

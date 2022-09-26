@@ -8,6 +8,7 @@ export const StepCardFooter = styled.div`
     justify-content: space-between;
     font-size: 1.4rem;
     line-height: 2rem;
+    background: ${colors.card.body.background};
 
     > * {
         flex-grow: 1;
@@ -21,6 +22,8 @@ export const StepCardFooter = styled.div`
     .step-card-footer-inner {
         border-top: 1px solid ${colors.palette.pale};
         padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .points {
