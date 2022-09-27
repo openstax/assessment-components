@@ -177,46 +177,8 @@ const StyledQuestion = styled.div`
     }
 
     .question-feedback {
-      ${mixins.resetText()}
-
-      z-index: 1;
-      position: relative;
-      border: ${layouts.answer.feedback.popover.borderWidth} solid ${colors.answer.feedback.popover.borderColor};
-      background-color: ${colors.palette.white};
-      background-clip: padding-box;
+      ${mixins.popover()}
       max-width: ${layouts.answer.feedback.popover.maxWidth};
-      margin: calc(${layouts.answer.feedback.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-      color: ${colors.palette.neutralThin};
-      font-size: 1.4rem;
-
-      .arrow {
-        position: absolute;
-        display: block;
-        width: ${layouts.answer.feedback.arrow.width};
-        height: ${layouts.answer.feedback.arrow.height};
-        margin-left: 3px;
-        top: calc((${layouts.answer.feedback.arrow.height} + ${layouts.answer.feedback.popover.borderWidth}) * -1);
-
-        &::before,
-        &::after {
-          position: absolute;
-          display: block;
-          content: "";
-          border-color: transparent;
-          border-style: solid;
-          border-width: 0 calc(${layouts.answer.feedback.arrow.width} / 2) ${layouts.answer.feedback.arrow.height} calc(${layouts.answer.feedback.arrow.width} / 2);
-        }
-        &::before {
-          top: 0;
-          border-bottom-color: ${colors.answer.feedback.popover.borderColor};
-        }
-        &::after {
-          top: ${layouts.answer.feedback.popover.borderWidth};
-          border-bottom-color: ${colors.palette.white};
-        }
-      }
-
       .question-feedback-content {
         padding: ${layouts.answer.feedback.popover.verticalSpacing} ${layouts.answer.feedback.popover.horizontalSpacing};
       }
