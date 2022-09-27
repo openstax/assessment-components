@@ -15,7 +15,7 @@ export interface ExerciseQuestionProps {
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
-  onNextStep: () => void;
+  onNextStep: ExerciseBaseProps['onNextStep'];
   feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
@@ -67,12 +67,11 @@ export const SaveButton = (props: {
   </Button>
 );
 
-const NextButton = (props: {
+export const NextButton = (props: {
   canUpdateCurrentStep: boolean,
-  onNextStep: ExerciseQuestionProps['onNextStep']
-}) => {
+} & React.ComponentPropsWithoutRef<'button'>) => {
   return (
-    <Button onClick={props.onNextStep} data-test-id="continue-btn">
+    <Button {...props} data-test-id="continue-btn">
       {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
     </Button>
   );
@@ -139,7 +138,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
                 attempt_number={attempt_number}
                 onClick={() => onAnswerSave(numberfyId(question.id))}
               /> :
-              <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+              <NextButton onClick={() => onNextStep(questionNumber)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
       </StepCardFooter>

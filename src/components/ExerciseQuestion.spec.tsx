@@ -1,4 +1,4 @@
-import { ExerciseQuestion, ExerciseQuestionProps, SaveButton } from './ExerciseQuestion';
+import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
 
 describe('ExerciseQuestion', () => {
@@ -171,6 +171,24 @@ describe('ExerciseQuestion', () => {
     );
     renderer.act(() => {
       tree.root.findByType(SaveButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalledWith(1);
+  });
+
+  it('passes question number on next button click', () => {
+    const mockFn = jest.fn();
+
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        needsSaved={false}
+        canAnswer={true}
+        onNextStep={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(NextButton).props.onClick();
     });
 
     expect(mockFn).toHaveBeenCalledWith(1);
