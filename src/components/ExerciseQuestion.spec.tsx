@@ -176,7 +176,7 @@ describe('ExerciseQuestion', () => {
     expect(mockFn).toHaveBeenCalledWith(1);
   });
 
-  it('passes question number on next button click', () => {
+  it('passes question index on next button click', () => {
     const mockFn = jest.fn();
 
     const tree = renderer.create(
@@ -191,6 +191,6 @@ describe('ExerciseQuestion', () => {
       tree.root.findByType(NextButton).props.onClick();
     });
 
-    expect(mockFn).toHaveBeenCalledWith(1);
+    expect(mockFn).toHaveBeenCalledWith(0);
   });
 });
