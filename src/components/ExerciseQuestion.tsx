@@ -138,7 +138,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
                 attempt_number={attempt_number}
                 onClick={() => onAnswerSave(numberfyId(question.id))}
               /> :
-              <NextButton onClick={() => onNextStep(questionNumber)} canUpdateCurrentStep={canUpdateCurrentStep} />}
+              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
       </StepCardFooter>

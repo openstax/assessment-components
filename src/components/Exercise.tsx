@@ -33,7 +33,7 @@ export interface ExerciseBaseProps {
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
-  onNextStep: (currentQuestionNumber: number) => void;
+  onNextStep: (currentIndex: number) => void;
   show_all_feedback?: boolean;
   scrollToQuestion?: number;
 }
