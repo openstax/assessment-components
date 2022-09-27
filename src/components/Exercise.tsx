@@ -78,7 +78,7 @@ export const Exercise = ({
         <ExerciseQuestion
           {...props}
           {...state}
-          ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + 1] = el}
+          ref={(el: HTMLDivElement) => questionsRef.current[questionNumber] = el}
           exercise_uid={exercise.uid}
           key={q.id}
           question={q}
