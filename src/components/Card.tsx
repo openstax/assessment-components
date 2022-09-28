@@ -122,7 +122,7 @@ const StepCardHeader = styled.div`
             display: inherit;
         }
 
-        .exercise-id0 {
+        .exercise-id {
             display: none;
         }
 
