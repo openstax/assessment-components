@@ -65,7 +65,7 @@ const StepCardHeader = styled.div`
   }
 
   .separator {
-      margin: 0.4rem;
+      margin: 0 0.4rem;
   }
 
   .exercise-id {
