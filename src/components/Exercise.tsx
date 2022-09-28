@@ -56,9 +56,10 @@ export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
+  const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
 
   React.useEffect(() => {
-    const el = document.querySelector(`.openstax-question[data-question-number="${scrollToQuestion}"]`)
+    const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
     if (el) {
       scrollToElement(el);
     }
@@ -77,6 +78,7 @@ export const Exercise = ({
         <ExerciseQuestion
           {...props}
           {...state}
+          ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
           exercise_uid={exercise.uid}
           key={q.id}
           question={q}

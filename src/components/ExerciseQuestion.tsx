@@ -1,3 +1,4 @@
+import React from "react";
 import { numberfyId } from "../../src/utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
@@ -86,7 +87,7 @@ const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free
   );
 }
 
-export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
+export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
@@ -98,6 +99,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
   return (
     <div data-test-id="student-exercise-question">
       <Question
+        ref={ref}
         task={task}
         question={question}
         answerIdOrder={answer_id_order}
@@ -144,4 +146,4 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
       </StepCardFooter>
     </div>
   );
-}
+})
