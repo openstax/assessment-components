@@ -14,6 +14,7 @@ export interface AnswersTableProps {
   correct_answer_feedback_html?: string;
   answered_count?: number;
   show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
   onChangeAnswer: () => void;
   hideAnswers: boolean;
   hasCorrectAnswer?: boolean;
@@ -30,7 +31,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
     incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html,
-    show_all_feedback = false, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
+    show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
   } = props;
   if (hideAnswers) { return null; }
 
@@ -56,6 +57,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     answered_count,
     disabled: !choicesEnabled,
     show_all_feedback,
+    tableFeedbackEnabled,
     onKeyPress
   };
 
@@ -73,7 +75,9 @@ export const AnswersTable = (props: AnswersTableProps) => {
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
 
-    if (answer.id === incorrectAnswerId && feedback_html) {
+    if (show_all_feedback && answer.feedback_html && tableFeedbackEnabled) {
+      feedback.push({ index: i, html: answer.feedback_html })
+    } else if (answer.id === incorrectAnswerId && feedback_html) {
       feedback.push({ index: i, html: feedback_html })
     } else if (answer.id === correct_answer_id && correct_answer_feedback_html) {
       feedback.push({ index: i, html: correct_answer_feedback_html })

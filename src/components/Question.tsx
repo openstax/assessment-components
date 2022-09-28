@@ -212,6 +212,7 @@ export interface QuestionProps {
   feedback_html: string;
   onChange: () => void;
   show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
   children?: ReactNode;
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;

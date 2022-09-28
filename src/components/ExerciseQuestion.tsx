@@ -15,7 +15,7 @@ export interface ExerciseQuestionProps {
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
-  onNextStep: () => void;
+  onNextStep: ExerciseBaseProps['onNextStep'];
   feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
@@ -35,6 +35,7 @@ export interface ExerciseQuestionProps {
   exercise_uid: string;
   free_response?: string;
   show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -66,12 +67,11 @@ export const SaveButton = (props: {
   </Button>
 );
 
-const NextButton = (props: {
+export const NextButton = (props: {
   canUpdateCurrentStep: boolean,
-  onNextStep: ExerciseQuestionProps['onNextStep']
-}) => {
+} & React.ComponentPropsWithoutRef<'button'>) => {
   return (
-    <Button onClick={props.onNextStep} data-test-id="continue-btn">
+    <Button {...props} data-test-id="continue-btn">
       {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
     </Button>
   );
@@ -92,7 +92,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, show_all_feedback
+    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
   return (
@@ -114,6 +114,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         displayFormats={false}
         displaySolution={displaySolution}
         show_all_feedback={show_all_feedback}
+        tableFeedbackEnabled={tableFeedbackEnabled}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
@@ -137,7 +138,7 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
                 attempt_number={attempt_number}
                 onClick={() => onAnswerSave(numberfyId(question.id))}
               /> :
-              <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
       </StepCardFooter>

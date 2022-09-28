@@ -34,7 +34,7 @@ export interface ExerciseBaseProps {
   answer_id_order?: ID[];
   hasMultipleAttempts: boolean;
   onAnswerSave: (question_id: number) => void;
-  onNextStep: () => void;
+  onNextStep: (currentIndex: number) => void;
   show_all_feedback?: boolean;
   scrollToQuestion?: number;
   showExerciseIcons?: boolean;
@@ -91,6 +91,7 @@ export const Exercise = ({
           displaySolution={true}
           detailedSolution={state.solution?.content_html}
           show_all_feedback={show_all_feedback}
+          tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
           canUpdateCurrentStep={
             // misleading prop name, we want to show a continue button for completed questions
             // that aren't the last question, which requires this prop to be true
