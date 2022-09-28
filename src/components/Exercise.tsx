@@ -39,6 +39,7 @@ export interface ExerciseBaseProps {
   scrollToQuestion?: number;
   showExerciseIcons?: boolean;
   topicUrl?: string;
+  errataUrl?: string;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -71,7 +72,8 @@ export const Exercise = ({
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
-    rightHeaderChildren={props.showExerciseIcons ? <ExerciseIcons exercise={exercise} topicUrl={props.topicUrl} /> : null}
+    rightHeaderChildren={props.showExerciseIcons ?
+      <ExerciseIcons exercise={exercise} topicUrl={props.topicUrl} errataUrl={props.errataUrl} /> : null}
   >
     <Preamble exercise={exercise} />
 

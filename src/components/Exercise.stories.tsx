@@ -302,5 +302,10 @@ export const MultiPartHalfComplete = () => {
 };
 
 export const Icons = () => {
-  return <Exercise {...exerciseWithQuestionStatesProps} showExerciseIcons={true} />;
+  return <Exercise
+    {...exerciseWithQuestionStatesProps}
+    showExerciseIcons={true}
+    topicUrl='https://openstax.org'
+    errataUrl='https://openstax.org'
+  />;
 };

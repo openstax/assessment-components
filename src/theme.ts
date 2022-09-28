@@ -11,6 +11,7 @@ const palette = {
   paleYellow: "#ffffbb",
   teal: "#0dc0de",
   blue: "#007da4",
+  mediumBlue: "#026AA1",
   lightBlue: "#34bdd8",
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
@@ -96,6 +97,7 @@ export const layouts = {
     arrow: {
       width: "16px",
       height: "8px",
+      edgeDistance: "4px",
     },
     horizontalSpacing: "0.8rem",
     verticalSpacing: "1rem",
@@ -253,11 +255,8 @@ export const mixins = {
       display: block;
       width: ${layouts.popover.arrow.width};
       height: ${layouts.popover.arrow.height};
-      margin-left: 3px;
-      top: calc((${layouts.popover.arrow.height} + ${layouts.popover.borderWidth}) * -1);
-      &.right {
-        right: 3px;
-      }
+      margin-left: ${layouts.popover.arrow.edgeDistance};
+      top: calc(${layouts.popover.arrow.height} * -1);
 
       &::before,
       &::after {
@@ -277,6 +276,12 @@ export const mixins = {
         border-bottom-color: ${colors.palette.white};
       }
     }
+
+    &.right {
+      right: calc(-${layouts.popover.arrow.edgeDistance} - ${layouts.popover.borderWidth});
+      .arrow { right: ${layouts.popover.arrow.edgeDistance}; }
+    }
+
 
     > .content {
       padding: ${layouts.popover.verticalSpacing} ${layouts.popover.horizontalSpacing};
