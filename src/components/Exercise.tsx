@@ -73,7 +73,6 @@ export const Exercise = ({
     <Preamble exercise={exercise} />
 
     {exercise.questions.map((q, i) => {
-      console.log(questionNumber);
       const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
       return (
         <ExerciseQuestion
