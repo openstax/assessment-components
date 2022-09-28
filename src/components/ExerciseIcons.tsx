@@ -7,8 +7,8 @@ type ExplanationType = 'multiple-choice' | 'two-step';
 
 const TypeExplanations: { [key in ExplanationType]: string } = {
   'multiple-choice': 'Select the best answer from the given list of distractors. Your instructor may or may not allow multiple attempts.',
-  'two-step': 'In a two-step question, OpenStax Tutor asks for your own answer first, then gives multiple-choice options to help you assess your learnings. \
-Recalling the answer to a question from memory helps you to retain things longer. Later, you and your instructor can review your work together.',
+  'two-step': 'In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. \
+Recalling the answer to a question from memory helps you to retain things longer.',
 }
 
 const ItemWrapper = styled.div`
