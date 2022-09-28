@@ -75,7 +75,7 @@ export const ExerciseIcons = ({ exercise, topicUrl, errataUrl }:
     typeExplanation = TypeExplanations['two-step'];
   } else if (isMultipleChoice) {
     typeExplanation = TypeExplanations['multiple-choice'];
-  };
+  }
 
   if (topicUrl) {
     items.push(
