@@ -44,9 +44,7 @@ interface PopoverItemProps {
   }
 }
 
-const PopoverItem = (props: PopoverItemProps) => {
-
-return (
+const PopoverItem = (props: PopoverItemProps) => (
   <ItemWrapper {...props.wrapperProps}>
     <InnerWrapper>
       {props.children}
@@ -56,8 +54,7 @@ return (
       </Popover>
     </InnerWrapper>
   </ItemWrapper>
-)
-};
+);
 
 const PopoverItemsWrapper = styled.div`
   max-width: 200px;
