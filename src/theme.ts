@@ -255,6 +255,9 @@ export const mixins = {
       height: ${layouts.popover.arrow.height};
       margin-left: 3px;
       top: calc((${layouts.popover.arrow.height} + ${layouts.popover.borderWidth}) * -1);
+      &.right {
+        right: 3px;
+      }
 
       &::before,
       &::after {

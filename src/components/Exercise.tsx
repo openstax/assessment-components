@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Content } from './Content';
-import { TaskStepCard } from './Card';
-import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
-import { ExerciseQuestion } from './ExerciseQuestion';
 import scrollToElement from 'scroll-to-element';
+import styled from 'styled-components';
+import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
+import { TaskStepCard } from './Card';
+import { Content } from './Content';
+import { ExerciseIcons } from './ExerciseIcons';
+import { ExerciseQuestion } from './ExerciseQuestion';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -36,6 +37,8 @@ export interface ExerciseBaseProps {
   onNextStep: () => void;
   show_all_feedback?: boolean;
   scrollToQuestion?: number;
+  showExerciseIcons?: boolean;
+  topicUrl?: string;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -68,6 +71,7 @@ export const Exercise = ({
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
+    rightHeaderChildren={props.showExerciseIcons ? <ExerciseIcons exercise={exercise} topicUrl={props.topicUrl} /> : null}
   >
     <Preamble exercise={exercise} />
 
@@ -96,4 +100,5 @@ export const Exercise = ({
     }
     )}
   </StyledTaskStepCard>
-)};
+  )
+};

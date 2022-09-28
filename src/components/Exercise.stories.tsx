@@ -300,3 +300,7 @@ export const MultiPartHalfComplete = () => {
 
   return <Exercise {...props} />;
 };
+
+export const Icons = () => {
+  return <Exercise {...exerciseWithQuestionStatesProps} showExerciseIcons={true} />;
+};
