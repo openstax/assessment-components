@@ -68,6 +68,7 @@ export const Exercise = ({
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
+    showTotalQuestions={legacyStepRender}
   >
     <Preamble exercise={exercise} />
 
