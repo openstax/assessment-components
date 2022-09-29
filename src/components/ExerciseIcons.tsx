@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { colors, mixins } from '../../src/theme';
 import { ExerciseData } from '../../src/types';
-import { faBookOpen, faTriangleExclamation, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTriangleExclamation';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type ExplanationType = 'multiple-choice' | 'two-step';
