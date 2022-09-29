@@ -195,6 +195,16 @@
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
+    "exercise--icons": {
+      "name": "Icons",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 304,
+      "locEnd": 311,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
     "exercise-question--default": {
       "name": "Default",
       "levels": [
