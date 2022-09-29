@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { colors, mixins } from '../../src/theme';
 import { ExerciseData } from '../../src/types';
-import * as Icons from './Icons';
+import { faBookOpen, faTriangleExclamation, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type ExplanationType = 'multiple-choice' | 'two-step';
 
@@ -62,6 +63,11 @@ const PopoverItemsWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  color: ${colors.palette.darkGray};
+  height: 1em;
+`;
+
 export const ExerciseIcons = ({ exercise, topicUrl, errataUrl }:
   { exercise: ExerciseData, topicUrl?: string, errataUrl?: string }) => {
   const items = [];
@@ -77,21 +83,21 @@ export const ExerciseIcons = ({ exercise, topicUrl, errataUrl }:
   if (topicUrl) {
     items.push(
       <PopoverItem key='topic' text='View topic in textbook' wrapperProps={{ as: 'a', href: topicUrl, target: '_blank' }}>
-        <Icons.Book />
+        <StyledFontAwesomeIcon icon={faBookOpen}></StyledFontAwesomeIcon>
       </PopoverItem>
     );
   }
 
   items.push(
     <PopoverItem key='errata' text='Suggest a correction' wrapperProps={{ as: 'a', href: errataUrl, target: '_blank' }}>
-      <Icons.Exclamation />
+      <StyledFontAwesomeIcon icon={faTriangleExclamation}></StyledFontAwesomeIcon>
     </PopoverItem>
   )
 
   if (typeExplanation) {
     items.push(
       <PopoverItem key='type' text={typeExplanation}>
-        <Icons.Info />
+        <StyledFontAwesomeIcon icon={faCircleInfo} height='16px' width='16px'></StyledFontAwesomeIcon>
       </PopoverItem>
     )
   }
