@@ -6,7 +6,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
+    className="sc-bczRLJ hctMxl exercise-step sc-kDDrLX iuUKZC"
   >
     <div
       className="sc-dkzDqf cGtPsv"
@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi eUguVo openstax-question step-card-body"
+          className="sc-papXJ fuSOwF openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -175,7 +175,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf gWibAH step-card-footer"
+          className="sc-jqUVSM bEqNdO step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -195,7 +195,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               className="controls"
             >
               <button
-                className="sc-eCYdqJ dqiaKp"
+                className="sc-ftvSup gRHhHP"
                 data-test-id="continue-btn"
                 onClick={[Function]}
               >
@@ -216,7 +216,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
+    className="sc-bczRLJ hctMxl exercise-step sc-kDDrLX iuUKZC"
   >
     <div
       className="sc-dkzDqf cGtPsv"
@@ -279,7 +279,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi eUguVo openstax-question step-card-body"
+          className="sc-papXJ fuSOwF openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -385,7 +385,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf gWibAH step-card-footer"
+          className="sc-jqUVSM bEqNdO step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -405,7 +405,630 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               className="controls"
             >
               <button
-                className="sc-eCYdqJ dqiaKp"
+                className="sc-ftvSup gRHhHP"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step sc-kDDrLX iuUKZC"
+  >
+    <div
+      className="sc-dkzDqf cGtPsv"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 1
+          </span>
+          <span
+            className="num-questions"
+          >
+             / 
+            1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@5
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+        <div
+          className="sc-iBkjds fTsKRk"
+        >
+          <a
+            className="sc-eCYdqJ kErKFb"
+            href="https://openstax.org"
+            target="_blank"
+          >
+            <div
+              className="sc-jSMfEi fqZheV"
+            >
+              <svg
+                height="15"
+                viewBox="0 0 512 512"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <span
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <path
+                  d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C87.5 32 35.1 48.6 9 59.9c-5.6 2.4-9 8-9 14V454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V73.9c0-6.1-3.4-11.6-9-14C540.9 48.6 488.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"
+                  fill="#757575"
+                />
+              </svg>
+              <div
+                className="sc-gKXOVf fuUtVw popover right"
+              >
+                <div
+                  className="arrow"
+                />
+                <div
+                  className="content"
+                >
+                  View topic in textbook
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            className="sc-eCYdqJ kErKFb"
+            href="https://openstax.org"
+            target="_blank"
+          >
+            <div
+              className="sc-jSMfEi fqZheV"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 512 512"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <span
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <path
+                  d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"
+                  fill="#757575"
+                />
+              </svg>
+              <div
+                className="sc-gKXOVf fuUtVw popover right"
+              >
+                <div
+                  className="arrow"
+                />
+                <div
+                  className="content"
+                >
+                  Suggest a correction
+                </div>
+              </div>
+            </div>
+          </a>
+          <div
+            className="sc-eCYdqJ kErKFb"
+          >
+            <div
+              className="sc-jSMfEi fqZheV"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 512 512"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <span
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <path
+                  d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
+                  fill="#757575"
+                />
+              </svg>
+              <div
+                className="sc-gKXOVf fuUtVw popover right"
+              >
+                <div
+                  className="arrow"
+                />
+                <div
+                  className="content"
+                >
+                  Select the best answer from the given list of distractors. Your instructor may or may not allow multiple attempts.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM EWshI"
+    >
+      <div
+        className="step-card-body exercise-context"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Context",
+          }
+        }
+      />
+      <div
+        className="step-card-body exercise-stimulus"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<b>Stimulus HTML</b>",
+          }
+        }
+      />
+      <div
+        data-test-id="student-exercise-question"
+      >
+        <div
+          className="sc-papXJ fuSOwF openstax-question step-card-body"
+          data-question-number={1}
+          data-test-id="question"
+        >
+          <div
+            className="answers-table"
+          >
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled answer-checked"
+                role="region"
+              >
+                <input
+                  checked={true}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-0"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-0"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Selected Choice a:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-a"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      a
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "True",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled"
+                role="region"
+              >
+                <input
+                  checked={false}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-1"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-1"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Choice b:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-b"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      b
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "False",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-jqUVSM bEqNdO step-card-footer"
+        >
+          <div
+            className="step-card-footer-inner"
+          >
+            <div
+              className="points"
+            >
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-ftvSup gRHhHP"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step sc-kDDrLX iuUKZC"
+  >
+    <div
+      className="sc-dkzDqf cGtPsv"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 1
+          </span>
+          <span
+            className="num-questions"
+          >
+             / 
+            1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@5
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+        <div
+          className="sc-iBkjds fTsKRk"
+        >
+          <a
+            className="sc-eCYdqJ kErKFb"
+            target="_blank"
+          >
+            <div
+              className="sc-jSMfEi fqZheV"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 512 512"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <span
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <path
+                  d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"
+                  fill="#757575"
+                />
+              </svg>
+              <div
+                className="sc-gKXOVf fuUtVw popover right"
+              >
+                <div
+                  className="arrow"
+                />
+                <div
+                  className="content"
+                >
+                  Suggest a correction
+                </div>
+              </div>
+            </div>
+          </a>
+          <div
+            className="sc-eCYdqJ kErKFb"
+          >
+            <div
+              className="sc-jSMfEi fqZheV"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 512 512"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <span
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <path
+                  d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"
+                  fill="#757575"
+                />
+              </svg>
+              <div
+                className="sc-gKXOVf fuUtVw popover right"
+              >
+                <div
+                  className="arrow"
+                />
+                <div
+                  className="content"
+                >
+                  In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. Recalling the answer to a question from memory helps you to retain things longer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM EWshI"
+    >
+      <div
+        className="step-card-body exercise-context"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Context",
+          }
+        }
+      />
+      <div
+        className="step-card-body exercise-stimulus"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<b>Stimulus HTML</b>",
+          }
+        }
+      />
+      <div
+        data-test-id="student-exercise-question"
+      >
+        <div
+          className="sc-papXJ fuSOwF openstax-question step-card-body"
+          data-question-number={1}
+          data-test-id="question"
+        >
+          <div
+            className="answers-table"
+          >
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled answer-checked"
+                role="region"
+              >
+                <input
+                  checked={true}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-0"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-0"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Selected Choice a:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-a"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      a
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "True",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled"
+                role="region"
+              >
+                <input
+                  checked={false}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-1"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-1"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Choice b:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-b"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      b
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "False",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-jqUVSM bEqNdO step-card-footer"
+        >
+          <div
+            className="step-card-footer-inner"
+          >
+            <div
+              className="points"
+            >
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-ftvSup gRHhHP"
                 data-test-id="continue-btn"
                 onClick={[Function]}
               >
@@ -426,7 +1049,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iBkjds dMjJeO"
+    className="sc-bczRLJ hctMxl exercise-step sc-kDDrLX iuUKZC"
   >
     <div
       className="sc-dkzDqf cGtPsv"
@@ -489,7 +1112,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jSMfEi eUguVo openstax-question step-card-body"
+          className="sc-papXJ fuSOwF openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -595,7 +1218,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           </div>
         </div>
         <div
-          className="sc-gKXOVf gWibAH step-card-footer"
+          className="sc-jqUVSM bEqNdO step-card-footer"
         >
           <div
             className="step-card-footer-inner"
@@ -628,7 +1251,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               className="controls"
             >
               <button
-                className="sc-eCYdqJ dqiaKp"
+                className="sc-ftvSup gRHhHP"
                 data-test-id="continue-btn"
                 onClick={[Function]}
               >

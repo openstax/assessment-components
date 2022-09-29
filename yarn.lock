@@ -6127,7 +6127,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6223,6 +6223,13 @@ react-frame-component@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-5.2.3.tgz#2d5d1e29b23d5b915c839b44980d03bb9cafc453"
   integrity sha512-r+h0o3r/uqOLNT724z4CRVkxQouKJvoi3OPfjqWACD30Y87rtEmeJrNZf1WYPGknn1Y8200HAjx7hY/dPUGgmA==
+
+react-html-comment@^2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/react-html-comment/-/react-html-comment-2.0.14.tgz#150ca9c422cf3b7db36406a913a63ab2ca58ed9c"
+  integrity sha512-QGletkPQtCw/HMjTrpHD2i2kW1UZ/gruuvJCnryckSAlZ/30lDQN/MRjpNlUX9wCS4ua4d7r5MaTBMuOLUE/Lg==
+  dependencies:
+    prop-types "^15.7.2"
 
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^18.0.0:
   version "18.2.0"
