@@ -290,8 +290,8 @@
       "levels": [
         "Print"
       ],
-      "locStart": 66,
-      "locEnd": 103,
+      "locStart": 62,
+      "locEnd": 99,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
