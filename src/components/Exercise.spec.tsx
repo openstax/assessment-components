@@ -213,5 +213,20 @@ describe('Exercise', () => {
       )
       expect(tree.root.findAllByProps({ "data-test-id": "continue-btn" })[0].props['children']).toContain('Continue');
     });
+
+    it('renders header icons with multiple choice explanation', () => {
+      const tree = renderer.create(
+        <Exercise {...props} showExerciseIcons={true} errataUrl='https://openstax.org' topicUrl='https://openstax.org'  />
+      );
+      expect(tree.toJSON()).toMatchSnapshot();
+    });
+
+    it('renders header icons with two-step explanation', () => {
+      props.exercise.questions[0].formats.push('free-response');
+      const tree = renderer.create(
+        <Exercise {...props} showExerciseIcons={true}  />
+      );
+      expect(tree.toJSON()).toMatchSnapshot();
+    });
   });
 });

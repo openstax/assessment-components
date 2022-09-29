@@ -11,6 +11,7 @@ const palette = {
   paleYellow: "#ffffbb",
   teal: "#0dc0de",
   blue: "#007da4",
+  mediumBlue: "#026AA1",
   lightBlue: "#34bdd8",
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
@@ -53,12 +54,10 @@ export const colors = {
       colorHover: palette.neutralDark,
       colorSelected: palette.lightBlue,
     },
-    feedback: {
-      arrowOuterColor: "rgba(0, 0, 0, 0.25)",
-      popover: {
-        borderColor: "rgba(0, 0, 0, 0.2)",
-      },
-    },
+  },
+  popover: {
+    arrowOuterColor: "rgba(0, 0, 0, 0.25)",
+    borderColor: "rgba(0, 0, 0, 0.2)",
   },
   card: {
     header: {
@@ -87,19 +86,25 @@ export const layouts = {
     bubbleSize: "2.4rem",
     labelSpacing: "6.5rem",
     feedback: {
-      arrow: {
-        width: "16px",
-        height: "8px",
-      },
       popover: {
         horizontalSpacing: "1.1rem",
         verticalSpacing: "0.9rem",
-        horizontalBuffer: "4rem",
-        borderWidth: "1px",
         maxWidth: "370px",
-      }
+      },
     },
   },
+  popover: {
+    arrow: {
+      width: "16px",
+      height: "8px",
+      edgeDistance: "4px",
+    },
+    horizontalSpacing: "0.8rem",
+    verticalSpacing: "1rem",
+    horizontalBuffer: "4rem",
+    borderWidth: "1px",
+    maxWidth: "325px",
+  }
 };
 
 export const BREAKPOINTS = {
@@ -230,6 +235,57 @@ export const mixins = {
     ${breakpoints.mobile`
       padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
     `}
+  `,
+  popover: () => css`
+    ${mixins.resetText()}
+
+    z-index: 1;
+    position: relative;
+    border: ${layouts.popover.borderWidth} solid ${colors.popover.borderColor};
+    background-color: ${colors.palette.white};
+    background-clip: padding-box;
+    max-width: ${layouts.popover.maxWidth};
+    margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    color: ${colors.palette.neutralThin};
+    font-size: 1.4rem;
+
+    .arrow {
+      position: absolute;
+      display: block;
+      width: ${layouts.popover.arrow.width};
+      height: ${layouts.popover.arrow.height};
+      margin-left: ${layouts.popover.arrow.edgeDistance};
+      top: calc(${layouts.popover.arrow.height} * -1);
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0 calc(${layouts.popover.arrow.width} / 2) ${layouts.popover.arrow.height} calc(${layouts.popover.arrow.width} / 2);
+      }
+      &::before {
+        top: 0;
+        border-bottom-color: ${colors.popover.borderColor};
+      }
+      &::after {
+        top: ${layouts.popover.borderWidth};
+        border-bottom-color: ${colors.palette.white};
+      }
+    }
+
+    &.right {
+      right: calc(-${layouts.popover.arrow.edgeDistance} - ${layouts.popover.borderWidth});
+      .arrow { right: ${layouts.popover.arrow.edgeDistance}; }
+    }
+
+
+    > .content {
+      padding: ${layouts.popover.verticalSpacing} ${layouts.popover.horizontalSpacing};
+    }
   `,
 };
 
