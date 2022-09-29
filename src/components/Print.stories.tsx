@@ -14,10 +14,6 @@ const ExerciseWrapper = styled.div`
     display: none;
   }
 
-  .separator, .exercise-id {
-    display: inherit;
-  }
-
   .exercise-id {
     height: auto;
   }

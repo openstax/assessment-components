@@ -56,7 +56,7 @@ const StepCardHeader = styled.div`
     }
   }
 
-  .num-questions, .points, .separator {
+  .num-questions, .points {
       display: none;
   }
 
@@ -201,6 +201,7 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 interface SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
+  showTotalQuestions: boolean;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
   headerTitleChildren?: ReactNode;
@@ -220,6 +221,7 @@ export interface StepCardProps extends SharedProps {
 const StepCard = ({
   questionNumber,
   numberOfQuestions,
+  showTotalQuestions,
   stepType,
   isHomework,
   availablePoints,
@@ -248,7 +250,7 @@ const StepCard = ({
               <div className="question-info">
                 {headerTitleChildren}
                 <span>{formattedQuestionNumber}</span>
-                <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
+                {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
               </div>
