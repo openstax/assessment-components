@@ -70,7 +70,7 @@ export type StepBase = {
   id: number;
   /** An exercise UID (number@version) */
   uid: string;
-  /** The number of available points to display in the header that wraps all questions. */
+  /** The number of available points to display in the header that wraps the exercise question(s). */
   available_points?: AvailablePoints;
 };
 
@@ -99,7 +99,7 @@ export type StepWithData = StepBase & {
 };
 
 export type QuestionState = {
-  /** The number of available points to display for the question in the footer. */
+  /** The number of available points to display in the footer for the question. */
   available_points: AvailablePoints;
   /** A boolean that will display the Continue/Next button when true and canAnswer is false */
   is_completed: boolean;
