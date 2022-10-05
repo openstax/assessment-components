@@ -66,8 +66,11 @@ export type Answer = {
 };
 
 export type StepBase = {
-  id: number; // could be id from tutor backend, could be index from assessments?
+  /** A Step ID from Tutor or the index from Assessments */
+  id: number;
+  /** An exercise UID (number@version) */
   uid: string;
+  /** The number of available points to display in the header that wraps the exercise question(s). */
   available_points?: AvailablePoints;
 };
 
@@ -96,22 +99,36 @@ export type StepWithData = StepBase & {
 };
 
 export type QuestionState = {
+  /** The number of available points to display in the footer for the question. */
   available_points: AvailablePoints;
+  /** A boolean that will display the Continue/Next button when true and canAnswer is false */
   is_completed: boolean;
+  /** A number ID of the user's selected Answer */
   answer_id?: number;
+  /** An array of Answer IDs that specify the order to display them when hasMultipleAttempts is true. */
   answer_id_order: ID[];
+  /** A string of the user's written response, used in two-step/WRM */
   free_response: string;
-  feedback_html: string; // Really only incorrect answer
+  /** A string of HTML to display below the incorrect answer */
+  feedback_html: string;
+  /** An ID of the answer to mark as correct. is_complete must also be true for this to display. */
   correct_answer_id: ID;
+  /** A string of HTML to display below the correct answer */
   correct_answer_feedback_html: string;
   response_validation?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  formats?: string[];
+  /** A number of the attempts remaining to display when hasMultipleAttempts is true. */
   attempts_remaining: number;
+  /** A number of the current attempt. Determines the button text - "Submit" when 0, otherwise "Re-submit". */
   attempt_number: number;
+  /** A Solution object that renders the content_html in the footer as "Detailed solution" */
   solution?: Solution;
+  /** An ID of the answer to mark as incorrect. Will always display regardless of correct_answer_id and is_completed. */
   incorrectAnswerId: ID;
+  /** A boolean that will disable the input controls and turn the Submit/Re-Submit button into Next/Continue when false. */
   canAnswer: boolean;
+  /** A boolean that  will enable the Submit/Re-Submit button when this and canAnswer are true. */
   needsSaved: boolean;
+  /** A boolean that will change the Submit/Re-Submit button to a disabled "Saving..." button when true */
   apiIsPending: boolean;
 };
 
