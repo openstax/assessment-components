@@ -21,4 +21,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Loader = () => <Wrapper><BulletList /></Wrapper>;
+export const Loader = () => <Wrapper><BulletList uniqueKey="OSLoader" /></Wrapper>;
