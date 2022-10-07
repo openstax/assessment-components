@@ -5,24 +5,24 @@ exports[`Loader matches snapshot 1`] = `
   className="sc-bczRLJ dHoDgd"
 >
   <svg
-    aria-labelledby="2whkloj-aria"
+    aria-labelledby="qb2y0t-aria"
     id={null}
     role="img"
     style={Object {}}
     viewBox="0 0 245 125"
   >
     <title
-      id="2whkloj-aria"
+      id="qb2y0t-aria"
     >
       Loading...
     </title>
     <rect
-      clipPath="url(#2whkloj-diff)"
+      clipPath="url(#qb2y0t-diff)"
       height="100%"
       role="presentation"
       style={
         Object {
-          "fill": "url(#2whkloj-animated-diff)",
+          "fill": "url(#qb2y0t-animated-diff)",
         }
       }
       width="100%"
@@ -31,7 +31,7 @@ exports[`Loader matches snapshot 1`] = `
     />
     <defs>
       <clipPath
-        id="2whkloj-diff"
+        id="qb2y0t-diff"
       >
         <circle
           cx="10"
@@ -87,7 +87,7 @@ exports[`Loader matches snapshot 1`] = `
         />
       </clipPath>
       <linearGradient
-        id="2whkloj-animated-diff"
+        id="qb2y0t-animated-diff"
       >
         <stop
           offset="0%"
