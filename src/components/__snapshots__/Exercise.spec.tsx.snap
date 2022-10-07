@@ -1024,6 +1024,210 @@ exports[`Exercise with question state data renders header icons with two-step ex
 </div>
 `;
 
+exports[`Exercise with question state data renders table feedback 1`] = `
+<div
+  className="sc-gsnTZi kTXtGE"
+  data-task-step-id={1}
+>
+  <div
+    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+  >
+    <div
+      className="sc-dkzDqf jPnAkk"
+    >
+      <div>
+        <div
+          className="question-info"
+        >
+          <span>
+            Question 1
+          </span>
+          <span
+            className="separator"
+          >
+            |
+          </span>
+          <span
+            className="question-id"
+          >
+            ID: 
+            1234@5
+          </span>
+        </div>
+      </div>
+      <div>
+        <div
+          className="points"
+        >
+          1.0
+           Points
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-hKMtZM EWshI"
+    >
+      <div
+        className="step-card-body exercise-context"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Context",
+          }
+        }
+      />
+      <div
+        className="step-card-body exercise-stimulus"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<b>Stimulus HTML</b>",
+          }
+        }
+      />
+      <div
+        data-test-id="student-exercise-question"
+      >
+        <div
+          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          data-question-number={1}
+          data-test-id="question"
+        >
+          <div
+            className="answers-table"
+          >
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled answer-checked"
+                role="region"
+              >
+                <input
+                  checked={true}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-0"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-0"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Selected Choice a:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-a"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      a
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "True",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+            <div
+              className="openstax-answer"
+            >
+              <section
+                className="answers-answer disabled"
+                role="region"
+              >
+                <input
+                  checked={false}
+                  className="answer-input-box"
+                  disabled={true}
+                  id="1-option-1"
+                  name="1-options"
+                  onChange={[Function]}
+                  type="radio"
+                />
+                <label
+                  className="answer-label"
+                  htmlFor="1-option-1"
+                >
+                  <span
+                    className="answer-letter-wrapper"
+                  >
+                    <button
+                      aria-label="Choice b:"
+                      className="answer-letter"
+                      data-test-id="answer-choice-b"
+                      disabled={true}
+                      onClick={[Function]}
+                    >
+                      b
+                    </button>
+                  </span>
+                  <div
+                    className="answer-answer"
+                  >
+                    <span
+                      className="answer-content"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "False",
+                        }
+                      }
+                    />
+                  </div>
+                </label>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-kDDrLX heSwtd step-card-footer"
+        >
+          <div
+            className="step-card-footer-inner"
+          >
+            <div
+              className="points"
+            >
+              <strong>
+                Points: 
+                1.0
+              </strong>
+              <span
+                className="attempts-left"
+              />
+            </div>
+            <div
+              className="controls"
+            >
+              <button
+                className="sc-papXJ jTyQce"
+                data-test-id="continue-btn"
+                onClick={[Function]}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 <div
   className="sc-gsnTZi kTXtGE"

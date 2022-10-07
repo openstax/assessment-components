@@ -228,5 +228,12 @@ describe('Exercise', () => {
       );
       expect(tree.toJSON()).toMatchSnapshot();
     });
+
+    it('renders table feedback', () => {
+      const tree = renderer.create(
+        <Exercise {...props} show_all_feedback={true}  />
+      );
+      expect(tree.toJSON()).toMatchSnapshot();
+    });
   });
 });
