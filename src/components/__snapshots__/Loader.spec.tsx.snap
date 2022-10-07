@@ -1,132 +1,135 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader matches snapshot 1`] = `
-<svg
-  aria-labelledby="q5irv9-aria"
-  className="sc-bczRLJ dtqrhK"
-  id={null}
-  role="img"
-  style={Object {}}
-  viewBox="0 0 245 125"
+<div
+  className="sc-bczRLJ dHoDgd"
 >
-  <title
-    id="q5irv9-aria"
+  <svg
+    aria-labelledby="2whkloj-aria"
+    id={null}
+    role="img"
+    style={Object {}}
+    viewBox="0 0 245 125"
   >
-    Loading...
-  </title>
-  <rect
-    clipPath="url(#q5irv9-diff)"
-    height="100%"
-    role="presentation"
-    style={
-      Object {
-        "fill": "url(#q5irv9-animated-diff)",
+    <title
+      id="2whkloj-aria"
+    >
+      Loading...
+    </title>
+    <rect
+      clipPath="url(#2whkloj-diff)"
+      height="100%"
+      role="presentation"
+      style={
+        Object {
+          "fill": "url(#2whkloj-animated-diff)",
+        }
       }
-    }
-    width="100%"
-    x="0"
-    y="0"
-  />
-  <defs>
-    <clipPath
-      id="q5irv9-diff"
-    >
-      <circle
-        cx="10"
-        cy="20"
-        r="8"
-      />
-      <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="15"
-      />
-      <circle
-        cx="10"
-        cy="50"
-        r="8"
-      />
-      <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="45"
-      />
-      <circle
-        cx="10"
-        cy="80"
-        r="8"
-      />
-      <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="75"
-      />
-      <circle
-        cx="10"
-        cy="110"
-        r="8"
-      />
-      <rect
-        height="10"
-        rx="5"
-        ry="5"
-        width="220"
-        x="25"
-        y="105"
-      />
-    </clipPath>
-    <linearGradient
-      id="q5irv9-animated-diff"
-    >
-      <stop
-        offset="0%"
-        stopColor="#f5f6f7"
-        stopOpacity={1}
+      width="100%"
+      x="0"
+      y="0"
+    />
+    <defs>
+      <clipPath
+        id="2whkloj-diff"
       >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-2; -2; 1"
+        <circle
+          cx="10"
+          cy="20"
+          r="8"
         />
-      </stop>
-      <stop
-        offset="50%"
-        stopColor="#eee"
-        stopOpacity={1}
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="15"
+        />
+        <circle
+          cx="10"
+          cy="50"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="45"
+        />
+        <circle
+          cx="10"
+          cy="80"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="75"
+        />
+        <circle
+          cx="10"
+          cy="110"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="105"
+        />
+      </clipPath>
+      <linearGradient
+        id="2whkloj-animated-diff"
       >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="-1; -1; 2"
-        />
-      </stop>
-      <stop
-        offset="100%"
-        stopColor="#f5f6f7"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="offset"
-          dur="1.2s"
-          keyTimes="0; 0.25; 1"
-          repeatCount="indefinite"
-          values="0; 0; 3"
-        />
-      </stop>
-    </linearGradient>
-  </defs>
-</svg>
+        <stop
+          offset="0%"
+          stopColor="#f5f6f7"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="-2; -2; 1"
+          />
+        </stop>
+        <stop
+          offset="50%"
+          stopColor="#eee"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="-1; -1; 2"
+          />
+        </stop>
+        <stop
+          offset="100%"
+          stopColor="#f5f6f7"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="0; 0; 3"
+          />
+        </stop>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
 `;
