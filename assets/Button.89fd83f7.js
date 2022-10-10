@@ -1,4 +1,4 @@
-import{c as e}from"./theme.b7ce5b34.js";import{s as a,j as c}from"./index.d152e56e.js";var d="/home/runner/work/assessment-components/assessment-components/src/components/Button.tsx";const l=a.button`
+import{c as e}from"./theme.883cc0d6.js";import{s as a,j as c}from"./index.c6a038da.js";var d="/home/runner/work/assessment-components/assessment-components/src/components/Button.tsx";const l=a.button`
   background-color: ${e.button.background};
   color: ${e.palette.white};
   font-size: 1.6rem;

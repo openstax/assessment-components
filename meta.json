@@ -295,6 +295,16 @@
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
+    "loader--default": {
+      "name": "Default",
+      "levels": [
+        "Loader"
+      ],
+      "locStart": 3,
+      "locEnd": 3,
+      "filePath": "src/components/Loader.stories.tsx",
+      "meta": {}
+    },
     "print--default": {
       "name": "Default",
       "levels": [
