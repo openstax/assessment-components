@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader matches snapshot 1`] = `
+<div
+  className="sc-bczRLJ dHoDgd"
+>
+  <svg
+    aria-labelledby="OSLoader-aria"
+    id={null}
+    role="img"
+    style={Object {}}
+    viewBox="0 0 245 125"
+  >
+    <title
+      id="OSLoader-aria"
+    >
+      Loading...
+    </title>
+    <rect
+      clipPath="url(#OSLoader-diff)"
+      height="100%"
+      role="presentation"
+      style={
+        Object {
+          "fill": "url(#OSLoader-animated-diff)",
+        }
+      }
+      width="100%"
+      x="0"
+      y="0"
+    />
+    <defs>
+      <clipPath
+        id="OSLoader-diff"
+      >
+        <circle
+          cx="10"
+          cy="20"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="15"
+        />
+        <circle
+          cx="10"
+          cy="50"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="45"
+        />
+        <circle
+          cx="10"
+          cy="80"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="75"
+        />
+        <circle
+          cx="10"
+          cy="110"
+          r="8"
+        />
+        <rect
+          height="10"
+          rx="5"
+          ry="5"
+          width="220"
+          x="25"
+          y="105"
+        />
+      </clipPath>
+      <linearGradient
+        id="OSLoader-animated-diff"
+      >
+        <stop
+          offset="0%"
+          stopColor="#f5f6f7"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="-2; -2; 1"
+          />
+        </stop>
+        <stop
+          offset="50%"
+          stopColor="#eee"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="-1; -1; 2"
+          />
+        </stop>
+        <stop
+          offset="100%"
+          stopColor="#f5f6f7"
+          stopOpacity={1}
+        >
+          <animate
+            attributeName="offset"
+            dur="1.2s"
+            keyTimes="0; 0.25; 1"
+            repeatCount="indefinite"
+            values="0; 0; 3"
+          />
+        </stop>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+`;

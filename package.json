@@ -65,6 +65,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "classnames": "^2.3.1",
     "jest-environment-jsdom": "^29.0.3",
+    "react-content-loader": "^6.2.0",
     "scroll-to-element": "^2.0.3"
   }
 }
