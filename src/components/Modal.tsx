@@ -1,3 +1,4 @@
+import { colors } from "../../src/theme";
 import styled, { css } from "styled-components";
 
 const Times = (props: React.HTMLAttributes<SVGElement>) => (
@@ -22,6 +23,9 @@ const Card = styled.div`
   width: 40rem;
   background-color: white;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05), 0 0 4rem rgba(0, 0, 0, 0.08);
+  color: ${colors.palette.neutralDarker};
+  font-size: 1.6rem;
+  line-height: 2.5rem;
 `;
 
 const Header = styled.header`
@@ -43,17 +47,18 @@ const Heading = styled.h1`
   align-items: center;
   margin: 0;
   padding: ${modalPadding * 0.5}rem 0;
+  font-size: 1.8rem;
 `;
 
-const Body = styled.div`
-  font-size: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  padding: ${modalPadding}rem;
+export const BodyHeading = styled.h3`
+  font-weight: 400;
+  font-size: 2.2rem;
+  margin-top: 0;
+`;
 
-  ${Card.Header} + & { /* stylelint-disable */
-    margin-top: 0;
-  }
+export const Body = styled.div`
+  font-size: 1.6rem;
+  padding: ${modalPadding}rem;
 `;
 
 const Mask = styled.div`
@@ -83,6 +88,7 @@ const CardWrapper = styled.div`
 `;
 
 const CloseModalIcon = styled((props) => <Times {...props} aria-hidden='true' focusable='false' />)`
+  padding: 0.4rem;
   cursor: pointer;
   margin-right: 0;
   padding-right: 0;
@@ -91,12 +97,18 @@ const CloseModalIcon = styled((props) => <Times {...props} aria-hidden='true' fo
   :hover {
     color: #333;
   }
-  height: 2rem;
-  width: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
 
   ${(props: { variant?: string }) => props.variant === 'error' && css`
     color: #C22032;
   `}
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: ${modalPadding}rem;
 `;
 
 export interface ModalPropTypes {
@@ -126,7 +138,7 @@ export const Modal = ({
             </Heading>
             <CloseModalIcon onClick={onModalClose} variant={variant}/>
           </Header>
-          <Body>{children}</Body>
+          {children}
         </Card>
       </CardWrapper>
       <Mask />
