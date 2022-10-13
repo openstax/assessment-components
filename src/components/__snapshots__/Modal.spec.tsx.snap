@@ -20,7 +20,7 @@ exports[`Modal matches snapshot 1`] = `
         </h1>
         <svg
           aria-hidden="true"
-          className="sc-ftvSup dzrDbo"
+          className="sc-ftvSup dSqixg"
           focusable="false"
           height="15px"
           onClick={[MockFunction]}

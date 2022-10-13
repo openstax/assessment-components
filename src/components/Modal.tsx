@@ -97,8 +97,8 @@ const CloseModalIcon = styled((props) => <Times {...props} aria-hidden='true' fo
   :hover {
     color: ${colors.palette.neutralDark};
   }
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 1.6rem;
+  width: 1.6rem;
 
   ${(props: { variant?: string }) => props.variant === 'error' && css`
     color: ${colors.palette.darkRed};
