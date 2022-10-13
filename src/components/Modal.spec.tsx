@@ -1,11 +1,11 @@
 import renderer from 'react-test-renderer';
-import { Body, Modal } from './Modal';
+import { Modal, ModalBody } from './Modal';
 
 describe('Modal', () => {
   it('matches snapshot', () => {
     const tree = renderer.create(
       <Modal onModalClose={jest.fn()} show={true} heading='Heading'>
-        <Body>Modal Body</Body>
+        <ModalBody>Modal Body</ModalBody>
       </Modal>
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -14,7 +14,7 @@ describe('Modal', () => {
   it('hides', () => {
     const tree = renderer.create(
       <Modal onModalClose={jest.fn()} show={false} heading='Heading'>
-        <Body>Modal Body</Body>
+        <ModalBody>Modal Body</ModalBody>
       </Modal>
     ).toJSON();
     expect(tree).toBeNull();

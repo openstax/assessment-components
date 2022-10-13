@@ -50,13 +50,13 @@ const Heading = styled.h1`
   font-size: 1.8rem;
 `;
 
-export const BodyHeading = styled.h3`
+export const ModalBodyHeading = styled.h3`
   font-weight: 400;
   font-size: 2.2rem;
   margin-top: 0;
 `;
 
-export const Body = styled.div`
+export const ModalBody = styled.div`
   font-size: 1.6rem;
   padding: ${modalPadding}rem;
 `;
@@ -105,7 +105,7 @@ const CloseModalIcon = styled((props) => <Times {...props} aria-hidden='true' fo
   `}
 `;
 
-export const Footer = styled.div`
+export const ModalFooter = styled.div`
   display: flex;
   justify-content: space-between;
   padding: ${modalPadding}rem;
