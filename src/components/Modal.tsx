@@ -109,6 +109,10 @@ export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: ${modalPadding}rem;
+
+  button {
+    min-width: 12rem;
+  }
 `;
 
 export interface ModalPropTypes {

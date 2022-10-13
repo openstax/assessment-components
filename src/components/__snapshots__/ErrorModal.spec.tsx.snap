@@ -68,10 +68,10 @@ exports[`Modal matches snapshot 1`] = `
         .
       </div>
       <div
-        className="sc-jqUVSM bdmjp"
+        className="sc-jqUVSM bCBcaQ"
       >
         <button
-          className="sc-bczRLJ fLTvYy sc-kDDrLX tflMh"
+          className="sc-bczRLJ fLTvYy"
           onClick={[MockFunction]}
         >
           OK
