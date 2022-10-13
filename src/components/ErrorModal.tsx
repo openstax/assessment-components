@@ -8,7 +8,7 @@ const StyledButton = styled(Button)`
   min-width: 12rem;
 `;
 
-export const ErrorModal = (props: React.PropsWithChildren<ErrorModalProps>) => {
+export const ErrorModal = (props: ErrorModalProps) => {
   return <Modal {...props} variant='error' heading='Error'>
     <Body>
       <BodyHeading>Uh-oh, there's been a glitch</BodyHeading>

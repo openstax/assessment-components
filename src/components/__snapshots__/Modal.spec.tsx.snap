@@ -2,25 +2,25 @@
 
 exports[`Modal matches snapshot 1`] = `
 <div
-  className="sc-gKPRtg bgqhPj"
+  className="sc-gKXOVf goHwpm"
 >
   <div
-    className="sc-iBYQkv bfgTBZ"
+    className="sc-iBkjds mgorR"
   >
     <div
-      className="sc-bcXHqe gDcqWW"
+      className="sc-bczRLJ fqMFQH"
     >
       <header
-        className="sc-gswNZR guaTzm"
+        className="sc-gsnTZi gMQQOl"
       >
         <h1
-          className="sc-dkrFOg gNfVqa"
+          className="sc-dkzDqf kmqMvc"
         >
           Heading
         </h1>
         <svg
           aria-hidden="true"
-          className="sc-ftTHYK hdNUUN"
+          className="sc-ftvSup dzrDbo"
           focusable="false"
           height="15px"
           onClick={[MockFunction]}
@@ -50,14 +50,14 @@ exports[`Modal matches snapshot 1`] = `
         </svg>
       </header>
       <div
-        className="sc-eDvSVe iBIsVQ"
+        className="sc-eCYdqJ GurhM"
       >
         Modal Body
       </div>
     </div>
   </div>
   <div
-    className="sc-jSUZER biCOgZ"
+    className="sc-jSMfEi kxSksp"
   />
 </div>
 `;

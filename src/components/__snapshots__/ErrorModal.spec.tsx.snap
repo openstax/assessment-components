@@ -2,25 +2,25 @@
 
 exports[`Modal matches snapshot 1`] = `
 <div
-  className="sc-jSMfEi LfhLz"
+  className="sc-iBkjds eMGsrA"
 >
   <div
-    className="sc-gKXOVf jaHBHf"
+    className="sc-ftvSup YygFK"
   >
     <div
-      className="sc-bczRLJ dVaQao"
+      className="sc-gsnTZi liuLzN"
     >
       <header
-        className="sc-gsnTZi loKqIZ"
+        className="sc-dkzDqf gXnWMX"
       >
         <h1
-          className="sc-dkzDqf bRZtFV"
+          className="sc-hKMtZM gKFAwv"
         >
-          Heading
+          Error
         </h1>
         <svg
           aria-hidden="true"
-          className="sc-iBkjds hzaACK"
+          className="sc-papXJ almpY"
           focusable="false"
           height="15px"
           onClick={[MockFunction]}
@@ -51,14 +51,36 @@ exports[`Modal matches snapshot 1`] = `
         </svg>
       </header>
       <div
-        className="sc-hKMtZM leChBF"
+        className="sc-jSMfEi cWLUhq"
       >
-        Modal Body
+        <h3
+          className="sc-eCYdqJ hrmHjt"
+        >
+          Uh-oh, there's been a glitch
+        </h3>
+        We're not quite sure what went wrong. Restart your browser. If this doesn't solve the problem, visit our 
+        <a
+          href="https://openstax.secure.force.com/help"
+          target="_blank"
+        >
+          Support Center
+        </a>
+        .
+      </div>
+      <div
+        className="sc-jqUVSM bdmjp"
+      >
+        <button
+          className="sc-bczRLJ fLTvYy sc-kDDrLX tflMh"
+          onClick={[MockFunction]}
+        >
+          OK
+        </button>
       </div>
     </div>
   </div>
   <div
-    className="sc-eCYdqJ jwqkhD"
+    className="sc-gKXOVf etxkPo"
   />
 </div>
 `;
