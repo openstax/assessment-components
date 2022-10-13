@@ -33,12 +33,12 @@ const Header = styled.header`
   align-items: center;
   margin-bottom: ${modalPadding * 0.5}rem;
   padding: ${modalPadding * 0.5}rem ${modalPadding}rem;
-  background: #f1f1f1;
+  background: ${colors.palette.neutralLighter};
   border-bottom: solid 0.1rem #ddd;
   justify-content: space-between;
   ${(props: { variant?: string }) => props.variant === 'error' && css`
-    background: #FBE7EA;
-    color: #D8183E;
+    background: ${colors.palette.paleRed};
+    color: ${colors.palette.darkRed};
   `}
 `;
 
@@ -92,16 +92,16 @@ const CloseModalIcon = styled((props) => <Times {...props} aria-hidden='true' fo
   cursor: pointer;
   margin-right: 0;
   padding-right: 0;
-  color: #999;
+  color: ${colors.palette.neutralMedium};
 
   :hover {
-    color: #333;
+    color: ${colors.palette.neutralDark};
   }
   height: 2.2rem;
   width: 2.2rem;
 
   ${(props: { variant?: string }) => props.variant === 'error' && css`
-    color: #C22032;
+    color: ${colors.palette.darkRed};
   `}
 `;
 

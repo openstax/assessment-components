@@ -5,6 +5,7 @@ const palette = {
   danger: "#c2002f",
   darkRed: "#c22032",
   lightRed: "#e298a0",
+  paleRed: "#FBE7EA",
   green: "#77af42",
   lightGreen: "#8bc753",
   darkGreen: "#63a524",
