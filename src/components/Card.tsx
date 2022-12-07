@@ -18,7 +18,6 @@ export const InnerStepCard = styled.div`
 
   ${breakpoints.desktop`
     max-width: 1000px;
-    min-width: 750px;
   `}
 `;
 

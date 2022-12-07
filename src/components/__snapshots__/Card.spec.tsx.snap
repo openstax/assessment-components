@@ -5,7 +5,7 @@ exports[`StepCard matches snapshot 1`] = `
   className="sc-gsnTZi kTXtGE"
 >
   <div
-    className="sc-bczRLJ hctMxl"
+    className="sc-bczRLJ YKyJl"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -52,7 +52,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   className="sc-gsnTZi kTXtGE"
 >
   <div
-    className="sc-bczRLJ hctMxl"
+    className="sc-bczRLJ YKyJl"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -106,7 +106,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step"
+    className="sc-bczRLJ YKyJl exercise-step"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -153,7 +153,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step"
+    className="sc-bczRLJ YKyJl exercise-step"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -200,7 +200,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step"
+    className="sc-bczRLJ YKyJl exercise-step"
   >
     <div
       className="sc-dkzDqf jPnAkk"

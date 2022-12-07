@@ -6,7 +6,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -216,7 +216,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -420,7 +420,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -745,7 +745,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -1030,7 +1030,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
