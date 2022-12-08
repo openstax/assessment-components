@@ -158,7 +158,6 @@ export const mixins = {
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
       font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
-      padding-top: 1px;
     }
   `,
   answerColor: (values: { color: string, background: string }) => css`
