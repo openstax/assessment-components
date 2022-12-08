@@ -1,4 +1,4 @@
-import{r as t,s as S,j as p}from"./index.c6a038da.js";import{c as T}from"./theme.883cc0d6.js";/*! *****************************************************************************
+import{r as t,s as S,j as p}from"./index.abd29396.js";import{c as T}from"./theme.55931c71.js";/*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -27,5 +27,6 @@ and limitations under the License.
   align-items: center;
   > svg {
     max-width: 600px;
+    flex-grow: 1;
   }
-`,F=()=>p(A,{children:p(U,{uniqueKey:"OSLoader"},void 0,!1,{fileName:h,lineNumber:24,columnNumber:38},void 0)},void 0,!1,{fileName:h,lineNumber:24,columnNumber:29},void 0);var G="/home/runner/work/assessment-components/assessment-components/src/components/Loader.stories.tsx";const $=()=>p(F,{},void 0,!1,{fileName:G,lineNumber:3,columnNumber:30},void 0);typeof window<"u"&&window.document&&window.document.createElement&&document.documentElement.setAttribute("data-storyloaded","");export{$ as Default};
+`,F=()=>p(A,{children:p(U,{uniqueKey:"OSLoader"},void 0,!1,{fileName:h,lineNumber:25,columnNumber:38},void 0)},void 0,!1,{fileName:h,lineNumber:25,columnNumber:29},void 0);var G="/home/runner/work/assessment-components/assessment-components/src/components/Loader.stories.tsx";const $=()=>p(F,{},void 0,!1,{fileName:G,lineNumber:3,columnNumber:30},void 0);typeof window<"u"&&window.document&&window.document.createElement&&document.documentElement.setAttribute("data-storyloaded","");export{$ as Default};

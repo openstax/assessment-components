@@ -151,7 +151,7 @@
         "Exercise"
       ],
       "locStart": 134,
-      "locEnd": 147,
+      "locEnd": 148,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -160,8 +160,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 149,
-      "locEnd": 149,
+      "locStart": 150,
+      "locEnd": 150,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -170,8 +170,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 151,
-      "locEnd": 176,
+      "locStart": 152,
+      "locEnd": 177,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -180,8 +180,18 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 178,
-      "locEnd": 200,
+      "locStart": 179,
+      "locEnd": 201,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--incorrect-with-feedback-and-solution-wrapping-text": {
+      "name": "Incorrect with feedback and solution wrapping text",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 203,
+      "locEnd": 227,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -190,8 +200,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 202,
-      "locEnd": 302,
+      "locStart": 229,
+      "locEnd": 329,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -200,8 +210,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 304,
-      "locEnd": 311,
+      "locStart": 331,
+      "locEnd": 338,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
