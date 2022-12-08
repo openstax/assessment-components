@@ -83,7 +83,7 @@ export const layouts = {
     verticalSpacing: "1rem",
     horizontalSpacing: "1rem",
     horizontalBuffer: "2.5rem",
-    bubbleSize: "2.4rem",
+    bubbleSize: "3.6rem",
     labelSpacing: "6.5rem",
     feedback: {
       popover: {
@@ -97,7 +97,7 @@ export const layouts = {
     arrow: {
       width: "16px",
       height: "8px",
-      edgeDistance: "4px",
+      edgeDistance: "9px",
     },
     horizontalSpacing: "0.8rem",
     verticalSpacing: "1rem",
@@ -157,6 +157,7 @@ export const mixins = {
       color: ${colors.answer.label.colorHover};
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
+      font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
     }
   `,
   answerColor: (values: { color: string, background: string }) => css`
@@ -179,8 +180,11 @@ export const mixins = {
   answerCorrectText: () => css`
     content: 'correct answer';
     color: ${colors.answer.label.color};
-    margin-left: calc(-3 * ${layouts.answer.bubbleSize});
-    width: calc(3 * ${layouts.answer.bubbleSize});
+    margin-left: calc(-1.34 * ${layouts.answer.bubbleSize});
+    display: flex;
+    align-items: center;
+    height: ${layouts.answer.bubbleSize};
+    width: 4.8rem;
     text-align: center;
     font-size: 1.2rem;
     line-height: 1.2rem;
@@ -204,13 +208,13 @@ export const mixins = {
         &::after {
           ${mixins.answerCorrectText()}
           width: ${layouts.answer.bubbleSize} !important;
-          margin-left: calc(-${layouts.answer.bubbleSize} / 3.3);
+          margin-left: -0.1rem;
         }
       }
     }
   `,
   resetText: () => css`
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family:  "Neue Helvetica W01", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
     line-height: 1.6;

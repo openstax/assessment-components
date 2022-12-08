@@ -74,7 +74,7 @@ describe('Exercise', () => {
 
     it('matches snapshot', () => {
       const tree = renderer.create(
-        <Exercise {...props} />
+        <Exercise {...props} show_all_feedback />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });

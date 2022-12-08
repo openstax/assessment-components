@@ -30,7 +30,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
         />
       </svg>
       <div
-        className="sc-dkzDqf kKHNLl popover right"
+        className="sc-dkzDqf crCAWf popover right"
       >
         <div
           className="arrow"
@@ -69,7 +69,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
         />
       </svg>
       <div
-        className="sc-dkzDqf kKHNLl popover right"
+        className="sc-dkzDqf crCAWf popover right"
       >
         <div
           className="arrow"
@@ -108,7 +108,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
         />
       </svg>
       <div
-        className="sc-dkzDqf kKHNLl popover right"
+        className="sc-dkzDqf crCAWf popover right"
       >
         <div
           className="arrow"

@@ -199,6 +199,32 @@ export const IncorrectWithFeedbackAndSolution = () => {
   return <Exercise {...props} />;
 };
 
+export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps };
+  props.questionStates = {
+    '1': {
+      available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: 2,
+      free_response: 'Free response',
+      feedback_html: 'Feedback for the incorrect answer',
+      correct_answer_id: '1',
+      correct_answer_feedback_html: 'Feedback for the correct answer',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: '2',
+      solution: { content_html: 'A detailed solution', solution_type: 'detailed' },
+      canAnswer: true,
+      needsSaved: false,
+      apiIsPending: false
+    }
+  };
+  props.exercise.questions[0].answers[0].content_html = 'A very long correct answer to observe line wrapping at mobile sizes';
+  props.exercise.questions[0].answers[1].content_html = 'A very long incorrect answer to observe line wrapping at mobile sizes';
+  return <Exercise {...props} />;
+};
+
 export const MultiPartHalfComplete = () => {
   const props: ExerciseWithQuestionStatesProps = {
     exercise: {
