@@ -65,7 +65,7 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   canUpdateCurrentStep: false
 }
 
-const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
+const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => { return {
   exercise: {
     uid: '1@1',
     uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
@@ -129,16 +129,17 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
       apiIsPending: false
     }
   },
-};
+}};
 
 export const Default = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)
-  exerciseWithQuestionStatesProps.questionStates['1'].answer_id = selectedAnswerId;
-  exerciseWithQuestionStatesProps.questionStates['1'].apiIsPending = apiIsPending;
+  const props = exerciseWithQuestionStatesProps();
+  props.questionStates['1'].answer_id = selectedAnswerId;
+  props.questionStates['1'].apiIsPending = apiIsPending;
   return (
     <Exercise
-      {...exerciseWithQuestionStatesProps}
+      {...props}
       onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
         setSelectedAnswerId(a.id)
       }}
@@ -150,7 +151,7 @@ export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps}
 
 export const CompleteWithFeedback = () => {
   const props: ExerciseWithQuestionStatesProps = {
-    ...exerciseWithQuestionStatesProps,
+    ...exerciseWithQuestionStatesProps(),
 
     questionStates: {
       '1': {
@@ -176,7 +177,7 @@ export const CompleteWithFeedback = () => {
 };
 
 export const IncorrectWithFeedbackAndSolution = () => {
-  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps };
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps() };
   props.questionStates = {
     '1': {
       available_points: '1.0',
@@ -200,7 +201,7 @@ export const IncorrectWithFeedbackAndSolution = () => {
 };
 
 export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
-  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps };
+  const props: ExerciseWithQuestionStatesProps = exerciseWithQuestionStatesProps();
   props.questionStates = {
     '1': {
       available_points: '1.0',
@@ -329,7 +330,7 @@ export const MultiPartHalfComplete = () => {
 
 export const Icons = () => {
   return <Exercise
-    {...exerciseWithQuestionStatesProps}
+    {...exerciseWithQuestionStatesProps()}
     showExerciseIcons={true}
     topicUrl='https://openstax.org'
     errataUrl='https://openstax.org'
