@@ -97,15 +97,19 @@ const StyledQuestion = styled.div`
       }
     }
 
+    .answers-answer.answer-correct .answer-answer {
+      align-items: flex-start;
+      margin-top: calc((${layouts.answer.bubbleSize} / 2) - 1rem);
+    }
+
     .answer-letter {
       text-align: center;
       padding: 0;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
 
     .answer-label {
       font-weight: normal;

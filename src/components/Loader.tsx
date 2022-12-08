@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   align-items: center;
   > svg {
     max-width: 600px;
+    flex-grow: 1;
   }
 `;
 

@@ -6,7 +6,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          className="sc-jqUVSM ghJTot openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -216,7 +216,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -273,7 +273,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          className="sc-jqUVSM ghJTot openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -420,7 +420,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -481,7 +481,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 />
               </svg>
               <div
-                className="sc-gKXOVf fuUtVw popover right"
+                className="sc-gKXOVf fcYMUq popover right"
               >
                 <div
                   className="arrow"
@@ -520,7 +520,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 />
               </svg>
               <div
-                className="sc-gKXOVf fuUtVw popover right"
+                className="sc-gKXOVf fcYMUq popover right"
               >
                 <div
                   className="arrow"
@@ -559,7 +559,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 />
               </svg>
               <div
-                className="sc-gKXOVf fuUtVw popover right"
+                className="sc-gKXOVf fcYMUq popover right"
               >
                 <div
                   className="arrow"
@@ -598,7 +598,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          className="sc-jqUVSM ghJTot openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -745,7 +745,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -805,7 +805,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 />
               </svg>
               <div
-                className="sc-gKXOVf fuUtVw popover right"
+                className="sc-gKXOVf fcYMUq popover right"
               >
                 <div
                   className="arrow"
@@ -844,7 +844,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 />
               </svg>
               <div
-                className="sc-gKXOVf fuUtVw popover right"
+                className="sc-gKXOVf fcYMUq popover right"
               >
                 <div
                   className="arrow"
@@ -883,7 +883,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          className="sc-jqUVSM ghJTot openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >
@@ -1030,7 +1030,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ hctMxl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -1087,7 +1087,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         data-test-id="student-exercise-question"
       >
         <div
-          className="sc-jqUVSM kpZOzU openstax-question step-card-body"
+          className="sc-jqUVSM ghJTot openstax-question step-card-body"
           data-question-number={1}
           data-test-id="question"
         >

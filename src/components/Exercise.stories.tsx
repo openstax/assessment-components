@@ -65,7 +65,7 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   canUpdateCurrentStep: false
 }
 
-const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
+const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => { return {
   exercise: {
     uid: '1@1',
     uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
@@ -129,16 +129,17 @@ const exerciseWithQuestionStatesProps: ExerciseWithQuestionStatesProps = {
       apiIsPending: false
     }
   },
-};
+}};
 
 export const Default = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)
-  exerciseWithQuestionStatesProps.questionStates['1'].answer_id = selectedAnswerId;
-  exerciseWithQuestionStatesProps.questionStates['1'].apiIsPending = apiIsPending;
+  const props = exerciseWithQuestionStatesProps();
+  props.questionStates['1'].answer_id = selectedAnswerId;
+  props.questionStates['1'].apiIsPending = apiIsPending;
   return (
     <Exercise
-      {...exerciseWithQuestionStatesProps}
+      {...props}
       onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
         setSelectedAnswerId(a.id)
       }}
@@ -150,7 +151,7 @@ export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps}
 
 export const CompleteWithFeedback = () => {
   const props: ExerciseWithQuestionStatesProps = {
-    ...exerciseWithQuestionStatesProps,
+    ...exerciseWithQuestionStatesProps(),
 
     questionStates: {
       '1': {
@@ -176,7 +177,7 @@ export const CompleteWithFeedback = () => {
 };
 
 export const IncorrectWithFeedbackAndSolution = () => {
-  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps };
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps() };
   props.questionStates = {
     '1': {
       available_points: '1.0',
@@ -196,6 +197,32 @@ export const IncorrectWithFeedbackAndSolution = () => {
       apiIsPending: false
     }
   };
+  return <Exercise {...props} />;
+};
+
+export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
+  const props: ExerciseWithQuestionStatesProps = exerciseWithQuestionStatesProps();
+  props.questionStates = {
+    '1': {
+      available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: 2,
+      free_response: 'Free response',
+      feedback_html: 'Feedback for the incorrect answer',
+      correct_answer_id: '1',
+      correct_answer_feedback_html: 'Feedback for the correct answer',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: '2',
+      solution: { content_html: 'A detailed solution', solution_type: 'detailed' },
+      canAnswer: true,
+      needsSaved: false,
+      apiIsPending: false
+    }
+  };
+  props.exercise.questions[0].answers[0].content_html = 'A very long correct answer to observe line wrapping at mobile sizes';
+  props.exercise.questions[0].answers[1].content_html = 'A very long incorrect answer to observe line wrapping at mobile sizes';
   return <Exercise {...props} />;
 };
 
@@ -303,7 +330,7 @@ export const MultiPartHalfComplete = () => {
 
 export const Icons = () => {
   return <Exercise
-    {...exerciseWithQuestionStatesProps}
+    {...exerciseWithQuestionStatesProps()}
     showExerciseIcons={true}
     topicUrl='https://openstax.org'
     errataUrl='https://openstax.org'
