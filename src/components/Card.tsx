@@ -24,7 +24,7 @@ export const InnerStepCard = styled.div`
 export const OuterStepCard = styled.div`
   padding: 2rem;
 
-  ${breakpoints.tablet`
+  ${breakpoints.mobile`
     padding: 0;
   `}
 `;

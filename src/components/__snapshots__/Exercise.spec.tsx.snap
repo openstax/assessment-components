@@ -2,7 +2,7 @@
 
 exports[`Exercise using step data matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi kTXtGE"
+  className="sc-gsnTZi iTZfeb"
   data-task-step-id={1}
 >
   <div
@@ -212,7 +212,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
 
 exports[`Exercise with question state data matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi kTXtGE"
+  className="sc-gsnTZi iTZfeb"
   data-task-step-id={1}
 >
   <div
@@ -416,7 +416,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 
 exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
 <div
-  className="sc-gsnTZi kTXtGE"
+  className="sc-gsnTZi iTZfeb"
   data-task-step-id={1}
 >
   <div
@@ -741,7 +741,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
 
 exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
 <div
-  className="sc-gsnTZi kTXtGE"
+  className="sc-gsnTZi iTZfeb"
   data-task-step-id={1}
 >
   <div
@@ -1026,7 +1026,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
 
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 <div
-  className="sc-gsnTZi kTXtGE"
+  className="sc-gsnTZi iTZfeb"
   data-task-step-id={1}
 >
   <div
