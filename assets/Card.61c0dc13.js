@@ -1,4 +1,4 @@
-import{c as t,b as o,m as k}from"./theme.55931c71.js";import{s,j as i,c as w}from"./index.abd29396.js";var n="/home/runner/work/assessment-components/assessment-components/src/components/Card.tsx";const S=s.div`
+import{c as t,b as o,m as k}from"./theme.1b4f3255.js";import{s,j as i,c as w}from"./index.b6fdfad3.js";var n="/home/runner/work/assessment-components/assessment-components/src/components/Card.tsx";const S=s.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ import{c as t,b as o,m as k}from"./theme.55931c71.js";import{s,j as i,c as w}fro
 `,C=s.div`
   padding: 2rem;
 
-  ${o.tablet`
+  ${o.mobile`
     padding: 0;
   `}
 `,c=s.div`
