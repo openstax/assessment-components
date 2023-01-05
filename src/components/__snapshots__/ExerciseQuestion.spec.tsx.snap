@@ -298,14 +298,7 @@ exports[`ExerciseQuestion renders Finish button 1`] = `
           data-test-id="finish-btn"
           onClick={[Function]}
         >
-          Finish Quiz
-        </button>
-        <button
-          className="sc-bczRLJ fLTvYy"
-          data-test-id="continue-btn"
-          onClick={[Function]}
-        >
-          Next
+          Finish quiz
         </button>
       </div>
     </div>

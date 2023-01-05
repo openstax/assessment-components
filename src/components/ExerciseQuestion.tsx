@@ -81,7 +81,7 @@ export const NextButton = (props: {
 }
 
 export const FinishButton = (props: React.ComponentPropsWithoutRef<'button'>) =>
-  <Button {...props} data-test-id="finish-btn">Finish Quiz</Button>
+  <Button {...props} data-test-id="finish-btn">Finish quiz</Button>
 
 const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free_response">) => {
   if (!free_response) { return null; }
@@ -138,15 +138,17 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
             {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
           </div>
           <div className="controls">
-            {canFinish ? <FinishButton onClick={() => onFinish()}/> : null}
-            {!canFinish && canAnswer && needsSaved ?
-              <SaveButton
-                disabled={apiIsPending || !answer_id}
-                isWaiting={apiIsPending}
-                attempt_number={attempt_number}
-                onClick={() => onAnswerSave(numberfyId(question.id))}
-              /> :
-              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
+            {canFinish ?
+              <FinishButton onClick={() => onFinish()}/> : 
+              (canAnswer && needsSaved ?
+                <SaveButton
+                  disabled={apiIsPending || !answer_id}
+                  isWaiting={apiIsPending}
+                  attempt_number={attempt_number}
+                  onClick={() => onAnswerSave(numberfyId(question.id))}
+                /> :
+                <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />)
+            }
           </div>
         </div>
       </StepCardFooter>
