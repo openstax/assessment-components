@@ -40,6 +40,8 @@ export interface ExerciseBaseProps {
   onAnswerSave: (question_id: number) => void;
   /** A callback with the current question index when the Next/Continue button is clicked. */
   onNextStep: (currentIndex: number) => void;
+  /** A callback when the Finish button is clicked. */
+  onFinish: () => void;
   /** A boolean that enables always showing every answer feedback_html field. */
   show_all_feedback?: boolean;
   /** The question number to scroll into view when the component renders. */

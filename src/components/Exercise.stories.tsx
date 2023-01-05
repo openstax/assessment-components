@@ -42,6 +42,7 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
+  onFinish: () => null,
   canAnswer: false,
   needsSaved: false,
   apiIsPending: false,
@@ -106,6 +107,7 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
+  onFinish: () => null,
   step: {
     id: 1,
     uid: '1234@5',
@@ -284,6 +286,7 @@ export const MultiPartHalfComplete = () => {
     onAnswerChange: () => null,
     onAnswerSave: () => null,
     onNextStep: () => null,
+    onFinish: () => null,
     step: {
       id: 1,
       uid: '1234@5',

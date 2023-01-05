@@ -17,6 +17,7 @@ export interface ExerciseQuestionProps {
   onAnswerChange: () => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
   onNextStep: ExerciseBaseProps['onNextStep'];
+  onFinish: ExerciseBaseProps['onFinish'];
   feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
@@ -27,6 +28,7 @@ export interface ExerciseQuestionProps {
   published_comments?: string;
   detailedSolution?: string;
   canAnswer: boolean;
+  canFinish: boolean;
   needsSaved: boolean;
   canUpdateCurrentStep: boolean;
   attempt_number: number;
@@ -78,6 +80,9 @@ export const NextButton = (props: {
   );
 }
 
+export const FinishButton = (props: React.ComponentPropsWithoutRef<'button'>) =>
+  <Button {...props} data-test-id="finish-btn">Finish Quiz</Button>
+
 const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free_response">) => {
   if (!free_response) { return null; }
   return (
@@ -92,7 +97,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
-    canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
+    canAnswer, canFinish, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, onFinish, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
@@ -133,7 +138,8 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
             {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
           </div>
           <div className="controls">
-            {canAnswer && needsSaved ?
+            {canFinish ? <FinishButton onClick={() => onFinish()}/> : null}
+            {!canFinish && canAnswer && needsSaved ?
               <SaveButton
                 disabled={apiIsPending || !answer_id}
                 isWaiting={apiIsPending}

@@ -40,6 +40,7 @@ const props = {
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
+  onFinish: () => null,
   is_completed: false,
   multiPartGroup: null,
   answer_id: '',
@@ -48,6 +49,7 @@ const props = {
   published_comments: '',
   detailedSolution: '',
   canAnswer: true,
+  canFinish: false,
   needsSaved: true,
   canUpdateCurrentStep: true,
   attempt_number: 0,
@@ -69,6 +71,7 @@ export const MultipleAttemptsOneLeft = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}
     canAnswer={true}
+    canFinish={false}
     needsSaved={false}
     canUpdateCurrentStep={true}
     attempts_remaining={1}
@@ -80,6 +83,19 @@ export const MultipleAttemptsNoneLeft = () =>
     hasMultipleAttempts={true}
     choicesEnabled={false}
     canAnswer={false}
+    canFinish={false}
+    needsSaved={false}
+    canUpdateCurrentStep={false}
+    attempts_remaining={0}
+    attempt_number={2}
+    incorrectAnswerId='2'
+  />;
+  export const CanFinish = () =>
+  <ExerciseQuestion {...props}
+    hasMultipleAttempts={true}
+    choicesEnabled={false}
+    canAnswer={false}
+    canFinish={true}
     needsSaved={false}
     canUpdateCurrentStep={false}
     attempts_remaining={0}

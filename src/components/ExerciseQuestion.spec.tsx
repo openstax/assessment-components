@@ -1,4 +1,4 @@
-import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton } from './ExerciseQuestion';
+import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton, FinishButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
 
 describe('ExerciseQuestion', () => {
@@ -29,6 +29,7 @@ describe('ExerciseQuestion', () => {
       onAnswerChange: () => null,
       onAnswerSave: () => null,
       onNextStep: () => null,
+      onFinish: () => null,
       feedback_html: '',
       correct_answer_feedback_html: '',
       is_completed: false,
@@ -40,6 +41,7 @@ describe('ExerciseQuestion', () => {
       detailedSolution: '',
       canAnswer: false,
       needsSaved: false,
+      canFinish: false,
       canUpdateCurrentStep: false,
       attempt_number: 0,
       apiIsPending: false,
@@ -106,6 +108,15 @@ describe('ExerciseQuestion', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders Finish button', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props}
+        canFinish={true}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 
   it('renders Re-submit button', () => {
     const tree = renderer.create(
@@ -192,5 +203,22 @@ describe('ExerciseQuestion', () => {
     });
 
     expect(mockFn).toHaveBeenCalledWith(0);
+  });
+
+  it('calls callback on finish button click', () => {
+    const mockFn = jest.fn();
+
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        canFinish={true}
+        onFinish={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(FinishButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalled();
   });
 });

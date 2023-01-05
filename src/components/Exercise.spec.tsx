@@ -48,6 +48,7 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
+        onFinish: () => null,
         canAnswer: false,
         needsSaved: false,
         apiIsPending: false,
@@ -132,6 +133,7 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
+        onFinish: () => null,
         step: {
           id: 1,
           uid: '1234@5',

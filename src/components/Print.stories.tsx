@@ -85,6 +85,7 @@ export const Default = () => (
             onAnswerChange={() => undefined}
             onAnswerSave={() => undefined}
             onNextStep={() => undefined}
+            onFinish={() => undefined}
             apiIsPending={false}
             canUpdateCurrentStep={false}
             exercise={exercise}
