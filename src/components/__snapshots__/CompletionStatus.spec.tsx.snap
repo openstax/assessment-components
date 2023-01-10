@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompletionStatus matches snapshot 1`] = `
+<div
+  className="sc-bczRLJ sc-jSMfEi YKyJl kikmgW"
+>
+  <h2
+    className="sc-gKXOVf bebcLz"
+  >
+    No questions have been answered.
+  </h2>
+  <p>
+    Begin working on the quiz.
+  </p>
+  <button
+    className="sc-eCYdqJ dqiaKp"
+    data-test-id="start-btn"
+    onClick={[Function]}
+  >
+    Start
+  </button>
+</div>
+`;
+
+exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
+<div
+  className="sc-bczRLJ sc-jSMfEi YKyJl kikmgW"
+>
+  <h2
+    className="sc-gKXOVf bebcLz"
+  >
+    You are done.
+  </h2>
+  <p>
+    Great job answering all the questions.
+  </p>
+  <button
+    className="sc-eCYdqJ dqiaKp"
+    data-test-id="review-btn"
+    onClick={[Function]}
+  >
+    Review
+  </button>
+</div>
+`;
+
+exports[`CompletionStatus matches snapshot with all questions completed and continue enabled 1`] = `
+<div
+  className="sc-bczRLJ sc-jSMfEi YKyJl kikmgW"
+>
+  <h2
+    className="sc-gKXOVf bebcLz"
+  >
+    You are done.
+  </h2>
+  <p>
+    Great job answering all the questions.
+  </p>
+  <button
+    className="sc-eCYdqJ dqiaKp"
+    data-test-id="continue-btn"
+    onClick={[Function]}
+  >
+    Continue to next step
+  </button>
+</div>
+`;
+
+exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
+<div
+  className="sc-bczRLJ sc-jSMfEi YKyJl kikmgW"
+>
+  <h2
+    className="sc-gKXOVf bebcLz"
+  >
+    Steps in progress
+  </h2>
+  <p>
+    You've completed 5 of 15 questions.
+  </p>
+  <button
+    className="sc-eCYdqJ dqiaKp"
+    data-test-id="continue-btn"
+    onClick={[Function]}
+  >
+    Continue
+  </button>
+</div>
+`;
