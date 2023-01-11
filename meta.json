@@ -145,6 +145,46 @@
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
+    "completion-status--default": {
+      "name": "Default",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 10,
+      "locEnd": 10,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--partial-complete": {
+      "name": "Partial complete",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 11,
+      "locEnd": 11,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--complete-with-continue": {
+      "name": "Complete with continue",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 12,
+      "locEnd": 12,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--complete": {
+      "name": "Complete",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 13,
+      "locEnd": 13,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
     "exercise--default": {
       "name": "Default",
       "levels": [
