@@ -9,6 +9,6 @@ const props: CompletionStatusProps = {
 
 export const Default = () => <CompletionStatus {...props} />;
 export const PartialComplete = () => <CompletionStatus {...props} numberCompleted={3} />
-export const Complete = () => <CompletionStatus {...props} numberCompleted={15} canContinue={true} />
-export const CompleteWithReview = () => <CompletionStatus {...props} numberCompleted={15} canContinue={false} />
+export const CompleteWithContinue = () => <CompletionStatus {...props} numberCompleted={15} canContinue={true} />
+export const Complete = () => <CompletionStatus {...props} numberCompleted={15} canContinue={false} />
 
