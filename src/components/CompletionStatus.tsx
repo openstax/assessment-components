@@ -37,17 +37,18 @@ export const CompletionStatus = ({
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
   const buttonText = allCompleted && canContinue ? 'Continue to next step' : (
-    allCompleted ? 'Review' : (
-      someCompleted ? 'Continue' : 'Start')
+      someCompleted ? 'Continue' : 'Start'
   );
 
   return (
     <CompletionStatusCard>
       <CompletionHeader>{allCompleted ? 'You are done.' : (someCompleted ? 'Steps in progress' : 'No questions have been answered.')}</CompletionHeader>
       <p>{allCompleted ? 'Great job answering all the questions.' : (someCompleted ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.` : 'Begin working on the quiz.')}</p>
-      <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={()=> handleClick()}>
-        {buttonText}
-      </Button>
+      {allCompleted && !canContinue ? null :
+        <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={()=> handleClick()}>
+          {buttonText}
+        </Button>
+      }
     </CompletionStatusCard>
   )
 };

@@ -34,13 +34,6 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
   <p>
     Great job answering all the questions.
   </p>
-  <button
-    className="sc-eCYdqJ dqiaKp"
-    data-test-id="review-btn"
-    onClick={[Function]}
-  >
-    Review
-  </button>
 </div>
 `;
 
