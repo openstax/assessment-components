@@ -34,27 +34,12 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
   <p>
     Great job answering all the questions.
   </p>
-</div>
-`;
-
-exports[`CompletionStatus matches snapshot with all questions completed and continue enabled 1`] = `
-<div
-  className="sc-bczRLJ sc-jSMfEi YKyJl kikmgW"
->
-  <h2
-    className="sc-gKXOVf bebcLz"
-  >
-    You are done.
-  </h2>
-  <p>
-    Great job answering all the questions.
-  </p>
   <button
     className="sc-eCYdqJ dqiaKp"
-    data-test-id="continue-btn"
+    data-test-id="next-btn"
     onClick={[Function]}
   >
-    Continue to next step
+    Next
   </button>
 </div>
 `;
@@ -66,7 +51,7 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
   <h2
     className="sc-gKXOVf bebcLz"
   >
-    Steps in progress
+    Quiz is partially complete.
   </h2>
   <p>
     You've completed 5 of 15 questions.
