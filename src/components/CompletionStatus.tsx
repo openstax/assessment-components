@@ -5,7 +5,6 @@ import Button from "./Button";
 export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
-  canContinue: boolean;
   handleClick: () => void;
 }
 
@@ -31,24 +30,22 @@ const CompletionHeader = styled.h2`
 `;
 
 export const CompletionStatus = ({
-  numberOfQuestions, numberCompleted, canContinue, handleClick
+  numberOfQuestions, numberCompleted, handleClick
 }: CompletionStatusProps) => {
   
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
-  const buttonText = allCompleted && canContinue ? 'Continue to next step' : (
+  const buttonText = allCompleted ? 'Next' : (
       someCompleted ? 'Continue' : 'Start'
   );
 
   return (
     <CompletionStatusCard>
-      <CompletionHeader>{allCompleted ? 'You are done.' : (someCompleted ? 'Steps in progress' : 'No questions have been answered.')}</CompletionHeader>
+      <CompletionHeader>{allCompleted ? 'You are done.' : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}</CompletionHeader>
       <p>{allCompleted ? 'Great job answering all the questions.' : (someCompleted ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.` : 'Begin working on the quiz.')}</p>
-      {allCompleted && !canContinue ? null :
-        <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={()=> handleClick()}>
-          {buttonText}
-        </Button>
-      }
+      <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={()=> handleClick()}>
+        {buttonText}
+      </Button>
     </CompletionStatusCard>
   )
 };
