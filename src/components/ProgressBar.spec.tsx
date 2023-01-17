@@ -28,6 +28,14 @@ describe('ProgressBar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('matches snapshot when status step is active', () => {
+    const tree = renderer.create(
+      <ProgressBar {...props} activeIndex={6} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
