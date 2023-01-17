@@ -1,7 +1,7 @@
 import { ProgressBar, ProgressBarItem, ProgressBarItemVariant, ProgressBarProps, StyledItem } from './ProgressBar';
 import renderer from 'react-test-renderer';
 
-const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null];
+const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null, 'isStatus'];
 
 describe('ProgressBar', () => {
   let props: ProgressBarProps<{variant: ProgressBarItemVariant}>;
@@ -31,7 +31,7 @@ describe('ProgressBar', () => {
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
-      <ProgressBarItem isActive={true} index={3} step={{variant: 'isCorrect'} }goToStep={mockEv} />
+      <ProgressBarItem isActive={true} index={3} step={{variant: 'isCorrect'}} goToStep={mockEv} />
     );
 
     renderer.act(() => {
