@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { colors, breakpoints } from '../theme';
+import FlagIcon from '../assets/flag';
 
 const ProgressBarWrapper = styled.div`
   display: flex;
@@ -39,6 +40,13 @@ const StyledItemWrapper = styled.span`
 
 const handleVariant = (variant: ProgressBarItemVariant, isActive: boolean) => {
   switch (variant) {
+    case 'isStatus':
+      return css`
+        color: ${isActive ? colors.palette.white : colors.palette.darkGray};
+        background-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
+        border: none;
+        box-shadow: ${isActive ? '0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2)' : 'none'};
+      `;
     case 'isCorrect':
       return css`
         color: ${colors.palette.white};
@@ -92,11 +100,13 @@ export interface ProgressBarItemProps<S> {
   goToStep: (index: number, step: S) => void;
 }
 
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | null;
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | null;
 
 export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>
-    <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>{index + 1}</StyledItem>
+    <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>
+      {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
+    </StyledItem>
   </StyledItemWrapper>;
 
 export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>

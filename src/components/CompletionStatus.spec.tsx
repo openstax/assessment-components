@@ -9,7 +9,6 @@ describe('CompletionStatus', () => {
     props = {
       numberOfQuestions: 15,
       numberCompleted: 0,
-      canContinue: false,
       handleClick: () => {console.log('click')}
     }
   });
@@ -31,13 +30,6 @@ describe('CompletionStatus', () => {
   it('matches snapshot with all questions completed', () => {
     const tree = renderer.create(
       <CompletionStatus {...props} numberCompleted={15} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('matches snapshot with all questions completed and continue enabled', () => {
-    const tree = renderer.create(
-      <CompletionStatus {...props} numberCompleted={15} canContinue={true} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
