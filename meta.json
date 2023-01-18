@@ -150,8 +150,8 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 10,
-      "locEnd": 10,
+      "locStart": 9,
+      "locEnd": 9,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -160,18 +160,8 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 11,
-      "locEnd": 11,
-      "filePath": "src/components/CompletionStatus.stories.tsx",
-      "meta": {}
-    },
-    "completion-status--complete-with-continue": {
-      "name": "Complete with continue",
-      "levels": [
-        "Completion status"
-      ],
-      "locStart": 12,
-      "locEnd": 12,
+      "locStart": 10,
+      "locEnd": 10,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -180,8 +170,8 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 13,
-      "locEnd": 13,
+      "locStart": 11,
+      "locEnd": 11,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -370,8 +360,8 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 11,
-      "locEnd": 11,
+      "locStart": 12,
+      "locEnd": 12,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
@@ -380,8 +370,8 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 12,
-      "locEnd": 12,
+      "locStart": 13,
+      "locEnd": 13,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
@@ -390,8 +380,18 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 13,
-      "locEnd": 13,
+      "locStart": 14,
+      "locEnd": 14,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
+    "progress-bar--status-step": {
+      "name": "Status step",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 15,
+      "locEnd": 15,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
