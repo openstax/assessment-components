@@ -42,11 +42,11 @@ const handleVariant = (variant: ProgressBarItemVariant, isActive: boolean) => {
   switch (variant) {
     case 'isStatus':
       return css`
-      color: ${isActive ? colors.palette.white : colors.palette.darkGray};
-      background-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
-      border: none;
-      box-shadow: ${isActive ? '0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2)' : 'none'};
-    `;
+        color: ${isActive ? colors.palette.white : colors.palette.darkGray};
+        background-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
+        border: none;
+        box-shadow: ${isActive ? '0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2)' : 'none'};
+      `;
     case 'isCorrect':
       return css`
         color: ${colors.palette.white};
