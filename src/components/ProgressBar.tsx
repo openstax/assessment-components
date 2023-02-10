@@ -17,7 +17,7 @@ const StyledItemWrapper = styled.span`
   align-items: center;
   margin: 0 1rem 1rem 0;
 
-  &:last {
+  &:last-child {
     margin-right: 0;
   }
 `;
