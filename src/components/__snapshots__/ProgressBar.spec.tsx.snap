@@ -5,70 +5,70 @@ exports[`ProgressBar matches snapshot 1`] = `
   className="sc-bczRLJ bQqPBP"
 >
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eJNClO"
+      className="sc-dkzDqf rrmtZ"
       onClick={[Function]}
     >
       1
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf flWHKH"
+      className="sc-dkzDqf hqAvxo"
       onClick={[Function]}
     >
       2
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf ivFLur"
+      className="sc-dkzDqf RONgL"
       onClick={[Function]}
     >
       3
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       4
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       5
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       6
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf gbMgmk"
+      className="sc-dkzDqf eJJMDn"
       onClick={[Function]}
     >
       <svg
@@ -93,70 +93,70 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   className="sc-bczRLJ bQqPBP"
 >
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eJNClO"
+      className="sc-dkzDqf rrmtZ"
       onClick={[Function]}
     >
       1
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf flWHKH"
+      className="sc-dkzDqf hqAvxo"
       onClick={[Function]}
     >
       2
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eJNClO"
+      className="sc-dkzDqf rrmtZ"
       onClick={[Function]}
     >
       3
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf gZwXnW"
+      className="sc-dkzDqf iYsOay"
       onClick={[Function]}
     >
       4
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       5
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       6
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf gbMgmk"
+      className="sc-dkzDqf eJJMDn"
       onClick={[Function]}
     >
       <svg
@@ -181,70 +181,70 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   className="sc-bczRLJ bQqPBP"
 >
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eJNClO"
+      className="sc-dkzDqf rrmtZ"
       onClick={[Function]}
     >
       1
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf flWHKH"
+      className="sc-dkzDqf hqAvxo"
       onClick={[Function]}
     >
       2
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eJNClO"
+      className="sc-dkzDqf rrmtZ"
       onClick={[Function]}
     >
       3
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       4
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       5
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf fUefSt"
+      className="sc-dkzDqf eUjXlS"
       onClick={[Function]}
     >
       6
     </button>
   </span>
   <span
-    className="sc-gsnTZi eMJLCs"
+    className="sc-gsnTZi ftDuYe"
   >
     <button
-      className="sc-dkzDqf eRQHog"
+      className="sc-dkzDqf OdHqc"
       onClick={[Function]}
     >
       <svg

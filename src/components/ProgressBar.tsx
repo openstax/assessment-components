@@ -15,27 +15,11 @@ const ProgressBarWrapper = styled.div`
 const StyledItemWrapper = styled.span`
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-
-  &::after {
-    content: "";
-    display: block;
-    height: 0.1rem;
-    width: 1rem;
-    background-color: ${colors.palette.pale};
-  }
+  margin: 0 1rem 1rem 0;
 
   &:last-child {
-    &::after {
-      content: none;
-    }
+    margin-right: 0;
   }
-
-  ${breakpoints.mobile`
-    &::after {
-      width: 3.3rem;
-    }
-  `}
 `;
 
 const handleVariant = (variant: ProgressBarItemVariant, isActive: boolean) => {
@@ -75,12 +59,12 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: ${props => props.isActive ? '3.0rem' : '2.4rem'};
+  height: ${props => props.isActive ? '3.0rem' : '2.4rem'};
   border-radius: 50%;
   border-width: 1px;
   border-style: solid;
-  margin: 0 0.3rem;
+  margin: ${props => props.isActive ? '0' : '0 0.3rem'};
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
