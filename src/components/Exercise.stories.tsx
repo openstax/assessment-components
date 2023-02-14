@@ -176,6 +176,54 @@ export const CompleteWithFeedback = () => {
   return <Exercise {...props} />;
 };
 
+export const FeedbackFlagNone = () => {
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps() };
+  props.questionStates = {
+    '1': {
+      available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: 1,
+      free_response: '',
+      feedback_html: '',
+      correct_answer_id: undefined,
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: '',
+      solution: undefined,
+      canAnswer: false,
+      needsSaved: false,
+      apiIsPending: false
+    }
+  };
+  return <Exercise {...props} />;
+};
+
+export const FeedbackFlagCorrectness = () => {
+  const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps() };
+  props.questionStates = {
+    '1': {
+      available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: undefined,
+      free_response: 'Free response',
+      feedback_html: '',
+      correct_answer_id: '1',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: '2',
+      solution: undefined,
+      canAnswer: true,
+      needsSaved: false,
+      apiIsPending: false
+    }
+  };
+  return <Exercise {...props} />;
+};
+
 export const IncorrectWithFeedbackAndSolution = () => {
   const props: ExerciseWithQuestionStatesProps = { ...exerciseWithQuestionStatesProps() };
   props.questionStates = {
