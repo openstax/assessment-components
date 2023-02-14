@@ -1,4 +1,4 @@
-import{s as u,j as e}from"./index.5cbceb37.js";import{I as c}from"./Card.fd29b348.js";import{B as p}from"./Button.8b9d0041.js";import"./theme.5c888d5f.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/CompletionStatus.tsx";const N=u(c)`
+import{s as u,j as e}from"./index.dfd08f9a.js";import{I as c}from"./Card.0891eb1d.js";import{B as p}from"./Button.8adc5b53.js";import"./theme.6dc881e6.js";var o="/home/runner/work/assessment-components/assessment-components/src/components/CompletionStatus.tsx";const N=u(c)`
   padding: 88px 72px;
   font-size: 1.8rem;
   line-height: 3rem;
