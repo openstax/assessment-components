@@ -36,7 +36,6 @@ import fetch from 'node-fetch';
   const exercises: object[] = [];
   for (let page = 1; page <= totalPages; page++) {
     const response = await fetch(searchApiUrl(query, page), { headers });
-    console.log(response.url);
     if (response.status !== 200) {
       console.error(`Error: Exercises responded with ${response.status}: ${response.statusText} for ${response.url}`);
       process.exit(1);
