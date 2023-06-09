@@ -11,7 +11,7 @@ const generatePDF = async() => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
-  await page.goto('http://localhost:61000/?mode=preview&story=print--default');
+  await page.goto('http://localhost:61000/assessment-components/?mode=preview&story=print--default');
   await page.waitForLoadState('networkidle')
   await page.emulateMedia({ media: 'screen' });
   await page.pdf({
