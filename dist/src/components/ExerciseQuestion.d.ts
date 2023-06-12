@@ -1,4 +1,6 @@
+import React from "react";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
+import { ExerciseBaseProps } from "./Exercise";
 export interface ExerciseQuestionProps {
     task?: Task;
     question: ExerciseQuestionData;
@@ -7,14 +9,14 @@ export interface ExerciseQuestionProps {
     choicesEnabled: boolean;
     hasMultipleAttempts: boolean;
     onAnswerChange: () => void;
-    onAnswerSave: () => void;
-    onNextStep: () => void;
+    onAnswerSave: ExerciseBaseProps['onAnswerSave'];
+    onNextStep: ExerciseBaseProps['onNextStep'];
     feedback_html: string;
     correct_answer_feedback_html: string;
     is_completed: boolean;
     correct_answer_id: ID;
     incorrectAnswerId: ID;
-    answerId?: ID;
+    answer_id?: ID;
     attempts_remaining: number;
     published_comments?: string;
     detailedSolution?: string;
@@ -27,5 +29,15 @@ export interface ExerciseQuestionProps {
     available_points: AvailablePoints;
     exercise_uid: string;
     free_response?: string;
+    show_all_feedback?: boolean;
+    tableFeedbackEnabled?: boolean;
 }
-export declare const ExerciseQuestion: (props: ExerciseQuestionProps) => JSX.Element;
+export declare const SaveButton: (props: {
+    disabled: boolean;
+    isWaiting: boolean;
+    attempt_number: number;
+} & React.ComponentPropsWithoutRef<'button'>) => JSX.Element;
+export declare const NextButton: (props: {
+    canUpdateCurrentStep: boolean;
+} & React.ComponentPropsWithoutRef<'button'>) => JSX.Element;
+export declare const ExerciseQuestion: React.ForwardRefExoticComponent<ExerciseQuestionProps & React.RefAttributes<HTMLDivElement>>;

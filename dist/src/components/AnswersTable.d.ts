@@ -10,6 +10,7 @@ export interface AnswersTableProps {
     correct_answer_feedback_html?: string;
     answered_count?: number;
     show_all_feedback?: boolean;
+    tableFeedbackEnabled?: boolean;
     onChangeAnswer: () => void;
     hideAnswers: boolean;
     hasCorrectAnswer?: boolean;

@@ -1,5 +1,5 @@
 import { ID, ExerciseQuestionData, Task } from 'src/types';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 export interface QuestionProps {
     question: ExerciseQuestionData;
     answer_id?: ID;
@@ -19,11 +19,12 @@ export interface QuestionProps {
     feedback_html: string;
     onChange: () => void;
     show_all_feedback?: boolean;
+    tableFeedbackEnabled?: boolean;
     children?: ReactNode;
     answerIdOrder?: ID[];
     choicesEnabled?: boolean;
 }
-export declare const Question: (props: QuestionProps) => JSX.Element;
+export declare const Question: React.ForwardRefExoticComponent<QuestionProps & React.RefAttributes<HTMLDivElement>>;
 interface QuestionHtmlProps {
     html?: string;
     type: string;

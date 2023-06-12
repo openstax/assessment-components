@@ -6,7 +6,7 @@ export interface AnswerProps {
     qid: ID;
     type: 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
     hasCorrectAnswer?: boolean;
-    onChangeAnswer: () => void;
+    onChangeAnswer?: (answer: AnswerType) => void;
     disabled: boolean;
     chosenAnswer: ChosenAnswer;
     correctAnswerId?: ID | null;
@@ -17,6 +17,7 @@ export interface AnswerProps {
     radioBox?: ReactNode;
     contentRenderer?: JSX.Element;
     show_all_feedback?: boolean;
+    tableFeedbackEnabled?: boolean;
 }
 export declare const Answer: {
     (props: AnswerProps): JSX.Element;
