@@ -10,13 +10,10 @@ const isAnswerCorrect = function isAnswerCorrect(answer, correctAnswerId) {
   if (!(answer.id || correctAnswerId)) {
     return answer.isCorrect;
   }
-
   let isCorrect = answer.id === correctAnswerId;
-
   if (answer.correctness != null) {
     isCorrect = answer.correctness === MAX_CORRECTNESS;
   }
-
   return isCorrect;
 };
 const isAnswerIncorrect = function isAnswerIncorrect(answer, incorrectAnswerId) {
@@ -25,8 +22,8 @@ const isAnswerIncorrect = function isAnswerIncorrect(answer, incorrectAnswerId) 
 };
 const isAnswerChecked = (answer, chosenAnswer) => Boolean((chosenAnswer || []).find(a => a == answer.id));
 function countWords(text) {
-  const trimmedText = text.trim(); //https://css-tricks.com/build-word-counter-app/
-
+  const trimmedText = text.trim();
+  //https://css-tricks.com/build-word-counter-app/
   const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
   if (!words) return 0;
   return words.length;
@@ -36,49 +33,42 @@ function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
-
       for (var key in source) {
         if (Object.prototype.hasOwnProperty.call(source, key)) {
           target[key] = source[key];
         }
       }
     }
-
     return target;
   };
   return _extends.apply(this, arguments);
 }
-
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
   var key, i;
-
   for (i = 0; i < sourceKeys.length; i++) {
     key = sourceKeys[i];
     if (excluded.indexOf(key) >= 0) continue;
     target[key] = source[key];
   }
-
   return target;
 }
 
 const _excluded$3 = ["html", "component", "block"];
 const Content = _ref => {
   let {
-    html,
-    component,
-    block = false
-  } = _ref,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
-
+      html,
+      component,
+      block = false
+    } = _ref,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$3);
   if (component !== undefined) {
     return /*#__PURE__*/React.cloneElement(component, _extends({
       html
     }, props));
   }
-
   if (block) {
     return jsx("div", _extends({
       dangerouslySetInnerHTML: {
@@ -102,7 +92,6 @@ const SimpleFeedback = props => jsx("aside", {
     block: true
   })
 });
-
 const Feedback = props => {
   const position = props.position || 'bottom';
   const wrapperClasses = cn('question-feedback', position);
@@ -137,34 +126,29 @@ const Answer = props => {
   const isChecked = isAnswerChecked(answer, chosenAnswer);
   const isCorrect = isAnswerCorrect(answer, correctAnswerId);
   const isIncorrect = isAnswerIncorrect(answer, incorrectAnswerId);
-
   const correctIncorrectIcon = jsx("div", {
     className: "correct-incorrect",
     children: isCorrect && props.correctIncorrectIcon
   });
-
   const classes = cn('answers-answer', {
     'disabled': disabled,
     'answer-checked': isChecked,
     'answer-correct': isCorrect && type !== 'student-mpp',
     'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId)
   });
-  let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`; // somewhat misleading - this means that there is a correct answer,
+  let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
+  // somewhat misleading - this means that there is a correct answer,
   // not necessarily that this answer is correct
-
   if (hasCorrectAnswer) {
     ariaLabel += `(${isCorrect ? 'Correct' : 'Incorrect'} Answer)`;
   }
-
   ariaLabel += ':';
   let onChangeAnswer, radioBox;
-
   if (!hasCorrectAnswer && type !== 'teacher-review' && type !== 'teacher-preview' && type !== 'student-mpp') {
     ({
       onChangeAnswer
     } = props);
   }
-
   if (onChangeAnswer) {
     radioBox = jsx("input", {
       type: "radio",
@@ -176,21 +160,17 @@ const Answer = props => {
       disabled: disabled
     });
   }
-
   if (show_all_feedback && answer.feedback_html) {
     feedback = jsx(SimpleFeedback, {
       contentRenderer: contentRenderer,
       children: answer.feedback_html
     }, "question-mc-feedback");
   }
-
   if (type === 'teacher-review') {
     let percent = 0;
-
     if (answer.selected_count && answered_count) {
       percent = Math.round(answer.selected_count / answered_count * 100);
     }
-
     selectedCount = jsx("span", {
       className: "selected-count",
       "data-percent": `${percent}`,
@@ -246,7 +226,6 @@ const Answer = props => {
       })]
     });
   }
-
   return jsx("div", {
     className: "openstax-answer",
     children: jsx("section", {
@@ -280,24 +259,20 @@ const AnswersTable = props => {
     answerIdOrder,
     instructions
   } = props;
-
   if (hideAnswers) {
     return null;
   }
-
   const {
     id
   } = question;
   const feedback = [];
   const chosenAnswer = [answer_id];
-
   const sortedAnswersByIdOrder = idOrder => {
     const {
       answers
     } = question;
     return answers.slice().sort((a, b) => idOrder.indexOf(a.id) - idOrder.indexOf(b.id));
   };
-
   const questionAnswerProps = {
     qid: id || `auto-${idCounter++}`,
     correctAnswerId: correct_answer_id,
@@ -319,7 +294,6 @@ const AnswersTable = props => {
       key: `${questionAnswerProps.qid}-option-${i}`
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
-
     if (answer.id === incorrectAnswerId && feedback_html) {
       feedback.push({
         index: i,
@@ -331,7 +305,6 @@ const AnswersTable = props => {
         html: correct_answer_feedback_html
       });
     }
-
     return jsx(Answer, _extends({}, answerProps));
   });
   feedback.forEach((item, i) => {
@@ -348,19 +321,19 @@ const AnswersTable = props => {
 };
 
 let _$6 = t => t,
-    _t$6,
-    _t2$3,
-    _t3$2,
-    _t4$2,
-    _t5$2,
-    _t6$2,
-    _t7$1,
-    _t8$1,
-    _t9$1,
-    _t10$1,
-    _t11$1,
-    _t12$1,
-    _t13;
+  _t$6,
+  _t2$3,
+  _t3$2,
+  _t4$2,
+  _t5$2,
+  _t6$2,
+  _t7$1,
+  _t8$1,
+  _t9$1,
+  _t10$1,
+  _t11$1,
+  _t12$1,
+  _t13;
 const palette = {
   red: "#ca2026",
   danger: "#c2002f",
@@ -464,20 +437,16 @@ const breakpoints = {
   mobile(...args) {
     return css(_t$6 || (_t$6 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.mobile, css(...args));
   },
-
   tablet(...args) {
     return css(_t2$3 || (_t2$3 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.tablet, css(...args));
   },
-
   desktop(...args) {
     return css(_t3$2 || (_t3$2 = _$6`@media(min-width: ${0}px) { ${0} }`), BREAKPOINTS.desktop, css(...args));
   },
-
   only: {
     mobile(...args) {
       return css(_t4$2 || (_t4$2 = _$6`@media(max-width: ${0}px) { ${0} }`), BREAKPOINTS.mobile, css(...args));
     }
-
   },
   margins: {
     mobile: '8px',
@@ -593,7 +562,7 @@ const mixins = {
 };
 
 let _$5 = t => t,
-    _t$5;
+  _t$5;
 const StyledQuestion = styled.div(_t$5 || (_t$5 = _$5`
 &.step-card-body {
   ${0};
@@ -842,7 +811,6 @@ const Question = props => {
     'has-correct-answer': hasCorrectAnswer && !(taskIsDeleted && taskIsHomework),
     'has-incorrect-answer': hasIncorrectAnswer
   });
-
   const hasSolution = () => {
     const {
       displaySolution
@@ -852,14 +820,12 @@ const Question = props => {
     } = question;
     return displaySolution && collaborator_solutions && collaborator_solutions.find(s => s['content_html'] !== undefined);
   };
-
   if (exercise_uid != null) {
     exerciseUid = jsx("div", {
       className: "exercise-uid",
       children: exercise_uid
     });
   }
-
   if (hasSolution()) {
     solution = jsxs("div", {
       className: "detailed-solution",
@@ -873,7 +839,6 @@ const Question = props => {
       })]
     });
   }
-
   return jsxs(StyledQuestion, {
     className: classes,
     "data-question-number": questionNumber,
@@ -906,11 +871,9 @@ const QuestionHtml = props => {
     hidden,
     questionNumber
   } = props;
-
   if (hidden === true || !(html.length > 0)) {
     return null;
   }
-
   return jsx(Content, {
     html: html,
     "data-question-number": questionNumber,
@@ -918,7 +881,6 @@ const QuestionHtml = props => {
     block: true
   });
 };
-
 const FormatsListing = ({
   formats: _formats = []
 }) => {
@@ -934,9 +896,8 @@ const FormatsListing = ({
 };
 
 const _excluded$2 = ["disabled", "isWaiting", "waitingText", "children"];
-
 let _$4 = t => t,
-    _t$4;
+  _t$4;
 const StyledButton = styled.button(_t$4 || (_t$4 = _$4`
   background-color: ${0};
   color: ${0};
@@ -966,16 +927,14 @@ const StyledButton = styled.button(_t$4 || (_t$4 = _$4`
     opacity: 0.4;
   }
 `), colors.button.background, colors.palette.white, colors.button.backgroundHover, colors.button.backgroundActive);
-
 const Button = props => {
   const {
-    disabled,
-    isWaiting,
-    waitingText,
-    children
-  } = props,
-        otherProps = _objectWithoutPropertiesLoose(props, _excluded$2);
-
+      disabled,
+      isWaiting,
+      waitingText,
+      children
+    } = props,
+    otherProps = _objectWithoutPropertiesLoose(props, _excluded$2);
   return jsx(StyledButton, _extends({}, otherProps, {
     disabled: isWaiting || disabled,
     children: isWaiting && waitingText || children
@@ -983,8 +942,8 @@ const Button = props => {
 };
 
 let _$3 = t => t,
-    _t$3,
-    _t2$2;
+  _t$3,
+  _t2$2;
 const StepCardFooter = styled.div(_t$3 || (_t$3 = _$3`
     ${0}
     border-top: 1px solid ${0};
@@ -1041,12 +1000,12 @@ const StepCardFooter = styled.div(_t$3 || (_t$3 = _$3`
     `)));
 
 let _$2 = t => t,
-    _t$2,
-    _t2$1,
-    _t3$1,
-    _t4$1,
-    _t5$1,
-    _t6$1;
+  _t$2,
+  _t2$1,
+  _t3$1,
+  _t4$1,
+  _t5$1,
+  _t6$1;
 const TextAreaErrorStyle = css(_t$2 || (_t$2 = _$2`
   background-color: #f5e9ea;
 `));
@@ -1107,11 +1066,9 @@ const FreeResponseTextArea = styled.textarea(_t5$1 || (_t5$1 = _$2`
     border: 2px solid ${0};
   `), colors.palette.danger), props => props.readOnly && colors.palette.neutralCool);
 FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
-
 const RevertButton = props => jsx(Button, _extends({}, props, {
   children: "Cancel"
 }));
-
 const FreeResponseInput = props => {
   const {
     availablePoints,
@@ -1129,11 +1086,9 @@ const FreeResponseInput = props => {
   } = props;
   const isOverWordLimit = countWords(defaultValue) > wordLimit;
   const questionProps = {};
-
   if (questionNumber) {
     questionProps['data-question-number'] = questionNumber;
   }
-
   return jsxs(StyledFreeResponse, {
     "data-test-id": "student-free-response",
     children: [jsxs("div", {
@@ -1184,21 +1139,20 @@ const FreeResponseInput = props => {
 FreeResponseInput.displayName = 'OSFreeResponse';
 
 const _excluded$1 = ["questionNumber", "numberOfQuestions", "stepType", "isHomework", "availablePoints", "unpadded", "className", "children", "questionId", "multipartBadge", "leftHeaderChildren", "rightHeaderChildren", "headerTitleChildren"],
-      _excluded2 = ["step", "questionNumber", "numberOfQuestions", "children", "className"];
-
+  _excluded2 = ["step", "questionNumber", "numberOfQuestions", "children", "className"];
 let _$1 = t => t,
-    _t$1,
-    _t2,
-    _t3,
-    _t4,
-    _t5,
-    _t6,
-    _t7,
-    _t8,
-    _t9,
-    _t10,
-    _t11,
-    _t12;
+  _t$1,
+  _t2,
+  _t3,
+  _t4,
+  _t5,
+  _t6,
+  _t7,
+  _t8,
+  _t9,
+  _t10,
+  _t11,
+  _t12;
 const InnerStepCard = styled.div(_t$1 || (_t$1 = _$1`
   position: relative;
   display: flex;
@@ -1377,26 +1331,24 @@ const StepCardQuestion = styled.div(_t9 || (_t9 = _$1`
             margin-right: ${0};
         }
     `), breakpoints.margins.mobile));
-
 const StepCard = _ref => {
   let {
-    questionNumber,
-    numberOfQuestions,
-    stepType,
-    isHomework,
-    availablePoints,
-    unpadded,
-    // currently does nothing; may need to restore if this causes tutor stepcard regression
-    className,
-    children,
-    questionId,
-    multipartBadge,
-    leftHeaderChildren,
-    rightHeaderChildren,
-    headerTitleChildren
-  } = _ref,
-      otherProps = _objectWithoutPropertiesLoose(_ref, _excluded$1);
-
+      questionNumber,
+      numberOfQuestions,
+      stepType,
+      isHomework,
+      availablePoints,
+      unpadded,
+      // currently does nothing; may need to restore if this causes tutor stepcard regression
+      className,
+      children,
+      questionId,
+      multipartBadge,
+      leftHeaderChildren,
+      rightHeaderChildren,
+      headerTitleChildren
+    } = _ref,
+    otherProps = _objectWithoutPropertiesLoose(_ref, _excluded$1);
   return jsxs(OuterStepCard, _extends({}, otherProps, {
     children: [multipartBadge, jsxs(InnerStepCard, {
       className: className,
@@ -1430,19 +1382,16 @@ const StepCard = _ref => {
     })]
   }));
 };
-
 StepCard.displayName = 'OSStepCard';
-
 const TaskStepCard = _ref2 => {
   let {
-    step,
-    questionNumber,
-    numberOfQuestions,
-    children,
-    className
-  } = _ref2,
-      otherProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-
+      step,
+      questionNumber,
+      numberOfQuestions,
+      children,
+      className
+    } = _ref2,
+    otherProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   return jsx(StepCard, _extends({}, otherProps, {
     unpadded: true,
     questionNumber: questionNumber,
@@ -1456,7 +1405,6 @@ const TaskStepCard = _ref2 => {
     children: children
   }));
 };
-
 TaskStepCard.displayName = 'OSTaskStepCard';
 
 const AttemptsRemaining = ({
@@ -1466,28 +1414,24 @@ const AttemptsRemaining = ({
     children: [count, " attempt", count === 1 ? '' : 's', " left"]
   });
 };
-
 const PublishedComments = ({
   published_comments
 }) => {
   if (!published_comments) {
     return null;
   }
-
   return jsxs("div", {
     children: [jsx("strong", {
       children: "Feedback:"
     }), " ", published_comments]
   });
 };
-
 const SaveButton = props => jsx(Button, _extends({}, props, {
   waitingText: "Saving\u2026",
   isWaiting: props.isWaiting,
   "data-test-id": "submit-answer-btn",
   children: props.attempt_number == 0 ? 'Submit' : 'Re-submit'
 }));
-
 const NextButton = props => {
   return jsx(Button, {
     onClick: props.onNextStep,
@@ -1495,14 +1439,12 @@ const NextButton = props => {
     children: props.canUpdateCurrentStep ? 'Continue' : 'Next'
   });
 };
-
 const FreeResponseReview = ({
   free_response
 }) => {
   if (!free_response) {
     return null;
   }
-
   return jsx(Fragment, {
     children: jsx("div", {
       className: "free-response",
@@ -1510,7 +1452,6 @@ const FreeResponseReview = ({
     })
   });
 };
-
 const ExerciseQuestion = props => {
   const {
     question,
@@ -1598,14 +1539,12 @@ const ExerciseQuestion = props => {
 };
 
 const _excluded = ["numberOfQuestions", "questionNumber", "step", "exercise", "canAnswer", "needsSaved"];
-
 let _ = t => t,
-    _t;
+  _t;
 const StyledTaskStepCard = styled(TaskStepCard)(_t || (_t = _`
   font-size: 1.8rem;
   line-height: 3rem;
 `));
-
 const Preamble = ({
   exercise
 }) => {
@@ -1621,18 +1560,16 @@ const Preamble = ({
     })]
   });
 };
-
 const Exercise = _ref => {
   let {
-    numberOfQuestions,
-    questionNumber,
-    step,
-    exercise,
-    canAnswer,
-    needsSaved
-  } = _ref,
-      props = _objectWithoutPropertiesLoose(_ref, _excluded);
-
+      numberOfQuestions,
+      questionNumber,
+      step,
+      exercise,
+      canAnswer,
+      needsSaved
+    } = _ref,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded);
   return jsxs(StyledTaskStepCard, {
     step: step,
     questionNumber: questionNumber,
