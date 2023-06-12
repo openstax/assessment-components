@@ -1,7 +1,7 @@
+import React from 'react';
 import { GlobalProvider } from "@ladle/react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { startMathJax, typesetMath } from './mathjax';
 
 const Wrapper = styled.div`
   *, ::before, ::after {
@@ -17,15 +17,6 @@ export const Provider: GlobalProvider = ({ children }) => {
     style.innerText = 'html { font-size: 10px }';
     document.head.append(style);
   }, []);
-
-  useEffect(() => {
-    if (window.MathJax === undefined) {
-      startMathJax();
-    } else {
-      typesetMath();
-    }
-
-  }, [children]);
 
   return (
     <Wrapper>

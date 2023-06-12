@@ -1,4 +1,4 @@
-import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from './utils';
+import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
 import { Answer } from './types';
 
 describe('isAnswerCorrect', () => {
@@ -7,6 +7,7 @@ describe('isAnswerCorrect', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',
@@ -45,6 +46,7 @@ describe('isAnswerIncorrect', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',
@@ -64,6 +66,7 @@ describe('isAnswerChecked', () => {
   beforeEach(() => {
     answer = {
       id: '1',
+      question_id: 1,
       correctness: null,
       isCorrect: true,
       content_html: '',
@@ -74,5 +77,12 @@ describe('isAnswerChecked', () => {
     expect(isAnswerChecked(answer, [])).toBe(false);
     expect(isAnswerChecked(answer)).toBe(false);
     expect(isAnswerChecked(answer, [answer.id])).toBe(true);
+  });
+});
+
+describe('numberfyId', () => {
+  it('converts an ID string to a number or returns the value', () => {
+    expect(numberfyId('1')).toBe(1);
+    expect(numberfyId(1)).toBe(1);
   });
 });

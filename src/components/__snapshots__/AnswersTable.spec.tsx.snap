@@ -27,6 +27,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-a"
             disabled={true}
+            onClick={[Function]}
           >
             a
           </button>
@@ -74,6 +75,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-b"
             disabled={true}
+            onClick={[Function]}
           >
             b
           </button>
@@ -101,6 +103,145 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
 </div>
 `;
 
+exports[`AnswersTable renders all feedback 1`] = `
+<div
+  className="answers-table"
+>
+  <div
+    className="openstax-answer"
+  >
+    <section
+      className="answers-answer disabled answer-checked answer-incorrect"
+      role="region"
+    >
+      <input
+        checked={true}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-0"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
+      <label
+        className="answer-label"
+        htmlFor="1-option-0"
+      >
+        <span
+          className="answer-letter-wrapper"
+        >
+          <button
+            aria-label="Selected Choice a:"
+            className="answer-letter"
+            data-test-id="answer-choice-a"
+            disabled={true}
+            onClick={[Function]}
+          >
+            a
+          </button>
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <span
+            className="answer-content"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "True",
+              }
+            }
+          />
+        </div>
+      </label>
+    </section>
+  </div>
+  <aside
+    className="question-feedback bottom"
+  >
+    <div
+      aria-label="Answer Feedback"
+      className="arrow"
+    />
+    <aside>
+      <div
+        className="question-feedback-content has-html"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Answer level feedback",
+          }
+        }
+      />
+    </aside>
+  </aside>
+  <div
+    className="openstax-answer"
+  >
+    <section
+      className="answers-answer disabled answer-correct"
+      role="region"
+    >
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-1"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
+      <label
+        className="answer-label"
+        htmlFor="1-option-1"
+      >
+        <span
+          className="answer-letter-wrapper"
+        >
+          <button
+            aria-label="Choice b:"
+            className="answer-letter"
+            data-test-id="answer-choice-b"
+            disabled={true}
+            onClick={[Function]}
+          >
+            b
+          </button>
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <span
+            className="answer-content"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "False",
+              }
+            }
+          />
+        </div>
+      </label>
+    </section>
+  </div>
+  <aside
+    className="question-feedback bottom"
+  >
+    <div
+      aria-label="Answer Feedback"
+      className="arrow"
+    />
+    <aside>
+      <div
+        className="question-feedback-content has-html"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Answer level feedback",
+          }
+        }
+      />
+    </aside>
+  </aside>
+</div>
+`;
+
 exports[`AnswersTable renders correct answer feedback 1`] = `
 <div
   className="answers-table"
@@ -124,6 +265,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-a"
             disabled={true}
+            onClick={[Function]}
           >
             a
           </button>
@@ -180,6 +322,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-b"
             disabled={true}
+            onClick={[Function]}
           >
             b
           </button>
@@ -219,7 +362,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         disabled={true}
         id="1-option-0"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -234,7 +377,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-a"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             a
           </button>
@@ -285,7 +428,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         disabled={true}
         id="1-option-1"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -300,7 +443,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-b"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             b
           </button>
@@ -343,7 +486,7 @@ exports[`AnswersTable renders instructions 1`] = `
         disabled={true}
         id="1-option-0"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -358,7 +501,7 @@ exports[`AnswersTable renders instructions 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-a"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             a
           </button>
@@ -391,7 +534,7 @@ exports[`AnswersTable renders instructions 1`] = `
         disabled={true}
         id="1-option-1"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -406,7 +549,7 @@ exports[`AnswersTable renders instructions 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-b"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             b
           </button>
@@ -446,7 +589,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
         disabled={true}
         id="1-option-0"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -461,7 +604,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-a"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             a
           </button>
@@ -494,7 +637,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
         disabled={true}
         id="1-option-1"
         name="1-options"
-        onChange={[MockFunction]}
+        onChange={[Function]}
         type="radio"
       />
       <label
@@ -509,7 +652,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
             className="answer-letter"
             data-test-id="answer-choice-b"
             disabled={true}
-            onClick={[MockFunction]}
+            onClick={[Function]}
           >
             b
           </button>

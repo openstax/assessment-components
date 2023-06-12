@@ -14,20 +14,19 @@ import fetch from 'node-fetch';
     }
   }) as ((flag: string, defaultValue: string) => string) & ((flag: string) => string | undefined)
 
-  const filename = spliceOption('-o', 'exercises.json');
+  const title = spliceOption('-o');
   const token = spliceOption('-t');
 
-  if (process.argv.length < 3) {
-    console.error('Usage: yarn run-download-json [-o exercises.json] [-t token] <query>');
+  if (process.argv.length < 3 || token === undefined) {
+    console.error('Usage: yarn run-download-json [-o "Anatomy & Physiology 2e Section 1.6"] [-t token] <query>');
     process.exit(1);
   }
 
   const query = process.argv.slice(2).join(' ');
 
-  const headers = {};
-  if (token !== undefined) {
-    headers['Authorization'] = `Bearer ${token}`;
-  }
+  const headers = {
+    'Authorization': `Bearer ${token}`
+  };
 
   const searchApiUrl = (query: string, page: number) => (
     `https://exercises.openstax.org/api/exercises?per_page=${perPage}&page=${page}&query=${query}`
@@ -48,11 +47,11 @@ import fetch from 'node-fetch';
     console.log(`Progress: ${exercises.length}/${total_count}`);
   }
 
-  writeFile(filename, JSON.stringify(exercises), (err) => {
+  writeFile('exercises.json', JSON.stringify({title, exercises}), (err) => {
     if (err)
       console.error(err);
     else {
-      console.log(`${exercises.length} exercises written to ${filename}`);
+      console.log(`${exercises.length} exercises written to exercises.json`);
     }
   });
 })();

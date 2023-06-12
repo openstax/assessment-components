@@ -1,4 +1,4 @@
-import { ExerciseQuestion, ExerciseQuestionProps } from './ExerciseQuestion';
+import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
 
 describe('ExerciseQuestion', () => {
@@ -34,7 +34,7 @@ describe('ExerciseQuestion', () => {
       is_completed: false,
       correct_answer_id: '',
       incorrectAnswerId: '',
-      answerId: '',
+      answer_id: '',
       attempts_remaining: 2,
       published_comments: '',
       detailedSolution: '',
@@ -101,7 +101,7 @@ describe('ExerciseQuestion', () => {
         incorrectAnswerId='2'
         canAnswer={true}
         needsSaved={true}
-        answerId='1'
+        answer_id='1'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -115,7 +115,7 @@ describe('ExerciseQuestion', () => {
         canAnswer={true}
         needsSaved={true}
         attempt_number={1}
-        answerId='1'
+        answer_id='1'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -156,5 +156,41 @@ describe('ExerciseQuestion', () => {
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('converts question id as a number when saving', () => {
+    const mockFn = jest.fn();
+
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        needsSaved={true}
+        canAnswer={true}
+        onAnswerSave={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(SaveButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalledWith(1);
+  });
+
+  it('passes question index on next button click', () => {
+    const mockFn = jest.fn();
+
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        needsSaved={false}
+        canAnswer={true}
+        onNextStep={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(NextButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalledWith(0);
   });
 });

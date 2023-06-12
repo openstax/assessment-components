@@ -11,7 +11,7 @@ export interface AnswerProps {
   qid: ID;
   type: 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
   hasCorrectAnswer?: boolean;
-  onChangeAnswer: () => void;
+  onChangeAnswer?: (answer: AnswerType) => void;
   disabled: boolean;
   chosenAnswer: ChosenAnswer;
   correctAnswerId?: ID | null;
@@ -22,6 +22,7 @@ export interface AnswerProps {
   radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
   show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
 }
 
 export const Answer = (props: AnswerProps) => {
@@ -38,7 +39,8 @@ export const Answer = (props: AnswerProps) => {
     hasCorrectAnswer,
     answered_count,
     contentRenderer,
-    show_all_feedback
+    show_all_feedback,
+    tableFeedbackEnabled,
   } = props;
 
   let body, feedback, selectedCount;
@@ -68,7 +70,9 @@ export const Answer = (props: AnswerProps) => {
   }
   ariaLabel += ':';
 
-  let onChangeAnswer, radioBox;
+  let onChangeAnswer: AnswerProps['onChangeAnswer'], radioBox;
+
+  const onChange = () => onChangeAnswer && onChangeAnswer(answer);
 
   if (!hasCorrectAnswer
     && (type !== 'teacher-review')
@@ -85,13 +89,13 @@ export const Answer = (props: AnswerProps) => {
         checked={isChecked}
         id={`${qid}-option-${iter}`}
         name={`${qid}-options`}
-        onChange={onChangeAnswer}
+        onChange={onChange}
         disabled={disabled}
       />
     );
   }
 
-  if (show_all_feedback && answer.feedback_html) {
+  if (show_all_feedback && answer.feedback_html && !tableFeedbackEnabled) {
     feedback = (
       <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
         {answer.feedback_html}
@@ -140,7 +144,7 @@ export const Answer = (props: AnswerProps) => {
           className="answer-label">
           <span className="answer-letter-wrapper">
             <button
-              onClick={onChangeAnswer}
+              onClick={onChange}
               aria-label={ariaLabel}
               className="answer-letter"
               disabled={disabled || isIncorrect}

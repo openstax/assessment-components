@@ -1,5 +1,5 @@
 import { Answer, AnswerProps } from './Answer';
-import renderer from 'react-test-renderer';
+import renderer, { act } from 'react-test-renderer';
 import { answerContent } from '../test/fixtures';
 
 describe('Answer', () => {
@@ -11,6 +11,7 @@ describe('Answer', () => {
       iter: 1,
       answer: {
         id: 1,
+        question_id: 1,
         correctness: null,
         isCorrect: true,
         content_html: answerContent[0],
@@ -30,10 +31,17 @@ describe('Answer', () => {
   });
 
   it('matches snapshot', () => {
-     const tree = renderer.create(
-       <Answer {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const callback = jest.fn();
+
+    const instance = renderer.create(
+      <Answer {...props} onChangeAnswer={callback} />
+    );
+    act(() => {
+      instance.root.findByType('input').props.onChange({ target: {} });
+    });
+    expect(callback).toHaveBeenCalled();
+
+    expect(instance.toJSON()).toMatchSnapshot();
   });
 
   it('renders with a custom renderer if set', () => {
@@ -84,7 +92,7 @@ describe('Answer', () => {
   });
 
   it('renders teacher preview', () => {
-    props = {...props, correctAnswerId: props.answer.id, correctIncorrectIcon: <span>Iconic</span>};
+    props = { ...props, correctAnswerId: props.answer.id, correctIncorrectIcon: <span>Iconic</span> };
     const tree = renderer.create(
       <Answer {...props} type='teacher-preview' />
     ).toJSON();

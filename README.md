@@ -1,6 +1,6 @@
 # Assessment Component Library
 
-WIP
+UI components for OpenStax assessments.
 
 ## Development
 

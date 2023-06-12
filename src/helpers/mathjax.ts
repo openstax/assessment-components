@@ -1,0 +1,207 @@
+import { debounce } from 'lodash';
+import { isEmpty, memoize } from 'lodash/fp.js';
+import WeakMap from 'weak-map';
+import { assertWindow } from '../utils';
+
+declare global {
+  interface Window {
+    MathJax?: any;
+    __debugMathJax?: boolean;
+  }
+}
+
+const MATH_MARKER_BLOCK  = '\u200c\u200c\u200c'; // zero-width non-joiner
+const MATH_MARKER_INLINE = '\u200b\u200b\u200b'; // zero-width space
+
+const MATH_RENDERED_CLASS = 'math-rendered';
+const MATH_MARKED_CLASS = 'math-marked';
+const MATH_DATA_SELECTOR = `[data-math]:not(.${MATH_RENDERED_CLASS})`;
+const MATH_ML_SELECTOR   = `math:not(.${MATH_RENDERED_CLASS})`;
+const COMBINED_MATH_SELECTOR = `${MATH_DATA_SELECTOR}, ${MATH_ML_SELECTOR}`;
+const MATHJAX_CONFIG = {
+  extensions: [],
+  showProcessingMessages: false,
+  skipStartupTypeset: true,
+  styles: {
+    '#MathJax_MSIE_Frame': {
+      left: '', right: 0, visibility: 'hidden',
+    },
+    '#MathJax_Message': {
+      left: '', right: 0, visibility: 'hidden',
+    },
+  },
+  tex2jax: {
+    displayMath: [[MATH_MARKER_BLOCK, MATH_MARKER_BLOCK]],
+    inlineMath:  [[MATH_MARKER_INLINE, MATH_MARKER_INLINE]],
+  },
+};
+
+let mathJaxLoadingQueue: (() => void)[] = [];
+
+const findProcessedMath = (root: Element): Element[] => Array.from(root.querySelectorAll('.MathJax math'));
+const findUnprocessedMath = (root: Element): Element[] => {
+  const processedMath = findProcessedMath(root);
+  return Array.from(root.querySelectorAll('math')).filter((node) => processedMath.indexOf(node) === -1);;
+};
+
+const findLatexNodes = (root: Element): Element[] => {
+  const latexNodes: Element[] = [];
+  for (const node of Array.from(root.querySelectorAll(MATH_DATA_SELECTOR))) {
+    const formula = node.getAttribute('data-math');
+
+    // Set textContent once so that resolveOrWait calls don't
+    // undo a MathJax pass before rendered class is applied
+    if (!node.classList.contains(MATH_MARKED_CLASS)) {
+      node.textContent = (node.tagName.toLowerCase() === 'div')
+        ? `${MATH_MARKER_BLOCK}${formula}${MATH_MARKER_BLOCK}`
+        : `${MATH_MARKER_INLINE}${formula}${MATH_MARKER_INLINE}`;
+      node.classList.add('math-marked');
+    }
+    latexNodes.push(node);
+  }
+
+  return latexNodes;
+};
+
+const typesetLatexNodes = (latexNodes: Element[], windowImpl: Window) => () => {
+  if (isEmpty(latexNodes)) {
+    return;
+  }
+
+  windowImpl.MathJax.Hub.Queue(
+    () => windowImpl.MathJax.Hub.Typeset(latexNodes),
+    markLatexNodesRendered(latexNodes)
+  );
+};
+
+const typesetMathMLNodes = (root: Element, windowImpl: Window) => () => {
+  const mathMLNodes = findUnprocessedMath(root);
+
+  if (isEmpty(mathMLNodes)) {
+    return;
+  }
+
+  // style the entire document because mathjax is unable to style individual math elements
+  windowImpl.MathJax.Hub.Queue(
+    () => windowImpl.MathJax.Hub.Typeset(root)
+  );
+};
+
+const markLatexNodesRendered = (latexNodes: Element[]) => () => {
+  // Queue a call to mark the found nodes as rendered so are ignored if typesetting is called repeatedly
+  // uses className += instead of classList because IE
+  const result = [];
+  for (const node of latexNodes) {
+    result.push(node.className += ` ${MATH_RENDERED_CLASS}`);
+  }
+};
+
+// Search document for math and [data-math] elements and then typeset them
+function typesetDocument(root: Element, windowImpl: Window) {
+  const latexNodes = findLatexNodes(root);
+
+  windowImpl.MathJax.Hub.Queue(
+    typesetLatexNodes(latexNodes, windowImpl),
+    typesetMathMLNodes(root, windowImpl)
+  );
+}
+
+const resolveOrWait = (root: Element, resolve: () => void, remainingTries = 5) => {
+  if (
+    remainingTries > 0
+    && (findLatexNodes(root).length || findUnprocessedMath(root).length)
+  ) {
+    setTimeout(() => {
+      resolveOrWait(root, resolve, remainingTries - 1);
+    }, 200);
+  } else {
+    resolve();
+  }
+};
+
+const typesetDocumentPromise = (root: Element, windowImpl: Window): Promise<void> => new Promise((resolve) => {
+  typesetDocument(root, windowImpl);
+  windowImpl.MathJax.Hub.Queue(() => {
+    resolveOrWait(root, resolve);
+  });
+});
+
+// memoize'd getter for typeset document function so that each node's
+// typeset has its own debounce
+const getTypesetDocument = memoize((root, windowImpl) => {
+  // Install a debounce around typesetting function so that it will only run once
+  // every Xms even if called multiple times in that period
+  return debounce(typesetDocumentPromise, 100, {
+    leading: true,
+    trailing: false,
+  }).bind(null, root, windowImpl);
+});
+getTypesetDocument.cache = new WeakMap();
+
+// typesetMath is the main exported function.
+// It's called by components like HTML after they're rendered
+const typesetMath = (root: Element, windowImpl = assertWindow() as Window) => {
+  if (!document.getElementById('MathJax-Script')) {
+    startMathJax();
+  }
+
+  const hasMath = root.querySelector(COMBINED_MATH_SELECTOR);
+  // schedule a Mathjax pass if there is at least one [data-math] or <math> element present
+  if (windowImpl && windowImpl.MathJax && windowImpl.MathJax.Hub && hasMath) {
+    return getTypesetDocument(root, windowImpl)();
+  } else if (hasMath) {
+    // There are math elements present but MathJax is still loading/initializing
+    // Push to a temp queue to be processed in a StartupHook in configuredCallback
+    mathJaxLoadingQueue.push(() => getTypesetDocument(root, windowImpl)());
+    return Promise.resolve();
+  } else {
+    return Promise.resolve();
+  }
+};
+
+function startMathJax(windowImpl: Window = assertWindow() as Window): Promise<void> {
+  return new Promise((resolve) => {
+    if (windowImpl.MathJax !== undefined || document.getElementById('MathJax-Script')) {
+      return resolve();
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured';
+    script.id = 'MathJax-Script';
+    script.async = true;
+    document.head.appendChild(script);
+
+    const configuredCallback = () => {
+      // there doesn't seem to be a config option for this
+      windowImpl.MathJax.HTML.Cookie.prefix = 'mathjax';
+      // proceed with mathjax initi
+      windowImpl.MathJax.Hub.Configured();
+      // Attempt another pass for calls stored during load & init. This hook is the final
+      // signal in the startup sequence, not long after MathJax.isReady becomes true:
+      // https://docs.mathjax.org/en/v2.7-latest/advanced/startup.html#startup-sequence
+      windowImpl.MathJax.Hub.Register.StartupHook('End', () => {
+        mathJaxLoadingQueue.forEach(op => op());
+        mathJaxLoadingQueue = [];
+      });
+    };
+
+    if (windowImpl.MathJax && windowImpl.MathJax.Hub) {
+      windowImpl.MathJax.Hub.Config(MATHJAX_CONFIG);
+      // Does not seem to work when passed to Config
+      windowImpl.MathJax.Hub.processSectionDelay = 0;
+      return configuredCallback();
+    } else {
+      // If the MathJax.js file has not loaded yet:
+      // Call MathJax.Configured once MathJax loads and
+      // loads this config JSON since the CDN URL
+      // says to `delayStartupUntil=configured`
+      (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
+      return windowImpl.MathJax = MATHJAX_CONFIG;
+    }
+  })
+};
+
+export {
+  typesetMath,
+  startMathJax,
+};

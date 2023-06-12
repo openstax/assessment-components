@@ -1,6 +1,9 @@
+import React from "react";
+import { numberfyId } from "../../src/utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
+import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
 
@@ -12,14 +15,14 @@ export interface ExerciseQuestionProps {
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;
   onAnswerChange: () => void;
-  onAnswerSave: () => void;
-  onNextStep: () => void;
+  onAnswerSave: ExerciseBaseProps['onAnswerSave'];
+  onNextStep: ExerciseBaseProps['onNextStep'];
   feedback_html: string;
   correct_answer_feedback_html: string;
   is_completed: boolean;
   correct_answer_id: ID;
   incorrectAnswerId: ID;
-  answerId?: ID;
+  answer_id?: ID;
   attempts_remaining: number;
   published_comments?: string;
   detailedSolution?: string;
@@ -32,6 +35,8 @@ export interface ExerciseQuestionProps {
   available_points: AvailablePoints;
   exercise_uid: string;
   free_response?: string;
+  show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -50,7 +55,7 @@ const PublishedComments = ({ published_comments }: { published_comments?: string
   );
 }
 
-const SaveButton = (props: {
+export const SaveButton = (props: {
   disabled: boolean, isWaiting: boolean, attempt_number: number
 } & React.ComponentPropsWithoutRef<'button'>) => (
   <Button
@@ -63,12 +68,11 @@ const SaveButton = (props: {
   </Button>
 );
 
-const NextButton = (props: {
+export const NextButton = (props: {
   canUpdateCurrentStep: boolean,
-  onNextStep: ExerciseQuestionProps['onNextStep']
-}) => {
+} & React.ComponentPropsWithoutRef<'button'>) => {
   return (
-    <Button onClick={props.onNextStep} data-test-id="continue-btn">
+    <Button {...props} data-test-id="continue-btn">
       {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
     </Button>
   );
@@ -83,23 +87,24 @@ const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free
   );
 }
 
-export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
+export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
-    answerId, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
+    answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response
+    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
   return (
     <div data-test-id="student-exercise-question">
       <Question
+        ref={ref}
         task={task}
         question={question}
         answerIdOrder={answer_id_order}
         choicesEnabled={choicesEnabled}
-        answer_id={answerId}
+        answer_id={answer_id}
         questionNumber={questionNumber}
         onChange={onAnswerChange}
         feedback_html={feedback_html}
@@ -110,31 +115,35 @@ export const ExerciseQuestion = (props: ExerciseQuestionProps) => {
         hideAnswers={false}
         displayFormats={false}
         displaySolution={displaySolution}
+        show_all_feedback={show_all_feedback}
+        tableFeedbackEnabled={tableFeedbackEnabled}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
       <StepCardFooter className="step-card-footer">
-        <div className="points">
-          <strong>Points: {available_points}</strong>
-          <span className="attempts-left">
-            {hasMultipleAttempts &&
-              attempts_remaining > 0 &&
-              <AttemptsRemaining count={attempts_remaining} />}
-          </span>
-          <PublishedComments published_comments={published_comments} />
-          {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
-        </div>
-        <div className="controls">
-          {canAnswer && needsSaved ?
-            <SaveButton
-              disabled={apiIsPending || !answerId}
-              isWaiting={apiIsPending}
-              attempt_number={attempt_number}
-              onClick={onAnswerSave}
-            /> :
-            <NextButton onNextStep={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />}
+        <div className="step-card-footer-inner">
+          <div className="points">
+            <strong>Points: {available_points}</strong>
+            <span className="attempts-left">
+              {hasMultipleAttempts &&
+                attempts_remaining > 0 &&
+                <AttemptsRemaining count={attempts_remaining} />}
+            </span>
+            <PublishedComments published_comments={published_comments} />
+            {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+          </div>
+          <div className="controls">
+            {canAnswer && needsSaved ?
+              <SaveButton
+                disabled={apiIsPending || !answer_id}
+                isWaiting={apiIsPending}
+                attempt_number={attempt_number}
+                onClick={() => onAnswerSave(numberfyId(question.id))}
+              /> :
+              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
+          </div>
         </div>
       </StepCardFooter>
     </div>
   );
-}
+})

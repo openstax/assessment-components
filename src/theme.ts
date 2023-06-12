@@ -11,6 +11,7 @@ const palette = {
   paleYellow: "#ffffbb",
   teal: "#0dc0de",
   blue: "#007da4",
+  mediumBlue: "#026AA1",
   lightBlue: "#34bdd8",
   neutralLightBlue: "#0dc0dc",
   tangerine: "#ffbd3e",
@@ -28,6 +29,7 @@ const palette = {
   neutral: "#818181", // gray
   neutralThin: "#6f6f6f", // medium gray
   neutralDark: "#5f6163", // dark gray
+  neutralFeedback: "#555", // another dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
   orange: "#D4450C"
@@ -48,19 +50,22 @@ export const colors = {
     checked: palette.lightBlue,
     hover: palette.neutralDark,
     label: {
-      color: palette.neutralMedium,
+      color: palette.neutral,
       colorHover: palette.neutralDark,
       colorSelected: palette.lightBlue,
     },
-    feedback: {
-      arrowOuterColor: "rgba(0, 0, 0, 0.25)",
-      popover: {
-        borderColor: "rgba(0, 0, 0, 0.2)",
-      },
-    },
+  },
+  popover: {
+    arrowOuterColor: "rgba(0, 0, 0, 0.25)",
+    borderColor: "rgba(0, 0, 0, 0.2)",
   },
   card: {
-    background: "#daf3f8",
+    header: {
+     background: "#daf3f8"
+    },
+    body: {
+      background: "#fdfdfd"
+    }
   },
   button: {
     background: palette.orange,
@@ -75,25 +80,31 @@ export const colors = {
 
 export const layouts = {
   answer: {
-    verticalSpacing: "1.5rem",
+    verticalSpacing: "1rem",
     horizontalSpacing: "1rem",
     horizontalBuffer: "2.5rem",
-    bubbleSize: "4rem",
+    bubbleSize: "3.6rem",
     labelSpacing: "6.5rem",
     feedback: {
-      arrow: {
-        width: "20px",
-        height: "15px",
-      },
       popover: {
-        horizontalSpacing: "2rem",
-        verticalSpacing: "2rem",
-        horizontalBuffer: "4rem",
-        borderWidth: "1px",
+        horizontalSpacing: "1.1rem",
+        verticalSpacing: "0.9rem",
         maxWidth: "370px",
-      }
+      },
     },
   },
+  popover: {
+    arrow: {
+      width: "16px",
+      height: "8px",
+      edgeDistance: "9px",
+    },
+    horizontalSpacing: "0.8rem",
+    verticalSpacing: "1rem",
+    horizontalBuffer: "4rem",
+    borderWidth: "1px",
+    maxWidth: "325px",
+  }
 };
 
 export const BREAKPOINTS = {
@@ -146,6 +157,7 @@ export const mixins = {
       color: ${colors.answer.label.colorHover};
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
+      font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
     }
   `,
   answerColor: (values: { color: string, background: string }) => css`
@@ -168,14 +180,14 @@ export const mixins = {
   answerCorrectText: () => css`
     content: 'correct answer';
     color: ${colors.answer.label.color};
-    margin-left: calc(-1.25 * ${layouts.answer.bubbleSize});
-    width: calc(1.25 * ${layouts.answer.bubbleSize});
+    margin-left: calc(-1.34 * ${layouts.answer.bubbleSize});
+    display: flex;
+    align-items: center;
+    height: ${layouts.answer.bubbleSize};
+    width: 4.8rem;
     text-align: center;
     font-size: 1.2rem;
-    // em used here for line-height for compatibility with IE
-    // http://caniuse.com/#feat=rem -- rem ignored in pseudo elements
-    line-height: 1em;
-    margin-top: 0.8rem;
+    line-height: 1.2rem;
   `,
   answerCorrectAnswer: () => css`
     color: ${colors.answer.correct.color};
@@ -195,14 +207,14 @@ export const mixins = {
         flex-direction: column;
         &::after {
           ${mixins.answerCorrectText()}
-          width: $openstax-answer-bubble-size !important;
-          margin-left: 0;
+          width: ${layouts.answer.bubbleSize} !important;
+          margin-left: -0.1rem;
         }
       }
     }
   `,
   resetText: () => css`
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family:  "Neue Helvetica W01", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
     line-height: 1.6;
@@ -227,6 +239,57 @@ export const mixins = {
     ${breakpoints.mobile`
       padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
     `}
+  `,
+  popover: () => css`
+    ${mixins.resetText()}
+
+    z-index: 1;
+    position: relative;
+    border: ${layouts.popover.borderWidth} solid ${colors.popover.borderColor};
+    background-color: ${colors.palette.white};
+    background-clip: padding-box;
+    max-width: ${layouts.popover.maxWidth};
+    margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    color: ${colors.palette.neutralThin};
+    font-size: 1.4rem;
+
+    .arrow {
+      position: absolute;
+      display: block;
+      width: ${layouts.popover.arrow.width};
+      height: ${layouts.popover.arrow.height};
+      margin-left: ${layouts.popover.arrow.edgeDistance};
+      top: calc(${layouts.popover.arrow.height} * -1);
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0 calc(${layouts.popover.arrow.width} / 2) ${layouts.popover.arrow.height} calc(${layouts.popover.arrow.width} / 2);
+      }
+      &::before {
+        top: 0;
+        border-bottom-color: ${colors.popover.borderColor};
+      }
+      &::after {
+        top: ${layouts.popover.borderWidth};
+        border-bottom-color: ${colors.palette.white};
+      }
+    }
+
+    &.right {
+      right: calc(-${layouts.popover.arrow.edgeDistance} - ${layouts.popover.borderWidth});
+      .arrow { right: ${layouts.popover.arrow.edgeDistance}; }
+    }
+
+
+    > .content {
+      padding: ${layouts.popover.verticalSpacing} ${layouts.popover.horizontalSpacing};
+    }
   `,
 };
 

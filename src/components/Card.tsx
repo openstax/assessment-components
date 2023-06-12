@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { breakpoints, colors, mixins } from "../theme";
-import { AvailablePoints, Step } from "../types";
+import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
 
@@ -18,14 +18,13 @@ export const InnerStepCard = styled.div`
 
   ${breakpoints.desktop`
     max-width: 1000px;
-    min-width: 750px;
   `}
 `;
 
 export const OuterStepCard = styled.div`
   padding: 2rem;
 
-  ${breakpoints.tablet`
+  ${breakpoints.mobile`
     padding: 0;
   `}
 `;
@@ -35,24 +34,28 @@ const StepCardHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${colors.card.background};
+  background: ${colors.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
+  letter-spacing: -0.72px;
 
   div {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
 
   div.question-info {
     font-weight: bold;
 
+    .question-id {
+      font-weight: normal;
+    }
     .ox-icon-lock {
         margin-right: 1rem;
     }
   }
 
-  .num-questions, .points, .separator {
+  .num-questions, .points {
       display: none;
   }
 
@@ -61,7 +64,7 @@ const StepCardHeader = styled.div`
   }
 
   .separator {
-      margin: 0 1rem;
+      margin: 0 0.4rem;
   }
 
   .exercise-id {
@@ -145,6 +148,14 @@ StepCardHeader.displayName = 'StepCardHeader';
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
   .step-card-body {
     ${mixins.stepCardPadding()}
+
+    background: ${colors.card.body.background};
+
+    &.exercise-stimulus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
     & + div .step-card-body {
@@ -189,6 +200,7 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
 interface SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
+  showTotalQuestions: boolean;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
   headerTitleChildren?: ReactNode;
@@ -198,8 +210,8 @@ export interface StepCardProps extends SharedProps {
   unpadded: boolean;
   className?: string;
   children?: ReactNode;
-  stepType: Step['type'];
-  availablePoints: AvailablePoints;
+  stepType: StepWithData['type'];
+  availablePoints?: AvailablePoints;
   questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
@@ -208,6 +220,7 @@ export interface StepCardProps extends SharedProps {
 const StepCard = ({
   questionNumber,
   numberOfQuestions,
+  showTotalQuestions,
   stepType,
   isHomework,
   availablePoints,
@@ -220,6 +233,11 @@ const StepCard = ({
   rightHeaderChildren,
   headerTitleChildren,
   ...otherProps }: StepCardProps) => {
+
+  const formattedQuestionNumber = numberOfQuestions > 1
+    ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
+    : `Question ${questionNumber}`;
+
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
@@ -230,14 +248,14 @@ const StepCard = ({
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
-                <span>Question {questionNumber}</span>
-                <span className="num-questions">&nbsp;/ {numberOfQuestions}</span>
+                <span>{formattedQuestionNumber}</span>
+                {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
               </div>
             </div>
             <div>
-              <div className="points">{availablePoints} Points</div>
+              {availablePoints && <div className="points">{availablePoints} Points</div>}
               {rightHeaderChildren}
             </div>
           </StepCardHeader>
@@ -252,7 +270,7 @@ StepCard.displayName = 'OSStepCard';
 export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
-  step: Step;
+  step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;
 }
@@ -269,11 +287,11 @@ const TaskStepCard = ({
   unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={step.type}
-  isHomework={step.task.type === 'homework'}
+  stepType={'type' in step ? step.type : 'exercise'}
+  isHomework={'task' in step ? (step.task === undefined || step.task.type === 'homework') : true}
   data-task-step-id={step.id}
   availablePoints={step.available_points}
-  className={cn(`${step.type}-step`, className)}
+  className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
 >
   {children}

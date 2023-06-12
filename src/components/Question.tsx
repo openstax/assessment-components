@@ -3,7 +3,7 @@ import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { ID, ExerciseQuestionData, Task } from 'src/types';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
 const StyledQuestion = styled.div`
@@ -12,7 +12,8 @@ const StyledQuestion = styled.div`
 }
 
 &.openstax-question {
-  font-size: 2rem;
+  border-top: 1px solid ${colors.palette.pale};
+  font-size: 1.8rem;
 
   .detailed-solution {
     margin-bottom: 1rem;
@@ -41,8 +42,8 @@ const StyledQuestion = styled.div`
 
   .answers-table {
     margin-bottom: 20px;
-    font-size: 17px;
-    line-height: 25px;
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 
   .instructions {
@@ -96,11 +97,19 @@ const StyledQuestion = styled.div`
       }
     }
 
+    .answers-answer.answer-correct .answer-answer {
+      align-items: flex-start;
+      margin-top: calc((${layouts.answer.bubbleSize} / 2) - 1rem);
+    }
+
     .answer-letter {
       text-align: center;
       padding: 0;
+      font-size: 1.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
 
     .answer-label {
       font-weight: normal;
@@ -172,48 +181,8 @@ const StyledQuestion = styled.div`
     }
 
     .question-feedback {
-      ${mixins.resetText()}
-
-      z-index: 1;
-      position: relative;
-      border: ${layouts.answer.feedback.popover.borderWidth} solid ${colors.answer.feedback.popover.borderColor};
-      background-color: ${colors.palette.white};
-      background-clip: padding-box;
-      border-radius: 0.3rem;
+      ${mixins.popover()}
       max-width: ${layouts.answer.feedback.popover.maxWidth};
-      margin: calc(${layouts.answer.feedback.arrow.height} - 5px) 0 ${layouts.answer.horizontalSpacing} calc(-1 * (2 * ${layouts.answer.horizontalSpacing}));
-      box-shadow: 10px 0px 10px rgba(0, 0, 0, .25);
-      color: ${colors.palette.neutral};
-      font-size: 1.4rem;
-      font-style: italic;
-
-      .arrow {
-        position: absolute;
-        display: block;
-        width: ${layouts.answer.feedback.arrow.width};
-        height: ${layouts.answer.feedback.arrow.height};
-        margin-left: 30px;
-        top: calc((${layouts.answer.feedback.arrow.height} + ${layouts.answer.feedback.popover.borderWidth}) * -1);
-
-        &::before,
-        &::after {
-          position: absolute;
-          display: block;
-          content: "";
-          border-color: transparent;
-          border-style: solid;
-          border-width: 0 calc(${layouts.answer.feedback.arrow.width} / 2) ${layouts.answer.feedback.arrow.height} calc(${layouts.answer.feedback.arrow.width} / 2);
-        }
-        &::before {
-          top: 0;
-          border-bottom-color: ${colors.answer.feedback.popover.borderColor};
-        }
-        &::after {
-          top: ${layouts.answer.feedback.popover.borderWidth};
-          border-bottom-color: ${colors.palette.white};
-        }
-      }
-
       .question-feedback-content {
         padding: ${layouts.answer.feedback.popover.verticalSpacing} ${layouts.answer.feedback.popover.horizontalSpacing};
       }
@@ -223,7 +192,7 @@ const StyledQuestion = styled.div`
   .openstax-answer {
     border-top: 1px solid #d5d5d5;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 6px 8px;
   }
 }
 `;
@@ -247,12 +216,13 @@ export interface QuestionProps {
   feedback_html: string;
   onChange: () => void;
   show_all_feedback?: boolean;
+  tableFeedbackEnabled?: boolean;
   children?: ReactNode;
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;
 }
 
-export const Question = (props: QuestionProps) => {
+export const Question = React.forwardRef((props: QuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   let exerciseUid, solution;
 
   const {
@@ -305,7 +275,7 @@ export const Question = (props: QuestionProps) => {
   }
 
   return (
-    <StyledQuestion className={classes} data-question-number={questionNumber} data-test-id="question">
+    <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
       <QuestionHtml type="context" html={context} hidden={hidePreambles} />
       <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
       <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
@@ -321,7 +291,7 @@ export const Question = (props: QuestionProps) => {
       {exerciseUid}
     </StyledQuestion>
   );
-}
+});
 
 interface QuestionHtmlProps {
   html?: string;

@@ -1,14 +1,14 @@
-import ProgressBar, { ProgressBarItem, ProgressBarItemVariant, ProgressBarProps, StyledItem } from './ProgressBar';
+import { ProgressBar, ProgressBarItem, ProgressBarItemVariant, ProgressBarProps, StyledItem } from './ProgressBar';
 import renderer from 'react-test-renderer';
 
-const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null];
+const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null, 'isStatus'];
 
 describe('ProgressBar', () => {
-  let props: ProgressBarProps;
+  let props: ProgressBarProps<{variant: ProgressBarItemVariant}>;
 
   beforeEach(() => {
     props = {
-      activeIndex: 3,
+      activeIndex: 2,
       goToStep: () => null,
       steps: variants.map((variant) => ({variant})),
     }
@@ -21,10 +21,25 @@ describe('ProgressBar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('matches snapshot when active step is incomplete', () => {
+    const tree = renderer.create(
+      <ProgressBar {...props} activeIndex={3} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('matches snapshot when status step is active', () => {
+    const tree = renderer.create(
+      <ProgressBar {...props} activeIndex={6} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
-      <ProgressBarItem isActive={false} index={3} variant={'isCorrect'} goToStep={mockEv} />
+      <ProgressBarItem isActive={true} index={3} step={{variant: 'isCorrect'}} goToStep={mockEv} />
     );
 
     renderer.act(() => {
