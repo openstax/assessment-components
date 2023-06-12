@@ -1,3 +1,4 @@
+/// <reference types="react" />
 interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     isWaiting?: never;
     waitingText?: never;

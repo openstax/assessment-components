@@ -4,3 +4,5 @@ export declare const isAnswerCorrect: (answer: Answer, correctAnswerId?: ID | nu
 export declare const isAnswerIncorrect: (answer: Answer, incorrectAnswerId?: ID) => boolean;
 export declare const isAnswerChecked: (answer: Answer, chosenAnswer?: ChosenAnswer) => boolean;
 export declare function countWords(text: string): number;
+export declare const numberfyId: (id: ID) => number;
+export declare const assertWindow: (message?: string) => Window & typeof globalThis;

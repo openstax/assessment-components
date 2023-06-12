@@ -10,6 +10,7 @@ export declare const colors: {
         paleYellow: string;
         teal: string;
         blue: string;
+        mediumBlue: string;
         lightBlue: string;
         neutralLightBlue: string;
         tangerine: string;
@@ -27,6 +28,7 @@ export declare const colors: {
         neutral: string;
         neutralThin: string;
         neutralDark: string;
+        neutralFeedback: string;
         neutralDarker: string;
         black: string;
         orange: string;
@@ -48,15 +50,18 @@ export declare const colors: {
             colorHover: string;
             colorSelected: string;
         };
-        feedback: {
-            arrowOuterColor: string;
-            popover: {
-                borderColor: string;
-            };
-        };
+    };
+    popover: {
+        arrowOuterColor: string;
+        borderColor: string;
     };
     card: {
-        background: string;
+        header: {
+            background: string;
+        };
+        body: {
+            background: string;
+        };
     };
     button: {
         background: string;
@@ -76,18 +81,24 @@ export declare const layouts: {
         bubbleSize: string;
         labelSpacing: string;
         feedback: {
-            arrow: {
-                width: string;
-                height: string;
-            };
             popover: {
                 horizontalSpacing: string;
                 verticalSpacing: string;
-                horizontalBuffer: string;
-                borderWidth: string;
                 maxWidth: string;
             };
         };
+    };
+    popover: {
+        arrow: {
+            width: string;
+            height: string;
+            edgeDistance: string;
+        };
+        horizontalSpacing: string;
+        verticalSpacing: string;
+        horizontalBuffer: string;
+        borderWidth: string;
+        maxWidth: string;
     };
 };
 export declare const BREAKPOINTS: {
@@ -125,6 +136,7 @@ export declare const mixins: {
     answerCorrectAnswer: () => import("styled-components").FlattenSimpleInterpolation;
     resetText: () => import("styled-components").FlattenSimpleInterpolation;
     stepCardPadding: () => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<any>>;
+    popover: () => import("styled-components").FlattenSimpleInterpolation;
 };
 declare const theme: {
     colors: {
@@ -139,6 +151,7 @@ declare const theme: {
             paleYellow: string;
             teal: string;
             blue: string;
+            mediumBlue: string;
             lightBlue: string;
             neutralLightBlue: string;
             tangerine: string;
@@ -156,6 +169,7 @@ declare const theme: {
             neutral: string;
             neutralThin: string;
             neutralDark: string;
+            neutralFeedback: string;
             neutralDarker: string;
             black: string;
             orange: string;
@@ -177,15 +191,18 @@ declare const theme: {
                 colorHover: string;
                 colorSelected: string;
             };
-            feedback: {
-                arrowOuterColor: string;
-                popover: {
-                    borderColor: string;
-                };
-            };
+        };
+        popover: {
+            arrowOuterColor: string;
+            borderColor: string;
         };
         card: {
-            background: string;
+            header: {
+                background: string;
+            };
+            body: {
+                background: string;
+            };
         };
         button: {
             background: string;
@@ -205,18 +222,24 @@ declare const theme: {
             bubbleSize: string;
             labelSpacing: string;
             feedback: {
-                arrow: {
-                    width: string;
-                    height: string;
-                };
                 popover: {
                     horizontalSpacing: string;
                     verticalSpacing: string;
-                    horizontalBuffer: string;
-                    borderWidth: string;
                     maxWidth: string;
                 };
             };
+        };
+        popover: {
+            arrow: {
+                width: string;
+                height: string;
+                edgeDistance: string;
+            };
+            horizontalSpacing: string;
+            verticalSpacing: string;
+            horizontalBuffer: string;
+            borderWidth: string;
+            maxWidth: string;
         };
     };
     transitions: {
