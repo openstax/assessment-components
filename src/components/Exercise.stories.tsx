@@ -336,3 +336,79 @@ export const Icons = () => {
     errataUrl='https://openstax.org'
   />;
 };
+
+export const MathJax = () => {
+  const props1: ExerciseWithStepDataProps = {
+    ...exerciseWithStepDataProps,
+    exercise: {
+      ...exerciseWithStepDataProps.exercise,
+      context: '',
+      stimulus_html: '',
+      questions: [{
+        id: '1',
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: `What's the sound of the reaction <span data-math="2 \\, \\text{H}_{2(g)} + \\, \\text{O}_{2(g)} \\to 2 \\, \\text{H}_{2}\\text{O}_{(l)}"></span> under the moonlight?`,
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="\\text{H}_2\\text{O} + \\sqrt[3]{\\text{Melodic Echo}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="2 \\, \\text{NO}_2 \\to \\, \\text{N}_2\\text{O}_4 + \\text{Silent Whisper}"></span>`,
+        }],
+      }],
+    }
+  };
+
+  const props2: ExerciseWithStepDataProps = {
+    ...exerciseWithStepDataProps,
+    exercise: {
+      ...exerciseWithStepDataProps.exercise,
+      context: '',
+      stimulus_html: `In a universe where equations like <span data-math="x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}"></span> have flavor and color properties.`,
+      questions: [{
+        id: '1',
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: `What's the flavor of the integral <span data-math="\( \\int (3x^2 - 2x + 1) \\, dx \)?"></span>`,
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="\\sqrt[3]{\\text{Blue Whale}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="\\frac{\\text{Banana}^{2}}{4}"></span>`,
+        }],
+      }, {
+        id: '2',
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: `If <span data-math="f(x) = \\sin(x) \\cos(x)"></span>, then what's the color of its derivative?`,
+        stem_html: '',
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="e^{\\text{Apple Pie}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Mountain}"></span>`,
+        }],
+      }],
+    }
+  };
+
+  return (
+    <>
+      <Exercise {...props1} />
+      <Exercise {...props2} />
+    </>
+  );
+};
