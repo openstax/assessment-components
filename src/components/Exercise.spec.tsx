@@ -85,10 +85,23 @@ describe('Exercise', () => {
 
     beforeEach(() => {
       const ref = { current: null };
+
       Object.defineProperty(ref, 'current', {
         get: jest.fn(() => [null, 'element'])
       });
-      jest.spyOn(React, "useRef").mockReturnValue(ref);
+
+      const _useRef = React.useRef;
+
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      (React.useRef as any) = jest.fn((initialValue) => {
+        // Return the mocked ref if it's likely the questionsRef use
+        if (Array.isArray(initialValue)) {
+          return ref;
+        }
+
+        // Let other useRef uses work normally
+        return _useRef(initialValue);
+      });
 
       props = {
         exercise: {
@@ -156,6 +169,10 @@ describe('Exercise', () => {
           }
         },
       };
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
     });
 
     it('matches snapshot', () => {

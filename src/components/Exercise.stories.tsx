@@ -336,3 +336,105 @@ export const Icons = () => {
     errataUrl='https://openstax.org'
   />;
 };
+
+export const MathJax = () => {
+  const props1: ExerciseWithStepDataProps = {
+    ...exerciseWithStepDataProps,
+    exercise: {
+      ...exerciseWithStepDataProps.exercise,
+      context: '',
+      stimulus_html: '',
+      questions: [{
+        id: '1',
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: `What's the sound of the reaction <span data-math="2 \\, \\text{H}_{2(g)} + \\, \\text{O}_{2(g)} \\to 2 \\, \\text{H}_{2}\\text{O}_{(l)}"></span> under the moonlight?`,
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="\\text{H}_2\\text{O} + \\sqrt[3]{\\text{Melodic Echo}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="2 \\, \\text{NO}_2 \\to \\, \\text{N}_2\\text{O}_4 + \\text{Silent Whisper}"></span>`,
+        }],
+      }],
+    }
+  };
+
+  const props2: ExerciseWithStepDataProps = {
+    ...exerciseWithStepDataProps,
+    exercise: {
+      ...exerciseWithStepDataProps.exercise,
+      context: '',
+      stimulus_html: `In a universe where equations like <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mfrac>
+      <mrow>
+        <mo>&#x2212;<!-- − --></mo>
+        <mi>b</mi>
+        <mo>&#x00B1;<!-- ± --></mo>
+        <msqrt>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>&#x2212;<!-- − --></mo>
+          <mn>4</mn>
+          <mi>a</mi>
+          <mi>c</mi>
+        </msqrt>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math> have flavor and color properties...`,
+      questions: [{
+        id: '1',
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: `What's the flavor of the integral <span data-math="( \\int (3x^2 - 2x + 1) \\, dx )?"></span>`,
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="\\sqrt[3]{\\text{Apple}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="\\frac{\\text{Banana}^{2}}{4}"></span>`,
+        }],
+      }, {
+        id: '2',
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: `If <span data-math="f(x) = \\sin(x) \\cos(x)"></span>, then what's the color of its derivative?`,
+        stem_html: '',
+        is_answer_order_important: false,
+        answers: [{
+          id: '1',
+          correctness: undefined,
+          content_html: `<span data-math="e^{\\text{Blue}}"></span>`,
+        }, {
+          id: '2',
+          correctness: undefined,
+          content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Red}"></span>`,
+        }],
+      }],
+    }
+  };
+
+  return (
+    <>
+      <Exercise {...props1} />
+      <Exercise {...props2} />
+    </>
+  );
+};

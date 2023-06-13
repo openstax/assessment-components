@@ -35,9 +35,10 @@
     "styled-components": "*"
   },
   "devDependencies": {
-    "@ladle/react": "^2.1.2",
+    "@ladle/react": "^2.14.0",
     "@playwright/test": "^1.25.0",
     "@types/jest": "^28.1.4",
+    "@types/lodash": "^4.14.195",
     "@types/node": "^18.7.5",
     "@types/node-fetch": "^2.6.2",
     "@types/react": "^17.0.20",
@@ -65,7 +66,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "classnames": "^2.3.1",
     "jest-environment-jsdom": "^29.0.3",
+    "lodash": "^4.17.21",
     "react-content-loader": "^6.2.0",
-    "scroll-to-element": "^2.0.3"
+    "scroll-to-element": "^2.0.3",
+    "weak-map": "^1.0.8"
   }
 }
