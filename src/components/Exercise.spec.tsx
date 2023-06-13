@@ -103,7 +103,6 @@ describe('Exercise', () => {
         return _useRef(initialValue);
       });
 
-
       props = {
         exercise: {
           uid: '1@1',

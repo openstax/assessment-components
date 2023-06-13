@@ -405,7 +405,7 @@ export const MathJax = () => {
         answers: [{
           id: '1',
           correctness: undefined,
-          content_html: `<span data-math="\\sqrt[3]{\\text{Blue Whale}}"></span>`,
+          content_html: `<span data-math="\\sqrt[3]{\\text{Apple}}"></span>`,
         }, {
           id: '2',
           correctness: undefined,
@@ -421,11 +421,11 @@ export const MathJax = () => {
         answers: [{
           id: '1',
           correctness: undefined,
-          content_html: `<span data-math="e^{\\text{Apple Pie}}"></span>`,
+          content_html: `<span data-math="e^{\\text{Blue}}"></span>`,
         }, {
           id: '2',
           correctness: undefined,
-          content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Mountain}"></span>`,
+          content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Red}"></span>`,
         }],
       }],
     }
