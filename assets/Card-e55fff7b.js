@@ -1,4 +1,4 @@
-import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}from"./index.dfd08f9a.js";var n="/home/runner/work/assessment-components/assessment-components/src/components/Card.tsx";const S=s.div`
+import{s as r,j as o,a}from"./index-4cca09be.js";import{c as s,b as i,m as w}from"./theme-fe2e1580.js";import{c as S}from"./index-0077c59e.js";const C=r.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6,25 +6,25 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
   min-height: 400px;
   border-radius: 0.25rem;
   margin: 0 auto 5rem auto;
-  border: 1px solid ${t.palette.light};
+  border: 1px solid ${s.palette.light};
   border-radius: 0.25rem;
   background-color: white;
 
-  ${o.desktop`
+  ${i.desktop`
     max-width: 1000px;
   `}
-`,C=s.div`
+`,q=r.div`
   padding: 2rem;
 
-  ${o.mobile`
+  ${i.mobile`
     padding: 0;
   `}
-`,c=s.div`
+`,c=r.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${t.card.header.background};
+  background: ${s.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
   letter-spacing: -0.72px;
@@ -62,7 +62,7 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
   }
 
   button {
-    color: ${t.palette.gray};
+    color: ${s.palette.gray};
   }
 
   .openstax-exercise-badges {
@@ -76,7 +76,7 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
       }
   }
 
-  ${o.desktop`
+  ${i.desktop`
       button.ox-icon-angle-left, button.ox-icon-angle-right {
           display: none;
       }
@@ -90,7 +90,7 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
     2. Show the number of questions.
     3. Override box-shadow of icons when turned into a button.
     */
-    ${o.tablet`
+    ${i.tablet`
         font-size: 1.6rem;
         line-height: 2.5rem;
 
@@ -99,10 +99,10 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
             margin: 0;
         }
         button.ox-icon-angle-left {
-            margin-right: ${o.margins.tablet};
+            margin-right: ${i.margins.tablet};
         }
         button.ox-icon-angle-right {
-            margin-left: ${o.margins.tablet};
+            margin-left: ${i.margins.tablet};
         }
         .openstax-exercise-badges svg {
             display: none;
@@ -120,23 +120,23 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
         }
   `}
 
-  ${o.mobile`
+  ${i.mobile`
       font-size: 1.4rem;
       line-height: 2rem;
       padding: 10px 8px;
 
       button.ox-icon-angle-left {
-          margin-right: ${o.margins.mobile};
+          margin-right: ${i.margins.mobile};
       }
       button.ox-icon-angle-left {
-          margin-right: ${o.margins.mobile};
+          margin-right: ${i.margins.mobile};
       }
   `}
-`;c.displayName="StepCardHeader";const q=s.div`
+`;c.displayName="StepCardHeader";const N=r.div`
   .step-card-body {
-    ${k.stepCardPadding()}
+    ${w.stepCardPadding()}
 
-    background: ${t.card.body.background};
+    background: ${s.card.body.background};
 
     &.exercise-stimulus {
       display: flex;
@@ -153,7 +153,7 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
         padding-bottom: 0;
     }
 
-    ${o.only.mobile`
+    ${i.only.mobile`
         && .question-feedback {
             margin-left: 0;
 
@@ -165,7 +165,7 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
         padding: 0;
     }
 
-    ${o.desktop`
+    ${i.desktop`
         .video-step &, .interactive-step & {
             .openstax-exercise-badges {
               margin-right: 3.8rem;
@@ -173,13 +173,13 @@ import{c as t,b as o,m as k}from"./theme.6dc881e6.js";import{s,j as i,c as w}fro
         }
     `}
 
-    ${o.mobile`
+    ${i.mobile`
         .openstax-exercise-badges svg {
-            margin-right: ${o.margins.mobile};
+            margin-right: ${i.margins.mobile};
         }
     `}
 
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`,u=({questionNumber:e,numberOfQuestions:a,showTotalQuestions:d,stepType:l,isHomework:m,availablePoints:r,unpadded:p,className:g,children:b,questionId:x,multipartBadge:h,leftHeaderChildren:v,rightHeaderChildren:N,headerTitleChildren:f,...y})=>{const $=a>1?`Questions ${e} - ${e+a-1}`:`Question ${e}`;return i(C,{...y,children:[h,i(S,{className:g,children:[e&&m&&l==="exercise"&&i(c,{children:[i("div",{children:[v,i("div",{className:"question-info",children:[f,i("span",{children:$},void 0,!1,{fileName:n,lineNumber:251,columnNumber:17},void 0),d?i("span",{className:"num-questions",children:["\xA0/ ",a]},void 0,!0,{fileName:n,lineNumber:252,columnNumber:39},void 0):null,i("span",{className:"separator",children:"|"},void 0,!1,{fileName:n,lineNumber:253,columnNumber:17},void 0),i("span",{className:"question-id",children:["ID: ",x]},void 0,!0,{fileName:n,lineNumber:254,columnNumber:17},void 0)]},void 0,!0,{fileName:n,lineNumber:249,columnNumber:15},void 0)]},void 0,!0,{fileName:n,lineNumber:247,columnNumber:13},void 0),i("div",{children:[r&&i("div",{className:"points",children:[r," Points"]},void 0,!0,{fileName:n,lineNumber:258,columnNumber:35},void 0),N]},void 0,!0,{fileName:n,lineNumber:257,columnNumber:13},void 0)]},void 0,!0,{fileName:n,lineNumber:246,columnNumber:11},void 0),i(q,{unpadded:p,children:b},void 0,!1,{fileName:n,lineNumber:263,columnNumber:9},void 0)]},void 0,!0,{fileName:n,lineNumber:244,columnNumber:7},void 0)]},void 0,!0,{fileName:n,lineNumber:242,columnNumber:5},void 0)};u.displayName="OSStepCard";const j=({step:e,questionNumber:a,numberOfQuestions:d,children:l,className:m,...r})=>i(u,{...r,unpadded:!0,questionNumber:a,numberOfQuestions:d,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,availablePoints:e.available_points,className:w(`${"type"in e?e.type:"exercise"}-step`,m),questionId:e.uid,children:l},void 0,!1,{fileName:n,lineNumber:286,columnNumber:2},void 0);j.displayName="OSTaskStepCard";export{S as I,j as T};
+`,m=({questionNumber:e,numberOfQuestions:t,showTotalQuestions:d,stepType:l,isHomework:p,availablePoints:n,unpadded:g,className:x,children:h,questionId:u,multipartBadge:b,leftHeaderChildren:f,rightHeaderChildren:y,headerTitleChildren:v,...$})=>{const k=t>1?`Questions ${e} - ${e+t-1}`:`Question ${e}`;return a(q,{...$,children:[b,a(C,{className:x,children:[e&&p&&l==="exercise"&&a(c,{children:[a("div",{children:[f,a("div",{className:"question-info",children:[v,o("span",{children:k}),d?a("span",{className:"num-questions",children:[" / ",t]}):null,o("span",{className:"separator",children:"|"}),a("span",{className:"question-id",children:["ID: ",u]})]})]}),a("div",{children:[n&&a("div",{className:"points",children:[n," Points"]}),y]})]}),o(N,{unpadded:g,children:h})]})]})};m.displayName="OSStepCard";const j=({step:e,questionNumber:t,numberOfQuestions:d,children:l,className:p,...n})=>o(m,{...n,unpadded:!0,questionNumber:t,numberOfQuestions:d,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,availablePoints:e.available_points,className:S(`${"type"in e?e.type:"exercise"}-step`,p),questionId:e.uid,children:l});j.displayName="OSTaskStepCard";export{C as I,j as T};

@@ -5,16 +5,6 @@
     "version": 1
   },
   "stories": {
-    "answer--default": {
-      "name": "Default",
-      "levels": [
-        "Answer"
-      ],
-      "locStart": 23,
-      "locEnd": 23,
-      "filePath": "src/components/Answer.stories.tsx",
-      "meta": {}
-    },
     "answer--checked": {
       "name": "Checked",
       "levels": [
@@ -35,6 +25,16 @@
       "filePath": "src/components/Answer.stories.tsx",
       "meta": {}
     },
+    "answer--default": {
+      "name": "Default",
+      "levels": [
+        "Answer"
+      ],
+      "locStart": 23,
+      "locEnd": 23,
+      "filePath": "src/components/Answer.stories.tsx",
+      "meta": {}
+    },
     "answer--incorrect": {
       "name": "Incorrect",
       "levels": [
@@ -43,16 +43,6 @@
       "locStart": 26,
       "locEnd": 26,
       "filePath": "src/components/Answer.stories.tsx",
-      "meta": {}
-    },
-    "answers-table--default": {
-      "name": "Default",
-      "levels": [
-        "Answers table"
-      ],
-      "locStart": 36,
-      "locEnd": 36,
-      "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
     "answers-table--checked": {
@@ -75,13 +65,13 @@
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
-    "answers-table--ordered": {
-      "name": "Ordered",
+    "answers-table--default": {
+      "name": "Default",
       "levels": [
         "Answers table"
       ],
-      "locStart": 39,
-      "locEnd": 39,
+      "locStart": 36,
+      "locEnd": 36,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -92,6 +82,16 @@
       ],
       "locStart": 40,
       "locEnd": 40,
+      "filePath": "src/components/AnswersTable.stories.tsx",
+      "meta": {}
+    },
+    "answers-table--ordered": {
+      "name": "Ordered",
+      "levels": [
+        "Answers table"
+      ],
+      "locStart": 39,
+      "locEnd": 39,
       "filePath": "src/components/AnswersTable.stories.tsx",
       "meta": {}
     },
@@ -125,6 +125,16 @@
       "filePath": "src/components/Button.stories.tsx",
       "meta": {}
     },
+    "card--custom-components": {
+      "name": "Custom components",
+      "levels": [
+        "Card"
+      ],
+      "locStart": 26,
+      "locEnd": 34,
+      "filePath": "src/components/Card.stories.tsx",
+      "meta": {}
+    },
     "card--default": {
       "name": "Default",
       "levels": [
@@ -135,14 +145,14 @@
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
-    "card--custom-components": {
-      "name": "Custom components",
+    "completion-status--complete": {
+      "name": "Complete",
       "levels": [
-        "Card"
+        "Completion status"
       ],
-      "locStart": 26,
-      "locEnd": 34,
-      "filePath": "src/components/Card.stories.tsx",
+      "locStart": 11,
+      "locEnd": 11,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
     "completion-status--default": {
@@ -165,14 +175,14 @@
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
-    "completion-status--complete": {
-      "name": "Complete",
+    "exercise--complete-with-feedback": {
+      "name": "Complete with feedback",
       "levels": [
-        "Completion status"
+        "Exercise"
       ],
-      "locStart": 11,
-      "locEnd": 11,
-      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "locStart": 152,
+      "locEnd": 177,
+      "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
     "exercise--default": {
@@ -195,13 +205,13 @@
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
-    "exercise--complete-with-feedback": {
-      "name": "Complete with feedback",
+    "exercise--icons": {
+      "name": "Icons",
       "levels": [
         "Exercise"
       ],
-      "locStart": 152,
-      "locEnd": 177,
+      "locStart": 331,
+      "locEnd": 338,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -225,6 +235,16 @@
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
+    "exercise--math-jax": {
+      "name": "Math jax",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 340,
+      "locEnd": 440,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
     "exercise--multi-part-half-complete": {
       "name": "Multi part half complete",
       "levels": [
@@ -232,16 +252,6 @@
       ],
       "locStart": 229,
       "locEnd": 329,
-      "filePath": "src/components/Exercise.stories.tsx",
-      "meta": {}
-    },
-    "exercise--icons": {
-      "name": "Icons",
-      "levels": [
-        "Exercise"
-      ],
-      "locStart": 331,
-      "locEnd": 338,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -275,16 +285,6 @@
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
-    "exercise-question--multiple-attempts-one-left": {
-      "name": "Multiple attempts one left",
-      "levels": [
-        "Exercise question"
-      ],
-      "locStart": 68,
-      "locEnd": 77,
-      "filePath": "src/components/ExerciseQuestion.stories.tsx",
-      "meta": {}
-    },
     "exercise-question--multiple-attempts-none-left": {
       "name": "Multiple attempts none left",
       "levels": [
@@ -292,6 +292,16 @@
       ],
       "locStart": 78,
       "locEnd": 88,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--multiple-attempts-one-left": {
+      "name": "Multiple attempts one left",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 68,
+      "locEnd": 77,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -395,16 +405,6 @@
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
-    "question--default": {
-      "name": "Default",
-      "levels": [
-        "Question"
-      ],
-      "locStart": 48,
-      "locEnd": 48,
-      "filePath": "src/components/Question.stories.tsx",
-      "meta": {}
-    },
     "question--checked": {
       "name": "Checked",
       "levels": [
@@ -422,6 +422,16 @@
       ],
       "locStart": 50,
       "locEnd": 50,
+      "filePath": "src/components/Question.stories.tsx",
+      "meta": {}
+    },
+    "question--default": {
+      "name": "Default",
+      "levels": [
+        "Question"
+      ],
+      "locStart": 48,
+      "locEnd": 48,
       "filePath": "src/components/Question.stories.tsx",
       "meta": {}
     },
