@@ -84,14 +84,10 @@ describe('Exercise', () => {
     let props: ExerciseWithQuestionStatesProps;
 
     beforeEach(() => {
-      let currentValue = [null, 'element'];
-
-      const ref: React.MutableRefObject<any> = {
-        current: null
-      };
+      const ref = { current: null };
 
       Object.defineProperty(ref, 'current', {
-        get: jest.fn(() => currentValue)
+        get: jest.fn(() => [null, 'element'])
       });
 
       const _useRef = React.useRef;
