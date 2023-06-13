@@ -55,7 +55,7 @@ const findLatexNodes = (root: Element): Element[] => {
       node.textContent = (node.tagName.toLowerCase() === 'div')
         ? `${MATH_MARKER_BLOCK}${formula}${MATH_MARKER_BLOCK}`
         : `${MATH_MARKER_INLINE}${formula}${MATH_MARKER_INLINE}`;
-      node.classList.add('math-marked');
+      node.classList.add(MATH_MARKED_CLASS);
     }
     latexNodes.push(node);
   }
