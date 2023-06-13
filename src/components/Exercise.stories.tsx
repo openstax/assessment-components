@@ -368,7 +368,33 @@ export const MathJax = () => {
     exercise: {
       ...exerciseWithStepDataProps.exercise,
       context: '',
-      stimulus_html: `In a universe where equations like <span data-math="x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}"></span> have flavor and color properties.`,
+      stimulus_html: `In a universe where equations like <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mfrac>
+      <mrow>
+        <mo>&#x2212;<!-- − --></mo>
+        <mi>b</mi>
+        <mo>&#x00B1;<!-- ± --></mo>
+        <msqrt>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>&#x2212;<!-- − --></mo>
+          <mn>4</mn>
+          <mi>a</mi>
+          <mi>c</mi>
+        </msqrt>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math> have flavor and color properties...`,
       questions: [{
         id: '1',
         collaborator_solutions: [],

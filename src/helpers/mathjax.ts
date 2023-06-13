@@ -1,7 +1,6 @@
 import { debounce } from 'lodash';
 import { isEmpty, memoize } from 'lodash/fp.js';
 import WeakMap from 'weak-map';
-import { assertWindow } from '../utils';
 
 declare global {
   interface Window {
@@ -36,8 +35,6 @@ const MATHJAX_CONFIG = {
   },
 };
 
-let mathJaxLoadingQueue: (() => void)[] = [];
-
 const findProcessedMath = (root: Element): Element[] => Array.from(root.querySelectorAll('.MathJax math'));
 const findUnprocessedMath = (root: Element): Element[] => {
   const processedMath = findProcessedMath(root);
@@ -55,7 +52,7 @@ const findLatexNodes = (root: Element): Element[] => {
       node.textContent = (node.tagName.toLowerCase() === 'div')
         ? `${MATH_MARKER_BLOCK}${formula}${MATH_MARKER_BLOCK}`
         : `${MATH_MARKER_INLINE}${formula}${MATH_MARKER_INLINE}`;
-      node.classList.add('math-marked');
+      node.classList.add(MATH_MARKED_CLASS);
     }
     latexNodes.push(node);
   }
@@ -140,64 +137,63 @@ getTypesetDocument.cache = new WeakMap();
 
 // typesetMath is the main exported function.
 // It's called by components like HTML after they're rendered
-const typesetMath = (root: Element, windowImpl = assertWindow() as Window) => {
-  if (!document.getElementById('MathJax-Script')) {
-    startMathJax();
-  }
+const typesetMath = async (root: Element, windowImpl = window) => {
+  await startMathJax();
 
   const hasMath = root.querySelector(COMBINED_MATH_SELECTOR);
   // schedule a Mathjax pass if there is at least one [data-math] or <math> element present
   if (windowImpl && windowImpl.MathJax && windowImpl.MathJax.Hub && hasMath) {
     return getTypesetDocument(root, windowImpl)();
-  } else if (hasMath) {
-    // There are math elements present but MathJax is still loading/initializing
-    // Push to a temp queue to be processed in a StartupHook in configuredCallback
-    mathJaxLoadingQueue.push(() => getTypesetDocument(root, windowImpl)());
   }
 
   return Promise.resolve();
 };
 
-function startMathJax(windowImpl: Window = assertWindow() as Window): Promise<void> {
-  if (windowImpl.MathJax !== undefined || document.getElementById('MathJax-Script')) {
-    return Promise.resolve();
-  }
+const mathjaxIsReady = (windowImpl: Window = window) =>
+  windowImpl.MathJax && windowImpl.MathJax.isReady;
 
-  const script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured';
-  script.id = 'MathJax-Script';
-  script.async = true;
-  document.head.appendChild(script);
+function startMathJax(windowImpl: Window = window): Promise<void> {
+  return new Promise((resolve) => {
+    if (mathjaxIsReady(windowImpl)) {
+      return resolve();
+    }
 
-  const configuredCallback = () => {
-    // there doesn't seem to be a config option for this
-    windowImpl.MathJax.HTML.Cookie.prefix = 'mathjax';
-    // proceed with mathjax initi
-    windowImpl.MathJax.Hub.Configured();
-    // Attempt another pass for calls stored during load & init. This hook is the final
-    // signal in the startup sequence, not long after MathJax.isReady becomes true:
-    // https://docs.mathjax.org/en/v2.7-latest/advanced/startup.html#startup-sequence
-    windowImpl.MathJax.Hub.Register.StartupHook('End', () => {
-      mathJaxLoadingQueue.forEach(op => op());
-      mathJaxLoadingQueue = [];
-    });
-  };
+    const interval = setInterval(() => {
+      if (mathjaxIsReady(windowImpl)) {
+        resolve();
+        clearInterval(interval);
+      }
+    }, 200);
 
-  if (windowImpl.MathJax && windowImpl.MathJax.Hub) {
-    windowImpl.MathJax.Hub.Config(MATHJAX_CONFIG);
-    // Does not seem to work when passed to Config
-    windowImpl.MathJax.Hub.processSectionDelay = 0;
-    configuredCallback();
-  } else {
-    // If the MathJax.js file has not loaded yet:
-    // Call MathJax.Configured once MathJax loads and
-    // loads this config JSON since the CDN URL
-    // says to `delayStartupUntil=configured`
-    (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
-    windowImpl.MathJax = MATHJAX_CONFIG;
-  }
+    if (!document.getElementById('MathJax-Script')) {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured';
+      script.id = 'MathJax-Script';
+      script.async = true;
+      document.head.appendChild(script);
+    }
 
-  return Promise.resolve();
+    const configuredCallback = () => {
+      // there doesn't seem to be a config option for this
+      windowImpl.MathJax.HTML.Cookie.prefix = 'mathjax';
+      // proceed with mathjax initi
+      windowImpl.MathJax.Hub.Configured();
+    };
+
+    if (windowImpl.MathJax && windowImpl.MathJax.Hub) {
+      windowImpl.MathJax.Hub.Config(MATHJAX_CONFIG);
+      // Does not seem to work when passed to Config
+      windowImpl.MathJax.Hub.processSectionDelay = 0;
+      configuredCallback();
+    } else {
+      // If the MathJax.js file has not loaded yet:
+      // Call MathJax.Configured once MathJax loads and
+      // loads this config JSON since the CDN URL
+      // says to `delayStartupUntil=configured`
+      (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
+      windowImpl.MathJax = MATHJAX_CONFIG;
+    }
+  });
 };
 
 export {
