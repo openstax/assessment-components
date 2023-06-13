@@ -374,7 +374,7 @@ export const MathJax = () => {
         collaborator_solutions: [],
         formats: ['true-false'],
         stimulus_html: '',
-        stem_html: `What's the flavor of the integral <span data-math="\( \\int (3x^2 - 2x + 1) \\, dx \)?"></span>`,
+        stem_html: `What's the flavor of the integral <span data-math="( \\int (3x^2 - 2x + 1) \\, dx )?"></span>`,
         is_answer_order_important: false,
         answers: [{
           id: '1',
