@@ -1,7 +1,6 @@
 import { debounce } from 'lodash';
 import { isEmpty, memoize } from 'lodash/fp.js';
 import WeakMap from 'weak-map';
-import { assertWindow } from '../utils';
 
 declare global {
   interface Window {
@@ -140,7 +139,7 @@ getTypesetDocument.cache = new WeakMap();
 
 // typesetMath is the main exported function.
 // It's called by components like HTML after they're rendered
-const typesetMath = (root: Element, windowImpl = assertWindow() as Window) => {
+const typesetMath = (root: Element, windowImpl = window) => {
   if (!document.getElementById('MathJax-Script')) {
     startMathJax();
   }
@@ -158,9 +157,9 @@ const typesetMath = (root: Element, windowImpl = assertWindow() as Window) => {
   return Promise.resolve();
 };
 
-function startMathJax(windowImpl: Window = assertWindow() as Window): Promise<void> {
+function startMathJax(windowImpl: Window = window) {
   if (windowImpl.MathJax !== undefined || document.getElementById('MathJax-Script')) {
-    return Promise.resolve();
+    return;
   }
 
   const script = document.createElement('script');
@@ -196,8 +195,6 @@ function startMathJax(windowImpl: Window = assertWindow() as Window): Promise<vo
     (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
     windowImpl.MathJax = MATHJAX_CONFIG;
   }
-
-  return Promise.resolve();
 };
 
 export {
