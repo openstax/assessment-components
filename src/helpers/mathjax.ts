@@ -1,4 +1,4 @@
-import { debounce } from 'lodash';
+import { debounce, once } from 'lodash';
 import { isEmpty, memoize } from 'lodash/fp.js';
 import WeakMap from 'weak-map';
 
@@ -140,61 +140,53 @@ getTypesetDocument.cache = new WeakMap();
 const typesetMath = async (root: Element, windowImpl = window) => {
   await startMathJax();
 
-  const hasMath = root.querySelector(COMBINED_MATH_SELECTOR);
+  // check if MathJax is setup
+  if (!(windowImpl && windowImpl.MathJax && windowImpl.MathJax.Hub)) {
+    console.warn('Warning: Expected MathJax to be initialized.');
+    return Promise.resolve();
+  }
+
   // schedule a Mathjax pass if there is at least one [data-math] or <math> element present
-  if (windowImpl && windowImpl.MathJax && windowImpl.MathJax.Hub && hasMath) {
+  if (root.querySelector(COMBINED_MATH_SELECTOR)) {
     return getTypesetDocument(root, windowImpl)();
   }
 
   return Promise.resolve();
 };
 
-const mathjaxIsReady = (windowImpl: Window = window) =>
-  windowImpl.MathJax && windowImpl.MathJax.isReady;
+const startMathJax: (windowImpl?: Window) => Promise<void> = once((windowImpl: Window = window) => new Promise((resolve) => {
+  const configuredCallback = () => {
+    // there doesn't seem to be a config option for this
+    windowImpl.MathJax.HTML.Cookie.prefix = 'mathjax';
+    // proceed with mathjax initi
+    windowImpl.MathJax.Hub.Configured();
+    windowImpl.MathJax.Hub.Register.StartupHook('End', () => {
+      resolve();
+    });
+  };
 
-function startMathJax(windowImpl: Window = window): Promise<void> {
-  return new Promise((resolve) => {
-    if (mathjaxIsReady(windowImpl)) {
-      return resolve();
-    }
+  if (!document.getElementById('MathJax-Script')) {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured';
+    script.id = 'MathJax-Script';
+    script.async = true;
+    document.head.appendChild(script);
+  }
 
-    const interval = setInterval(() => {
-      if (mathjaxIsReady(windowImpl)) {
-        resolve();
-        clearInterval(interval);
-      }
-    }, 200);
-
-    if (!document.getElementById('MathJax-Script')) {
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML-full&delayStartupUntil=configured';
-      script.id = 'MathJax-Script';
-      script.async = true;
-      document.head.appendChild(script);
-    }
-
-    const configuredCallback = () => {
-      // there doesn't seem to be a config option for this
-      windowImpl.MathJax.HTML.Cookie.prefix = 'mathjax';
-      // proceed with mathjax initi
-      windowImpl.MathJax.Hub.Configured();
-    };
-
-    if (windowImpl.MathJax && windowImpl.MathJax.Hub) {
-      windowImpl.MathJax.Hub.Config(MATHJAX_CONFIG);
-      // Does not seem to work when passed to Config
-      windowImpl.MathJax.Hub.processSectionDelay = 0;
-      configuredCallback();
-    } else {
-      // If the MathJax.js file has not loaded yet:
-      // Call MathJax.Configured once MathJax loads and
-      // loads this config JSON since the CDN URL
-      // says to `delayStartupUntil=configured`
-      (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
-      windowImpl.MathJax = MATHJAX_CONFIG;
-    }
-  });
-};
+  if (windowImpl.MathJax && windowImpl.MathJax.Hub) {
+    windowImpl.MathJax.Hub.Config(MATHJAX_CONFIG);
+    // Does not seem to work when passed to Config
+    windowImpl.MathJax.Hub.processSectionDelay = 0;
+    configuredCallback();
+  } else {
+    // If the MathJax.js file has not loaded yet:
+    // Call MathJax.Configured once MathJax loads and
+    // loads this config JSON since the CDN URL
+    // says to `delayStartupUntil=configured`
+    (MATHJAX_CONFIG as any).AuthorInit = configuredCallback;
+    windowImpl.MathJax = MATHJAX_CONFIG;
+  }
+}));
 
 export {
   typesetMath,
