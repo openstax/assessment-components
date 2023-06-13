@@ -92,6 +92,7 @@ describe('Exercise', () => {
 
       const _useRef = React.useRef;
 
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (React.useRef as any) = jest.fn((initialValue) => {
         // Return the mocked ref if it's likely the questionsRef use
         if (Array.isArray(initialValue)) {
