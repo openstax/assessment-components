@@ -92,7 +92,7 @@ describe('Exercise', () => {
 
       const _useRef = React.useRef;
 
-      (React.useRef as any) = jest.fn((initialValue: any) => {
+      (React.useRef as any) = jest.fn((initialValue) => {
         // Return the mocked ref if it's likely the questionsRef use
         if (Array.isArray(initialValue)) {
           return ref;
