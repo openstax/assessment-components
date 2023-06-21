@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { breakpoints, colors, mixins } from "../theme";
+import { breakpoints, colors, layouts, mixins } from "../theme";
 import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
@@ -22,7 +22,7 @@ export const InnerStepCard = styled.div`
 `;
 
 export const OuterStepCard = styled.div`
-  padding: 2rem;
+  padding: ${layouts.card.spacing};
 
   ${breakpoints.mobile`
     padding: 0;

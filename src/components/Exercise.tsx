@@ -2,16 +2,44 @@ import React from 'react';
 import scrollToElement from 'scroll-to-element';
 import styled from 'styled-components';
 import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
-import { TaskStepCard } from './Card';
+import { TaskStepCard, TaskStepCardProps } from './Card';
 import { Content } from './Content';
-import { ExerciseIcons } from './ExerciseIcons';
 import { ExerciseQuestion } from './ExerciseQuestion';
 import { typesetMath } from '../helpers/mathjax';
+import { ExerciseToolbar } from './ExerciseToolbar';
+import { breakpoints } from '../theme';
+import { ExerciseIcons } from './ExerciseIcons';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
   line-height: 2.8rem;
 `;
+
+const ToolbarWrapper = styled.div`
+  ${breakpoints.desktop`
+    ${StyledTaskStepCard} {
+      margin-left: 6.8rem;
+    }
+  `}
+  ${breakpoints.tablet`
+    ${StyledTaskStepCard} {
+      margin-left: 4.8rem;
+    }
+  `}
+${breakpoints.mobile`
+    ${StyledTaskStepCard} {
+      margin-left: 0;
+    }
+  `}
+`;
+
+const TaskStepCardWithToolbar = (props: React.PropsWithChildren<
+  Pick<TaskStepCardProps, 'step' | 'questionNumber' | 'numberOfQuestions' | 'showTotalQuestions'> &
+  Pick<ExerciseBaseProps, 'topicUrl' | 'errataUrl'>
+>) => <ToolbarWrapper>
+        <ExerciseToolbar topicUrl={props.topicUrl} errataUrl={props.errataUrl} />
+    <StyledTaskStepCard {...props} />
+  </ToolbarWrapper>;
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   return (
@@ -94,13 +122,15 @@ export const Exercise = ({
     }
   }, [exercise]);
 
-  return (<StyledTaskStepCard
+  const CardComponent = (props.topicUrl || props.errataUrl) ? TaskStepCardWithToolbar : StyledTaskStepCard;
+
+  return (<CardComponent
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
-    rightHeaderChildren={props.showExerciseIcons ?
-      <ExerciseIcons exercise={exercise} topicUrl={props.topicUrl} errataUrl={props.errataUrl} /> : null}
+    rightHeaderChildren={props.showExerciseIcons ? <ExerciseIcons exercise={exercise} /> : null}
     showTotalQuestions={legacyStepRender}
+    {...props}
   >
     <div ref={container}>
       <Preamble exercise={exercise} />
@@ -132,5 +162,5 @@ export const Exercise = ({
       }
       )}
     </div>
-  </StyledTaskStepCard>)
+  </CardComponent>)
 };

@@ -90,11 +90,13 @@ export const ExerciseIcons = ({ exercise, topicUrl, errataUrl }:
     );
   }
 
-  items.push(
-    <PopoverItem key='errata' text='Suggest a correction' wrapperProps={{ as: 'a', href: errataUrl, target: '_blank' }}>
-      <StyledFontAwesomeIcon icon={faTriangleExclamation}></StyledFontAwesomeIcon>
-    </PopoverItem>
-  )
+  if (errataUrl) {
+    items.push(
+      <PopoverItem key='errata' text='Suggest a correction' wrapperProps={{ as: 'a', href: errataUrl, target: '_blank' }}>
+        <StyledFontAwesomeIcon icon={faTriangleExclamation}></StyledFontAwesomeIcon>
+      </PopoverItem>
+    )
+  }
 
   if (typeExplanation) {
     items.push(

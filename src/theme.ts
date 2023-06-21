@@ -104,6 +104,9 @@ export const layouts = {
     horizontalBuffer: "4rem",
     borderWidth: "1px",
     maxWidth: "325px",
+  },
+  card: {
+    spacing: '2rem'
   }
 };
 

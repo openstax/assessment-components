@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
 import { Answer } from '../types';
+import { ExerciseToolbar } from './ExerciseToolbar';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -332,8 +333,6 @@ export const Icons = () => {
   return <Exercise
     {...exerciseWithQuestionStatesProps()}
     showExerciseIcons={true}
-    topicUrl='https://openstax.org'
-    errataUrl='https://openstax.org'
   />;
 };
 
@@ -437,4 +436,15 @@ export const MathJax = () => {
       <Exercise {...props2} />
     </>
   );
+};
+
+export const Toolbar = () => {
+  return (
+    <>
+      <Exercise
+        {...exerciseWithQuestionStatesProps()}
+        errataUrl='openstax.org'
+        topicUrl='openstax.org'
+      />
+    </>)
 };
