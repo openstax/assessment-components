@@ -26,7 +26,7 @@ const ToolbarWrapper = styled.div`
       margin-left: 4.8rem;
     }
   `}
-${breakpoints.mobile`
+  ${breakpoints.mobile`
     ${StyledTaskStepCard} {
       margin-left: 0;
     }
