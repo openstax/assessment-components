@@ -130,7 +130,8 @@ export const Exercise = ({
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
     rightHeaderChildren={props.showExerciseIcons ? <ExerciseIcons exercise={exercise} /> : null}
     showTotalQuestions={legacyStepRender}
-    {...props}
+    topicUrl={props.topicUrl}
+    errataUrl={props.errataUrl}
   >
     <div ref={container}>
       <Preamble exercise={exercise} />
