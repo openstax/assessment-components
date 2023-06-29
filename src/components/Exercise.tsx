@@ -89,7 +89,7 @@ export const Exercise = ({
   }, [scrollToQuestion, exercise]);
 
   const feedback = 'questionStates' in props ?
-    Object.values(props['questionStates']).map((s: QuestionState) =>
+    Object.values(props.questionStates).map((s) =>
       [s.feedback_html, s.correct_answer_feedback_html]
     ).flat(0) : [];
 
