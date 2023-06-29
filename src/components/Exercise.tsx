@@ -88,11 +88,16 @@ export const Exercise = ({
     }
   }, [scrollToQuestion, exercise]);
 
+  const feedback = 'questionStates' in props ?
+    Object.values(props['questionStates']).map((s: QuestionState) =>
+      [s.feedback_html, s.correct_answer_feedback_html]
+    ).flat(0) : [];
+
   React.useEffect(() => {
     if (container.current) {
       typesetMath(container.current);
     }
-  }, [exercise]);
+  }, [exercise, ...feedback]);
 
   return (<StyledTaskStepCard
     step={step}
