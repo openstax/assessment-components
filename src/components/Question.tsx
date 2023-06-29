@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { ID, ExerciseQuestionData, Task } from 'src/types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
+import { typesetMath } from '../helpers/mathjax';
 
 const StyledQuestion = styled.div`
 &.step-card-body {
@@ -274,22 +275,32 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
       </div>;
   }
 
+  const container = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (container.current) {
+      typesetMath(container.current);
+    }
+  }, [question, props.correct_answer_feedback_html, props.feedback_html]);
+
   return (
-    <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
-      <QuestionHtml type="context" html={context} hidden={hidePreambles} />
-      <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
-      <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
-      {props.children}
+    <div ref={container}>
+      <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
+        <QuestionHtml type="context" html={context} hidden={hidePreambles} />
+        <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
+        <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
+        {props.children}
 
-      <AnswersTable
-        {...props}
-        onChangeAnswer={props.onChange}
-        hasCorrectAnswer={hasCorrectAnswer} />
+        <AnswersTable
+          {...props}
+          onChangeAnswer={props.onChange}
+          hasCorrectAnswer={hasCorrectAnswer} />
 
-      {solution}
-      {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
-      {exerciseUid}
-    </StyledQuestion>
+        {solution}
+        {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
+        {exerciseUid}
+      </StyledQuestion>
+    </div>
   );
 });
 
