@@ -6,7 +6,6 @@ import { TaskStepCard } from './Card';
 import { Content } from './Content';
 import { ExerciseIcons } from './ExerciseIcons';
 import { ExerciseQuestion } from './ExerciseQuestion';
-import { typesetMath } from '../helpers/mathjax';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
