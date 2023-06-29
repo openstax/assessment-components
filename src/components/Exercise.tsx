@@ -1,6 +1,6 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { TaskStepCard, TaskStepCardProps } from './Card';
 import { Content } from './Content';
@@ -8,36 +8,39 @@ import { ExerciseQuestion } from './ExerciseQuestion';
 import { typesetMath } from '../helpers/mathjax';
 import { ExerciseToolbar } from './ExerciseToolbar';
 import { breakpoints } from '../theme';
-import { ExerciseIcons } from './ExerciseIcons';
+import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
   line-height: 2.8rem;
 `;
 
-const ToolbarWrapper = styled.div`
-  ${breakpoints.desktop`
-    ${StyledTaskStepCard} {
-      margin-left: 6.8rem;
-    }
-  `}
-  ${breakpoints.tablet`
-    ${StyledTaskStepCard} {
-      margin-left: 4.8rem;
-    }
-  `}
-  ${breakpoints.mobile`
-    ${StyledTaskStepCard} {
-      margin-left: 0;
-    }
+const ToolbarWrapper = styled.div<{ desktopToolbarEnabled: boolean }>`
+  ${props => props.desktopToolbarEnabled && css`
+    ${breakpoints.desktop`
+      ${StyledTaskStepCard} {
+        margin-left: 6.8rem;
+      }
+    `}
+    ${breakpoints.tablet`
+      ${StyledTaskStepCard} {
+        margin-left: 4.8rem;
+      }
+    `}
+    ${breakpoints.mobile`
+      ${StyledTaskStepCard} {
+        margin-left: 0;
+      }
+    `}
   `}
 `;
 
-const TaskStepCardWithToolbar = (props: React.PropsWithChildren<
-  Pick<TaskStepCardProps, 'step' | 'questionNumber' | 'numberOfQuestions' | 'showTotalQuestions'> &
-  Pick<ExerciseBaseProps, 'topicUrl' | 'errataUrl'>
->) => <ToolbarWrapper>
-        <ExerciseToolbar topicUrl={props.topicUrl} errataUrl={props.errataUrl} />
+const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProps> &
+  Pick<ExerciseBaseProps, 'exerciseIcons'> & {
+    desktopToolbarEnabled: boolean;
+  }
+) => <ToolbarWrapper desktopToolbarEnabled>
+        <ExerciseToolbar icons={props.exerciseIcons} />
     <StyledTaskStepCard {...props} />
   </ToolbarWrapper>;
 
@@ -54,6 +57,38 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
     </>
   );
 };
+
+interface ExerciseIconLocation {
+  desktop: boolean;
+  mobile: boolean;
+}
+
+interface ExerciseIcon {
+  location?: {
+    /**
+     * @default {
+     *   desktop: true,
+     *   mobile: false
+     * }
+     **/
+    header?: ExerciseIconLocation;
+    /**
+     * @default {
+     *   desktop: false,
+     *   mobile: true
+     * }
+     **/
+    toolbar?: ExerciseIconLocation;
+  }
+}
+
+export interface ExerciseIcons {
+  /** An object containing a URL for the errata form for this exercise and settings for rendering the icon. */  errata?: ExerciseIcon & { url: string };
+  /** An object containing a URL for textbook content relevant to the exercise and settings for rendering the icon. */
+  topic?: ExerciseIcon & { url: string };
+  /** An object of settings for rendering the info icon that describes the exercise type (multiple-choice, two-step, etc.) */
+  info?: ExerciseIcon;
+}
 
 export interface ExerciseBaseProps {
   /** An object containing a Step ID and Exercise UID */
@@ -73,16 +108,12 @@ export interface ExerciseBaseProps {
   show_all_feedback?: boolean;
   /** The question number to scroll into view when the component renders. */
   scrollToQuestion?: number;
-  /** A boolean that enables showing exercise icons in the card header:
+  /** An object containing data for how to render the following icons:
+   * - An errata icon linking to the errata/feedback form
    * - An info icon describing the exercise type (multiple-choice, two-step, etc.)
    * - A topic icon linking to the relevant textbook location
-   * - An errata icon linking to the errata/feedback form
    */
-  showExerciseIcons?: boolean;
-  /** A URL for textbook content relevant to the exercise. */
-  topicUrl?: string;
-  /** A URL for the errata form. */
-  errataUrl?: string;
+  exerciseIcons?: ExerciseIcons;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
@@ -103,7 +134,7 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 }
 
 export const Exercise = ({
-  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
+  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
@@ -122,16 +153,16 @@ export const Exercise = ({
     }
   }, [exercise]);
 
-  const CardComponent = (props.topicUrl || props.errataUrl) ? TaskStepCardWithToolbar : StyledTaskStepCard;
+  const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({location}) => location?.toolbar?.desktop);
 
-  return (<CardComponent
+  return <TaskStepCardWithToolbar
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
-    rightHeaderChildren={props.showExerciseIcons ? <ExerciseIcons exercise={exercise} /> : null}
+    rightHeaderChildren={exerciseIcons ? <ExerciseHeaderIcons exercise={exercise} icons={exerciseIcons} /> : null}
     showTotalQuestions={legacyStepRender}
-    topicUrl={props.topicUrl}
-    errataUrl={props.errataUrl}
+    desktopToolbarEnabled={desktopToolbarEnabled}
+    {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
   >
     <div ref={container}>
       <Preamble exercise={exercise} />
@@ -163,5 +194,5 @@ export const Exercise = ({
       }
       )}
     </div>
-  </CardComponent>)
+  </TaskStepCardWithToolbar>;
 };

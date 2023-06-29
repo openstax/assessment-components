@@ -39,12 +39,9 @@ const StepCardHeader = styled.div`
   line-height: 3rem;
   letter-spacing: -0.72px;
 
-  div {
-    display: flex;
-    align-items: baseline;
-  }
-
   div.question-info {
+     display: flex;
+    align-items: baseline;
     font-weight: bold;
 
     .question-id {
@@ -244,7 +241,7 @@ const StepCard = ({
       <InnerStepCard className={className}>
         {questionNumber && isHomework && stepType === 'exercise' &&
           <StepCardHeader>
-            <div>
+            <div className="">
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}

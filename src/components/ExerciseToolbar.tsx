@@ -1,10 +1,13 @@
 import { colors, layouts, breakpoints } from "../../src/theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { ExerciseBaseProps } from "./Exercise";
+import { ExerciseIcons } from "./Exercise";
 
-const StyledToolbar = styled.div`
+const StyledToolbar = styled.div<{
+  mobile: boolean;
+  desktop: boolean;
+}>`
   position: absolute;
   background: #fff;
   width: 4.5rem;
@@ -53,7 +56,17 @@ const StyledToolbar = styled.div`
     }
   }
 
-  ${breakpoints.mobile`
+  ${props => !props.desktop && css`
+    ${breakpoints.desktop`
+      display: none;
+    `}
+    ${breakpoints.tablet`
+      display: none;
+    `}
+  `}
+
+  ${props => props.mobile && breakpoints.mobile`
+    display: block;
     position: relative;
     width: auto;
     display: flex;
@@ -70,9 +83,10 @@ const StyledToolbar = styled.div`
       height: auto;
       min-height: 4.8rem;
 
-      svg {
-
+      &:hover {
+        width: auto;
       }
+
       span {
         display: block;
         font-size: 1rem;
@@ -80,21 +94,21 @@ const StyledToolbar = styled.div`
         color: ${colors.palette.neutral};
         text-align: center;
       }
-      &:hover {
-        width: auto;
-      }
     }
   `}
 `;
 
-export type ExerciseToolbarProps =  Pick<ExerciseBaseProps, 'topicUrl' | 'errataUrl'>;
-
-export const ExerciseToolbar = ({ topicUrl, errataUrl }: ExerciseToolbarProps) => {
-  if (!errataUrl && !topicUrl) {
+export const ExerciseToolbar = ({ icons }: { icons?: ExerciseIcons }) => {
+  if (!icons) {
     return null;
   }
+  const settings = Object.values(icons);
+  const mobile = settings.some(({location}) => location?.toolbar?.mobile ?? true);
+  const desktop = settings.some(({location}) => location?.toolbar?.desktop ?? true);
+  const topicUrl = icons.topic?.url;
+  const errataUrl = icons.errata?.url;
 
-  return <StyledToolbar>
+  return <StyledToolbar {...{ mobile, desktop }}>
     {topicUrl ? <a href={topicUrl} target="_blank">
       <FontAwesomeIcon icon={faBookOpen}></FontAwesomeIcon>
       <span>View topic in textbook</span>

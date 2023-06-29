@@ -1,4 +1,4 @@
-import { ExerciseIcons } from './ExerciseIcons';
+import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
 import renderer from 'react-test-renderer';
 
 describe('ExerciseIcons', () => {
@@ -39,7 +39,7 @@ describe('ExerciseIcons', () => {
 
   it('matches snapshot', () => {
     const tree = renderer.create(
-      <ExerciseIcons exercise={exercise} topicUrl='https://openstax.org' errataUrl='https://openstax.org' />
+      <ExerciseHeaderIcons exercise={exercise} topicUrl='https://openstax.org' errataUrl='https://openstax.org' />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

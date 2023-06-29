@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
 import { Answer } from '../types';
-import { ExerciseToolbar } from './ExerciseToolbar';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -330,9 +329,32 @@ export const MultiPartHalfComplete = () => {
 };
 
 export const Icons = () => {
+  const location = {
+    toolbar: {
+      desktop: false,
+      mobile: true
+    },
+    header: {
+      desktop: true,
+      mobile: false
+    }
+  };
+
   return <Exercise
     {...exerciseWithQuestionStatesProps()}
-    showExerciseIcons={true}
+    exerciseIcons={{
+      topic: {
+        url: 'https://openstax.org',
+        location
+      },
+      errata: {
+        url: 'https://openstax.org',
+        location
+      },
+      info: {
+        location
+      },
+    }}
   />;
 };
 

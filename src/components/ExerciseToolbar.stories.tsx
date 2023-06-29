@@ -7,4 +7,36 @@ const Wrapper = styled.div`
   min-height: 20rem;
 `;
 
-export const Default = () => <Wrapper><ExerciseToolbar data={{}} /></Wrapper>;
+export const Default = () => <Wrapper>
+  <ExerciseToolbar icons={{
+    topic: {
+      url: 'https://openstax.org'
+    },
+    errata: {
+      url: 'https://openstax.org'
+    }
+  }} />
+  </Wrapper>;
+
+export const DefaultMobileOnly = () => <Wrapper>
+  <ExerciseToolbar icons={{
+    topic: {
+      url: 'https://openstax.org',
+      location: {
+        toolbar: {
+          desktop: false,
+          mobile: true
+        }
+      }
+    },
+    errata: {
+      url: 'https://openstax.org',
+      location: {
+        toolbar: {
+          desktop: false,
+          mobile: true
+        }
+      }
+    }
+  }} />
+  </Wrapper>;
