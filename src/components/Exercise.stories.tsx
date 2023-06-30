@@ -396,7 +396,7 @@ This resonates with an unheard symphony of the universe, creating a multisensory
     exercise: {
       ...exerciseWithStepDataProps.exercise,
       context: `At the intersection of mathematics and abstract art, there is a realm where equations take on the characteristics of color and flavor. For
-instance, in this dimension, the quadratic formula <span data-math="x = \frac{{-b \pm \sqrt{{b^2-4ac}}}}{{2a}}"></span> might taste like a blend of sweet and
+instance, in this dimension, the quadratic formula <span data-math="x = \\frac{{-b \\pm \\sqrt{{b^2-4ac}}}}{{2a}}"></span> might taste like a blend of sweet and
 sour, with the variable <span data-math="a"></span> contributing sweetness, <span data-math="b"></span> sourness, and <span data-math="c"></span> a hint of
 bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps alter the color of the equation, ranging from vibrant blue to fiery red.`,
       stimulus_html: `In a universe where equations like
