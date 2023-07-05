@@ -1,6 +1,10 @@
 import { Question, QuestionProps } from './Question';
 import renderer from 'react-test-renderer';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('Question', () => {
   let props: QuestionProps;
 

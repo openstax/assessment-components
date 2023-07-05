@@ -1,6 +1,10 @@
 import { Content } from './Content';
 import renderer from 'react-test-renderer';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('Content', () => {
   const html = '<b>Content with HTML</b>';
   const CustomRenderer = ({ html = '' }: { html?: string }) => (
