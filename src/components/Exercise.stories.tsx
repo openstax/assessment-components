@@ -460,6 +460,23 @@ bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps a
           content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Red}"></span>`,
         }],
       }],
+    },
+    questionStates: {
+      ...exerciseWithQuestionStatesProps().questionStates,
+      '1': {
+        ...exerciseWithQuestionStatesProps().questionStates['1'],
+        solution: {
+          content_html: `<span data-math="\\sqrt[3]{\\text{Apple}}"></span>`,
+          solution_type: 'detailed'
+        }
+      },
+      '2': {
+        ...exerciseWithQuestionStatesProps().questionStates['1'],
+        solution: {
+          content_html: `<span data-math="e^{\\text{Blue}}"></span>`,
+          solution_type: 'detailed'
+        }
+      }
     }
   };
 
