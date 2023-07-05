@@ -6,6 +6,7 @@ import { Content } from "./Content";
 import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
+import { useTypeset } from "../helpers/mathjax";
 
 export interface ExerciseQuestionProps {
   task?: Task;
@@ -96,6 +97,8 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
+  const solutionRef = useTypeset([detailedSolution]);
+
   return (
     <div data-test-id="student-exercise-question">
       <Question
@@ -130,7 +133,9 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
                 <AttemptsRemaining count={attempts_remaining} />}
             </span>
             <PublishedComments published_comments={published_comments} />
-            {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+            {detailedSolution && <div ref={solutionRef}>
+              <strong>Detailed solution:</strong> <Content html={detailedSolution} />
+            </div>}
           </div>
           <div className="controls">
             {canAnswer && needsSaved ?

@@ -1,5 +1,6 @@
 import { debounce, once } from 'lodash';
 import { isEmpty, memoize } from 'lodash/fp.js';
+import React from 'react';
 import WeakMap from 'weak-map';
 
 declare global {
@@ -188,7 +189,20 @@ const startMathJax: (windowImpl?: Window) => Promise<void> = once((windowImpl: W
   }
 }));
 
+const useTypeset = <T>(dependencies: T[]) => {
+  const container = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (container.current) {
+      typesetMath(container.current);
+    }
+  }, dependencies);
+
+  return container;
+}
+
 export {
   typesetMath,
   startMathJax,
+  useTypeset,
 };

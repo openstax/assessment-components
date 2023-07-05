@@ -6,6 +6,7 @@ import { TaskStepCard } from './Card';
 import { Content } from './Content';
 import { ExerciseIcons } from './ExerciseIcons';
 import { ExerciseQuestion } from './ExerciseQuestion';
+import { useTypeset } from '../helpers/mathjax';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -13,8 +14,9 @@ const StyledTaskStepCard = styled(TaskStepCard)`
 `;
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
+  const container = useTypeset([exercise.context, exercise.stimulus_html]);
   return (
-    <>
+    <div ref={container}>
       {exercise.context &&
         <Content className="step-card-body exercise-context"
           block html={exercise.context} />}
@@ -22,7 +24,7 @@ const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
       {exercise.stimulus_html &&
         <Content className="step-card-body exercise-stimulus"
           block html={exercise.stimulus_html} />}
-    </>
+    </div>
   );
 };
 
