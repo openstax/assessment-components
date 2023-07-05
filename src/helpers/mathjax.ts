@@ -189,7 +189,7 @@ const startMathJax: (windowImpl?: Window) => Promise<void> = once((windowImpl: W
   }
 }));
 
-const useTypeset = <T>(dependencies: T[]) => {
+const useTypesetMath = <T>(dependencies: T[]) => {
   const container = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -204,5 +204,5 @@ const useTypeset = <T>(dependencies: T[]) => {
 export {
   typesetMath,
   startMathJax,
-  useTypeset,
+  useTypesetMath,
 };

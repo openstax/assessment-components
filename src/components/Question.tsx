@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { ID, ExerciseQuestionData, Task } from 'src/types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
-import { useTypeset } from '../helpers/mathjax';
+import { useTypesetMath } from '../helpers/mathjax';
 
 const StyledQuestion = styled.div`
 &.step-card-body {
@@ -275,7 +275,7 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
       </div>;
   }
 
-  const container = useTypeset([question, props.correct_answer_feedback_html, props.feedback_html]);
+  const container = useTypesetMath([question, props.correct_answer_feedback_html, props.feedback_html]);
 
   return (
     <div ref={container}>
