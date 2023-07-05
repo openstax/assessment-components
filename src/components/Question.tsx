@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import { ID, ExerciseQuestionData, Task } from 'src/types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
-import { useTypesetMath } from '../hooks/useTypesetMath';
 
 const StyledQuestion = styled.div`
 &.step-card-body {
@@ -274,11 +273,6 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
           html={collaborator_solutions.map(s => s['content_html']).join('')} />
       </div>;
   }
-
-  const { typesetMath } = useTypesetMath();
-  React.useEffect(() => {
-    typesetMath && typesetMath();
-  }, [question, props.correct_answer_feedback_html, props.feedback_html]);
 
   return (
     <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">

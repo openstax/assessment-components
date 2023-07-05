@@ -6,7 +6,6 @@ import { Content } from "./Content";
 import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
-import { useTypesetMath } from "../hooks/useTypesetMath";
 
 export interface ExerciseQuestionProps {
   task?: Task;
@@ -96,12 +95,6 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
-
-  const { typesetMath } = useTypesetMath();
-
-  React.useEffect(() => {
-    typesetMath && typesetMath();
-  }, [detailedSolution])
 
   return (
     <div data-test-id="student-exercise-question">

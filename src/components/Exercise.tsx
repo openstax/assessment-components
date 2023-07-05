@@ -95,11 +95,7 @@ export const Exercise = ({
     }
   }, [scrollToQuestion, exercise]);
 
-  React.useEffect(() => {
-    typesetExercise();
-  }, [exercise]);
-
-  return <TypesetMathContext.Provider value={{ typesetMath: typesetExercise }}>
+  return <TypesetMathContext.Provider value={typesetExercise}>
     <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
