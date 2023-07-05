@@ -7,6 +7,7 @@ import { Content } from './Content';
 import { ExerciseIcons } from './ExerciseIcons';
 import { ExerciseQuestion } from './ExerciseQuestion';
 import { typesetMath } from '../helpers/mathjax';
+import { TypesetMathContext } from '../hooks/useTypesetMath';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -74,9 +75,6 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
-const TypesetExerciseContext = React.createContext<{ typesetExercise?: () => void }>({});
-export const useTypesetExercise = () => React.useContext(TypesetExerciseContext);
-
 export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
@@ -101,7 +99,7 @@ export const Exercise = ({
     typesetExercise();
   }, [exercise]);
 
-  return (<TypesetExerciseContext.Provider value={{ typesetExercise }}>
+  return (<TypesetMathContext.Provider value={{ typesetMath: typesetExercise }}>
     <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
@@ -141,6 +139,6 @@ export const Exercise = ({
       )}
     </div>
     </StyledTaskStepCard>
-   </TypesetExerciseContext.Provider>
+   </TypesetMathContext.Provider>
   )
 };

@@ -3,9 +3,10 @@ import { numberfyId } from "../../src/utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
-import { ExerciseBaseProps, useTypesetExercise } from "./Exercise";
+import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
+import { useTypesetMath } from "../hooks/useTypesetMath";
 
 export interface ExerciseQuestionProps {
   task?: Task;
@@ -96,10 +97,10 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
-  const { typesetExercise } = useTypesetExercise();
+  const { typesetMath } = useTypesetMath();
 
   React.useEffect(() => {
-    typesetExercise && typesetExercise();
+    typesetMath && typesetMath();
   }, [detailedSolution])
 
   return (
