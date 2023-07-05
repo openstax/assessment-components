@@ -49,22 +49,24 @@ exports[`Exercise using step data matches snapshot 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
+        />
+      </div>
       <div
         data-test-id="student-exercise-question"
       >
@@ -255,22 +257,24 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
+        />
+      </div>
       <div
         data-test-id="student-exercise-question"
       >
@@ -582,22 +586,24 @@ exports[`Exercise with question state data renders header icons with multiple ch
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
+        />
+      </div>
       <div
         data-test-id="student-exercise-question"
       >
@@ -869,22 +875,24 @@ exports[`Exercise with question state data renders header icons with two-step ex
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
+        />
+      </div>
       <div
         data-test-id="student-exercise-question"
       >
@@ -1075,22 +1083,24 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
+        />
+      </div>
       <div
         data-test-id="student-exercise-question"
       >
