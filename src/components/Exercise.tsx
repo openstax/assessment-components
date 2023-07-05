@@ -6,6 +6,7 @@ import { TaskStepCard } from './Card';
 import { Content } from './Content';
 import { ExerciseIcons } from './ExerciseIcons';
 import { ExerciseQuestion } from './ExerciseQuestion';
+import { typesetMath } from '../helpers/mathjax';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -73,11 +74,21 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
+const TypesetExerciseContext = React.createContext<{ typesetExercise?: () => void }>({});
+export const useTypesetExercise = () => React.useContext(TypesetExerciseContext);
+
 export const Exercise = ({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, ...props
 }: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
+  const container = React.useRef<HTMLDivElement>(null);
+
+  const typesetExercise = () => {
+    if (container.current) {
+      typesetMath(container.current);
+    }
+  };
 
   React.useEffect(() => {
     const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
@@ -86,7 +97,12 @@ export const Exercise = ({
     }
   }, [scrollToQuestion, exercise]);
 
-  return (<StyledTaskStepCard
+  React.useEffect(() => {
+    typesetExercise();
+  }, [exercise]);
+
+  return (<TypesetExerciseContext.Provider value={{ typesetExercise }}>
+    <StyledTaskStepCard
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
@@ -94,33 +110,37 @@ export const Exercise = ({
       <ExerciseIcons exercise={exercise} topicUrl={props.topicUrl} errataUrl={props.errataUrl} /> : null}
     showTotalQuestions={legacyStepRender}
   >
-    <Preamble exercise={exercise} />
+    <div ref={container}>
+      <Preamble exercise={exercise} />
 
-    {exercise.questions.map((q, i) => {
-      const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
-      return (
-        <ExerciseQuestion
-          {...props}
-          {...state}
-          ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
-          exercise_uid={exercise.uid}
-          key={q.id}
-          question={q}
-          questionNumber={questionNumber + i}
-          choicesEnabled={state.canAnswer}
-          displaySolution={true}
-          detailedSolution={state.solution?.content_html}
-          show_all_feedback={show_all_feedback}
-          tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
-          canUpdateCurrentStep={
-            // misleading prop name, we want to show a continue button for completed questions
-            // that aren't the last question, which requires this prop to be true
-            'canUpdateCurrentStep' in props ?
-              props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
-          }
-        />
-      )
-    }
-  )}
- </StyledTaskStepCard>)
+      {exercise.questions.map((q, i) => {
+        const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
+        return (
+          <ExerciseQuestion
+            {...props}
+            {...state}
+            ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
+            exercise_uid={exercise.uid}
+            key={q.id}
+            question={q}
+            questionNumber={questionNumber + i}
+            choicesEnabled={state.canAnswer}
+            displaySolution={true}
+            detailedSolution={state.solution?.content_html}
+            show_all_feedback={show_all_feedback}
+            tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
+            canUpdateCurrentStep={
+              // misleading prop name, we want to show a continue button for completed questions
+              // that aren't the last question, which requires this prop to be true
+              'canUpdateCurrentStep' in props ?
+                props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+            }
+          />
+        )
+      }
+      )}
+    </div>
+    </StyledTaskStepCard>
+   </TypesetExerciseContext.Provider>
+  )
 };

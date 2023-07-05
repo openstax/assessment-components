@@ -3,7 +3,7 @@ import { numberfyId } from "../../src/utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
-import { ExerciseBaseProps } from "./Exercise";
+import { ExerciseBaseProps, useTypesetExercise } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
 
@@ -95,6 +95,12 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
+
+  const { typesetExercise } = useTypesetExercise();
+
+  React.useEffect(() => {
+    typesetExercise && typesetExercise();
+  }, [detailedSolution])
 
   return (
     <div data-test-id="student-exercise-question">

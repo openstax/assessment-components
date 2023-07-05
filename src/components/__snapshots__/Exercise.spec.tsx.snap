@@ -49,26 +49,26 @@ exports[`Exercise using step data matches snapshot 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
-      <div
-        data-test-id="student-exercise-question"
-      >
-        <div>
+        />
+        <div
+          data-test-id="student-exercise-question"
+        >
           <div
             className="sc-jqUVSM ghJTot openstax-question step-card-body"
             data-question-number={1}
@@ -175,34 +175,34 @@ exports[`Exercise using step data matches snapshot 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="sc-kDDrLX heSwtd step-card-footer"
-        >
           <div
-            className="step-card-footer-inner"
+            className="sc-kDDrLX heSwtd step-card-footer"
           >
             <div
-              className="points"
+              className="step-card-footer-inner"
             >
-              <strong>
-                Points: 
-                1.0
-              </strong>
-              <span
-                className="attempts-left"
-              />
-            </div>
-            <div
-              className="controls"
-            >
-              <button
-                className="sc-papXJ jTyQce"
-                data-test-id="continue-btn"
-                onClick={[Function]}
+              <div
+                className="points"
               >
-                Next
-              </button>
+                <strong>
+                  Points: 
+                  1.0
+                </strong>
+                <span
+                  className="attempts-left"
+                />
+              </div>
+              <div
+                className="controls"
+              >
+                <button
+                  className="sc-papXJ jTyQce"
+                  data-test-id="continue-btn"
+                  onClick={[Function]}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -255,26 +255,26 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
-      <div
-        data-test-id="student-exercise-question"
-      >
-        <div>
+        />
+        <div
+          data-test-id="student-exercise-question"
+        >
           <div
             className="sc-jqUVSM ghJTot openstax-question step-card-body"
             data-question-number={1}
@@ -381,34 +381,34 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="sc-kDDrLX heSwtd step-card-footer"
-        >
           <div
-            className="step-card-footer-inner"
+            className="sc-kDDrLX heSwtd step-card-footer"
           >
             <div
-              className="points"
+              className="step-card-footer-inner"
             >
-              <strong>
-                Points: 
-                1.0
-              </strong>
-              <span
-                className="attempts-left"
-              />
-            </div>
-            <div
-              className="controls"
-            >
-              <button
-                className="sc-papXJ jTyQce"
-                data-test-id="continue-btn"
-                onClick={[Function]}
+              <div
+                className="points"
               >
-                Next
-              </button>
+                <strong>
+                  Points: 
+                  1.0
+                </strong>
+                <span
+                  className="attempts-left"
+                />
+              </div>
+              <div
+                className="controls"
+              >
+                <button
+                  className="sc-papXJ jTyQce"
+                  data-test-id="continue-btn"
+                  onClick={[Function]}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -582,26 +582,26 @@ exports[`Exercise with question state data renders header icons with multiple ch
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
-      <div
-        data-test-id="student-exercise-question"
-      >
-        <div>
+        />
+        <div
+          data-test-id="student-exercise-question"
+        >
           <div
             className="sc-jqUVSM ghJTot openstax-question step-card-body"
             data-question-number={1}
@@ -708,34 +708,34 @@ exports[`Exercise with question state data renders header icons with multiple ch
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="sc-kDDrLX heSwtd step-card-footer"
-        >
           <div
-            className="step-card-footer-inner"
+            className="sc-kDDrLX heSwtd step-card-footer"
           >
             <div
-              className="points"
+              className="step-card-footer-inner"
             >
-              <strong>
-                Points: 
-                1.0
-              </strong>
-              <span
-                className="attempts-left"
-              />
-            </div>
-            <div
-              className="controls"
-            >
-              <button
-                className="sc-papXJ jTyQce"
-                data-test-id="continue-btn"
-                onClick={[Function]}
+              <div
+                className="points"
               >
-                Next
-              </button>
+                <strong>
+                  Points: 
+                  1.0
+                </strong>
+                <span
+                  className="attempts-left"
+                />
+              </div>
+              <div
+                className="controls"
+              >
+                <button
+                  className="sc-papXJ jTyQce"
+                  data-test-id="continue-btn"
+                  onClick={[Function]}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -869,26 +869,26 @@ exports[`Exercise with question state data renders header icons with two-step ex
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
-      <div
-        data-test-id="student-exercise-question"
-      >
-        <div>
+        />
+        <div
+          data-test-id="student-exercise-question"
+        >
           <div
             className="sc-jqUVSM ghJTot openstax-question step-card-body"
             data-question-number={1}
@@ -995,34 +995,34 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="sc-kDDrLX heSwtd step-card-footer"
-        >
           <div
-            className="step-card-footer-inner"
+            className="sc-kDDrLX heSwtd step-card-footer"
           >
             <div
-              className="points"
+              className="step-card-footer-inner"
             >
-              <strong>
-                Points: 
-                1.0
-              </strong>
-              <span
-                className="attempts-left"
-              />
-            </div>
-            <div
-              className="controls"
-            >
-              <button
-                className="sc-papXJ jTyQce"
-                data-test-id="continue-btn"
-                onClick={[Function]}
+              <div
+                className="points"
               >
-                Next
-              </button>
+                <strong>
+                  Points: 
+                  1.0
+                </strong>
+                <span
+                  className="attempts-left"
+                />
+              </div>
+              <div
+                className="controls"
+              >
+                <button
+                  className="sc-papXJ jTyQce"
+                  data-test-id="continue-btn"
+                  onClick={[Function]}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1075,26 +1075,26 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     <div
       className="sc-hKMtZM EWshI"
     >
-      <div
-        className="step-card-body exercise-context"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Context",
+      <div>
+        <div
+          className="step-card-body exercise-context"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Context",
+            }
           }
-        }
-      />
-      <div
-        className="step-card-body exercise-stimulus"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<b>Stimulus HTML</b>",
+        />
+        <div
+          className="step-card-body exercise-stimulus"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<b>Stimulus HTML</b>",
+            }
           }
-        }
-      />
-      <div
-        data-test-id="student-exercise-question"
-      >
-        <div>
+        />
+        <div
+          data-test-id="student-exercise-question"
+        >
           <div
             className="sc-jqUVSM ghJTot openstax-question step-card-body"
             data-question-number={1}
@@ -1201,47 +1201,47 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="sc-kDDrLX heSwtd step-card-footer"
-        >
           <div
-            className="step-card-footer-inner"
+            className="sc-kDDrLX heSwtd step-card-footer"
           >
             <div
-              className="points"
+              className="step-card-footer-inner"
             >
-              <strong>
-                Points: 
-                1.0
-              </strong>
-              <span
-                className="attempts-left"
-              />
-              <div>
-                <strong>
-                  Detailed solution:
-                </strong>
-                 
-                <span
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "Detailed solution",
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <div
-              className="controls"
-            >
-              <button
-                className="sc-papXJ jTyQce"
-                data-test-id="continue-btn"
-                onClick={[Function]}
+              <div
+                className="points"
               >
-                Next
-              </button>
+                <strong>
+                  Points: 
+                  1.0
+                </strong>
+                <span
+                  className="attempts-left"
+                />
+                <div>
+                  <strong>
+                    Detailed solution:
+                  </strong>
+                   
+                  <span
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "Detailed solution",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+              <div
+                className="controls"
+              >
+                <button
+                  className="sc-papXJ jTyQce"
+                  data-test-id="continue-btn"
+                  onClick={[Function]}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>

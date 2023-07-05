@@ -338,8 +338,29 @@ export const Icons = () => {
 };
 
 export const MathJax = () => {
-  const props1: ExerciseWithStepDataProps = {
-    ...exerciseWithStepDataProps,
+  const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
+  const [correctAnswerId, setCorrectAnswerId] = useState<number | undefined>(undefined);
+
+  const props1: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps(),
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: false,
+        answer_id_order: ['1', '2'],
+        answer_id: selectedAnswerId,
+        free_response: '',
+        feedback_html: '',
+        correct_answer_id: '1',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: true,
+        apiIsPending: false
+      }
+    },
     exercise: {
       ...exerciseWithStepDataProps.exercise,
       context: '',
@@ -352,23 +373,34 @@ export const MathJax = () => {
         is_answer_order_important: false,
         answers: [{
           id: '1',
-          correctness: undefined,
+          correctness: '1',
           content_html: `<span data-math="\\text{H}_2\\text{O} + \\sqrt[3]{\\text{Melodic Echo}}"></span>`,
+          feedback_html: `<span data-math="\\text{H}_2\\text{O} + \\sqrt[3]{\\text{Melodic Echo}}"></span> implies that water molecules are harmonizing with the cubic root of a Melodic Echo.
+This resonates with an unheard symphony of the universe, creating a multisensory mathematics that's both refreshing and melodious.`,
         }, {
           id: '2',
           correctness: undefined,
           content_html: `<span data-math="2 \\, \\text{NO}_2 \\to \\, \\text{N}_2\\text{O}_4 + \\text{Silent Whisper}"></span>`,
         }],
       }],
-    }
+    },
   };
 
-  const props2: ExerciseWithStepDataProps = {
-    ...exerciseWithStepDataProps,
+  if (correctAnswerId) {
+    props1.questionStates['1'].is_completed = true;
+    props1.questionStates['1'].correct_answer_feedback_html = props1.exercise.questions[0].answers[0].feedback_html || '';
+  }
+
+  const props2: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps(),
     exercise: {
       ...exerciseWithStepDataProps.exercise,
-      context: '',
-      stimulus_html: `In a universe where equations like <math xmlns="http://www.w3.org/1998/Math/MathML">
+      context: `At the intersection of mathematics and abstract art, there is a realm where equations take on the characteristics of color and flavor. For
+instance, in this dimension, the quadratic formula <span data-math="x = \\frac{{-b \\pm \\sqrt{{b^2-4ac}}}}{{2a}}"></span> might taste like a blend of sweet and
+sour, with the variable <span data-math="a"></span> contributing sweetness, <span data-math="b"></span> sourness, and <span data-math="c"></span> a hint of
+bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps alter the color of the equation, ranging from vibrant blue to fiery red.`,
+      stimulus_html: `In a universe where equations like
+<math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>x</mi>
   <mo>=</mo>
   <mrow class="MJX-TeXAtom-ORD">
@@ -428,12 +460,36 @@ export const MathJax = () => {
           content_html: `<span data-math="\\frac{\\pi}{2} + \\text{Red}"></span>`,
         }],
       }],
+    },
+    questionStates: {
+      ...exerciseWithQuestionStatesProps().questionStates,
+      '1': {
+        ...exerciseWithQuestionStatesProps().questionStates['1'],
+        solution: {
+          content_html: `<span data-math="\\sqrt[3]{\\text{Apple}}"></span>`,
+          solution_type: 'detailed'
+        }
+      },
+      '2': {
+        ...exerciseWithQuestionStatesProps().questionStates['1'],
+        solution: {
+          content_html: `<span data-math="e^{\\text{Blue}}"></span>`,
+          solution_type: 'detailed'
+        }
+      }
     }
   };
 
   return (
     <>
-      <Exercise {...props1} />
+      <Exercise {...props1}
+        onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+          setSelectedAnswerId(a.id)
+        }}
+        onAnswerSave={() => {
+          setCorrectAnswerId(1);
+        }}
+      />
       <Exercise {...props2} />
     </>
   );
