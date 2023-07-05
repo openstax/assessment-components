@@ -389,6 +389,10 @@ This resonates with an unheard symphony of the universe, creating a multisensory
   if (correctAnswerId) {
     props1.questionStates['1'].is_completed = true;
     props1.questionStates['1'].correct_answer_feedback_html = props1.exercise.questions[0].answers[0].feedback_html || '';
+    props1.questionStates['1'].solution = {
+      content_html: `<span data-math="2 \\, \\text{H}_{2(g)} + \\, \\text{O}_{2(g)} \\to 2 \\, \\text{H}_{2}\\text{O}_{(l)}"></span>`,
+      solution_type: 'detailed'
+    };
   }
 
   const props2: ExerciseWithQuestionStatesProps = {
