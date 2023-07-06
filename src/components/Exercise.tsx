@@ -82,11 +82,11 @@ export const Exercise = ({
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
 
-  const typesetExercise = () => {
+  const typesetExercise = React.useCallback(() => {
     if (container.current) {
       typesetMath(container.current);
     }
-  };
+  }, []);
 
   React.useEffect(() => {
     const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
