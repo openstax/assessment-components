@@ -1,5 +1,6 @@
 import React from "react";
 import { useTypesetMath } from "../hooks/useTypesetMath";
+import { typesetMath } from "src/helpers/mathjax";
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 type ComponentType = keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
@@ -20,7 +21,7 @@ export const Content = (<T extends ComponentType | undefined>(
 
   React.useEffect(() => {
     typesetMath();
-  }, [html])
+  }, [typesetMath, html])
 
   if (component !== undefined) {
     return React.cloneElement(component, {html, ...props});
