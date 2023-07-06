@@ -1,6 +1,5 @@
 import React from "react";
 import { useTypesetMath } from "../hooks/useTypesetMath";
-import { typesetMath } from "src/helpers/mathjax";
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 type ComponentType = keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
