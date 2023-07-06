@@ -241,7 +241,7 @@
         "Exercise"
       ],
       "locStart": 340,
-      "locEnd": 440,
+      "locEnd": 500,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
