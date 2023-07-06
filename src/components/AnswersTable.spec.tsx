@@ -3,6 +3,10 @@ import renderer from 'react-test-renderer';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('AnswersTable', () => {
   let props: AnswersTableProps;
 

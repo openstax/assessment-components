@@ -1,6 +1,10 @@
 import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('ExerciseQuestion', () => {
   let props: ExerciseQuestionProps;
 
