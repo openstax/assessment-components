@@ -69,7 +69,7 @@ interface ExerciseIcon {
     /**
      * @default {
      *   desktop: true,
-     *   mobile: false
+     *   mobile: true
      * }
      **/
     header?: ExerciseIconLocation;
