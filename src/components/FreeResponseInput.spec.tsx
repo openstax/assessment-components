@@ -2,6 +2,10 @@ import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 import renderer from 'react-test-renderer';
 import React from 'react';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('Free Response Input', () => {
   let props: FreeResponseProps;
 

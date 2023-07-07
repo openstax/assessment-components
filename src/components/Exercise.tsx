@@ -9,6 +9,7 @@ import { typesetMath } from '../helpers/mathjax';
 import { ExerciseToolbar } from './ExerciseToolbar';
 import { breakpoints } from '../theme';
 import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
+import { TypesetMathContext } from '../hooks/useTypesetMath';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: 1.8rem;
@@ -140,6 +141,12 @@ export const Exercise = ({
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
 
+  const typesetExercise = React.useCallback(() => {
+    if (container.current) {
+      typesetMath(container.current);
+    }
+  }, []);
+
   React.useEffect(() => {
     const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
     if (el) {
@@ -155,7 +162,8 @@ export const Exercise = ({
 
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
 
-  return <TaskStepCardWithToolbar
+  return <TypesetMathContext.Provider value={typesetExercise}>
+    <TaskStepCardWithToolbar
     step={step}
     questionNumber={questionNumber}
     numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
@@ -195,4 +203,5 @@ export const Exercise = ({
       )}
     </div>
   </TaskStepCardWithToolbar>;
+  </TypesetMathContext.Provider>;
 };
