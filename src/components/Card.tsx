@@ -241,7 +241,7 @@ const StepCard = ({
       <InnerStepCard className={className}>
         {questionNumber && isHomework && stepType === 'exercise' &&
           <StepCardHeader>
-            <div className="">
+            <div>
               {leftHeaderChildren}
               <div className="question-info">
                 {headerTitleChildren}
