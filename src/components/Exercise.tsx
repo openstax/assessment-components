@@ -39,7 +39,7 @@ const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProp
   Pick<ExerciseBaseProps, 'exerciseIcons'> & {
     desktopToolbarEnabled: boolean;
   }
-) => <ToolbarWrapper desktopToolbarEnabled>
+) => <ToolbarWrapper desktopToolbarEnabled={props.desktopToolbarEnabled}>
         <ExerciseToolbar icons={props.exerciseIcons} />
     <StyledTaskStepCard {...props} />
   </ToolbarWrapper>;
@@ -153,7 +153,7 @@ export const Exercise = ({
     }
   }, [exercise]);
 
-  const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({location}) => location?.toolbar?.desktop);
+  const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
 
   return <TaskStepCardWithToolbar
     step={step}

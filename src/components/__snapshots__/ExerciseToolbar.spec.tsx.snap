@@ -2,10 +2,10 @@
 
 exports[`ExerciseToolbar conditionally renders icons 2`] = `
 <div
-  className="sc-bczRLJ fXGBwS"
+  className="sc-bczRLJ bQEoKI"
 >
   <a
-    href="openstax"
+    href="https://openstax.org"
     target="_blank"
   >
     <svg
@@ -34,10 +34,10 @@ exports[`ExerciseToolbar conditionally renders icons 2`] = `
 
 exports[`ExerciseToolbar conditionally renders icons 3`] = `
 <div
-  className="sc-bczRLJ fXGBwS"
+  className="sc-bczRLJ bQEoKI"
 >
   <a
-    href="openstax"
+    href="https://openstax.org"
     target="_blank"
   >
     <svg
@@ -66,10 +66,10 @@ exports[`ExerciseToolbar conditionally renders icons 3`] = `
 
 exports[`ExerciseToolbar matches snapshot 1`] = `
 <div
-  className="sc-bczRLJ fXGBwS"
+  className="sc-bczRLJ bQEoKI"
 >
   <a
-    href="openstax.org"
+    href="https://openstax.org"
     target="_blank"
   >
     <svg
@@ -94,7 +94,7 @@ exports[`ExerciseToolbar matches snapshot 1`] = `
     </span>
   </a>
   <a
-    href="openstax.org"
+    href="https://openstax.org"
     target="_blank"
   >
     <svg

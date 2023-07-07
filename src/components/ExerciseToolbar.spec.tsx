@@ -4,7 +4,36 @@ import renderer from 'react-test-renderer';
 describe('ExerciseToolbar', () => {
   it('matches snapshot', () => {
     const instance = renderer.create(
-      <ExerciseToolbar errataUrl='openstax.org' topicUrl='openstax.org' />
+      <ExerciseToolbar
+        icons={{
+          errata: {
+            url: 'https://openstax.org',
+            location: {
+              header: {
+                mobile: true,
+                desktop: true
+              }
+            }
+          },
+          topic: {
+            url: 'https://openstax.org',
+            location: {
+              header: {
+                mobile: true,
+                desktop: true
+              }
+            }
+          },
+          info: {
+            location: {
+              header: {
+                mobile: true,
+                desktop: true
+              }
+            }
+          }
+        }}
+      />
     );
 
     expect(instance.toJSON()).toMatchSnapshot();
@@ -16,11 +45,35 @@ describe('ExerciseToolbar', () => {
     ).toJSON()).toMatchInlineSnapshot(`null`);
 
     expect(renderer.create(
-      <ExerciseToolbar errataUrl='openstax' />
+      <ExerciseToolbar
+        icons={{
+          errata: {
+            url: 'https://openstax.org',
+            location: {
+              header: {
+                mobile: true,
+                desktop: true
+              }
+            }
+          }
+        }}
+      />
     ).toJSON()).toMatchSnapshot();
 
     expect(renderer.create(
-      <ExerciseToolbar topicUrl='openstax' />
+      <ExerciseToolbar
+        icons={{
+          topic: {
+            url: 'https://openstax.org',
+            location: {
+              header: {
+                mobile: true,
+                desktop: true
+              }
+            }
+          }
+        }}
+      />
     ).toJSON()).toMatchSnapshot();
   });
 });

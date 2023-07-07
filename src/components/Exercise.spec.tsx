@@ -233,7 +233,29 @@ describe('Exercise', () => {
 
     it('renders header icons with multiple choice explanation', () => {
       const tree = renderer.create(
-        <Exercise {...props} showExerciseIcons={true} errataUrl='https://openstax.org' topicUrl='https://openstax.org'  />
+        <Exercise
+          {...props}
+          exerciseIcons={{
+            errata: {
+              url: 'https://openstax.org',
+              location: {
+                header: {
+                  mobile: true,
+                  desktop: true
+                }
+              }
+            },
+            topic: {
+              url: 'https://openstax.org',
+              location: {
+                header: {
+                  mobile: true,
+                  desktop: true
+                }
+              }
+            }
+          }}
+        />
       );
       expect(tree.toJSON()).toMatchSnapshot();
     });
@@ -241,7 +263,37 @@ describe('Exercise', () => {
     it('renders header icons with two-step explanation', () => {
       props.exercise.questions[0].formats.push('free-response');
       const tree = renderer.create(
-        <Exercise {...props} showExerciseIcons={true}  />
+        <Exercise
+          {...props}
+          exerciseIcons={{
+            errata: {
+              url: 'https://openstax.org',
+              location: {
+                header: {
+                  mobile: true,
+                  desktop: true
+                }
+              }
+            },
+            topic: {
+              url: 'https://openstax.org',
+              location: {
+                header: {
+                  mobile: true,
+                  desktop: true
+                }
+              }
+            },
+            info: {
+              location: {
+                header: {
+                  mobile: true,
+                  desktop: true
+                }
+              }
+            }
+          }}
+        />
       );
       expect(tree.toJSON()).toMatchSnapshot();
     });

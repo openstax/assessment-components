@@ -5,7 +5,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
   className="sc-hKMtZM gYevhA"
 >
   <a
-    className="sc-bczRLJ cGXCKY"
+    className="sc-bczRLJ kQJjcU"
     href="https://openstax.org"
     target="_blank"
   >
@@ -44,7 +44,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
     </div>
   </a>
   <a
-    className="sc-bczRLJ cGXCKY"
+    className="sc-bczRLJ kQJjcU"
     href="https://openstax.org"
     target="_blank"
   >
@@ -83,7 +83,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
     </div>
   </a>
   <div
-    className="sc-bczRLJ cGXCKY"
+    className="sc-bczRLJ kQJjcU"
   >
     <div
       className="sc-gsnTZi fxSdQu"

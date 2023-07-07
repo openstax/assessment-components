@@ -465,8 +465,17 @@ export const Toolbar = () => {
     <>
       <Exercise
         {...exerciseWithQuestionStatesProps()}
-        errataUrl='openstax.org'
-        topicUrl='openstax.org'
+        exerciseIcons={{
+          errata: {
+            url: 'openstax.org',
+            location: {
+              toolbar: {
+                mobile: true,
+                desktop: false
+              }
+            }
+          }
+        }}
       />
     </>)
 };

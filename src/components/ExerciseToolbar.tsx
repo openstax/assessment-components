@@ -103,8 +103,8 @@ export const ExerciseToolbar = ({ icons }: { icons?: ExerciseIcons }) => {
     return null;
   }
   const settings = Object.values(icons);
-  const mobile = settings.some(({location}) => location?.toolbar?.mobile ?? true);
-  const desktop = settings.some(({location}) => location?.toolbar?.desktop ?? true);
+  const mobile = settings.some(({ location }) => location?.toolbar?.mobile ?? true);
+  const desktop = settings.some(({ location }) => location?.toolbar?.desktop ?? true);
   const topicUrl = icons.topic?.url;
   const errataUrl = icons.errata?.url;
 
