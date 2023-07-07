@@ -40,7 +40,7 @@ const StepCardHeader = styled.div`
   letter-spacing: -0.72px;
 
   div.question-info {
-     display: flex;
+    display: flex;
     align-items: baseline;
     font-weight: bold;
 
