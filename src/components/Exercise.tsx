@@ -84,7 +84,8 @@ interface ExerciseIcon {
 }
 
 export interface ExerciseIcons {
-  /** An object containing a URL for the errata form for this exercise and settings for rendering the icon. */  errata?: ExerciseIcon & { url: string };
+  /** An object containing a URL for the errata form for this exercise and settings for rendering the icon. */
+  errata?: ExerciseIcon & { url: string };
   /** An object containing a URL for textbook content relevant to the exercise and settings for rendering the icon. */
   topic?: ExerciseIcon & { url: string };
   /** An object of settings for rendering the info icon that describes the exercise type (multiple-choice, two-step, etc.) */
