@@ -10,11 +10,11 @@ export const InnerStepCard = styled.div`
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 400px;
-  border-radius: 0.25rem;
   margin: 0 auto 5rem auto;
   border: 1px solid ${colors.palette.light};
   border-radius: 0.25rem;
   background-color: white;
+  overflow: hidden;
 
   ${breakpoints.desktop`
     max-width: 1000px;

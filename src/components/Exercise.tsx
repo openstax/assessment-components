@@ -2,11 +2,11 @@ import React from 'react';
 import scrollToElement from 'scroll-to-element';
 import styled, { css } from 'styled-components';
 import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
-import { TaskStepCard, TaskStepCardProps } from './Card';
+import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from './Card';
 import { Content } from './Content';
 import { ExerciseQuestion } from './ExerciseQuestion';
 import { typesetMath } from '../helpers/mathjax';
-import { ExerciseToolbar } from './ExerciseToolbar';
+import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
 import { breakpoints } from '../theme';
 import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
 import { TypesetMathContext } from '../hooks/useTypesetMath';
@@ -16,7 +16,10 @@ const StyledTaskStepCard = styled(TaskStepCard)`
   line-height: 2.8rem;
 `;
 
-const ToolbarWrapper = styled.div<{ desktopToolbarEnabled: boolean }>`
+const ToolbarWrapper = styled.div<{
+  desktopToolbarEnabled: boolean;
+  mobileToolbarEnabled: boolean;
+}>`
   ${props => props.desktopToolbarEnabled && css`
     ${breakpoints.desktop`
       ${StyledTaskStepCard} {
@@ -34,13 +37,26 @@ const ToolbarWrapper = styled.div<{ desktopToolbarEnabled: boolean }>`
       }
     `}
   `}
+
+  ${props => props.mobileToolbarEnabled && css`
+    ${breakpoints.mobile`
+      ${StyledToolbar} + ${OuterStepCard} ${InnerStepCard} {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    `}
+  `}
 `;
 
 const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProps> &
   Pick<ExerciseBaseProps, 'exerciseIcons'> & {
     desktopToolbarEnabled: boolean;
+    mobileToolbarEnabled: boolean;
   }
-) => <ToolbarWrapper desktopToolbarEnabled={props.desktopToolbarEnabled}>
+) => <ToolbarWrapper
+       desktopToolbarEnabled={props.desktopToolbarEnabled}
+       mobileToolbarEnabled={props.mobileToolbarEnabled}
+     >
         <ExerciseToolbar icons={props.exerciseIcons} />
     <StyledTaskStepCard {...props} />
   </ToolbarWrapper>;
@@ -162,6 +178,7 @@ export const Exercise = ({
   }, [exercise]);
 
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
+  const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
   return <TypesetMathContext.Provider value={typesetExercise}>
     <TaskStepCardWithToolbar
@@ -171,6 +188,7 @@ export const Exercise = ({
     rightHeaderChildren={exerciseIcons ? <ExerciseHeaderIcons exercise={exercise} icons={exerciseIcons} /> : null}
     showTotalQuestions={legacyStepRender}
     desktopToolbarEnabled={desktopToolbarEnabled}
+    mobileToolbarEnabled={mobileToolbarEnabled}
     {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
   >
     <div ref={container}>

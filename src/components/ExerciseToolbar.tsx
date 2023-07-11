@@ -1,10 +1,10 @@
 import { colors, layouts, breakpoints } from "../../src/theme";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookOpen, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faBookOpen, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { ExerciseIcons } from "./Exercise";
 
-const StyledToolbar = styled.div<{
+export const StyledToolbar = styled.div<{
   mobile: boolean;
   desktop: boolean;
 }>`
@@ -72,7 +72,10 @@ const StyledToolbar = styled.div<{
     display: flex;
     flex-direction: row;
     margin: 0;
-    border-bottom: 0;
+
+    &:not(:last-child) {
+      border-bottom: 0;
+    }
 
     > * {
       flex-direction: column;
@@ -114,7 +117,7 @@ export const ExerciseToolbar = ({ icons }: { icons?: ExerciseIcons }) => {
       <span>View topic in textbook</span>
     </a> : null}
     {errataUrl ? <a href={errataUrl} target="_blank">
-      <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon>
+      <FontAwesomeIcon icon={faTriangleExclamation}></FontAwesomeIcon>
       <span>Suggest a correction</span>
     </a> : null}
   </StyledToolbar>
