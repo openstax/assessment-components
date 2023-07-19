@@ -171,12 +171,6 @@ export const Exercise = ({
     }
   }, [scrollToQuestion, exercise]);
 
-  React.useEffect(() => {
-    if (container.current) {
-      typesetMath(container.current);
-    }
-  }, [exercise]);
-
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
