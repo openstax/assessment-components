@@ -2,6 +2,10 @@ import { Answer, AnswerProps } from './Answer';
 import renderer, { act } from 'react-test-renderer';
 import { answerContent } from '../test/fixtures';
 
+jest.mock('../hooks/useTypesetMath', () => ({
+  useTypesetMath: () => jest.fn(),
+}));
+
 describe('Answer', () => {
   let props: AnswerProps;
 
