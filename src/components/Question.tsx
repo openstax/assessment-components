@@ -84,22 +84,21 @@ const StyledQuestion = styled.div`
           background-color: ${colors.palette.neutralLightest};
         }
       }
+      &.answer-checked {
+        font-weight: bold;
+      }
       ${mixins.answer()};
     }
 
     .answer-answer {
       flex: 1;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
       margin-left: ${layouts.answer.horizontalSpacing};
       * {
         margin: 0;
       }
-    }
-
-    .answers-answer.answer-correct .answer-answer {
-      align-items: flex-start;
-      margin-top: calc((${layouts.answer.bubbleSize} / 2) - 1rem);
     }
 
     .answer-letter {
@@ -112,17 +111,18 @@ const StyledQuestion = styled.div`
     }
 
     .answer-label {
-      font-weight: normal;
       width: 100%;
       padding: ${layouts.answer.verticalSpacing} 0 0 0;
       margin: 0;
-
       transition: color ${transitions.answer};
+      display: flex;
     }
 
     // a selectable answer
     .answer-input-box:not([disabled]) ~ .answer-label {
-      cursor: pointer;
+      &, .answer-letter {
+        cursor: pointer;
+      }
 
       &:hover {
         ${mixins.answerHover()}
@@ -142,8 +142,8 @@ const StyledQuestion = styled.div`
         }
       }
 
-      .answer-checked{
-        .answer-label {
+      .answer-checked {
+        .answer-label, .answer-label:hover {
           ${mixins.answerChecked()};
         }
       }
@@ -160,7 +160,7 @@ const StyledQuestion = styled.div`
 
         &.answer-correct {
           .answer-label {
-            ${mixins.answerCorrect()};
+            ${mixins.answerCorrect(true)};
           }
         }
       }
@@ -175,7 +175,7 @@ const StyledQuestion = styled.div`
     &.has-incorrect-answer {
       .answer-incorrect, .answer-checked.answer-incorrect {
         .answer-label {
-          ${mixins.answerIncorrect()}
+          ${mixins.answerIncorrect(true)}
         }
       }
     }

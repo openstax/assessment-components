@@ -38,21 +38,12 @@ const palette = {
 export const colors = {
   palette: palette,
   answer: {
-    color: palette.lightBlue,
-    correct: {
-      color: palette.green,
-      background: "#77af42",
-    },
-    incorrect: {
-      color: palette.red,
-      background: palette.red,
-    },
-    checked: palette.lightBlue,
-    hover: palette.neutralDark,
-    label: {
-      color: palette.neutral,
-      colorHover: palette.neutralDark,
-      colorSelected: palette.lightBlue,
+    letter: {
+      neutral: palette.neutralThin,
+      hover: '#026AA1',
+      checked: '#026AA1',
+      correct: '#0D7741',
+      incorrect: '#C22032'
     },
   },
   popover: {
@@ -73,8 +64,8 @@ export const colors = {
     backgroundActive: "#C5400B"
   },
   freeResponse: {
-    color: palette.neutralDark,
-    background: palette.neutralLighter,
+    color: palette.neutralDarker,
+    background:palette.neutralLighter,
   },
 };
 
@@ -141,10 +132,10 @@ export const transitions = {
 
 export const mixins = {
   answer: () => css`
-    .answer-label {
+    .answer-letter {
       display: flex;
     }
-    color: ${colors.answer.label.color};
+    color: ${palette.neutralDarker};
     .answer-letter {
       width: ${layouts.answer.bubbleSize};
       height: ${layouts.answer.bubbleSize};
@@ -154,64 +145,37 @@ export const mixins = {
       border-width: 2px;
       border-style: solid;
       border-color: #c6c6c6;
-      color: ${colors.answer.label.colorHover};
+      color: ${colors.answer.letter.neutral};
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
       font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
     }
   `,
-  answerColor: (values: { color: string, background: string }) => css`
-    color: ${values.color};
+  answerColor: (
+    color: string, invertBubble: boolean = false
+  ) => css`
     .answer-letter {
-       border-color: ${values.color};
-       background-color: ${values.background};
-       color: ${colors.palette.white};
+      color: ${invertBubble ? '#fff' : color};
+      border-color: ${color};
+      ${invertBubble ? `background-color: ${color};` : null}
+
     }
   `,
-  answerChecked: () => mixins.answerColor({ color: colors.answer.checked, background: colors.answer.checked }),
-  answerCorrect: () => mixins.answerColor(colors.answer.correct),
-  answerIncorrect: () => mixins.answerColor(colors.answer.incorrect),
+  answerChecked: () => mixins.answerColor(colors.answer.letter.checked, true),
+  answerCorrect: (checked?: boolean) => mixins.answerColor(colors.answer.letter.correct, checked),
+  answerIncorrect: (checked?: boolean) => mixins.answerColor(colors.answer.letter.incorrect, checked),
   answerHover: () => css`
-    color: ${colors.answer.label.colorHover};
-    .answer-letter {
-      border-color: ${colors.answer.label.colorSelected};
-    }
-  `,
-  answerCorrectText: () => css`
-    content: 'correct answer';
-    color: ${colors.answer.label.color};
-    margin-left: calc(-1.34 * ${layouts.answer.bubbleSize});
-    display: flex;
-    align-items: center;
-    height: ${layouts.answer.bubbleSize};
-    width: 4.8rem;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    ${mixins.answerColor(colors.answer.letter.hover)};
+    font-weight: bold;
   `,
   answerCorrectAnswer: () => css`
-    color: ${colors.answer.correct.color};
-    .answer-letter {
-      border-color: ${colors.answer.correct.color};
-      color: ${colors.answer.correct.color};
-    }
-    &::before {
-     ${mixins.answerCorrectText()}
-      @media screen and (max-width: ${BREAKPOINTS.tablet}px) {
-        display: none;
-      }
-    }
-    @media screen and (max-width:  ${BREAKPOINTS.tablet}px) {
-      .answer-letter-wrapper {
-        display: flex;
-        flex-direction: column;
-        &::after {
-          ${mixins.answerCorrectText()}
-          width: ${layouts.answer.bubbleSize} !important;
-          margin-left: -0.1rem;
-        }
-      }
-    }
+    ${mixins.answerColor(colors.answer.letter.correct, false)}
+    // @media screen and (max-width:  ${BREAKPOINTS.tablet}px) {
+    //   .answer-letter-wrapper {
+    //     display: flex;
+    //     flex-direction: column;
+    //   }
+    // }
   `,
   resetText: () => css`
     font-family:  "Neue Helvetica W01", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -251,7 +215,7 @@ export const mixins = {
     max-width: ${layouts.popover.maxWidth};
     margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    color: ${colors.palette.neutralThin};
+    color: ${colors.palette.neutralThin}; // TODO
     font-size: 1.4rem;
 
     .arrow {

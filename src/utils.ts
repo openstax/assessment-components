@@ -1,6 +1,6 @@
 import { Answer, ChosenAnswer, ID } from '../src/types';
 
-export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+export const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const MAX_CORRECTNESS = '1.0';
 

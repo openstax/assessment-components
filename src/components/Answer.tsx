@@ -4,6 +4,29 @@ import { ALPHABET, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from '.
 import { Answer as AnswerType, ChosenAnswer, ID } from '../types';
 import { Content } from './Content';
 import { SimpleFeedback } from './Feedback';
+import styled from 'styled-components';
+import { colors } from '../theme';
+
+const StyledAnswerIndicator = styled.div<{ state: boolean }>`
+  color: ${props => props.state ? colors.answer.letter.correct : colors.answer.letter.incorrect};
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+`;
+
+const AnswerIndicator = (
+  { isCorrect, isIncorrect }: { isCorrect?: boolean; isIncorrect?: boolean }
+) => {
+  if (!isCorrect && !isIncorrect) {
+    return null;
+  }
+  const state = isCorrect || isIncorrect === false;
+
+  return <StyledAnswerIndicator state={state}>
+    {state ? 'Correct' : 'Incorrect'} Answer
+  </StyledAnswerIndicator>
+};
+
 
 export interface AnswerProps {
   answer: AnswerType;
@@ -154,6 +177,7 @@ export const Answer = (props: AnswerProps) => {
             </button>
           </span>
           <div className="answer-answer">
+            <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
             <Content className="answer-content" component={contentRenderer} html={answer.content_html} />
             {feedback}
           </div>
