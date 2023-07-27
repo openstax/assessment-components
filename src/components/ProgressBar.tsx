@@ -96,11 +96,11 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
   }
 
   const variantData = {
-    'isCorrect': {
+    isCorrect: {
       icon: faCheck,
       color: colors.answer.correct,
     },
-    'isIncorrect': {
+    isIncorrect: {
       icon: faXmark,
       color: colors.answer.incorrect,
     },
