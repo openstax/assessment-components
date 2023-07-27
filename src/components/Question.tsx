@@ -119,9 +119,7 @@ const StyledQuestion = styled.div`
 
     // a selectable answer
     .answer-input-box:not([disabled]) ~ .answer-label {
-      &, .answer-letter {
-        cursor: pointer;
-      }
+      cursor: pointer;
 
       &:hover {
         ${mixins.answerHover()}

@@ -79,7 +79,7 @@ export const Answer = (props: AnswerProps) => {
   );
 
   const isVisuallyChecked = chosenAnswer.every(i => i === undefined) &&
-    (incorrectAnswerId === 0 && isCorrect || isIncorrect);
+    (!incorrectAnswerId && isCorrect || isIncorrect);
 
   const classes = cn('answers-answer', {
     'disabled': disabled,
