@@ -84,7 +84,7 @@ const StyledQuestion = styled.div`
           background-color: ${colors.palette.neutralLightest};
         }
       }
-      &.answer-checked {
+      &.answer-selected {
         font-weight: bold;
       }
       ${mixins.answer()};
@@ -139,7 +139,7 @@ const StyledQuestion = styled.div`
         }
       }
 
-      .answer-checked {
+      .answer-selected {
         .answer-label, .answer-label:hover {
           ${mixins.answerChecked()};
         }
@@ -148,7 +148,7 @@ const StyledQuestion = styled.div`
 
     // answer that has been checked
     &.has-correct-answer {
-      .answer-checked {
+      .answer-selected {
         &:not(.answer-correct) {
           .answer-label {
             ${mixins.answerIncorrect()};
@@ -162,7 +162,7 @@ const StyledQuestion = styled.div`
         }
       }
 
-      .answer-correct:not(.answer-checked) {
+      .answer-correct:not(.answer-selected) {
         .answer-label {
           ${mixins.answerCorrectAnswer()}
         }
@@ -174,7 +174,7 @@ const StyledQuestion = styled.div`
         .answer-label, .answer-label:hover {
           ${mixins.answerIncorrect()}
         }
-        &.answer-checked.answer-incorrect {
+        &.answer-selected.answer-incorrect {
           ${mixins.answerIncorrect(true)}
         }
       }
