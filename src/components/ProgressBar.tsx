@@ -77,7 +77,6 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   }
 `;
 
-
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   background: ${props => props.color};
   color: #fff;
