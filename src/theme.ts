@@ -130,7 +130,7 @@ export const transitions = {
 
 export const mixins = {
   answer: () => css`
-    .answer-letter {
+    .answer-label {
       display: flex;
     }
     color: ${palette.neutralDarker};
@@ -150,9 +150,9 @@ export const mixins = {
     }
   `,
   answerColor: (
-    color: string, invertBubble: boolean = false
+    color: string, invertBubble = false
   ) => css`
-    .answer-letter {
+    .answer-letter, &:hover .answer-letter {
       color: ${invertBubble ? '#fff' : color};
       border-color: ${color};
       ${invertBubble ? `background-color: ${color};` : null}
@@ -204,7 +204,7 @@ export const mixins = {
     max-width: ${layouts.popover.maxWidth};
     margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-    color: ${colors.palette.neutralThin}; // TODO
+    color: ${colors.palette.neutralThin};
     font-size: 1.4rem;
 
     .arrow {

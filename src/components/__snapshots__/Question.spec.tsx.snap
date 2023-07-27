@@ -2,7 +2,7 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -42,13 +42,13 @@ exports[`Question defaults QuestionHtml html 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -90,13 +90,13 @@ exports[`Question defaults QuestionHtml html 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -120,7 +120,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -160,13 +160,13 @@ exports[`Question defaults collaborator_solutions 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -208,13 +208,13 @@ exports[`Question defaults collaborator_solutions 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -238,7 +238,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -278,13 +278,13 @@ exports[`Question defaults formats 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -326,13 +326,13 @@ exports[`Question defaults formats 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -365,7 +365,7 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -405,13 +405,13 @@ exports[`Question matches snapshot 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -453,13 +453,13 @@ exports[`Question matches snapshot 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -483,7 +483,7 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -523,13 +523,13 @@ exports[`Question renders exercise uid 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -571,13 +571,13 @@ exports[`Question renders exercise uid 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -606,7 +606,7 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -646,13 +646,13 @@ exports[`Question renders formats 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -694,13 +694,13 @@ exports[`Question renders formats 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div
@@ -736,7 +736,7 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-bczRLJ jqMCQk openstax-question"
+  className="sc-gsnTZi dJZqLB openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -776,13 +776,13 @@ exports[`Question renders solutions 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice a:"
+              aria-label="Choice A:"
               className="answer-letter"
-              data-test-id="answer-choice-a"
+              data-test-id="answer-choice-A"
               disabled={true}
               onClick={[Function]}
             >
-              a
+              A
             </button>
           </span>
           <div
@@ -824,13 +824,13 @@ exports[`Question renders solutions 1`] = `
             className="answer-letter-wrapper"
           >
             <button
-              aria-label="Choice b:"
+              aria-label="Choice B:"
               className="answer-letter"
-              data-test-id="answer-choice-b"
+              data-test-id="answer-choice-B"
               disabled={true}
               onClick={[Function]}
             >
-              b
+              B
             </button>
           </span>
           <div

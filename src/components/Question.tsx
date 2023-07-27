@@ -115,7 +115,6 @@ const StyledQuestion = styled.div`
       padding: ${layouts.answer.verticalSpacing} 0 0 0;
       margin: 0;
       transition: color ${transitions.answer};
-      display: flex;
     }
 
     // a selectable answer
