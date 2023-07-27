@@ -66,22 +66,7 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   ${props => handleVariant(props.variant)}
 `;
 
-export interface ProgressBarProps<S extends {variant: ProgressBarItemVariant}> {
-  steps: S[];
-  activeIndex: number | null;
-  goToStep: (index: number, step: S) => void;
-}
-
-export interface ProgressBarItemProps<S> {
-  index: number;
-  isActive: boolean;
-  step: S;
-  goToStep: (index: number, step: S) => void;
-}
-
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | null;
-
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{ color: string }>`
+const StyledFontAwesomeIcon = styled(({ color, isActive, ...props }) => <FontAwesomeIcon {...props} />)`
   background: ${props => props.color};
   color: #fff;
   position: absolute;
@@ -92,9 +77,13 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)<{ color: string }>`
   padding: 0.1rem;
   font-size: 1.2rem;
   border-radius: 50%;
+  ${props => props.isActive ? css`
+    bottom: 0;
+    right: 0;
+  ` : null};
 `;
 
-const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
+const ItemIcon = ({ variant, isActive }: { variant: ProgressBarItemVariant, isActive: boolean }) => {
   if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect') {
     return null;
   }
@@ -110,15 +99,36 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
     },
   }[variant];
 
-  return <StyledFontAwesomeIcon icon={variantData.icon} color={variantData.color} height='16px' width='16px' />;
+  return <StyledFontAwesomeIcon
+    icon={variantData.icon}
+    color={variantData.color}
+    height='16px'
+    width='16px'
+    isActive={isActive}
+  />;
 }
+
+export interface ProgressBarProps<S extends {variant: ProgressBarItemVariant}> {
+  steps: S[];
+  activeIndex: number | null;
+  goToStep: (index: number, step: S) => void;
+}
+
+export interface ProgressBarItemProps<S> {
+  index: number;
+  isActive: boolean;
+  step: S;
+  goToStep: (index: number, step: S) => void;
+}
+
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | null;
 
 export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>
     <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
-    <ItemIcon variant={step.variant} />
+    <ItemIcon variant={step.variant} isActive={isActive} />
   </StyledItemWrapper>;
 
 export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
