@@ -64,14 +64,21 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   font-weight: bold;
   cursor: pointer;
   color: ${colors.palette.neutralDarker};
-  ${props => props.isActive ? shadowCss : null}
+  ${props => props.isActive ? css`
+    ${shadowCss}
+    & + [data-icon] {
+      bottom: 0;
+      right: 0;
+    }
+  ` : null}
   ${props => handleVariant(props.variant)}
   &:hover {
     ${shadowCss}
   }
 `;
 
-const StyledFontAwesomeIcon = styled(({ color, isActive, ...rest }) => <FontAwesomeIcon {...rest} />)`
+
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   background: ${props => props.color};
   color: #fff;
   position: absolute;
@@ -82,13 +89,9 @@ const StyledFontAwesomeIcon = styled(({ color, isActive, ...rest }) => <FontAwes
   padding: 0.1rem;
   font-size: 1.2rem;
   border-radius: 50%;
-  ${props => props.isActive ? css`
-    bottom: 0;
-    right: 0;
-  ` : null};
 `;
 
-const ItemIcon = ({ variant, isActive }: { variant: ProgressBarItemVariant, isActive: boolean }) => {
+const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
   if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect') {
     return null;
   }
@@ -109,7 +112,6 @@ const ItemIcon = ({ variant, isActive }: { variant: ProgressBarItemVariant, isAc
     color={variantData.color}
     height='16px'
     width='16px'
-    isActive={isActive}
   />;
 }
 
