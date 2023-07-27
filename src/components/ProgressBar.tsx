@@ -135,7 +135,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({in
     <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
-    <ItemIcon variant={step.variant} isActive={isActive} />
+    <ItemIcon variant={step.variant} />
   </StyledItemWrapper>;
 
 export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
