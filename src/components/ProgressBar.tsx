@@ -49,6 +49,8 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
   }
 };
 
+const shadowCss = 'box-shadow: 0px 1px 4px 0px #00000066;';
+
 export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isActive: boolean }>`
   display: flex;
   justify-content: center;
@@ -62,11 +64,14 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   font-weight: bold;
   cursor: pointer;
   color: ${colors.palette.neutralDarker};
-  ${props => props.isActive ? 'box-shadow: 0px 1px 4px 0px #00000066;' : null}
+  ${props => props.isActive ? shadowCss : null}
   ${props => handleVariant(props.variant)}
+  &:hover {
+    ${shadowCss}
+  }
 `;
 
-const StyledFontAwesomeIcon = styled(({ color, isActive, ...props }) => <FontAwesomeIcon {...props} />)`
+const StyledFontAwesomeIcon = styled(({ color, isActive, ...rest }) => <FontAwesomeIcon {...rest} />)`
   background: ${props => props.color};
   color: #fff;
   position: absolute;

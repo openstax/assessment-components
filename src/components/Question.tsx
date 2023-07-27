@@ -172,8 +172,11 @@ const StyledQuestion = styled.div`
     }
 
     &.has-incorrect-answer {
-      .answer-incorrect, .answer-checked.answer-incorrect {
+      .answer-incorrect {
         .answer-label, .answer-label:hover {
+          ${mixins.answerIncorrect()}
+        }
+        &.answer-checked.answer-incorrect {
           ${mixins.answerIncorrect(true)}
         }
       }

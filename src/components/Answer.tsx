@@ -78,9 +78,12 @@ export const Answer = (props: AnswerProps) => {
     </div>
   );
 
+  const isVisuallyChecked = chosenAnswer.every(i => i === undefined) &&
+    (incorrectAnswerId === 0 && isCorrect || isIncorrect);
+
   const classes = cn('answers-answer', {
     'disabled': disabled,
-    'answer-checked': isChecked,
+    'answer-checked': isChecked || isVisuallyChecked,
     'answer-correct': isCorrect && type !== 'student-mpp',
     'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId),
   });

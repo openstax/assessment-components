@@ -8,7 +8,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf idpXEC"
+      className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
       1
@@ -37,7 +37,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf kcvJBN"
+      className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
       2
@@ -66,7 +66,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf kHAvxU"
+      className="sc-dkzDqf gUUpTo"
       onClick={[Function]}
     >
       3
@@ -95,7 +95,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       4
@@ -105,7 +105,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       5
@@ -115,7 +115,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       6
@@ -125,7 +125,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       <svg
@@ -153,7 +153,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf idpXEC"
+      className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
       1
@@ -182,7 +182,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf kcvJBN"
+      className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
       2
@@ -211,7 +211,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf idpXEC"
+      className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
       3
@@ -240,7 +240,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf fOqAxn"
+      className="sc-dkzDqf hyCUkj"
       onClick={[Function]}
     >
       4
@@ -250,7 +250,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       5
@@ -260,7 +260,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       6
@@ -270,7 +270,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       <svg
@@ -298,7 +298,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf idpXEC"
+      className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
       1
@@ -327,7 +327,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf kcvJBN"
+      className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
       2
@@ -356,7 +356,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf idpXEC"
+      className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
       3
@@ -385,7 +385,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       4
@@ -395,7 +395,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       5
@@ -405,7 +405,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf borMDZ"
+      className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
       6
@@ -415,7 +415,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
-      className="sc-dkzDqf fOqAxn"
+      className="sc-dkzDqf hyCUkj"
       onClick={[Function]}
     >
       <svg

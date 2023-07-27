@@ -70,7 +70,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-kDDrLX ilflf openstax-question step-card-body"
+            className="sc-kDDrLX frwtTu openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -276,7 +276,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-kDDrLX ilflf openstax-question step-card-body"
+            className="sc-kDDrLX frwtTu openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -603,7 +603,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-kDDrLX ilflf openstax-question step-card-body"
+            className="sc-kDDrLX frwtTu openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -890,7 +890,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-kDDrLX ilflf openstax-question step-card-body"
+            className="sc-kDDrLX frwtTu openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -1096,7 +1096,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-kDDrLX ilflf openstax-question step-card-body"
+            className="sc-kDDrLX frwtTu openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
