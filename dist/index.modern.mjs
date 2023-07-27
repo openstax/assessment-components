@@ -18,7 +18,7 @@ import{jsx as e,jsxs as t,Fragment as r}from"react/jsx-runtime.js";import n from
       font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
     }
   `),B.neutralDarker,"3.6rem","3.6rem","3.6rem","3.6rem","3.6rem",F.answer.neutral,"0.1s ease-in-out","0.1s ease-in-out","0.1s ease-in-out",F.palette.white),answerColor:(e,t=!1)=>s(j||(j=V`
-    .answer-letter, &:hover .answer-letter {
+    .answer-letter {
       color: ${0};
       border-color: ${0};
       ${0}
@@ -502,7 +502,7 @@ import{jsx as e,jsxs as t,Fragment as r}from"react/jsx-runtime.js";import n from
 
     &.has-incorrect-answer {
       .answer-incorrect, .answer-checked.answer-incorrect {
-        .answer-label {
+        .answer-label, .answer-label:hover {
           ${0}
         }
       }
