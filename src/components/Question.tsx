@@ -173,7 +173,7 @@ const StyledQuestion = styled.div`
 
     &.has-incorrect-answer {
       .answer-incorrect, .answer-checked.answer-incorrect {
-        .answer-label {
+        .answer-label, .answer-label:hover {
           ${mixins.answerIncorrect(true)}
         }
       }

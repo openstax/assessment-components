@@ -152,7 +152,7 @@ export const mixins = {
   answerColor: (
     color: string, invertBubble = false
   ) => css`
-    .answer-letter, &:hover .answer-letter {
+    .answer-letter {
       color: ${invertBubble ? '#fff' : color};
       border-color: ${color};
       ${invertBubble ? `background-color: ${color};` : null}
