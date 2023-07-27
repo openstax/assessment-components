@@ -38,13 +38,11 @@ const palette = {
 export const colors = {
   palette: palette,
   answer: {
-    letter: {
-      neutral: palette.neutralThin,
-      hover: '#026AA1',
-      checked: '#026AA1',
-      correct: '#0D7741',
-      incorrect: '#C22032'
-    },
+    neutral: palette.neutralThin,
+    hover: '#026AA1',
+    checked: '#026AA1',
+    correct: '#0D7741',
+    incorrect: '#C22032'
   },
   popover: {
     arrowOuterColor: "rgba(0, 0, 0, 0.25)",
@@ -145,7 +143,7 @@ export const mixins = {
       border-width: 2px;
       border-style: solid;
       border-color: #c6c6c6;
-      color: ${colors.answer.letter.neutral};
+      color: ${colors.answer.neutral};
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
       font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
@@ -158,25 +156,16 @@ export const mixins = {
       color: ${invertBubble ? '#fff' : color};
       border-color: ${color};
       ${invertBubble ? `background-color: ${color};` : null}
-
     }
   `,
-  answerChecked: () => mixins.answerColor(colors.answer.letter.checked, true),
-  answerCorrect: (checked?: boolean) => mixins.answerColor(colors.answer.letter.correct, checked),
-  answerIncorrect: (checked?: boolean) => mixins.answerColor(colors.answer.letter.incorrect, checked),
+  answerChecked: () => mixins.answerColor(colors.answer.checked, true),
+  answerCorrect: (checked?: boolean) => mixins.answerColor(colors.answer.correct, checked),
+  answerIncorrect: (checked?: boolean) => mixins.answerColor(colors.answer.incorrect, checked),
   answerHover: () => css`
-    ${mixins.answerColor(colors.answer.letter.hover)};
+    ${mixins.answerColor(colors.answer.hover)};
     font-weight: bold;
   `,
-  answerCorrectAnswer: () => css`
-    ${mixins.answerColor(colors.answer.letter.correct, false)}
-    // @media screen and (max-width:  ${BREAKPOINTS.tablet}px) {
-    //   .answer-letter-wrapper {
-    //     display: flex;
-    //     flex-direction: column;
-    //   }
-    // }
-  `,
+  answerCorrectAnswer: () => mixins.answerColor(colors.answer.correct, false),
   resetText: () => css`
     font-family:  "Neue Helvetica W01", Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
