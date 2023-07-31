@@ -26,7 +26,7 @@ describe('Answer', () => {
       onKeyPress: () => jest.fn(),
       qid: 1,
       hasCorrectAnswer: false,
-      chosenAnswer: [''],
+      answerId: '',
       correctAnswerId: 2,
       incorrectAnswerId: 0,
       answered_count: 10,
@@ -83,7 +83,7 @@ describe('Answer', () => {
 
   it('renders a checked answer', () => {
     const tree = renderer.create(
-      <Answer {...props} chosenAnswer={[props.answer.id]} />
+      <Answer {...props} answerId={props.answer.id} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });

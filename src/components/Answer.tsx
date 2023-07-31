@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { ReactNode } from 'react';
 import { ALPHABET, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from '../utils';
-import { Answer as AnswerType, ChosenAnswer, ID } from '../types';
+import { Answer as AnswerType, ID } from '../types';
 import { Content } from './Content';
 import { SimpleFeedback } from './Feedback';
 import styled from 'styled-components';
@@ -27,7 +27,6 @@ const AnswerIndicator = (
   </StyledAnswerIndicator>
 };
 
-
 export interface AnswerProps {
   answer: AnswerType;
   iter: number;
@@ -36,7 +35,7 @@ export interface AnswerProps {
   hasCorrectAnswer?: boolean;
   onChangeAnswer?: (answer: AnswerType) => void;
   disabled: boolean;
-  chosenAnswer: ChosenAnswer;
+  answerId?: ID;
   correctAnswerId?: ID | null;
   incorrectAnswerId?: ID;
   onKeyPress?: () => void;
@@ -56,7 +55,7 @@ export const Answer = (props: AnswerProps) => {
     disabled,
     onKeyPress,
     qid,
-    chosenAnswer,
+    answerId,
     correctAnswerId,
     incorrectAnswerId,
     hasCorrectAnswer,
@@ -68,19 +67,16 @@ export const Answer = (props: AnswerProps) => {
 
   let body, feedback, selectedCount;
 
-  const isChecked = isAnswerChecked(answer, chosenAnswer);
+  const isChecked = isAnswerChecked(answer, answerId);
   const isCorrect = isAnswerCorrect(answer, correctAnswerId);
   const isIncorrect = isAnswerIncorrect(answer, incorrectAnswerId);
-  // When rendering a previous response, we can determine if this answer is it, because:
+  // When rendering a previous response, we can determine if it was this answer.
   // If there is no incorrectAnswerId, that means only a correct answer is present, check isCorrect.
   // If an incorrectAnswerId is present (there is only ever one, if multiple attempts are enabled,
   // it is the latest one) checking isIncorrect works because incorrectAnswerId is only set for
   // a missed attempt, meaning if an attempt is missed and then successfully re-attempted,
   // incorrectAnswerId will be empty.
-  // TODO: chosenAnswer being an array containing only the lastest selection is unnecessary and should
-  // be refactored to become the value itself.
-  const isPreviousResponse = chosenAnswer.every(i => i === undefined) &&
-    (!incorrectAnswerId && isCorrect || isIncorrect);
+  const isPreviousResponse = answerId === undefined && (!incorrectAnswerId && isCorrect || isIncorrect);
 
   const classes = cn('answers-answer', {
     'disabled': disabled,
