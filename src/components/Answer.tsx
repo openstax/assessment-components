@@ -71,13 +71,14 @@ export const Answer = (props: AnswerProps) => {
   const isChecked = isAnswerChecked(answer, chosenAnswer);
   const isCorrect = isAnswerCorrect(answer, correctAnswerId);
   const isIncorrect = isAnswerIncorrect(answer, incorrectAnswerId);
-
-  const correctIncorrectIcon = (
-    <div className="correct-incorrect">
-      {isCorrect && props.correctIncorrectIcon}
-    </div>
-  );
-
+  // When rendering a previous response, we can determine if this answer is it, because:
+  // If there is no incorrectAnswerId, that means only a correct answer is present, check isCorrect.
+  // If an incorrectAnswerId is present (there is only ever one, if multiple attempts are enabled,
+  // it is the latest one) checking isIncorrect works because incorrectAnswerId is only set for
+  // a missed attempt, meaning if an attempt is missed and then successfully re-attempted,
+  // incorrectAnswerId will be empty.
+  // TODO: chosenAnswer being an array containing only the lastest selection is unnecessary and should
+  // be refactored to become the value itself.
   const isPreviousResponse = chosenAnswer.every(i => i === undefined) &&
     (!incorrectAnswerId && isCorrect || isIncorrect);
 
@@ -87,6 +88,12 @@ export const Answer = (props: AnswerProps) => {
     'answer-correct': isCorrect && type !== 'student-mpp',
     'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId),
   });
+
+  const correctIncorrectIcon = (
+    <div className="correct-incorrect">
+      {isCorrect && props.correctIncorrectIcon}
+    </div>
+  );
 
   let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
   // somewhat misleading - this means that there is a correct answer,
