@@ -111,7 +111,7 @@ exports[`AnswersTable renders all feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-incorrect"
+      className="answers-answer disabled answer-selected answer-incorrect"
       role="region"
     >
       <input
@@ -262,7 +262,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-correct"
+      className="answers-answer disabled answer-selected answer-correct"
       role="region"
     >
       <label
@@ -371,7 +371,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-incorrect"
+      className="answers-answer disabled answer-selected answer-incorrect"
       role="region"
     >
       <input

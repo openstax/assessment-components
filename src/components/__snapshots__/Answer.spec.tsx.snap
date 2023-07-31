@@ -62,7 +62,7 @@ exports[`Answer renders a checked answer 1`] = `
   className="openstax-answer"
 >
   <section
-    className="answers-answer answer-checked"
+    className="answers-answer answer-selected"
     role="region"
   >
     <input

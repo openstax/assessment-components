@@ -1,4 +1,4 @@
-import { Answer, ChosenAnswer, ID } from '../src/types';
+import { Answer, ID } from '../src/types';
 
 export const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -15,13 +15,12 @@ export const isAnswerCorrect = function(answer: Answer, correctAnswerId?: ID | n
   return isCorrect;
 };
 
-export const isAnswerIncorrect = function(answer: Answer, incorrectAnswerId?: ID) {
+export const isAnswerIncorrect = (answer: Answer, incorrectAnswerId?: ID) =>
   // Allow multiple attempts to show incorrectness without the correct_answer_id
-  return answer.id === incorrectAnswerId;
-};
+  answer.id === incorrectAnswerId;
 
-export const isAnswerChecked = (answer: Answer, chosenAnswer?: ChosenAnswer) =>
-  Boolean((chosenAnswer || []).find( a => a == answer.id));
+export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
+   answer.id == answerId;
 
 export function countWords(text: string) {
   const trimmedText = text.trim();

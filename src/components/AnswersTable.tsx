@@ -39,8 +39,6 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const feedback: { index: number, html: string }[] = [];
 
-  const chosenAnswer = [answer_id];
-
   const sortedAnswersByIdOrder = (idOrder: ID[]) => {
     const { answers } = question;
     return answers.slice().sort((a, b) => idOrder.indexOf(a.id) - idOrder.indexOf(b.id));
@@ -48,10 +46,10 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const questionAnswerProps = {
     qid: id || `auto-${idCounter++}`,
+    answerId: answer_id,
     correctAnswerId: correct_answer_id,
     incorrectAnswerId,
     hasCorrectAnswer,
-    chosenAnswer,
     onChangeAnswer: onChangeAnswer,
     type,
     answered_count,

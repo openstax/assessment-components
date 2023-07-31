@@ -15,12 +15,11 @@ const props: AnswerProps = {
   onKeyPress: () => null,
   qid: 1,
   hasCorrectAnswer: false,
-  chosenAnswer: [],
   incorrectAnswerId: 0,
   answered_count: 0,
 };
 
 export const Default = () => <Answer {...props} />;
-export const Checked = () => <Answer {...props} chosenAnswer={['1']} />;
+export const Checked = () => <Answer {...props} answerId='1' />;
 export const Correct = () => <Answer {...props} correctAnswerId='1' />;
 export const Incorrect = () => <Answer {...props} incorrectAnswerId='1' />;
