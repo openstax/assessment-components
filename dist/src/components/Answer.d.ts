@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Answer as AnswerType, ChosenAnswer, ID } from '../types';
+import { Answer as AnswerType, ID } from '../types';
 export interface AnswerProps {
     answer: AnswerType;
     iter: number;
@@ -8,7 +8,7 @@ export interface AnswerProps {
     hasCorrectAnswer?: boolean;
     onChangeAnswer?: (answer: AnswerType) => void;
     disabled: boolean;
-    chosenAnswer: ChosenAnswer;
+    answerId?: ID;
     correctAnswerId?: ID | null;
     incorrectAnswerId?: ID;
     onKeyPress?: () => void;

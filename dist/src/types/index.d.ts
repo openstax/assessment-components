@@ -132,6 +132,5 @@ export declare type Task = {
     type?: 'homework';
 };
 export declare type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
-export declare type ChosenAnswer = (ID | undefined)[];
 export declare type ID = string | number;
 export declare type AvailablePoints = `${number}.${number}`;
