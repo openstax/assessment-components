@@ -10,8 +10,8 @@
       "levels": [
         "Answer"
       ],
-      "locStart": 24,
-      "locEnd": 24,
+      "locStart": 23,
+      "locEnd": 23,
       "filePath": "src/components/Answer.stories.tsx",
       "meta": {}
     },
@@ -20,8 +20,8 @@
       "levels": [
         "Answer"
       ],
-      "locStart": 25,
-      "locEnd": 25,
+      "locStart": 24,
+      "locEnd": 24,
       "filePath": "src/components/Answer.stories.tsx",
       "meta": {}
     },
@@ -30,8 +30,8 @@
       "levels": [
         "Answer"
       ],
-      "locStart": 23,
-      "locEnd": 23,
+      "locStart": 22,
+      "locEnd": 22,
       "filePath": "src/components/Answer.stories.tsx",
       "meta": {}
     },
@@ -40,8 +40,8 @@
       "levels": [
         "Answer"
       ],
-      "locStart": 26,
-      "locEnd": 26,
+      "locStart": 25,
+      "locEnd": 25,
       "filePath": "src/components/Answer.stories.tsx",
       "meta": {}
     },

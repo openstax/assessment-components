@@ -1,11 +1,11 @@
-import{m as t,c as e,b as o}from"./theme-0bf4f63c.js";import{s as r}from"./index-0d12179a.js";const n=r.div`
-    ${t.stepCardPadding()}
+import{m as e,c as t,b as o}from"./theme-2316a49f.js";import{s as r}from"./index-bd739496.js";const p=r.div`
+    ${e.stepCardPadding()}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 1.4rem;
     line-height: 2rem;
-    background: ${e.card.body.background};
+    background: ${t.card.body.background};
 
     > * {
         flex-grow: 1;
@@ -17,7 +17,7 @@ import{m as t,c as e,b as o}from"./theme-0bf4f63c.js";import{s as r}from"./index
     }
 
     .step-card-footer-inner {
-        border-top: 1px solid ${e.palette.pale};
+        border-top: 1px solid ${t.palette.pale};
         padding-top: 32px;
         display: flex;
         justify-content: space-between;
@@ -27,7 +27,8 @@ import{m as t,c as e,b as o}from"./theme-0bf4f63c.js";import{s as r}from"./index
         margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
 
         .attempts-left {
-            color: #F36B32;
+          color: #B03808;
+          font-weight: bold;
         }
     }
 
@@ -58,4 +59,4 @@ import{m as t,c as e,b as o}from"./theme-0bf4f63c.js";import{s as r}from"./index
             }
         }
     `}
-`;export{n as S};
+`;export{p as S};
