@@ -73,10 +73,10 @@ describe('isAnswerChecked', () => {
     }
   });
 
-  it('checks for being a chosenAnswer', () => {
-    expect(isAnswerChecked(answer, [])).toBe(false);
+  it('checks for being a checked answer', () => {
+    expect(isAnswerChecked(answer, undefined)).toBe(false);
     expect(isAnswerChecked(answer)).toBe(false);
-    expect(isAnswerChecked(answer, [answer.id])).toBe(true);
+    expect(isAnswerChecked(answer, answer.id)).toBe(true);
   });
 });
 

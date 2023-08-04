@@ -6,7 +6,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-crXcEl dZCMOw"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -70,7 +70,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-jqUVSM ghJTot openstax-question step-card-body"
+            className="sc-kDDrLX hxNAId openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -81,7 +81,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                 className="openstax-answer"
               >
                 <section
-                  className="answers-answer disabled answer-checked"
+                  className="answers-answer disabled answer-selected"
                   role="region"
                 >
                   <input
@@ -101,13 +101,13 @@ exports[`Exercise using step data matches snapshot 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Selected Choice a:"
+                        aria-label="Selected Choice A:"
                         className="answer-letter"
-                        data-test-id="answer-choice-a"
+                        data-test-id="answer-choice-A"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        a
+                        A
                       </button>
                     </span>
                     <div
@@ -149,13 +149,13 @@ exports[`Exercise using step data matches snapshot 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Choice b:"
+                        aria-label="Choice B:"
                         className="answer-letter"
-                        data-test-id="answer-choice-b"
+                        data-test-id="answer-choice-B"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        b
+                        B
                       </button>
                     </span>
                     <div
@@ -176,7 +176,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX heSwtd step-card-footer"
+            className="sc-iqcoie ejJcYd step-card-footer"
           >
             <div
               className="step-card-footer-inner"
@@ -218,7 +218,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-crXcEl dZCMOw"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -276,7 +276,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-jqUVSM ghJTot openstax-question step-card-body"
+            className="sc-kDDrLX hxNAId openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -287,7 +287,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 className="openstax-answer"
               >
                 <section
-                  className="answers-answer disabled answer-checked"
+                  className="answers-answer disabled answer-selected"
                   role="region"
                 >
                   <input
@@ -307,13 +307,13 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Selected Choice a:"
+                        aria-label="Selected Choice A:"
                         className="answer-letter"
-                        data-test-id="answer-choice-a"
+                        data-test-id="answer-choice-A"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        a
+                        A
                       </button>
                     </span>
                     <div
@@ -355,13 +355,13 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Choice b:"
+                        aria-label="Choice B:"
                         className="answer-letter"
-                        data-test-id="answer-choice-b"
+                        data-test-id="answer-choice-B"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        b
+                        B
                       </button>
                     </span>
                     <div
@@ -382,7 +382,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX heSwtd step-card-footer"
+            className="sc-iqcoie ejJcYd step-card-footer"
           >
             <div
               className="step-card-footer-inner"
@@ -424,7 +424,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-crXcEl dZCMOw"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -603,7 +603,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-jqUVSM ghJTot openstax-question step-card-body"
+            className="sc-kDDrLX hxNAId openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -614,7 +614,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 className="openstax-answer"
               >
                 <section
-                  className="answers-answer disabled answer-checked"
+                  className="answers-answer disabled answer-selected"
                   role="region"
                 >
                   <input
@@ -634,13 +634,13 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Selected Choice a:"
+                        aria-label="Selected Choice A:"
                         className="answer-letter"
-                        data-test-id="answer-choice-a"
+                        data-test-id="answer-choice-A"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        a
+                        A
                       </button>
                     </span>
                     <div
@@ -682,13 +682,13 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Choice b:"
+                        aria-label="Choice B:"
                         className="answer-letter"
-                        data-test-id="answer-choice-b"
+                        data-test-id="answer-choice-B"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        b
+                        B
                       </button>
                     </span>
                     <div
@@ -709,7 +709,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
             </div>
           </div>
           <div
-            className="sc-kDDrLX heSwtd step-card-footer"
+            className="sc-iqcoie ejJcYd step-card-footer"
           >
             <div
               className="step-card-footer-inner"
@@ -751,7 +751,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-crXcEl dZCMOw"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -890,7 +890,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-jqUVSM ghJTot openstax-question step-card-body"
+            className="sc-kDDrLX hxNAId openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -901,7 +901,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 className="openstax-answer"
               >
                 <section
-                  className="answers-answer disabled answer-checked"
+                  className="answers-answer disabled answer-selected"
                   role="region"
                 >
                   <input
@@ -921,13 +921,13 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Selected Choice a:"
+                        aria-label="Selected Choice A:"
                         className="answer-letter"
-                        data-test-id="answer-choice-a"
+                        data-test-id="answer-choice-A"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        a
+                        A
                       </button>
                     </span>
                     <div
@@ -969,13 +969,13 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Choice b:"
+                        aria-label="Choice B:"
                         className="answer-letter"
-                        data-test-id="answer-choice-b"
+                        data-test-id="answer-choice-B"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        b
+                        B
                       </button>
                     </span>
                     <div
@@ -996,7 +996,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
             </div>
           </div>
           <div
-            className="sc-kDDrLX heSwtd step-card-footer"
+            className="sc-iqcoie ejJcYd step-card-footer"
           >
             <div
               className="step-card-footer-inner"
@@ -1038,7 +1038,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step sc-iqcoie cbfqin"
+    className="sc-bczRLJ YKyJl exercise-step sc-crXcEl dZCMOw"
   >
     <div
       className="sc-dkzDqf jPnAkk"
@@ -1096,7 +1096,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
           data-test-id="student-exercise-question"
         >
           <div
-            className="sc-jqUVSM ghJTot openstax-question step-card-body"
+            className="sc-kDDrLX hxNAId openstax-question step-card-body"
             data-question-number={1}
             data-test-id="question"
           >
@@ -1107,7 +1107,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 className="openstax-answer"
               >
                 <section
-                  className="answers-answer disabled answer-checked"
+                  className="answers-answer disabled answer-selected"
                   role="region"
                 >
                   <input
@@ -1127,13 +1127,13 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Selected Choice a:"
+                        aria-label="Selected Choice A:"
                         className="answer-letter"
-                        data-test-id="answer-choice-a"
+                        data-test-id="answer-choice-A"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        a
+                        A
                       </button>
                     </span>
                     <div
@@ -1175,13 +1175,13 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="answer-letter-wrapper"
                     >
                       <button
-                        aria-label="Choice b:"
+                        aria-label="Choice B:"
                         className="answer-letter"
-                        data-test-id="answer-choice-b"
+                        data-test-id="answer-choice-B"
                         disabled={true}
                         onClick={[Function]}
                       >
-                        b
+                        B
                       </button>
                     </span>
                     <div
@@ -1202,7 +1202,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX heSwtd step-card-footer"
+            className="sc-iqcoie ejJcYd step-card-footer"
           >
             <div
               className="step-card-footer-inner"

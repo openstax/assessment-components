@@ -144,7 +144,6 @@ export type Task = {
 };
 
 export type AnswerDisplayType = 'teacher-review' | 'teacher-preview' | 'student' | 'student-mpp';
-export type ChosenAnswer = (ID | undefined)[];
 
 export type ID = string | number;
 

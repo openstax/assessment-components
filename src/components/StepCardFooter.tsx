@@ -30,7 +30,8 @@ export const StepCardFooter = styled.div`
         margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
 
         .attempts-left {
-            color: #F36B32;
+          color: #B03808;
+          font-weight: bold;
         }
     }
 

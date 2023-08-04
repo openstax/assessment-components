@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
 import { colors, breakpoints } from '../theme';
 import FlagIcon from '../assets/flag';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 
 const ProgressBarWrapper = styled.div`
   display: flex;
@@ -16,60 +19,100 @@ const StyledItemWrapper = styled.span`
   display: flex;
   align-items: center;
   margin: 0 1rem 1rem 0;
+  position: relative;
 
   &:last-child {
     margin-right: 0;
   }
 `;
 
-const handleVariant = (variant: ProgressBarItemVariant, isActive: boolean) => {
+const handleVariant = (variant: ProgressBarItemVariant) => {
   switch (variant) {
     case 'isStatus':
       return css`
-        color: ${isActive ? colors.palette.white : colors.palette.darkGray};
-        background-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
-        border: none;
-        box-shadow: ${isActive ? '0px 0px 2px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2)' : 'none'};
+        background-color: ${colors.palette.neutralBright};
       `;
     case 'isCorrect':
       return css`
-        color: ${colors.palette.white};
-        background-color: rgba(99, 165, 36, 0.6);
-        border-color: ${colors.palette.darkGreen};
-        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
+        color: ${colors.answer.correct};
+        background-color: #E8F4D8;
       `;
     case 'isIncorrect':
       return css`
-        color: ${colors.palette.white};
-        background-color: ${colors.palette.lightRed};
-        border-color: ${colors.palette.darkRed};
-        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
+        color: ${colors.answer.incorrect};
+        background-color: #F8E8EA;
       `;
     default:
       return css`
-        color: ${colors.palette.darkGray};
-        background-color: ${isActive ? colors.palette.white : colors.palette.neutralLight};
-        border-color: ${isActive ? colors.palette.darkGray : colors.palette.neutralLight};
-        box-shadow: ${isActive ? '0 0 6px rgba(0, 0, 0, 0.4)' : 'none'};
+        background-color: ${colors.palette.neutralBright};
       `;
   }
 };
+
+const shadowCss = 'box-shadow: 0px 1px 4px 0px #00000066;';
 
 export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isActive: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${props => props.isActive ? '3.0rem' : '2.4rem'};
-  height: ${props => props.isActive ? '3.0rem' : '2.4rem'};
+  width: ${props => props.isActive ? '4rem' : '3.2rem'};
+  height: ${props => props.isActive ? '4rem' : '3.2rem'};
+  border: 0;
   border-radius: 50%;
-  border-width: 1px;
-  border-style: solid;
   margin: ${props => props.isActive ? '0' : '0 0.3rem'};
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
-  ${props => handleVariant(props.variant, props.isActive)}
+  color: ${colors.palette.neutralDarker};
+  ${props => props.isActive ? css`
+    ${shadowCss}
+    & + [data-icon] {
+      bottom: 0;
+      right: 0;
+    }
+  ` : null}
+  ${props => handleVariant(props.variant)}
+  &:hover {
+    ${shadowCss}
+  }
 `;
+
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  background: ${props => props.color};
+  color: #fff;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  padding: 0.1rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+`;
+
+const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
+  if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect') {
+    return null;
+  }
+
+  const variantData = {
+    isCorrect: {
+      icon: faCheck,
+      color: colors.answer.correct,
+    },
+    isIncorrect: {
+      icon: faXmark,
+      color: colors.answer.incorrect,
+    },
+  }[variant];
+
+  return <StyledFontAwesomeIcon
+    icon={variantData.icon}
+    color={variantData.color}
+    height='16px'
+    width='16px'
+  />;
+}
 
 export interface ProgressBarProps<S extends {variant: ProgressBarItemVariant}> {
   steps: S[];
@@ -91,6 +134,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({in
     <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
+    <ItemIcon variant={step.variant} />
   </StyledItemWrapper>;
 
 export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
@@ -102,4 +146,3 @@ export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps
     goToStep={goToStep}
   />)}
 </ProgressBarWrapper>;
-
