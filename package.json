@@ -25,6 +25,7 @@
     "generate-pdf": "rollup scripts/generate-pdf.ts -o dist/scripts/generate-pdf.mjs && node dist/scripts/generate-pdf.mjs",
     "download-json-to-pdf": "yarn download-json",
     "postdownload-json-to-pdf": "yarn generate-pdf",
+    "generate-eoc-pdfs": "node scripts/generate-eoc-pdfs.js",
     "test": "jest --coverage .",
     "lint": "eslint src/*ts",
     "typecheck": "tsc --noEmit"
