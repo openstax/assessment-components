@@ -111,12 +111,11 @@ export const Exercise = ({
         const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
         return (
           <ExerciseQuestion
-            {...props}
+            {...{...props, available_points: undefined}}
             {...state}
             ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
             exercise_uid={exercise.uid}
             key={q.id}
-            available_points={undefined}
             question={q}
             questionNumber={questionNumber + i}
             choicesEnabled={state.canAnswer}
