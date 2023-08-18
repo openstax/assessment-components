@@ -184,10 +184,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
               <div
                 className="points"
               >
-                <strong>
-                  Points: 
-                  1.0
-                </strong>
                 <span
                   className="attempts-left"
                 />
@@ -390,10 +386,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               <div
                 className="points"
               >
-                <strong>
-                  Points: 
-                  1.0
-                </strong>
                 <span
                   className="attempts-left"
                 />
@@ -717,10 +709,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
               <div
                 className="points"
               >
-                <strong>
-                  Points: 
-                  1.0
-                </strong>
                 <span
                   className="attempts-left"
                 />
@@ -1004,10 +992,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
               <div
                 className="points"
               >
-                <strong>
-                  Points: 
-                  1.0
-                </strong>
                 <span
                   className="attempts-left"
                 />
@@ -1210,10 +1194,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               <div
                 className="points"
               >
-                <strong>
-                  Points: 
-                  1.0
-                </strong>
                 <span
                   className="attempts-left"
                 />
