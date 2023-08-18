@@ -100,7 +100,6 @@ const RevertButton = (props: {
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    availablePoints,
     cancelHandler,
     defaultValue,
     infoRowChildren,
@@ -144,7 +143,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       <StepCardFooter>
         <div className="points">
           {/* <strong>Points: {availablePoints}</strong> */}
-          {/* {pointsChildren} */}
+          {pointsChildren}
         </div>
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
