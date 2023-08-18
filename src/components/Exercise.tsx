@@ -116,6 +116,7 @@ export const Exercise = ({
             ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
             exercise_uid={exercise.uid}
             key={q.id}
+            avilable_points={undefined}
             question={q}
             questionNumber={questionNumber + i}
             choicesEnabled={state.canAnswer}

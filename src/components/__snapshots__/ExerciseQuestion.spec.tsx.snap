@@ -128,6 +128,10 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -283,6 +287,10 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -439,6 +447,10 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -589,6 +601,10 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         >
@@ -751,6 +767,10 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -894,6 +914,10 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -1067,6 +1091,10 @@ exports[`ExerciseQuestion renders free response 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -1222,6 +1250,10 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         />
@@ -1377,6 +1409,10 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       <div
         className="points"
       >
+        <strong>
+          Points: 
+          1.0
+        </strong>
         <span
           className="attempts-left"
         >

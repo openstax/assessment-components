@@ -290,7 +290,6 @@ const TaskStepCard = ({
   stepType={'type' in step ? step.type : 'exercise'}
   isHomework={'task' in step ? (step.task === undefined || step.task.type === 'homework') : true}
   data-task-step-id={step.id}
-  availablePoints={step.available_points}
   className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
 >

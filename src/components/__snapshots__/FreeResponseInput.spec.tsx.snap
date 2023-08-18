@@ -46,7 +46,12 @@ exports[`Free Response Input matches snapshot 1`] = `
   >
     <div
       className="points"
-    />
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
     <div
       className="controls"
     >
@@ -123,7 +128,12 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
   >
     <div
       className="points"
-    />
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
     <div
       className="controls"
     >
@@ -200,7 +210,12 @@ exports[`Free Response Input renders word limit error 1`] = `
   >
     <div
       className="points"
-    />
+    >
+      <strong>
+        Points: 
+        1.0
+      </strong>
+    </div>
     <div
       className="controls"
     >
