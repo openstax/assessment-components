@@ -143,8 +143,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       </div>
       <StepCardFooter>
         <div className="points">
-          <strong>Points: {availablePoints}</strong>
-          {pointsChildren}
+          {/* <strong>Points: {availablePoints}</strong> */}
+          {/* {pointsChildren} */}
         </div>
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />

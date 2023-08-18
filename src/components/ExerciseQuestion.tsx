@@ -93,7 +93,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
+    displaySolution, free_response, show_all_feedback, tableFeedbackEnabled
   } = props;
 
   return (
@@ -123,7 +123,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       <StepCardFooter className="step-card-footer">
         <div className="step-card-footer-inner">
           <div className="points">
-            <strong>Points: {available_points}</strong>
+            {/* <strong>Points: {available_points}</strong> */}
             <span className="attempts-left">
               {hasMultipleAttempts &&
                 attempts_remaining > 0 &&
