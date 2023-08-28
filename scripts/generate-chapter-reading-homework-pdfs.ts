@@ -17,6 +17,7 @@ const filterAndGroupExercises = (exercises: ExerciseData[]) => {
   let filteredExercises = exercises;
 
   if (filterName === 'single-part-multiple-choice') {
+    console.log(`using filter ${filterName}`);
     filteredExercises = exercises.filter(exercise =>
       exercise.questions.length === 1 &&
       exercise.questions[0].formats.includes('multiple-choice')
