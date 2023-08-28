@@ -16,11 +16,10 @@ const filterAndGroupExercises = (exercises: ExerciseData[]) => {
   const moduleGroups = {};
   let filteredExercises = exercises;
 
-  if (filterName === 'single-part-multiple-choice-only') {
+  if (filterName === 'single-part-multiple-choice') {
     filteredExercises = exercises.filter(exercise =>
       exercise.questions.length === 1 &&
-      exercise.questions[0].formats.includes('multiple-choice') &&
-      !exercise.questions[0].formats.includes('free-response')
+      exercise.questions[0].formats.includes('multiple-choice')
     );
   }
 
