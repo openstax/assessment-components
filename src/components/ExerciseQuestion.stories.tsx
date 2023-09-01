@@ -43,7 +43,7 @@ const props = {
   is_completed: false,
   multiPartGroup: null,
   answer_id: '',
-  available_points: '1.0' as const,
+  available_points: undefined,
   attempts_remaining: 2,
   published_comments: '',
   detailedSolution: '',

@@ -254,10 +254,10 @@ const StepCard = ({
                 <span className="question-id">ID: {questionId}</span>
               </div>
             </div>
-            <div>
+            {availablePoints || rightHeaderChildren ? <div>
               {availablePoints && <div className="points">{availablePoints} Points</div>}
               {rightHeaderChildren}
-            </div>
+            </div> : null}
           </StepCardHeader>
         }
         <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
@@ -290,7 +290,8 @@ const TaskStepCard = ({
   stepType={'type' in step ? step.type : 'exercise'}
   isHomework={'task' in step ? (step.task === undefined || step.task.type === 'homework') : true}
   data-task-step-id={step.id}
-  availablePoints={step.available_points}
+  // uncomment next line to display available points on exercise questions
+  // availablePoints={step.available_points}
   className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
 >
