@@ -320,8 +320,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 45,
-      "locEnd": 45,
+      "locStart": 44,
+      "locEnd": 44,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -330,8 +330,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 46,
-      "locEnd": 46,
+      "locStart": 45,
+      "locEnd": 45,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -340,8 +340,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 47,
-      "locEnd": 47,
+      "locStart": 46,
+      "locEnd": 46,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
