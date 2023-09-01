@@ -131,7 +131,6 @@ exports[`TaskStepCard can optionally provide task 1`] = `
           </span>
         </div>
       </div>
-      <div />
     </div>
     <div
       className="sc-hKMtZM EWshI"
@@ -171,7 +170,6 @@ exports[`TaskStepCard can optionally provide type 1`] = `
           </span>
         </div>
       </div>
-      <div />
     </div>
     <div
       className="sc-hKMtZM EWshI"
@@ -211,7 +209,6 @@ exports[`TaskStepCard matches snapshot 1`] = `
           </span>
         </div>
       </div>
-      <div />
     </div>
     <div
       className="sc-hKMtZM EWshI"
