@@ -123,7 +123,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       <StepCardFooter className="step-card-footer">
         <div className="step-card-footer-inner">
           <div className="points">
-           {available_points ? <strong>Points: {available_points}</strong> : null}
+            {available_points ? <strong>Points: {available_points}</strong> : null}
             <span className="attempts-left">
               {hasMultipleAttempts &&
                 attempts_remaining > 0 &&
