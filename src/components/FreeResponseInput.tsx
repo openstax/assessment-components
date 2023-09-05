@@ -11,7 +11,6 @@ export interface FreeResponseProps {
   readOnly: boolean;
   wordLimit: number;
   infoRowChildren?: ReactNode;
-  pointsChildren?: ReactNode;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
   saveHandler: MouseEventHandler<HTMLButtonElement>;
@@ -19,7 +18,7 @@ export interface FreeResponseProps {
   isSubmitDisabled: boolean;
   questionNumber: number,
   question: ExerciseQuestionData,
-  availablePoints: AvailablePoints,
+  availablePoints?: AvailablePoints,
   textHasChanged: boolean;
   submitBtnLabel: string;
 }
@@ -105,7 +104,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     defaultValue,
     infoRowChildren,
     isSubmitDisabled,
-    pointsChildren,
     question,
     questionNumber,
     saveHandler,
@@ -142,10 +140,9 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
         </InfoRow>
       </div>
       <StepCardFooter>
-        <div className="points">
-          <strong>Points: {availablePoints}</strong>
-          {pointsChildren}
-        </div>
+      {availablePoints
+        ? <div className="points"><strong>Points: {availablePoints}</strong></div>
+        : null}
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
           <Button

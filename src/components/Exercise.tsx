@@ -112,7 +112,7 @@ export const Exercise = ({
         return (
           <ExerciseQuestion
             {...props}
-            {...state}
+            {...{...state, available_points: undefined}}
             ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
             exercise_uid={exercise.uid}
             key={q.id}
