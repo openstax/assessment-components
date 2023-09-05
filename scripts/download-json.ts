@@ -43,6 +43,11 @@ import fetch from 'node-fetch';
 
     const { total_count, items } = await response.json();
 
+    if (total_count === 0) {
+      console.error('0 exercises found');
+      process.exit(1);
+    }
+
     totalPages = Math.ceil(total_count/perPage);
     exercises.push(...items);
 
