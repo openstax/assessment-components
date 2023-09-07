@@ -25,6 +25,8 @@
     "generate-pdf": "rollup scripts/generate-pdf.ts -o dist/scripts/generate-pdf.mjs && node dist/scripts/generate-pdf.mjs",
     "download-json-to-pdf": "yarn download-json",
     "postdownload-json-to-pdf": "yarn generate-pdf",
+    "generate-eoc-pdfs": "node scripts/generate-eoc-pdfs.js",
+    "generate-chapter-reading-homework-pdfs": "microbundle scripts/generate-chapter-reading-homework-pdfs.ts -o dist/scripts/generate-chapter-reading-homework-pdfs.js --target node --format cjs --sourcemap false && node dist/scripts/generate-chapter-reading-homework-pdfs.js $@",
     "test": "jest --coverage .",
     "lint": "eslint src/*ts",
     "typecheck": "tsc --noEmit"

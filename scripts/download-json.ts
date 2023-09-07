@@ -36,7 +36,17 @@ import fetch from 'node-fetch';
   const exercises: object[] = [];
   for (let page = 1; page <= totalPages; page++) {
     const response = await fetch(searchApiUrl(query, page), { headers });
+    if (response.status !== 200) {
+      console.error(`Error: Exercises responded with ${response.status}: ${response.statusText} for ${response.url}`);
+      process.exit(1);
+    }
+
     const { total_count, items } = await response.json();
+
+    if (total_count === 0) {
+      console.error('0 exercises found');
+      process.exit(1);
+    }
 
     totalPages = Math.ceil(total_count/perPage);
     exercises.push(...items);

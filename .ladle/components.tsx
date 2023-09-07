@@ -2,6 +2,7 @@ import React from 'react';
 import { GlobalProvider } from "@ladle/react";
 import { useEffect } from "react";
 import styled from "styled-components";
+import { TypesetMathContext } from '../src/hooks/useTypesetMath';
 
 const Wrapper = styled.div`
   *, ::before, ::after {
@@ -20,7 +21,9 @@ export const Provider: GlobalProvider = ({ children }) => {
 
   return (
     <Wrapper>
-      {children}
+      <TypesetMathContext.Provider value={() => {}}>
+        {children}
+      </TypesetMathContext.Provider>
     </Wrapper>
   )
 };

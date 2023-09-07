@@ -26,13 +26,13 @@ exports[`Answer matches snapshot 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b:"
+          aria-label="Choice B:"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={false}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
@@ -62,7 +62,7 @@ exports[`Answer renders a checked answer 1`] = `
   className="openstax-answer"
 >
   <section
-    className="answers-answer answer-checked"
+    className="answers-answer answer-selected"
     role="region"
   >
     <input
@@ -83,13 +83,13 @@ exports[`Answer renders a checked answer 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Selected Choice b:"
+          aria-label="Selected Choice B:"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={false}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
@@ -131,18 +131,24 @@ exports[`Answer renders a correct answer 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b(Correct Answer):"
+          aria-label="Choice B(Correct Answer):"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={true}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
         className="answer-answer"
       >
+        <div
+          className="sc-bczRLJ bwhOfi"
+        >
+          Correct
+           Answer
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -179,18 +185,24 @@ exports[`Answer renders an incorrect answer 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b(Incorrect Answer):"
+          aria-label="Choice B(Incorrect Answer):"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={true}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
         className="answer-answer"
       >
+        <div
+          className="sc-bczRLJ gojKWV"
+        >
+          Incorrect
+           Answer
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -236,13 +248,13 @@ exports[`Answer renders feedback 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b:"
+          aria-label="Choice B:"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={false}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
@@ -301,18 +313,24 @@ exports[`Answer renders teacher preview 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b:"
+          aria-label="Choice B:"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={false}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div
         className="answer-answer"
       >
+        <div
+          className="sc-bczRLJ bwhOfi"
+        >
+          Correct
+           Answer
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -355,7 +373,7 @@ exports[`Answer renders teacher review 1`] = `
         <span
           className="letter red"
         >
-          b
+          B
         </span>
       </div>
       <div
@@ -406,13 +424,13 @@ exports[`Answer renders with a custom renderer if set 1`] = `
         className="answer-letter-wrapper"
       >
         <button
-          aria-label="Choice b:"
+          aria-label="Choice B:"
           className="answer-letter"
-          data-test-id="answer-choice-b"
+          data-test-id="answer-choice-B"
           disabled={false}
           onClick={[Function]}
         >
-          b
+          B
         </button>
       </span>
       <div

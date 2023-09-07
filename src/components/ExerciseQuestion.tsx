@@ -32,7 +32,7 @@ export interface ExerciseQuestionProps {
   attempt_number: number;
   apiIsPending: boolean;
   displaySolution: boolean;
-  available_points: AvailablePoints;
+  available_points?: AvailablePoints;
   exercise_uid: string;
   free_response?: string;
   show_all_feedback?: boolean;
@@ -123,7 +123,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       <StepCardFooter className="step-card-footer">
         <div className="step-card-footer-inner">
           <div className="points">
-            <strong>Points: {available_points}</strong>
+            {available_points ? <strong>Points: {available_points}</strong> : null}
             <span className="attempts-left">
               {hasMultipleAttempts &&
                 attempts_remaining > 0 &&

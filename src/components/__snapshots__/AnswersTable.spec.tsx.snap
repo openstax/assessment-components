@@ -23,13 +23,13 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice a:"
+            aria-label="Choice A:"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
@@ -71,13 +71,13 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b:"
+            aria-label="Choice B:"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div
@@ -111,7 +111,7 @@ exports[`AnswersTable renders all feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-incorrect"
+      className="answers-answer disabled answer-selected answer-incorrect"
       role="region"
     >
       <input
@@ -131,18 +131,24 @@ exports[`AnswersTable renders all feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Selected Choice a:"
+            aria-label="Selected Choice A:"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
           className="answer-answer"
         >
+          <div
+            className="sc-bczRLJ gojKWV"
+          >
+            Incorrect
+             Answer
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -197,18 +203,24 @@ exports[`AnswersTable renders all feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b:"
+            aria-label="Choice B:"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div
           className="answer-answer"
         >
+          <div
+            className="sc-bczRLJ bwhOfi"
+          >
+            Correct
+             Answer
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -250,7 +262,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-correct"
+      className="answers-answer disabled answer-selected answer-correct"
       role="region"
     >
       <label
@@ -261,18 +273,24 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Selected Choice a(Correct Answer):"
+            aria-label="Selected Choice A(Correct Answer):"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
           className="answer-answer"
         >
+          <div
+            className="sc-bczRLJ bwhOfi"
+          >
+            Correct
+             Answer
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -318,13 +336,13 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b(Incorrect Answer):"
+            aria-label="Choice B(Incorrect Answer):"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div
@@ -353,7 +371,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
     className="openstax-answer"
   >
     <section
-      className="answers-answer disabled answer-checked answer-incorrect"
+      className="answers-answer disabled answer-selected answer-incorrect"
       role="region"
     >
       <input
@@ -373,18 +391,24 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Selected Choice a:"
+            aria-label="Selected Choice A:"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
           className="answer-answer"
         >
+          <div
+            className="sc-bczRLJ gojKWV"
+          >
+            Incorrect
+             Answer
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -439,18 +463,24 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b:"
+            aria-label="Choice B:"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div
           className="answer-answer"
         >
+          <div
+            className="sc-bczRLJ bwhOfi"
+          >
+            Correct
+             Answer
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -497,13 +527,13 @@ exports[`AnswersTable renders instructions 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice a:"
+            aria-label="Choice A:"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
@@ -545,13 +575,13 @@ exports[`AnswersTable renders instructions 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b:"
+            aria-label="Choice B:"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div
@@ -600,13 +630,13 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice a:"
+            aria-label="Choice A:"
             className="answer-letter"
-            data-test-id="answer-choice-a"
+            data-test-id="answer-choice-A"
             disabled={true}
             onClick={[Function]}
           >
-            a
+            A
           </button>
         </span>
         <div
@@ -648,13 +678,13 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           className="answer-letter-wrapper"
         >
           <button
-            aria-label="Choice b:"
+            aria-label="Choice B:"
             className="answer-letter"
-            data-test-id="answer-choice-b"
+            data-test-id="answer-choice-B"
             disabled={true}
             onClick={[Function]}
           >
-            b
+            B
           </button>
         </span>
         <div

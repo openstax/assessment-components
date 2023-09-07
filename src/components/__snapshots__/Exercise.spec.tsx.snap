@@ -3,14 +3,14 @@
 exports[`Exercise using step data matches snapshot 1`] = `
 Array [
   <div
-    className="sc-evZas eLpAxy"
+    className="sc-breuTD uXhmp"
   >
     <div
       className="sc-gsnTZi dxdISE"
       data-task-step-id={1}
     >
       <div
-        className="sc-bczRLJ eAXREJ exercise-step sc-crXcEl dZCMOw"
+        className="sc-bczRLJ eAXREJ exercise-step sc-evZas fQHbKU"
       >
         <div
           className="sc-dkzDqf hbFgnH"
@@ -41,14 +41,6 @@ Array [
               </span>
             </div>
           </div>
-          <div>
-            <div
-              className="points"
-            >
-              1.0
-               Points
-            </div>
-          </div>
         </div>
         <div
           className="sc-hKMtZM EWshI"
@@ -74,7 +66,7 @@ Array [
               data-test-id="student-exercise-question"
             >
               <div
-                className="sc-jSMfEi dmwdQl openstax-question step-card-body"
+                className="sc-gKXOVf kJgboL openstax-question step-card-body"
                 data-question-number={1}
                 data-test-id="question"
               >
@@ -85,7 +77,7 @@ Array [
                     className="openstax-answer"
                   >
                     <section
-                      className="answers-answer disabled answer-checked"
+                      className="answers-answer disabled answer-selected"
                       role="region"
                     >
                       <input
@@ -105,13 +97,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Selected Choice a:"
+                            aria-label="Selected Choice A:"
                             className="answer-letter"
-                            data-test-id="answer-choice-a"
+                            data-test-id="answer-choice-A"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            a
+                            A
                           </button>
                         </span>
                         <div
@@ -153,13 +145,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Choice b:"
+                            aria-label="Choice B:"
                             className="answer-letter"
-                            data-test-id="answer-choice-b"
+                            data-test-id="answer-choice-B"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            b
+                            B
                           </button>
                         </span>
                         <div
@@ -180,7 +172,7 @@ Array [
                 </div>
               </div>
               <div
-                className="sc-gKXOVf gWibAH step-card-footer"
+                className="sc-iBkjds feSBuo step-card-footer"
               >
                 <div
                   className="step-card-footer-inner"
@@ -188,10 +180,6 @@ Array [
                   <div
                     className="points"
                   >
-                    <strong>
-                      Points: 
-                      1.0
-                    </strong>
                     <span
                       className="attempts-left"
                     />
@@ -222,14 +210,14 @@ Array [
 exports[`Exercise with question state data matches snapshot 1`] = `
 Array [
   <div
-    className="sc-evZas eLpAxy"
+    className="sc-breuTD uXhmp"
   >
     <div
       className="sc-gsnTZi dxdISE"
       data-task-step-id={1}
     >
       <div
-        className="sc-bczRLJ eAXREJ exercise-step sc-crXcEl dZCMOw"
+        className="sc-bczRLJ eAXREJ exercise-step sc-evZas fQHbKU"
       >
         <div
           className="sc-dkzDqf hbFgnH"
@@ -252,14 +240,6 @@ Array [
                 ID: 
                 1234@5
               </span>
-            </div>
-          </div>
-          <div>
-            <div
-              className="points"
-            >
-              1.0
-               Points
             </div>
           </div>
         </div>
@@ -287,7 +267,7 @@ Array [
               data-test-id="student-exercise-question"
             >
               <div
-                className="sc-jSMfEi dmwdQl openstax-question step-card-body"
+                className="sc-gKXOVf kJgboL openstax-question step-card-body"
                 data-question-number={1}
                 data-test-id="question"
               >
@@ -298,7 +278,7 @@ Array [
                     className="openstax-answer"
                   >
                     <section
-                      className="answers-answer disabled answer-checked"
+                      className="answers-answer disabled answer-selected"
                       role="region"
                     >
                       <input
@@ -318,13 +298,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Selected Choice a:"
+                            aria-label="Selected Choice A:"
                             className="answer-letter"
-                            data-test-id="answer-choice-a"
+                            data-test-id="answer-choice-A"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            a
+                            A
                           </button>
                         </span>
                         <div
@@ -366,13 +346,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Choice b:"
+                            aria-label="Choice B:"
                             className="answer-letter"
-                            data-test-id="answer-choice-b"
+                            data-test-id="answer-choice-B"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            b
+                            B
                           </button>
                         </span>
                         <div
@@ -393,7 +373,7 @@ Array [
                 </div>
               </div>
               <div
-                className="sc-gKXOVf gWibAH step-card-footer"
+                className="sc-iBkjds feSBuo step-card-footer"
               >
                 <div
                   className="step-card-footer-inner"
@@ -401,10 +381,6 @@ Array [
                   <div
                     className="points"
                   >
-                    <strong>
-                      Points: 
-                      1.0
-                    </strong>
                     <span
                       className="attempts-left"
                     />
@@ -435,10 +411,10 @@ Array [
 exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
 Array [
   <div
-    className="sc-evZas eLpAxy"
+    className="sc-breuTD uXhmp"
   >
     <div
-      className="sc-iBkjds ggrDvF"
+      className="sc-ftvSup jsTUAi"
     >
       <a
         href="https://openstax.org"
@@ -496,7 +472,7 @@ Array [
       data-task-step-id={1}
     >
       <div
-        className="sc-bczRLJ eAXREJ exercise-step sc-crXcEl dZCMOw"
+        className="sc-bczRLJ eAXREJ exercise-step sc-evZas fQHbKU"
       >
         <div
           className="sc-dkzDqf hbFgnH"
@@ -523,25 +499,19 @@ Array [
           </div>
           <div>
             <div
-              className="points"
-            >
-              1.0
-               Points
-            </div>
-            <div
-              className="sc-kDDrLX hgSAso"
+              className="sc-iqcoie iCsHxN"
             >
               <a
-                className="sc-ftvSup kaIsAt"
+                className="sc-papXJ fAQnos"
                 href="https://openstax.org"
                 target="_blank"
               >
                 <div
-                  className="sc-papXJ juOIaI"
+                  className="sc-jqUVSM kAapWN"
                 >
                   <svg
                     aria-hidden="true"
-                    className="svg-inline--fa fa-book-open sc-iqcoie cZPEWq"
+                    className="svg-inline--fa fa-book-open sc-crXcEl bkZrBF"
                     data-icon="book-open"
                     data-prefix="fas"
                     focusable="false"
@@ -557,7 +527,7 @@ Array [
                     />
                   </svg>
                   <div
-                    className="sc-jqUVSM dPnHDX popover right"
+                    className="sc-kDDrLX kncUAM popover right"
                   >
                     <div
                       className="arrow"
@@ -571,16 +541,16 @@ Array [
                 </div>
               </a>
               <a
-                className="sc-ftvSup kaIsAt"
+                className="sc-papXJ fAQnos"
                 href="https://openstax.org"
                 target="_blank"
               >
                 <div
-                  className="sc-papXJ juOIaI"
+                  className="sc-jqUVSM kAapWN"
                 >
                   <svg
                     aria-hidden="true"
-                    className="svg-inline--fa fa-triangle-exclamation sc-iqcoie cZPEWq"
+                    className="svg-inline--fa fa-triangle-exclamation sc-crXcEl bkZrBF"
                     data-icon="triangle-exclamation"
                     data-prefix="fas"
                     focusable="false"
@@ -596,7 +566,7 @@ Array [
                     />
                   </svg>
                   <div
-                    className="sc-jqUVSM dPnHDX popover right"
+                    className="sc-kDDrLX kncUAM popover right"
                   >
                     <div
                       className="arrow"
@@ -636,7 +606,7 @@ Array [
               data-test-id="student-exercise-question"
             >
               <div
-                className="sc-jSMfEi dmwdQl openstax-question step-card-body"
+                className="sc-gKXOVf kJgboL openstax-question step-card-body"
                 data-question-number={1}
                 data-test-id="question"
               >
@@ -647,7 +617,7 @@ Array [
                     className="openstax-answer"
                   >
                     <section
-                      className="answers-answer disabled answer-checked"
+                      className="answers-answer disabled answer-selected"
                       role="region"
                     >
                       <input
@@ -667,13 +637,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Selected Choice a:"
+                            aria-label="Selected Choice A:"
                             className="answer-letter"
-                            data-test-id="answer-choice-a"
+                            data-test-id="answer-choice-A"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            a
+                            A
                           </button>
                         </span>
                         <div
@@ -715,13 +685,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Choice b:"
+                            aria-label="Choice B:"
                             className="answer-letter"
-                            data-test-id="answer-choice-b"
+                            data-test-id="answer-choice-B"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            b
+                            B
                           </button>
                         </span>
                         <div
@@ -742,7 +712,7 @@ Array [
                 </div>
               </div>
               <div
-                className="sc-gKXOVf gWibAH step-card-footer"
+                className="sc-iBkjds feSBuo step-card-footer"
               >
                 <div
                   className="step-card-footer-inner"
@@ -750,10 +720,6 @@ Array [
                   <div
                     className="points"
                   >
-                    <strong>
-                      Points: 
-                      1.0
-                    </strong>
                     <span
                       className="attempts-left"
                     />
@@ -784,10 +750,10 @@ Array [
 exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
 Array [
   <div
-    className="sc-evZas eLpAxy"
+    className="sc-breuTD uXhmp"
   >
     <div
-      className="sc-iBkjds ggrDvF"
+      className="sc-ftvSup jsTUAi"
     >
       <a
         href="https://openstax.org"
@@ -845,7 +811,7 @@ Array [
       data-task-step-id={1}
     >
       <div
-        className="sc-bczRLJ eAXREJ exercise-step sc-crXcEl dZCMOw"
+        className="sc-bczRLJ eAXREJ exercise-step sc-evZas fQHbKU"
       >
         <div
           className="sc-dkzDqf hbFgnH"
@@ -872,25 +838,19 @@ Array [
           </div>
           <div>
             <div
-              className="points"
-            >
-              1.0
-               Points
-            </div>
-            <div
-              className="sc-kDDrLX hgSAso"
+              className="sc-iqcoie iCsHxN"
             >
               <a
-                className="sc-ftvSup kaIsAt"
+                className="sc-papXJ fAQnos"
                 href="https://openstax.org"
                 target="_blank"
               >
                 <div
-                  className="sc-papXJ juOIaI"
+                  className="sc-jqUVSM kAapWN"
                 >
                   <svg
                     aria-hidden="true"
-                    className="svg-inline--fa fa-book-open sc-iqcoie cZPEWq"
+                    className="svg-inline--fa fa-book-open sc-crXcEl bkZrBF"
                     data-icon="book-open"
                     data-prefix="fas"
                     focusable="false"
@@ -906,7 +866,7 @@ Array [
                     />
                   </svg>
                   <div
-                    className="sc-jqUVSM dPnHDX popover right"
+                    className="sc-kDDrLX kncUAM popover right"
                   >
                     <div
                       className="arrow"
@@ -920,16 +880,16 @@ Array [
                 </div>
               </a>
               <a
-                className="sc-ftvSup kaIsAt"
+                className="sc-papXJ fAQnos"
                 href="https://openstax.org"
                 target="_blank"
               >
                 <div
-                  className="sc-papXJ juOIaI"
+                  className="sc-jqUVSM kAapWN"
                 >
                   <svg
                     aria-hidden="true"
-                    className="svg-inline--fa fa-triangle-exclamation sc-iqcoie cZPEWq"
+                    className="svg-inline--fa fa-triangle-exclamation sc-crXcEl bkZrBF"
                     data-icon="triangle-exclamation"
                     data-prefix="fas"
                     focusable="false"
@@ -945,7 +905,7 @@ Array [
                     />
                   </svg>
                   <div
-                    className="sc-jqUVSM dPnHDX popover right"
+                    className="sc-kDDrLX kncUAM popover right"
                   >
                     <div
                       className="arrow"
@@ -959,14 +919,14 @@ Array [
                 </div>
               </a>
               <div
-                className="sc-ftvSup kaIsAt"
+                className="sc-papXJ fAQnos"
               >
                 <div
-                  className="sc-papXJ juOIaI"
+                  className="sc-jqUVSM kAapWN"
                 >
                   <svg
                     aria-hidden="true"
-                    className="svg-inline--fa fa-circle-info sc-iqcoie cZPEWq"
+                    className="svg-inline--fa fa-circle-info sc-crXcEl bkZrBF"
                     data-icon="circle-info"
                     data-prefix="fas"
                     focusable="false"
@@ -984,7 +944,7 @@ Array [
                     />
                   </svg>
                   <div
-                    className="sc-jqUVSM dPnHDX popover right"
+                    className="sc-kDDrLX kncUAM popover right"
                   >
                     <div
                       className="arrow"
@@ -1024,7 +984,7 @@ Array [
               data-test-id="student-exercise-question"
             >
               <div
-                className="sc-jSMfEi dmwdQl openstax-question step-card-body"
+                className="sc-gKXOVf kJgboL openstax-question step-card-body"
                 data-question-number={1}
                 data-test-id="question"
               >
@@ -1035,7 +995,7 @@ Array [
                     className="openstax-answer"
                   >
                     <section
-                      className="answers-answer disabled answer-checked"
+                      className="answers-answer disabled answer-selected"
                       role="region"
                     >
                       <input
@@ -1055,13 +1015,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Selected Choice a:"
+                            aria-label="Selected Choice A:"
                             className="answer-letter"
-                            data-test-id="answer-choice-a"
+                            data-test-id="answer-choice-A"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            a
+                            A
                           </button>
                         </span>
                         <div
@@ -1103,13 +1063,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Choice b:"
+                            aria-label="Choice B:"
                             className="answer-letter"
-                            data-test-id="answer-choice-b"
+                            data-test-id="answer-choice-B"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            b
+                            B
                           </button>
                         </span>
                         <div
@@ -1130,7 +1090,7 @@ Array [
                 </div>
               </div>
               <div
-                className="sc-gKXOVf gWibAH step-card-footer"
+                className="sc-iBkjds feSBuo step-card-footer"
               >
                 <div
                   className="step-card-footer-inner"
@@ -1138,10 +1098,6 @@ Array [
                   <div
                     className="points"
                   >
-                    <strong>
-                      Points: 
-                      1.0
-                    </strong>
                     <span
                       className="attempts-left"
                     />
@@ -1172,14 +1128,14 @@ Array [
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 Array [
   <div
-    className="sc-evZas eLpAxy"
+    className="sc-breuTD uXhmp"
   >
     <div
       className="sc-gsnTZi dxdISE"
       data-task-step-id={1}
     >
       <div
-        className="sc-bczRLJ eAXREJ exercise-step sc-crXcEl dZCMOw"
+        className="sc-bczRLJ eAXREJ exercise-step sc-evZas fQHbKU"
       >
         <div
           className="sc-dkzDqf hbFgnH"
@@ -1202,14 +1158,6 @@ Array [
                 ID: 
                 1234@5
               </span>
-            </div>
-          </div>
-          <div>
-            <div
-              className="points"
-            >
-              1.0
-               Points
             </div>
           </div>
         </div>
@@ -1237,7 +1185,7 @@ Array [
               data-test-id="student-exercise-question"
             >
               <div
-                className="sc-jSMfEi dmwdQl openstax-question step-card-body"
+                className="sc-gKXOVf kJgboL openstax-question step-card-body"
                 data-question-number={1}
                 data-test-id="question"
               >
@@ -1248,7 +1196,7 @@ Array [
                     className="openstax-answer"
                   >
                     <section
-                      className="answers-answer disabled answer-checked"
+                      className="answers-answer disabled answer-selected"
                       role="region"
                     >
                       <input
@@ -1268,13 +1216,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Selected Choice a:"
+                            aria-label="Selected Choice A:"
                             className="answer-letter"
-                            data-test-id="answer-choice-a"
+                            data-test-id="answer-choice-A"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            a
+                            A
                           </button>
                         </span>
                         <div
@@ -1316,13 +1264,13 @@ Array [
                           className="answer-letter-wrapper"
                         >
                           <button
-                            aria-label="Choice b:"
+                            aria-label="Choice B:"
                             className="answer-letter"
-                            data-test-id="answer-choice-b"
+                            data-test-id="answer-choice-B"
                             disabled={true}
                             onClick={[Function]}
                           >
-                            b
+                            B
                           </button>
                         </span>
                         <div
@@ -1343,7 +1291,7 @@ Array [
                 </div>
               </div>
               <div
-                className="sc-gKXOVf gWibAH step-card-footer"
+                className="sc-iBkjds feSBuo step-card-footer"
               >
                 <div
                   className="step-card-footer-inner"
@@ -1351,10 +1299,6 @@ Array [
                   <div
                     className="points"
                   >
-                    <strong>
-                      Points: 
-                      1.0
-                    </strong>
                     <span
                       className="attempts-left"
                     />
