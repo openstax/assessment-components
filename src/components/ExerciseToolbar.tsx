@@ -97,6 +97,10 @@ export const StyledToolbar = styled.div<{
         color: ${colors.palette.neutral};
         text-align: center;
       }
+
+      & + * {
+        border-left: 1px solid ${colors.palette.light};
+      }
     }
   `}
 `;

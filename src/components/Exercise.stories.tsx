@@ -519,23 +519,3 @@ bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps a
     </>
   );
 };
-
-export const Toolbar = () => {
-  return (
-    <>
-      <Exercise
-        {...exerciseWithQuestionStatesProps()}
-        exerciseIcons={{
-          errata: {
-            url: 'openstax.org',
-            location: {
-              toolbar: {
-                mobile: true,
-                desktop: false
-              }
-            }
-          }
-        }}
-      />
-    </>)
-};
