@@ -111,7 +111,7 @@ export const ExerciseToolbar = ({ icons }: { icons?: ExerciseIcons }) => {
   }
   const settings = Object.values(icons);
   const mobile = settings.some(({ location }) => location?.toolbar?.mobile ?? true);
-  const desktop = settings.some(({ location }) => location?.toolbar?.desktop ?? true);
+  const desktop = settings.some(({ location }) => location?.toolbar?.desktop ?? false);
   const topicUrl = icons.topic?.url;
   const errataUrl = icons.errata?.url;
 

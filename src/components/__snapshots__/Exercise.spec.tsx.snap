@@ -407,7 +407,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   className="sc-breuTD uXhmp"
 >
   <div
-    className="sc-ftvSup jsTUAi"
+    className="sc-ftvSup jndYKm"
   >
     <a
       href="https://openstax.org"
@@ -743,7 +743,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   className="sc-breuTD uXhmp"
 >
   <div
-    className="sc-ftvSup jsTUAi"
+    className="sc-ftvSup jndYKm"
   >
     <a
       href="https://openstax.org"
