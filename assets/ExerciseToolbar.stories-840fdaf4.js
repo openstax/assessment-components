@@ -1,4 +1,4 @@
-import{s as r,j as t}from"./index-c35e3dc7.js";import{E as o}from"./ExerciseToolbar-4011a07e.js";import"./theme-b8a93513.js";import"./index.es-5a30d2be.js";const e=r.div`
+import{s as r,j as t}from"./index-83221d50.js";import{E as o}from"./ExerciseToolbar-c0d603c4.js";import"./theme-5cfd6c7e.js";import"./index.es-bcfb3c18.js";const e=r.div`
   overflow: hidden;
   position: relative;
   min-height: 20rem;
