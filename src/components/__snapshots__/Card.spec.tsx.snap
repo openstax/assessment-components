@@ -2,13 +2,13 @@
 
 exports[`StepCard matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi iTZfeb"
+  className="sc-gsnTZi dxdISE"
 >
   <div
-    className="sc-bczRLJ YKyJl"
+    className="sc-bczRLJ eAXREJ"
   >
     <div
-      className="sc-dkzDqf jPnAkk"
+      className="sc-dkzDqf hbFgnH"
     >
       <div>
         <div
@@ -49,13 +49,13 @@ exports[`StepCard matches snapshot 1`] = `
 
 exports[`StepCard matches snapshot with more than one question 1`] = `
 <div
-  className="sc-gsnTZi iTZfeb"
+  className="sc-gsnTZi dxdISE"
 >
   <div
-    className="sc-bczRLJ YKyJl"
+    className="sc-bczRLJ eAXREJ"
   >
     <div
-      className="sc-dkzDqf jPnAkk"
+      className="sc-dkzDqf hbFgnH"
     >
       <div>
         <div
@@ -102,14 +102,14 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
 
 exports[`TaskStepCard can optionally provide task 1`] = `
 <div
-  className="sc-gsnTZi iTZfeb"
+  className="sc-gsnTZi dxdISE"
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step"
+    className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf jPnAkk"
+      className="sc-dkzDqf hbFgnH"
     >
       <div>
         <div
@@ -141,14 +141,14 @@ exports[`TaskStepCard can optionally provide task 1`] = `
 
 exports[`TaskStepCard can optionally provide type 1`] = `
 <div
-  className="sc-gsnTZi iTZfeb"
+  className="sc-gsnTZi dxdISE"
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step"
+    className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf jPnAkk"
+      className="sc-dkzDqf hbFgnH"
     >
       <div>
         <div
@@ -180,14 +180,14 @@ exports[`TaskStepCard can optionally provide type 1`] = `
 
 exports[`TaskStepCard matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi iTZfeb"
+  className="sc-gsnTZi dxdISE"
   data-task-step-id={1}
 >
   <div
-    className="sc-bczRLJ YKyJl exercise-step"
+    className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf jPnAkk"
+      className="sc-dkzDqf hbFgnH"
     >
       <div>
         <div
