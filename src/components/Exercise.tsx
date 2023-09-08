@@ -176,45 +176,45 @@ export const Exercise = ({
 
   return <TypesetMathContext.Provider value={typesetExercise}>
     <TaskStepCardWithToolbar
-    step={step}
-    questionNumber={questionNumber}
-    numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
-    rightHeaderChildren={exerciseIcons ? <ExerciseHeaderIcons exercise={exercise} icons={exerciseIcons} /> : null}
-    showTotalQuestions={legacyStepRender}
-    desktopToolbarEnabled={desktopToolbarEnabled}
-    mobileToolbarEnabled={mobileToolbarEnabled}
-    {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
-  >
-    <div ref={container}>
-      <Preamble exercise={exercise} />
+      step={step}
+      questionNumber={questionNumber}
+      numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
+      rightHeaderChildren={exerciseIcons ? <ExerciseHeaderIcons exercise={exercise} icons={exerciseIcons} /> : null}
+      showTotalQuestions={legacyStepRender}
+      desktopToolbarEnabled={desktopToolbarEnabled}
+      mobileToolbarEnabled={mobileToolbarEnabled}
+      {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
+    >
+      <div ref={container}>
+        <Preamble exercise={exercise} />
 
-      {exercise.questions.map((q, i) => {
-        const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
-        return (
-          <ExerciseQuestion
-            {...props}
-            {...{...state, available_points: undefined}}
-            ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
-            exercise_uid={exercise.uid}
-            key={q.id}
-            question={q}
-            questionNumber={questionNumber + i}
-            choicesEnabled={state.canAnswer}
-            displaySolution={true}
-            detailedSolution={state.solution?.content_html}
-            show_all_feedback={show_all_feedback}
-            tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
-            canUpdateCurrentStep={
-              // misleading prop name, we want to show a continue button for completed questions
-              // that aren't the last question, which requires this prop to be true
-              'canUpdateCurrentStep' in props ?
-                props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
-            }
-          />
-        )
-      }
-      )}
-    </div>
-  </TaskStepCardWithToolbar>;
+        {exercise.questions.map((q, i) => {
+          const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
+          return (
+            <ExerciseQuestion
+              {...props}
+              {...{...state, available_points: undefined}}
+              ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
+              exercise_uid={exercise.uid}
+              key={q.id}
+              question={q}
+              questionNumber={questionNumber + i}
+              choicesEnabled={state.canAnswer}
+              displaySolution={true}
+              detailedSolution={state.solution?.content_html}
+              show_all_feedback={show_all_feedback}
+              tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
+              canUpdateCurrentStep={
+                // misleading prop name, we want to show a continue button for completed questions
+                // that aren't the last question, which requires this prop to be true
+                'canUpdateCurrentStep' in props ?
+                  props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+              }
+            />
+          )
+        }
+        )}
+      </div>
+    </TaskStepCardWithToolbar>
   </TypesetMathContext.Provider>;
 };
