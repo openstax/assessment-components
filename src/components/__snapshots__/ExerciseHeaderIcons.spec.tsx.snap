@@ -5,6 +5,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
   className="sc-hKMtZM gYevhA"
 >
   <a
+    aria-label="View topic in textbook"
     className="sc-bczRLJ kQJjcU"
     href="https://openstax.org"
     target="_blank"
@@ -44,6 +45,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
     </div>
   </a>
   <a
+    aria-label="Suggest a correction"
     className="sc-bczRLJ kQJjcU"
     href="https://openstax.org"
     target="_blank"
@@ -83,6 +85,7 @@ exports[`ExerciseIcons matches snapshot 1`] = `
     </div>
   </a>
   <div
+    aria-label="Select the best answer from the given list of distractors. Your instructor may or may not allow multiple attempts."
     className="sc-bczRLJ kQJjcU"
   >
     <div

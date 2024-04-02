@@ -62,7 +62,12 @@ interface PopoverItemProps {
 }
 
 const PopoverItem = (props: PopoverItemProps) => (
-  <ItemWrapper {...props.wrapperProps} mobile={props.mobile} desktop={props.desktop}>
+  <ItemWrapper
+    {...props.wrapperProps}
+    mobile={props.mobile}
+    desktop={props.desktop}
+    aria-label={props.text}
+  >
     <InnerWrapper>
       {props.children}
       <Popover className="popover right">
