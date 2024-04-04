@@ -495,6 +495,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
             className="sc-iqcoie iCsHxN"
           >
             <a
+              aria-label="View topic in textbook"
               className="sc-papXJ fAQnos"
               href="https://openstax.org"
               target="_blank"
@@ -534,6 +535,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               </div>
             </a>
             <a
+              aria-label="Suggest a correction"
               className="sc-papXJ fAQnos"
               href="https://openstax.org"
               target="_blank"
@@ -831,6 +833,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
             className="sc-iqcoie iCsHxN"
           >
             <a
+              aria-label="View topic in textbook"
               className="sc-papXJ fAQnos"
               href="https://openstax.org"
               target="_blank"
@@ -870,6 +873,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </a>
             <a
+              aria-label="Suggest a correction"
               className="sc-papXJ fAQnos"
               href="https://openstax.org"
               target="_blank"
@@ -909,6 +913,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </a>
             <div
+              aria-label="In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. Recalling the answer to a question from memory helps you to retain things longer."
               className="sc-papXJ fAQnos"
             >
               <div
