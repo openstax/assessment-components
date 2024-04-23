@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 
-const ProgressBarWrapper = styled.div`
+const ProgressBarWrapper = styled.nav`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -131,18 +131,25 @@ export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | 
 
 export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>
-    <StyledItem variant={step.variant} isActive={isActive} onClick={() => goToStep(index, step)}>
+    <StyledItem
+      variant={step.variant}
+      isActive={isActive}
+      onClick={() => goToStep(index, step)}
+      aria-current={isActive ? 'location' : 'false'}
+      aria-label={step.variant === 'isStatus' ? 'Assignment status' : `Step ${index + 1}` }
+    >
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
     <ItemIcon variant={step.variant} />
   </StyledItemWrapper>;
 
-export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) => <ProgressBarWrapper>
-  {steps.map((step, index) => <ProgressBarItem
-    key={index}
-    index={index}
-    isActive={index === activeIndex}
-    step={step}
-    goToStep={goToStep}
-  />)}
-</ProgressBarWrapper>;
+export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) =>
+  <ProgressBarWrapper aria-label="Breadcrumbs">
+    {steps.map((step, index) => <ProgressBarItem
+      key={index}
+      index={index}
+      isActive={index === activeIndex}
+      step={step}
+      goToStep={goToStep}
+    />)}
+  </ProgressBarWrapper>;
