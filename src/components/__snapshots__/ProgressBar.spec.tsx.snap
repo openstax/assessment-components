@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar matches snapshot 1`] = `
-<div
+<nav
+  aria-label="Breadcrumbs"
   className="sc-bczRLJ bQqPBP"
 >
   <span
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 1"
       className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
@@ -38,6 +41,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 2"
       className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
@@ -68,6 +73,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="location"
+      aria-label="Step 3"
       className="sc-dkzDqf hmFFbY"
       onClick={[Function]}
     >
@@ -98,6 +105,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 4"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -108,6 +117,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 5"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -118,6 +129,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 6"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -128,6 +141,8 @@ exports[`ProgressBar matches snapshot 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Assignment status"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -145,17 +160,20 @@ exports[`ProgressBar matches snapshot 1`] = `
       </svg>
     </button>
   </span>
-</div>
+</nav>
 `;
 
 exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
-<div
+<nav
+  aria-label="Breadcrumbs"
   className="sc-bczRLJ bQqPBP"
 >
   <span
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 1"
       className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
@@ -186,6 +204,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 2"
       className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
@@ -216,6 +236,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 3"
       className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
@@ -246,6 +268,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="location"
+      aria-label="Step 4"
       className="sc-dkzDqf ejGnvX"
       onClick={[Function]}
     >
@@ -256,6 +280,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 5"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -266,6 +292,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 6"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -276,6 +304,8 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Assignment status"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -293,17 +323,20 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
       </svg>
     </button>
   </span>
-</div>
+</nav>
 `;
 
 exports[`ProgressBar matches snapshot when status step is active 1`] = `
-<div
+<nav
+  aria-label="Breadcrumbs"
   className="sc-bczRLJ bQqPBP"
 >
   <span
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 1"
       className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
@@ -334,6 +367,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 2"
       className="sc-dkzDqf gKblal"
       onClick={[Function]}
     >
@@ -364,6 +399,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 3"
       className="sc-dkzDqf KrxmS"
       onClick={[Function]}
     >
@@ -394,6 +431,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 4"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -404,6 +443,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 5"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -414,6 +455,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="false"
+      aria-label="Step 6"
       className="sc-dkzDqf iyRspZ"
       onClick={[Function]}
     >
@@ -424,6 +467,8 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     className="sc-gsnTZi AyNuQ"
   >
     <button
+      aria-current="location"
+      aria-label="Assignment status"
       className="sc-dkzDqf ejGnvX"
       onClick={[Function]}
     >
@@ -441,5 +486,5 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
       </svg>
     </button>
   </span>
-</div>
+</nav>
 `;
