@@ -136,7 +136,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({in
       isActive={isActive}
       onClick={() => goToStep(index, step)}
       aria-current={isActive ? 'location' : 'false'}
-      aria-label={step.variant === 'isStatus' ? 'Assignment status' : `Step ${index + 1}` }
+      aria-label={step.variant === 'isStatus' ? 'Assignment status' : `Question ${index + 1}` }
     >
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
