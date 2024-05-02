@@ -6,7 +6,6 @@ exports[`Answer matches snapshot 1`] = `
 >
   <section
     className="answers-answer"
-    role="region"
   >
     <input
       checked={false}
@@ -63,7 +62,6 @@ exports[`Answer renders a checked answer 1`] = `
 >
   <section
     className="answers-answer answer-selected"
-    role="region"
   >
     <input
       checked={true}
@@ -120,7 +118,6 @@ exports[`Answer renders a correct answer 1`] = `
 >
   <section
     className="answers-answer disabled answer-correct"
-    role="region"
   >
     <label
       className="answer-label"
@@ -174,7 +171,6 @@ exports[`Answer renders an incorrect answer 1`] = `
 >
   <section
     className="answers-answer answer-incorrect"
-    role="region"
   >
     <label
       className="answer-label"
@@ -228,7 +224,6 @@ exports[`Answer renders feedback 1`] = `
 >
   <section
     className="answers-answer"
-    role="region"
   >
     <input
       checked={false}
@@ -295,7 +290,6 @@ exports[`Answer renders teacher preview 1`] = `
 >
   <section
     className="answers-answer answer-correct"
-    role="region"
   >
     <div
       className="correct-incorrect"
@@ -356,7 +350,6 @@ exports[`Answer renders teacher review 1`] = `
 >
   <section
     className="answers-answer"
-    role="region"
   >
     <div
       className="review-wrapper"
@@ -404,7 +397,6 @@ exports[`Answer renders with a custom renderer if set 1`] = `
 >
   <section
     className="answers-answer"
-    role="region"
   >
     <input
       checked={false}

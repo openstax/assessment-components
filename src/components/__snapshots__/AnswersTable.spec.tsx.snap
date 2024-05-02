@@ -9,7 +9,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <div
         className="correct-incorrect"
@@ -57,7 +56,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <div
         className="correct-incorrect"
@@ -112,7 +110,6 @@ exports[`AnswersTable renders all feedback 1`] = `
   >
     <section
       className="answers-answer disabled answer-selected answer-incorrect"
-      role="region"
     >
       <input
         checked={true}
@@ -184,7 +181,6 @@ exports[`AnswersTable renders all feedback 1`] = `
   >
     <section
       className="answers-answer disabled answer-correct"
-      role="region"
     >
       <input
         checked={false}
@@ -263,7 +259,6 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
   >
     <section
       className="answers-answer disabled answer-selected answer-correct"
-      role="region"
     >
       <label
         className="answer-label"
@@ -326,7 +321,6 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <label
         className="answer-label"
@@ -372,7 +366,6 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
   >
     <section
       className="answers-answer disabled answer-selected answer-incorrect"
-      role="region"
     >
       <input
         checked={true}
@@ -444,7 +437,6 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
   >
     <section
       className="answers-answer disabled answer-correct"
-      role="region"
     >
       <input
         checked={false}
@@ -508,7 +500,6 @@ exports[`AnswersTable renders instructions 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <input
         checked={false}
@@ -556,7 +547,6 @@ exports[`AnswersTable renders instructions 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <input
         checked={false}
@@ -611,7 +601,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <input
         checked={false}
@@ -659,7 +648,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
   >
     <section
       className="answers-answer disabled"
-      role="region"
     >
       <input
         checked={false}
