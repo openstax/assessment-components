@@ -23,7 +23,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -71,7 +70,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -141,7 +139,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -189,7 +186,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -259,7 +255,6 @@ exports[`Question defaults formats 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -307,7 +302,6 @@ exports[`Question defaults formats 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -386,7 +380,6 @@ exports[`Question matches snapshot 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -434,7 +427,6 @@ exports[`Question matches snapshot 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -504,7 +496,6 @@ exports[`Question renders exercise uid 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -552,7 +543,6 @@ exports[`Question renders exercise uid 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -627,7 +617,6 @@ exports[`Question renders formats 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -675,7 +664,6 @@ exports[`Question renders formats 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -757,7 +745,6 @@ exports[`Question renders solutions 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}
@@ -805,7 +792,6 @@ exports[`Question renders solutions 1`] = `
     >
       <section
         className="answers-answer disabled"
-        role="region"
       >
         <input
           checked={false}

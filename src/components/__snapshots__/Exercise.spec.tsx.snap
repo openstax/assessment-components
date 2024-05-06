@@ -77,7 +77,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                 >
                   <section
                     className="answers-answer disabled answer-selected"
-                    role="region"
                   >
                     <input
                       checked={true}
@@ -125,7 +124,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                 >
                   <section
                     className="answers-answer disabled"
-                    role="region"
                   >
                     <input
                       checked={false}
@@ -275,7 +273,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 >
                   <section
                     className="answers-answer disabled answer-selected"
-                    role="region"
                   >
                     <input
                       checked={true}
@@ -323,7 +320,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 >
                   <section
                     className="answers-answer disabled"
-                    role="region"
                   >
                     <input
                       checked={false}
@@ -613,7 +609,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 >
                   <section
                     className="answers-answer disabled answer-selected"
-                    role="region"
                   >
                     <input
                       checked={true}
@@ -661,7 +656,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 >
                   <section
                     className="answers-answer disabled"
-                    role="region"
                   >
                     <input
                       checked={false}
@@ -991,7 +985,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 >
                   <section
                     className="answers-answer disabled answer-selected"
-                    role="region"
                   >
                     <input
                       checked={true}
@@ -1039,7 +1032,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 >
                   <section
                     className="answers-answer disabled"
-                    role="region"
                   >
                     <input
                       checked={false}
@@ -1189,7 +1181,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 >
                   <section
                     className="answers-answer disabled answer-selected"
-                    role="region"
                   >
                     <input
                       checked={true}
@@ -1237,7 +1228,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 >
                   <section
                     className="answers-answer disabled"
-                    role="region"
                   >
                     <input
                       checked={false}

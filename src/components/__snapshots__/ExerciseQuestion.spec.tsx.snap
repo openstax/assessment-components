@@ -26,7 +26,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -74,7 +73,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -179,7 +177,6 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       >
         <section
           className="answers-answer answer-selected"
-          role="region"
         >
           <input
             checked={true}
@@ -227,7 +224,6 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       >
         <section
           className="answers-answer answer-incorrect"
-          role="region"
         >
           <input
             checked={false}
@@ -339,7 +335,6 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       >
         <section
           className="answers-answer answer-selected"
-          role="region"
         >
           <input
             checked={true}
@@ -387,7 +382,6 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       >
         <section
           className="answers-answer answer-incorrect"
-          role="region"
         >
           <input
             checked={false}
@@ -499,7 +493,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       >
         <section
           className="answers-answer"
-          role="region"
         >
           <input
             checked={false}
@@ -547,7 +540,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       >
         <section
           className="answers-answer"
-          role="region"
         >
           <input
             checked={false}
@@ -659,7 +651,6 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -707,7 +698,6 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       >
         <section
           className="answers-answer disabled answer-incorrect"
-          role="region"
         >
           <input
             checked={false}
@@ -818,7 +808,6 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       >
         <section
           className="answers-answer disabled answer-correct"
-          role="region"
         >
           <label
             className="answer-label"
@@ -863,7 +852,6 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       >
         <section
           className="answers-answer disabled answer-incorrect"
-          role="region"
         >
           <label
             className="answer-label"
@@ -989,7 +977,6 @@ exports[`ExerciseQuestion renders free response 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -1037,7 +1024,6 @@ exports[`ExerciseQuestion renders free response 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -1142,7 +1128,6 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       >
         <section
           className="answers-answer disabled"
-          role="region"
         >
           <input
             checked={false}
@@ -1190,7 +1175,6 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       >
         <section
           className="answers-answer disabled answer-incorrect"
-          role="region"
         >
           <input
             checked={false}
@@ -1301,7 +1285,6 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       >
         <section
           className="answers-answer"
-          role="region"
         >
           <input
             checked={false}
@@ -1349,7 +1332,6 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       >
         <section
           className="answers-answer answer-incorrect"
-          role="region"
         >
           <input
             checked={false}

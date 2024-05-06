@@ -194,7 +194,7 @@ export const Answer = (props: AnswerProps) => {
 
   return (
     <div className="openstax-answer">
-      <section role="region" className={classes}>
+      <section className={classes}>
         {body}
       </section>
     </div>
