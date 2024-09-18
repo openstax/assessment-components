@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps } from './Exercise';
 import { Answer } from '../types';
+import styled from 'styled-components';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -131,6 +132,38 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
   },
 }};
 
+type TextResizerValue = -2 | -1 | 0 | 1 | 2 | 3;
+const textResizerScales = [0.75, 0.9, 1, 1.25, 1.5, 2];
+const textResizerValues: TextResizerValue[] = [-2, -1, 0, 1, 2, 3];
+const textResizerValueMap = new Map(textResizerValues.map((v, i) => [v, textResizerScales[i]]));
+
+const ExerciseWrapper = styled.div<{ textSize: TextResizerValue }>`
+   ${(props: { textSize: TextResizerValue }) => `
+    --content-text-scale: ${textResizerValueMap.get(props.textSize)};
+  `}
+`;
+
+const TextResizerProvider = ({ children }: { children: React.ReactNode }) => {
+  const [index, setIndex] = useState(2);
+
+  const increase = () => setIndex(Math.min(index + 1, textResizerValues.length - 1));
+  const decrease = () => setIndex(Math.max(index - 1, 0));
+
+  return (
+    <ExerciseWrapper textSize={textResizerValues[index]}>
+      <div style={{ marginBottom: '2rem', alignItems: 'center', placeContent: 'center', display: 'flex', gap: '1rem' }}>
+        <h3>Text Size</h3>
+        <button onClick={decrease}>- Decrease</button>
+        <span style={{ display: 'inline-block', width: '3rem', textAlign: 'center' }}>
+          <b>{textResizerScales[index]}</b>
+        </span>
+        <button onClick={increase}>+ Increase</button>
+      </div>
+      {children}
+    </ExerciseWrapper>
+  );
+};
+
 export const Default = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)
@@ -144,7 +177,8 @@ export const Default = () => {
         setSelectedAnswerId(a.id)
       }}
       onAnswerSave={() => setApiIsPending(true)}
-    />)
+    />
+  )
 };
 
 export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps} />;
@@ -173,7 +207,7 @@ export const CompleteWithFeedback = () => {
     }
   };
 
-  return <Exercise {...props} />;
+  return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
 };
 
 export const IncorrectWithFeedbackAndSolution = () => {
@@ -197,7 +231,7 @@ export const IncorrectWithFeedbackAndSolution = () => {
       apiIsPending: false
     }
   };
-  return <Exercise {...props} />;
+  return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
 };
 
 export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
@@ -223,7 +257,7 @@ export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
   };
   props.exercise.questions[0].answers[0].content_html = 'A very long correct answer to observe line wrapping at mobile sizes';
   props.exercise.questions[0].answers[1].content_html = 'A very long incorrect answer to observe line wrapping at mobile sizes';
-  return <Exercise {...props} />;
+  return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
 };
 
 export const MultiPartHalfComplete = () => {
@@ -325,7 +359,7 @@ export const MultiPartHalfComplete = () => {
     }
   };
 
-  return <Exercise {...props} />;
+  return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
 };
 
 export const Icons = () => {
@@ -341,20 +375,20 @@ export const Icons = () => {
   };
 
   return <Exercise
-    {...exerciseWithQuestionStatesProps()}
-    exerciseIcons={{
-      topic: {
-        url: 'https://openstax.org',
-        location
-      },
-      errata: {
-        url: 'https://openstax.org',
-        location
-      },
-      info: {
-        location
-      },
-    }}
+      {...exerciseWithQuestionStatesProps()}
+      exerciseIcons={{
+        topic: {
+          url: 'https://openstax.org',
+          location
+        },
+        errata: {
+          url: 'https://openstax.org',
+          location
+        },
+        info: {
+          location
+        },
+      }}
   />;
 };
 
@@ -506,7 +540,7 @@ bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps a
   };
 
   return (
-    <>
+    <TextResizerProvider>
       <Exercise {...props1}
         onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
           setSelectedAnswerId(a.id)
@@ -516,6 +550,6 @@ bitterness. The discriminant <span data-math="b^2 - 4ac"></span> could perhaps a
         }}
       />
       <Exercise {...props2} />
-    </>
+    </TextResizerProvider>
   );
 };

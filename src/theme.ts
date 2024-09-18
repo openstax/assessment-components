@@ -208,7 +208,7 @@ export const mixins = {
     margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     color: ${colors.palette.neutralThin};
-    font-size: 1.4rem;
+    font-size: calc(1.4rem * var(--content-text-scale));
 
     .arrow {
       position: absolute;
