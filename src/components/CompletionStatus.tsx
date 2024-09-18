@@ -12,6 +12,7 @@ export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
   handleClick: () => void;
+  className?: string;
 }
 
 const CompletionStatusCard = styled(InnerStepCard)`
@@ -36,7 +37,7 @@ const CompletionHeader = styled.h2`
 `;
 
 export const CompletionStatus = styled(({
-  numberOfQuestions, numberCompleted, handleClick
+  numberOfQuestions, numberCompleted, handleClick, className
 }: CompletionStatusProps) => {
 
   const allCompleted = numberOfQuestions === numberCompleted;
@@ -47,7 +48,7 @@ export const CompletionStatus = styled(({
 
   return <>
     <GlobalStyle />
-    <CompletionStatusCard>
+    <CompletionStatusCard className={className}>
       <CompletionHeader>{allCompleted ? 'You are done.' : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}</CompletionHeader>
       <p>{allCompleted ? 'Great job answering all the questions.' : (someCompleted ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.` : 'Begin working on the quiz.')}</p>
       <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={() => handleClick()}>
