@@ -1,11 +1,12 @@
-import{m as e,c as t,b as o}from"./theme-4cac50d3.js";import{s as r}from"./index-3ee08883.js";const p=r.div`
+import{m as e,c as t,b as o}from"./theme-e69cbe91.js";import{s as a}from"./index-6d896872.js";const p=a.div`
     ${e.stepCardPadding()}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: calc(1.4rem * var(--content-text-scale));
+    line-height: calc(2rem * var(--content-text-scale));
     background: ${t.card.body.background};
+    overflow: auto;
 
     > * {
         flex-grow: 1;

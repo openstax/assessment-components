@@ -1,11 +1,11 @@
-import{s as r,j as s,a as n}from"./index-3ee08883.js";import{c as o,b as i,l as w,m as S}from"./theme-4cac50d3.js";import{c as C}from"./index-e94e4a14.js";const q=r.div`
+import{s as r,j as o,a as t}from"./index-6d896872.js";import{c as s,b as i,l as w,m as S}from"./theme-e69cbe91.js";import{c as C}from"./index-72240dee.js";const q=r.div`
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 400px;
   margin: 0 auto 5rem auto;
-  border: 1px solid ${o.palette.light};
+  border: 1px solid ${s.palette.light};
   border-radius: 0.25rem;
   background-color: white;
   overflow: hidden;
@@ -24,7 +24,7 @@ import{s as r,j as s,a as n}from"./index-3ee08883.js";import{c as o,b as i,l as 
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: ${o.card.header.background};
+  background: ${s.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
   letter-spacing: -0.72px;
@@ -59,7 +59,7 @@ import{s as r,j as s,a as n}from"./index-3ee08883.js";import{c as o,b as i,l as 
   }
 
   button {
-    color: ${o.palette.gray};
+    color: ${s.palette.gray};
   }
 
   .openstax-exercise-badges {
@@ -132,8 +132,8 @@ import{s as r,j as s,a as n}from"./index-3ee08883.js";import{c as o,b as i,l as 
 `;m.displayName="StepCardHeader";const j=r.div`
   .step-card-body {
     ${S.stepCardPadding()}
-
-    background: ${o.card.body.background};
+    overflow: auto;
+    background: ${s.card.body.background};
 
     &.exercise-stimulus {
       display: flex;
@@ -179,4 +179,4 @@ import{s as r,j as s,a as n}from"./index-3ee08883.js";import{c as o,b as i,l as 
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
-`,g=({questionNumber:e,numberOfQuestions:t,showTotalQuestions:d,stepType:l,isHomework:p,availablePoints:a,unpadded:x,className:h,children:u,questionId:b,multipartBadge:f,leftHeaderChildren:y,rightHeaderChildren:c,headerTitleChildren:$,...v})=>{const k=t>1?`Questions ${e} - ${e+t-1}`:`Question ${e}`;return n(N,{...v,children:[f,n(q,{className:h,children:[e&&p&&l==="exercise"&&n(m,{children:[n("div",{children:[y,n("div",{className:"question-info",children:[$,s("span",{children:k}),d?n("span",{className:"num-questions",children:[" / ",t]}):null,s("span",{className:"separator",children:"|"}),n("span",{className:"question-id",children:["ID: ",b]})]})]}),a||c?n("div",{children:[a&&n("div",{className:"points",children:[a," Points"]}),c]}):null]}),s(j,{unpadded:x,children:u})]})]})};g.displayName="OSStepCard";const I=({step:e,questionNumber:t,numberOfQuestions:d,children:l,className:p,...a})=>s(g,{...a,unpadded:!0,questionNumber:t,numberOfQuestions:d,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,className:C(`${"type"in e?e.type:"exercise"}-step`,p),questionId:e.uid,children:l});I.displayName="OSTaskStepCard";export{q as I,N as O,I as T};
+`,g=({questionNumber:e,numberOfQuestions:n,showTotalQuestions:d,stepType:l,isHomework:p,availablePoints:a,unpadded:x,className:h,children:u,questionId:b,multipartBadge:f,leftHeaderChildren:y,rightHeaderChildren:c,headerTitleChildren:v,...$})=>{const k=n>1?`Questions ${e} - ${e+n-1}`:`Question ${e}`;return t(N,{...$,children:[f,t(q,{className:h,children:[e&&p&&l==="exercise"&&t(m,{children:[t("div",{children:[y,t("div",{className:"question-info",children:[v,o("span",{children:k}),d?t("span",{className:"num-questions",children:[" / ",n]}):null,o("span",{className:"separator",children:"|"}),t("span",{className:"question-id",children:["ID: ",b]})]})]}),a||c?t("div",{children:[a&&t("div",{className:"points",children:[a," Points"]}),c]}):null]}),o(j,{unpadded:x,children:u})]})]})};g.displayName="OSStepCard";const I=({step:e,questionNumber:n,numberOfQuestions:d,children:l,className:p,...a})=>o(g,{...a,unpadded:!0,questionNumber:n,numberOfQuestions:d,stepType:"type"in e?e.type:"exercise",isHomework:"task"in e?e.task===void 0||e.task.type==="homework":!0,"data-task-step-id":e.id,className:C(`${"type"in e?e.type:"exercise"}-step`,p),questionId:e.uid,children:l});I.displayName="OSTaskStepCard";export{q as I,N as O,I as T};
