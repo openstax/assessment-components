@@ -141,7 +141,7 @@ exports[`Answer renders a correct answer 1`] = `
         className="answer-answer"
       >
         <div
-          className="sc-bczRLJ bwhOfi"
+          className="sc-bczRLJ jEysTE"
         >
           Correct
            Answer
@@ -194,7 +194,7 @@ exports[`Answer renders an incorrect answer 1`] = `
         className="answer-answer"
       >
         <div
-          className="sc-bczRLJ gojKWV"
+          className="sc-bczRLJ dfvfuH"
         >
           Incorrect
            Answer
@@ -320,7 +320,7 @@ exports[`Answer renders teacher preview 1`] = `
         className="answer-answer"
       >
         <div
-          className="sc-bczRLJ bwhOfi"
+          className="sc-bczRLJ jEysTE"
         >
           Correct
            Answer

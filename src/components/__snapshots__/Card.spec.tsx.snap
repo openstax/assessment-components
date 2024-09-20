@@ -39,7 +39,7 @@ exports[`StepCard matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM EWshI"
+      className="sc-hKMtZM bwRTaS"
     >
       Question content
     </div>
@@ -92,7 +92,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM EWshI"
+      className="sc-hKMtZM bwRTaS"
     >
       Question content
     </div>
@@ -133,7 +133,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM EWshI"
+      className="sc-hKMtZM bwRTaS"
     />
   </div>
 </div>
@@ -172,7 +172,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM EWshI"
+      className="sc-hKMtZM bwRTaS"
     />
   </div>
 </div>
@@ -211,7 +211,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-hKMtZM EWshI"
+      className="sc-hKMtZM bwRTaS"
     />
   </div>
 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
-import styled, { css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
 import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from './Card';
 import { Content } from './Content';
@@ -12,8 +12,14 @@ import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
 import { TypesetMathContext } from '../hooks/useTypesetMath';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
-  font-size: 1.8rem;
-  line-height: 2.8rem;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+`;
+
+const GlobalStyle = createGlobalStyle`
+  :root {
+    --content-text-scale: 1;
+  }
 `;
 
 const ToolbarWrapper = styled.div<{
@@ -151,9 +157,9 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
-export const Exercise = ({
+export const Exercise = styled(({
   numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, ...props
-}: ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) => {
+}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps)) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
@@ -175,6 +181,7 @@ export const Exercise = ({
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
   return <TypesetMathContext.Provider value={typesetExercise}>
+    <GlobalStyle />
     <TaskStepCardWithToolbar
       step={step}
       questionNumber={questionNumber}
@@ -184,6 +191,7 @@ export const Exercise = ({
       desktopToolbarEnabled={desktopToolbarEnabled}
       mobileToolbarEnabled={mobileToolbarEnabled}
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
+      className={props.className}
     >
       <div ref={container}>
         <Preamble exercise={exercise} />
@@ -217,4 +225,5 @@ export const Exercise = ({
       </div>
     </TaskStepCardWithToolbar>
   </TypesetMathContext.Provider>;
-};
+})`
+`;

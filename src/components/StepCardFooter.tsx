@@ -6,9 +6,10 @@ export const StepCardFooter = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: calc(1.4rem * var(--content-text-scale));
+    line-height: calc(2rem * var(--content-text-scale));
     background: ${colors.card.body.background};
+    overflow: auto;
 
     > * {
         flex-grow: 1;

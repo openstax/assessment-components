@@ -145,7 +145,7 @@ StepCardHeader.displayName = 'StepCardHeader';
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
   .step-card-body {
     ${mixins.stepCardPadding()}
-
+    overflow: auto;
     background: ${colors.card.body.background};
 
     &.exercise-stimulus {
