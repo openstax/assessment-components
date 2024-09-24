@@ -141,7 +141,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       </div>
       <StepCardFooter>
       {availablePoints
-        ? <div className="points"><strong>Points: {availablePoints}</strong></div>
+        ? <div className="points" role="status"><strong>Points: {availablePoints}</strong></div>
         : null}
         <div className="controls">
           <RevertButton disabled={!textHasChanged} onClick={cancelHandler} />
