@@ -125,6 +125,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -282,6 +283,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -440,6 +442,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -592,6 +595,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -756,6 +760,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -901,6 +906,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -1076,6 +1082,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -1233,6 +1240,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
@@ -1390,6 +1398,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     >
       <div
         className="points"
+        role="status"
       >
         <strong>
           Points: 
