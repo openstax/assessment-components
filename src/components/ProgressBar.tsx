@@ -13,7 +13,7 @@ const ProgressBarWrapper = styled.nav`
   padding: 2rem;
 
   ${breakpoints.mobile`
-    padding: 0.8rem;
+    padding: 1.6rem 0.8rem;
   `}
 `;
 
