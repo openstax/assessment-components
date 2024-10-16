@@ -7,18 +7,19 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 
 const ProgressBarWrapper = styled.nav`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 1rem;
   padding: 2rem;
+
   ${breakpoints.mobile`
-    padding: 0;
+    padding: 0.8rem;
   `}
 `;
 
 const StyledItemWrapper = styled.span`
   display: flex;
   align-items: center;
-  margin: 0 1rem 1rem 0;
   position: relative;
 
   &:last-child {
