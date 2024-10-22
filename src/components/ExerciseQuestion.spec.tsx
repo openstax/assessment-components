@@ -50,6 +50,7 @@ describe('ExerciseQuestion', () => {
       displaySolution: false,
       available_points: '1.0',
       exercise_uid: '',
+      hasFeedback: true,
     }
   });
 
@@ -125,6 +126,21 @@ describe('ExerciseQuestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders Submit & continue button', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props}
+        choicesEnabled={true}
+        incorrectAnswerId='2'
+        canAnswer={true}
+        needsSaved={true}
+        answer_id='1'
+        canUpdateCurrentStep={false}
+        hasFeedback={false}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('renders continue button (unused?)', () => {
     const tree = renderer.create(
       <ExerciseQuestion {...props}
@@ -193,6 +209,29 @@ describe('ExerciseQuestion', () => {
     );
     renderer.act(() => {
       tree.root.findByType(NextButton).props.onClick();
+    });
+
+    expect(mockFn).toHaveBeenCalledWith(0);
+  });
+
+  it('passes question index on submit button click when there is not feedback', () => {
+    const mockFn = jest.fn();
+
+    // This combination of props should never happen: `is_completed` should not 
+    // be true at the same time as `needsSaved`. This combination allows the 
+    // test to work correctly without simulating waiting for api calls
+    const tree = renderer.create(
+      <ExerciseQuestion
+        {...props}
+        needsSaved={true}
+        canAnswer={true}
+        hasFeedback={false}
+        is_completed={true}
+        onNextStep={mockFn}
+      />
+    );
+    renderer.act(() => {
+      tree.root.findByType(SaveButton).props.onClick();
     });
 
     expect(mockFn).toHaveBeenCalledWith(0);
