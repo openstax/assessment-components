@@ -50,6 +50,7 @@ describe('ExerciseQuestion', () => {
       displaySolution: false,
       available_points: '1.0',
       exercise_uid: '',
+      hasFeedback: true,
     }
   });
 
@@ -120,6 +121,37 @@ describe('ExerciseQuestion', () => {
         needsSaved={true}
         attempt_number={1}
         answer_id='1'
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders Save & continue button', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props}
+        choicesEnabled={true}
+        incorrectAnswerId='2'
+        canAnswer={true}
+        needsSaved={true}
+        answer_id='1'
+        canUpdateCurrentStep={false}
+        hasFeedback={false}
+      />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders Re-submit & continue button', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props}
+        choicesEnabled={true}
+        incorrectAnswerId='2'
+        canAnswer={true}
+        needsSaved={true}
+        attempt_number={1}
+        answer_id='1'
+        canUpdateCurrentStep={false}
+        hasFeedback={false}
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

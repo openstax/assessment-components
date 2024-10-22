@@ -138,6 +138,7 @@ export interface ExerciseBaseProps {
    * - A topic icon linking to the relevant textbook location
    */
   exerciseIcons?: ExerciseIcons;
+  hasFeedback?: boolean;
 }
 
 export interface ExerciseWithStepDataProps extends ExerciseBaseProps {

@@ -152,6 +152,165 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
 </div>
 `;
 
+exports[`ExerciseQuestion renders Re-submit & continue button 1`] = `
+<div
+  data-test-id="student-exercise-question"
+>
+  <div
+    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    data-question-number={1}
+    data-test-id="question"
+  >
+    <div
+      className="question-stem"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Is this a question?",
+        }
+      }
+      data-question-number={1}
+    />
+    <div
+      className="answers-table"
+    >
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer answer-selected"
+        >
+          <input
+            checked={true}
+            className="answer-input-box"
+            disabled={false}
+            id="1-option-0"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-0"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Selected Choice A:"
+                className="answer-letter"
+                data-test-id="answer-choice-A"
+                disabled={false}
+                onClick={[Function]}
+              >
+                A
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "True",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer answer-incorrect"
+        >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={false}
+            id="1-option-1"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-1"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Choice B:"
+                className="answer-letter"
+                data-test-id="answer-choice-B"
+                disabled={true}
+                onClick={[Function]}
+              >
+                B
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <div
+                className="sc-gsnTZi jsjSLp"
+              >
+                Incorrect
+                 Answer
+              </div>
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "False",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-hKMtZM eTQwo step-card-footer"
+  >
+    <div
+      className="step-card-footer-inner"
+    >
+      <div
+        className="points"
+        role="status"
+      >
+        <strong>
+          Points: 
+          1.0
+        </strong>
+        <span
+          className="attempts-left"
+        />
+        
+      </div>
+      <div
+        className="controls"
+      >
+        <button
+          className="sc-bczRLJ fLTvYy"
+          data-test-id="submit-answer-btn"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Re-submit & continue
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ExerciseQuestion renders Re-submit button 1`] = `
 <div
   data-test-id="student-exercise-question"
@@ -304,6 +463,165 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
           onClick={[Function]}
         >
           Re-submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExerciseQuestion renders Save & continue button 1`] = `
+<div
+  data-test-id="student-exercise-question"
+>
+  <div
+    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    data-question-number={1}
+    data-test-id="question"
+  >
+    <div
+      className="question-stem"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Is this a question?",
+        }
+      }
+      data-question-number={1}
+    />
+    <div
+      className="answers-table"
+    >
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer answer-selected"
+        >
+          <input
+            checked={true}
+            className="answer-input-box"
+            disabled={false}
+            id="1-option-0"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-0"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Selected Choice A:"
+                className="answer-letter"
+                data-test-id="answer-choice-A"
+                disabled={false}
+                onClick={[Function]}
+              >
+                A
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "True",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+      <div
+        className="openstax-answer"
+      >
+        <section
+          className="answers-answer answer-incorrect"
+        >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={false}
+            id="1-option-1"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="answer-label"
+            htmlFor="1-option-1"
+          >
+            <span
+              className="answer-letter-wrapper"
+            >
+              <button
+                aria-label="Choice B:"
+                className="answer-letter"
+                data-test-id="answer-choice-B"
+                disabled={true}
+                onClick={[Function]}
+              >
+                B
+              </button>
+            </span>
+            <div
+              className="answer-answer"
+            >
+              <div
+                className="sc-gsnTZi jsjSLp"
+              >
+                Incorrect
+                 Answer
+              </div>
+              <span
+                className="answer-content"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "False",
+                  }
+                }
+              />
+            </div>
+          </label>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-hKMtZM eTQwo step-card-footer"
+  >
+    <div
+      className="step-card-footer-inner"
+    >
+      <div
+        className="points"
+        role="status"
+      >
+        <strong>
+          Points: 
+          1.0
+        </strong>
+        <span
+          className="attempts-left"
+        />
+        
+      </div>
+      <div
+        className="controls"
+      >
+        <button
+          className="sc-bczRLJ fLTvYy"
+          data-test-id="submit-answer-btn"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Submit & continue
         </button>
       </div>
     </div>

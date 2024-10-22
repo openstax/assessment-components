@@ -37,6 +37,7 @@ export interface ExerciseQuestionProps {
   free_response?: string;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
+  hasFeedback?: ExerciseBaseProps['hasFeedback'];
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -56,7 +57,7 @@ const PublishedComments = ({ published_comments }: { published_comments?: string
 }
 
 export const SaveButton = (props: {
-  disabled: boolean, isWaiting: boolean, attempt_number: number
+  disabled: boolean, isWaiting: boolean, attempt_number: number, willContinue?: boolean
 } & React.ComponentPropsWithoutRef<'button'>) => (
   <Button
     {...props}
@@ -64,7 +65,8 @@ export const SaveButton = (props: {
     isWaiting={props.isWaiting}
     data-test-id="submit-answer-btn"
   >
-    {props.attempt_number == 0 ? 'Submit' : 'Re-submit'}
+    {(props.attempt_number == 0 ? 'Submit' : 'Re-submit') +
+      (props.willContinue ? ' & continue' : '')}
   </Button>
 );
 
@@ -93,7 +95,8 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled
+    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled,
+    hasFeedback
   } = props;
 
   return (
@@ -138,7 +141,13 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
                 disabled={apiIsPending || !answer_id}
                 isWaiting={apiIsPending}
                 attempt_number={attempt_number}
-                onClick={() => onAnswerSave(numberfyId(question.id))}
+                willContinue={!canUpdateCurrentStep && !hasFeedback}
+                onClick={() => {
+                  onAnswerSave(numberfyId(question.id))
+                  if (!canUpdateCurrentStep && !hasFeedback) {
+                    onNextStep(questionNumber - 1)
+                  }
+                }}
               /> :
               <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>

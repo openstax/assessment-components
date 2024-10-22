@@ -51,7 +51,8 @@ const props = {
   needsSaved: true,
   canUpdateCurrentStep: true,
   attempt_number: 0,
-  apiIsPending: false
+  apiIsPending: false,
+  hasFeedback: false
 };
 
 export const Default = () => <ExerciseQuestion {...props} />;
