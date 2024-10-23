@@ -37,7 +37,7 @@ export declare const SaveButton: (props: {
     disabled: boolean;
     isWaiting: boolean;
     attempt_number: number;
-    willContinue?: boolean;
+    willContinue: boolean;
 } & React.ComponentPropsWithoutRef<'button'>) => JSX.Element;
 export declare const NextButton: (props: {
     canUpdateCurrentStep: boolean;
