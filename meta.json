@@ -180,8 +180,18 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 186,
-      "locEnd": 211,
+      "locStart": 215,
+      "locEnd": 240,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--complete-without-feedback": {
+      "name": "Complete without feedback",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 242,
+      "locEnd": 268,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -190,8 +200,18 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 167,
-      "locEnd": 182,
+      "locStart": 168,
+      "locEnd": 183,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--default-without-feedback": {
+      "name": "Default without feedback",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 185,
+      "locEnd": 211,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -200,8 +220,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 184,
-      "locEnd": 184,
+      "locStart": 213,
+      "locEnd": 213,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -210,8 +230,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 365,
-      "locEnd": 393,
+      "locStart": 422,
+      "locEnd": 450,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -220,8 +240,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 213,
-      "locEnd": 235,
+      "locStart": 270,
+      "locEnd": 292,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -230,8 +250,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 237,
-      "locEnd": 261,
+      "locStart": 294,
+      "locEnd": 318,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -240,8 +260,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 395,
-      "locEnd": 555,
+      "locStart": 452,
+      "locEnd": 612,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -250,8 +270,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 263,
-      "locEnd": 363,
+      "locStart": 320,
+      "locEnd": 420,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -260,8 +280,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 57,
-      "locEnd": 57,
+      "locStart": 58,
+      "locEnd": 58,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -270,8 +290,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 58,
-      "locEnd": 61,
+      "locStart": 59,
+      "locEnd": 62,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -280,8 +300,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 62,
-      "locEnd": 67,
+      "locStart": 63,
+      "locEnd": 68,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -290,8 +310,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 78,
-      "locEnd": 88,
+      "locStart": 79,
+      "locEnd": 89,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -300,8 +320,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 68,
-      "locEnd": 77,
+      "locStart": 69,
+      "locEnd": 78,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
