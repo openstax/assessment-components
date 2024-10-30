@@ -142,6 +142,7 @@ describe('Exercise', () => {
         numberOfQuestions: 1,
         scrollToQuestion: 1,
         hasMultipleAttempts: false,
+        hasFeedback: true,
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,

@@ -130,6 +130,7 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
       apiIsPending: false
     }
   },
+  hasFeedback: true,
 }};
 
 type TextResizerValue = -2 | -1 | 0 | 1 | 2 | 3;
@@ -181,6 +182,34 @@ export const Default = () => {
   )
 };
 
+export const DefaultWithoutFeedback = () => {
+  const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
+  const [apiIsPending, setApiIsPending] = useState(false)
+  const [isCompleted, setIsCompleted] = useState(false)
+  const props = exerciseWithQuestionStatesProps();
+  props.hasFeedback = false;
+  props.questionStates['1'].answer_id = selectedAnswerId;
+  props.questionStates['1'].apiIsPending = apiIsPending;
+  props.questionStates['1'].is_completed = isCompleted;
+  props.questionStates['1'].canAnswer = !isCompleted;
+  return (
+    <Exercise
+      {...props}
+      onAnswerChange={(a: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+        setSelectedAnswerId(a.id)
+      }}
+      onAnswerSave={() => {
+        setApiIsPending(true);
+        setTimeout(() => {
+          setApiIsPending(false)
+          setIsCompleted(true)
+        }, 1000)
+      }}
+      onNextStep={(idx) => console.log(`Next step: ${idx}`)}
+    />
+  )
+};
+
 export const DeprecatedStepData = () => <Exercise {...exerciseWithStepDataProps} />;
 
 export const CompleteWithFeedback = () => {
@@ -205,6 +234,34 @@ export const CompleteWithFeedback = () => {
         apiIsPending: false
       }
     }
+  };
+
+  return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
+};
+
+export const CompleteWithoutFeedback = () => {
+  const props: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps(),
+
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: ['1', '2'],
+        answer_id: 1,
+        free_response: 'Free response',
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false
+      }
+    },
+    hasFeedback: false,
   };
 
   return <TextResizerProvider><Exercise {...props} /></TextResizerProvider>;
