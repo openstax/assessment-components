@@ -45,6 +45,7 @@ export interface AnswerProps {
   contentRenderer?: JSX.Element;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
+  feedbackId?: string;
 }
 
 export const Answer = (props: AnswerProps) => {
@@ -63,6 +64,7 @@ export const Answer = (props: AnswerProps) => {
     contentRenderer,
     show_all_feedback,
     tableFeedbackEnabled,
+    feedbackId,
   } = props;
 
   let body, feedback, selectedCount;
@@ -99,7 +101,7 @@ export const Answer = (props: AnswerProps) => {
   }
   ariaLabel += ':';
 
-  let onChangeAnswer: AnswerProps['onChangeAnswer'], radioBox;
+  let onChangeAnswer: AnswerProps['onChangeAnswer'];
 
   const onChange = () => onChangeAnswer && onChangeAnswer(answer);
 
@@ -108,20 +110,6 @@ export const Answer = (props: AnswerProps) => {
     && (type !== 'teacher-preview')
     && (type !== 'student-mpp')) {
     ({ onChangeAnswer } = props);
-  }
-
-  if (onChangeAnswer) {
-    radioBox = (
-      <input
-        type="radio"
-        className="answer-input-box"
-        checked={isChecked}
-        id={`${qid}-option-${iter}`}
-        name={`${qid}-options`}
-        onChange={onChange}
-        disabled={disabled}
-      />
-    );
   }
 
   if (show_all_feedback && answer.feedback_html && !tableFeedbackEnabled) {
@@ -166,21 +154,27 @@ export const Answer = (props: AnswerProps) => {
       <>
         {type === 'teacher-preview' && correctIncorrectIcon}
         {selectedCount}
-        {radioBox}
+        <input
+          type="radio"
+          className="answer-input-box"
+          checked={isChecked}
+          aria-checked={isChecked}
+          id={`${qid}-option-${iter}`}
+          name={`${qid}-options`}
+          onChange={onChange}
+          disabled={disabled || !onChangeAnswer}
+          aria-details={feedbackId}
+        />
         <label
           onKeyPress={onKeyPress}
           htmlFor={`${qid}-option-${iter}`}
           className="answer-label">
-          <span className="answer-letter-wrapper">
-            <button
-              onClick={onChange}
-              aria-label={ariaLabel}
-              className="answer-letter"
-              disabled={disabled || isIncorrect}
-              data-test-id={`answer-choice-${ALPHABET[iter]}`}
-            >
-              {ALPHABET[iter]}
-            </button>
+          <span
+            className="answer-letter-wrapper"
+            aria-label={ariaLabel}
+            data-answer-choice={ALPHABET[iter]}
+            data-test-id={`answer-choice-${ALPHABET[iter]}`}
+          >
           </span>
           <div className="answer-answer">
             <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
