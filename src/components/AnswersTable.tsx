@@ -37,7 +37,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const { id } = question;
 
-  const feedback: { index: number, html: string }[] = [];
+  const feedback: { index: number, html: string, id: string }[] = [];
 
   const sortedAnswersByIdOrder = (idOrder: ID[]) => {
     const { answers } = question;
@@ -69,34 +69,38 @@ export const AnswersTable = (props: AnswersTableProps) => {
           question_id: typeof question.id === 'string' ? parseInt(question.id, 10) : question.id
          },
       iter: i,
-      key: `${questionAnswerProps.qid}-option-${i}`
+      key: `${questionAnswerProps.qid}-option-${i}`,
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
+    const feedbackId = `feedback-${questionAnswerProps.qid}-${i}`
+    let hasFeedback = true;
 
     if (show_all_feedback && answer.feedback_html && tableFeedbackEnabled) {
-      feedback.push({ index: i, html: answer.feedback_html })
+      feedback.push({ index: i, html: answer.feedback_html, id: feedbackId })
     } else if (answer.id === incorrectAnswerId && feedback_html) {
-      feedback.push({ index: i, html: feedback_html })
+      feedback.push({ index: i, html: feedback_html, id: feedbackId })
     } else if (answer.id === correct_answer_id && correct_answer_feedback_html) {
-      feedback.push({ index: i, html: correct_answer_feedback_html })
+      feedback.push({ index: i, html: correct_answer_feedback_html, id: feedbackId })
+    } else {
+      hasFeedback = false;
     }
 
     return (
-      <Answer {...answerProps} />
+      <Answer feedbackId={hasFeedback ? feedbackId : undefined} {...answerProps} />
     );
   });
 
   feedback.forEach((item, i) => {
     const spliceIndex = item.index + i + 1;
     answersHtml.splice(spliceIndex, 0, (
-      <Feedback key={spliceIndex} contentRenderer={props.contentRenderer}>
+      <Feedback id={item.id} key={spliceIndex} contentRenderer={props.contentRenderer}>
         {item.html}
       </Feedback>
     ));
   });
 
   return (
-    <div className="answers-table">
+    <div role="radiogroup" aria-label="Answer choices" className="answers-table">
       {instructions}
       {answersHtml}
     </div>

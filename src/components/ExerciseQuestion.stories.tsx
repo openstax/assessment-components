@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExerciseQuestion } from './ExerciseQuestion';
 
 const props = {
@@ -55,7 +56,10 @@ const props = {
   hasFeedback: false
 };
 
-export const Default = () => <ExerciseQuestion {...props} />;
+export const Default = () => {
+  const [answerId, setAnswerId] = React.useState('')
+  return <ExerciseQuestion {...props} answer_id={answerId} onAnswerChange={({ id }) => { console.log(id); setAnswerId(id) }} />
+};
 export const FreeResponseEntered = () =>
   <ExerciseQuestion {...props}
     free_response="In this free response, I will..."
