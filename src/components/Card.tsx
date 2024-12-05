@@ -243,7 +243,7 @@ const StepCard = ({
           <StepCardHeader>
             <div>
               {leftHeaderChildren}
-              <div className="question-info">
+              <div className="question-info" role="heading" aria-level={2}>
                 {headerTitleChildren}
                 <span>{formattedQuestionNumber}</span>
                 {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
