@@ -45,6 +45,7 @@ export interface AnswerProps {
   contentRenderer?: JSX.Element;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
+  feedbackId?: string;
 }
 
 export const Answer = (props: AnswerProps) => {
@@ -63,6 +64,7 @@ export const Answer = (props: AnswerProps) => {
     contentRenderer,
     show_all_feedback,
     tableFeedbackEnabled,
+    feedbackId,
   } = props;
 
   let body, feedback, selectedCount;
@@ -78,9 +80,10 @@ export const Answer = (props: AnswerProps) => {
   // incorrectAnswerId will be empty.
   const isPreviousResponse = answerId === undefined && (!incorrectAnswerId && isCorrect || isIncorrect);
 
+  const isSelected = isChecked || isPreviousResponse;
   const classes = cn('answers-answer', {
     'disabled': disabled,
-    'answer-selected': isChecked || isPreviousResponse,
+    'answer-selected': isSelected,
     'answer-correct': isCorrect && type !== 'student-mpp',
     'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId),
   });
@@ -91,15 +94,10 @@ export const Answer = (props: AnswerProps) => {
     </div>
   );
 
-  let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
-  // somewhat misleading - this means that there is a correct answer,
-  // not necessarily that this answer is correct
-  if (hasCorrectAnswer) {
-    ariaLabel += `(${isCorrect ? 'Correct' : 'Incorrect'} Answer)`;
-  }
+  let ariaLabel = `${isSelected ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
   ariaLabel += ':';
 
-  let onChangeAnswer: AnswerProps['onChangeAnswer'], radioBox;
+  let onChangeAnswer: AnswerProps['onChangeAnswer'];
 
   const onChange = () => onChangeAnswer && onChangeAnswer(answer);
 
@@ -108,20 +106,6 @@ export const Answer = (props: AnswerProps) => {
     && (type !== 'teacher-preview')
     && (type !== 'student-mpp')) {
     ({ onChangeAnswer } = props);
-  }
-
-  if (onChangeAnswer) {
-    radioBox = (
-      <input
-        type="radio"
-        className="answer-input-box"
-        checked={isChecked}
-        id={`${qid}-option-${iter}`}
-        name={`${qid}-options`}
-        onChange={onChange}
-        disabled={disabled}
-      />
-    );
   }
 
   if (show_all_feedback && answer.feedback_html && !tableFeedbackEnabled) {
@@ -166,21 +150,27 @@ export const Answer = (props: AnswerProps) => {
       <>
         {type === 'teacher-preview' && correctIncorrectIcon}
         {selectedCount}
-        {radioBox}
+        <input
+          type="radio"
+          className="answer-input-box"
+          checked={isSelected}
+          aria-checked={isSelected}
+          id={`${qid}-option-${iter}`}
+          name={`${qid}-options`}
+          onChange={onChange}
+          disabled={disabled || !onChangeAnswer}
+          aria-details={feedbackId}
+        />
         <label
           onKeyPress={onKeyPress}
           htmlFor={`${qid}-option-${iter}`}
           className="answer-label">
-          <span className="answer-letter-wrapper">
-            <button
-              onClick={onChange}
-              aria-label={ariaLabel}
-              className="answer-letter"
-              disabled={disabled || isIncorrect}
-              data-test-id={`answer-choice-${ALPHABET[iter]}`}
-            >
-              {ALPHABET[iter]}
-            </button>
+          <span
+            className="answer-letter-wrapper"
+            aria-label={ariaLabel}
+            data-answer-choice={ALPHABET[iter]}
+            data-test-id={`answer-choice-${ALPHABET[iter]}`}
+          >
           </span>
           <div className="answer-answer">
             <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
