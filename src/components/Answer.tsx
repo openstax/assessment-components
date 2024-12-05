@@ -80,9 +80,10 @@ export const Answer = (props: AnswerProps) => {
   // incorrectAnswerId will be empty.
   const isPreviousResponse = answerId === undefined && (!incorrectAnswerId && isCorrect || isIncorrect);
 
+  const isSelected = isChecked || isPreviousResponse;
   const classes = cn('answers-answer', {
     'disabled': disabled,
-    'answer-selected': isChecked || isPreviousResponse,
+    'answer-selected': isSelected,
     'answer-correct': isCorrect && type !== 'student-mpp',
     'answer-incorrect': incorrectAnswerId && isAnswerIncorrect(answer, incorrectAnswerId),
   });
@@ -93,7 +94,7 @@ export const Answer = (props: AnswerProps) => {
     </div>
   );
 
-  let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
+  let ariaLabel = `${isSelected ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
   ariaLabel += ':';
 
   let onChangeAnswer: AnswerProps['onChangeAnswer'];
@@ -152,8 +153,8 @@ export const Answer = (props: AnswerProps) => {
         <input
           type="radio"
           className="answer-input-box"
-          checked={isChecked}
-          aria-checked={isChecked}
+          checked={isSelected}
+          aria-checked={isSelected}
           id={`${qid}-option-${iter}`}
           name={`${qid}-options`}
           onChange={onChange}
