@@ -16,7 +16,9 @@ exports[`Exercise using step data matches snapshot 1`] = `
       >
         <div>
           <div
+            aria-level={2}
             className="question-info"
+            role="heading"
           >
             <span>
               Question 1
@@ -207,7 +209,9 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       >
         <div>
           <div
+            aria-level={2}
             className="question-info"
+            role="heading"
           >
             <span>
               Question 1
@@ -446,7 +450,9 @@ exports[`Exercise with question state data renders header icons with multiple ch
       >
         <div>
           <div
+            aria-level={2}
             className="question-info"
+            role="heading"
           >
             <span>
               Question 1
@@ -771,7 +777,9 @@ exports[`Exercise with question state data renders header icons with two-step ex
       >
         <div>
           <div
+            aria-level={2}
             className="question-info"
+            role="heading"
           >
             <span>
               Question 1
@@ -1082,7 +1090,9 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       >
         <div>
           <div
+            aria-level={2}
             className="question-info"
+            role="heading"
           >
             <span>
               Question 1
