@@ -8,6 +8,7 @@ exports[`Answer matches snapshot 1`] = `
     className="answers-answer"
   >
     <input
+      aria-checked={false}
       checked={false}
       className="answer-input-box"
       disabled={false}
@@ -22,18 +23,11 @@ exports[`Answer matches snapshot 1`] = `
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B:"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={false}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -64,6 +58,7 @@ exports[`Answer renders a checked answer 1`] = `
     className="answers-answer answer-selected"
   >
     <input
+      aria-checked={true}
       checked={true}
       className="answer-input-box"
       disabled={false}
@@ -78,18 +73,11 @@ exports[`Answer renders a checked answer 1`] = `
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Selected Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Selected Choice B:"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={false}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -119,24 +107,27 @@ exports[`Answer renders a correct answer 1`] = `
   <section
     className="answers-answer disabled answer-correct"
   >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="answer-input-box"
+      disabled={true}
+      id="1-option-1"
+      name="1-options"
+      onChange={[Function]}
+      type="radio"
+    />
     <label
       className="answer-label"
       htmlFor="1-option-1"
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B(Correct Answer):"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={true}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -172,24 +163,27 @@ exports[`Answer renders an incorrect answer 1`] = `
   <section
     className="answers-answer answer-incorrect"
   >
+    <input
+      aria-checked={false}
+      checked={false}
+      className="answer-input-box"
+      disabled={true}
+      id="1-option-1"
+      name="1-options"
+      onChange={[Function]}
+      type="radio"
+    />
     <label
       className="answer-label"
       htmlFor="1-option-1"
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B(Incorrect Answer):"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={true}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -226,6 +220,7 @@ exports[`Answer renders feedback 1`] = `
     className="answers-answer"
   >
     <input
+      aria-checked={false}
       checked={false}
       className="answer-input-box"
       disabled={false}
@@ -240,18 +235,11 @@ exports[`Answer renders feedback 1`] = `
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B:"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={false}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -298,24 +286,27 @@ exports[`Answer renders teacher preview 1`] = `
         Iconic
       </span>
     </div>
+    <input
+      aria-checked={false}
+      checked={false}
+      className="answer-input-box"
+      disabled={true}
+      id="1-option-1"
+      name="1-options"
+      onChange={[Function]}
+      type="radio"
+    />
     <label
       className="answer-label"
       htmlFor="1-option-1"
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B:"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={false}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
@@ -399,6 +390,7 @@ exports[`Answer renders with a custom renderer if set 1`] = `
     className="answers-answer"
   >
     <input
+      aria-checked={false}
       checked={false}
       className="answer-input-box"
       disabled={false}
@@ -413,18 +405,11 @@ exports[`Answer renders with a custom renderer if set 1`] = `
       onKeyPress={[Function]}
     >
       <span
+        aria-label="Choice B:"
         className="answer-letter-wrapper"
-      >
-        <button
-          aria-label="Choice B:"
-          className="answer-letter"
-          data-test-id="answer-choice-B"
-          disabled={false}
-          onClick={[Function]}
-        >
-          B
-        </button>
-      </span>
+        data-answer-choice="B"
+        data-test-id="answer-choice-B"
+      />
       <div
         className="answer-answer"
       >
