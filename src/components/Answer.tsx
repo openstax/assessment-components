@@ -94,11 +94,6 @@ export const Answer = (props: AnswerProps) => {
   );
 
   let ariaLabel = `${isChecked ? 'Selected ' : ''}Choice ${ALPHABET[iter]}`;
-  // somewhat misleading - this means that there is a correct answer,
-  // not necessarily that this answer is correct
-  if (hasCorrectAnswer) {
-    ariaLabel += `(${isCorrect ? 'Correct' : 'Incorrect'} Answer)`;
-  }
   ariaLabel += ':';
 
   let onChangeAnswer: AnswerProps['onChangeAnswer'];
