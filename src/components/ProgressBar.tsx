@@ -100,10 +100,12 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
     isCorrect: {
       icon: faCheck,
       color: colors.answer.correct,
+      label: 'Correct',
     },
     isIncorrect: {
       icon: faXmark,
       color: colors.answer.incorrect,
+      label: 'Incorrect',
     },
   }[variant];
 
@@ -112,6 +114,8 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
     color={variantData.color}
     height='16px'
     width='16px'
+    aria-label={variantData.label}
+    aria-hidden={undefined}
   />;
 }
 
