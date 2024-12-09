@@ -127,14 +127,8 @@ const StyledQuestion = styled.div`
       }
     }
 
-    // hide the radio button in all cases
     .answer-input-box {
-      clip: rect(0px, 0px, 0px, 0px);
-      clip-path: inset(50%);
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+      ${mixins.visuallyHidden()}
     }
 
     // a selected answer
