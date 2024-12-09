@@ -72,21 +72,24 @@ export const AnswersTable = (props: AnswersTableProps) => {
       key: `${questionAnswerProps.qid}-option-${i}`,
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
-    const feedbackId = `feedback-${questionAnswerProps.qid}-${i}`
-    let hasFeedback = true;
+    let html: string | undefined;
+    let feedbackId: string | undefined;
 
     if (show_all_feedback && answer.feedback_html && tableFeedbackEnabled) {
-      feedback.push({ index: i, html: answer.feedback_html, id: feedbackId })
+      html = answer.feedback_html;
     } else if (answer.id === incorrectAnswerId && feedback_html) {
-      feedback.push({ index: i, html: feedback_html, id: feedbackId })
+      html = feedback_html;
     } else if (answer.id === correct_answer_id && correct_answer_feedback_html) {
-      feedback.push({ index: i, html: correct_answer_feedback_html, id: feedbackId })
-    } else {
-      hasFeedback = false;
+      html = correct_answer_feedback_html;
+    }
+
+    if (html) {
+      feedbackId = `feedback-${questionAnswerProps.qid}-${i}`
+      feedback.push({ index: i, html, id: feedbackId });
     }
 
     return (
-      <Answer feedbackId={hasFeedback ? feedbackId : undefined} {...answerProps} />
+      <Answer feedbackId={feedbackId} {...answerProps} />
     );
   });
 
