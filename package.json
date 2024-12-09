@@ -1,6 +1,6 @@
 {
   "name": "@openstax/assessment-components",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "source": "./src/index.ts",
   "types": "./dist/src/index.d.ts",

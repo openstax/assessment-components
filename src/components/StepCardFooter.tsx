@@ -25,11 +25,11 @@ export const StepCardFooter = styled.div`
         padding-top: 32px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.6rem;
     }
 
     .points {
-        margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
         .attempts-left {
           color: #B03808;
           font-weight: bold;
@@ -39,7 +39,6 @@ export const StepCardFooter = styled.div`
     .controls {
         display: flex;
         flex-flow: column wrap-reverse;
-        margin-left: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
 
         button + button {
             margin: 0.8rem 0 0 0;
