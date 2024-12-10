@@ -2,7 +2,7 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -16,7 +16,9 @@ exports[`Question defaults QuestionHtml html 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -38,18 +40,11 @@ exports[`Question defaults QuestionHtml html 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -85,18 +80,11 @@ exports[`Question defaults QuestionHtml html 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -118,7 +106,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -132,7 +120,9 @@ exports[`Question defaults collaborator_solutions 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -154,18 +144,11 @@ exports[`Question defaults collaborator_solutions 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -201,18 +184,11 @@ exports[`Question defaults collaborator_solutions 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -234,7 +210,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -248,7 +224,9 @@ exports[`Question defaults formats 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -270,18 +248,11 @@ exports[`Question defaults formats 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -317,18 +288,11 @@ exports[`Question defaults formats 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -359,7 +323,7 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -373,7 +337,9 @@ exports[`Question matches snapshot 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -395,18 +361,11 @@ exports[`Question matches snapshot 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -442,18 +401,11 @@ exports[`Question matches snapshot 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -475,7 +427,7 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -489,7 +441,9 @@ exports[`Question renders exercise uid 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -511,18 +465,11 @@ exports[`Question renders exercise uid 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -558,18 +505,11 @@ exports[`Question renders exercise uid 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -596,7 +536,7 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -610,7 +550,9 @@ exports[`Question renders formats 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -632,18 +574,11 @@ exports[`Question renders formats 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -679,18 +614,11 @@ exports[`Question renders formats 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
@@ -724,7 +652,7 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-gsnTZi bfsWKR openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -738,7 +666,9 @@ exports[`Question renders solutions 1`] = `
     data-question-number={1}
   />
   <div
+    aria-label="Answer choices"
     className="answers-table"
+    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -760,18 +690,11 @@ exports[`Question renders solutions 1`] = `
           htmlFor="1-option-0"
         >
           <span
+            aria-label="Choice A:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice A:"
-              className="answer-letter"
-              data-test-id="answer-choice-A"
-              disabled={true}
-              onClick={[Function]}
-            >
-              A
-            </button>
-          </span>
+            data-answer-choice="A"
+            data-test-id="answer-choice-A"
+          />
           <div
             className="answer-answer"
           >
@@ -807,18 +730,11 @@ exports[`Question renders solutions 1`] = `
           htmlFor="1-option-1"
         >
           <span
+            aria-label="Choice B:"
             className="answer-letter-wrapper"
-          >
-            <button
-              aria-label="Choice B:"
-              className="answer-letter"
-              data-test-id="answer-choice-B"
-              disabled={true}
-              onClick={[Function]}
-            >
-              B
-            </button>
-          </span>
+            data-answer-choice="B"
+            data-test-id="answer-choice-B"
+          />
           <div
             className="answer-answer"
           >
