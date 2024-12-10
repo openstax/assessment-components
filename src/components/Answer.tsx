@@ -48,7 +48,7 @@ export interface AnswerProps {
   feedbackId?: string;
 }
 
-interface AnswerAnswerProps extends Pick<
+type AnswerAnswerProps = Pick<
   AnswerBodyProps,
   'answer' |
   'contentRenderer' |
@@ -56,27 +56,24 @@ interface AnswerAnswerProps extends Pick<
   'tableFeedbackEnabled' |
   'isCorrect' |
   'isIncorrect'
-> {
-  showIndicator?: boolean
-}
+>;
 
 const AnswerAnswer = (props: AnswerAnswerProps) => {
   const {
-    answer,
+    answer: { content_html, feedback_html },
     contentRenderer,
     show_all_feedback,
     tableFeedbackEnabled,
     isCorrect,
     isIncorrect,
-    showIndicator,
   } = props;
   return (
     <div className="answer-answer">
-      {showIndicator && <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />}
-      <Content className="answer-content" component={contentRenderer} html={answer.content_html} />
-      {show_all_feedback && answer.feedback_html && !tableFeedbackEnabled &&
+      <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
+      <Content className="answer-content" component={contentRenderer} html={content_html} />
+      {show_all_feedback && feedback_html && !tableFeedbackEnabled &&
         <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
-          {answer.feedback_html}
+          {feedback_html}
         </SimpleFeedback>}
     </div>
   )
@@ -98,10 +95,9 @@ const TeacherReview = (props: AnswerBodyProps) => {
     show_all_feedback,
     tableFeedbackEnabled,
   } = props;
-  let percent = 0;
-  if (answer.selected_count && answered_count) {
-    percent = Math.round((answer.selected_count / answered_count) * 100);
-  }
+  const percent = answer.selected_count && answered_count
+    ? Math.round((answer.selected_count / answered_count) * 100)
+    : 0;
   return (
     <div className="review-wrapper">
       <div className={cn('review-count', { 'green': isCorrect, 'red': !isCorrect })}>
@@ -115,7 +111,6 @@ const TeacherReview = (props: AnswerBodyProps) => {
           {ALPHABET[iter]}
         </span>
       </div>
-
       <AnswerAnswer 
         answer={answer}
         contentRenderer={contentRenderer}
@@ -125,7 +120,7 @@ const TeacherReview = (props: AnswerBodyProps) => {
   );
 }
 
-const RadioAnswer = (props: AnswerBodyProps) => {
+const AnswerChoice = (props: AnswerBodyProps) => {
   const {
     type,
     iter,
@@ -164,7 +159,6 @@ const RadioAnswer = (props: AnswerBodyProps) => {
       type="radio"
       className="answer-input-box"
       checked={isSelected}
-      aria-checked={isSelected}
       id={`${qid}-option-${iter}`}
       name={`${qid}-options`}
       onChange={onChange}
@@ -187,7 +181,6 @@ const RadioAnswer = (props: AnswerBodyProps) => {
         contentRenderer={contentRenderer}
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
-        showIndicator={true}
         isCorrect={isCorrect}
         isIncorrect={isIncorrect} />
     </label>
@@ -197,7 +190,7 @@ const RadioAnswer = (props: AnswerBodyProps) => {
 const AnswerBody = (props: AnswerBodyProps) => {
   return props.type === 'teacher-review'
     ? <TeacherReview {...props} />
-    : <RadioAnswer {...props} />
+    : <AnswerChoice {...props} />
 }
 
 export const Answer = (props: AnswerProps) => {

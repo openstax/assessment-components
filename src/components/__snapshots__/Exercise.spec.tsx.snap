@@ -65,7 +65,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf MMKoc openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
@@ -81,7 +81,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                     className="answers-answer disabled answer-selected"
                   >
                     <input
-                      aria-checked={true}
                       checked={true}
                       className="answer-input-box"
                       disabled={true}
@@ -122,7 +121,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                     className="answers-answer disabled"
                   >
                     <input
-                      aria-checked={false}
                       checked={false}
                       className="answer-input-box"
                       disabled={true}
@@ -252,7 +250,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf MMKoc openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
@@ -268,7 +266,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                     className="answers-answer disabled answer-selected"
                   >
                     <input
-                      aria-checked={true}
                       checked={true}
                       className="answer-input-box"
                       disabled={true}
@@ -309,7 +306,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                     className="answers-answer disabled"
                   >
                     <input
-                      aria-checked={false}
                       checked={false}
                       className="answer-input-box"
                       disabled={true}
@@ -579,7 +575,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf MMKoc openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
@@ -595,7 +591,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                     className="answers-answer disabled answer-selected"
                   >
                     <input
-                      aria-checked={true}
                       checked={true}
                       className="answer-input-box"
                       disabled={true}
@@ -636,7 +631,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                     className="answers-answer disabled"
                   >
                     <input
-                      aria-checked={false}
                       checked={false}
                       className="answer-input-box"
                       disabled={true}
@@ -946,7 +940,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf MMKoc openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
@@ -962,7 +956,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                     className="answers-answer disabled answer-selected"
                   >
                     <input
-                      aria-checked={true}
                       checked={true}
                       className="answer-input-box"
                       disabled={true}
@@ -1003,7 +996,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                     className="answers-answer disabled"
                   >
                     <input
-                      aria-checked={false}
                       checked={false}
                       className="answer-input-box"
                       disabled={true}
@@ -1133,7 +1125,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf MMKoc openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
@@ -1149,7 +1141,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                     className="answers-answer disabled answer-selected"
                   >
                     <input
-                      aria-checked={true}
                       checked={true}
                       className="answer-input-box"
                       disabled={true}
@@ -1190,7 +1181,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                     className="answers-answer disabled"
                   >
                     <input
-                      aria-checked={false}
                       checked={false}
                       className="answer-input-box"
                       disabled={true}

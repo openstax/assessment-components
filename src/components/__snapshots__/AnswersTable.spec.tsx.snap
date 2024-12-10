@@ -16,7 +16,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
         className="correct-incorrect"
       />
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -66,7 +65,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
         className="correct-incorrect"
       />
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -122,7 +120,6 @@ exports[`AnswersTable renders all feedback 1`] = `
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
-        aria-checked={true}
         aria-details="feedback-1-0"
         checked={true}
         className="answer-input-box"
@@ -189,7 +186,6 @@ exports[`AnswersTable renders all feedback 1`] = `
       className="answers-answer disabled answer-correct"
     >
       <input
-        aria-checked={false}
         aria-details="feedback-1-1"
         checked={false}
         className="answer-input-box"
@@ -265,7 +261,6 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
       className="answers-answer disabled answer-selected answer-correct"
     >
       <input
-        aria-checked={true}
         aria-details="feedback-1-0"
         checked={true}
         className="answer-input-box"
@@ -332,7 +327,6 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
       className="answers-answer disabled"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -382,7 +376,6 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
-        aria-checked={true}
         aria-details="feedback-1-0"
         checked={true}
         className="answer-input-box"
@@ -449,7 +442,6 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
       className="answers-answer disabled answer-correct"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -508,7 +500,6 @@ exports[`AnswersTable renders instructions 1`] = `
       className="answers-answer disabled"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -549,7 +540,6 @@ exports[`AnswersTable renders instructions 1`] = `
       className="answers-answer disabled"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -599,7 +589,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
       className="answers-answer disabled"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -640,7 +629,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
       className="answers-answer disabled"
     >
       <input
-        aria-checked={false}
         checked={false}
         className="answer-input-box"
         disabled={true}

@@ -2,7 +2,7 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -27,7 +27,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -68,7 +67,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -108,7 +106,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -133,7 +131,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -174,7 +171,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -214,7 +210,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -239,7 +235,6 @@ exports[`Question defaults formats 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -280,7 +275,6 @@ exports[`Question defaults formats 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -329,7 +323,7 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -354,7 +348,6 @@ exports[`Question matches snapshot 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -395,7 +388,6 @@ exports[`Question matches snapshot 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -435,7 +427,7 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -460,7 +452,6 @@ exports[`Question renders exercise uid 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -501,7 +492,6 @@ exports[`Question renders exercise uid 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -546,7 +536,7 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -571,7 +561,6 @@ exports[`Question renders formats 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -612,7 +601,6 @@ exports[`Question renders formats 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -664,7 +652,7 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-gsnTZi bcIUqS openstax-question"
+  className="sc-gsnTZi gkbTrE openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -689,7 +677,6 @@ exports[`Question renders solutions 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
@@ -730,7 +717,6 @@ exports[`Question renders solutions 1`] = `
         className="answers-answer disabled"
       >
         <input
-          aria-checked={false}
           checked={false}
           className="answer-input-box"
           disabled={true}
