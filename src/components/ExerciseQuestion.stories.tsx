@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExerciseQuestion } from './ExerciseQuestion';
+import { Answer } from 'src/types';
 
 const props = {
   question: {
@@ -58,7 +59,16 @@ const props = {
 
 export const Default = () => {
   const [answerId, setAnswerId] = React.useState('')
-  return <ExerciseQuestion {...props} answer_id={answerId} onAnswerChange={({ id }) => { console.log(id); setAnswerId(id) }} />
+  const onAnswerChange = (({ id }: Answer) => {
+    setAnswerId(String(id))
+  }) as () => void
+  return (
+    <ExerciseQuestion
+      {...props}
+      answer_id={answerId}
+      onAnswerChange={onAnswerChange}
+    />
+  )
 };
 export const FreeResponseEntered = () =>
   <ExerciseQuestion {...props}
