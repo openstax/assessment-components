@@ -1,5 +1,5 @@
-import{m as e,c as t,b as o}from"./theme-e6ec1032.js";import{s as a}from"./index-12e12f28.js";const p=a.div`
-    ${e.stepCardPadding()}
+import{m as o,c as t,b as e}from"./theme-6985e173.js";import{s as r}from"./index-f9eac2aa.js";const p=r.div`
+    ${o.stepCardPadding()}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -22,11 +22,14 @@ import{m as e,c as t,b as o}from"./theme-e6ec1032.js";import{s as a}from"./index
         padding-top: 32px;
         display: flex;
         justify-content: space-between;
+        gap: 1.6rem;
+
+        ${e.mobile`
+            flex-wrap: wrap;
+        `}
     }
 
     .points {
-        margin-bottom: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
-
         .attempts-left {
           color: #B03808;
           font-weight: bold;
@@ -36,14 +39,13 @@ import{m as e,c as t,b as o}from"./theme-e6ec1032.js";import{s as a}from"./index
     .controls {
         display: flex;
         flex-flow: column wrap-reverse;
-        margin-left: 1.6rem; // Replace with https://caniuse.com/?search=gap soon
 
         button + button {
             margin: 0.8rem 0 0 0;
         }
     }
 
-    ${o.desktop`
+    ${e.desktop`
         padding: 0 140px 32px 140px;
         flex-wrap: nowrap;
 
