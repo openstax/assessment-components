@@ -159,7 +159,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -346,7 +346,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -673,7 +673,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -1040,7 +1040,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -1227,7 +1227,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
