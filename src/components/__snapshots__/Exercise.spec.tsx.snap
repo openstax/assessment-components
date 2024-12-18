@@ -15,10 +15,8 @@ exports[`Exercise using step data matches snapshot 1`] = `
         className="sc-dkzDqf hbFgnH"
       >
         <div>
-          <div
-            aria-level={2}
+          <h2
             className="question-info"
-            role="heading"
           >
             <span>
               Question 1
@@ -40,7 +38,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               ID: 
               1234@4
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
@@ -208,10 +206,8 @@ exports[`Exercise with question state data matches snapshot 1`] = `
         className="sc-dkzDqf hbFgnH"
       >
         <div>
-          <div
-            aria-level={2}
+          <h2
             className="question-info"
-            role="heading"
           >
             <span>
               Question 1
@@ -227,7 +223,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
@@ -449,10 +445,8 @@ exports[`Exercise with question state data renders header icons with multiple ch
         className="sc-dkzDqf hbFgnH"
       >
         <div>
-          <div
-            aria-level={2}
+          <h2
             className="question-info"
-            role="heading"
           >
             <span>
               Question 1
@@ -468,7 +462,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
         <div>
           <div
@@ -776,10 +770,8 @@ exports[`Exercise with question state data renders header icons with two-step ex
         className="sc-dkzDqf hbFgnH"
       >
         <div>
-          <div
-            aria-level={2}
+          <h2
             className="question-info"
-            role="heading"
           >
             <span>
               Question 1
@@ -795,7 +787,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
         <div>
           <div
@@ -1089,10 +1081,8 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
         className="sc-dkzDqf hbFgnH"
       >
         <div>
-          <div
-            aria-level={2}
+          <h2
             className="question-info"
-            role="heading"
           >
             <span>
               Question 1
@@ -1108,7 +1098,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
