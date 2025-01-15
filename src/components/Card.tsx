@@ -33,7 +33,7 @@ const StepCardHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 1.6rem 2.4rem;
   background: ${colors.card.header.background};
   font-size: 1.8rem;
   line-height: 3rem;
@@ -240,7 +240,7 @@ const StepCard = ({
       {multipartBadge}
       <InnerStepCard className={className}>
         {questionNumber && isHomework && stepType === 'exercise' &&
-          <StepCardHeader>
+          <StepCardHeader className="step-card-header">
             <div>
               {leftHeaderChildren}
               <h2 className="question-info">

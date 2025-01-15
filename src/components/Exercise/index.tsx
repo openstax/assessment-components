@@ -1,15 +1,16 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
-import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from './Card';
-import { Content } from './Content';
-import { ExerciseQuestion } from './ExerciseQuestion';
-import { typesetMath } from '../helpers/mathjax';
-import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
-import { breakpoints } from '../theme';
-import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
-import { TypesetMathContext } from '../hooks/useTypesetMath';
+import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../../src/types';
+import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
+import { Content } from '../Content';
+import { ExerciseQuestion } from '../ExerciseQuestion';
+import { typesetMath } from '../../helpers/mathjax';
+import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
+import { breakpoints } from '../../theme';
+import { ExerciseHeaderIcons } from '../ExerciseHeaderIcons';
+import { TypesetMathContext } from '../../hooks/useTypesetMath';
+import { exerciseStyles } from './styles';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: calc(1.8rem * var(--content-text-scale));
@@ -227,4 +228,5 @@ export const Exercise = styled(({
     </TaskStepCardWithToolbar>
   </TypesetMathContext.Provider>;
 })`
+  ${exerciseStyles}
 `;
