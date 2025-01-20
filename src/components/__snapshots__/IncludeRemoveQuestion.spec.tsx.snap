@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IncludeRemoveQuestion matches snapshot 1`] = `
+<div
+  className="sc-bczRLJ fXHYVE"
+>
+  <button
+    aria-label="details"
+    className="sc-gsnTZi gpynMb include"
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      aria-label="include question"
+      className="svg-inline--fa fa-plus fa-border fa-lg sc-dkzDqf dzKezH include"
+      data-icon="plus"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Include question
+    </span>
+  </button>
+  <button
+    aria-label="details button"
+    className="sc-gsnTZi gpynMb details"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf dzKezH details"
+      data-icon="ellipsis"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M120 256c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm160 0c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm104 56c-30.9 0-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56s-25.1 56-56 56z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Details
+    </span>
+  </button>
+</div>
+`;
+
+exports[`IncludeRemoveQuestion matches snapshot 2`] = `
+<div
+  className="sc-bczRLJ fXHYVE"
+>
+  <button
+    aria-label="details"
+    className="sc-gsnTZi gpynMb remove"
+    onClick={[Function]}
+  >
+    <svg
+      aria-hidden="true"
+      aria-label="remove question"
+      className="svg-inline--fa fa-minus fa-border fa-lg sc-dkzDqf dzKezH remove"
+      data-icon="minus"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Remove question
+    </span>
+  </button>
+  <button
+    aria-label="details button"
+    className="sc-gsnTZi gpynMb details"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf dzKezH details"
+      data-icon="ellipsis"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 448 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M120 256c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm160 0c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm104 56c-30.9 0-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56s-25.1 56-56 56z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    <span>
+      Details
+    </span>
+  </button>
+</div>
+`;

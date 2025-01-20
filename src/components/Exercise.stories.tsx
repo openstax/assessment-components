@@ -5,6 +5,7 @@ import {
   ExerciseWithQuestionStatesProps,
 } from './Exercise';
 import { Answer } from '../types';
+import { IncludeRemoveQuestion } from './IncludeRemoveQuestion';
 import styled from 'styled-components';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
@@ -143,6 +144,13 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
     hasFeedback: true,
   }
 };
+
+const exerciseWithOverlayProps = (overlayChildren: React.ReactNode) => {
+  return {
+    enableOverlay: true,
+    overlayChildren,
+  };
+ }
 
 type TextResizerValue = -2 | -1 | 0 | 1 | 2 | 3;
 const textResizerScales = [0.75, 0.9, 1, 1.25, 1.5, 2];
@@ -522,7 +530,6 @@ export const MathJax = () => {
   const [correctAnswerId, setCorrectAnswerId] = useState<number | undefined>(
     undefined,
   );
-
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps(),
     questionStates: {
@@ -804,6 +811,148 @@ export const PreviewCard = () => {
   return (
     <TextResizerProvider>
       <Exercise {...props1} className='preview-card' />
+    </TextResizerProvider>
+  );
+};
+
+export const OverlayCard = () => {
+  const randomlyCorrectAnswer = Math.floor(Math.random() * 3) + 1;
+  const props1: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps(),
+    ...exerciseWithOverlayProps(<button>Overlay</button>),
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: ['1', '2', '3', '4'],
+        answer_id: randomlyCorrectAnswer,
+        free_response: '',
+        feedback_html: '',
+        correct_answer_id: randomlyCorrectAnswer.toString(),
+        correct_answer_feedback_html:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false,
+        solution: {
+          content_html:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          solution_type: 'detailed',
+        },
+      },
+    },
+    exercise: {
+      tags: [
+        'book:stax-anp',
+        'context-cnxmod:bbaedbf4-4d78-4b7c-bc94-2a742f0f2f8c',
+        'lo:stax-anp:22-3-6',
+        'exid:stax-anp:1786',
+        'dok:1',
+        'time:short',
+        'book-slug:anatomy-and-physiology',
+        'book-slug:anatomy-and-physiology-2e',
+        'module-slug:anatomy-and-physiology:22-3-the-process-of-breathing',
+        'module-slug:anatomy-and-physiology-2e:22-3-the-process-of-breathing',
+        'assignment-type:reading',
+        'blooms:1',
+        'ost-type:concept-coach',
+        'assessment:preparedness:https://openstax.org/orn/book:page/4fd99458-6fdf-49bc-8688-a6dc17a1268d:11673dd9-55e6-46d9-8b78-b06df85246bd',
+      ],
+      uuid: '8ae2b252-8943-4a1a-a123-2e6d9eeef4p5',
+      group_uuid: '19bd7035-d50b-42d8-8f8c-a4d72588a7aa',
+      number: 3030,
+      version: 4,
+      uid: '3030@4',
+      published_at: '2022-15-05T21:24:12.207Z',
+      solutions_are_public: false,
+      authors: [
+        {
+          user_id: 1,
+          name: 'OpenStax Exercises',
+        },
+      ],
+      copyright_holders: [
+        {
+          user_id: 2,
+          name: 'Rice University',
+        },
+      ],
+      derived_from: [],
+      is_vocab: false,
+      stimulus_html: '',
+      questions: [
+        {
+          id: 320733,
+          is_answer_order_important: true,
+          stimulus_html: '',
+          stem_html:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          answers: [
+            {
+              id: 832312,
+              content_html: 'Option 1',
+            },
+            {
+              id: 832313,
+              content_html: 'Option 2',
+            },
+            {
+              id: 832314,
+              content_html: 'Option 3',
+            },
+            {
+              id: 832315,
+              content_html: 'Option 4',
+            },
+          ],
+          hints: [],
+          formats: ['free-response', 'multiple-choice'],
+          combo_choices: [],
+        },
+      ],
+
+      versions: [4, 3, 2, 1],
+    },
+  };
+
+  const [buttonVariant, setButtonVariant] = React.useState<'include' | 'remove'>('include');
+
+  const props2: ExerciseWithQuestionStatesProps = {
+    ...exerciseWithQuestionStatesProps(),
+    ...exerciseWithOverlayProps(
+      <IncludeRemoveQuestion 
+        buttonVariant={buttonVariant}
+        onIncludeHandler={() => setButtonVariant('remove')}
+        onRemoveHandler={() => setButtonVariant('include')}
+      />
+    ),
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: ['1', '2'],
+        answer_id: undefined,
+        free_response: 'Free response',
+        feedback_html: 'Feedback',
+        correct_answer_id: '1',
+        correct_answer_feedback_html: 'Feedback for the correct answer',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false,
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props1} className='preview-card' />
+      <Exercise {...props2} />
     </TextResizerProvider>
   );
 };

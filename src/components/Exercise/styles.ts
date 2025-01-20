@@ -1,4 +1,20 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
+
+export const StyledOverlay = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    z-index: 2;
+`;
 
 export const exerciseStyles = css`
   &.preview-card {

@@ -2,17 +2,17 @@
 
 exports[`Exercise using step data matches snapshot 1`] = `
 <div
-  className="sc-breuTD uXhmp"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf igaccC step-card-header"
       >
         <div>
           <h2
@@ -44,7 +44,206 @@ exports[`Exercise using step data matches snapshot 1`] = `
       <div
         className="sc-hKMtZM bwRTaS"
       >
+        <div
+          tabIndex={-1}
+        >
+          <div
+            className="step-card-body exercise-context"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "Context",
+              }
+            }
+          />
+          <div
+            className="step-card-body exercise-stimulus"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<b>Stimulus HTML</b>",
+              }
+            }
+          />
+          <div
+            data-test-id="student-exercise-question"
+          >
+            <div
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
+              data-question-number={1}
+              data-test-id="question"
+            >
+              <div
+                aria-label="Answer choices"
+                className="answers-table"
+                role="radiogroup"
+              >
+                <div
+                  className="openstax-answer"
+                >
+                  <section
+                    className="answers-answer disabled answer-selected"
+                  >
+                    <input
+                      checked={true}
+                      className="answer-input-box"
+                      disabled={true}
+                      id="1234@5-option-0"
+                      name="1234@5-options"
+                      onChange={[Function]}
+                      type="radio"
+                    />
+                    <label
+                      className="answer-label"
+                      htmlFor="1234@5-option-0"
+                    >
+                      <span
+                        aria-label="Selected Choice A:"
+                        className="answer-letter-wrapper"
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
+                      <div
+                        className="answer-answer"
+                      >
+                        <span
+                          className="answer-content"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "True",
+                            }
+                          }
+                        />
+                      </div>
+                    </label>
+                  </section>
+                </div>
+                <div
+                  className="openstax-answer"
+                >
+                  <section
+                    className="answers-answer disabled"
+                  >
+                    <input
+                      checked={false}
+                      className="answer-input-box"
+                      disabled={true}
+                      id="1234@5-option-1"
+                      name="1234@5-options"
+                      onChange={[Function]}
+                      type="radio"
+                    />
+                    <label
+                      className="answer-label"
+                      htmlFor="1234@5-option-1"
+                    >
+                      <span
+                        aria-label="Choice B:"
+                        className="answer-letter-wrapper"
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
+                      <div
+                        className="answer-answer"
+                      >
+                        <span
+                          className="answer-content"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "False",
+                            }
+                          }
+                        />
+                      </div>
+                    </label>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div
+              className="sc-iBkjds kLYXXQ step-card-footer"
+            >
+              <div
+                className="step-card-footer-inner"
+              >
+                <div
+                  className="points"
+                  role="status"
+                >
+                  <span
+                    className="attempts-left"
+                  />
+                </div>
+                <div
+                  className="controls"
+                >
+                  <button
+                    className="sc-eCYdqJ dqiaKp"
+                    data-test-id="continue-btn"
+                    onClick={[Function]}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Exercise with overlay rendering matches snapshot 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
+    >
+      <div
+        className="sc-dkzDqf igaccC step-card-header"
+      >
         <div>
+          <h2
+            className="question-info"
+          >
+            <span>
+              Question 1
+            </span>
+            <span
+              className="num-questions"
+            >
+               / 
+              1
+            </span>
+            <span
+              className="separator"
+            >
+              |
+            </span>
+            <span
+              className="question-id"
+            >
+              ID: 
+              1234@4
+            </span>
+          </h2>
+        </div>
+      </div>
+      <div
+        className="sc-hKMtZM bwRTaS"
+      >
+        <div
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          tabIndex={0}
+        >
           <div
             className="step-card-body exercise-context"
             dangerouslySetInnerHTML={
@@ -193,17 +392,17 @@ exports[`Exercise using step data matches snapshot 1`] = `
 
 exports[`Exercise with question state data matches snapshot 1`] = `
 <div
-  className="sc-breuTD uXhmp"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf igaccC step-card-header"
       >
         <div>
           <h2
@@ -229,7 +428,9 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       <div
         className="sc-hKMtZM bwRTaS"
       >
-        <div>
+        <div
+          tabIndex={-1}
+        >
           <div
             className="step-card-body exercise-context"
             dangerouslySetInnerHTML={
@@ -378,7 +579,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 
 exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
 <div
-  className="sc-breuTD uXhmp"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
     className="sc-ftvSup jndYKm"
@@ -439,10 +640,10 @@ exports[`Exercise with question state data renders header icons with multiple ch
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf igaccC step-card-header"
       >
         <div>
           <h2
@@ -554,7 +755,9 @@ exports[`Exercise with question state data renders header icons with multiple ch
       <div
         className="sc-hKMtZM bwRTaS"
       >
-        <div>
+        <div
+          tabIndex={-1}
+        >
           <div
             className="step-card-body exercise-context"
             dangerouslySetInnerHTML={
@@ -703,7 +906,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
 
 exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
 <div
-  className="sc-breuTD uXhmp"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
     className="sc-ftvSup jndYKm"
@@ -764,10 +967,10 @@ exports[`Exercise with question state data renders header icons with two-step ex
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf igaccC step-card-header"
       >
         <div>
           <h2
@@ -919,7 +1122,9 @@ exports[`Exercise with question state data renders header icons with two-step ex
       <div
         className="sc-hKMtZM bwRTaS"
       >
-        <div>
+        <div
+          tabIndex={-1}
+        >
           <div
             className="step-card-body exercise-context"
             dangerouslySetInnerHTML={
@@ -1068,17 +1273,17 @@ exports[`Exercise with question state data renders header icons with two-step ex
 
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 <div
-  className="sc-breuTD uXhmp"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf igaccC step-card-header"
       >
         <div>
           <h2
@@ -1104,7 +1309,9 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       <div
         className="sc-hKMtZM bwRTaS"
       >
-        <div>
+        <div
+          tabIndex={-1}
+        >
           <div
             className="step-card-body exercise-context"
             dangerouslySetInnerHTML={

@@ -87,9 +87,6 @@ const StepCardHeader = styled.div`
       button.ox-icon-angle-left, button.ox-icon-angle-right {
           display: none;
       }
-      .separator {
-          display: inherit;
-      }
   `}
 
     /*

@@ -10,7 +10,7 @@ import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
 import { breakpoints } from '../../theme';
 import { ExerciseHeaderIcons } from '../ExerciseHeaderIcons';
 import { TypesetMathContext } from '../../hooks/useTypesetMath';
-import { exerciseStyles } from './styles';
+import { exerciseStyles, StyledOverlay } from './styles';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: calc(1.8rem * var(--content-text-scale));
@@ -61,10 +61,10 @@ const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProp
     mobileToolbarEnabled: boolean;
   }
 ) => <ToolbarWrapper
-       desktopToolbarEnabled={props.desktopToolbarEnabled}
-       mobileToolbarEnabled={props.mobileToolbarEnabled}
-     >
-        <ExerciseToolbar icons={props.exerciseIcons} />
+  desktopToolbarEnabled={props.desktopToolbarEnabled}
+  mobileToolbarEnabled={props.mobileToolbarEnabled}
+>
+    <ExerciseToolbar icons={props.exerciseIcons} />
     <StyledTaskStepCard {...props} />
   </ToolbarWrapper>;
 
@@ -159,12 +159,19 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
+export interface OverlayProps {
+  enableOverlay?: boolean;
+  overlayChildren?: React.ReactNode;
+}
+
 export const Exercise = styled(({
-  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, ...props
-}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps)) => {
+  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, enableOverlay = false, overlayChildren, ...props
+}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
+
+  const [showOverlay, setShowOverlay] = React.useState<boolean>(false);
 
   const typesetExercise = React.useCallback(() => {
     if (container.current) {
@@ -178,6 +185,12 @@ export const Exercise = styled(({
       scrollToElement(el);
     }
   }, [scrollToQuestion, exercise]);
+
+  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (container.current && !container.current.contains(event.relatedTarget as Node)) {
+      setShowOverlay(false);
+    }
+  };
 
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
@@ -195,7 +208,15 @@ export const Exercise = styled(({
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
       className={props.className}
     >
-      <div ref={container}>
+      <div 
+        ref={container}
+        tabIndex={enableOverlay ? 0 : -1} // This container is focusable only if enableOverlay is true
+        {...(enableOverlay ? { onMouseOver: () => setShowOverlay(true), onMouseLeave: () => setShowOverlay(false), onFocus: () => setShowOverlay(true), onBlur: handleBlur} : {})}
+      >
+        {(enableOverlay && showOverlay) && 
+          <StyledOverlay>
+            {overlayChildren}
+          </StyledOverlay>}
         <Preamble exercise={exercise} />
 
         {exercise.questions.map((q, i) => {
@@ -203,7 +224,7 @@ export const Exercise = styled(({
           return (
             <ExerciseQuestion
               {...props}
-              {...{...state, available_points: undefined}}
+              {...{ ...state, available_points: undefined }}
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
               exercise_uid={exercise.uid}
               key={q.id}
