@@ -87,6 +87,9 @@ const StepCardHeader = styled.div`
       button.ox-icon-angle-left, button.ox-icon-angle-right {
           display: none;
       }
+      .separator {
+          display: inherit;
+      }
   `}
 
     /*
@@ -264,6 +267,7 @@ StepCard.displayName = 'OSStepCard';
 export interface TaskStepCardProps extends SharedProps {
   className?: string;
   children?: ReactNode;
+  tabIndex?: number;
   step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;

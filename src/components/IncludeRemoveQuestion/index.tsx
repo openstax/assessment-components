@@ -6,9 +6,9 @@ export interface IncludeRemoveQuestionProps {
   // Prop that defines the variant of the button
   buttonVariant: 'include' | 'remove';
   // Method invoked when the include button is clicked
-  onIncludeHandler: any;
+  onIncludeHandler: () => void;
     // Method invoked when the remove button is clicked
-  onRemoveHandler: any;
+  onRemoveHandler: () => void;
 }
 
 export const IncludeRemoveQuestion = ({buttonVariant, onIncludeHandler, onRemoveHandler }: IncludeRemoveQuestionProps) => {

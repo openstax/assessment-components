@@ -9,30 +9,29 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-    width: 74px;
-    height: 87px;
+    width: 7.4rem;
+    height: 8.7rem;
     color: white;
     border: none;
 
     &:hover {
-      box-shadow: 0px 1px 4px 0px #00000066;
+      box-shadow: 0 0.1rem 0.4rem 0 #00000066;
     }
     
     span {
-        font-family: "HelveticaNeue";
-        line-height: 13px;
-        font-size: 14px;
+        line-height: 1.3rem;
+        font-size: 1.4rem;
         font-weight: bold;
     }
 
     &.include {
         background-color: ${colors.palette.mediumBlue};
-        padding-top: 14px;
+        padding-top: 1.4rem;
     }
 
     &.remove {
         background-color: ${colors.palette.orange};
-        padding-top: 14px;
+        padding-top: 1.4rem;
     }
 
     &.details {
@@ -45,9 +44,9 @@ export const StyledIcon = styled(FontAwesomeIcon)`
     background-color: ${colors.palette.white};
     vertical-align: middle;
     position: relative;
-    bottom: 5px;
+    bottom: 0.5rem;
     font-weight: 900;
-    line-height: 13.8px;
+    line-height: 1.4rem;
 
 
     &.include {

@@ -7,17 +7,17 @@ describe('IncludeRemoveQuestion', () => {
     ${'include'}
     ${'remove'}
   `('matches snapshot', ({ buttonVariant }: { buttonVariant: 'include' | 'remove' }) => {
-    const mockIncludeHandlre = jest.fn();
+    const mockIncludeHandler = jest.fn();
     const mockRemoveHandler = jest.fn();
     const component = renderer.create(
-      <IncludeRemoveQuestion buttonVariant={buttonVariant} onIncludeHandler={mockIncludeHandlre} onRemoveHandler={mockRemoveHandler}/>
+      <IncludeRemoveQuestion buttonVariant={buttonVariant} onIncludeHandler={mockIncludeHandler} onRemoveHandler={mockRemoveHandler}/>
     );
   
     renderer.act(() => {
         component.root.findAllByType('button')[0].props.onClick();
     });
     
-    expect(buttonVariant === 'include' ? mockIncludeHandlre : mockRemoveHandler).toHaveBeenCalled();
+    expect(buttonVariant === 'include' ? mockIncludeHandler : mockRemoveHandler).toHaveBeenCalled();
     expect(component).toMatchSnapshot();
   });
 });

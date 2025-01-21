@@ -55,18 +55,21 @@ const ToolbarWrapper = styled.div<{
   `}
 `;
 
-const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProps> &
+const TaskStepCardWithToolbar = React.forwardRef<HTMLDivElement, React.PropsWithChildren<TaskStepCardProps> &
   Pick<ExerciseBaseProps, 'exerciseIcons'> & {
     desktopToolbarEnabled: boolean;
     mobileToolbarEnabled: boolean;
   }
-) => <ToolbarWrapper
-  desktopToolbarEnabled={props.desktopToolbarEnabled}
-  mobileToolbarEnabled={props.mobileToolbarEnabled}
->
+>((props, ref) => (
+  <ToolbarWrapper
+    ref={ref}
+    desktopToolbarEnabled={props.desktopToolbarEnabled}
+    mobileToolbarEnabled={props.mobileToolbarEnabled}
+  >
     <ExerciseToolbar icons={props.exerciseIcons} />
     <StyledTaskStepCard {...props} />
-  </ToolbarWrapper>;
+  </ToolbarWrapper>
+));
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   return (
@@ -170,12 +173,13 @@ export const Exercise = styled(({
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
+  const hoverRef = React.useRef<HTMLDivElement>(null);
 
   const [showOverlay, setShowOverlay] = React.useState<boolean>(false);
 
   const typesetExercise = React.useCallback(() => {
-    if (container.current) {
-      typesetMath(container.current);
+    if (hoverRef.current) {
+      typesetMath(hoverRef.current);
     }
   }, []);
 
@@ -187,7 +191,7 @@ export const Exercise = styled(({
   }, [scrollToQuestion, exercise]);
 
   const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
-    if (container.current && !container.current.contains(event.relatedTarget as Node)) {
+    if (hoverRef.current && !hoverRef.current.contains(event.relatedTarget as Node)) {
       setShowOverlay(false);
     }
   };
@@ -198,6 +202,7 @@ export const Exercise = styled(({
   return <TypesetMathContext.Provider value={typesetExercise}>
     <GlobalStyle />
     <TaskStepCardWithToolbar
+      ref={container}
       step={step}
       questionNumber={questionNumber}
       numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
@@ -208,12 +213,21 @@ export const Exercise = styled(({
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
       className={props.className}
     >
-      <div 
-        ref={container}
+      <div
+        ref={hoverRef}
         tabIndex={enableOverlay ? 0 : -1} // This container is focusable only if enableOverlay is true
-        {...(enableOverlay ? { onMouseOver: () => setShowOverlay(true), onMouseLeave: () => setShowOverlay(false), onFocus: () => setShowOverlay(true), onBlur: handleBlur} : {})}
+        {
+        ...(enableOverlay
+          ? {
+            onMouseOver: () => setShowOverlay(true),
+            onMouseLeave: () => setShowOverlay(false),
+            onFocus: () => setShowOverlay(true),
+            onBlur: handleBlur
+          }
+          : {})
+        }
       >
-        {(enableOverlay && showOverlay) && 
+        {(enableOverlay && showOverlay) &&
           <StyledOverlay>
             {overlayChildren}
           </StyledOverlay>}
