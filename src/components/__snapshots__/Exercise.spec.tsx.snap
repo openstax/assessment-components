@@ -12,7 +12,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2
@@ -205,7 +205,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2
@@ -402,7 +402,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2
@@ -643,7 +643,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2
@@ -970,7 +970,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2
@@ -1283,7 +1283,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl RyOjk"
     >
       <div
-        className="sc-dkzDqf igaccC step-card-header"
+        className="sc-dkzDqf kooVfX step-card-header"
       >
         <div>
           <h2

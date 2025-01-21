@@ -8,7 +8,7 @@ exports[`StepCard matches snapshot 1`] = `
     className="sc-bczRLJ eAXREJ"
   >
     <div
-      className="sc-dkzDqf igaccC step-card-header"
+      className="sc-dkzDqf kooVfX step-card-header"
     >
       <div>
         <h2
@@ -55,7 +55,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
     className="sc-bczRLJ eAXREJ"
   >
     <div
-      className="sc-dkzDqf igaccC step-card-header"
+      className="sc-dkzDqf kooVfX step-card-header"
     >
       <div>
         <h2
@@ -109,7 +109,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
     className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf igaccC step-card-header"
+      className="sc-dkzDqf kooVfX step-card-header"
     >
       <div>
         <h2
@@ -148,7 +148,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
     className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf igaccC step-card-header"
+      className="sc-dkzDqf kooVfX step-card-header"
     >
       <div>
         <h2
@@ -187,7 +187,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
     className="sc-bczRLJ eAXREJ exercise-step"
   >
     <div
-      className="sc-dkzDqf igaccC step-card-header"
+      className="sc-dkzDqf kooVfX step-card-header"
     >
       <div>
         <h2

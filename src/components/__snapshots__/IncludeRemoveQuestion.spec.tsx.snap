@@ -6,13 +6,13 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
 >
   <button
     aria-label="details"
-    className="sc-gsnTZi gpynMb include"
+    className="sc-gsnTZi gmAXwu include"
     onClick={[Function]}
   >
     <svg
       aria-hidden="true"
       aria-label="include question"
-      className="svg-inline--fa fa-plus fa-border fa-lg sc-dkzDqf dzKezH include"
+      className="svg-inline--fa fa-plus fa-border fa-lg sc-dkzDqf bHPCba include"
       data-icon="plus"
       data-prefix="fas"
       focusable="false"
@@ -33,11 +33,11 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   </button>
   <button
     aria-label="details button"
-    className="sc-gsnTZi gpynMb details"
+    className="sc-gsnTZi gmAXwu details"
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf dzKezH details"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf bHPCba details"
       data-icon="ellipsis"
       data-prefix="fas"
       focusable="false"
@@ -65,13 +65,13 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
 >
   <button
     aria-label="details"
-    className="sc-gsnTZi gpynMb remove"
+    className="sc-gsnTZi gmAXwu remove"
     onClick={[Function]}
   >
     <svg
       aria-hidden="true"
       aria-label="remove question"
-      className="svg-inline--fa fa-minus fa-border fa-lg sc-dkzDqf dzKezH remove"
+      className="svg-inline--fa fa-minus fa-border fa-lg sc-dkzDqf bHPCba remove"
       data-icon="minus"
       data-prefix="fas"
       focusable="false"
@@ -92,11 +92,11 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
   </button>
   <button
     aria-label="details button"
-    className="sc-gsnTZi gpynMb details"
+    className="sc-gsnTZi gmAXwu details"
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf dzKezH details"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf bHPCba details"
       data-icon="ellipsis"
       data-prefix="fas"
       focusable="false"
