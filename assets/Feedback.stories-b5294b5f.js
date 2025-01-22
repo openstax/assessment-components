@@ -1,1 +1,0 @@
-import{j as e}from"./index-e7f7ebf6.js";import{F as t}from"./Feedback-e00df85d.js";import"./index-277e404a.js";const m=()=>e(t,{children:"Feedback"});typeof window<"u"&&window.document&&window.document.createElement&&document.documentElement.setAttribute("data-storyloaded","");export{m as Default};
