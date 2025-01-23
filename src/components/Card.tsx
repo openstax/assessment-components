@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState, useRef } from "react";
 import { breakpoints, colors, layouts, mixins } from "../theme";
 import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
@@ -194,6 +194,22 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
     }
 `;
 
+export const StyledOverlay = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    z-index: 2;
+`;
+
 interface SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
@@ -212,6 +228,7 @@ export interface StepCardProps extends SharedProps {
   questionId?: string;
   multipartBadge?: ReactNode;
   isHomework: boolean;
+  overlayChildren?: React.ReactNode;
 }
 
 const StepCard = ({
@@ -229,35 +246,64 @@ const StepCard = ({
   leftHeaderChildren,
   rightHeaderChildren,
   headerTitleChildren,
+  overlayChildren,
   ...otherProps }: StepCardProps) => {
+
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
   const formattedQuestionNumber = numberOfQuestions > 1
     ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
     : `Question ${questionNumber}`;
 
+  const handleOverlayBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (overlayRef.current && !overlayRef.current.contains(event.relatedTarget as Node)) {
+      setShowOverlay(false);
+    }
+  };
+
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
       <InnerStepCard className={className}>
-        {questionNumber && isHomework && stepType === 'exercise' &&
-          <StepCardHeader className="step-card-header">
-            <div>
-              {leftHeaderChildren}
-              <h2 className="question-info">
-                {headerTitleChildren}
-                <span>{formattedQuestionNumber}</span>
-                {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
-                <span className="separator">|</span>
-                <span className="question-id">ID: {questionId}</span>
-              </h2>
-            </div>
-            {availablePoints || rightHeaderChildren ? <div>
-              {availablePoints && <div className="points">{availablePoints} Points</div>}
-              {rightHeaderChildren}
-            </div> : null}
-          </StepCardHeader>
-        }
-        <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
+        <div
+          ref={overlayRef}
+          {
+          ...(overlayChildren
+            ? {
+              onMouseOver: () => setShowOverlay(true),
+              onMouseLeave: () => setShowOverlay(false),
+              onFocus: () => setShowOverlay(true),
+              onBlur: handleOverlayBlur,
+              tabIndex: 0,
+            }
+            : {})
+          }
+        >
+          {(overlayChildren && showOverlay) &&
+            <StyledOverlay>
+              {overlayChildren}
+            </StyledOverlay>}
+          {questionNumber && isHomework && stepType === 'exercise' &&
+            <StepCardHeader className="step-card-header">
+              <div>
+                {leftHeaderChildren}
+                <h2 className="question-info">
+                  {headerTitleChildren}
+                  <span>{formattedQuestionNumber}</span>
+                  {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
+                  <span className="separator">|</span>
+                  <span className="question-id">ID: {questionId}</span>
+                </h2>
+              </div>
+              {availablePoints || rightHeaderChildren ? <div>
+                {availablePoints && <div className="points">{availablePoints} Points</div>}
+                {rightHeaderChildren}
+              </div> : null}
+            </StepCardHeader>
+          }
+          <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
+        </div>
       </InnerStepCard>
     </OuterStepCard>
   )
@@ -271,6 +317,7 @@ export interface TaskStepCardProps extends SharedProps {
   step: StepBase | StepWithData;
   questionNumber: number;
   numberOfQuestions: number;
+  overlayChildren?: React.ReactNode;
 }
 
 const TaskStepCard = ({
@@ -279,6 +326,7 @@ const TaskStepCard = ({
   numberOfQuestions,
   children,
   className,
+  overlayChildren,
   ...otherProps
 }: TaskStepCardProps) =>
 (<StepCard {...otherProps}
@@ -292,6 +340,7 @@ const TaskStepCard = ({
   // availablePoints={step.available_points}
   className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
   questionId={step.uid}
+  overlayChildren={overlayChildren}
 >
   {children}
 </StepCard>);

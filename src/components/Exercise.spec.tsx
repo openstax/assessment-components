@@ -306,7 +306,6 @@ describe('Exercise', () => {
 
     beforeEach(() => {
       props = {
-        enableOverlay: true,
         overlayChildren: <span>Overlay</span>,
         exercise: {
           uid: '1@1',

@@ -147,7 +147,6 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
 
 const exerciseWithOverlayProps = (overlayChildren: React.ReactNode) => {
   return {
-    enableOverlay: true,
     overlayChildren,
   };
  }
