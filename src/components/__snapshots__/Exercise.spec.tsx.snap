@@ -12,7 +12,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf fOwuna"
       >
         <div>
           <h2
@@ -203,7 +203,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf fOwuna"
       >
         <div>
           <h2
@@ -442,7 +442,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf fOwuna"
       >
         <div>
           <h2
@@ -767,7 +767,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf fOwuna"
       >
         <div>
           <h2
@@ -1078,7 +1078,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf fOwuna"
       >
         <div>
           <h2
