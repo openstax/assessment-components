@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef } from "react";
+import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
 import { breakpoints, colors, layouts, mixins } from "../theme";
 import { AvailablePoints, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
@@ -205,8 +205,7 @@ export const StyledOverlay = styled.div`
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF;
-    opacity: 0.8;
+    background-color: #FFFFFF80;
     z-index: 2;
 `;
 
@@ -249,6 +248,8 @@ const StepCard = ({
   overlayChildren,
   ...otherProps }: StepCardProps) => {
 
+  // Helps to stop focusing first child when is already focused
+  const [previousFocusedElement, setPreviousFocusedElement] = useState<HTMLElement | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
@@ -262,6 +263,42 @@ const StepCard = ({
     }
   };
 
+  const handleOverlayFocus = useCallback((event: FocusEvent) => {
+    setShowOverlay(true);
+    const firstOverlayFocusableElement = document.getElementById('overlay-element')?.querySelector(
+      'button, [href], input, select, textarea'
+    ) as HTMLElement;
+
+    if (
+      (firstOverlayFocusableElement !== previousFocusedElement) && 
+      (event.target === overlayRef.current)
+    ) {
+      setPreviousFocusedElement(firstOverlayFocusableElement);
+      firstOverlayFocusableElement.focus();
+    }
+  }, [overlayRef, previousFocusedElement]);
+
+  const hideFocusableElements = useCallback(() => {
+    const focusableElements = Array.from(document.getElementById("step-card")?.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    ) || []);
+
+    focusableElements.forEach((el) => {
+      (el as HTMLElement).setAttribute('tabindex', '-1');
+    });
+  }, []);
+
+  useEffect(() => {
+    const currentOverlayRef = overlayRef.current;
+    if (currentOverlayRef && overlayChildren) {
+      currentOverlayRef.addEventListener('focus', handleOverlayFocus);
+      hideFocusableElements();
+    }
+    return () => {
+      currentOverlayRef?.removeEventListener('focus', handleOverlayFocus);
+    };
+  }, [overlayChildren, overlayRef, handleOverlayFocus, hideFocusableElements]);
+
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
@@ -273,7 +310,6 @@ const StepCard = ({
             ? {
               onMouseOver: () => setShowOverlay(true),
               onMouseLeave: () => setShowOverlay(false),
-              onFocus: () => setShowOverlay(true),
               onBlur: handleOverlayBlur,
               tabIndex: 0,
             }
@@ -281,28 +317,31 @@ const StepCard = ({
           }
         >
           {(overlayChildren && showOverlay) &&
-            <StyledOverlay>
+            <StyledOverlay id="overlay-element">
               {overlayChildren}
-            </StyledOverlay>}
-          {questionNumber && isHomework && stepType === 'exercise' &&
-            <StepCardHeader className="step-card-header">
-              <div>
-                {leftHeaderChildren}
-                <h2 className="question-info">
-                  {headerTitleChildren}
-                  <span>{formattedQuestionNumber}</span>
-                  {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
-                  <span className="separator">|</span>
-                  <span className="question-id">ID: {questionId}</span>
-                </h2>
-              </div>
-              {availablePoints || rightHeaderChildren ? <div>
-                {availablePoints && <div className="points">{availablePoints} Points</div>}
-                {rightHeaderChildren}
-              </div> : null}
-            </StepCardHeader>
+            </StyledOverlay>
           }
-          <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
+          <div id="step-card">
+            {questionNumber && isHomework && stepType === 'exercise' &&
+              <StepCardHeader className="step-card-header">
+                <div>
+                  {leftHeaderChildren}
+                  <h2 className="question-info">
+                    {headerTitleChildren}
+                    <span>{formattedQuestionNumber}</span>
+                    {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
+                    <span className="separator">|</span>
+                    <span className="question-id">ID: {questionId}</span>
+                  </h2>
+                </div>
+                {availablePoints || rightHeaderChildren ? <div>
+                  {availablePoints && <div className="points">{availablePoints} Points</div>}
+                  {rightHeaderChildren}
+                </div> : null}
+              </StepCardHeader>
+            }
+            <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
+          </div>
         </div>
       </InnerStepCard>
     </OuterStepCard>

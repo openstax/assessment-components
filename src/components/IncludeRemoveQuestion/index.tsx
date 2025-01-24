@@ -33,11 +33,11 @@ export const IncludeRemoveQuestion = ({buttonVariant, onIncludeHandler, onRemove
     
     return (
         <StyledContainer>
-            <StyledButton className={buttonVariant} onClick={() => onClickHandler(buttonVariant)} aria-label="details">
+            <StyledButton className={buttonVariant} onClick={() => onClickHandler(buttonVariant)} aria-label={buttonVariant}>
                 <StyledIcon className={buttonVariant} icon={buttonIcon} aria-label={buttonVariant + ' question'} border size="lg" />
                 <span>{generateButtonText(buttonVariant)}</span>
             </StyledButton>
-            <StyledButton className="details" aria-label="details button">
+            <StyledButton className="details" aria-label="details">
                 <StyledIcon className="details" icon={faEllipsisH} border size="lg"/>
                 <span>Details</span>
             </StyledButton>

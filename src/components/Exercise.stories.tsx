@@ -951,7 +951,7 @@ export const OverlayCard = () => {
   return (
     <TextResizerProvider>
       <Exercise {...props1} className='preview-card' />
-      <Exercise {...props2} />
+      <Exercise {...props2} className='preview-card' />
     </TextResizerProvider>
   );
 };

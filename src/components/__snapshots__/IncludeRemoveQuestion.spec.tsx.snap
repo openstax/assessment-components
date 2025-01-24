@@ -5,7 +5,7 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   className="sc-bczRLJ fXHYVE"
 >
   <button
-    aria-label="details"
+    aria-label="include"
     className="sc-gsnTZi gmAXwu include"
     onClick={[Function]}
   >
@@ -32,7 +32,7 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
     </span>
   </button>
   <button
-    aria-label="details button"
+    aria-label="details"
     className="sc-gsnTZi gmAXwu details"
   >
     <svg
@@ -64,7 +64,7 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
   className="sc-bczRLJ fXHYVE"
 >
   <button
-    aria-label="details"
+    aria-label="remove"
     className="sc-gsnTZi gmAXwu remove"
     onClick={[Function]}
   >
@@ -91,7 +91,7 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
     </span>
   </button>
   <button
-    aria-label="details button"
+    aria-label="details"
     className="sc-gsnTZi gmAXwu details"
   >
     <svg

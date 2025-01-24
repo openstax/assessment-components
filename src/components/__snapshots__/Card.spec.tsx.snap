@@ -9,40 +9,44 @@ exports[`StepCard matches snapshot 1`] = `
   >
     <div>
       <div
-        className="sc-dkzDqf kooVfX step-card-header"
+        id="step-card"
       >
-        <div>
-          <h2
-            className="question-info"
-          >
-            <span>
-              Question 1
-            </span>
-            <span
-              className="separator"
+        <div
+          className="sc-dkzDqf kooVfX step-card-header"
+        >
+          <div>
+            <h2
+              className="question-info"
             >
-              |
-            </span>
-            <span
-              className="question-id"
+              <span>
+                Question 1
+              </span>
+              <span
+                className="separator"
+              >
+                |
+              </span>
+              <span
+                className="question-id"
+              >
+                ID: 
+              </span>
+            </h2>
+          </div>
+          <div>
+            <div
+              className="points"
             >
-              ID: 
-            </span>
-          </h2>
-        </div>
-        <div>
-          <div
-            className="points"
-          >
-            1.0
-             Points
+              1.0
+               Points
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="sc-hKMtZM bwRTaS"
-      >
-        Question content
+        <div
+          className="sc-hKMtZM bwRTaS"
+        >
+          Question content
+        </div>
       </div>
     </div>
   </div>
@@ -58,46 +62,50 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   >
     <div>
       <div
-        className="sc-dkzDqf kooVfX step-card-header"
+        id="step-card"
       >
-        <div>
-          <h2
-            className="question-info"
-          >
-            <span>
-              Questions 1 - 3
-            </span>
-            <span
-              className="num-questions"
+        <div
+          className="sc-dkzDqf kooVfX step-card-header"
+        >
+          <div>
+            <h2
+              className="question-info"
             >
-               / 
-              3
-            </span>
-            <span
-              className="separator"
+              <span>
+                Questions 1 - 3
+              </span>
+              <span
+                className="num-questions"
+              >
+                 / 
+                3
+              </span>
+              <span
+                className="separator"
+              >
+                |
+              </span>
+              <span
+                className="question-id"
+              >
+                ID: 
+              </span>
+            </h2>
+          </div>
+          <div>
+            <div
+              className="points"
             >
-              |
-            </span>
-            <span
-              className="question-id"
-            >
-              ID: 
-            </span>
-          </h2>
-        </div>
-        <div>
-          <div
-            className="points"
-          >
-            1.0
-             Points
+              1.0
+               Points
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="sc-hKMtZM bwRTaS"
-      >
-        Question content
+        <div
+          className="sc-hKMtZM bwRTaS"
+        >
+          Question content
+        </div>
       </div>
     </div>
   </div>
@@ -114,32 +122,36 @@ exports[`TaskStepCard can optionally provide task 1`] = `
   >
     <div>
       <div
-        className="sc-dkzDqf kooVfX step-card-header"
+        id="step-card"
       >
-        <div>
-          <h2
-            className="question-info"
-          >
-            <span>
-              Question 1
-            </span>
-            <span
-              className="separator"
+        <div
+          className="sc-dkzDqf kooVfX step-card-header"
+        >
+          <div>
+            <h2
+              className="question-info"
             >
-              |
-            </span>
-            <span
-              className="question-id"
-            >
-              ID: 
-              1234@1
-            </span>
-          </h2>
+              <span>
+                Question 1
+              </span>
+              <span
+                className="separator"
+              >
+                |
+              </span>
+              <span
+                className="question-id"
+              >
+                ID: 
+                1234@1
+              </span>
+            </h2>
+          </div>
         </div>
+        <div
+          className="sc-hKMtZM bwRTaS"
+        />
       </div>
-      <div
-        className="sc-hKMtZM bwRTaS"
-      />
     </div>
   </div>
 </div>
@@ -155,32 +167,36 @@ exports[`TaskStepCard can optionally provide type 1`] = `
   >
     <div>
       <div
-        className="sc-dkzDqf kooVfX step-card-header"
+        id="step-card"
       >
-        <div>
-          <h2
-            className="question-info"
-          >
-            <span>
-              Question 1
-            </span>
-            <span
-              className="separator"
+        <div
+          className="sc-dkzDqf kooVfX step-card-header"
+        >
+          <div>
+            <h2
+              className="question-info"
             >
-              |
-            </span>
-            <span
-              className="question-id"
-            >
-              ID: 
-              1234@1
-            </span>
-          </h2>
+              <span>
+                Question 1
+              </span>
+              <span
+                className="separator"
+              >
+                |
+              </span>
+              <span
+                className="question-id"
+              >
+                ID: 
+                1234@1
+              </span>
+            </h2>
+          </div>
         </div>
+        <div
+          className="sc-hKMtZM bwRTaS"
+        />
       </div>
-      <div
-        className="sc-hKMtZM bwRTaS"
-      />
     </div>
   </div>
 </div>
@@ -196,32 +212,36 @@ exports[`TaskStepCard matches snapshot 1`] = `
   >
     <div>
       <div
-        className="sc-dkzDqf kooVfX step-card-header"
+        id="step-card"
       >
-        <div>
-          <h2
-            className="question-info"
-          >
-            <span>
-              Question 1
-            </span>
-            <span
-              className="separator"
+        <div
+          className="sc-dkzDqf kooVfX step-card-header"
+        >
+          <div>
+            <h2
+              className="question-info"
             >
-              |
-            </span>
-            <span
-              className="question-id"
-            >
-              ID: 
-              1234@1
-            </span>
-          </h2>
+              <span>
+                Question 1
+              </span>
+              <span
+                className="separator"
+              >
+                |
+              </span>
+              <span
+                className="question-id"
+              >
+                ID: 
+                1234@1
+              </span>
+            </h2>
+          </div>
         </div>
+        <div
+          className="sc-hKMtZM bwRTaS"
+        />
       </div>
-      <div
-        className="sc-hKMtZM bwRTaS"
-      />
     </div>
   </div>
 </div>
