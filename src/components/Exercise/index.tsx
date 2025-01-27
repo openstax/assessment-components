@@ -59,14 +59,17 @@ const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProp
   Pick<ExerciseBaseProps, 'exerciseIcons'> & {
     desktopToolbarEnabled: boolean;
     mobileToolbarEnabled: boolean;
+    overlayChildren?: React.ReactNode;
   }
-) => <ToolbarWrapper
-       desktopToolbarEnabled={props.desktopToolbarEnabled}
-       mobileToolbarEnabled={props.mobileToolbarEnabled}
-     >
-        <ExerciseToolbar icons={props.exerciseIcons} />
-    <StyledTaskStepCard {...props} />
-  </ToolbarWrapper>;
+) => (
+  <ToolbarWrapper
+    desktopToolbarEnabled={props.desktopToolbarEnabled}
+    mobileToolbarEnabled={props.mobileToolbarEnabled}
+  >
+    <ExerciseToolbar icons={props.exerciseIcons} />
+    <StyledTaskStepCard overlayChildren={props.overlayChildren} {...props} />
+  </ToolbarWrapper>
+);
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   return (
@@ -159,9 +162,21 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
+export interface OverlayProps {
+  overlayChildren?: React.ReactNode;
+}
+
 export const Exercise = styled(({
-  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, ...props
-}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps)) => {
+  numberOfQuestions,
+  questionNumber,
+  step,
+  exercise,
+  show_all_feedback,
+  scrollToQuestion,
+  exerciseIcons,
+  overlayChildren,
+  ...props
+}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
@@ -194,8 +209,9 @@ export const Exercise = styled(({
       mobileToolbarEnabled={mobileToolbarEnabled}
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
       className={props.className}
+      overlayChildren={overlayChildren}
     >
-      <div ref={container}>
+      <div ref={container} >
         <Preamble exercise={exercise} />
 
         {exercise.questions.map((q, i) => {
@@ -203,7 +219,7 @@ export const Exercise = styled(({
           return (
             <ExerciseQuestion
               {...props}
-              {...{...state, available_points: undefined}}
+              {...{ ...state, available_points: undefined }}
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
               exercise_uid={exercise.uid}
               key={q.id}
