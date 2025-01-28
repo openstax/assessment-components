@@ -7,6 +7,7 @@ import {
 import { Answer } from '../types';
 import { IncludeRemoveQuestion } from './IncludeRemoveQuestion';
 import styled from 'styled-components';
+import { ExercisePreview } from './ExercisePreview';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -103,7 +104,7 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
         is_answer_order_important: false,
         answers: [{
           id: '1',
-          correctness: undefined,
+          correctness: '1.0',
           content_html: 'True',
         }, {
           id: '2',
@@ -948,10 +949,26 @@ export const OverlayCard = () => {
     },
   };
 
+  const [selectedQuestions, setSelectedQuestions] = useState<string[]>([]);
+
   return (
     <TextResizerProvider>
+      <h2>Exercise cards</h2>
       <Exercise {...props1} className='preview-card' />
       <Exercise {...props2} className='preview-card' />
+      <h2>Exercise Preview cards</h2>
+      <ExercisePreview 
+        selectedQuestions={selectedQuestions} 
+        setSelectedQuestions={setSelectedQuestions} 
+        enableOverlay 
+        exercise={props1.exercise} 
+      />
+      <ExercisePreview 
+        selectedQuestions={selectedQuestions} 
+        setSelectedQuestions={setSelectedQuestions} 
+        enableOverlay 
+        exercise={props2.exercise} 
+      />
     </TextResizerProvider>
   );
 };

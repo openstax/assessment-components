@@ -1,11 +1,24 @@
 import { css } from "styled-components";
 
 export const exerciseStyles = css`
+
+  &.included-card {
+    background-color: #daf3f8;
+    .step-card-footer-inner, .step-card-body, .step-card-header {
+      background-color: #daf3f8 !important;
+    }
+
+    .answer-letter-wrapper::before:not(.answer-correct} {
+      background-color: #daf3f8 !important;
+    }
+  }
+
   &.preview-card {
     --spacing: 0.8rem;
 
     .step-card-header,
     .step-card-body {
+      background-color: #FFFFFF;
       padding: var(--spacing);
       font-size: 1.6rem;
       line-height: 2rem;
@@ -44,6 +57,7 @@ export const exerciseStyles = css`
     .openstax-question {
       .openstax-answer {
         padding: 0;
+        border: none;
 
         .answer-label {
           padding-top: var(--spacing);
@@ -74,13 +88,31 @@ export const exerciseStyles = css`
       }
     }
 
-    .step-card-footer {
+    .step-card-footer, .detailed-solution {
       display: none;
     }
 
     .question-stem,
-    .question-feedback-content {
+    .question-feedback-content,
+    .question-info,
+    .exercise-context {
       line-height: 2rem;
+    }
+
+    .question-info {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+
+    .question-id {
+      font-weight: 400;
+      font-size: 1.6rem;
+    }
+
+    .question-stem {
+      color: #424242;
+      font-weight: bold;
+      font-size: 1.6rem;
     }
   }
 `;
