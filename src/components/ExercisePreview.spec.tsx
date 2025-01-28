@@ -1,6 +1,5 @@
 import { ExercisePreview } from './ExercisePreview';
 import renderer from 'react-test-renderer';
-import React from 'react';
 import { ExerciseData } from 'src/types';
 
 describe('ExercisePreview', () => {

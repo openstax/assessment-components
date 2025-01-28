@@ -4,11 +4,11 @@ export const exerciseStyles = css`
 
   &.included-card {
     background-color: #daf3f8;
-    .step-card-footer-inner, .step-card-body, .step-card-header {
-      background-color: #daf3f8 !important;
-    }
-
-    .answer-letter-wrapper::before:not(.answer-correct} {
+    
+    .step-card-footer-inner, 
+    .step-card-body, 
+    .step-card-header, 
+    .answer-letter-wrapper::before {
       background-color: #daf3f8 !important;
     }
   }
