@@ -958,14 +958,14 @@ export const OverlayCard = () => {
       <Exercise {...props2} className='preview-card' />
       <h2>Exercise Preview cards</h2>
       <ExercisePreview 
-        selectedQuestions={selectedQuestions} 
-        setSelectedQuestions={setSelectedQuestions} 
+        selected={selectedQuestions} 
+        onSelectionChange={setSelectedQuestions} 
         enableOverlay 
         exercise={props1.exercise} 
       />
       <ExercisePreview 
-        selectedQuestions={selectedQuestions} 
-        setSelectedQuestions={setSelectedQuestions} 
+        selected={selectedQuestions} 
+        onSelectionChange={setSelectedQuestions} 
         enableOverlay 
         exercise={props2.exercise} 
       />
