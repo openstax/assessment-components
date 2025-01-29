@@ -5,8 +5,8 @@ import { Exercise } from "./Exercise";
 
 export interface ExercisePreviewProps {
     exercise: ExerciseData;
-    selectedQuestions: string[];
-    setSelectedQuestions?: React.Dispatch<React.SetStateAction<string[]>>;
+    selected: string[];
+    onSelectionChange?: React.Dispatch<React.SetStateAction<string[]>>;
     enableOverlay?: boolean;
 }
 
@@ -16,8 +16,8 @@ export interface ExercisePreviewProps {
 export const ExercisePreview = (
     {
         exercise,
-        selectedQuestions,
-        setSelectedQuestions,
+        selected,
+        onSelectionChange,
         enableOverlay = false,
     }: ExercisePreviewProps) => {
 
@@ -66,25 +66,25 @@ export const ExercisePreview = (
     };
 
     const includeQuestionHandler = React.useCallback(() => {
-        setSelectedQuestions?.(previous => previous.concat(exercise.uid));
-    }, [exercise, setSelectedQuestions]);
+        onSelectionChange?.(previous => previous.concat(exercise.uid));
+    }, [exercise, onSelectionChange]);
 
     const removeQuestionHandler = useCallback(() => {
-        setSelectedQuestions?.(previous => previous.filter((id) => id !== exercise.uid));
-    }, [exercise, setSelectedQuestions]);
+        onSelectionChange?.(previous => previous.filter((id) => id !== exercise.uid));
+    }, [exercise, onSelectionChange]);
 
     const includeRemoveQuestionComponent = React.useMemo(() =>
         <IncludeRemoveQuestion
-            buttonVariant={selectedQuestions.includes(exercise.uid) ? 'remove' : 'include'}
+            buttonVariant={selected.includes(exercise.uid) ? 'remove' : 'include'}
             onIncludeHandler={includeQuestionHandler}
             onRemoveHandler={removeQuestionHandler}
         />
-        , [selectedQuestions, exercise, includeQuestionHandler, removeQuestionHandler]);
+        , [selected, exercise, includeQuestionHandler, removeQuestionHandler]);
 
     return (
         <Exercise
             exercise={exercise}
-            className={selectedQuestions.includes(exercise.uid) ? 'preview-card included-card' : 'preview-card'}
+            className={selected.includes(exercise.uid) ? 'preview-card is-selected' : 'preview-card'}
             {
             ...(enableOverlay
                 ? {

@@ -1,15 +1,16 @@
+import { colors } from "../../theme";
 import { css } from "styled-components";
 
 export const exerciseStyles = css`
 
-  &.included-card {
-    background-color: #daf3f8;
+  &.is-selected {
+    background-color: ${colors.card.header.background};
     
     .step-card-footer-inner, 
     .step-card-body, 
     .step-card-header, 
     .answer-letter-wrapper::before {
-      background-color: #daf3f8 !important;
+      background-color: ${colors.card.header.background} !important;
     }
   }
 
@@ -18,7 +19,7 @@ export const exerciseStyles = css`
 
     .step-card-header,
     .step-card-body {
-      background-color: #FFFFFF;
+      background-color: ${colors.palette.white};
       padding: var(--spacing);
       font-size: 1.6rem;
       line-height: 2rem;
@@ -67,6 +68,13 @@ export const exerciseStyles = css`
           .answer-answer {
             margin-left: var(--spacing);
           }
+
+          &::before {
+            min-width: 2.3rem;
+            min-height: 2.3rem;
+            width: 2.3rem;
+            height: 2.3rem;
+          }
         }
 
         .answer-letter {
@@ -101,16 +109,16 @@ export const exerciseStyles = css`
 
     .question-info {
       font-weight: bold;
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
 
     .question-id {
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
 
     .question-stem {
-      color: #424242;
+      color: ${colors.palette.neutralDarker};
       font-weight: bold;
       font-size: 1.6rem;
     }

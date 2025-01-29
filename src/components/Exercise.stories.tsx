@@ -104,7 +104,7 @@ const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
         is_answer_order_important: false,
         answers: [{
           id: '1',
-          correctness: '1.0',
+          correctness: undefined,
           content_html: 'True',
         }, {
           id: '2',
