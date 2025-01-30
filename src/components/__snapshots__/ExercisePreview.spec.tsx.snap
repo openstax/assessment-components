@@ -9,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card"
+      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -198,6 +198,203 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
 `;
 
 exports[`ExercisePreview using step data matches snapshot %description 2`] = `
+<div
+  className="sc-fEOsli eTaXVj"
+>
+  <div
+    className="sc-eCYdqJ jqafet"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card is-selected"
+    >
+      <div
+        onBlur={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        tabIndex={0}
+      >
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-jSMfEi cfhjdW step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-gKXOVf eiZLwY"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-jqUVSM kmbXEX openstax-question step-card-body"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    aria-label="Answer choices"
+                    className="answers-table"
+                    role="radiogroup"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled answer-selected"
+                      >
+                        <input
+                          checked={true}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Selected Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="sc-kDDrLX eDCkPk step-card-footer"
+                >
+                  <div
+                    className="step-card-footer-inner"
+                  >
+                    <div
+                      className="points"
+                      role="status"
+                    >
+                      <span
+                        className="attempts-left"
+                      />
+                    </div>
+                    <div
+                      className="controls"
+                    >
+                      <button
+                        className="sc-ftvSup gRHhHP"
+                        data-test-id="submit-answer-btn"
+                        disabled={false}
+                        onClick={[Function]}
+                      >
+                        Submit & continue
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExercisePreview using step data matches snapshot %description 3`] = `
 <div
   className="sc-fEOsli eTaXVj"
 >

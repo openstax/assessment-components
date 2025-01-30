@@ -77,10 +77,10 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   canUpdateCurrentStep: false,
 };
 
-const exerciseWithQuestionStatesProps = (): ExerciseWithQuestionStatesProps => {
+const exerciseWithQuestionStatesProps = (uid?: string): ExerciseWithQuestionStatesProps => {
   return {
     exercise: {
-      uid: '1@1',
+      uid: uid || '1@1',
       uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
       group_uuid: '20e82bf6-232e-40c8-ba68-2d22c6498f69',
       number: 1,
@@ -818,7 +818,7 @@ export const PreviewCard = () => {
 export const OverlayCard = () => {
   const randomlyCorrectAnswer = Math.floor(Math.random() * 3) + 1;
   const props1: ExerciseWithQuestionStatesProps = {
-    ...exerciseWithQuestionStatesProps(),
+    ...exerciseWithQuestionStatesProps('1@123'),
     ...exerciseWithOverlayProps(<button>Overlay</button>),
     questionStates: {
       '1': {
@@ -921,7 +921,7 @@ export const OverlayCard = () => {
   const [buttonVariant, setButtonVariant] = React.useState<'include' | 'remove'>('include');
 
   const props2: ExerciseWithQuestionStatesProps = {
-    ...exerciseWithQuestionStatesProps(),
+    ...exerciseWithQuestionStatesProps('1@321'),
     ...exerciseWithOverlayProps(
       <IncludeRemoveQuestion 
         buttonVariant={buttonVariant}
@@ -950,6 +950,11 @@ export const OverlayCard = () => {
   };
 
   const [selectedQuestions, setSelectedQuestions] = useState<string[]>([]);
+  const [showDetails1, setShowDetails1] = useState<boolean>(false);
+  const [showDetails2, setShowDetails2] = useState<boolean>(false);
+
+  const includeHandler = (exerciseUid: string) => setSelectedQuestions(previous => previous.concat(exerciseUid));
+  const removeHandler = (exerciseUid: string) => setSelectedQuestions(previous => previous.filter((id) => id !== exerciseUid));
 
   return (
     <TextResizerProvider>
@@ -957,15 +962,21 @@ export const OverlayCard = () => {
       <Exercise {...props1} className='preview-card' />
       <Exercise {...props2} className='preview-card' />
       <h2>Exercise Preview cards</h2>
+      {showDetails1 && <h2>Details 1!</h2>}
       <ExercisePreview 
-        selected={selectedQuestions} 
-        onSelectionChange={setSelectedQuestions} 
+        selected={selectedQuestions.includes(props1.exercise.uid)} 
+        onIncludeHandler={()=> includeHandler(props1.exercise.uid)} 
+        onRemoveHandler={()=> removeHandler(props1.exercise.uid)}
+        onClickDetails={()=> setShowDetails1((previous) => !previous)}
         enableOverlay 
         exercise={props1.exercise} 
       />
+      {showDetails2 && <h2>Details 2!</h2>}
       <ExercisePreview 
-        selected={selectedQuestions} 
-        onSelectionChange={setSelectedQuestions} 
+        selected={selectedQuestions.includes(props2.exercise.uid)} 
+        onIncludeHandler={()=> includeHandler(props2.exercise.uid)} 
+        onRemoveHandler={()=> removeHandler(props2.exercise.uid)}
+        onClickDetails={()=> setShowDetails2((previous) => !previous)}
         enableOverlay 
         exercise={props2.exercise} 
       />

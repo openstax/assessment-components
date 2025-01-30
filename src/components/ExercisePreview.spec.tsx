@@ -45,18 +45,22 @@ describe('ExercisePreview', () => {
     });
 
     it.each`
-        enableOverlay | description
-        ${true}       | ${'with overlay'}
-        ${false}      | ${'without overlay'}
-    `('matches snapshot %description', ({ enableOverlay }: { enableOverlay: boolean }) => {
-      const selectedQuestionsMock: string[] = [];
-      const setQuestionsmock = jest.fn();
+        enableOverlay | selected | description
+        ${true}       | ${true}  | ${'with overlay and selected true'}
+        ${true}       | ${true}  | ${'with overlay and selected false'}
+        ${false}      | ${false} | ${'without overlay'}
+    `('matches snapshot %description', ({ enableOverlay, selected }: { enableOverlay: boolean, selected: boolean }) => {
+      const onIncludeMock = jest.fn();
+      const onRemoveMock = jest.fn();
+      const onDetailsMock = jest.fn();
       const tree = renderer.create(
         <ExercisePreview 
           exercise={exercise} 
           enableOverlay={enableOverlay}
-          selected={selectedQuestionsMock} 
-          onSelectionChange={setQuestionsmock}
+          selected={selected}
+          onIncludeHandler={onIncludeMock}
+          onRemoveHandler={onRemoveMock}
+          onClickDetails={onDetailsMock}
         />
       ).toJSON();
       expect(tree).toMatchSnapshot();
