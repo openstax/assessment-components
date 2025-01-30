@@ -34,6 +34,19 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   <button
     aria-label="details"
     className="sc-gsnTZi gmAXwu details"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
   >
     <svg
       aria-hidden="true"
@@ -93,6 +106,19 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
   <button
     aria-label="details"
     className="sc-gsnTZi gmAXwu details"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
   >
     <svg
       aria-hidden="true"
