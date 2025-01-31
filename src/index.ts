@@ -9,3 +9,4 @@ export * from './components/ProgressBar';
 export * from './components/Loader';
 export * from './components/ExerciseToolbar';
 export * from './components/IncludeRemoveQuestion';
+export * from './components/ExercisePreview';
