@@ -12,7 +12,7 @@ exports[`StepCard matches snapshot 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf kooVfX step-card-header"
+          className="sc-dkzDqf igaccC step-card-header"
         >
           <div>
             <h2
@@ -65,7 +65,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf kooVfX step-card-header"
+          className="sc-dkzDqf igaccC step-card-header"
         >
           <div>
             <h2
@@ -125,7 +125,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf kooVfX step-card-header"
+          className="sc-dkzDqf igaccC step-card-header"
         >
           <div>
             <h2
@@ -170,7 +170,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf kooVfX step-card-header"
+          className="sc-dkzDqf igaccC step-card-header"
         >
           <div>
             <h2
@@ -215,7 +215,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf kooVfX step-card-header"
+          className="sc-dkzDqf igaccC step-card-header"
         >
           <div>
             <h2

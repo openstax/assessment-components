@@ -1,11 +1,25 @@
+import { colors } from "../../theme";
 import { css } from "styled-components";
 
 export const exerciseStyles = css`
+
+  &.is-selected {
+    background-color: ${colors.card.header.background};
+    
+    .step-card-footer-inner, 
+    .step-card-body, 
+    .step-card-header, 
+    .answer-letter-wrapper::before {
+      background-color: ${colors.card.header.background} !important;
+    }
+  }
+
   &.preview-card {
     --spacing: 0.8rem;
 
     .step-card-header,
     .step-card-body {
+      background-color: ${colors.palette.white};
       padding: var(--spacing);
       font-size: 1.6rem;
       line-height: 2rem;
@@ -44,6 +58,7 @@ export const exerciseStyles = css`
     .openstax-question {
       .openstax-answer {
         padding: 0;
+        border: none;
 
         .answer-label {
           padding-top: var(--spacing);
@@ -52,6 +67,13 @@ export const exerciseStyles = css`
         .answer-letter-wrapper {
           .answer-answer {
             margin-left: var(--spacing);
+          }
+
+          &::before {
+            min-width: 2.3rem;
+            min-height: 2.3rem;
+            width: 2.3rem;
+            height: 2.3rem;
           }
         }
 
@@ -74,13 +96,31 @@ export const exerciseStyles = css`
       }
     }
 
-    .step-card-footer {
+    .step-card-footer, .detailed-solution {
       display: none;
     }
 
     .question-stem,
-    .question-feedback-content {
+    .question-feedback-content,
+    .question-info,
+    .exercise-context {
       line-height: 2rem;
+    }
+
+    .question-info {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .question-id {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .question-stem {
+      color: ${colors.palette.neutralDarker};
+      font-weight: bold;
+      font-size: 1.6rem;
     }
   }
 `;
