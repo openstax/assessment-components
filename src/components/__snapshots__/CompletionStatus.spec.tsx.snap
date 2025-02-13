@@ -2,10 +2,10 @@
 
 exports[`CompletionStatus matches snapshot 1`] = `
 <div
-  className="sc-bczRLJ sc-jSMfEi eAXREJ ixqeJm sc-iBkjds"
+  className="sc-bczRLJ sc-gKXOVf eAXREJ hSbqXj sc-ftvSup"
 >
   <h2
-    className="sc-gKXOVf jeuREl"
+    className="sc-iBkjds jcQjIn"
   >
     No questions have been answered.
   </h2>
@@ -13,7 +13,7 @@ exports[`CompletionStatus matches snapshot 1`] = `
     Begin working on the quiz.
   </p>
   <button
-    className="sc-eCYdqJ dqiaKp"
+    className="sc-jSMfEi hsxEPT"
     data-test-id="start-btn"
     onClick={[Function]}
   >
@@ -24,10 +24,10 @@ exports[`CompletionStatus matches snapshot 1`] = `
 
 exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-jSMfEi eAXREJ ixqeJm sc-iBkjds"
+  className="sc-bczRLJ sc-gKXOVf eAXREJ hSbqXj sc-ftvSup"
 >
   <h2
-    className="sc-gKXOVf jeuREl"
+    className="sc-iBkjds jcQjIn"
   >
     You are done.
   </h2>
@@ -35,7 +35,7 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
     Great job answering all the questions.
   </p>
   <button
-    className="sc-eCYdqJ dqiaKp"
+    className="sc-jSMfEi hsxEPT"
     data-test-id="next-btn"
     onClick={[Function]}
   >
@@ -46,10 +46,10 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 
 exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-jSMfEi eAXREJ ixqeJm sc-iBkjds"
+  className="sc-bczRLJ sc-gKXOVf eAXREJ hSbqXj sc-ftvSup"
 >
   <h2
-    className="sc-gKXOVf jeuREl"
+    className="sc-iBkjds jcQjIn"
   >
     Quiz is partially complete.
   </h2>
@@ -57,7 +57,7 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
     You've completed 5 of 15 questions.
   </p>
   <button
-    className="sc-eCYdqJ dqiaKp"
+    className="sc-jSMfEi hsxEPT"
     data-test-id="continue-btn"
     onClick={[Function]}
   >
