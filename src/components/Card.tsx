@@ -245,8 +245,6 @@ const StepCard = ({
   overlayChildren,
   ...otherProps }: StepCardProps) => {
 
-  // Helps to stop focusing first child when is already focused
-  const [previousFocusedElement, setPreviousFocusedElement] = useState<HTMLElement | null>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
@@ -260,20 +258,9 @@ const StepCard = ({
     }
   };
 
-  const handleOverlayFocus = useCallback((event: FocusEvent) => {
+  const handleOverlayFocus = useCallback(() => {
     setShowOverlay(true);
-    const firstOverlayFocusableElement = document.getElementById('overlay-element')?.querySelector(
-      'button, [href], input, select, textarea'
-    ) as HTMLElement;
-
-    if (
-      (firstOverlayFocusableElement !== previousFocusedElement) && 
-      (event.target === overlayRef.current)
-    ) {
-      setPreviousFocusedElement(firstOverlayFocusableElement);
-      firstOverlayFocusableElement.focus();
-    }
-  }, [overlayRef, previousFocusedElement]);
+  }, []);
 
   const hideFocusableElements = useCallback(() => {
     const focusableElements = Array.from(document.getElementById("step-card")?.querySelectorAll(

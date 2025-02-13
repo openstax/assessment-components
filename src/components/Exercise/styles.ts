@@ -2,13 +2,12 @@ import { colors } from "../../theme";
 import { css } from "styled-components";
 
 export const exerciseStyles = css`
-
   &.is-selected {
     background-color: ${colors.card.header.background};
-    
-    .step-card-footer-inner, 
-    .step-card-body, 
-    .step-card-header, 
+
+    .step-card-footer-inner,
+    .step-card-body,
+    .step-card-header,
     .answer-letter-wrapper::before {
       background-color: ${colors.card.header.background} !important;
     }
@@ -16,6 +15,10 @@ export const exerciseStyles = css`
 
   &.preview-card {
     --spacing: 0.8rem;
+
+    [data-task-step-id] {
+      padding: 0;
+    }
 
     .step-card-header,
     .step-card-body {
@@ -86,6 +89,12 @@ export const exerciseStyles = css`
         }
       }
 
+      &.has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper:before {
+        color: ${colors.palette.white};
+        border-color: ${colors.answer.correct};
+        background: ${colors.answer.correct};
+      }
+
       .question-feedback-content {
         font-size: 1.6rem;
       }
@@ -122,5 +131,7 @@ export const exerciseStyles = css`
       font-weight: bold;
       font-size: 1.6rem;
     }
+
+
   }
 `;
