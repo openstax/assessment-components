@@ -39,10 +39,11 @@ const StepCardHeader = styled.div`
   line-height: 3rem;
   letter-spacing: -0.72px;
 
-  div.question-info {
+  h2.question-info {
     display: flex;
     align-items: baseline;
-    font-weight: bold;
+    font-size: inherit;
+    margin: inherit;
 
     .question-id {
       font-weight: normal;

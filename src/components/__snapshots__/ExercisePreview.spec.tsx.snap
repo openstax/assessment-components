@@ -9,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card is-selected"
+      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -21,7 +21,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi cfhjdW step-card-header"
+            className="sc-jSMfEi biHTWy step-card-header"
           >
             <div>
               <h2
@@ -206,7 +206,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card is-selected"
+      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -218,7 +218,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi cfhjdW step-card-header"
+            className="sc-jSMfEi biHTWy step-card-header"
           >
             <div>
               <h2
@@ -403,14 +403,14 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dcgACV preview-card"
+      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-jSMfEi cfhjdW step-card-header"
+            className="sc-jSMfEi biHTWy step-card-header"
           >
             <div>
               <h2
