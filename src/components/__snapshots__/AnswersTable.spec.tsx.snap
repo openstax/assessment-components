@@ -2,7 +2,9 @@
 
 exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -13,24 +15,26 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
       <div
         className="correct-incorrect"
       />
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-0"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
       <label
         className="answer-label"
         htmlFor="1-option-0"
         onKeyPress={[Function]}
       >
         <span
+          aria-label="Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice A:"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -60,24 +64,26 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
       <div
         className="correct-incorrect"
       />
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-1"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
       <label
         className="answer-label"
         htmlFor="1-option-1"
         onKeyPress={[Function]}
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B:"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >
@@ -103,7 +109,9 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
 
 exports[`AnswersTable renders all feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -112,6 +120,7 @@ exports[`AnswersTable renders all feedback 1`] = `
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
+        aria-details="feedback-1-0"
         checked={true}
         className="answer-input-box"
         disabled={true}
@@ -125,18 +134,11 @@ exports[`AnswersTable renders all feedback 1`] = `
         htmlFor="1-option-0"
       >
         <span
+          aria-label="Selected Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Selected Choice A:"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -160,6 +162,7 @@ exports[`AnswersTable renders all feedback 1`] = `
   </div>
   <aside
     className="question-feedback bottom"
+    id="feedback-1-0"
   >
     <div
       aria-label="Answer Feedback"
@@ -183,6 +186,7 @@ exports[`AnswersTable renders all feedback 1`] = `
       className="answers-answer disabled answer-correct"
     >
       <input
+        aria-details="feedback-1-1"
         checked={false}
         className="answer-input-box"
         disabled={true}
@@ -196,18 +200,11 @@ exports[`AnswersTable renders all feedback 1`] = `
         htmlFor="1-option-1"
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B:"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >
@@ -231,6 +228,7 @@ exports[`AnswersTable renders all feedback 1`] = `
   </div>
   <aside
     className="question-feedback bottom"
+    id="feedback-1-1"
   >
     <div
       aria-label="Answer Feedback"
@@ -252,7 +250,9 @@ exports[`AnswersTable renders all feedback 1`] = `
 
 exports[`AnswersTable renders correct answer feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -260,23 +260,26 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
     <section
       className="answers-answer disabled answer-selected answer-correct"
     >
+      <input
+        aria-details="feedback-1-0"
+        checked={true}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-0"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
       <label
         className="answer-label"
         htmlFor="1-option-0"
       >
         <span
+          aria-label="Selected Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Selected Choice A(Correct Answer):"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -300,6 +303,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
   </div>
   <aside
     className="question-feedback bottom"
+    id="feedback-1-0"
   >
     <div
       aria-label="Answer Feedback"
@@ -322,23 +326,25 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
     <section
       className="answers-answer disabled"
     >
+      <input
+        checked={false}
+        className="answer-input-box"
+        disabled={true}
+        id="1-option-1"
+        name="1-options"
+        onChange={[Function]}
+        type="radio"
+      />
       <label
         className="answer-label"
         htmlFor="1-option-1"
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B(Incorrect Answer):"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >
@@ -359,7 +365,9 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
 
 exports[`AnswersTable renders incorrect answer feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -368,6 +376,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
+        aria-details="feedback-1-0"
         checked={true}
         className="answer-input-box"
         disabled={true}
@@ -381,18 +390,11 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         htmlFor="1-option-0"
       >
         <span
+          aria-label="Selected Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Selected Choice A:"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -416,6 +418,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
   </div>
   <aside
     className="question-feedback bottom"
+    id="feedback-1-0"
   >
     <div
       aria-label="Answer Feedback"
@@ -452,18 +455,11 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         htmlFor="1-option-1"
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B:"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >
@@ -490,7 +486,9 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
 
 exports[`AnswersTable renders instructions 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <b>
     Instructions
@@ -515,18 +513,11 @@ exports[`AnswersTable renders instructions 1`] = `
         htmlFor="1-option-0"
       >
         <span
+          aria-label="Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice A:"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -562,18 +553,11 @@ exports[`AnswersTable renders instructions 1`] = `
         htmlFor="1-option-1"
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B:"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >
@@ -594,7 +578,9 @@ exports[`AnswersTable renders instructions 1`] = `
 
 exports[`AnswersTable sorts by given ID order 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -616,18 +602,11 @@ exports[`AnswersTable sorts by given ID order 1`] = `
         htmlFor="1-option-0"
       >
         <span
+          aria-label="Choice A:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice A:"
-            className="answer-letter"
-            data-test-id="answer-choice-A"
-            disabled={true}
-            onClick={[Function]}
-          >
-            A
-          </button>
-        </span>
+          data-answer-choice="A"
+          data-test-id="answer-choice-A"
+        />
         <div
           className="answer-answer"
         >
@@ -663,18 +642,11 @@ exports[`AnswersTable sorts by given ID order 1`] = `
         htmlFor="1-option-1"
       >
         <span
+          aria-label="Choice B:"
           className="answer-letter-wrapper"
-        >
-          <button
-            aria-label="Choice B:"
-            className="answer-letter"
-            data-test-id="answer-choice-B"
-            disabled={true}
-            onClick={[Function]}
-          >
-            B
-          </button>
-        </span>
+          data-answer-choice="B"
+          data-test-id="answer-choice-B"
+        />
         <div
           className="answer-answer"
         >

@@ -4,6 +4,7 @@ import FlagIcon from '../assets/flag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
+import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const ProgressBarWrapper = styled.nav`
   display: flex;
@@ -92,7 +93,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
-  if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect') {
+  if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect' && variant !== 'isIncomplete') {
     return null;
   }
 
@@ -107,6 +108,11 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
       color: colors.answer.incorrect,
       label: 'Incorrect',
     },
+    isIncomplete: {
+      icon: faQuestion,
+      color: colors.answer.neutral,
+      label: 'Incomplete'
+    }
   }[variant];
 
   return <StyledFontAwesomeIcon
@@ -132,7 +138,7 @@ export interface ProgressBarItemProps<S> {
   goToStep: (index: number, step: S) => void;
 }
 
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | null;
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | 'isIncomplete' | null;
 
 export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>

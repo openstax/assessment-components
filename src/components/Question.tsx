@@ -101,7 +101,8 @@ const StyledQuestion = styled.div`
       }
     }
 
-    .answer-letter {
+    .answer-letter-wrapper::before {
+      content: attr(data-answer-choice);
       text-align: center;
       padding: 0;
       font-size: 1.6rem;
@@ -126,15 +127,26 @@ const StyledQuestion = styled.div`
       }
     }
 
+    .answer-input-box {
+      ${mixins.visuallyHidden()}
+    }
+
     // a selected answer
     &:not(.has-correct-answer) {
       .answer-input-box {
-        display: none;
-
         &:checked {
           + .answer-label,
           + .answer-label:hover {
             ${mixins.answerChecked()};
+          }
+        }
+
+        &:focus-visible {
+          + .answer-label .answer-letter-wrapper::before {
+            outline-style: solid;
+            outline-width: 2px;
+            outline-offset: 2px;
+            outline-color: ${colors.answer.checked};
           }
         }
       }

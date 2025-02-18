@@ -6,6 +6,7 @@ interface FeedbackProps {
   children: string;
   className?: string;
   contentRenderer?: JSX.Element;
+  id: string
 }
 
 const SimpleFeedback = (props: Pick<FeedbackProps, 'children' | 'className' | 'contentRenderer'>) => (
@@ -18,12 +19,12 @@ const SimpleFeedback = (props: Pick<FeedbackProps, 'children' | 'className' | 'c
   </aside>
 );
 
-const Feedback = (props: FeedbackProps) => {
+const Feedback = ({ id, ...props }: FeedbackProps) => {
   const position = props.position || 'bottom';
   const wrapperClasses = classnames('question-feedback', position);
 
   return (
-    <aside className={wrapperClasses}>
+    <aside id={id} className={wrapperClasses}>
       <div className="arrow" aria-label="Answer Feedback" />
       <SimpleFeedback {...props}>
         {props.children}

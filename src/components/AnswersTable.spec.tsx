@@ -114,7 +114,8 @@ describe('AnswersTable', () => {
     const tree = renderer.create(
       <AnswersTable {...props} question={{...props.question, id: ''}} />
     );
-    expect(tree.root.findAllByProps({ qid: 'auto-0' }).length).toBe(2);
+    // 2 answers * 3 times the prop is passed down (Answer -> AnswerBody -> RadioAnswer)
+    expect(tree.root.findAllByProps({ qid: 'auto-0' }).length).toBe(6);
   });
 
   it('defaults type and show_all_feedback', () => {

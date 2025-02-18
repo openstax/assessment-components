@@ -39,10 +39,11 @@ const StepCardHeader = styled.div`
   line-height: 3rem;
   letter-spacing: -0.72px;
 
-  div.question-info {
+  h2.question-info {
     display: flex;
     align-items: baseline;
-    font-weight: bold;
+    font-size: inherit;
+    margin: inherit;
 
     .question-id {
       font-weight: normal;
@@ -243,13 +244,13 @@ const StepCard = ({
           <StepCardHeader>
             <div>
               {leftHeaderChildren}
-              <div className="question-info">
+              <h2 className="question-info">
                 {headerTitleChildren}
                 <span>{formattedQuestionNumber}</span>
                 {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
                 <span className="separator">|</span>
                 <span className="question-id">ID: {questionId}</span>
-              </div>
+              </h2>
             </div>
             {availablePoints || rightHeaderChildren ? <div>
               {availablePoints && <div className="points">{availablePoints} Points</div>}

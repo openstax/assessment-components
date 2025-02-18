@@ -134,10 +134,10 @@ export const transitions = {
 export const mixins = {
   answer: () => css`
     .answer-label {
-      display: flex;
+      display: inline-flex;
     }
     color: ${palette.neutralDarker};
-    .answer-letter {
+    .answer-letter-wrapper::before {
       width: ${layouts.answer.bubbleSize};
       height: ${layouts.answer.bubbleSize};
       min-width: ${layouts.answer.bubbleSize};
@@ -150,12 +150,14 @@ export const mixins = {
       transition: color ${transitions.answer}, border-color ${transitions.answer}, background-color ${transitions.answer};
       background-color: ${colors.palette.white};
       font-family: "Neue Helvetica W01", Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      font-weight: normal;
     }
   `,
   answerColor: (
     color: string, invertBubble = false
   ) => css`
-    .answer-letter {
+    .answer-letter-wrapper::before {
       color: ${invertBubble ? '#fff' : color};
       border-color: ${color};
       ${invertBubble ? `background-color: ${color};` : null}
@@ -247,6 +249,15 @@ export const mixins = {
       padding: ${layouts.popover.verticalSpacing} ${layouts.popover.horizontalSpacing};
     }
   `,
+  visuallyHidden: () => css`
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  `
 };
 
 const theme = {

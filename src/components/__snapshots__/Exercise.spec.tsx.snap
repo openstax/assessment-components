@@ -12,10 +12,10 @@ exports[`Exercise using step data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf ihThJf"
       >
         <div>
-          <div
+          <h2
             className="question-info"
           >
             <span>
@@ -38,7 +38,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               ID: 
               1234@4
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
@@ -65,12 +65,14 @@ exports[`Exercise using step data matches snapshot 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf kUGNPP openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
               <div
+                aria-label="Answer choices"
                 className="answers-table"
+                role="radiogroup"
               >
                 <div
                   className="openstax-answer"
@@ -92,18 +94,11 @@ exports[`Exercise using step data matches snapshot 1`] = `
                       htmlFor="1234@5-option-0"
                     >
                       <span
+                        aria-label="Selected Choice A:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Selected Choice A:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-A"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          A
-                        </button>
-                      </span>
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -139,18 +134,11 @@ exports[`Exercise using step data matches snapshot 1`] = `
                       htmlFor="1234@5-option-1"
                     >
                       <span
+                        aria-label="Choice B:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Choice B:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-B"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          B
-                        </button>
-                      </span>
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -169,7 +157,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -215,10 +203,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf ihThJf"
       >
         <div>
-          <div
+          <h2
             className="question-info"
           >
             <span>
@@ -235,7 +223,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
@@ -262,12 +250,14 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf kUGNPP openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
               <div
+                aria-label="Answer choices"
                 className="answers-table"
+                role="radiogroup"
               >
                 <div
                   className="openstax-answer"
@@ -289,18 +279,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       htmlFor="1-option-0"
                     >
                       <span
+                        aria-label="Selected Choice A:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Selected Choice A:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-A"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          A
-                        </button>
-                      </span>
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -336,18 +319,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       htmlFor="1-option-1"
                     >
                       <span
+                        aria-label="Choice B:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Choice B:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-B"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          B
-                        </button>
-                      </span>
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -366,7 +342,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -466,10 +442,10 @@ exports[`Exercise with question state data renders header icons with multiple ch
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf ihThJf"
       >
         <div>
-          <div
+          <h2
             className="question-info"
           >
             <span>
@@ -486,7 +462,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
         <div>
           <div
@@ -599,12 +575,14 @@ exports[`Exercise with question state data renders header icons with multiple ch
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf kUGNPP openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
               <div
+                aria-label="Answer choices"
                 className="answers-table"
+                role="radiogroup"
               >
                 <div
                   className="openstax-answer"
@@ -626,18 +604,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       htmlFor="1-option-0"
                     >
                       <span
+                        aria-label="Selected Choice A:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Selected Choice A:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-A"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          A
-                        </button>
-                      </span>
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -673,18 +644,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       htmlFor="1-option-1"
                     >
                       <span
+                        aria-label="Choice B:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Choice B:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-B"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          B
-                        </button>
-                      </span>
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -703,7 +667,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -803,10 +767,10 @@ exports[`Exercise with question state data renders header icons with two-step ex
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf ihThJf"
       >
         <div>
-          <div
+          <h2
             className="question-info"
           >
             <span>
@@ -823,7 +787,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
         <div>
           <div
@@ -976,12 +940,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf kUGNPP openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
               <div
+                aria-label="Answer choices"
                 className="answers-table"
+                role="radiogroup"
               >
                 <div
                   className="openstax-answer"
@@ -1003,18 +969,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       htmlFor="1-option-0"
                     >
                       <span
+                        aria-label="Selected Choice A:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Selected Choice A:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-A"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          A
-                        </button>
-                      </span>
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -1050,18 +1009,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       htmlFor="1-option-1"
                     >
                       <span
+                        aria-label="Choice B:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Choice B:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-B"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          B
-                        </button>
-                      </span>
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -1080,7 +1032,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -1126,10 +1078,10 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf hbFgnH"
+        className="sc-dkzDqf ihThJf"
       >
         <div>
-          <div
+          <h2
             className="question-info"
           >
             <span>
@@ -1146,7 +1098,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               ID: 
               1234@5
             </span>
-          </div>
+          </h2>
         </div>
       </div>
       <div
@@ -1173,12 +1125,14 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
             data-test-id="student-exercise-question"
           >
             <div
-              className="sc-gKXOVf kUGNPP openstax-question step-card-body"
+              className="sc-gKXOVf Ufdwm openstax-question step-card-body"
               data-question-number={1}
               data-test-id="question"
             >
               <div
+                aria-label="Answer choices"
                 className="answers-table"
+                role="radiogroup"
               >
                 <div
                   className="openstax-answer"
@@ -1200,18 +1154,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       htmlFor="1-option-0"
                     >
                       <span
+                        aria-label="Selected Choice A:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Selected Choice A:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-A"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          A
-                        </button>
-                      </span>
+                        data-answer-choice="A"
+                        data-test-id="answer-choice-A"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -1247,18 +1194,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       htmlFor="1-option-1"
                     >
                       <span
+                        aria-label="Choice B:"
                         className="answer-letter-wrapper"
-                      >
-                        <button
-                          aria-label="Choice B:"
-                          className="answer-letter"
-                          data-test-id="answer-choice-B"
-                          disabled={true}
-                          onClick={[Function]}
-                        >
-                          B
-                        </button>
-                      </span>
+                        data-answer-choice="B"
+                        data-test-id="answer-choice-B"
+                      />
                       <div
                         className="answer-answer"
                       >
@@ -1277,7 +1217,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kbdJYE step-card-footer"
+              className="sc-iBkjds kLYXXQ step-card-footer"
             >
               <div
                 className="step-card-footer-inner"

@@ -5,7 +5,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -19,7 +19,9 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -41,18 +43,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={true}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -88,18 +83,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -118,7 +106,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -157,7 +145,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -171,7 +159,9 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -193,18 +183,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Selected Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Selected Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={false}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -240,18 +223,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -276,7 +252,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -316,7 +292,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -330,7 +306,9 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -352,18 +330,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Selected Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Selected Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={false}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -399,18 +370,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -435,7 +399,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -475,7 +439,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -489,7 +453,9 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -511,18 +477,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Selected Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Selected Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={false}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -558,18 +517,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -594,7 +546,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -634,7 +586,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -648,7 +600,9 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -670,18 +624,11 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={false}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -717,18 +664,11 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={false}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -747,7 +687,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -793,7 +733,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -807,7 +747,9 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -829,18 +771,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={true}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -876,18 +811,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -912,7 +840,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -951,7 +879,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -965,7 +893,9 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -973,23 +903,25 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
         <section
           className="answers-answer disabled answer-correct"
         >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={true}
+            id="1-option-0"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
           <label
             className="answer-label"
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A(Correct Answer):"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={true}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -1017,23 +949,25 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
         <section
           className="answers-answer disabled answer-incorrect"
         >
+          <input
+            checked={false}
+            className="answer-input-box"
+            disabled={true}
+            id="1-option-1"
+            name="1-options"
+            onChange={[Function]}
+            type="radio"
+          />
           <label
             className="answer-label"
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B(Incorrect Answer):"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -1058,7 +992,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1116,7 +1050,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1135,7 +1069,9 @@ exports[`ExerciseQuestion renders free response 1`] = `
       A free response
     </div>
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1157,18 +1093,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={true}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -1204,18 +1133,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -1234,7 +1156,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1273,7 +1195,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1287,7 +1209,9 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1309,18 +1233,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={true}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -1356,18 +1273,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -1392,7 +1302,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1431,7 +1341,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cYzaBK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1445,7 +1355,9 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1467,18 +1379,11 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
             htmlFor="1-option-0"
           >
             <span
+              aria-label="Choice A:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice A:"
-                className="answer-letter"
-                data-test-id="answer-choice-A"
-                disabled={false}
-                onClick={[Function]}
-              >
-                A
-              </button>
-            </span>
+              data-answer-choice="A"
+              data-test-id="answer-choice-A"
+            />
             <div
               className="answer-answer"
             >
@@ -1514,18 +1419,11 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
             htmlFor="1-option-1"
           >
             <span
+              aria-label="Choice B:"
               className="answer-letter-wrapper"
-            >
-              <button
-                aria-label="Choice B:"
-                className="answer-letter"
-                data-test-id="answer-choice-B"
-                disabled={true}
-                onClick={[Function]}
-              >
-                B
-              </button>
-            </span>
+              data-answer-choice="B"
+              data-test-id="answer-choice-B"
+            />
             <div
               className="answer-answer"
             >
@@ -1550,7 +1448,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM eTQwo step-card-footer"
+    className="sc-hKMtZM IyIWE step-card-footer"
   >
     <div
       className="step-card-footer-inner"
