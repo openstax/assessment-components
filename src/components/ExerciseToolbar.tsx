@@ -92,7 +92,7 @@ export const StyledToolbar = styled.div<{
 
       span {
         display: block;
-        font-size: 1rem;
+        font-size: 1.4rem;
         margin-top: 0.2rem;
         color: ${colors.palette.neutral};
         text-align: center;

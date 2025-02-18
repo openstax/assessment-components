@@ -45,7 +45,7 @@ const Popover = styled.div`
   top: 3rem;
   width: 20rem;
   position: absolute;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.8rem;
 `;
 
