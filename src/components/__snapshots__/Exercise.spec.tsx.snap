@@ -12,7 +12,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf ihThJf"
+        className="sc-dkzDqf iertSZ"
       >
         <div>
           <h2
@@ -157,7 +157,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kLYXXQ step-card-footer"
+              className="sc-iBkjds gVkNEK step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -203,7 +203,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf ihThJf"
+        className="sc-dkzDqf iertSZ"
       >
         <div>
           <h2
@@ -342,7 +342,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kLYXXQ step-card-footer"
+              className="sc-iBkjds gVkNEK step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -381,7 +381,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   className="sc-breuTD uXhmp"
 >
   <div
-    className="sc-ftvSup jndYKm"
+    className="sc-ftvSup eUSUwo"
   >
     <a
       href="https://openstax.org"
@@ -442,7 +442,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf ihThJf"
+        className="sc-dkzDqf iertSZ"
       >
         <div>
           <h2
@@ -495,7 +495,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   />
                 </svg>
                 <div
-                  className="sc-kDDrLX fBhBLm popover right"
+                  className="sc-kDDrLX cCjffY popover right"
                 >
                   <div
                     className="arrow"
@@ -535,7 +535,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   />
                 </svg>
                 <div
-                  className="sc-kDDrLX fBhBLm popover right"
+                  className="sc-kDDrLX cCjffY popover right"
                 >
                   <div
                     className="arrow"
@@ -667,7 +667,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
               </div>
             </div>
             <div
-              className="sc-iBkjds kLYXXQ step-card-footer"
+              className="sc-iBkjds gVkNEK step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -706,7 +706,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   className="sc-breuTD uXhmp"
 >
   <div
-    className="sc-ftvSup jndYKm"
+    className="sc-ftvSup eUSUwo"
   >
     <a
       href="https://openstax.org"
@@ -767,7 +767,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf ihThJf"
+        className="sc-dkzDqf iertSZ"
       >
         <div>
           <h2
@@ -820,7 +820,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   />
                 </svg>
                 <div
-                  className="sc-kDDrLX fBhBLm popover right"
+                  className="sc-kDDrLX cCjffY popover right"
                 >
                   <div
                     className="arrow"
@@ -860,7 +860,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   />
                 </svg>
                 <div
-                  className="sc-kDDrLX fBhBLm popover right"
+                  className="sc-kDDrLX cCjffY popover right"
                 >
                   <div
                     className="arrow"
@@ -900,7 +900,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   />
                 </svg>
                 <div
-                  className="sc-kDDrLX fBhBLm popover right"
+                  className="sc-kDDrLX cCjffY popover right"
                 >
                   <div
                     className="arrow"
@@ -1032,7 +1032,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
               </div>
             </div>
             <div
-              className="sc-iBkjds kLYXXQ step-card-footer"
+              className="sc-iBkjds gVkNEK step-card-footer"
             >
               <div
                 className="step-card-footer-inner"
@@ -1078,7 +1078,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
       className="sc-bczRLJ eAXREJ exercise-step sc-evZas dPJYxI sc-ksZaOG kmSAkY"
     >
       <div
-        className="sc-dkzDqf ihThJf"
+        className="sc-dkzDqf iertSZ"
       >
         <div>
           <h2
@@ -1217,7 +1217,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
               </div>
             </div>
             <div
-              className="sc-iBkjds kLYXXQ step-card-footer"
+              className="sc-iBkjds gVkNEK step-card-footer"
             >
               <div
                 className="step-card-footer-inner"

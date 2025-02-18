@@ -11,7 +11,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf KrxmS"
+      className="sc-dkzDqf jNtHoM"
       onClick={[Function]}
     >
       1
@@ -43,7 +43,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf gKblal"
+      className="sc-dkzDqf kKjkNT"
       onClick={[Function]}
     >
       2
@@ -75,7 +75,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="location"
       aria-label="Question 3"
-      className="sc-dkzDqf hmFFbY"
+      className="sc-dkzDqf hBCaja"
       onClick={[Function]}
     >
       3
@@ -107,7 +107,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       4
@@ -119,7 +119,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       5
@@ -131,7 +131,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       6
@@ -143,7 +143,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       <svg
@@ -174,7 +174,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf KrxmS"
+      className="sc-dkzDqf jNtHoM"
       onClick={[Function]}
     >
       1
@@ -206,7 +206,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf gKblal"
+      className="sc-dkzDqf kKjkNT"
       onClick={[Function]}
     >
       2
@@ -238,7 +238,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 3"
-      className="sc-dkzDqf KrxmS"
+      className="sc-dkzDqf jNtHoM"
       onClick={[Function]}
     >
       3
@@ -270,7 +270,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="location"
       aria-label="Question 4"
-      className="sc-dkzDqf ejGnvX"
+      className="sc-dkzDqf hImxuh"
       onClick={[Function]}
     >
       4
@@ -282,7 +282,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       5
@@ -294,7 +294,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       6
@@ -306,7 +306,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       <svg
@@ -337,7 +337,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf KrxmS"
+      className="sc-dkzDqf jNtHoM"
       onClick={[Function]}
     >
       1
@@ -369,7 +369,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf gKblal"
+      className="sc-dkzDqf kKjkNT"
       onClick={[Function]}
     >
       2
@@ -401,7 +401,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 3"
-      className="sc-dkzDqf KrxmS"
+      className="sc-dkzDqf jNtHoM"
       onClick={[Function]}
     >
       3
@@ -433,7 +433,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       4
@@ -445,7 +445,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       5
@@ -457,7 +457,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf iyRspZ"
+      className="sc-dkzDqf cDKeHP"
       onClick={[Function]}
     >
       6
@@ -469,7 +469,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="location"
       aria-label="Assignment status"
-      className="sc-dkzDqf ejGnvX"
+      className="sc-dkzDqf hImxuh"
       onClick={[Function]}
     >
       <svg
