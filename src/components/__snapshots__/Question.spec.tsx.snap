@@ -16,9 +16,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -120,9 +118,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -224,9 +220,7 @@ exports[`Question defaults formats 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -337,9 +331,7 @@ exports[`Question matches snapshot 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -441,9 +433,7 @@ exports[`Question renders exercise uid 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -550,9 +540,7 @@ exports[`Question renders formats 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"
@@ -666,9 +654,7 @@ exports[`Question renders solutions 1`] = `
     data-question-number={1}
   />
   <div
-    aria-label="Answer choices"
     className="answers-table"
-    role="radiogroup"
   >
     <div
       className="openstax-answer"

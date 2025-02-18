@@ -73,9 +73,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    aria-label="Answer choices"
                     className="answers-table"
-                    role="radiogroup"
                   >
                     <div
                       className="openstax-answer"
@@ -270,9 +268,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                   data-test-id="question"
                 >
                   <div
-                    aria-label="Answer choices"
                     className="answers-table"
-                    role="radiogroup"
                   >
                     <div
                       className="openstax-answer"
@@ -462,9 +458,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                   data-test-id="question"
                 >
                   <div
-                    aria-label="Answer choices"
                     className="answers-table"
-                    role="radiogroup"
                   >
                     <div
                       className="openstax-answer"

@@ -103,7 +103,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
   });
 
   return (
-    <div role="radiogroup" aria-label="Answer choices" className="answers-table">
+    <div className="answers-table">
       {instructions}
       {answersHtml}
     </div>
