@@ -62,7 +62,7 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
   border: 0;
   border-radius: 50%;
   margin: ${props => props.isActive ? '0' : '0 0.3rem'};
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   color: ${colors.palette.neutralDarker};

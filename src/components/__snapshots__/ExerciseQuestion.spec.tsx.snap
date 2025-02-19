@@ -106,7 +106,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -252,7 +252,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -399,7 +399,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -546,7 +546,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -687,7 +687,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -840,7 +840,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -992,7 +992,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1156,7 +1156,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1302,7 +1302,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1448,7 +1448,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM IyIWE step-card-footer"
+    className="sc-hKMtZM iGTyMe step-card-footer"
   >
     <div
       className="step-card-footer-inner"

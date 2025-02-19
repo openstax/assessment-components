@@ -129,7 +129,7 @@ const StepCardHeader = styled.div`
   `}
 
   ${breakpoints.mobile`
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       line-height: 2rem;
       padding: 10px 8px;
 
