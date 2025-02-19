@@ -1,4 +1,4 @@
-import{s as r,j as s,a as n}from"./index-083a511c.js";import{c as o,b as i,l as w,m as S}from"./theme-15dbd4ed.js";import{c as C}from"./index-770e27a8.js";const q=r.div`
+import{s as r,j as s,a as n}from"./index-92fb6a1e.js";import{c as o,b as i,l as w,m as S}from"./theme-cad0805b.js";import{c as C}from"./index-68b86f58.js";const q=r.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -119,7 +119,7 @@ import{s as r,j as s,a as n}from"./index-083a511c.js";import{c as o,b as i,l as 
   `}
 
   ${i.mobile`
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       line-height: 2rem;
       padding: 10px 8px;
 

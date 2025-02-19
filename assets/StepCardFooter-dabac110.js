@@ -1,9 +1,9 @@
-import{m as o,c as t,b as e}from"./theme-15dbd4ed.js";import{s as r}from"./index-083a511c.js";const p=r.div`
+import{m as o,c as t,b as e}from"./theme-cad0805b.js";import{s as r}from"./index-92fb6a1e.js";const p=r.div`
     ${o.stepCardPadding()}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: calc(1.4rem * var(--content-text-scale));
+    font-size: calc(1.6rem * var(--content-text-scale));
     line-height: calc(2rem * var(--content-text-scale));
     background: ${t.card.body.background};
     overflow: auto;

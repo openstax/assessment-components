@@ -1,4 +1,4 @@
-import{s as h,C as u,a as l,j as a}from"./index-083a511c.js";import{c as r,l as m,b as n}from"./theme-15dbd4ed.js";import{F as f,f as x,a as k}from"./index-54194679.js";const y=h.div`
+import{s as h,C as u,a as l,j as a}from"./index-92fb6a1e.js";import{c as r,l as m,b as n}from"./theme-cad0805b.js";import{F as f,f as x,a as k}from"./index-7f03425a.js";const y=h.div`
   position: absolute;
   background: #fff;
   width: 4.5rem;
@@ -83,7 +83,7 @@ import{s as h,C as u,a as l,j as a}from"./index-083a511c.js";import{c as r,l as 
 
       span {
         display: block;
-        font-size: 1rem;
+        font-size: 1.4rem;
         margin-top: 0.2rem;
         color: ${r.palette.neutral};
         text-align: center;
