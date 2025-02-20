@@ -23,6 +23,7 @@ export interface AnswersTableProps {
   onKeyPress?: () => void;
   contentRenderer?: JSX.Element;
   instructions?: JSX.Element;
+  previewMode?: boolean;
 }
 
 export const AnswersTable = (props: AnswersTableProps) => {
@@ -30,7 +31,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
-    incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html,
+    incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html, previewMode,
     show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
   } = props;
   if (hideAnswers) { return null; }
@@ -53,7 +54,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     onChangeAnswer: onChangeAnswer,
     type,
     answered_count,
-    disabled: !choicesEnabled,
+    disabled: previewMode || !choicesEnabled,
     show_all_feedback,
     tableFeedbackEnabled,
     onKeyPress
@@ -64,10 +65,10 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const answersHtml = answers.map((answer, i) => {
     const additionalProps: { answer: AnswerType, iter: number, key: string }
       = {
-        answer: {
-          ...answer,
-          question_id: typeof question.id === 'string' ? parseInt(question.id, 10) : question.id
-         },
+      answer: {
+        ...answer,
+        question_id: typeof question.id === 'string' ? parseInt(question.id, 10) : question.id
+      },
       iter: i,
       key: `${questionAnswerProps.qid}-option-${i}`,
     };
@@ -103,7 +104,17 @@ export const AnswersTable = (props: AnswersTableProps) => {
   });
 
   return (
-    <div className="answers-table">
+    <div
+      {
+      ...(!previewMode
+        ? {
+          role: "radiogroup",
+          'aria-label': "Answer choices"
+        }
+        : {})
+      }
+      className="answers-table"
+    >
       {instructions}
       {answersHtml}
     </div>

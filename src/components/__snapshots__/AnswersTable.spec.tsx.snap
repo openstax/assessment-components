@@ -2,7 +2,9 @@
 
 exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -107,7 +109,9 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
 
 exports[`AnswersTable renders all feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -246,7 +250,9 @@ exports[`AnswersTable renders all feedback 1`] = `
 
 exports[`AnswersTable renders correct answer feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -359,7 +365,9 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
 
 exports[`AnswersTable renders incorrect answer feedback 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"
@@ -478,7 +486,9 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
 
 exports[`AnswersTable renders instructions 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <b>
     Instructions
@@ -568,7 +578,9 @@ exports[`AnswersTable renders instructions 1`] = `
 
 exports[`AnswersTable sorts by given ID order 1`] = `
 <div
+  aria-label="Answer choices"
   className="answers-table"
+  role="radiogroup"
 >
   <div
     className="openstax-answer"

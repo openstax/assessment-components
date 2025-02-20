@@ -220,6 +220,26 @@ export const Default = () => {
   );
 };
 
+export const AnswerInteractionDisable = () => {
+  const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
+  const [apiIsPending, setApiIsPending] = useState(false);
+  const props = exerciseWithQuestionStatesProps();
+  props.questionStates['1'].answer_id = selectedAnswerId;
+  props.questionStates['1'].apiIsPending = apiIsPending;
+  return (
+    <Exercise
+      {...props}
+      onAnswerChange={(
+        a: Omit<Answer, 'id'> & { id: number; question_id: number },
+      ) => {
+        setSelectedAnswerId(a.id);
+      }}
+      onAnswerSave={() => setApiIsPending(true)}
+      previewMode
+    />
+  );
+};
+
 export const DefaultWithoutFeedback = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)

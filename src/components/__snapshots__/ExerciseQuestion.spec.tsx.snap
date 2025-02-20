@@ -19,7 +19,9 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -157,7 +159,9 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -302,7 +306,9 @@ exports[`ExerciseQuestion renders Save button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -447,7 +453,9 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -592,7 +600,9 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -737,7 +747,9 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -881,7 +893,9 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1055,7 +1069,9 @@ exports[`ExerciseQuestion renders free response 1`] = `
       A free response
     </div>
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1193,7 +1209,9 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"
@@ -1337,7 +1355,9 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
       data-question-number={1}
     />
     <div
+      aria-label="Answer choices"
       className="answers-table"
+      role="radiogroup"
     >
       <div
         className="openstax-answer"

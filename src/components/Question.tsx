@@ -232,6 +232,7 @@ export interface QuestionProps {
   children?: ReactNode;
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;
+  previewMode?: boolean;
 }
 
 export const Question = React.forwardRef((props: QuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {

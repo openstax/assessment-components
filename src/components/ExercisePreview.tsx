@@ -82,6 +82,7 @@ export const ExercisePreview = (
     <Exercise
       exercise={exercise}
       className={selected ? 'preview-card is-selected' : 'preview-card'}
+      previewMode
       {
       ...(enableOverlay
         ? {
