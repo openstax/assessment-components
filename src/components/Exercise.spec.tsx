@@ -376,5 +376,12 @@ describe('Exercise', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('matches snapshot with previewMode', () => {
+      const tree = renderer.create(
+        <Exercise {...props} show_all_feedback previewMode />
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

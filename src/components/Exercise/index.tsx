@@ -175,8 +175,9 @@ export const Exercise = styled(({
   scrollToQuestion,
   exerciseIcons,
   overlayChildren,
+  previewMode = false,
   ...props
-}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
+}: { className?: string, previewMode?: boolean } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
@@ -236,6 +237,7 @@ export const Exercise = styled(({
                 'canUpdateCurrentStep' in props ?
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
+              previewMode={previewMode}
             />
           )
         }

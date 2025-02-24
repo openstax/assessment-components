@@ -38,6 +38,7 @@ export interface ExerciseQuestionProps {
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
+  previewMode?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -97,7 +98,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled,
-    hasFeedback
+    hasFeedback, previewMode
   } = props;
 
   const [shouldContinue, setShouldContinue] = React.useState(false)
@@ -129,6 +130,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         displaySolution={displaySolution}
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
+        previewMode={previewMode}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
