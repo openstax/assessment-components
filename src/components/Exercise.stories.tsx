@@ -979,8 +979,8 @@ export const OverlayCard = () => {
   return (
     <TextResizerProvider>
       <h2>Exercise cards</h2>
-      <Exercise {...props1} className='preview-card' />
-      <Exercise {...props2} className='preview-card' />
+      <Exercise {...props1} className='preview-card' previewMode />
+      <Exercise {...props2} className='preview-card' previewMode />
       <h2>Exercise Preview cards</h2>
       {showDetails1 && <h2>Details 1!</h2>}
       <ExercisePreview 

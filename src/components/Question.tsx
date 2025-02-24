@@ -297,7 +297,8 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
       <AnswersTable
         {...props}
         onChangeAnswer={props.onChange}
-        hasCorrectAnswer={hasCorrectAnswer} />
+        hasCorrectAnswer={hasCorrectAnswer}
+      />
 
       {solution}
       {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
