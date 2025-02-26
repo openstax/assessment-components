@@ -830,7 +830,7 @@ export const PreviewCard = () => {
 
   return (
     <TextResizerProvider>
-      <Exercise {...props1} className='preview-card' />
+      <Exercise {...props1} className='preview-card' previewMode />
     </TextResizerProvider>
   );
 };
