@@ -220,6 +220,26 @@ export const Default = () => {
   );
 };
 
+export const AnswerInteractionDisable = () => {
+  const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
+  const [apiIsPending, setApiIsPending] = useState(false);
+  const props = exerciseWithQuestionStatesProps();
+  props.questionStates['1'].answer_id = selectedAnswerId;
+  props.questionStates['1'].apiIsPending = apiIsPending;
+  return (
+    <Exercise
+      {...props}
+      onAnswerChange={(
+        a: Omit<Answer, 'id'> & { id: number; question_id: number },
+      ) => {
+        setSelectedAnswerId(a.id);
+      }}
+      onAnswerSave={() => setApiIsPending(true)}
+      previewMode
+    />
+  );
+};
+
 export const DefaultWithoutFeedback = () => {
   const [selectedAnswerId, setSelectedAnswerId] = useState<number>(0);
   const [apiIsPending, setApiIsPending] = useState(false)
@@ -810,7 +830,7 @@ export const PreviewCard = () => {
 
   return (
     <TextResizerProvider>
-      <Exercise {...props1} className='preview-card' />
+      <Exercise {...props1} className='preview-card' previewMode />
     </TextResizerProvider>
   );
 };
@@ -959,8 +979,8 @@ export const OverlayCard = () => {
   return (
     <TextResizerProvider>
       <h2>Exercise cards</h2>
-      <Exercise {...props1} className='preview-card' />
-      <Exercise {...props2} className='preview-card' />
+      <Exercise {...props1} className='preview-card' previewMode />
+      <Exercise {...props2} className='preview-card' previewMode />
       <h2>Exercise Preview cards</h2>
       {showDetails1 && <h2>Details 1!</h2>}
       <ExercisePreview 
