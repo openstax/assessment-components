@@ -21,7 +21,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi biHTWy step-card-header"
+            className="sc-jSMfEi goXcMs step-card-header"
           >
             <div>
               <h2
@@ -158,7 +158,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX eDCkPk step-card-footer"
+                  className="sc-kDDrLX bmBrfO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -216,7 +216,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi biHTWy step-card-header"
+            className="sc-jSMfEi goXcMs step-card-header"
           >
             <div>
               <h2
@@ -353,7 +353,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX eDCkPk step-card-footer"
+                  className="sc-kDDrLX bmBrfO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -406,7 +406,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi biHTWy step-card-header"
+            className="sc-jSMfEi goXcMs step-card-header"
           >
             <div>
               <h2
@@ -543,7 +543,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX eDCkPk step-card-footer"
+                  className="sc-kDDrLX bmBrfO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
