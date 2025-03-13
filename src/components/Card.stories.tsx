@@ -20,6 +20,7 @@ const props: TaskStepCardProps = {
   },
   questionNumber: 1,
   numberOfQuestions: 1,
+  showTotalQuestions: false,
 };
 
 export const Default = () => <TaskStepCard {...props}><ExerciseQuestion /></TaskStepCard>;
