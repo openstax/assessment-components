@@ -1,4 +1,5 @@
 import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../../src/types';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import data from '../../exercises.json';
 import styled from 'styled-components';
@@ -35,15 +36,6 @@ const ExerciseWrapper = styled.div`
     }
   }
 `;
-
-// let data;
-// try {
-//     data = await import('../../exercises.json');
-// } catch (error) {
-//     console.error('Failed to load exercises.json:', error);
-//     data = {}; // Provide a default value or handle the absence of the file as needed
-// }
-
 
 const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
 
