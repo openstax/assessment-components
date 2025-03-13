@@ -68,7 +68,7 @@ describe('ExercisePreview', () => {
         ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined}
         ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}
         ${false} | ${'without overlay'}                 | ${undefined}             | ${true}
-    `('matches snapshot %description', (
+    `('matches snapshot $description', (
       { selected, overlay, showFeedback }: { selected: boolean, overlay: JSX.Element, showFeedback: boolean }) => {
       const tree = renderer.create(
         <ExercisePreview

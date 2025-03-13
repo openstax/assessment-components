@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExercisePreview using step data matches snapshot %description 1`] = `
+exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >
@@ -200,7 +200,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
 </div>
 `;
 
-exports[`ExercisePreview using step data matches snapshot %description 2`] = `
+exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >
@@ -400,7 +400,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
 </div>
 `;
 
-exports[`ExercisePreview using step data matches snapshot %description 3`] = `
+exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >
