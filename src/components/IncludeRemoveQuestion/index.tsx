@@ -25,8 +25,6 @@ export const IncludeRemoveQuestion = (
       case 'remove':
         onRemoveHandler();
         break;
-      default:
-        break;
     }
   };
 

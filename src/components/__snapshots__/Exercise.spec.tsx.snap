@@ -9,7 +9,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div>
         <div
@@ -206,7 +206,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div
         onBlur={[Function]}
@@ -408,7 +408,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div
         onBlur={[Function]}
@@ -608,7 +608,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div>
         <div
@@ -853,7 +853,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div>
         <div
@@ -1184,7 +1184,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div>
         <div
@@ -1501,7 +1501,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl iLMhfL"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb"
     >
       <div>
         <div
