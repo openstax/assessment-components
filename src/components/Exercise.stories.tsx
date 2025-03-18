@@ -725,12 +725,12 @@ export const PreviewCard = () => {
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps(),
     questionStates: {
-      '1': {
+      '320733': {
         available_points: '1.0',
         is_completed: true,
         answer_id_order: ['1', '2', '3', '4'],
         answer_id: randomlyCorrectAnswer,
-        free_response: '',
+        free_response: 'Feedback info',
         feedback_html: '',
         correct_answer_id: randomlyCorrectAnswer.toString(),
         correct_answer_feedback_html:
@@ -798,18 +798,22 @@ export const PreviewCard = () => {
             {
               id: 832300,
               content_html: 'hypothalamus',
+              correctness: undefined,
             },
             {
               id: 832303,
               content_html: 'medulla oblongata',
+              correctness: '1.0',
             },
             {
               id: 832301,
               content_html: 'corpus callosum',
+              correctness: undefined,
             },
             {
               id: 832302,
               content_html: 'cerebellum',
+              correctness: undefined,
             },
           ],
           hints: [],
@@ -822,9 +826,18 @@ export const PreviewCard = () => {
     },
   };
 
+  const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
+
   return (
     <TextResizerProvider>
-      <Exercise {...props1} className='preview-card' previewMode />
+      <button 
+        onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
+      </button>
+      <ExercisePreview 
+        exercise={props1.exercise} 
+        questionStates={props1.questionStates} 
+        showAllFeedback={showFeedback}
+      />
     </TextResizerProvider>
   );
 };

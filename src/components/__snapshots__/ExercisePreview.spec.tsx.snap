@@ -79,10 +79,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected answer-correct"
+                        className="answers-answer disabled"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -95,7 +95,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -103,12 +103,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           <div
                             className="answer-answer"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              Correct
-                               Answer
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -182,10 +176,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                     >
                       <button
                         className="sc-jSMfEi hsxEPT"
-                        data-test-id="continue-btn"
+                        data-test-id="submit-answer-btn"
+                        disabled={true}
                         onClick={[Function]}
                       >
-                        Next
+                        Submit & continue
                       </button>
                     </div>
                   </div>
@@ -279,10 +274,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected answer-correct"
+                        className="answers-answer disabled"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -295,7 +290,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -303,12 +298,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           <div
                             className="answer-answer"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              Correct
-                               Answer
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -382,10 +371,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                     >
                       <button
                         className="sc-jSMfEi hsxEPT"
-                        data-test-id="continue-btn"
+                        data-test-id="submit-answer-btn"
+                        disabled={true}
                         onClick={[Function]}
                       >
-                        Next
+                        Submit & continue
                       </button>
                     </div>
                   </div>
