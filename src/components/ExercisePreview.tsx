@@ -1,11 +1,10 @@
 import React from "react";
-import { ExerciseData, ExerciseQuestionData, ID, QuestionState, StepBase } from "src/types";
+import { ExerciseData, ExerciseQuestionData, StepBase } from "src/types";
 import { Exercise } from "./Exercise";
 
 export interface ExercisePreviewProps {
   exercise: ExerciseData;
   selected?: boolean;
-  questionStates?: { [key: ID]: QuestionState };
   showAllFeedback?: boolean;
   overlayChildren?: React.ReactNode;
 }
@@ -15,7 +14,6 @@ export const ExercisePreview = (
     exercise,
     selected,
     showAllFeedback = false,
-    questionStates,
     overlayChildren,
   }: ExercisePreviewProps) => {
 
@@ -30,11 +28,9 @@ export const ExercisePreview = (
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce((acc, answer) => {
       const { id, correct_answer_id } = answer;
-      const questionValues = (questionStates && showAllFeedback) ? questionStates[id] : undefined;
       return { 
         ...acc, 
         [id]: {
-          ...questionValues,
           correct_answer_id: correct_answer_id,
         } 
       };

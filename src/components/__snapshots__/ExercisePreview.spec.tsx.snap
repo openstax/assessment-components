@@ -467,6 +467,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         className="answers-answer disabled answer-selected answer-correct"
                       >
                         <input
+                          aria-details="feedback-1234@5-0"
                           checked={true}
                           className="answer-input-box"
                           disabled={true}
@@ -506,6 +507,25 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         </label>
                       </section>
                     </div>
+                    <aside
+                      className="question-feedback bottom"
+                      id="feedback-1234@5-0"
+                    >
+                      <div
+                        aria-label="Answer Feedback"
+                        className="arrow"
+                      />
+                      <aside>
+                        <div
+                          className="question-feedback-content has-html"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "Feedback",
+                            }
+                          }
+                        />
+                      </aside>
+                    </aside>
                     <div
                       className="openstax-answer"
                     >

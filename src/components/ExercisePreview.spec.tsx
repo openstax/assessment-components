@@ -1,12 +1,11 @@
 import { ExercisePreview } from './ExercisePreview';
 import renderer from 'react-test-renderer';
-import { ExerciseData, ID, QuestionState } from 'src/types';
+import { ExerciseData } from 'src/types';
 
 describe('ExercisePreview', () => {
   describe('using step data', () => {
 
     let exercise: ExerciseData;
-    let questionStates: { [key: ID]: QuestionState };
 
     beforeEach(() => {
       exercise = {
@@ -36,30 +35,13 @@ describe('ExercisePreview', () => {
             id: '1',
             correctness: '1.0',
             content_html: 'True',
+            feedback_html: 'Feedback',
           }, {
             id: '2',
             correctness: undefined,
             content_html: 'False',
           }],
         }],
-      };
-      questionStates = {
-        '1234@5': {
-          available_points: '1.0',
-          is_completed: true,
-          answer_id_order: ['1', '2'],
-          answer_id: undefined,
-          free_response: 'Free response',
-          feedback_html: 'Feedback',
-          correct_answer_id: '1',
-          correct_answer_feedback_html: 'Feedback for the correct answer',
-          attempts_remaining: 0,
-          attempt_number: 1,
-          incorrectAnswerId: 0,
-          canAnswer: false,
-          needsSaved: false,
-          apiIsPending: false,
-        },
       };
     });
 
@@ -76,7 +58,6 @@ describe('ExercisePreview', () => {
           selected={selected}
           overlayChildren={overlay}
           showAllFeedback={showFeedback}
-          questionStates={selected ? questionStates : undefined}
         />
       ).toJSON();
       expect(tree).toMatchSnapshot();

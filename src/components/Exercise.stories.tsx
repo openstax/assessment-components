@@ -799,11 +799,13 @@ export const PreviewCard = () => {
               id: 832300,
               content_html: 'hypothalamus',
               correctness: undefined,
+              feedback_html: 'Feedback response',
             },
             {
               id: 832303,
               content_html: 'medulla oblongata',
               correctness: '1.0',
+              feedback_html: 'Feedback response',
             },
             {
               id: 832301,
@@ -834,8 +836,7 @@ export const PreviewCard = () => {
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
       <ExercisePreview 
-        exercise={props1.exercise} 
-        questionStates={props1.questionStates} 
+        exercise={props1.exercise}
         showAllFeedback={showFeedback}
       />
     </TextResizerProvider>
@@ -1004,7 +1005,6 @@ export const OverlayCard = () => {
       />
       {showDetails2 && <h2>Details 2!</h2>}
       <ExercisePreview
-        questionStates={props2.questionStates}
         selected={selectedQuestions.includes(props2.exercise.uid)}
         overlayChildren={includeRemoveQuestionComponent2}
         exercise={props2.exercise}
