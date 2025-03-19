@@ -837,7 +837,7 @@ export const PreviewCard = () => {
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
       <button 
-        onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} correct answer`}
+        onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showCorrectAnswer ? 'off': 'on'} correct answer`}
       </button>
       <ExercisePreview 
         exercise={props1.exercise}
