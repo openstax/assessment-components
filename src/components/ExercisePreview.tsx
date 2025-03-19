@@ -31,7 +31,8 @@ export const ExercisePreview = (
       return { 
         ...acc, 
         [id]: {
-          correct_answer_id: correct_answer_id,
+          correct_answer_id,
+          is_completed: true,
         } 
       };
     }, {});
