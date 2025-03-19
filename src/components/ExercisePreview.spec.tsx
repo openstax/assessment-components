@@ -46,18 +46,21 @@ describe('ExercisePreview', () => {
     });
 
     it.each`
-        selected | description                          | overlay                  | showFeedback
-        ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined}
-        ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}
-        ${false} | ${'without overlay'}                 | ${undefined}             | ${true}
+        selected | description                          | overlay                  | showFeedback | showCorrect
+        ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined} | ${true}
+        ${true}  | ${'with overlay and correctness'}    | ${<button>Over</button>} | ${undefined} | ${true}
+        ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}     | ${false}
+        ${false} | ${'without overlay'}                 | ${undefined}             | ${true}      | ${true}
     `('matches snapshot $description', (
-      { selected, overlay, showFeedback }: { selected: boolean, overlay: JSX.Element, showFeedback: boolean }) => {
+      { selected, overlay, showFeedback, showCorrect }: 
+      { selected: boolean, overlay: JSX.Element, showFeedback: boolean, showCorrect: boolean }) => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
           selected={selected}
           overlayChildren={overlay}
           showAllFeedback={showFeedback}
+          showCorrectAnswer={showCorrect}
         />
       ).toJSON();
       expect(tree).toMatchSnapshot();

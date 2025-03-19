@@ -829,15 +829,20 @@ export const PreviewCard = () => {
   };
 
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
+  const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
 
   return (
     <TextResizerProvider>
       <button 
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
+      <button 
+        onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} correct answer`}
+      </button>
       <ExercisePreview 
         exercise={props1.exercise}
         showAllFeedback={showFeedback}
+        showCorrectAnswer={showCorrectAnswer}
       />
     </TextResizerProvider>
   );
