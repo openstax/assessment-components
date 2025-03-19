@@ -33,8 +33,9 @@ describe('ExercisePreview', () => {
           is_answer_order_important: false,
           answers: [{
             id: '1',
-            correctness: undefined,
+            correctness: '1.0',
             content_html: 'True',
+            feedback_html: 'Feedback',
           }, {
             id: '2',
             correctness: undefined,
@@ -45,22 +46,18 @@ describe('ExercisePreview', () => {
     });
 
     it.each`
-        enableOverlay | selected | description
-        ${true}       | ${true}  | ${'with overlay and selected true'}
-        ${true}       | ${true}  | ${'with overlay and selected false'}
-        ${false}      | ${false} | ${'without overlay'}
-    `('matches snapshot %description', ({ enableOverlay, selected }: { enableOverlay: boolean, selected: boolean }) => {
-      const onIncludeMock = jest.fn();
-      const onRemoveMock = jest.fn();
-      const onDetailsMock = jest.fn();
+        selected | description                          | overlay                  | showFeedback
+        ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined}
+        ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}
+        ${false} | ${'without overlay'}                 | ${undefined}             | ${true}
+    `('matches snapshot $description', (
+      { selected, overlay, showFeedback }: { selected: boolean, overlay: JSX.Element, showFeedback: boolean }) => {
       const tree = renderer.create(
-        <ExercisePreview 
-          exercise={exercise} 
-          enableOverlay={enableOverlay}
+        <ExercisePreview
+          exercise={exercise}
           selected={selected}
-          onIncludeHandler={onIncludeMock}
-          onRemoveHandler={onRemoveMock}
-          onClickDetails={onDetailsMock}
+          overlayChildren={overlay}
+          showAllFeedback={showFeedback}
         />
       ).toJSON();
       expect(tree).toMatchSnapshot();

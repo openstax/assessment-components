@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExercisePreview using step data matches snapshot %description 1`] = `
+exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-fEOsli eTaXVj"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
-    className="sc-eCYdqJ jqafet"
+    className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -21,7 +21,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi goXcMs step-card-header"
+            className="sc-dkzDqf eYRLRg step-card-header"
           >
             <div>
               <h2
@@ -45,7 +45,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
             </div>
           </div>
           <div
-            className="sc-gKXOVf eiZLwY"
+            className="sc-hKMtZM bwRTaS"
           >
             <div>
               <div
@@ -68,7 +68,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-jqUVSM kmbXEX openstax-question step-card-body"
+                  className="sc-iBkjds lXypw openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -79,10 +79,10 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected"
+                        className="answers-answer disabled"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -95,7 +95,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -158,7 +158,7 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX bmBrfO step-card-footer"
+                  className="sc-ftvSup fUvOut step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -175,9 +175,9 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-ftvSup gRHhHP"
+                        className="sc-jSMfEi hsxEPT"
                         data-test-id="submit-answer-btn"
-                        disabled={false}
+                        disabled={true}
                         onClick={[Function]}
                       >
                         Submit & continue
@@ -195,16 +195,16 @@ exports[`ExercisePreview using step data matches snapshot %description 1`] = `
 </div>
 `;
 
-exports[`ExercisePreview using step data matches snapshot %description 2`] = `
+exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-fEOsli eTaXVj"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
-    className="sc-eCYdqJ jqafet"
+    className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -216,7 +216,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
           id="step-card"
         >
           <div
-            className="sc-jSMfEi goXcMs step-card-header"
+            className="sc-dkzDqf eYRLRg step-card-header"
           >
             <div>
               <h2
@@ -240,7 +240,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
             </div>
           </div>
           <div
-            className="sc-gKXOVf eiZLwY"
+            className="sc-hKMtZM bwRTaS"
           >
             <div>
               <div
@@ -263,7 +263,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-jqUVSM kmbXEX openstax-question step-card-body"
+                  className="sc-iBkjds lXypw openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -274,10 +274,10 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected"
+                        className="answers-answer disabled"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -290,7 +290,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -353,7 +353,7 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX bmBrfO step-card-footer"
+                  className="sc-ftvSup fUvOut step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -370,9 +370,9 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-ftvSup gRHhHP"
+                        className="sc-jSMfEi hsxEPT"
                         data-test-id="submit-answer-btn"
-                        disabled={false}
+                        disabled={true}
                         onClick={[Function]}
                       >
                         Submit & continue
@@ -390,23 +390,23 @@ exports[`ExercisePreview using step data matches snapshot %description 2`] = `
 </div>
 `;
 
-exports[`ExercisePreview using step data matches snapshot %description 3`] = `
+exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-fEOsli eTaXVj"
+  className="sc-ksZaOG gLzA-Dq"
 >
   <div
-    className="sc-eCYdqJ jqafet"
+    className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-hKMtZM doPJeP exercise-step sc-fnykZs elrDSM sc-bjUoiL dJvDYc preview-card"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-jSMfEi goXcMs step-card-header"
+            className="sc-dkzDqf eYRLRg step-card-header"
           >
             <div>
               <h2
@@ -430,7 +430,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
             </div>
           </div>
           <div
-            className="sc-gKXOVf eiZLwY"
+            className="sc-hKMtZM bwRTaS"
           >
             <div>
               <div
@@ -453,7 +453,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-jqUVSM kmbXEX openstax-question step-card-body"
+                  className="sc-iBkjds lXypw openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -464,9 +464,10 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected"
+                        className="answers-answer disabled answer-selected answer-correct"
                       >
                         <input
+                          aria-details="feedback-1234@5-0"
                           checked={true}
                           className="answer-input-box"
                           disabled={true}
@@ -488,6 +489,12 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                           <div
                             className="answer-answer"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              Correct
+                               Answer
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -500,6 +507,25 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                         </label>
                       </section>
                     </div>
+                    <aside
+                      className="question-feedback bottom"
+                      id="feedback-1234@5-0"
+                    >
+                      <div
+                        aria-label="Answer Feedback"
+                        className="arrow"
+                      />
+                      <aside>
+                        <div
+                          className="question-feedback-content has-html"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "Feedback",
+                            }
+                          }
+                        />
+                      </aside>
+                    </aside>
                     <div
                       className="openstax-answer"
                     >
@@ -543,7 +569,7 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-kDDrLX bmBrfO step-card-footer"
+                  className="sc-ftvSup fUvOut step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -560,9 +586,9 @@ exports[`ExercisePreview using step data matches snapshot %description 3`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-ftvSup gRHhHP"
+                        className="sc-jSMfEi hsxEPT"
                         data-test-id="submit-answer-btn"
-                        disabled={false}
+                        disabled={true}
                         onClick={[Function]}
                       >
                         Submit & continue

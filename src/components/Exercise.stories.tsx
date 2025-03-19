@@ -77,7 +77,7 @@ const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   canUpdateCurrentStep: false,
 };
 
-const exerciseWithQuestionStatesProps = (uid?: string): ExerciseWithQuestionStatesProps => {
+const exerciseWithQuestionStatesProps = (uid?: string, correctness?: string): ExerciseWithQuestionStatesProps => {
   return {
     exercise: {
       uid: uid || '1@1',
@@ -104,11 +104,11 @@ const exerciseWithQuestionStatesProps = (uid?: string): ExerciseWithQuestionStat
         is_answer_order_important: false,
         answers: [{
           id: '1',
-          correctness: undefined,
+          correctness: correctness,
           content_html: 'True',
         }, {
           id: '2',
-          correctness: undefined,
+          correctness: correctness,
           content_html: 'False',
         }],
       }],
@@ -145,12 +145,6 @@ const exerciseWithQuestionStatesProps = (uid?: string): ExerciseWithQuestionStat
     hasFeedback: true,
   }
 };
-
-const exerciseWithOverlayProps = (overlayChildren: React.ReactNode) => {
-  return {
-    overlayChildren,
-  };
- }
 
 type TextResizerValue = -2 | -1 | 0 | 1 | 2 | 3;
 const textResizerScales = [0.75, 0.9, 1, 1.25, 1.5, 2];
@@ -657,12 +651,12 @@ bitterness. The discriminant <span data-math='b^2 - 4ac'></span> could perhaps a
           answers: [
             {
               id: '1',
-              correctness: undefined,
+              correctness: '1.0',
               content_html: `<span data-math='\\sqrt[3]{\\text{Apple}}'></span>`,
             },
             {
               id: '2',
-              correctness: undefined,
+              correctness: '1.0',
               content_html: `<span data-math='\\frac{\\text{Banana}^{2}}{4}'></span>`,
             },
           ],
@@ -677,12 +671,12 @@ bitterness. The discriminant <span data-math='b^2 - 4ac'></span> could perhaps a
           answers: [
             {
               id: '1',
-              correctness: undefined,
+              correctness: '1.0',
               content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
             },
             {
               id: '2',
-              correctness: undefined,
+              correctness: '1.0',
               content_html: `<span data-math='\\frac{\\pi}{2} + \\text{Red}'></span>`,
             },
           ],
@@ -731,12 +725,12 @@ export const PreviewCard = () => {
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps(),
     questionStates: {
-      '1': {
+      '320733': {
         available_points: '1.0',
         is_completed: true,
         answer_id_order: ['1', '2', '3', '4'],
         answer_id: randomlyCorrectAnswer,
-        free_response: '',
+        free_response: 'Feedback info',
         feedback_html: '',
         correct_answer_id: randomlyCorrectAnswer.toString(),
         correct_answer_feedback_html:
@@ -804,18 +798,24 @@ export const PreviewCard = () => {
             {
               id: 832300,
               content_html: 'hypothalamus',
+              correctness: undefined,
+              feedback_html: 'Feedback response',
             },
             {
               id: 832303,
               content_html: 'medulla oblongata',
+              correctness: '1.0',
+              feedback_html: 'Feedback response',
             },
             {
               id: 832301,
               content_html: 'corpus callosum',
+              correctness: undefined,
             },
             {
               id: 832302,
               content_html: 'cerebellum',
+              correctness: undefined,
             },
           ],
           hints: [],
@@ -828,9 +828,17 @@ export const PreviewCard = () => {
     },
   };
 
+  const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
+
   return (
     <TextResizerProvider>
-      <Exercise {...props1} className='preview-card' previewMode />
+      <button 
+        onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
+      </button>
+      <ExercisePreview 
+        exercise={props1.exercise}
+        showAllFeedback={showFeedback}
+      />
     </TextResizerProvider>
   );
 };
@@ -839,7 +847,6 @@ export const OverlayCard = () => {
   const randomlyCorrectAnswer = Math.floor(Math.random() * 3) + 1;
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps('1@123'),
-    ...exerciseWithOverlayProps(<button>Overlay</button>),
     questionStates: {
       '1': {
         available_points: '1.0',
@@ -938,17 +945,8 @@ export const OverlayCard = () => {
     },
   };
 
-  const [buttonVariant, setButtonVariant] = React.useState<'include' | 'remove'>('include');
-
   const props2: ExerciseWithQuestionStatesProps = {
-    ...exerciseWithQuestionStatesProps('1@321'),
-    ...exerciseWithOverlayProps(
-      <IncludeRemoveQuestion 
-        buttonVariant={buttonVariant}
-        onIncludeHandler={() => setButtonVariant('remove')}
-        onRemoveHandler={() => setButtonVariant('include')}
-      />
-    ),
+    ...exerciseWithQuestionStatesProps('1@321', '1.0'),
     questionStates: {
       '1': {
         available_points: '1.0',
@@ -976,29 +974,41 @@ export const OverlayCard = () => {
   const includeHandler = (exerciseUid: string) => setSelectedQuestions(previous => previous.concat(exerciseUid));
   const removeHandler = (exerciseUid: string) => setSelectedQuestions(previous => previous.filter((id) => id !== exerciseUid));
 
+
+  const includeRemoveQuestionComponent1 =
+    <IncludeRemoveQuestion
+      buttonVariant={selectedQuestions.includes(props1.exercise.uid) ? 'remove' : 'include'}
+      onIncludeHandler={() => includeHandler(props1.exercise.uid)}
+      onRemoveHandler={() => removeHandler(props1.exercise.uid)}
+      onClickDetails={() => setShowDetails1((previous) => !previous)}
+    />;
+
+  const includeRemoveQuestionComponent2 =
+    <IncludeRemoveQuestion
+      buttonVariant={selectedQuestions.includes(props2.exercise.uid) ? 'remove' : 'include'}
+      onIncludeHandler={() => includeHandler(props2.exercise.uid)}
+      onRemoveHandler={() => removeHandler(props2.exercise.uid)}
+      onClickDetails={() => setShowDetails2((previous) => !previous)}
+    />;
+
   return (
     <TextResizerProvider>
       <h2>Exercise cards</h2>
-      <Exercise {...props1} className='preview-card' previewMode />
-      <Exercise {...props2} className='preview-card' previewMode />
+      <Exercise {...props1} overlayChildren={<button>Overlay</button>} className='preview-card' previewMode />
+      <Exercise {...props2} overlayChildren={<button>Overlay</button>} className='preview-card' previewMode />
       <h2>Exercise Preview cards</h2>
       {showDetails1 && <h2>Details 1!</h2>}
-      <ExercisePreview 
-        selected={selectedQuestions.includes(props1.exercise.uid)} 
-        onIncludeHandler={()=> includeHandler(props1.exercise.uid)} 
-        onRemoveHandler={()=> removeHandler(props1.exercise.uid)}
-        onClickDetails={()=> setShowDetails1((previous) => !previous)}
-        enableOverlay 
-        exercise={props1.exercise} 
+      <ExercisePreview
+        selected={selectedQuestions.includes(props1.exercise.uid)}
+        overlayChildren={includeRemoveQuestionComponent1}
+        exercise={props1.exercise}
       />
       {showDetails2 && <h2>Details 2!</h2>}
-      <ExercisePreview 
-        selected={selectedQuestions.includes(props2.exercise.uid)} 
-        onIncludeHandler={()=> includeHandler(props2.exercise.uid)} 
-        onRemoveHandler={()=> removeHandler(props2.exercise.uid)}
-        onClickDetails={()=> setShowDetails2((previous) => !previous)}
-        enableOverlay 
-        exercise={props2.exercise} 
+      <ExercisePreview
+        selected={selectedQuestions.includes(props2.exercise.uid)}
+        overlayChildren={includeRemoveQuestionComponent2}
+        exercise={props2.exercise}
+        showAllFeedback
       />
     </TextResizerProvider>
   );

@@ -131,7 +131,5 @@ export const exerciseStyles = css`
       font-weight: bold;
       font-size: 1.6rem;
     }
-
-
   }
 `;
