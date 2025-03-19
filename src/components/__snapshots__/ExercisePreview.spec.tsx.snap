@@ -453,7 +453,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds lXypw openstax-question step-card-body"
+                  className="sc-iBkjds lXypw openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
