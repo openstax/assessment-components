@@ -6,6 +6,7 @@ export interface ExercisePreviewProps {
   exercise: ExerciseData;
   selected?: boolean;
   showAllFeedback?: boolean;
+  showCorrectAnswer?: boolean;
   overlayChildren?: React.ReactNode;
 }
 
@@ -14,11 +15,16 @@ export const ExercisePreview = (
     exercise,
     selected,
     showAllFeedback = false,
+    showCorrectAnswer = false,
     overlayChildren,
   }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
-    exercise.questions.map(question => question.answers.map(a => a.correctness = undefined ));
+    exercise.questions.map(question => 
+      question.answers.map(a => {
+        a.feedback_html = ''; 
+        a.correctness = showCorrectAnswer ? a.correctness : undefined;
+      } ));
     return exercise;
   };
 
@@ -32,7 +38,7 @@ export const ExercisePreview = (
         ...acc, 
         [id]: {
           correct_answer_id,
-          is_completed: true,
+          is_completed: showCorrectAnswer,
         } 
       };
     }, {});
