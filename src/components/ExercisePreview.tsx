@@ -2,7 +2,6 @@ import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase } from "src/types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
-import { colors } from "../theme";
 
 export interface ExercisePreviewProps {
   exercise: ExerciseData;
@@ -46,6 +45,7 @@ export const ExercisePreview = (
       return {
         ...acc,
         [id]: {
+          answer_id: '',
           correct_answer_id,
           is_completed: showCorrectAnswer,
           solution: {
@@ -91,12 +91,6 @@ export const ExercisePreview = (
         & > div {
           display: none;
         }
-      }
-
-      .answer-letter-wrapper::before {
-        color: ${colors.palette.neutralThin} !important;
-        border-color: #c6c6c6 !important;
-        background: ${colors.palette.white} !important;
       }`
     }
   `;
