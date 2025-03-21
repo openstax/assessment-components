@@ -80,28 +80,24 @@ export const ExercisePreview = (
 
   const StyledExercise = styled(Exercise)`
 
-      .step-card-footer-inner {
-        border-top: none;
-      }
-
       ${(!showAllFeedback) &&
     `.step-card-footer {
-          display: none;
-        }`
+        display: none;
+      }`
     }
       ${!showCorrectAnswer &&
     `.answer-answer {
-          font-weight: normal;
-          & > div {
-            display: none;
-          }
+        font-weight: normal;
+        & > div {
+          display: none;
         }
+      }
 
-        .answer-letter-wrapper::before {
-          color: ${colors.palette.neutralThin} !important;
-          border-color: #c6c6c6 !important;
-          background: ${colors.palette.white} !important;
-        }`
+      .answer-letter-wrapper::before {
+        color: ${colors.palette.neutralThin} !important;
+        border-color: #c6c6c6 !important;
+        background: ${colors.palette.white} !important;
+      }`
     }
   `;
 

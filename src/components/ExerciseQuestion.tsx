@@ -134,6 +134,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
+      {(previewMode && detailedSolution ) || !previewMode? 
       <StepCardFooter className="step-card-footer">
         <div className="step-card-footer-inner">
           <div className="points" role="status">
@@ -163,7 +164,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
               <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
           </div>
         </div>
-      </StepCardFooter>
+      </StepCardFooter> : null}
     </div>
   );
 })

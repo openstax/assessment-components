@@ -9,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fEOsli fZGyZE iCBiYQ preview-card is-selected"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fEOsli QazMO ubRcZ preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -180,34 +180,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                     />
                   </div>
                 </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
-                  <div
-                    className="step-card-footer-inner"
-                  >
-                    <div
-                      className="points"
-                      role="status"
-                    >
-                      <span
-                        className="attempts-left"
-                      />
-                    </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -227,7 +199,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-bjUoiL fZGyZE hmjJCZ preview-card is-selected"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-bjUoiL QazMO hChJgc preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -392,34 +364,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                     />
                   </div>
                 </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
-                  <div
-                    className="step-card-footer-inner"
-                  >
-                    <div
-                      className="points"
-                      role="status"
-                    >
-                      <span
-                        className="attempts-left"
-                      />
-                    </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -439,7 +383,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fZGyZE jiPToZ preview-card is-selected"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QazMO dNZVdw preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -610,34 +554,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                     />
                   </div>
                 </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
-                  <div
-                    className="step-card-footer-inner"
-                  >
-                    <div
-                      className="points"
-                      role="status"
-                    >
-                      <span
-                        className="attempts-left"
-                      />
-                    </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -657,7 +573,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-idiyUo fZGyZE kuBlnY preview-card "
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-idiyUo QazMO mjsmp preview-card "
     >
       <div>
         <div

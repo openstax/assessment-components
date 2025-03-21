@@ -9,7 +9,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div>
         <div
@@ -206,7 +206,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div
         onBlur={[Function]}
@@ -408,7 +408,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div
         onBlur={[Function]}
@@ -562,33 +562,6 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                     </div>
                   </div>
                 </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
-                  <div
-                    className="step-card-footer-inner"
-                  >
-                    <div
-                      className="points"
-                      role="status"
-                    >
-                      <span
-                        className="attempts-left"
-                      />
-                    </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="continue-btn"
-                        onClick={[Function]}
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -608,7 +581,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div>
         <div
@@ -853,7 +826,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div>
         <div
@@ -1184,7 +1157,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div>
         <div
@@ -1501,7 +1474,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl fZGyZE"
+      className="sc-bczRLJ LfjAZ exercise-step sc-breuTD dSaRVj sc-hAZoDl QazMO"
     >
       <div>
         <div

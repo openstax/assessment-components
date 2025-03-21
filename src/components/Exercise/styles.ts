@@ -14,7 +14,6 @@ export const exerciseStyles = css`
 
   &.preview-card {
     --spacing: 0.8rem;
-    min-height: 30rem;
 
     [data-task-step-id] {
       padding: 0;
