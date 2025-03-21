@@ -160,7 +160,7 @@ export const mixins = {
     .answer-letter-wrapper::before {
       color: ${invertBubble ? '#fff' : color};
       border-color: ${color};
-      ${invertBubble ? `background-color: ${color} !important;` : null}
+      ${invertBubble ? `background-color: ${color};` : null}
     }
   `,
   answerChecked: () => mixins.answerColor(colors.answer.checked, true),

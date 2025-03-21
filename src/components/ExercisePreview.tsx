@@ -1,6 +1,8 @@
 import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase } from "src/types";
 import { Exercise } from "./Exercise";
+import styled from "styled-components";
+import { colors } from "../theme";
 
 export interface ExercisePreviewProps {
   exercise: ExerciseData;
@@ -20,26 +22,36 @@ export const ExercisePreview = (
   }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
-    exercise.questions.map(question => 
+    exercise.questions.map(question =>
       question.answers.map(a => {
-        a.feedback_html = ''; 
+        a.feedback_html = '';
         a.correctness = showCorrectAnswer ? a.correctness : undefined;
-      } ));
+      }));
     return exercise;
   };
 
   const exercisePreviewProps = (exercise: ExerciseData) => {
     const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
-      { id: q.id, correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || '') }));
+      {
+        id: q.id,
+        correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || ''),
+        content_html:
+          showAllFeedback &&
+          q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
+      }
+    ));
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce((acc, answer) => {
-      const { id, correct_answer_id } = answer;
-      return { 
-        ...acc, 
+      const { id, correct_answer_id, content_html } = answer;
+      return {
+        ...acc,
         [id]: {
           correct_answer_id,
           is_completed: showCorrectAnswer,
-        } 
+          solution: {
+            content_html,
+          }
+        }
       };
     }, {});
 
@@ -66,10 +78,37 @@ export const ExercisePreview = (
     };
   };
 
+  const StyledExercise = styled(Exercise)`
+
+      .step-card-footer-inner {
+        border-top: none;
+      }
+
+      ${(!showAllFeedback) &&
+    `.step-card-footer {
+          display: none;
+        }`
+    }
+      ${!showCorrectAnswer &&
+    `.answer-answer {
+          font-weight: normal;
+          & > div {
+            display: none;
+          }
+        }
+
+        .answer-letter-wrapper::before {
+          color: ${colors.palette.neutralThin} !important;
+          border-color: #c6c6c6 !important;
+          background: ${colors.palette.white} !important;
+        }`
+    }
+  `;
+
   return (
-    <Exercise
+    <StyledExercise
       exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
-      className={selected ? 'preview-card is-selected' : 'preview-card'}
+      className={`preview-card ${selected ? 'is-selected' : ''}`}
       previewMode
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}

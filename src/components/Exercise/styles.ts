@@ -5,16 +5,16 @@ export const exerciseStyles = css`
   &.is-selected {
     background-color: ${colors.card.header.background};
 
-    .step-card-footer-inner,
+    .step-card-footer,
     .step-card-body,
-    .step-card-header,
-    .answer-letter-wrapper::before {
+    .step-card-header {
       background-color: ${colors.card.header.background} !important;
     }
   }
 
   &.preview-card {
     --spacing: 0.8rem;
+    min-height: 30rem;
 
     [data-task-step-id] {
       padding: 0;
@@ -105,7 +105,7 @@ export const exerciseStyles = css`
       }
     }
 
-    .step-card-footer, .detailed-solution {
+    .step-card-footer .controls, .detailed-solution {
       display: none;
     }
 
