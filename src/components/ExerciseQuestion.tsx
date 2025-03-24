@@ -134,36 +134,37 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
-      <StepCardFooter className="step-card-footer">
-        <div className="step-card-footer-inner">
-          <div className="points" role="status">
-            {available_points ? <strong>Points: {available_points}</strong> : null}
-            <span className="attempts-left">
-              {hasMultipleAttempts &&
-                attempts_remaining > 0 &&
-                <AttemptsRemaining count={attempts_remaining} />}
-            </span>
-            <PublishedComments published_comments={published_comments} />
-            {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+      {(previewMode && detailedSolution) || !previewMode ?
+        <StepCardFooter className="step-card-footer">
+          <div className="step-card-footer-inner">
+            <div className="points" role="status">
+              {available_points ? <strong>Points: {available_points}</strong> : null}
+              <span className="attempts-left">
+                {hasMultipleAttempts &&
+                  attempts_remaining > 0 &&
+                  <AttemptsRemaining count={attempts_remaining} />}
+              </span>
+              <PublishedComments published_comments={published_comments} />
+              {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+            </div>
+            <div className="controls">
+              {(canAnswer && needsSaved) || shouldContinue ?
+                <SaveButton
+                  disabled={apiIsPending || !answer_id || shouldContinue}
+                  isWaiting={apiIsPending || shouldContinue}
+                  attempt_number={attempt_number}
+                  onClick={() => {
+                    onAnswerSave(numberfyId(question.id));
+                    if (!hasFeedback) {
+                      setShouldContinue(true);
+                    }
+                  }}
+                  willContinue={!hasFeedback}
+                /> :
+                <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
+            </div>
           </div>
-          <div className="controls">
-            {(canAnswer && needsSaved) || shouldContinue ?
-              <SaveButton
-                disabled={apiIsPending || !answer_id || shouldContinue}
-                isWaiting={apiIsPending || shouldContinue}
-                attempt_number={attempt_number}
-                onClick={() => {
-                  onAnswerSave(numberfyId(question.id));
-                  if (!hasFeedback) {
-                    setShouldContinue(true);
-                  }
-                }}
-                willContinue={!hasFeedback}
-              /> :
-              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
-          </div>
-        </div>
-      </StepCardFooter>
+        </StepCardFooter> : null}
     </div>
   );
 })

@@ -9,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fEOsli QCsJH ubRcZ preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -68,7 +68,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds lXypw openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -79,10 +79,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected answer-correct"
+                        className="answers-answer disabled answer-correct"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -95,7 +95,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -162,33 +162,22 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                       </section>
                     </div>
                   </div>
-                </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
                   <div
-                    className="step-card-footer-inner"
+                    className="detailed-solution"
                   >
                     <div
-                      className="points"
-                      role="status"
+                      className="header"
                     >
-                      <span
-                        className="attempts-left"
-                      />
+                      Detailed solution:
                     </div>
                     <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -210,7 +199,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-bjUoiL QCsJH cePIaL preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -269,7 +258,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds lXypw openstax-question step-card-body"
+                  className="sc-iBkjds bohpoA openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -357,33 +346,22 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       </section>
                     </div>
                   </div>
-                </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
                   <div
-                    className="step-card-footer-inner"
+                    className="detailed-solution"
                   >
                     <div
-                      className="points"
-                      role="status"
+                      className="header"
                     >
-                      <span
-                        className="attempts-left"
-                      />
+                      Detailed solution:
                     </div>
                     <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -405,7 +383,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH dNZVdw preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -464,7 +442,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds lXypw openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -475,10 +453,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected answer-correct"
+                        className="answers-answer disabled answer-correct"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -491,7 +469,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -558,33 +536,22 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       </section>
                     </div>
                   </div>
-                </div>
-                <div
-                  className="sc-ftvSup fUvOut step-card-footer"
-                >
                   <div
-                    className="step-card-footer-inner"
+                    className="detailed-solution"
                   >
                     <div
-                      className="points"
-                      role="status"
+                      className="header"
                     >
-                      <span
-                        className="attempts-left"
-                      />
+                      Detailed solution:
                     </div>
                     <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-jSMfEi hsxEPT"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
-                        onClick={[Function]}
-                      >
-                        Submit & continue
-                      </button>
-                    </div>
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -606,7 +573,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl hfZzAb preview-card"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-idiyUo QCsJH mjsmp preview-card "
     >
       <div>
         <div
@@ -660,7 +627,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds lXypw openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -671,11 +638,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-selected answer-correct"
+                        className="answers-answer disabled answer-correct"
                       >
                         <input
                           aria-details="feedback-1234@5-0"
-                          checked={true}
+                          checked={false}
                           className="answer-input-box"
                           disabled={true}
                           id="1234@5-option-0"
@@ -688,7 +655,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                           htmlFor="1234@5-option-0"
                         >
                           <span
-                            aria-label="Selected Choice A:"
+                            aria-label="Choice A:"
                             className="answer-letter-wrapper"
                             data-answer-choice="A"
                             data-test-id="answer-choice-A"
@@ -774,6 +741,23 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       </section>
                     </div>
                   </div>
+                  <div
+                    className="detailed-solution"
+                  >
+                    <div
+                      className="header"
+                    >
+                      Detailed solution:
+                    </div>
+                    <div
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
+                  </div>
                 </div>
                 <div
                   className="sc-ftvSup fUvOut step-card-footer"
@@ -788,6 +772,19 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       <span
                         className="attempts-left"
                       />
+                      <div>
+                        <strong>
+                          Detailed solution:
+                        </strong>
+                         
+                        <span
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span>",
+                            }
+                          }
+                        />
+                      </div>
                     </div>
                     <div
                       className="controls"

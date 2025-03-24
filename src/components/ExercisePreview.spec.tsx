@@ -26,7 +26,16 @@ describe('ExercisePreview', () => {
         versions: [1],
         questions: [{
           id: '1234@5',
-          collaborator_solutions: [],
+          collaborator_solutions: [
+            {
+              solution_type: 'no-detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            },
+            {
+              solution_type: 'detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            },
+          ],
           formats: ['true-false'],
           stimulus_html: '',
           stem_html: '',

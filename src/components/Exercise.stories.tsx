@@ -821,6 +821,16 @@ export const PreviewCard = () => {
           hints: [],
           formats: ['free-response', 'multiple-choice'],
           combo_choices: [],
+          collaborator_solutions: [
+            {
+              solution_type: 'detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            },
+            {
+              solution_type: 'no-detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            }
+          ],
         },
       ],
 
@@ -830,6 +840,7 @@ export const PreviewCard = () => {
 
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
+  const [selected, setSelected] = React.useState<boolean>(false);
 
   return (
     <TextResizerProvider>
@@ -839,8 +850,12 @@ export const PreviewCard = () => {
       <button 
         onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showCorrectAnswer ? 'off': 'on'} correct answer`}
       </button>
+      <button 
+        onClick={()=> setSelected(prev => !prev)}>{`${selected ? 'Selected': 'Unselected'}`}
+      </button>
       <ExercisePreview 
         exercise={props1.exercise}
+        selected={selected}
         showAllFeedback={showFeedback}
         showCorrectAnswer={showCorrectAnswer}
       />
