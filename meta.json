@@ -130,8 +130,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 26,
-      "locEnd": 34,
+      "locStart": 27,
+      "locEnd": 35,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -140,8 +140,8 @@
       "levels": [
         "Card"
       ],
-      "locStart": 25,
-      "locEnd": 25,
+      "locStart": 26,
+      "locEnd": 26,
       "filePath": "src/components/Card.stories.tsx",
       "meta": {}
     },
@@ -175,13 +175,23 @@
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
+    "exercise--answer-interaction-disable": {
+      "name": "Answer interaction disable",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 217,
+      "locEnd": 235,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
     "exercise--complete-with-feedback": {
       "name": "Complete with feedback",
       "levels": [
         "Exercise"
       ],
-      "locStart": 215,
-      "locEnd": 240,
+      "locStart": 267,
+      "locEnd": 296,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -190,8 +200,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 242,
-      "locEnd": 268,
+      "locStart": 298,
+      "locEnd": 324,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -200,8 +210,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 168,
-      "locEnd": 183,
+      "locStart": 198,
+      "locEnd": 215,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -210,8 +220,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 185,
-      "locEnd": 211,
+      "locStart": 237,
+      "locEnd": 263,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -220,8 +230,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 213,
-      "locEnd": 213,
+      "locStart": 265,
+      "locEnd": 265,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -230,8 +240,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 422,
-      "locEnd": 450,
+      "locStart": 510,
+      "locEnd": 540,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -240,8 +250,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 270,
-      "locEnd": 292,
+      "locStart": 326,
+      "locEnd": 357,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -250,8 +260,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 294,
-      "locEnd": 318,
+      "locStart": 359,
+      "locEnd": 393,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -260,8 +270,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 452,
-      "locEnd": 612,
+      "locStart": 542,
+      "locEnd": 721,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -270,8 +280,28 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 320,
-      "locEnd": 420,
+      "locStart": 395,
+      "locEnd": 508,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--overlay-card": {
+      "name": "Overlay card",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 866,
+      "locEnd": 1035,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--preview-card": {
+      "name": "Preview card",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 723,
+      "locEnd": 864,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -385,6 +415,16 @@
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
+    "include-remove-question--default": {
+      "name": "Default",
+      "levels": [
+        "Include remove question"
+      ],
+      "locStart": 4,
+      "locEnd": 13,
+      "filePath": "src/components/IncludeRemoveQuestion.stories.tsx",
+      "meta": {}
+    },
     "loader--default": {
       "name": "Default",
       "levels": [
@@ -400,8 +440,8 @@
       "levels": [
         "Print"
       ],
-      "locStart": 62,
-      "locEnd": 99,
+      "locStart": 64,
+      "locEnd": 101,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
