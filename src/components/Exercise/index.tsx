@@ -1,15 +1,16 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../src/types';
-import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from './Card';
-import { Content } from './Content';
-import { ExerciseQuestion } from './ExerciseQuestion';
-import { typesetMath } from '../helpers/mathjax';
-import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
-import { breakpoints } from '../theme';
-import { ExerciseHeaderIcons } from './ExerciseHeaderIcons';
-import { TypesetMathContext } from '../hooks/useTypesetMath';
+import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../../src/types';
+import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
+import { Content } from '../Content';
+import { ExerciseQuestion } from '../ExerciseQuestion';
+import { typesetMath } from '../../helpers/mathjax';
+import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
+import { breakpoints } from '../../theme';
+import { ExerciseHeaderIcons } from '../ExerciseHeaderIcons';
+import { TypesetMathContext } from '../../hooks/useTypesetMath';
+import { exerciseStyles } from './styles';
 
 const StyledTaskStepCard = styled(TaskStepCard)`
   font-size: calc(1.8rem * var(--content-text-scale));
@@ -58,14 +59,17 @@ const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProp
   Pick<ExerciseBaseProps, 'exerciseIcons'> & {
     desktopToolbarEnabled: boolean;
     mobileToolbarEnabled: boolean;
+    overlayChildren?: React.ReactNode;
   }
-) => <ToolbarWrapper
-       desktopToolbarEnabled={props.desktopToolbarEnabled}
-       mobileToolbarEnabled={props.mobileToolbarEnabled}
-     >
-        <ExerciseToolbar icons={props.exerciseIcons} />
-    <StyledTaskStepCard {...props} />
-  </ToolbarWrapper>;
+) => (
+  <ToolbarWrapper
+    desktopToolbarEnabled={props.desktopToolbarEnabled}
+    mobileToolbarEnabled={props.mobileToolbarEnabled}
+  >
+    <ExerciseToolbar icons={props.exerciseIcons} />
+    <StyledTaskStepCard overlayChildren={props.overlayChildren} {...props} />
+  </ToolbarWrapper>
+);
 
 const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
   return (
@@ -158,9 +162,22 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
 }
 
+export interface OverlayProps {
+  overlayChildren?: React.ReactNode;
+}
+
 export const Exercise = styled(({
-  numberOfQuestions, questionNumber, step, exercise, show_all_feedback, scrollToQuestion, exerciseIcons, ...props
-}: { className?: string } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps)) => {
+  numberOfQuestions,
+  questionNumber,
+  step,
+  exercise,
+  show_all_feedback,
+  scrollToQuestion,
+  exerciseIcons,
+  overlayChildren,
+  previewMode = false,
+  ...props
+}: { className?: string, previewMode?: boolean } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
@@ -193,8 +210,9 @@ export const Exercise = styled(({
       mobileToolbarEnabled={mobileToolbarEnabled}
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
       className={props.className}
+      overlayChildren={overlayChildren}
     >
-      <div ref={container}>
+      <div ref={container} >
         <Preamble exercise={exercise} />
 
         {exercise.questions.map((q, i) => {
@@ -202,7 +220,7 @@ export const Exercise = styled(({
           return (
             <ExerciseQuestion
               {...props}
-              {...{...state, available_points: undefined}}
+              {...{ ...state, available_points: undefined }}
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
               exercise_uid={exercise.uid}
               key={q.id}
@@ -219,6 +237,7 @@ export const Exercise = styled(({
                 'canUpdateCurrentStep' in props ?
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
+              previewMode={previewMode}
             />
           )
         }
@@ -227,4 +246,5 @@ export const Exercise = styled(({
     </TaskStepCardWithToolbar>
   </TypesetMathContext.Provider>;
 })`
+  ${exerciseStyles}
 `;

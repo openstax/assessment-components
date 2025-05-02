@@ -6,7 +6,7 @@ interface FeedbackProps {
   children: string;
   className?: string;
   contentRenderer?: JSX.Element;
-  id: string
+  id: string;
 }
 
 const SimpleFeedback = (props: Pick<FeedbackProps, 'children' | 'className' | 'contentRenderer'>) => (

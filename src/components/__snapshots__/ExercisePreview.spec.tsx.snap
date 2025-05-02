@@ -1,0 +1,805 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fEOsli QCsJH ubRcZ preview-card is-selected"
+    >
+      <div
+        onBlur={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        tabIndex={0}
+      >
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-dkzDqf eYRLRg step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-hKMtZM bwRTaS"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    className="answers-table"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled answer-correct"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              Correct
+                               Answer
+                            </div>
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                  <div
+                    className="detailed-solution"
+                  >
+                    <div
+                      className="header"
+                    >
+                      Detailed solution:
+                    </div>
+                    <div
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-bjUoiL QCsJH cePIaL preview-card is-selected"
+    >
+      <div
+        onBlur={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        tabIndex={0}
+      >
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-dkzDqf eYRLRg step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-hKMtZM bwRTaS"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    className="answers-table"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                  <div
+                    className="detailed-solution"
+                  >
+                    <div
+                      className="header"
+                    >
+                      Detailed solution:
+                    </div>
+                    <div
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH kKGUqH preview-card is-selected"
+    >
+      <div
+        onBlur={[Function]}
+        onMouseLeave={[Function]}
+        onMouseOver={[Function]}
+        tabIndex={0}
+      >
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-dkzDqf eYRLRg step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-hKMtZM bwRTaS"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    className="answers-table"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                  <div
+                    className="detailed-solution"
+                  >
+                    <div
+                      className="header"
+                    >
+                      Detailed solution:
+                    </div>
+                    <div
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-idiyUo QCsJH mjsmp preview-card "
+    >
+      <div>
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-dkzDqf eYRLRg step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-hKMtZM bwRTaS"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    className="answers-table"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled answer-correct"
+                      >
+                        <input
+                          aria-details="feedback-1234@5-0"
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              Correct
+                               Answer
+                            </div>
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <aside
+                      className="question-feedback bottom"
+                      id="feedback-1234@5-0"
+                    >
+                      <div
+                        aria-label="Answer Feedback"
+                        className="arrow"
+                      />
+                      <aside>
+                        <div
+                          className="question-feedback-content has-html"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "Feedback",
+                            }
+                          }
+                        />
+                      </aside>
+                    </aside>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            className="answer-answer"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                  <div
+                    className="detailed-solution"
+                  >
+                    <div
+                      className="header"
+                    >
+                      Detailed solution:
+                    </div>
+                    <div
+                      className="solution"
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+                <div
+                  className="sc-ftvSup fUvOut step-card-footer"
+                >
+                  <div
+                    className="step-card-footer-inner"
+                  >
+                    <div
+                      className="points"
+                      role="status"
+                    >
+                      <span
+                        className="attempts-left"
+                      />
+                      <div>
+                        <strong>
+                          Detailed solution:
+                        </strong>
+                         
+                        <span
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span>",
+                            }
+                          }
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="controls"
+                    >
+                      <button
+                        className="sc-jSMfEi hsxEPT"
+                        data-test-id="submit-answer-btn"
+                        disabled={true}
+                        onClick={[Function]}
+                      >
+                        Submit & continue
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -38,6 +38,7 @@ export interface ExerciseQuestionProps {
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
+  previewMode?: boolean;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -97,7 +98,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled,
-    hasFeedback
+    hasFeedback, previewMode
   } = props;
 
   const [shouldContinue, setShouldContinue] = React.useState(false)
@@ -129,39 +130,41 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         displaySolution={displaySolution}
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
+        previewMode={previewMode}
       >
         <FreeResponseReview free_response={free_response} />
       </Question>
-      <StepCardFooter className="step-card-footer">
-        <div className="step-card-footer-inner">
-          <div className="points" role="status">
-            {available_points ? <strong>Points: {available_points}</strong> : null}
-            <span className="attempts-left">
-              {hasMultipleAttempts &&
-                attempts_remaining > 0 &&
-                <AttemptsRemaining count={attempts_remaining} />}
-            </span>
-            <PublishedComments published_comments={published_comments} />
-            {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+      {(previewMode && detailedSolution) || !previewMode ?
+        <StepCardFooter className="step-card-footer">
+          <div className="step-card-footer-inner">
+            <div className="points" role="status">
+              {available_points ? <strong>Points: {available_points}</strong> : null}
+              <span className="attempts-left">
+                {hasMultipleAttempts &&
+                  attempts_remaining > 0 &&
+                  <AttemptsRemaining count={attempts_remaining} />}
+              </span>
+              <PublishedComments published_comments={published_comments} />
+              {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
+            </div>
+            <div className="controls">
+              {(canAnswer && needsSaved) || shouldContinue ?
+                <SaveButton
+                  disabled={apiIsPending || !answer_id || shouldContinue}
+                  isWaiting={apiIsPending || shouldContinue}
+                  attempt_number={attempt_number}
+                  onClick={() => {
+                    onAnswerSave(numberfyId(question.id));
+                    if (!hasFeedback) {
+                      setShouldContinue(true);
+                    }
+                  }}
+                  willContinue={!hasFeedback}
+                /> :
+                <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
+            </div>
           </div>
-          <div className="controls">
-            {(canAnswer && needsSaved) || shouldContinue ?
-              <SaveButton
-                disabled={apiIsPending || !answer_id || shouldContinue}
-                isWaiting={apiIsPending || shouldContinue}
-                attempt_number={attempt_number}
-                onClick={() => {
-                  onAnswerSave(numberfyId(question.id));
-                  if (!hasFeedback) {
-                    setShouldContinue(true);
-                  }
-                }}
-                willContinue={!hasFeedback}
-              /> :
-              <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
-          </div>
-        </div>
-      </StepCardFooter>
+        </StepCardFooter> : null}
     </div>
   );
 })
