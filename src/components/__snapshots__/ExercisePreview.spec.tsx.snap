@@ -383,7 +383,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH dNZVdw preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH kKGUqH preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -442,7 +442,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds bohpoA openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -453,7 +453,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                       className="openstax-answer"
                     >
                       <section
-                        className="answers-answer disabled answer-correct"
+                        className="answers-answer disabled"
                       >
                         <input
                           checked={false}
@@ -477,12 +477,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           <div
                             className="answer-answer"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              Correct
-                               Answer
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={

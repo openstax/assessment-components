@@ -56,7 +56,7 @@ describe('ExercisePreview', () => {
 
     it.each`
         selected | description                          | overlay                  | showFeedback | showCorrect
-        ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined} | ${true}
+        ${true}  | ${'with overlay and selected true'}  | ${<button>Over</button>} | ${undefined} | ${false}
         ${true}  | ${'with overlay and correctness'}    | ${<button>Over</button>} | ${undefined} | ${true}
         ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}     | ${false}
         ${false} | ${'without overlay'}                 | ${undefined}             | ${true}      | ${true}
