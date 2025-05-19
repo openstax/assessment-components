@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 
 const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrectAnswer?: boolean }>`
-
     ${({ showAllFeedback }) => !showAllFeedback &&
     `.step-card-footer {
         display: none;
