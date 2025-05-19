@@ -3,6 +3,23 @@ import { ExerciseData, ExerciseQuestionData, StepBase } from "src/types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 
+
+const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrectAnswer?: boolean }>`
+
+    ${({ showAllFeedback }) => !showAllFeedback &&
+    `.step-card-footer {
+        display: none;
+      }`
+    }
+    ${({ showCorrectAnswer }) => !showCorrectAnswer &&
+    `.answer-answer {
+        font-weight: normal;
+        & > div {
+          display: none;
+        }
+      }`
+    }
+  `;
 export interface ExercisePreviewProps {
   exercise: ExerciseData;
   selected?: boolean;
@@ -78,23 +95,6 @@ export const ExercisePreview = (
     };
   };
 
-  const StyledExercise = styled(Exercise)`
-
-      ${(!showAllFeedback) &&
-    `.step-card-footer {
-        display: none;
-      }`
-    }
-      ${!showCorrectAnswer &&
-    `.answer-answer {
-        font-weight: normal;
-        & > div {
-          display: none;
-        }
-      }`
-    }
-  `;
-
   return (
     <StyledExercise
       exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
@@ -102,6 +102,8 @@ export const ExercisePreview = (
       previewMode
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}
+      showAllFeedback={showAllFeedback}
+      showCorrectAnswer={showCorrectAnswer}
     />
   );
 };
