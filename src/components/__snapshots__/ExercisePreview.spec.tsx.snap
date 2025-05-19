@@ -9,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ifskTs preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ghrOKm preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -199,7 +199,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH fDXVcP preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ignuyR preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -383,7 +383,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH fDXVcP preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ignuyR preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -567,7 +567,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH jagmNG preview-card "
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH JxRcU preview-card "
     >
       <div>
         <div
