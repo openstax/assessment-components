@@ -18,14 +18,18 @@ exports[`ProgressBar matches snapshot 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -50,14 +54,18 @@ exports[`ProgressBar matches snapshot 1`] = `
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM cCtdaL"
-      color="#0D7741"
+      className="svg-inline--fa fa-check sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="check"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#0D7741",
+        }
+      }
       viewBox="0 0 512 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -82,14 +90,18 @@ exports[`ProgressBar matches snapshot 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -107,11 +119,35 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       4
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -119,11 +155,35 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       5
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -131,11 +191,35 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       6
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -181,14 +265,18 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -213,14 +301,18 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM cCtdaL"
-      color="#0D7741"
+      className="svg-inline--fa fa-check sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="check"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#0D7741",
+        }
+      }
       viewBox="0 0 512 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -245,14 +337,18 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -270,11 +366,35 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="location"
       aria-label="Question 4"
-      className="sc-dkzDqf hImxuh"
+      className="sc-dkzDqf QtcfG"
       onClick={[Function]}
     >
       4
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -282,11 +402,35 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       5
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -294,11 +438,35 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       6
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -344,14 +512,18 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -376,14 +548,18 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM cCtdaL"
-      color="#0D7741"
+      className="svg-inline--fa fa-check sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="check"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#0D7741",
+        }
+      }
       viewBox="0 0 512 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -408,14 +584,18 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM jnosjc"
-      color="#C22032"
+      className="svg-inline--fa fa-xmark sc-hKMtZM jzvSmu"
+      color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
       focusable="false"
       height="16px"
       role="img"
-      style={Object {}}
+      style={
+        Object {
+          "background": "#C22032",
+        }
+      }
       viewBox="0 0 320 512"
       width="16px"
       xmlns="http://www.w3.org/2000/svg"
@@ -433,11 +613,35 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       4
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -445,11 +649,35 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       5
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
@@ -457,11 +685,35 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf btPlio"
       onClick={[Function]}
     >
       6
     </button>
+    <svg
+      aria-label="No feedback"
+      className="svg-inline--fa fa-circle sc-hKMtZM aaIOv"
+      color="#5f6163"
+      data-icon="circle"
+      data-prefix="fas"
+      focusable="false"
+      height="16px"
+      role="img"
+      style={
+        Object {
+          "background": "#6f6f6f",
+        }
+      }
+      viewBox="0 0 512 512"
+      width="16px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
   </span>
   <span
     className="sc-gsnTZi cxjQPl"
