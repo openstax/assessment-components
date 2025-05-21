@@ -120,13 +120,15 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
       color: colors.palette.white,
       label: 'Incomplete'
     },
-    'null': {
+    null: {
       icon: faCircle,
       background: colors.answer.neutral,
       color: colors.answer.neutralDark,
       label: 'No feedback'
     }
-  }[variant === null ? 'null' : variant];
+  }[String(variant)];
+
+  if (!variantData) return null;
 
   return <StyledFontAwesomeIcon
     icon={variantData.icon}
