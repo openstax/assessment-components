@@ -43,7 +43,7 @@ export const colors = {
     checked: '#026AA1',
     correct: '#0D7741',
     incorrect: '#C22032',
-    neutralDark: "#5f6163"
+    neutralDark: '#5f6163'
   },
   popover: {
     arrowOuterColor: "rgba(0, 0, 0, 0.25)",
