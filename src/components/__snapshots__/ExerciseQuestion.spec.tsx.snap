@@ -49,8 +49,18 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -89,8 +99,18 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -189,8 +209,18 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -229,13 +259,17 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -336,8 +370,18 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -376,13 +420,17 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -483,8 +531,18 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -523,13 +581,17 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -630,8 +692,18 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -670,8 +742,18 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -777,8 +859,18 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -817,13 +909,17 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -923,13 +1019,17 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi evWjfC"
               >
-                Correct
-                 Answer
+                <span>
+                  Correct Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -969,13 +1069,17 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -1099,8 +1203,18 @@ exports[`ExerciseQuestion renders free response 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1139,8 +1253,18 @@ exports[`ExerciseQuestion renders free response 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1239,8 +1363,18 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1279,13 +1413,17 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"
@@ -1385,8 +1523,18 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               data-test-id="answer-choice-A"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
+              <div
+                className="sc-gsnTZi evWjfC"
+              >
+                <span>
+                   
+                </span>
+              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1425,13 +1573,17 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               data-test-id="answer-choice-B"
             />
             <div
+              aria-atomic="true"
+              aria-live="polite"
               className="answer-answer"
+              role="status"
             >
               <div
                 className="sc-gsnTZi jsjSLp"
               >
-                Incorrect
-                 Answer
+                <span>
+                  Incorrect Answer
+                </span>
               </div>
               <span
                 className="answer-content"

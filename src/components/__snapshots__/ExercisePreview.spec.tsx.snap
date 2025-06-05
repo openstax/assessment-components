@@ -101,13 +101,17 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
                             <div
                               className="sc-gKXOVf QPaPs"
                             >
-                              Correct
-                               Answer
+                              <span>
+                                Correct Answer
+                              </span>
                             </div>
                             <span
                               className="answer-content"
@@ -147,8 +151,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -291,8 +305,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -331,8 +355,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -475,8 +509,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -515,8 +559,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -655,13 +709,17 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
                             <div
                               className="sc-gKXOVf QPaPs"
                             >
-                              Correct
-                               Answer
+                              <span>
+                                Correct Answer
+                              </span>
                             </div>
                             <span
                               className="answer-content"
@@ -720,8 +778,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={

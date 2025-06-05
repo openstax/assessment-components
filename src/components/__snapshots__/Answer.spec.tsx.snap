@@ -28,8 +28,18 @@ exports[`Answer matches snapshot 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
+        <div
+          className="sc-bczRLJ jEysTE"
+        >
+          <span>
+             
+          </span>
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -77,8 +87,18 @@ exports[`Answer renders a checked answer 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
+        <div
+          className="sc-bczRLJ jEysTE"
+        >
+          <span>
+             
+          </span>
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -126,13 +146,17 @@ exports[`Answer renders a correct answer 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
         <div
           className="sc-bczRLJ jEysTE"
         >
-          Correct
-           Answer
+          <span>
+            Correct Answer
+          </span>
         </div>
         <span
           className="answer-content"
@@ -181,13 +205,17 @@ exports[`Answer renders an incorrect answer 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
         <div
           className="sc-bczRLJ dfvfuH"
         >
-          Incorrect
-           Answer
+          <span>
+            Incorrect Answer
+          </span>
         </div>
         <span
           className="answer-content"
@@ -236,8 +264,18 @@ exports[`Answer renders feedback 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
+        <div
+          className="sc-bczRLJ jEysTE"
+        >
+          <span>
+             
+          </span>
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -302,13 +340,17 @@ exports[`Answer renders teacher preview 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
         <div
           className="sc-bczRLJ jEysTE"
         >
-          Correct
-           Answer
+          <span>
+            Correct Answer
+          </span>
         </div>
         <span
           className="answer-content"
@@ -355,8 +397,18 @@ exports[`Answer renders teacher review 1`] = `
         </span>
       </div>
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
+        <div
+          className="sc-bczRLJ dfvfuH"
+        >
+          <span>
+             
+          </span>
+        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -404,8 +456,18 @@ exports[`Answer renders with a custom renderer if set 1`] = `
         data-test-id="answer-choice-B"
       />
       <div
+        aria-atomic="true"
+        aria-live="polite"
         className="answer-answer"
+        role="status"
       >
+        <div
+          className="sc-bczRLJ jEysTE"
+        >
+          <span>
+             
+          </span>
+        </div>
         <div
           className="custom-renderer"
           dangerouslySetInnerHTML={

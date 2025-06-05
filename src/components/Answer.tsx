@@ -17,13 +17,12 @@ const StyledAnswerIndicator = styled.div<{ state: boolean }>`
 const AnswerIndicator = (
   { isCorrect, isIncorrect }: { isCorrect?: boolean; isIncorrect?: boolean }
 ) => {
-  if (!isCorrect && !isIncorrect) {
-    return null;
-  }
-  const state = isCorrect || isIncorrect === false;
+  let text = '';
+  if (isCorrect) text = 'Correct Answer';
+  else if (isIncorrect) text = 'Incorrect Answer';
 
-  return <StyledAnswerIndicator state={state}>
-    {state ? 'Correct' : 'Incorrect'} Answer
+  return <StyledAnswerIndicator state={!!isCorrect || isIncorrect === false}>
+    <span>{text || '\u00A0'}</span>
   </StyledAnswerIndicator>
 };
 
@@ -68,7 +67,12 @@ const AnswerAnswer = (props: AnswerAnswerProps) => {
     isIncorrect,
   } = props;
   return (
-    <div className="answer-answer">
+    <div 
+      className="answer-answer"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
       <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
       <Content className="answer-content" component={contentRenderer} html={content_html} />
       {show_all_feedback && feedback_html && !tableFeedbackEnabled &&
