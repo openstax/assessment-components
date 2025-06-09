@@ -104,8 +104,18 @@ exports[`Exercise using step data matches snapshot 1`] = `
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -144,8 +154,18 @@ exports[`Exercise using step data matches snapshot 1`] = `
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -306,8 +326,18 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -346,8 +376,18 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -506,8 +546,18 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -546,8 +596,18 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -670,8 +730,18 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -710,8 +780,18 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1001,8 +1081,18 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1041,8 +1131,18 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1372,8 +1472,18 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1412,8 +1522,18 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1563,8 +1683,18 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             data-test-id="answer-choice-A"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1603,8 +1733,18 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             data-test-id="answer-choice-B"
                           />
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
                             className="answer-answer"
+                            role="status"
                           >
+                            <div
+                              className="sc-gKXOVf QPaPs"
+                            >
+                              <span>
+                                 
+                              </span>
+                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={

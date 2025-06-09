@@ -36,8 +36,18 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -85,8 +95,18 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -140,13 +160,17 @@ exports[`AnswersTable renders all feedback 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
           <div
             className="sc-bczRLJ dfvfuH"
           >
-            Incorrect
-             Answer
+            <span>
+              Incorrect Answer
+            </span>
           </div>
           <span
             className="answer-content"
@@ -206,13 +230,17 @@ exports[`AnswersTable renders all feedback 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
           <div
             className="sc-bczRLJ jEysTE"
           >
-            Correct
-             Answer
+            <span>
+              Correct Answer
+            </span>
           </div>
           <span
             className="answer-content"
@@ -281,13 +309,17 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
           <div
             className="sc-bczRLJ jEysTE"
           >
-            Correct
-             Answer
+            <span>
+              Correct Answer
+            </span>
           </div>
           <span
             className="answer-content"
@@ -346,8 +378,18 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -396,13 +438,17 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
           <div
             className="sc-bczRLJ dfvfuH"
           >
-            Incorrect
-             Answer
+            <span>
+              Incorrect Answer
+            </span>
           </div>
           <span
             className="answer-content"
@@ -461,13 +507,17 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
           <div
             className="sc-bczRLJ jEysTE"
           >
-            Correct
-             Answer
+            <span>
+              Correct Answer
+            </span>
           </div>
           <span
             className="answer-content"
@@ -519,8 +569,18 @@ exports[`AnswersTable renders instructions 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -559,8 +619,18 @@ exports[`AnswersTable renders instructions 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -608,8 +678,18 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           data-test-id="answer-choice-A"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -648,8 +728,18 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           data-test-id="answer-choice-B"
         />
         <div
+          aria-atomic="true"
+          aria-live="polite"
           className="answer-answer"
+          role="status"
         >
+          <div
+            className="sc-bczRLJ jEysTE"
+          >
+            <span>
+               
+            </span>
+          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
