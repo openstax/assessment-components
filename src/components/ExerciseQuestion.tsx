@@ -111,6 +111,25 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
 
   return (
     <div data-test-id="student-exercise-question">
+      <pre style={{display: 'none'}} data-test-id="debug-props">
+        {JSON.stringify({
+          task,
+          question,
+          answer_id_order,
+          choicesEnabled,
+          answer_id,
+          questionNumber,
+          feedback_html,
+          correct_answer_feedback_html,
+          correct_answer_id,
+          incorrectAnswerId,
+          is_completed,
+          displaySolution,
+          show_all_feedback,
+          tableFeedbackEnabled,
+          previewMode
+        }, null, 2)}
+      </pre>
       <Question
         ref={ref}
         task={task}
