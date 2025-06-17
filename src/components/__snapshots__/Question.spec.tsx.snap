@@ -2,7 +2,7 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -106,7 +106,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -210,7 +210,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -323,7 +323,7 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -427,7 +427,7 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -536,7 +536,7 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -652,7 +652,7 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-gsnTZi gkbTrE openstax-question"
+  className="sc-gKXOVf Ufdwm openstax-question"
   data-question-number={1}
   data-test-id="question"
 >

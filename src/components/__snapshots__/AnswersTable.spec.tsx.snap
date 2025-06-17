@@ -143,7 +143,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           className="answer-answer"
         >
           <div
-            className="sc-bczRLJ dfvfuH"
+            className="sc-jSMfEi faCGeG"
           >
             Incorrect
              Answer
@@ -209,7 +209,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           className="answer-answer"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             Correct
              Answer
@@ -284,7 +284,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           className="answer-answer"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             Correct
              Answer
@@ -399,7 +399,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           className="answer-answer"
         >
           <div
-            className="sc-bczRLJ dfvfuH"
+            className="sc-jSMfEi faCGeG"
           >
             Incorrect
              Answer
@@ -464,7 +464,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           className="answer-answer"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             Correct
              Answer
