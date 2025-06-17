@@ -55,7 +55,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -105,7 +105,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -215,7 +215,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -376,7 +376,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -537,7 +537,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -698,7 +698,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -748,7 +748,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -865,7 +865,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -1209,7 +1209,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -1259,7 +1259,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -1369,7 +1369,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    
@@ -1529,7 +1529,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               role="status"
             >
               <div
-                className="sc-gsnTZi evWjfC"
+                className="sc-gKXOVf QPaPs"
               >
                 <span>
                    

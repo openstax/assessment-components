@@ -42,7 +42,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -101,7 +101,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -384,7 +384,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -575,7 +575,7 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -625,7 +625,7 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -684,7 +684,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -734,7 +734,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
