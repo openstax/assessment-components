@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTypesetMath } from "../hooks/useTypesetMath";
 import { createMediaModalManager } from "./modalManager";
 
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 type ComponentType = keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
 
 export interface ContentProps<T extends ComponentType | undefined> {
