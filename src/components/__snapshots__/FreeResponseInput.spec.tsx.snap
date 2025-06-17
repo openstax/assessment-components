@@ -2,14 +2,14 @@
 
 exports[`Free Response Input matches snapshot 1`] = `
 <div
-  className="sc-eCYdqJ bdsjUG"
+  className="sc-papXJ fRQGOB"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-jSMfEi brxjqp"
+      className="sc-jqUVSM llTaqN"
       data-question-number={1}
     >
       <div
@@ -23,7 +23,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-iBkjds kAOViC"
+      className="sc-iqcoie hAyYEr"
       data-test-id="free-response-box"
       defaultValue=""
       onChange={[Function]}
@@ -31,7 +31,7 @@ exports[`Free Response Input matches snapshot 1`] = `
       readOnly={true}
     />
     <div
-      className="sc-gKXOVf frReNa"
+      className="sc-kDDrLX kuqXks"
     >
       <div>
         <span>
@@ -42,7 +42,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe"
+    className="sc-ftvSup fUvOut"
   >
     <div
       className="points"
@@ -57,14 +57,14 @@ exports[`Free Response Input matches snapshot 1`] = `
       className="controls"
     >
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         disabled={true}
         onClick={[Function]}
       >
         Cancel
       </button>
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         data-test-id="submit-answer-btn"
         disabled={false}
         onClick={[Function]}
@@ -78,14 +78,14 @@ exports[`Free Response Input matches snapshot 1`] = `
 
 exports[`Free Response Input renders leftInfoComponent component 1`] = `
 <div
-  className="sc-eCYdqJ bdsjUG"
+  className="sc-papXJ fRQGOB"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-jSMfEi brxjqp"
+      className="sc-jqUVSM llTaqN"
       data-question-number={1}
     >
       <div
@@ -99,7 +99,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-iBkjds dPEGcO"
+      className="sc-iqcoie hRmkSf"
       data-test-id="free-response-box"
       defaultValue=""
       onChange={[Function]}
@@ -107,7 +107,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
       readOnly={false}
     />
     <div
-      className="sc-gKXOVf kozzyQ"
+      className="sc-kDDrLX hdDdFG"
     >
       <div>
         <span
@@ -125,7 +125,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe"
+    className="sc-ftvSup fUvOut"
   >
     <div
       className="points"
@@ -140,14 +140,14 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
       className="controls"
     >
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         disabled={true}
         onClick={[Function]}
       >
         Cancel
       </button>
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         data-test-id="submit-answer-btn"
         disabled={false}
         onClick={[Function]}
@@ -161,14 +161,14 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
 
 exports[`Free Response Input renders word limit error 1`] = `
 <div
-  className="sc-eCYdqJ bdsjUG"
+  className="sc-papXJ fRQGOB"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-jSMfEi brxjqp"
+      className="sc-jqUVSM llTaqN"
       data-question-number={1}
     >
       <div
@@ -182,7 +182,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-iBkjds gNTqZV"
+      className="sc-iqcoie kQAHRc"
       data-test-id="free-response-box"
       defaultValue="response has more than five words"
       onChange={[Function]}
@@ -190,7 +190,7 @@ exports[`Free Response Input renders word limit error 1`] = `
       readOnly={false}
     />
     <div
-      className="sc-gKXOVf frReNa"
+      className="sc-kDDrLX kuqXks"
     >
       <div>
         <span>
@@ -208,7 +208,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe"
+    className="sc-ftvSup fUvOut"
   >
     <div
       className="points"
@@ -223,14 +223,14 @@ exports[`Free Response Input renders word limit error 1`] = `
       className="controls"
     >
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         disabled={true}
         onClick={[Function]}
       >
         Cancel
       </button>
       <button
-        className="sc-dkzDqf eLBlMX"
+        className="sc-iBkjds KAmuY"
         data-test-id="submit-answer-btn"
         disabled={true}
         onClick={[Function]}

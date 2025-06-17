@@ -42,7 +42,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -101,7 +101,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -166,7 +166,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ dfvfuH"
+            className="sc-jSMfEi faCGeG"
           >
             <span>
               Incorrect Answer
@@ -236,7 +236,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
               Correct Answer
@@ -315,7 +315,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
               Correct Answer
@@ -384,7 +384,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -444,7 +444,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ dfvfuH"
+            className="sc-jSMfEi faCGeG"
           >
             <span>
               Incorrect Answer
@@ -513,7 +513,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
               Correct Answer
@@ -575,7 +575,7 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -625,7 +625,7 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -684,7 +684,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
@@ -734,7 +734,7 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           role="status"
         >
           <div
-            className="sc-bczRLJ jEysTE"
+            className="sc-jSMfEi ecLwSd"
           >
             <span>
                
