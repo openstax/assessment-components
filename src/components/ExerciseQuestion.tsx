@@ -137,7 +137,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
       {(previewMode && detailedSolution) || !previewMode ?
         <StepCardFooter className="step-card-footer">
           <div className="step-card-footer-inner">
-            <div className="points" role="status">
+            <div className="points" role="status" >
               {available_points ? <strong>Points: {available_points}</strong> : null}
               <span className="attempts-left">
                 {hasMultipleAttempts &&

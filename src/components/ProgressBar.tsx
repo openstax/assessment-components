@@ -4,6 +4,7 @@ import FlagIcon from '../assets/flag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
+import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const ProgressBarWrapper = styled.nav`
@@ -44,9 +45,13 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
         color: ${colors.answer.incorrect};
         background-color: #F8E8EA;
       `;
-    default:
+    case 'isIncomplete':
       return css`
         background-color: ${colors.palette.neutralBright};
+      `;
+    default:
+      return css`
+        background-color: ${colors.palette.neutralLight};
       `;
   }
 };
@@ -80,8 +85,7 @@ export const StyledItem = styled.button<{ variant: ProgressBarItemVariant, isAct
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-  background: ${props => props.color};
-  color: #fff;
+  color: ${props => props.color};
   position: absolute;
   bottom: 0.4rem;
   right: 0.3rem;
@@ -93,31 +97,43 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
-  if (!variant || variant !== 'isCorrect' && variant !== 'isIncorrect' && variant !== 'isIncomplete') {
+  if (variant === 'isStatus') {
     return null;
   }
 
   const variantData = {
     isCorrect: {
       icon: faCheck,
-      color: colors.answer.correct,
+      background: colors.answer.correct,
+      color: colors.palette.white,
       label: 'Correct',
     },
     isIncorrect: {
       icon: faXmark,
-      color: colors.answer.incorrect,
+      background: colors.answer.incorrect,
+      color: colors.palette.white,
       label: 'Incorrect',
     },
     isIncomplete: {
       icon: faQuestion,
-      color: colors.answer.neutral,
+      background: colors.answer.neutral,
+      color: colors.palette.white,
       label: 'Incomplete'
+    },
+    null: {
+      icon: faCircle,
+      background: colors.answer.neutral,
+      color: colors.answer.neutralDark,
+      label: 'No feedback'
     }
-  }[variant];
+  }[String(variant)];
+
+  if (!variantData) return null;
 
   return <StyledFontAwesomeIcon
     icon={variantData.icon}
     color={variantData.color}
+    style={{ background: variantData.background }} // for the icon background of noFeedback
     height='16px'
     width='16px'
     aria-label={variantData.label}
