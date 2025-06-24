@@ -35,7 +35,6 @@ describe('MediaModal', () => {
     );
 
 
-    // const overlay = component.root.findByProps({ onClick: mockClose });
     const overlay = component.root.findAllByType('div')[0];
 
     act(() => {
