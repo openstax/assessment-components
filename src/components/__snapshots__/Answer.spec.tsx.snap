@@ -34,7 +34,7 @@ exports[`Answer matches snapshot 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
              
@@ -93,7 +93,7 @@ exports[`Answer renders a checked answer 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
              
@@ -152,7 +152,7 @@ exports[`Answer renders a correct answer 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
             Correct Answer
@@ -211,7 +211,7 @@ exports[`Answer renders an incorrect answer 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ dfvfuH"
+          className="sc-jSMfEi faCGeG"
         >
           <span>
             Incorrect Answer
@@ -270,7 +270,7 @@ exports[`Answer renders feedback 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
              
@@ -346,7 +346,7 @@ exports[`Answer renders teacher preview 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
             Correct Answer
@@ -403,7 +403,7 @@ exports[`Answer renders teacher review 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ dfvfuH"
+          className="sc-jSMfEi faCGeG"
         >
           <span>
              
@@ -462,7 +462,7 @@ exports[`Answer renders with a custom renderer if set 1`] = `
         role="status"
       >
         <div
-          className="sc-bczRLJ jEysTE"
+          className="sc-jSMfEi ecLwSd"
         >
           <span>
              

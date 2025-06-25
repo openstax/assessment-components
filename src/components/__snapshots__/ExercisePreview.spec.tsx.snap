@@ -2,14 +2,14 @@
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
-  className="sc-ksZaOG gLzA-Dq"
+  className="sc-idiyUo gmbPkG"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ghrOKm preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR sc-hHLeRK fiShVI fCLzFd preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -68,7 +68,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iqcoie jDZAbt openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -107,7 +107,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                 Correct Answer
@@ -157,7 +157,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -206,14 +206,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-ksZaOG gLzA-Dq"
+  className="sc-idiyUo gmbPkG"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ignuyR preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR sc-hHLeRK fiShVI idZLVS preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -272,7 +272,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -311,7 +311,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -361,7 +361,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -410,14 +410,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-ksZaOG gLzA-Dq"
+  className="sc-idiyUo gmbPkG"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH ignuyR preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR sc-hHLeRK fiShVI idZLVS preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -476,7 +476,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -515,7 +515,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -565,7 +565,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -614,14 +614,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-ksZaOG gLzA-Dq"
+  className="sc-idiyUo gmbPkG"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH JxRcU preview-card "
+      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR sc-hHLeRK fiShVI eQAWTH preview-card "
     >
       <div>
         <div
@@ -675,7 +675,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iqcoie jDZAbt openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -715,7 +715,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                 Correct Answer
@@ -784,7 +784,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             role="status"
                           >
                             <div
-                              className="sc-gKXOVf QPaPs"
+                              className="sc-kDDrLX cblOfC"
                             >
                               <span>
                                  
@@ -822,7 +822,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                   </div>
                 </div>
                 <div
-                  className="sc-ftvSup fUvOut step-card-footer"
+                  className="sc-crXcEl bKgUeI step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -852,7 +852,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="controls"
                     >
                       <button
-                        className="sc-jSMfEi hsxEPT"
+                        className="sc-jqUVSM hISqvv"
                         data-test-id="submit-answer-btn"
                         disabled={true}
                         onClick={[Function]}
