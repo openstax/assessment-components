@@ -3,15 +3,6 @@ import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState } from "src
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 
-export interface ExercisePreviewProps {
-  exercise: ExerciseData;
-  selected?: boolean;
-  showAllFeedback?: boolean;
-  showCorrectAnswer?: boolean;
-  overlayChildren?: React.ReactNode;
-  questionStates?: { [key: string]: QuestionState };
-}
-
 const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrectAnswer?: boolean }>`
   ${({ showAllFeedback }) => !showAllFeedback && `
     .step-card-footer {
@@ -27,6 +18,15 @@ const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrect
     }
   `}
 `;
+
+export interface ExercisePreviewProps {
+  exercise: ExerciseData;
+  selected?: boolean;
+  showAllFeedback?: boolean;
+  showCorrectAnswer?: boolean;
+  overlayChildren?: React.ReactNode;
+  questionStates?: { [key: string]: QuestionState };
+}
 
 export const ExercisePreview = ({
   exercise,
