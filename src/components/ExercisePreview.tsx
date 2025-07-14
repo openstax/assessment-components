@@ -1,5 +1,5 @@
 import React from "react";
-import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState } from "src/types";
+import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "src/types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 
@@ -23,18 +23,20 @@ export interface ExercisePreviewProps {
   exercise: ExerciseData;
   selected?: boolean;
   showAllFeedback?: boolean;
+  showChosenAnswer?: boolean;
   showCorrectAnswer?: boolean;
   overlayChildren?: React.ReactNode;
-  questionStates?: { [key: string]: QuestionState };
+  questionStates?: { [key: ID]: QuestionState };
 }
 
 export const ExercisePreview = ({
   exercise,
   selected,
   showAllFeedback = false,
+  showChosenAnswer = false,
   showCorrectAnswer = false,
   overlayChildren,
-  questionStates,
+  questionStates
 }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
@@ -47,23 +49,27 @@ export const ExercisePreview = ({
   };
 
   const exercisePreviewProps = (exercise: ExerciseData) => {
-    const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => (
-      {
+    const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => {
+      // Note: will only work as long as both ExerciseData and QuestionState use the same type for the IDs
+      const questionState = (questionStates ?? {})[q.id];
+
+      return {
         id: q.id,
+        answer_id: (showChosenAnswer ? questionState : undefined)?.answer_id ?? '',
         correct_answer_id: (q.answers.find((a) => a.correctness === '1.0')?.id || ''),
         content_html:
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
       }
-    ));
+    });
 
-    const questionStateFields = questionStates ? questionStates : formatAnswerData(exercise.questions).reduce(
+    const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, correct_answer_id, content_html } = answer;
+        const { id, answer_id, correct_answer_id, content_html } = answer;
         return {
           ...acc,
           [id]: {
-            answer_id: '',
+            answer_id,
             correct_answer_id,
             is_completed: showCorrectAnswer,
             solution: {
@@ -103,8 +109,6 @@ export const ExercisePreview = ({
       className={`preview-card ${selected ? 'is-selected' : ''}`}
       previewMode
       overlayChildren={overlayChildren}
-      showAllFeedback={showAllFeedback}
-      showCorrectAnswer={showCorrectAnswer}
       {...exercisePreviewProps(exercise)}
     />
   );

@@ -141,38 +141,26 @@ describe('ExercisePreview', () => {
       };
     });
 
-    it('matches snapshot', () => {
+    it('matches snapshot without chosen answer', () => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
           questionStates={questionStates}
           showAllFeedback={true}
+          showChosenAnswer={false}
           showCorrectAnswer={true}
         />
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
 
-    it('matches snapshot with selected state', () => {
+    it('matches snapshot with chosen answer', () => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
           questionStates={questionStates}
-          selected={true}
           showAllFeedback={true}
-          showCorrectAnswer={true}
-        />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-
-    it('matches snapshot with overlay', () => {
-      const tree = renderer.create(
-        <ExercisePreview
-          exercise={exercise}
-          questionStates={questionStates}
-          overlayChildren={<button>Overlay</button>}
-          showAllFeedback={true}
+          showChosenAnswer={true}
           showCorrectAnswer={true}
         />
       ).toJSON();

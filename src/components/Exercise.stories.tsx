@@ -721,18 +721,19 @@ bitterness. The discriminant <span data-math='b^2 - 4ac'></span> could perhaps a
 };
 
 export const PreviewCard = () => {
-  const randomlyCorrectAnswer = Math.floor(Math.random() * 3) + 1;
+  const answer_id_order = [832300, 832303, 832301, 832302];
+  const answer_id = answer_id_order[Math.floor(Math.random() * answer_id_order.length)];
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps(),
     questionStates: {
       '320733': {
         available_points: '1.0',
         is_completed: true,
-        answer_id_order: ['1', '2', '3', '4'],
-        answer_id: randomlyCorrectAnswer,
+        answer_id_order,
+        answer_id,
         free_response: 'Feedback info',
         feedback_html: '',
-        correct_answer_id: randomlyCorrectAnswer.toString(),
+        correct_answer_id: 832303,
         correct_answer_feedback_html:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         attempts_remaining: 0,
@@ -839,25 +840,31 @@ export const PreviewCard = () => {
   };
 
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
+  const [showChosenAnswer, setShowChosenAnswer] = React.useState<boolean>(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<boolean>(false);
 
   return (
     <TextResizerProvider>
-      <button 
+      <button
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
-      <button 
+      <button
+        onClick={()=> setShowChosenAnswer(prev => !prev)}>{`Turn ${showChosenAnswer ? 'off': 'on'} chosen answer`}
+      </button>
+      <button
         onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showCorrectAnswer ? 'off': 'on'} correct answer`}
       </button>
-      <button 
+      <button
         onClick={()=> setSelected(prev => !prev)}>{`${selected ? 'Selected': 'Unselected'}`}
       </button>
-      <ExercisePreview 
+      <ExercisePreview
         exercise={props1.exercise}
         selected={selected}
         showAllFeedback={showFeedback}
+        showChosenAnswer={showChosenAnswer}
         showCorrectAnswer={showCorrectAnswer}
+        questionStates={props1.questionStates}
       />
     </TextResizerProvider>
   );
