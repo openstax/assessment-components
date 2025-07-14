@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExercisePreview using questionStates matches snapshot with questionStates 1`] = `
+exports[`ExercisePreview using questionStates matches snapshot 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >
@@ -242,7 +242,7 @@ exports[`ExercisePreview using questionStates matches snapshot with questionStat
 </div>
 `;
 
-exports[`ExercisePreview using questionStates matches snapshot with questionStates and overlay 1`] = `
+exports[`ExercisePreview using questionStates matches snapshot with overlay 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >
@@ -489,7 +489,7 @@ exports[`ExercisePreview using questionStates matches snapshot with questionStat
 </div>
 `;
 
-exports[`ExercisePreview using questionStates matches snapshot with questionStates and selected state 1`] = `
+exports[`ExercisePreview using questionStates matches snapshot with selected state 1`] = `
 <div
   className="sc-ksZaOG gLzA-Dq"
 >

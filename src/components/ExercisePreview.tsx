@@ -57,46 +57,22 @@ export const ExercisePreview = ({
       }
     ));
 
-    // If questionStates is provided, use it directly
-    if (questionStates) {
-      const step: StepBase = {
-        id: 1,
-        uid: exercise.uid,
-        available_points: '1.0',
-      };
-
-      return {
-        canAnswer: true,
-        needsSaved: true,
-        hasMultipleAttempts: false,
-        onAnswerChange: () => undefined,
-        onAnswerSave: () => undefined,
-        onNextStep: () => undefined,
-        apiIsPending: false,
-        canUpdateCurrentStep: false,
-        step: step,
-        questionNumber: exercise.number as number,
-        numberOfQuestions: exercise.questions.length,
-        questionStates: questionStates,
-        show_all_feedback: showAllFeedback,
-      };
-    }
-
-    // Otherwise, use the default behavior
-    const questionStateFields = formatAnswerData(exercise.questions).reduce((acc, answer) => {
-      const { id, correct_answer_id, content_html } = answer;
-      return {
-        ...acc,
-        [id]: {
-          answer_id: '',
-          correct_answer_id,
-          is_completed: showCorrectAnswer,
-          solution: {
-            content_html,
+    const questionStateFields = questionStates ? questionStates : formatAnswerData(exercise.questions).reduce(
+      (acc, answer) => {
+        const { id, correct_answer_id, content_html } = answer;
+        return {
+          ...acc,
+          [id]: {
+            answer_id: '',
+            correct_answer_id,
+            is_completed: showCorrectAnswer,
+            solution: {
+              content_html,
+            }
           }
-        }
-      };
-    }, {});
+        };
+      }, {}
+    );
 
     const step: StepBase = {
       id: 1,

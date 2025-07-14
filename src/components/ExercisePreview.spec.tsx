@@ -61,7 +61,7 @@ describe('ExercisePreview', () => {
         ${true}  | ${'with overlay and selected false'} | ${<button>Over</button>} | ${false}     | ${false}
         ${false} | ${'without overlay'}                 | ${undefined}             | ${true}      | ${true}
     `('matches snapshot $description', (
-      { selected, overlay, showFeedback, showCorrect }: 
+      { selected, overlay, showFeedback, showCorrect }:
       { selected: boolean, overlay: JSX.Element, showFeedback: boolean, showCorrect: boolean }) => {
       const tree = renderer.create(
         <ExercisePreview
@@ -141,7 +141,7 @@ describe('ExercisePreview', () => {
       };
     });
 
-    it('matches snapshot with questionStates', () => {
+    it('matches snapshot', () => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
@@ -153,7 +153,7 @@ describe('ExercisePreview', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('matches snapshot with questionStates and selected state', () => {
+    it('matches snapshot with selected state', () => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
@@ -166,7 +166,7 @@ describe('ExercisePreview', () => {
       expect(tree).toMatchSnapshot();
     });
 
-    it('matches snapshot with questionStates and overlay', () => {
+    it('matches snapshot with overlay', () => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
