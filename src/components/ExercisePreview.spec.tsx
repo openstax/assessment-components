@@ -166,5 +166,19 @@ describe('ExercisePreview', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    it('matches snapshot with labeled answers', () => {
+      const tree = renderer.create(
+        <ExercisePreview
+          exercise={exercise}
+          questionStates={questionStates}
+          showAllFeedback={true}
+          showChosenAnswer={true}
+          showCorrectAnswer={true}
+          labelAnswers={true}
+        />
+      ).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

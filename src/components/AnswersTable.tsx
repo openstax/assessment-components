@@ -14,6 +14,7 @@ export interface AnswersTableProps {
   correct_answer_feedback_html?: string;
   answered_count?: number;
   show_all_feedback?: boolean;
+  labelAnswers?: boolean;
   tableFeedbackEnabled?: boolean;
   onChangeAnswer: () => void;
   hideAnswers: boolean;
@@ -32,7 +33,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
     incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html, previewMode,
-    show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
+    labelAnswers, show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
   } = props;
   if (hideAnswers) { return null; }
 
@@ -55,6 +56,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     type,
     answered_count,
     disabled: previewMode || !choicesEnabled,
+    labelAnswers,
     show_all_feedback,
     tableFeedbackEnabled,
     onKeyPress

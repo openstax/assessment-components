@@ -132,6 +132,8 @@ export interface ExerciseBaseProps {
   onAnswerSave: (question_id: number) => void;
   /** A callback with the current question index when the Next/Continue button is clicked. */
   onNextStep: (currentIndex: number) => void;
+  /** A boolean that enables labeling the correct answer and the selected incorrect answer */
+  labelAnswers?: boolean;
   /** A boolean that enables always showing every answer feedback_html field. */
   show_all_feedback?: boolean;
   /** The question number to scroll into view when the component renders. */
@@ -175,6 +177,7 @@ export const Exercise = styled(({
   scrollToQuestion,
   exerciseIcons,
   overlayChildren,
+  labelAnswers = true,
   previewMode = false,
   ...props
 }: { className?: string, previewMode?: boolean } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
@@ -230,6 +233,7 @@ export const Exercise = styled(({
               displaySolution={true}
               detailedSolution={state.solution?.content_html}
               show_all_feedback={show_all_feedback}
+              labelAnswers={labelAnswers}
               tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
               canUpdateCurrentStep={
                 // misleading prop name, we want to show a continue button for completed questions

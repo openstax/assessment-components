@@ -842,10 +842,12 @@ export const PreviewCard = () => {
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
   const [showChosenAnswer, setShowChosenAnswer] = React.useState<boolean>(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
+  const [labelAnswers, setLabelAnswers] = React.useState<boolean>(false);
   const [selected, setSelected] = React.useState<boolean>(false);
 
   return (
     <TextResizerProvider>
+      <h3>Answer labels require correctness to be on</h3>
       <button
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
@@ -856,6 +858,9 @@ export const PreviewCard = () => {
         onClick={()=> setShowCorrectAnswer(prev => !prev)}>{`Turn ${showCorrectAnswer ? 'off': 'on'} correct answer`}
       </button>
       <button
+        onClick={()=> setLabelAnswers(prev => !prev)}>{`Turn ${labelAnswers ? 'off': 'on'} answer labels`}
+      </button>
+      <button
         onClick={()=> setSelected(prev => !prev)}>{`${selected ? 'Selected': 'Unselected'}`}
       </button>
       <ExercisePreview
@@ -864,6 +869,7 @@ export const PreviewCard = () => {
         showAllFeedback={showFeedback}
         showChosenAnswer={showChosenAnswer}
         showCorrectAnswer={showCorrectAnswer}
+        labelAnswers={labelAnswers}
         questionStates={props1.questionStates}
       />
     </TextResizerProvider>

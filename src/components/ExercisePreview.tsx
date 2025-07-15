@@ -12,9 +12,6 @@ const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrect
   ${({ showCorrectAnswer }) => !showCorrectAnswer && `
     .answer-answer {
       font-weight: normal;
-      & > div {
-        display: none;
-      }
     }
   `}
 `;
@@ -25,6 +22,7 @@ export interface ExercisePreviewProps {
   showAllFeedback?: boolean;
   showChosenAnswer?: boolean;
   showCorrectAnswer?: boolean;
+  labelAnswers?: boolean;
   overlayChildren?: React.ReactNode;
   questionStates?: { [key: ID]: QuestionState };
 }
@@ -35,6 +33,7 @@ export const ExercisePreview = ({
   showAllFeedback = false,
   showChosenAnswer = false,
   showCorrectAnswer = false,
+  labelAnswers = false,
   overlayChildren,
   questionStates
 }: ExercisePreviewProps) => {
@@ -99,6 +98,7 @@ export const ExercisePreview = ({
       questionNumber: exercise.number as number,
       numberOfQuestions: exercise.questions.length,
       questionStates: questionStateFields,
+      labelAnswers,
       show_all_feedback: showAllFeedback,
     };
   };

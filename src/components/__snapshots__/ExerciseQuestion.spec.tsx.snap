@@ -5,7 +5,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
+    className="sc-dkzDqf cedznK openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -54,13 +54,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -104,13 +97,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -165,7 +151,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -214,13 +200,6 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -326,7 +305,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -375,13 +354,6 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -487,7 +459,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -536,13 +508,6 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -648,7 +613,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
+    className="sc-dkzDqf cedznK openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -697,13 +662,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -747,13 +705,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -815,7 +766,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -864,13 +815,6 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -975,7 +919,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1154,7 +1098,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body"
+    className="sc-dkzDqf cedznK openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1208,13 +1152,6 @@ exports[`ExerciseQuestion renders free response 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1258,13 +1195,6 @@ exports[`ExerciseQuestion renders free response 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1319,7 +1249,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1368,13 +1298,6 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={
@@ -1479,7 +1402,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf eRmTaj openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1528,13 +1451,6 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               className="answer-answer"
               role="status"
             >
-              <div
-                className="sc-gsnTZi evWjfC"
-              >
-                <span>
-                   
-                </span>
-              </div>
               <span
                 className="answer-content"
                 dangerouslySetInnerHTML={

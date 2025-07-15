@@ -35,6 +35,7 @@ export interface ExerciseQuestionProps {
   available_points?: AvailablePoints;
   exercise_uid: string;
   free_response?: string;
+  labelAnswers?: boolean;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
@@ -97,7 +98,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, show_all_feedback, tableFeedbackEnabled,
+    displaySolution, available_points, free_response, labelAnswers, show_all_feedback, tableFeedbackEnabled,
     hasFeedback, previewMode
   } = props;
 
@@ -128,6 +129,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         hideAnswers={false}
         displayFormats={false}
         displaySolution={displaySolution}
+        labelAnswers={labelAnswers}
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
         previewMode={previewMode}

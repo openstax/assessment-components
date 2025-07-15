@@ -9,7 +9,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card "
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card "
     >
       <div>
         <div
@@ -63,7 +63,195 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body has-correct-answer"
+                  data-question-number={1}
+                  data-test-id="question"
+                >
+                  <div
+                    className="answers-table"
+                  >
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled answer-selected answer-correct"
+                      >
+                        <input
+                          aria-details="feedback-1234@5-0"
+                          checked={true}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-0"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-0"
+                        >
+                          <span
+                            aria-label="Selected Choice A:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="A"
+                            data-test-id="answer-choice-A"
+                          />
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="answer-answer"
+                            role="status"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "True",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                    <aside
+                      className="question-feedback bottom"
+                      id="feedback-1234@5-0"
+                    >
+                      <div
+                        aria-label="Answer Feedback"
+                        className="arrow"
+                      />
+                      <aside>
+                        <div
+                          className="question-feedback-content has-html"
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "Feedback",
+                            }
+                          }
+                        />
+                      </aside>
+                    </aside>
+                    <div
+                      className="openstax-answer"
+                    >
+                      <section
+                        className="answers-answer disabled"
+                      >
+                        <input
+                          checked={false}
+                          className="answer-input-box"
+                          disabled={true}
+                          id="1234@5-option-1"
+                          name="1234@5-options"
+                          onChange={[Function]}
+                          type="radio"
+                        />
+                        <label
+                          className="answer-label"
+                          htmlFor="1234@5-option-1"
+                        >
+                          <span
+                            aria-label="Choice B:"
+                            className="answer-letter-wrapper"
+                            data-answer-choice="B"
+                            data-test-id="answer-choice-B"
+                          />
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="answer-answer"
+                            role="status"
+                          >
+                            <span
+                              className="answer-content"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "False",
+                                }
+                              }
+                            />
+                          </div>
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
+<div
+  className="sc-ksZaOG gLzA-Dq"
+>
+  <div
+    className="sc-gsnTZi dxdISE"
+    data-task-step-id={1}
+  >
+    <div
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card "
+    >
+      <div>
+        <div
+          id="step-card"
+        >
+          <div
+            className="sc-dkzDqf eYRLRg step-card-header"
+          >
+            <div>
+              <h2
+                className="question-info"
+              >
+                <span>
+                  Question 1
+                </span>
+                <span
+                  className="separator"
+                >
+                  |
+                </span>
+                <span
+                  className="question-id"
+                >
+                  ID: 
+                  1@1
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div
+            className="sc-hKMtZM bwRTaS"
+          >
+            <div>
+              <div
+                className="step-card-body exercise-context"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Context",
+                  }
+                }
+              />
+              <div
+                className="step-card-body exercise-stimulus"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<b>Stimulus HTML</b>",
+                  }
+                }
+              />
+              <div
+                data-test-id="student-exercise-question"
+              >
+                <div
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -171,13 +359,6 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -211,7 +392,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card "
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card "
     >
       <div>
         <div
@@ -265,7 +446,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -304,13 +485,6 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                Correct Answer
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -373,13 +547,6 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -413,7 +580,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -472,7 +639,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -510,13 +677,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                Correct Answer
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -560,13 +720,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -617,7 +770,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -676,7 +829,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -714,13 +867,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -764,13 +910,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -821,7 +960,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card is-selected"
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -880,7 +1019,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -918,13 +1057,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -968,13 +1100,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1025,7 +1150,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs QCsJH bpENVV preview-card "
+      className="sc-bczRLJ eAXREJ exercise-step sc-breuTD dSaRVj sc-hAZoDl sc-fnykZs fUhdjz ftkIxP preview-card "
     >
       <div>
         <div
@@ -1079,7 +1204,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iBkjds bohpoA openstax-question step-card-body has-correct-answer"
+                  className="sc-iBkjds jBQfpN openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1118,13 +1243,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                Correct Answer
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1187,13 +1305,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-gKXOVf QPaPs"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={

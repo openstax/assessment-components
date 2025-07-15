@@ -89,12 +89,6 @@ export const exerciseStyles = css`
         }
       }
 
-      &.has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper:before {
-        color: ${colors.palette.white};
-        border-color: ${colors.answer.correct};
-        background: ${colors.answer.correct};
-      }
-
       .question-feedback-content {
         font-size: 1.6rem;
       }
