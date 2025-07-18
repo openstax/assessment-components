@@ -1,4 +1,4 @@
-import{s as H,R as L,a as u,j as n}from"./index-fc444f5e.js";import{m as e,c as o,l as t,t as Q}from"./theme-5a5cccca.js";import{A as F}from"./AnswersTable-46278dc4.js";import{c as R}from"./index-024c0e29.js";import{C as g}from"./Feedback-c9146b36.js";const B=H.div`
+import{s as H,R as L,a as u,j as n}from"./index-a0932445.js";import{m as e,c as o,l as t,t as Q}from"./theme-feeb0def.js";import{A as F}from"./AnswersTable-368043a2.js";import{c as R}from"./index-83a9df1a.js";import{C as g}from"./Feedback-8d04c25c.js";const B=H.div`
 &.step-card-body {
   ${e.stepCardPadding()};
 }
@@ -104,6 +104,7 @@ import{s as H,R as L,a as u,j as n}from"./index-fc444f5e.js";import{m as e,c as 
     }
 
     .answer-label {
+      align-items: center;
       width: 100%;
       padding: ${t.answer.verticalSpacing} 0 0 0;
       margin: 0;
@@ -155,7 +156,7 @@ import{s as H,R as L,a as u,j as n}from"./index-fc444f5e.js";import{m as e,c as 
       .answer-selected {
         &:not(.answer-correct) {
           .answer-label {
-            ${e.answerIncorrect()};
+            ${e.answerIncorrect(!0)};
           }
         }
 
@@ -168,7 +169,7 @@ import{s as H,R as L,a as u,j as n}from"./index-fc444f5e.js";import{m as e,c as 
 
       .answer-correct:not(.answer-selected) {
         .answer-label {
-          ${e.answerCorrectAnswer()}
+          ${e.answerCorrect(!1)}
         }
       }
     }
@@ -199,4 +200,4 @@ import{s as H,R as L,a as u,j as n}from"./index-fc444f5e.js";import{m as e,c as 
     padding: 6px 8px;
   }
 }
-`,G=L.forwardRef((a,r)=>{let s,i;const{question:l,correct_answer_id:x,incorrectAnswerId:$,exercise_uid:p,className:v,questionNumber:h,context:y,task:c,hidePreambles:d}=a,{stem_html:k,collaborator_solutions:q=[],formats:S,stimulus_html:N}=l,b=!!x,_=!!$,z=c!=null?c.is_deleted:void 0,C=(c!=null?c.type:void 0)==="homework",A=R("openstax-question",v,{"has-correct-answer":b&&!(z&&C),"has-incorrect-answer":_}),I=()=>{const{displaySolution:w}=a,{collaborator_solutions:f=[]}=l;return w&&f&&f.find(j=>j.content_html!==void 0)};return p!=null&&(s=n("div",{className:"exercise-uid",children:p})),I()&&(i=u("div",{className:"detailed-solution",children:[n("div",{className:"header",children:"Detailed solution:"}),n(g,{className:"solution",block:!0,html:q.map(w=>w.content_html).join("")})]})),u(B,{ref:r,className:A,"data-question-number":h,"data-test-id":"question",children:[n(m,{type:"context",html:y,hidden:d}),n(m,{type:"stimulus",html:N,hidden:d}),n(m,{type:"stem",html:k,hidden:d,questionNumber:h}),a.children,n(F,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:b}),i,a.displayFormats?n(D,{formats:S}):void 0,s]})}),m=a=>{const{html:r="",type:s,hidden:i,questionNumber:l}=a;return i===!0||!(r.length>0)?null:n(g,{html:r,"data-question-number":l,className:`question-${s}`,block:!0})},D=({formats:a=[]})=>u("div",{className:"formats-listing",children:[n("div",{className:"header",children:"Formats:"}),a.map((r,s)=>n("span",{children:r},s))]});export{m as Q,G as a};
+`,G=L.forwardRef((a,r)=>{let s,i;const{question:l,correct_answer_id:x,incorrectAnswerId:$,exercise_uid:p,className:v,questionNumber:h,context:y,task:c,hidePreambles:d}=a,{stem_html:k,collaborator_solutions:q=[],formats:S,stimulus_html:N}=l,f=!!x,_=!!$,z=c!=null?c.is_deleted:void 0,C=(c!=null?c.type:void 0)==="homework",I=R("openstax-question",v,{"has-correct-answer":f&&!(z&&C),"has-incorrect-answer":_}),j=()=>{const{displaySolution:w}=a,{collaborator_solutions:b=[]}=l;return w&&b&&b.find(A=>A.content_html!==void 0)};return p!=null&&(s=n("div",{className:"exercise-uid",children:p})),j()&&(i=u("div",{className:"detailed-solution",children:[n("div",{className:"header",children:"Detailed solution:"}),n(g,{className:"solution",block:!0,html:q.map(w=>w.content_html).join("")})]})),u(B,{ref:r,className:I,"data-question-number":h,"data-test-id":"question",children:[n(m,{type:"context",html:y,hidden:d}),n(m,{type:"stimulus",html:N,hidden:d}),n(m,{type:"stem",html:k,hidden:d,questionNumber:h}),a.children,n(F,{...a,onChangeAnswer:a.onChange,hasCorrectAnswer:f}),i,a.displayFormats?n(D,{formats:S}):void 0,s]})}),m=a=>{const{html:r="",type:s,hidden:i,questionNumber:l}=a;return i===!0||!(r.length>0)?null:n(g,{html:r,"data-question-number":l,className:`question-${s}`,block:!0})},D=({formats:a=[]})=>u("div",{className:"formats-listing",children:[n("div",{className:"header",children:"Formats:"}),a.map((r,s)=>n("span",{children:r},s))]});export{m as Q,G as a};

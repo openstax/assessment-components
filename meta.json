@@ -300,8 +300,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 866,
-      "locEnd": 1035,
+      "locStart": 879,
+      "locEnd": 1048,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -311,7 +311,7 @@
         "Exercise"
       ],
       "locStart": 723,
-      "locEnd": 864,
+      "locEnd": 877,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
