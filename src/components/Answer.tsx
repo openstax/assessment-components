@@ -14,16 +14,19 @@ const StyledAnswerIndicator = styled.div<{ state: boolean }>`
   font-weight: bold;
 `;
 
+// Annoyingly, sometimes the incorrect answer is only signaled via hasCorrectAnswer and isSelected (not isIncorrect)
 const AnswerIndicator = (
-  { isCorrect, isIncorrect }: { isCorrect?: boolean; isIncorrect?: boolean }
+  { hasCorrectAnswer, isCorrect, isIncorrect, isSelected }: {
+    hasCorrectAnswer?:boolean; isCorrect?: boolean; isIncorrect?: boolean; isSelected?: boolean
+  }
 ) => {
-  let text = '';
-  if (isCorrect) text = 'Correct Answer';
-  else if (isIncorrect) text = 'Incorrect Answer';
+  if (!isCorrect && !isIncorrect && (!isSelected || !hasCorrectAnswer)) { return null; }
 
-  return <StyledAnswerIndicator state={!!isCorrect || isIncorrect === false}>
-    <span>{text || '\u00A0'}</span>
-  </StyledAnswerIndicator>
+  const text = `${isCorrect ? 'Correct' : 'Incorrect'} Answer`;
+
+  return <StyledAnswerIndicator state={!!isCorrect}>
+    <span>{text}</span>
+  </StyledAnswerIndicator>;
 };
 
 export interface AnswerProps {
@@ -42,6 +45,7 @@ export interface AnswerProps {
   correctIncorrectIcon?: ReactNode,
   radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
+  labelAnswers?: boolean;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
   feedbackId?: string;
@@ -51,29 +55,37 @@ type AnswerAnswerProps = Pick<
   AnswerBodyProps,
   'answer' |
   'contentRenderer' |
+  'labelAnswers' |
   'show_all_feedback' |
   'tableFeedbackEnabled' |
+  'hasCorrectAnswer' |
   'isCorrect' |
-  'isIncorrect'
+  'isIncorrect' |
+  'isSelected'
 >;
 
+// labelAnswers defaults to true, must be explicitly false to disable
 const AnswerAnswer = (props: AnswerAnswerProps) => {
   const {
     answer: { content_html, feedback_html },
     contentRenderer,
+    labelAnswers,
     show_all_feedback,
     tableFeedbackEnabled,
+    hasCorrectAnswer,
     isCorrect,
     isIncorrect,
+    isSelected,
   } = props;
   return (
-    <div 
+    <div
       className="answer-answer"
       role="status"
       aria-live="polite"
       aria-atomic="true"
     >
-      <AnswerIndicator isCorrect={isCorrect} isIncorrect={isIncorrect} />
+      {labelAnswers !== false && <AnswerIndicator hasCorrectAnswer={hasCorrectAnswer} isCorrect={isCorrect}
+                                                  isIncorrect={isIncorrect} isSelected={isSelected} />}
       <Content className="answer-content" component={contentRenderer} html={content_html} />
       {show_all_feedback && feedback_html && !tableFeedbackEnabled &&
         <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
@@ -87,6 +99,7 @@ interface AnswerBodyProps extends AnswerProps {
   isCorrect?: boolean;
   isSelected?: boolean;
   isIncorrect?: boolean;
+  labelAnswers?: boolean;
 }
 
 const TeacherReview = (props: AnswerBodyProps) => {
@@ -115,7 +128,7 @@ const TeacherReview = (props: AnswerBodyProps) => {
           {ALPHABET[iter]}
         </span>
       </div>
-      <AnswerAnswer 
+      <AnswerAnswer
         answer={answer}
         contentRenderer={contentRenderer}
         show_all_feedback={show_all_feedback}
@@ -141,6 +154,7 @@ const AnswerChoice = (props: AnswerBodyProps) => {
     hasCorrectAnswer,
     show_all_feedback,
     tableFeedbackEnabled,
+    labelAnswers = true,
   } = props;
   const ariaLabel = `${isSelected ? 'Selected ' : ''}Choice ${ALPHABET[iter]}:`;
   let onChangeAnswer: AnswerProps['onChangeAnswer'];
@@ -180,13 +194,17 @@ const AnswerChoice = (props: AnswerBodyProps) => {
         data-test-id={`answer-choice-${ALPHABET[iter]}`}
       >
       </span>
-      <AnswerAnswer 
+      <AnswerAnswer
         answer={answer}
         contentRenderer={contentRenderer}
+        labelAnswers={labelAnswers}
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
+        hasCorrectAnswer={hasCorrectAnswer}
         isCorrect={isCorrect}
-        isIncorrect={isIncorrect} />
+        isIncorrect={isIncorrect}
+        isSelected={isSelected}
+        />
     </label>
   </>
 }

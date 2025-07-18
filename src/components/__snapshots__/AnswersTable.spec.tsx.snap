@@ -41,13 +41,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -100,13 +93,6 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -383,13 +369,6 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -574,13 +553,6 @@ exports[`AnswersTable renders instructions 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -624,13 +596,6 @@ exports[`AnswersTable renders instructions 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -683,13 +648,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
@@ -733,13 +691,6 @@ exports[`AnswersTable sorts by given ID order 1`] = `
           className="answer-answer"
           role="status"
         >
-          <div
-            className="sc-bczRLJ jEysTE"
-          >
-            <span>
-               
-            </span>
-          </div>
           <span
             className="answer-content"
             dangerouslySetInnerHTML={
