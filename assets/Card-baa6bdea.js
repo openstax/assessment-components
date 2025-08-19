@@ -1,11 +1,11 @@
-import{s as c,j as a,r as l,a as i}from"./index-a0932445.js";import{c as p,b as t,l as T,m as A}from"./theme-feeb0def.js";import{c as B}from"./index-83a9df1a.js";const L=c.div`
+import{s as c,j as a,r as l,a as i}from"./index-3984dcc0.js";import{c as p,b as t,l as T,m as A}from"./theme-76e27ff7.js";import{c as B}from"./index-b9715211.js";const L=c.div`
   position: relative;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 400px;
   margin: 0 auto 5rem auto;
-  border: 1px solid ${p.palette.light};
+  border: 0.1rem solid ${p.palette.pale};
   border-radius: 0.25rem;
   background-color: white;
   overflow: hidden;
