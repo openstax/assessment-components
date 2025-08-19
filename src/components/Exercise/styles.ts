@@ -4,11 +4,16 @@ import { css } from "styled-components";
 export const exerciseStyles = css`
   &.is-selected {
     background-color: ${colors.card.header.background};
+    border-width: 0.2rem;
 
     .step-card-footer,
     .step-card-body,
     .step-card-header {
       background-color: ${colors.card.header.background} !important;
+    }
+
+    .openstax-question {
+      border-width: 0.2rem !important;
     }
   }
 
