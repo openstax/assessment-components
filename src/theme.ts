@@ -189,7 +189,7 @@ export const mixins = {
     line-break: auto;
   `,
   stepCardPadding: () => css`
-    padding: 48px 140px;
+    padding: 4.8rem 14rem 0;
 
     ${breakpoints.tablet`
       padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};

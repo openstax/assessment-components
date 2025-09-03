@@ -9,7 +9,6 @@ export const InnerStepCard = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  min-height: 400px;
   margin: 0 auto 5rem auto;
   border: 0.1rem solid ${colors.palette.pale};
   border-radius: 0.25rem;

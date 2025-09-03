@@ -33,6 +33,7 @@ const StyledFreeResponse = styled.div`
 
   .step-card-body {
     ${mixins.stepCardPadding()}
+    padding-bottom: 1rem;
   }
 `;
 
