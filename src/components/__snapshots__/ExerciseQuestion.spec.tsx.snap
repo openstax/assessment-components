@@ -5,7 +5,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -112,7 +112,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -151,7 +151,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -265,7 +265,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -305,7 +305,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -419,7 +419,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -459,7 +459,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -573,7 +573,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -613,7 +613,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -720,7 +720,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -766,7 +766,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -880,7 +880,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -919,7 +919,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1040,7 +1040,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1098,7 +1098,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1210,7 +1210,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1249,7 +1249,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1363,7 +1363,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1402,7 +1402,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-dkzDqf cedznK openstax-question step-card-body has-incorrect-answer"
+    className="sc-dkzDqf cVQjzY openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
@@ -1516,7 +1516,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKMtZM iGTyMe step-card-footer"
+    className="sc-hKMtZM bCEVeY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
