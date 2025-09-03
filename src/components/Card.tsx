@@ -43,6 +43,7 @@ const StepCardHeader = styled.div`
     align-items: baseline;
     font-size: inherit;
     margin: inherit;
+    text-transform: uppercase;
 
     .question-id {
       font-weight: normal;
