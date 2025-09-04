@@ -1,4 +1,4 @@
-import{s as a,j as s}from"./index-3984dcc0.js";import{c as t}from"./theme-76e27ff7.js";const c=a.button`
+import{s as a,j as s}from"./index-cd3385ec.js";import{c as t}from"./theme-8fe185ce.js";const c=a.button`
   background-color: ${t.button.background};
   color: ${t.palette.white};
   font-size: 1.6rem;
