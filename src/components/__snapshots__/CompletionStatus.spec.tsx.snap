@@ -2,7 +2,7 @@
 
 exports[`CompletionStatus matches snapshot 1`] = `
 <div
-  className="sc-bczRLJ sc-gKXOVf eurzkp hSbqXj sc-ftvSup"
+  className="sc-bczRLJ sc-gKXOVf fZGYwW hSbqXj sc-ftvSup"
 >
   <h2
     className="sc-iBkjds jcQjIn"
@@ -24,7 +24,7 @@ exports[`CompletionStatus matches snapshot 1`] = `
 
 exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-gKXOVf eurzkp hSbqXj sc-ftvSup"
+  className="sc-bczRLJ sc-gKXOVf fZGYwW hSbqXj sc-ftvSup"
 >
   <h2
     className="sc-iBkjds jcQjIn"
@@ -46,7 +46,7 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 
 exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-gKXOVf eurzkp hSbqXj sc-ftvSup"
+  className="sc-bczRLJ sc-gKXOVf fZGYwW hSbqXj sc-ftvSup"
 >
   <h2
     className="sc-iBkjds jcQjIn"
