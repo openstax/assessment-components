@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTypesetMath } from "../hooks/useTypesetMath";
 import { createMediaModalManager } from "./modalManager";
 
@@ -13,24 +13,31 @@ export interface ContentProps<T extends ComponentType | undefined> {
   html: string;
   block?: boolean;
 }
-
 function enhanceImagesForAccessibility(rootEl: HTMLElement) {
   rootEl.querySelectorAll('img').forEach((img) => {
-    img.setAttribute('tabindex', '0');
-    img.setAttribute('role', 'button');
+    if (img.closest('button')) {
+      return;
+    }
+
+    const button = document.createElement('button');
+    button.type = 'button';
     const alt = img.getAttribute('alt');
-    const label = alt ? `Open preview of ${alt}` : 'Open media preview';
-    img.setAttribute('aria-label', label);
+    const label = alt ? `Click to enlarge image of ${alt}` : 'Click to enlarge this image';
+    button.setAttribute('aria-label', label);
+
+    button.classList.add('image-button-wrapper');
+
+    img.parentElement?.insertBefore(button, img);
+    button.appendChild(img);
   });
 }
-
 export const Content = (<T extends ComponentType | undefined>(
   { html, component, block = false, ...props }: ContentProps<T>
 ) => {
   const typesetMath = useTypesetMath();
   const divRef = useRef<HTMLDivElement>(null);
   const spanRef = useRef<HTMLSpanElement>(null);
-  const [MediaModalPortal, setMediaModalPortal] = useState<() => JSX.Element | null>(() => () => null);
+  const mediaModalManager = createMediaModalManager();
 
   useEffect(() => {
     const container = block ? divRef.current : spanRef.current;
@@ -39,13 +46,12 @@ export const Content = (<T extends ComponentType | undefined>(
     typesetMath();
     enhanceImagesForAccessibility(container);
 
-    const mediaModalManager = createMediaModalManager(container);
-    setMediaModalPortal(() => mediaModalManager.MediaModalPortal);
+    mediaModalManager.mount(container);
 
     return () => {
-      mediaModalManager.detachListeners();
+      mediaModalManager.unmount();
     };
-  }, [typesetMath, html, block]);
+  }, [block, mediaModalManager, typesetMath]);
 
   if (component !== undefined) {
     return React.cloneElement(component, { html, ...props });
@@ -58,7 +64,7 @@ export const Content = (<T extends ComponentType | undefined>(
       ) : (
         <span ref={spanRef} dangerouslySetInnerHTML={{ __html: html }} {...props} />
       )}
-      <MediaModalPortal />
+      <mediaModalManager.MediaModalPortal />
     </>
   );
 });
