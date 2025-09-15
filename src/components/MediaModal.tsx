@@ -11,8 +11,6 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 // tslint:disable-next-line:variable-name
@@ -23,6 +21,9 @@ const ScrollableContent = styled.div`
   overflow: auto;
 
   > img {
+    ${/*
+      fix ScrollableContent height issue where it is slightly larger than
+      the image and leaves a gap at the bottom */ ''}
     display: block;
   }
 `;

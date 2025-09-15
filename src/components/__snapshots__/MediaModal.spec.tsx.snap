@@ -2,7 +2,7 @@
 
 exports[`MediaModal renders correctly when isOpen is true 1`] = `
 <div
-  className="sc-bczRLJ drFAoC"
+  className="sc-bczRLJ iteVFC"
   onClick={[MockFunction]}
 >
   <div
@@ -56,7 +56,7 @@ exports[`MediaModal renders correctly when isOpen is true 1`] = `
         </svg>
       </button>
       <div
-        className="sc-gsnTZi kRDrws"
+        className="sc-gsnTZi kqLvsl"
       >
         <div>
           Test Content
