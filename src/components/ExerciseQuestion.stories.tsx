@@ -79,6 +79,19 @@ export const MultipleAttemptsOneLeft = () =>
     attempt_number={1}
     incorrectAnswerId='2'
   />;
+
+export const MultipleAttemptsOneLeftAndUnlimited = () =>
+  <ExerciseQuestion {...props}
+    hasMultipleAttempts={true}
+    hasUnlimitedAttempts={true}
+    canAnswer={true}
+    needsSaved={false}
+    canUpdateCurrentStep={true}
+    attempts_remaining={1}
+    attempt_number={1}
+    incorrectAnswerId='2'
+  />;
+
 export const MultipleAttemptsNoneLeftAndUnlimited = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}
