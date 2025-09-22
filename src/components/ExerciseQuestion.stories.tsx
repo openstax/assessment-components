@@ -37,6 +37,7 @@ const props = {
   onChange: () => null,
   choicesEnabled: true,
   hasMultipleAttempts: false,
+  hasUnlimitedAttempts: false,
   onAnswerChange: () => null,
   onAnswerSave: () => null,
   onNextStep: () => null,
@@ -63,12 +64,14 @@ export const FreeResponseEntered = () =>
 export const MultipleAttemptsAllLeft = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}
+    hasUnlimitedAttempts={false}
     attempts_remaining={2}
     attempt_number={0}
   />;
 export const MultipleAttemptsOneLeft = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}
+    hasUnlimitedAttempts={false}
     canAnswer={true}
     needsSaved={false}
     canUpdateCurrentStep={true}
@@ -76,9 +79,23 @@ export const MultipleAttemptsOneLeft = () =>
     attempt_number={1}
     incorrectAnswerId='2'
   />;
-export const MultipleAttemptsNoneLeft = () =>
+export const MultipleAttemptsNoneLeftAndUnlimited = () =>
   <ExerciseQuestion {...props}
     hasMultipleAttempts={true}
+    hasUnlimitedAttempts={true}
+    choicesEnabled={false}
+    canAnswer={false}
+    needsSaved={false}
+    canUpdateCurrentStep={false}
+    attempts_remaining={0}
+    attempt_number={2}
+    incorrectAnswerId='2'
+  />;
+
+export const UnlimitedAttemptsOnly = () =>
+  <ExerciseQuestion {...props}
+    hasMultipleAttempts={false}
+    hasUnlimitedAttempts={true}
     choicesEnabled={false}
     canAnswer={false}
     needsSaved={false}
