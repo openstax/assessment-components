@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { InnerStepCard } from "./Card";
 import Button from "./Button";
-
+import { colors } from '../theme';
 const GlobalStyle = createGlobalStyle`
   :root {
     --content-text-scale: 1;
@@ -25,7 +25,6 @@ const CompletionStatusCard = styled(InnerStepCard)`
   display: block;
 
   button {
-    min-width: 160px;
     height: 48px;
   }
 
@@ -45,7 +44,6 @@ const ButtonGroup = styled.div`
   gap: 1rem;
 
   button {
-    min-width: 100px;
     height: 48px;
   }
 `;
@@ -57,22 +55,22 @@ const ScoreGroup = styled.div`
 `;
 
 const RetryResumeButton = styled(Button)`
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #D5D5D5;
+  background-color: ${colors.palette.white};
+  color: ${colors.palette.black};
+  border: 1px solid ${colors.palette.pale};
   font-weight: normal;
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: #f5f5f5 !important;
-    color: #000000 !important;
-    border: 1px solid #D5D5D5 !important;
+    background-color: ${colors.palette.neutralBright} !important;
+    color: ${colors.palette.black} !important;
+    border: 1px solid ${colors.palette.pale} !important;
   }
 
   &:active {
-    background-color: #eaeaea !important;
-    color: #000000 !important;
-    border: 1px solid #D5D5D5 !important;
+    background-color: ${colors.palette.neutralLight} !important;
+    color: ${colors.palette.black} !important;
+    border: 1px solid ${colors.palette.pale} !important;
   }
 `;
 
@@ -88,7 +86,7 @@ export const CompletionStatus = styled(({
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
 
-  const buttonText = allCompleted ? 'Next' : (someCompleted ? 'Continue' : 'Start');
+  const buttonText = allCompleted || (numberCompleted === 0 && handleRetry) || (someCompleted && handleRetry) ? 'Next' : (someCompleted ? 'Continue' : 'Start');
 
   const retryOrResume = allCompleted ? 'Retry Quiz' : 'Resume Quiz';
   const unlimitedDone = "Attempts for this quiz are unlimited. Your highest score will be saved.";
