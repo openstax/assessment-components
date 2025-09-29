@@ -104,7 +104,7 @@ export type QuestionState = {
   /** A boolean that will display the Continue/Next button when true and canAnswer is false */
   is_completed: boolean;
   /** A number ID of the user's selected Answer */
-  answer_id?: number;
+  answer_id?: ID;
   /** An array of Answer IDs that specify the order to display them when hasMultipleAttempts is true. */
   answer_id_order: ID[];
   /** A string of the user's written response, used in two-step/WRM */

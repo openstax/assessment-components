@@ -25,11 +25,16 @@ export const exerciseStyles = css`
   }
   &.is-selected {
     background-color: ${colors.card.header.background};
+    border-width: 0.2rem;
 
     .step-card-footer,
     .step-card-body,
     .step-card-header {
       background-color: ${colors.card.header.background} !important;
+    }
+
+    .openstax-question {
+      border-width: 0.2rem !important;
     }
   }
 
@@ -108,12 +113,6 @@ export const exerciseStyles = css`
           height: 2.8rem;
           display: flex;
         }
-      }
-
-      &.has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper:before {
-        color: ${colors.palette.white};
-        border-color: ${colors.answer.correct};
-        background: ${colors.answer.correct};
       }
 
       .question-feedback-content {

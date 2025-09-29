@@ -2,7 +2,7 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -51,13 +51,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -101,13 +94,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -126,7 +112,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -175,13 +161,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -225,13 +204,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -250,7 +222,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -299,13 +271,6 @@ exports[`Question defaults formats 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -349,13 +314,6 @@ exports[`Question defaults formats 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -383,7 +341,7 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -432,13 +390,6 @@ exports[`Question matches snapshot 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -482,13 +433,6 @@ exports[`Question matches snapshot 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -507,7 +451,7 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -556,13 +500,6 @@ exports[`Question renders exercise uid 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -606,13 +543,6 @@ exports[`Question renders exercise uid 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -636,7 +566,7 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -685,13 +615,6 @@ exports[`Question renders formats 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -735,13 +658,6 @@ exports[`Question renders formats 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -772,7 +688,7 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-gKXOVf Ufdwm openstax-question"
+  className="sc-gKXOVf bLowwd openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
@@ -821,13 +737,6 @@ exports[`Question renders solutions 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={
@@ -871,13 +780,6 @@ exports[`Question renders solutions 1`] = `
             className="answer-answer"
             role="status"
           >
-            <div
-              className="sc-jSMfEi ecLwSd"
-            >
-              <span>
-                 
-              </span>
-            </div>
             <span
               className="answer-content"
               dangerouslySetInnerHTML={

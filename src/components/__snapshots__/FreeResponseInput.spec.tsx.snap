@@ -2,7 +2,7 @@
 
 exports[`Free Response Input matches snapshot 1`] = `
 <div
-  className="sc-papXJ fRQGOB"
+  className="sc-papXJ fLdtzc"
   data-test-id="student-free-response"
 >
   <div
@@ -42,7 +42,7 @@ exports[`Free Response Input matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-ftvSup fUvOut"
+    className="sc-ftvSup ihVfvz"
   >
     <div
       className="points"
@@ -78,7 +78,7 @@ exports[`Free Response Input matches snapshot 1`] = `
 
 exports[`Free Response Input renders leftInfoComponent component 1`] = `
 <div
-  className="sc-papXJ fRQGOB"
+  className="sc-papXJ fLdtzc"
   data-test-id="student-free-response"
 >
   <div
@@ -125,7 +125,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
     </div>
   </div>
   <div
-    className="sc-ftvSup fUvOut"
+    className="sc-ftvSup ihVfvz"
   >
     <div
       className="points"
@@ -161,7 +161,7 @@ exports[`Free Response Input renders leftInfoComponent component 1`] = `
 
 exports[`Free Response Input renders word limit error 1`] = `
 <div
-  className="sc-papXJ fRQGOB"
+  className="sc-papXJ fLdtzc"
   data-test-id="student-free-response"
 >
   <div
@@ -208,7 +208,7 @@ exports[`Free Response Input renders word limit error 1`] = `
     </div>
   </div>
   <div
-    className="sc-ftvSup fUvOut"
+    className="sc-ftvSup ihVfvz"
   >
     <div
       className="points"

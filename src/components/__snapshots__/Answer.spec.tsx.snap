@@ -33,13 +33,6 @@ exports[`Answer matches snapshot 1`] = `
         className="answer-answer"
         role="status"
       >
-        <div
-          className="sc-jSMfEi ecLwSd"
-        >
-          <span>
-             
-          </span>
-        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -92,13 +85,6 @@ exports[`Answer renders a checked answer 1`] = `
         className="answer-answer"
         role="status"
       >
-        <div
-          className="sc-jSMfEi ecLwSd"
-        >
-          <span>
-             
-          </span>
-        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -269,13 +255,6 @@ exports[`Answer renders feedback 1`] = `
         className="answer-answer"
         role="status"
       >
-        <div
-          className="sc-jSMfEi ecLwSd"
-        >
-          <span>
-             
-          </span>
-        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -402,13 +381,6 @@ exports[`Answer renders teacher review 1`] = `
         className="answer-answer"
         role="status"
       >
-        <div
-          className="sc-jSMfEi faCGeG"
-        >
-          <span>
-             
-          </span>
-        </div>
         <span
           className="answer-content"
           dangerouslySetInnerHTML={
@@ -461,13 +433,6 @@ exports[`Answer renders with a custom renderer if set 1`] = `
         className="answer-answer"
         role="status"
       >
-        <div
-          className="sc-jSMfEi ecLwSd"
-        >
-          <span>
-             
-          </span>
-        </div>
         <div
           className="custom-renderer"
           dangerouslySetInnerHTML={

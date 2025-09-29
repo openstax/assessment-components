@@ -112,6 +112,7 @@ const StyledQuestion = styled.div`
     }
 
     .answer-label {
+      align-items: center;
       width: 100%;
       padding: ${layouts.answer.verticalSpacing} 0 0 0;
       margin: 0;
@@ -163,7 +164,7 @@ const StyledQuestion = styled.div`
       .answer-selected {
         &:not(.answer-correct) {
           .answer-label {
-            ${mixins.answerIncorrect()};
+            ${mixins.answerIncorrect(true)};
           }
         }
 
@@ -176,7 +177,7 @@ const StyledQuestion = styled.div`
 
       .answer-correct:not(.answer-selected) {
         .answer-label {
-          ${mixins.answerCorrectAnswer()}
+          ${mixins.answerCorrect(false)}
         }
       }
     }
@@ -227,6 +228,7 @@ export interface QuestionProps {
   contentRenderer?: JSX.Element;
   feedback_html: string;
   onChange: () => void;
+  labelAnswers?: boolean;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
   children?: ReactNode;

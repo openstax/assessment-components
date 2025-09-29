@@ -9,14 +9,14 @@ exports[`Exercise using step data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -46,7 +46,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -69,7 +69,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -109,13 +109,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -159,13 +152,6 @@ exports[`Exercise using step data matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -181,7 +167,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -226,7 +212,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div
         onBlur={[Function]}
@@ -238,7 +224,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -268,7 +254,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -291,7 +277,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -331,13 +317,6 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -381,13 +360,6 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -403,7 +375,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -448,7 +420,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div
         onBlur={[Function]}
@@ -460,7 +432,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -490,7 +462,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -513,7 +485,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -551,13 +523,6 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -601,13 +566,6 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -641,14 +599,14 @@ exports[`Exercise with question state data matches snapshot 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -672,7 +630,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -695,7 +653,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -735,13 +693,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -785,13 +736,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -807,7 +751,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -906,14 +850,14 @@ exports[`Exercise with question state data renders header icons with multiple ch
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -1023,7 +967,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -1046,7 +990,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1086,13 +1030,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1136,13 +1073,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1158,7 +1088,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1257,14 +1187,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -1414,7 +1344,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -1437,7 +1367,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1477,13 +1407,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1527,13 +1450,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1549,7 +1465,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1594,14 +1510,14 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ eAXREJ exercise-step sc-bjUoiL dkQSQA sc-dIouRR cYYzjY"
+      className="sc-bczRLJ fZGYwW exercise-step sc-bjUoiL dkQSQA sc-dIouRR hESRLg"
     >
       <div>
         <div
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eYRLRg step-card-header"
+            className="sc-dkzDqf jPjFCZ step-card-header"
           >
             <div>
               <h2
@@ -1625,7 +1541,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
             </div>
           </div>
           <div
-            className="sc-hKMtZM bwRTaS"
+            className="sc-hKMtZM dCUIYQ"
           >
             <div>
               <div
@@ -1648,7 +1564,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-iqcoie jDZAbt openstax-question step-card-body"
+                  className="sc-iqcoie fNQDNS openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1688,13 +1604,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1738,13 +1647,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             className="answer-answer"
                             role="status"
                           >
-                            <div
-                              className="sc-kDDrLX cblOfC"
-                            >
-                              <span>
-                                 
-                              </span>
-                            </div>
                             <span
                               className="answer-content"
                               dangerouslySetInnerHTML={
@@ -1760,7 +1662,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-crXcEl bKgUeI step-card-footer"
+                  className="sc-crXcEl dyLDO step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
