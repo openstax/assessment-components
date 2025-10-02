@@ -227,7 +227,7 @@ exports[`ProgressBar matches snapshot 1`] = `
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf uBTrp"
       onClick={[Function]}
     >
       <svg
@@ -474,7 +474,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf cDKeHP"
+      className="sc-dkzDqf uBTrp"
       onClick={[Function]}
     >
       <svg
@@ -721,7 +721,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     <button
       aria-current="location"
       aria-label="Assignment status"
-      className="sc-dkzDqf hImxuh"
+      className="sc-dkzDqf kDxnUH"
       onClick={[Function]}
     >
       <svg
