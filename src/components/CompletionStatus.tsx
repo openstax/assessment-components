@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
 export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
-  handleClick: () => void;
+  handleContinue: () => void;
+  handleNext: () => void;
   className?: string;
   scoreSoFar?: string;
   savedScore?: string;
@@ -77,7 +78,8 @@ const RetryResumeButton = styled(Button)`
 export const CompletionStatus = styled(({
   numberOfQuestions,
   numberCompleted,
-  handleClick,
+  handleContinue,
+  handleNext,
   className,
   scoreSoFar,
   savedScore,
@@ -93,10 +95,17 @@ export const CompletionStatus = styled(({
   const unlimitetedCurrent = "You are in the middle of a quiz attempt. Attempts for this quiz are unlimited. Your highest score will be saved.";
 
   // When allCompleted, clicking Retry/Resume should create a new attempt (handleRetry)
-  // When not completed, clicking Retry/Resume should resume (handleClick)
+  // When not completed, clicking Retry/Resume should resume (handleContinue)
   const onRetryResumeClick = allCompleted
     ? handleRetry
-    : handleClick;
+    : handleContinue;
+
+  // if unlimited attempts (handleRetry) is active always show next button
+  // if all is completed show next button
+  // if not unlimited and incomplete show and handle continue
+  const onNextContinueClick = allCompleted ||  handleRetry
+    ? handleNext
+    : handleContinue;
 
   return (
     <>
@@ -139,7 +148,7 @@ export const CompletionStatus = styled(({
 
           <Button
             data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
-            onClick={() => handleClick()}
+            onClick={onNextContinueClick}
           >
             {buttonText}
           </Button>

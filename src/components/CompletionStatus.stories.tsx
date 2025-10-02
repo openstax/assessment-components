@@ -3,13 +3,15 @@ import { CompletionStatus, CompletionStatusProps } from './CompletionStatus';
 const props: CompletionStatusProps = {
   numberOfQuestions: 15,
   numberCompleted: 0,
-  handleClick: () => {console.log('click')}
+  handleNext: () => {console.log('next')},
+  handleContinue: () => {console.log('continue')},
 };
 
 const unlimitedProps: CompletionStatusProps = {
   numberOfQuestions: 15,
   numberCompleted: 0,
-  handleClick: () => {console.log('click')},
+  handleNext: () => {console.log('next')},
+  handleContinue: () => {console.log('continue')},
   handleRetry: () => {console.log('retry')},
   scoreSoFar: '5/15',
   savedScore: '10/15'
