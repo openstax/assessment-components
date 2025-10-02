@@ -32,7 +32,8 @@ const palette = {
   neutralFeedback: "#555", // another dark gray
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
-  orange: "#D4450C"
+  orange: "#D4450C",
+  softOrange: "#FEDE9F"
 };
 
 export const colors = {

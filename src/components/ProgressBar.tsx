@@ -33,7 +33,7 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
   switch (variant) {
     case 'isStatus':
       return css`
-        background-color: ${colors.palette.neutralBright};
+        background-color: ${colors.palette.softOrange};
       `;
     case 'isCorrect':
       return css`
