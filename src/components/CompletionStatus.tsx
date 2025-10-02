@@ -92,7 +92,7 @@ export const CompletionStatus = styled(({
 
   const retryOrResume = allCompleted ? 'Retry Quiz' : 'Resume Quiz';
   const unlimitedDone = "Attempts for this quiz are unlimited. Your highest score will be saved.";
-  const unlimitetedCurrent = "You are in the middle of a quiz attempt. Attempts for this quiz are unlimited. Your highest score will be saved.";
+  const unlimitedCurrent = "You are in the middle of a quiz attempt. Attempts for this quiz are unlimited. Your highest score will be saved.";
 
   // When allCompleted, clicking Retry/Resume should create a new attempt (handleRetry)
   // When not completed, clicking Retry/Resume should resume (handleContinue)
@@ -119,7 +119,7 @@ export const CompletionStatus = styled(({
 
         {handleRetry ? (
           <div>
-            <p>{allCompleted ? unlimitedDone : unlimitetedCurrent}</p>
+            <p>{allCompleted ? unlimitedDone : unlimitedCurrent}</p>
             <ScoreGroup>
               <p>
                 <b>Current Score:</b> {scoreSoFar ?? 'Score unavailable'} | <b>Saved Score:</b> {savedScore ?? 'Score unavailable'}
