@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { faCircle } from '@fortawesome/free-solid-svg-icons/faCircle';
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faP, faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 const ProgressBarWrapper = styled.nav`
   display: flex;
@@ -33,7 +33,8 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
   switch (variant) {
     case 'isStatus':
       return css`
-        background-color: ${colors.palette.neutralBright};
+        color: ${colors.palette.white};
+        background-color: ${colors.palette.neutralDarker};
       `;
     case 'isCorrect':
       return css`
@@ -48,6 +49,11 @@ const handleVariant = (variant: ProgressBarItemVariant) => {
     case 'isIncomplete':
       return css`
         background-color: ${colors.palette.neutralBright};
+      `;
+    case 'isPartialCredit':
+      return css`
+        color: ${colors.answer.partialCredit};
+        background-color: ${colors.palette.yellow};
       `;
     default:
       return css`
@@ -91,9 +97,20 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   right: 0.3rem;
   height: 0.8rem;
   width: 0.8rem;
-  padding: 0.1rem;
   font-size: 1.2rem;
   border-radius: 50%;
+`;
+
+const StyledFeedbackNotification = styled.button<{ isActive: boolean }>`
+  background-color: ${colors.palette.mediumBlue};
+  border: 0.2rem solid ${colors.palette.white};
+  position: absolute;
+  top: 0.1rem;
+  left: ${props => props.isActive ? '3.8rem' : '3.2rem'};
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
 `;
 
 const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
@@ -101,30 +118,43 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
     return null;
   }
 
+  const defaultPadding = '0.1rem';
+
   const variantData = {
     isCorrect: {
       icon: faCheck,
       background: colors.answer.correct,
       color: colors.palette.white,
+      padding: defaultPadding,
       label: 'Correct',
     },
     isIncorrect: {
       icon: faXmark,
       background: colors.answer.incorrect,
       color: colors.palette.white,
+      padding: defaultPadding,
       label: 'Incorrect',
     },
     isIncomplete: {
       icon: faQuestion,
       background: colors.answer.neutral,
       color: colors.palette.white,
+      padding: defaultPadding,
       label: 'Incomplete'
+    },
+    isPartialCredit: {
+      icon: faP,
+      background: colors.answer.partialCredit,
+      color: colors.palette.white,
+      padding: '0.1rem 0.1rem 0.1rem 0.2rem',
+      label: 'Partial credit'
     },
     null: {
       icon: faCircle,
       background: colors.answer.neutral,
       color: colors.answer.neutralDark,
-      label: 'No feedback'
+      padding: defaultPadding,
+      label: 'No yet graded'
     }
   }[String(variant)];
 
@@ -133,7 +163,7 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
   return <StyledFontAwesomeIcon
     icon={variantData.icon}
     color={variantData.color}
-    style={{ background: variantData.background }} // for the icon background of noFeedback
+    style={{ background: variantData.background, padding: variantData.padding }}
     height='16px'
     width='16px'
     aria-label={variantData.label}
@@ -141,7 +171,7 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
   />;
 }
 
-export interface ProgressBarProps<S extends {variant: ProgressBarItemVariant}> {
+export interface ProgressBarProps<S extends {variant: ProgressBarItemVariant, hasFeedback?: boolean}> {
   steps: S[];
   activeIndex: number | null;
   goToStep: (index: number, step: S) => void;
@@ -154,10 +184,14 @@ export interface ProgressBarItemProps<S> {
   goToStep: (index: number, step: S) => void;
 }
 
-export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | 'isIncomplete' | null;
+export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | 'isIncomplete' | 'isPartialCredit' | null;
 
-export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
+export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant; hasFeedback?: boolean}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>
+    {step.hasFeedback && step.variant && step.variant !== 'isStatus' 
+      ? <StyledFeedbackNotification isActive={isActive} aria-label={`Question ${index + 1} - Feedback`} /> 
+      : null
+    }
     <StyledItem
       variant={step.variant}
       isActive={isActive}
@@ -170,7 +204,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant}>({in
     <ItemIcon variant={step.variant} />
   </StyledItemWrapper>;
 
-export const ProgressBar = <S extends {variant: ProgressBarItemVariant}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) =>
+export const ProgressBar = <S extends {variant: ProgressBarItemVariant; hasFeedback?: boolean}>({ steps, activeIndex, goToStep }: ProgressBarProps<S>) =>
   <ProgressBarWrapper aria-label="Breadcrumbs">
     {steps.map((step, index) => <ProgressBarItem
       key={index}

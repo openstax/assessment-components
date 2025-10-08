@@ -1,16 +1,16 @@
 import { ProgressBar, ProgressBarItem, ProgressBarItemVariant, ProgressBarProps, StyledItem } from './ProgressBar';
 import renderer from 'react-test-renderer';
 
-const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', null, null, null, 'isStatus'];
+const variants: ProgressBarItemVariant[] = ['isIncorrect', 'isCorrect', 'isIncorrect', 'isIncorrect', 'isPartialCredit', null, 'isStatus'];
 
 describe('ProgressBar', () => {
-  let props: ProgressBarProps<{variant: ProgressBarItemVariant}>;
+  let props: ProgressBarProps<{variant: ProgressBarItemVariant; hasFeedback?: boolean}>;
 
   beforeEach(() => {
     props = {
       activeIndex: 2,
       goToStep: () => null,
-      steps: variants.map((variant) => ({variant})),
+      steps: variants.map((variant, index) => ({variant, hasFeedback: index % 2 !== 0 ? true : false})),
     }
   });
 
@@ -24,6 +24,13 @@ describe('ProgressBar', () => {
   it('matches snapshot when active step is incomplete', () => {
     const tree = renderer.create(
       <ProgressBar {...props} activeIndex={3} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('matches snapshot when active step is partial credit', () => {
+    const tree = renderer.create(
+      <ProgressBar {...props} activeIndex={4} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
