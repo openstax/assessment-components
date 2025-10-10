@@ -720,7 +720,36 @@ bitterness. The discriminant <span data-math='b^2 - 4ac'></span> could perhaps a
   );
 };
 
-export const PreviewCard = () => {
+
+
+const RightComponent = (
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '2rem',
+      textAlign: 'center',
+    }}
+  >
+    <span style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Comment</span>
+    <textarea
+      style={{
+        width: '100%',
+        maxWidth: '400px',
+        height: '120px',
+        padding: '1rem',
+        fontSize: '1rem',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        resize: 'vertical'
+      }}
+      placeholder="Write your comment here..."
+    />
+  </div>
+);
+
+export const PreviewCardWithScore = () => {
   const answer_id_order = [832300, 832303, 832301, 832302];
   const answer_id = answer_id_order[Math.floor(Math.random() * answer_id_order.length)];
   const props1: ExerciseWithQuestionStatesProps = {
@@ -747,6 +776,30 @@ export const PreviewCard = () => {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           solution_type: 'detailed',
         },
+        scoring: { score: 1.5, maxScore: 2.0}
+      },
+      '320734': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order,
+        answer_id,
+        free_response: 'Feedback info',
+        feedback_html: '',
+        correct_answer_id: 832303,
+        correct_answer_feedback_html:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false,
+        solution: {
+          content_html:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+          solution_type: 'detailed',
+        },
+        scoring: { score: 2.0, maxScore: 3.0}
       },
     },
     exercise: {
@@ -833,12 +886,58 @@ export const PreviewCard = () => {
             }
           ],
         },
+        {
+          id: 320734,
+          is_answer_order_important: true,
+          stimulus_html: '',
+          stem_html:
+            'Respiratory rate refers to the total number of breaths (respiratory cycles) that occur each minute. The respiratory rate is controlled by the ___ within the brain.',
+          answers: [
+            {
+              id: 732300,
+              content_html: 'hypothalamus',
+              correctness: undefined,
+              feedback_html: 'Feedback response',
+            },
+            {
+              id: 732303,
+              content_html: 'medulla oblongata',
+              correctness: '1.0',
+              feedback_html: 'Feedback response',
+            },
+            {
+              id: 732301,
+              content_html: 'corpus callosum',
+              correctness: undefined,
+            },
+            {
+              id: 732302,
+              content_html: 'cerebellum',
+              correctness: undefined,
+            },
+          ],
+          hints: [],
+          formats: ['free-response', 'multiple-choice'],
+          combo_choices: [],
+          collaborator_solutions: [
+            {
+              solution_type: 'detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            },
+            {
+              solution_type: 'no-detailed',
+              content_html: `<span data-math='e^{\\text{Blue}}'></span>`,
+            }
+          ],
+        },
       ],
 
       versions: [4, 3, 2, 1],
     },
   };
 
+  const [showScoring, setShowScoring] = React.useState<boolean>(false);
+  const [showRightComp, setShowRightComp] = React.useState<boolean>(false);
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
   const [showChosenAnswer, setShowChosenAnswer] = React.useState<boolean>(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
@@ -848,6 +947,12 @@ export const PreviewCard = () => {
   return (
     <TextResizerProvider>
       <h3>Answer labels require correctness to be on</h3>
+      <button
+        onClick={()=> setShowScoring(prev => !prev)}>{`Turn ${showScoring ? 'off': 'on'} scoring`}
+      </button>
+      <button
+        onClick={()=> setShowRightComp(prev => !prev)}>{`Turn ${showRightComp ? 'off': 'on'} right component`}
+      </button>
       <button
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
       </button>
@@ -871,8 +976,20 @@ export const PreviewCard = () => {
         showCorrectAnswer={showCorrectAnswer}
         labelAnswers={labelAnswers}
         questionStates={props1.questionStates}
+        showScoring={showScoring}
+        rightSideSlot={showRightComp ? RightComponent : null}
       />
     </TextResizerProvider>
+  );
+};
+
+export const PreviewCardWithoutScore = () => {
+  const props = exerciseWithQuestionStatesProps();
+  return (
+    <ExercisePreview
+      {...props}
+      showScoring
+    />
   );
 };
 

@@ -179,8 +179,15 @@ export const Exercise = styled(({
   overlayChildren,
   labelAnswers = true,
   previewMode = false,
+  showScoring = false,
+  rightSideSlot,
   ...props
-}: { className?: string, previewMode?: boolean } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
+}: { 
+    className?: string, 
+    previewMode?: boolean,
+    showScoring?: boolean,
+    rightSideSlot?: React.ReactNode,
+  } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
@@ -201,6 +208,21 @@ export const Exercise = styled(({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
+  let totalScoring = { score: 0, maxScore: 0 };
+  let isGraded = true;
+
+  for (const q of exercise.questions) {
+    const scoring = 'questionStates' in props ?  props['questionStates'][q.id]?.scoring : {};
+
+    if (!scoring?.score || !scoring?.maxScore) {
+      isGraded = false;
+      break;
+    } else {
+      totalScoring.score += scoring.score;
+      totalScoring.maxScore += scoring.maxScore;
+    }
+  }
+
   return <TypesetMathContext.Provider value={typesetExercise}>
     <GlobalStyle />
     <TaskStepCardWithToolbar
@@ -213,6 +235,9 @@ export const Exercise = styled(({
       mobileToolbarEnabled={mobileToolbarEnabled}
       {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
       className={props.className}
+      showScoring={showScoring}
+      isGraded={isGraded}
+      totalScoring={legacyStepRender && 'scoring' in step ? step.scoring : totalScoring}
       overlayChildren={overlayChildren}
     >
       <div ref={container} >
@@ -242,6 +267,7 @@ export const Exercise = styled(({
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
               previewMode={previewMode}
+              rightSideSlot={rightSideSlot}
             />
           )
         }
