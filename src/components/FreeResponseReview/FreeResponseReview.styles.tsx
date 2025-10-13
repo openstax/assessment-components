@@ -8,7 +8,7 @@ const baseContainer = `
   margin: ${layouts.answer.verticalSpacing} 0 ${layouts.answer.horizontalSpacing} ${layouts.answer.verticalSpacing};
 `;
 
-export const FreeResponsePlainContainer = styled.div`
+export const FreeResponseDefaultContainer = styled.div`
   ${baseContainer}
   border-left: ${layouts.answer.horizontalSpacing} solid ${colors.palette.neutralLighter};
   font-style: italic;

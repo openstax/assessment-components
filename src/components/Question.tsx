@@ -6,7 +6,7 @@ import { ID, ExerciseQuestionData, Task } from 'src/types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
-const StyledSharedBodyContainer = styled.div`
+const StyledBodyContainer = styled.div`
   display: flex;
   width: 100%;
   gap: 2rem;
@@ -298,7 +298,7 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
 
   return (
     <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
-      <StyledSharedBodyContainer>
+      <StyledBodyContainer>
         <div>
           <QuestionHtml type="context" html={context} hidden={hidePreambles} />
           <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
@@ -318,7 +318,7 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
         {rightSideSlot && (
           <div className="right-side-slot">{rightSideSlot}</div>
         )}
-      </StyledSharedBodyContainer>
+      </StyledBodyContainer>
     </StyledQuestion>
   );
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import { 
-  FreeResponsePlainContainer, 
+  FreeResponseDefaultContainer, 
   FreeResponseExpandedContainer, 
   FreeResponseText, 
   ReadMoreLink, 
@@ -20,7 +20,7 @@ export const FreeResponseReview = ({ free_response, previewMode }: {
     return (
       previewMode 
         ? <FreeResponseExpandedContainer>{children}</FreeResponseExpandedContainer>
-        : <FreeResponsePlainContainer>{children}</FreeResponsePlainContainer>
+        : <FreeResponseDefaultContainer>{children}</FreeResponseDefaultContainer>
     );
   };
 
