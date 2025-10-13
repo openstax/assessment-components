@@ -22,9 +22,3 @@ export const NoResponse = () =>
   <FreeResponseReview 
     free_response="" 
   />;
-  
-export const NoResponsePreview = () => 
-  <FreeResponseReview 
-    free_response="" 
-    previewMode
-  />;

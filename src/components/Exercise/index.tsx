@@ -182,15 +182,28 @@ export const Exercise = styled(({
   showScoring = false,
   rightSideSlot,
   ...props
-}: { 
-    className?: string, 
-    previewMode?: boolean,
-    showScoring?: boolean,
-    rightSideSlot?: React.ReactNode,
-  } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
+}: {
+  className?: string,
+  previewMode?: boolean,
+  showScoring?: boolean,
+  rightSideSlot?: React.ReactNode,
+} & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
   const container = React.useRef<HTMLDivElement>(null);
+  const [questionStates, setQuestionStates] =
+    React.useState<{ [key: ID]: QuestionState }>('questionStates' in props ? props['questionStates'] : {});
+
+
+  const handleScoringChange = (questionId: ID, score: number) => {
+    setQuestionStates(prev => ({
+      ...prev,
+      [questionId]: {
+        ...prev[questionId],
+        scoring: { score, maxScore: prev[questionId]?.scoring?.maxScore}
+      }
+    }));
+  };
 
   const typesetExercise = React.useCallback(() => {
     if (container.current) {
@@ -212,7 +225,7 @@ export const Exercise = styled(({
   let isGraded = true;
 
   for (const q of exercise.questions) {
-    const scoring = 'questionStates' in props ?  props['questionStates'][q.id]?.scoring : {};
+    const scoring = questionStates[q.id]?.scoring;
 
     if (!scoring?.score || !scoring?.maxScore) {
       isGraded = false;
@@ -267,7 +280,18 @@ export const Exercise = styled(({
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
               previewMode={previewMode}
-              rightSideSlot={rightSideSlot}
+              rightSideSlot={
+                React.isValidElement(rightSideSlot)
+                  ? React.cloneElement(
+                      rightSideSlot,
+                      {
+                        score: questionStates[q.id]?.scoring?.score,
+                        maxScore: questionStates[q.id]?.scoring?.maxScore,
+                        onChange: (score: number) => handleScoringChange(q.id, score)
+                      }
+                    )
+                  : undefined
+              }
             />
           )
         }
