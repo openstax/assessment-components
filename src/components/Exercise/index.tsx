@@ -221,7 +221,7 @@ export const Exercise = styled(({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
-  let totalScoring = { score: 0, maxScore: 0 };
+  const totalScoring = { score: 0, maxScore: 0 };
   let isGraded = true;
 
   for (const q of exercise.questions) {

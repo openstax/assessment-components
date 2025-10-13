@@ -82,7 +82,28 @@ describe('StepCard', () => {
 
 // Tests for StepCard scoring display logic
 describe('StepCard scoring display', () => {
-  it('shows score and maxScore when isGraded is true', () => {
+
+  it('shows score and maxScore when isGraded is true (singular)', () => {
+    const tree = renderer.create(
+      <StepCard
+        unpadded={false}
+        stepType="exercise"
+        isHomework={true}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+        showScoring={true}
+        isGraded={true}
+        totalScoring={{ score: 1.0, maxScore: 1.0 }}
+      >
+        Question content
+      </StepCard>
+    );
+    const scoring = tree.root.findByProps({ className: 'scoring' });
+    expect(scoring.findByType('span').children.join('')).toBe('1.0/1.0 point');
+  });
+
+  it('shows score and maxScore when isGraded is true (plural)', () => {
     const tree = renderer.create(
       <StepCard
         unpadded={false}
@@ -99,7 +120,7 @@ describe('StepCard scoring display', () => {
       </StepCard>
     );
     const scoring = tree.root.findByProps({ className: 'scoring' });
-    expect(scoring.findByType('span').children.join('')).toBe('2.5/3.0 point');
+    expect(scoring.findByType('span').children.join('')).toBe('2.5/3.0 points');
   });
 
   it('shows "ungraded" when isGraded is false', () => {

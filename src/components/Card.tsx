@@ -359,7 +359,7 @@ const StepCard = ({
                 {showScoring &&
                   <div className="scoring">
                     {isGraded 
-                      ? <span>{totalScoring?.score?.toFixed(1)}/{totalScoring?.maxScore?.toFixed(1)} point</span> 
+                      ? <span>{totalScoring?.score?.toFixed(1)}/{totalScoring?.maxScore?.toFixed(1)}{totalScoring?.maxScore && totalScoring.maxScore > 1.1 ? ' points' : ' point'}</span> 
                       : <StyledUngraded><span>ungraded</span></StyledUngraded>
                   }</div>
                 }

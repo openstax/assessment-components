@@ -1,4 +1,3 @@
-import { width } from '@fortawesome/free-solid-svg-icons/faBookOpen';
 import { ExerciseQuestion } from './ExerciseQuestion';
 import * as QuestionsComponents from './Question.stories';
 
