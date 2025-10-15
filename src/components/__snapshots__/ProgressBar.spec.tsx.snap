@@ -210,7 +210,7 @@ exports[`ProgressBar matches snapshot 1`] = `
       6
     </button>
     <svg
-      aria-label="No yet graded"
+      aria-label="Not yet graded"
       className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
       color="#5f6163"
       data-icon="circle"
@@ -471,7 +471,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
       6
     </button>
     <svg
-      aria-label="No yet graded"
+      aria-label="Not yet graded"
       className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
       color="#5f6163"
       data-icon="circle"
@@ -732,7 +732,7 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
       6
     </button>
     <svg
-      aria-label="No yet graded"
+      aria-label="Not yet graded"
       className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
       color="#5f6163"
       data-icon="circle"
@@ -993,7 +993,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
       6
     </button>
     <svg
-      aria-label="No yet graded"
+      aria-label="Not yet graded"
       className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
       color="#5f6163"
       data-icon="circle"

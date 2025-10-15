@@ -154,7 +154,7 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
       background: colors.answer.neutral,
       color: colors.answer.neutralDark,
       padding: defaultPadding,
-      label: 'No yet graded'
+      label: 'Not yet graded'
     }
   }[String(variant)];
 
