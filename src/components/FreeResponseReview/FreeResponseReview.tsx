@@ -7,6 +7,16 @@ import {
   COLLAPSED_HEIGHT 
 } from "./FreeResponseReview.styles";
 
+const FreeResponseContainer = (
+  { children, previewMode }: { children: React.ReactNode, previewMode: boolean | undefined }
+) => {
+    return (
+      previewMode 
+        ? <FreeResponseExpandedContainer>{children}</FreeResponseExpandedContainer>
+        : <FreeResponseDefaultContainer>{children}</FreeResponseDefaultContainer>
+    );
+  };
+
 export const FreeResponseReview = ({ free_response, previewMode }: {
   free_response?: string;
   previewMode?: boolean;
@@ -16,26 +26,19 @@ export const FreeResponseReview = ({ free_response, previewMode }: {
   const [isOverflowing, setIsOverflowing] = React.useState(false);
   const textRef = React.useRef<HTMLDivElement>(null);
 
-  const FreeResponseContainer = ({ children }: { children: React.ReactNode }) => {
-    return (
-      previewMode 
-        ? <FreeResponseExpandedContainer>{children}</FreeResponseExpandedContainer>
-        : <FreeResponseDefaultContainer>{children}</FreeResponseDefaultContainer>
-    );
-  };
-
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (previewMode && textRef.current) {
-      const isTextOverflowing = textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
+      const isTextOverflowing =
+        !expanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
       setIsOverflowing(isTextOverflowing);
     }
-  }, [free_response, previewMode]);
+  }, [free_response, previewMode, expanded]);
 
 
   if (!free_response) { return null; }
 
   return (
-    <FreeResponseContainer>
+    <FreeResponseContainer previewMode={previewMode}>
       {previewMode 
         ? <FreeResponseText
             ref={textRef}
@@ -46,7 +49,7 @@ export const FreeResponseReview = ({ free_response, previewMode }: {
           </FreeResponseText>
         : free_response
       }
-      {previewMode && isOverflowing && (
+      {previewMode && (isOverflowing || expanded) && (
         <ReadMoreLink onClick={() => setExpanded(!expanded)}>
           {expanded ? "show less" : "read more"}
         </ReadMoreLink>

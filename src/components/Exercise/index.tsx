@@ -200,7 +200,7 @@ export const Exercise = styled(({
       ...prev,
       [questionId]: {
         ...prev[questionId],
-        scoring: { score, maxScore: prev[questionId]?.scoring?.maxScore}
+        scoring: { score, maxScore: prev[questionId]?.scoring?.maxScore }
       }
     }));
   };
@@ -221,20 +221,23 @@ export const Exercise = styled(({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
-  const totalScoring = { score: 0, maxScore: 0 };
-  let isGraded = true;
+  const { totalScoring, isGraded } = React.useMemo(() => {
+    const totalScoring = { score: 0, maxScore: 0 };
+    let isGraded = true;
 
-  for (const q of exercise.questions) {
-    const scoring = questionStates[q.id]?.scoring;
+    for (const q of exercise.questions) {
+      const scoring = questionStates[q.id]?.scoring;
 
-    if (!scoring?.score || !scoring?.maxScore) {
-      isGraded = false;
-      break;
-    } else {
-      totalScoring.score += scoring.score;
-      totalScoring.maxScore += scoring.maxScore;
+      if (!scoring?.score || !scoring?.maxScore) {
+        isGraded = false;
+        break;
+      } else {
+        totalScoring.score += scoring.score;
+        totalScoring.maxScore += scoring.maxScore;
+      }
     }
-  }
+    return { totalScoring, isGraded };
+  }, [exercise.questions, questionStates]);
 
   return <TypesetMathContext.Provider value={typesetExercise}>
     <GlobalStyle />
@@ -283,13 +286,14 @@ export const Exercise = styled(({
               rightSideSlot={
                 React.isValidElement(rightSideSlot)
                   ? React.cloneElement(
-                      rightSideSlot,
-                      {
-                        score: questionStates[q.id]?.scoring?.score,
-                        maxScore: questionStates[q.id]?.scoring?.maxScore,
-                        onChange: (score: number) => handleScoringChange(q.id, score)
-                      }
-                    )
+                    rightSideSlot,
+                    {
+                      key: q.id,
+                      score: questionStates[q.id]?.scoring?.score,
+                      maxScore: questionStates[q.id]?.scoring?.maxScore,
+                      onChange: (score: number) => handleScoringChange(q.id, score)
+                    }
+                  )
                   : undefined
               }
             />
