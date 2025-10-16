@@ -3,6 +3,11 @@ export interface ExercisePersonData {
   name: string;
 }
 
+export interface ExerciseScoringData {
+  score?: number;
+  maxScore?: number;
+}
+
 export interface ExerciseAnswerData {
   id: ID;
   content_html: string;
@@ -96,6 +101,7 @@ export type StepWithData = StepBase & {
   attempt_number?: number;
   solution?: Solution;
   incorrectAnswerId?: ID;
+  scoring?: ExerciseScoringData;
 };
 
 export type QuestionState = {
@@ -130,6 +136,8 @@ export type QuestionState = {
   needsSaved: boolean;
   /** A boolean that will change the Submit/Re-Submit button to a disabled "Saving..." button when true */
   apiIsPending: boolean;
+  /** An object that contains the current score and maxScore of an answered question */
+  scoring?: ExerciseScoringData;
 };
 
 export interface Solution {

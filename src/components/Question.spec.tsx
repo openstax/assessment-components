@@ -123,4 +123,20 @@ describe('Question', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders rightSideSlot when provided', () => {
+    const rightSideSlot = <div>Right Side Content</div>;
+    const tree = renderer.create(
+      <Question {...props} rightSideSlot={rightSideSlot} />
+    );
+    expect(tree.root.findByProps({ className: 'right-side-slot' }).children).toBeDefined();
+  });
+
+
+  it('does not render rightSideSlot when not provided', () => {
+    const tree = renderer.create(
+      <Question {...props} />
+    );
+    expect(() => tree.root.findByProps({ className: 'right-side-slot' })).toThrow();
+  });
 });

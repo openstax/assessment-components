@@ -1,6 +1,6 @@
 import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
 import { breakpoints, colors, layouts, mixins } from "../theme";
-import { AvailablePoints, StepBase, StepWithData } from "../types";
+import { AvailablePoints, ExerciseScoringData, StepBase, StepWithData } from "../types";
 import styled from "styled-components";
 import cn from "classnames";
 
@@ -73,6 +73,17 @@ const StepCardHeader = styled.div`
     color: ${colors.palette.gray};
   }
 
+  .scoring {
+    margin-left: auto;
+    margin-right: 1rem;
+
+    span {
+      font-size: 1.2rem;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  }
+
   .openstax-exercise-badges {
       margin: 0;
       line-height: 2rem;
@@ -138,6 +149,26 @@ const StepCardHeader = styled.div`
       }
   `}
 `;
+
+const StyledUngraded = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${colors.palette.darkRed};
+  border-radius: 0.5rem;
+  width: 7.8rem;
+  height: 1.9rem;
+  padding: 0.2rem 0.4rem;
+
+  span {
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: ${colors.palette.white};
+  }
+`;
+
 StepCardHeader.displayName = 'StepCardHeader';
 
 const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
@@ -226,6 +257,9 @@ export interface StepCardProps extends SharedProps {
   multipartBadge?: ReactNode;
   isHomework: boolean;
   overlayChildren?: React.ReactNode;
+  totalScoring?: ExerciseScoringData;
+  showScoring?: boolean;
+  isGraded?: boolean;
 }
 
 const StepCard = ({
@@ -244,6 +278,9 @@ const StepCard = ({
   rightHeaderChildren,
   headerTitleChildren,
   overlayChildren,
+  showScoring,
+  totalScoring,
+  isGraded,
   ...otherProps }: StepCardProps) => {
 
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -319,6 +356,13 @@ const StepCard = ({
                     <span className="question-id">ID: {questionId}</span>
                   </h2>
                 </div>
+                {showScoring &&
+                  <div className="scoring">
+                    {isGraded 
+                      ? <span>{totalScoring?.score?.toFixed(1)}/{totalScoring?.maxScore?.toFixed(1)}{totalScoring?.maxScore && totalScoring.maxScore > 1.1 ? ' points' : ' point'}</span> 
+                      : <StyledUngraded><span>ungraded</span></StyledUngraded>
+                  }</div>
+                }
                 {availablePoints || rightHeaderChildren ? <div>
                   {availablePoints && <div className="points">{availablePoints} Points</div>}
                   {rightHeaderChildren}
@@ -342,6 +386,9 @@ export interface TaskStepCardProps extends SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
   overlayChildren?: React.ReactNode;
+  totalScoring?: ExerciseScoringData;
+  showScoring?: boolean;
+  isGraded?: boolean;
 }
 
 const TaskStepCard = ({
