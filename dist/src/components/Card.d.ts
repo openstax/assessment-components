@@ -1,0 +1,48 @@
+import { ReactNode } from "react";
+import { AvailablePoints, ExerciseScoringData, StepBase, StepWithData } from "../types";
+export declare const InnerStepCard: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const OuterStepCard: import("styled-components").StyledComponent<"div", any, {}, never>;
+export declare const StyledOverlay: import("styled-components").StyledComponent<"div", any, {}, never>;
+interface SharedProps {
+    questionNumber: number;
+    numberOfQuestions: number;
+    showTotalQuestions: boolean;
+    leftHeaderChildren?: ReactNode;
+    rightHeaderChildren?: ReactNode;
+    headerTitleChildren?: ReactNode;
+}
+export interface StepCardProps extends SharedProps {
+    unpadded: boolean;
+    className?: string;
+    children?: ReactNode;
+    stepType: StepWithData['type'];
+    availablePoints?: AvailablePoints;
+    questionId?: string;
+    multipartBadge?: ReactNode;
+    isHomework: boolean;
+    overlayChildren?: React.ReactNode;
+    totalScoring?: ExerciseScoringData;
+    showScoring?: boolean;
+    isGraded?: boolean;
+}
+declare const StepCard: {
+    ({ questionNumber, numberOfQuestions, showTotalQuestions, stepType, isHomework, availablePoints, unpadded, className, children, questionId, multipartBadge, leftHeaderChildren, rightHeaderChildren, headerTitleChildren, overlayChildren, showScoring, totalScoring, isGraded, ...otherProps }: StepCardProps): JSX.Element;
+    displayName: string;
+};
+export interface TaskStepCardProps extends SharedProps {
+    className?: string;
+    children?: ReactNode;
+    tabIndex?: number;
+    step: StepBase | StepWithData;
+    questionNumber: number;
+    numberOfQuestions: number;
+    overlayChildren?: React.ReactNode;
+    totalScoring?: ExerciseScoringData;
+    showScoring?: boolean;
+    isGraded?: boolean;
+}
+declare const TaskStepCard: {
+    ({ step, questionNumber, numberOfQuestions, children, className, overlayChildren, ...otherProps }: TaskStepCardProps): JSX.Element;
+    displayName: string;
+};
+export { StepCard, TaskStepCard };
