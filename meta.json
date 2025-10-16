@@ -520,8 +520,8 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 19,
-      "locEnd": 19,
+      "locStart": 29,
+      "locEnd": 29,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
@@ -530,18 +530,38 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 20,
-      "locEnd": 20,
+      "locStart": 30,
+      "locEnd": 30,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
-    "progress-bar--in-progress-no-feedback": {
-      "name": "In progress no feedback",
+    "progress-bar--in-progress-has-feedback": {
+      "name": "In progress has feedback",
       "levels": [
         "Progress bar"
       ],
-      "locStart": 23,
-      "locEnd": 23,
+      "locStart": 34,
+      "locEnd": 34,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
+    "progress-bar--in-progress-has-partial-feedback": {
+      "name": "In progress has partial feedback",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 35,
+      "locEnd": 35,
+      "filePath": "src/components/ProgressBar.stories.tsx",
+      "meta": {}
+    },
+    "progress-bar--in-progress-no-graded": {
+      "name": "In progress no graded",
+      "levels": [
+        "Progress bar"
+      ],
+      "locStart": 33,
+      "locEnd": 33,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
@@ -550,8 +570,8 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 21,
-      "locEnd": 21,
+      "locStart": 31,
+      "locEnd": 31,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
@@ -560,8 +580,8 @@
       "levels": [
         "Progress bar"
       ],
-      "locStart": 22,
-      "locEnd": 22,
+      "locStart": 32,
+      "locEnd": 32,
       "filePath": "src/components/ProgressBar.stories.tsx",
       "meta": {}
     },
