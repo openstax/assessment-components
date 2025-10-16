@@ -300,18 +300,28 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 879,
-      "locEnd": 1048,
+      "locStart": 996,
+      "locEnd": 1165,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
-    "exercise--preview-card": {
-      "name": "Preview card",
+    "exercise--preview-card-with-score": {
+      "name": "Preview card with score",
       "levels": [
         "Exercise"
       ],
-      "locStart": 723,
-      "locEnd": 877,
+      "locStart": 752,
+      "locEnd": 984,
+      "filePath": "src/components/Exercise.stories.tsx",
+      "meta": {}
+    },
+    "exercise--preview-card-without-score": {
+      "name": "Preview card without score",
+      "levels": [
+        "Exercise"
+      ],
+      "locStart": 986,
+      "locEnd": 994,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -320,8 +330,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 58,
-      "locEnd": 58,
+      "locStart": 67,
+      "locEnd": 67,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -330,8 +340,28 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 59,
-      "locEnd": 62,
+      "locStart": 68,
+      "locEnd": 71,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--free-response-preview-entered": {
+      "name": "Free response preview entered",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 72,
+      "locEnd": 76,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--free-response-right-component": {
+      "name": "Free response right component",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 77,
+      "locEnd": 84,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -340,8 +370,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 63,
-      "locEnd": 68,
+      "locStart": 85,
+      "locEnd": 90,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -350,8 +380,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 79,
-      "locEnd": 89,
+      "locStart": 101,
+      "locEnd": 111,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -360,8 +390,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 69,
-      "locEnd": 78,
+      "locStart": 91,
+      "locEnd": 100,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -423,6 +453,36 @@
       "locStart": 46,
       "locEnd": 46,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
+      "meta": {}
+    },
+    "free-response-review--default": {
+      "name": "Default",
+      "levels": [
+        "Free response review"
+      ],
+      "locStart": 11,
+      "locEnd": 14,
+      "filePath": "src/components/FreeResponseReview/FreeResponseReview.stories.tsx",
+      "meta": {}
+    },
+    "free-response-review--no-response": {
+      "name": "No response",
+      "levels": [
+        "Free response review"
+      ],
+      "locStart": 21,
+      "locEnd": 24,
+      "filePath": "src/components/FreeResponseReview/FreeResponseReview.stories.tsx",
+      "meta": {}
+    },
+    "free-response-review--preview-mode": {
+      "name": "Preview mode",
+      "levels": [
+        "Free response review"
+      ],
+      "locStart": 15,
+      "locEnd": 19,
+      "filePath": "src/components/FreeResponseReview/FreeResponseReview.stories.tsx",
       "meta": {}
     },
     "include-remove-question--default": {
