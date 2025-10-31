@@ -33,7 +33,7 @@ const palette = {
   neutralDarker: "#424242", // very dark gray
   black: "#000000",
   orange: "#D4450C",
-  softOrange: "#FEDE9F"
+  yellow: "#FEDE9F",
 };
 
 export const colors = {
@@ -44,6 +44,7 @@ export const colors = {
     checked: '#026AA1',
     correct: '#0D7741',
     incorrect: '#C22032',
+    partialCredit: '#976502',
     neutralDark: '#5f6163'
   },
   popover: {

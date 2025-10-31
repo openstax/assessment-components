@@ -6,6 +6,7 @@ import { Content } from "./Content";
 import { ExerciseBaseProps } from "./Exercise";
 import { Question } from './Question';
 import { StepCardFooter } from "./StepCardFooter";
+import { FreeResponseReview } from "./FreeResponseReview/FreeResponseReview";
 
 export interface ExerciseQuestionProps {
   task?: Task;
@@ -41,6 +42,7 @@ export interface ExerciseQuestionProps {
   tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
   previewMode?: boolean;
+  rightSideSlot?: React.ReactNode;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -90,15 +92,6 @@ export const NextButton = (props: {
   );
 }
 
-const FreeResponseReview = ({ free_response }: Pick<ExerciseQuestionProps, "free_response">) => {
-  if (!free_response) { return null; }
-  return (
-    <>
-      <div className="free-response">{free_response}</div>
-    </>
-  );
-}
-
 export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
@@ -140,8 +133,9 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
         previewMode={previewMode}
+        rightSideSlot={props.rightSideSlot}
       >
-        <FreeResponseReview free_response={free_response} />
+        <FreeResponseReview free_response={free_response} previewMode={previewMode} />
       </Question>
       {(previewMode && detailedSolution) || !previewMode ?
         <StepCardFooter className="step-card-footer">

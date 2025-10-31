@@ -62,7 +62,7 @@ describe('ExercisePreview', () => {
         ${false} | ${'without overlay'}                 | ${undefined}             | ${true}      | ${true}
     `('matches snapshot $description', (
       { selected, overlay, showFeedback, showCorrect }:
-      { selected: boolean, overlay: JSX.Element, showFeedback: boolean, showCorrect: boolean }) => {
+        { selected: boolean, overlay: JSX.Element, showFeedback: boolean, showCorrect: boolean }) => {
       const tree = renderer.create(
         <ExercisePreview
           exercise={exercise}
@@ -137,6 +137,7 @@ describe('ExercisePreview', () => {
             content_html: 'Detailed solution',
             solution_type: 'detailed',
           },
+          scoring: { score: 1.0, maxScore: 1.0}
         },
       };
     });

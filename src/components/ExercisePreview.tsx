@@ -25,6 +25,8 @@ export interface ExercisePreviewProps {
   labelAnswers?: boolean;
   overlayChildren?: React.ReactNode;
   questionStates?: { [key: ID]: QuestionState };
+  showScoring?: boolean;
+  rightSideSlot?: React.ReactNode;
 }
 
 export const ExercisePreview = ({
@@ -34,8 +36,10 @@ export const ExercisePreview = ({
   showChosenAnswer = false,
   showCorrectAnswer = false,
   labelAnswers = false,
+  showScoring = false,
   overlayChildren,
-  questionStates
+  questionStates,
+  rightSideSlot
 }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
@@ -47,7 +51,7 @@ export const ExercisePreview = ({
     return exercise;
   };
 
-  const exercisePreviewProps = (exercise: ExerciseData) => {
+const exercisePreviewProps = (exercise: ExerciseData) => {
     const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => {
       // Note: will only work as long as both ExerciseData and QuestionState use the same type for the IDs
       const questionState = (questionStates ?? {})[q.id];
@@ -59,12 +63,13 @@ export const ExercisePreview = ({
         content_html:
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
+        scoring: questionState?.scoring ?? {},
       }
     });
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, answer_id, correct_answer_id, content_html } = answer;
+        const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
         return {
           ...acc,
           [id]: {
@@ -73,7 +78,8 @@ export const ExercisePreview = ({
             is_completed: showCorrectAnswer,
             solution: {
               content_html,
-            }
+            },
+            scoring
           }
         };
       }, {}
@@ -109,8 +115,10 @@ export const ExercisePreview = ({
       exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
       className={`preview-card ${selected ? 'is-selected' : ''}`}
       previewMode
+      showScoring={showScoring}
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}
+      rightSideSlot={rightSideSlot}
     />
   );
 };

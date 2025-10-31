@@ -12,7 +12,7 @@ exports[`StepCard matches snapshot 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf jPjFCZ step-card-header"
+          className="sc-dkzDqf eWUzRx step-card-header"
         >
           <div>
             <h2
@@ -43,7 +43,7 @@ exports[`StepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-hKMtZM dCUIYQ"
+          className="sc-eCYdqJ eSWpyp"
         >
           Question content
         </div>
@@ -65,7 +65,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf jPjFCZ step-card-header"
+          className="sc-dkzDqf eWUzRx step-card-header"
         >
           <div>
             <h2
@@ -102,7 +102,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
           </div>
         </div>
         <div
-          className="sc-hKMtZM dCUIYQ"
+          className="sc-eCYdqJ eSWpyp"
         >
           Question content
         </div>
@@ -125,7 +125,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf jPjFCZ step-card-header"
+          className="sc-dkzDqf eWUzRx step-card-header"
         >
           <div>
             <h2
@@ -149,7 +149,7 @@ exports[`TaskStepCard can optionally provide task 1`] = `
           </div>
         </div>
         <div
-          className="sc-hKMtZM dCUIYQ"
+          className="sc-eCYdqJ eSWpyp"
         />
       </div>
     </div>
@@ -170,7 +170,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf jPjFCZ step-card-header"
+          className="sc-dkzDqf eWUzRx step-card-header"
         >
           <div>
             <h2
@@ -194,7 +194,7 @@ exports[`TaskStepCard can optionally provide type 1`] = `
           </div>
         </div>
         <div
-          className="sc-hKMtZM dCUIYQ"
+          className="sc-eCYdqJ eSWpyp"
         />
       </div>
     </div>
@@ -215,7 +215,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
         id="step-card"
       >
         <div
-          className="sc-dkzDqf jPjFCZ step-card-header"
+          className="sc-dkzDqf eWUzRx step-card-header"
         >
           <div>
             <h2
@@ -239,7 +239,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-hKMtZM dCUIYQ"
+          className="sc-eCYdqJ eSWpyp"
         />
       </div>
     </div>
