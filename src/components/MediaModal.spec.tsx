@@ -32,7 +32,7 @@ describe('MediaModal', () => {
     .findAllByType('div')
     .find(el => el.props.onClick === mockClose);
     if (!overlay) {
-      throw new Error('Overlay div with onClick handler not found');
+      throw new Error('Overlay div not found');
     }
 
     act(() => {
@@ -53,4 +53,13 @@ describe('MediaModal', () => {
 
     expect(mockClose).toHaveBeenCalled();
   });
+  it('matches snapshot', () => {
+    const tree = renderer.create(
+    <MediaModal isOpen={true} onClose={mockClose}>
+      <div>Test Content</div>
+    </MediaModal>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });

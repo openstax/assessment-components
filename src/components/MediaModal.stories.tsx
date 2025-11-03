@@ -253,7 +253,7 @@ This resonates with an unheard symphony of the universe, creating a multisensory
     props1.questionStates['1'].correct_answer_feedback_html =
       props1.exercise.questions[0].answers[0].feedback_html || '';
     props1.questionStates['1'].solution = {
-      content_html: ` <span data-math='2 \\, \\text{H}_{2(g)} + \\, \\text{O}_{2(g)} \\to 2 \\, \\text{H}_{2}\\text{O}_{(l)}'></span> <img src="https://openstax.org/apps/archive/20240910.161227/resources/7cae44f5197466069c4f7e68a0c28fe10450bade" data-media-type="image/png" alt="A flow chart shows the steps in the scientific method. In step 1, an observation is made. In step 2, a question is asked about the observation. In step 3, an answer to the question, called a hypothesis, is proposed. In step 4, a prediction is made based on the hypothesis. In step 5, an experiment is done to test the prediction. In step 6, the results are analyzed to determine whether or not the hypothesis is correct. If the hypothesis is incorrect, another hypothesis is made. In either case, the results are reported." width="300" height="510">`,
+      content_html: ` <span data-math='2 \\, \\text{H}_{2(g)} + \\, \\text{O}_{2(g)} \\to 2 \\, \\text{H}_{2}\\text{O}_{(l)}'></span> `,
       solution_type: 'detailed',
     };
   }
