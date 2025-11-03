@@ -5,114 +5,120 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body"
+    className="sc-ftvSup iNyEe openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
+              >
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -151,121 +157,127 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-selected"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={true}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Selected Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer answer-selected"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={true}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Selected Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -305,121 +317,127 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-selected"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={true}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Selected Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer answer-selected"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={true}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Selected Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -459,121 +477,127 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-selected"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={true}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Selected Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer answer-selected"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={true}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Selected Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -613,114 +637,120 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body"
+    className="sc-ftvSup iNyEe openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
+              >
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -766,121 +796,127 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer disabled answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -919,128 +955,134 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled answer-correct"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled answer-correct"
             >
-              <div
-                className="sc-gKXOVf QPaPs"
-              >
-                <span>
-                  Correct Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
+              >
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf QPaPs"
+                  >
+                    <span>
+                      Correct Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled answer-incorrect"
             >
-              <div
-                className="sc-gKXOVf dWxWHr"
-              >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1098,119 +1140,125 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body"
+    className="sc-ftvSup iNyEe openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      className="free-response"
+      className="sc-iBkjds kzijku"
     >
-      A free response
-    </div>
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
-    >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          className="sc-jqUVSM ibsNGN"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
-          >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
-              />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
+          A free response
+        </div>
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
+              >
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer disabled"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
+              />
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1249,121 +1297,127 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer disabled"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer disabled answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={true}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer disabled answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={true}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1402,121 +1456,127 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-iBkjds kXIpML openstax-question step-card-body has-incorrect-answer"
+    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="question-stem"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Is this a question?",
-        }
-      }
-      data-question-number={1}
-    />
-    <div
-      aria-label="Answer choices"
-      className="answers-table"
-      role="radiogroup"
+      className="sc-iBkjds kzijku"
     >
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer"
+      <div>
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Is this a question?",
+            }
+          }
+          data-question-number={1}
+        />
+        <div
+          aria-label="Answer choices"
+          className="answers-table"
+          role="radiogroup"
         >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-0"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-0"
+          <div
+            className="openstax-answer"
           >
-            <span
-              aria-label="Choice A:"
-              className="answer-letter-wrapper"
-              data-answer-choice="A"
-              data-test-id="answer-choice-A"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
+            <section
+              className="answers-answer"
             >
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "True",
-                  }
-                }
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-0"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
-      </div>
-      <div
-        className="openstax-answer"
-      >
-        <section
-          className="answers-answer answer-incorrect"
-        >
-          <input
-            checked={false}
-            className="answer-input-box"
-            disabled={false}
-            id="1-option-1"
-            name="1-options"
-            onChange={[Function]}
-            type="radio"
-          />
-          <label
-            className="answer-label"
-            htmlFor="1-option-1"
-          >
-            <span
-              aria-label="Choice B:"
-              className="answer-letter-wrapper"
-              data-answer-choice="B"
-              data-test-id="answer-choice-B"
-            />
-            <div
-              aria-atomic="true"
-              aria-live="polite"
-              className="answer-answer"
-              role="status"
-            >
-              <div
-                className="sc-gKXOVf dWxWHr"
+              <label
+                className="answer-label"
+                htmlFor="1-option-0"
               >
-                <span>
-                  Incorrect Answer
-                </span>
-              </div>
-              <span
-                className="answer-content"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "False",
-                  }
-                }
+                <span
+                  aria-label="Choice A:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="A"
+                  data-test-id="answer-choice-A"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "True",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+          <div
+            className="openstax-answer"
+          >
+            <section
+              className="answers-answer answer-incorrect"
+            >
+              <input
+                checked={false}
+                className="answer-input-box"
+                disabled={false}
+                id="1-option-1"
+                name="1-options"
+                onChange={[Function]}
+                type="radio"
               />
-            </div>
-          </label>
-        </section>
+              <label
+                className="answer-label"
+                htmlFor="1-option-1"
+              >
+                <span
+                  aria-label="Choice B:"
+                  className="answer-letter-wrapper"
+                  data-answer-choice="B"
+                  data-test-id="answer-choice-B"
+                />
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-answer"
+                  role="status"
+                >
+                  <div
+                    className="sc-gKXOVf dWxWHr"
+                  >
+                    <span>
+                      Incorrect Answer
+                    </span>
+                  </div>
+                  <span
+                    className="answer-content"
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "False",
+                      }
+                    }
+                  />
+                </div>
+              </label>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-ftvSup ihVfvz step-card-footer"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
       className="step-card-footer-inner"

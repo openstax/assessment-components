@@ -6,6 +6,18 @@ import { ID, ExerciseQuestionData, Task } from 'src/types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
+const StyledBodyContainer = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+
+  .step-card-body,
+  .right-side-slot {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+`;
+
 const StyledQuestion = styled.div`
 &.step-card-body {
   ${mixins.stepCardPadding()};
@@ -67,13 +79,6 @@ const StyledQuestion = styled.div`
 
   .multiple-choice-prompt {
     font-weight: 600;
-  }
-
-  .free-response {
-    padding: ${layouts.answer.horizontalSpacing} ${layouts.answer.horizontalBuffer};
-    margin: ${layouts.answer.verticalSpacing} 0 ${layouts.answer.horizontalSpacing} ${layouts.answer.verticalSpacing};
-    border-left: ${layouts.answer.horizontalSpacing} solid ${colors.palette.neutralLighter};
-    font-style: italic;
   }
 
   &:not(.openstax-question-preview) {
@@ -235,13 +240,15 @@ export interface QuestionProps {
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;
   previewMode?: boolean;
+  rightSideSlot?: React.ReactNode;
 }
 
 export const Question = React.forwardRef((props: QuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
   let exerciseUid, solution;
 
   const {
-    question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber, context, task, hidePreambles
+    question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber,
+    context, task, hidePreambles, rightSideSlot
   } = props;
 
   const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
@@ -291,20 +298,27 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
 
   return (
     <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
-      <QuestionHtml type="context" html={context} hidden={hidePreambles} />
-      <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
-      <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
-      {props.children}
+      <StyledBodyContainer>
+        <div>
+          <QuestionHtml type="context" html={context} hidden={hidePreambles} />
+          <QuestionHtml type="stimulus" html={stimulus_html} hidden={hidePreambles} />
+          <QuestionHtml type="stem" html={stem_html} hidden={hidePreambles} questionNumber={questionNumber} />
+          {props.children}
 
-      <AnswersTable
-        {...props}
-        onChangeAnswer={props.onChange}
-        hasCorrectAnswer={hasCorrectAnswer}
-      />
+          <AnswersTable
+            {...props}
+            onChangeAnswer={props.onChange}
+            hasCorrectAnswer={hasCorrectAnswer}
+          />
 
-      {solution}
-      {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
-      {exerciseUid}
+          {solution}
+          {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
+          {exerciseUid}
+        </div>
+        {rightSideSlot && (
+          <div className="right-side-slot">{rightSideSlot}</div>
+        )}
+      </StyledBodyContainer>
     </StyledQuestion>
   );
 });

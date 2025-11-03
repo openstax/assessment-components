@@ -1,4 +1,5 @@
 import { ExerciseQuestion } from './ExerciseQuestion';
+import * as QuestionsComponents from './Question.stories';
 
 const props = {
   question: {
@@ -55,10 +56,31 @@ const props = {
   hasFeedback: false
 };
 
+const exampleText =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mauris orci, mattis scelerisque' +
+  'tortor non, rhoncus consequat nulla. Cras et auctor nisl, facilisis lobortis quam. ' +
+  'Nullam dui ex, molestie non maximus id, vehicula nec augue. Nulla dignissim, dolor ac rutrum sagittis, ' +
+  'lorem lacus gravida nunc, ac ullamcorper odio nunc eu lacus. Mauris sit amet lacinia sapien. ' +
+  'Fusce mi ante, hendrerit sed rhoncus nec, aliquam vitae diam. Nullam quis ex egestas mi egestas laoreet a non ligula. ' +
+  'Nunc vulputate urna vitae nibh pretium, eget tempus enim faucibus.';
+
 export const Default = () => <ExerciseQuestion {...props} />;
 export const FreeResponseEntered = () =>
   <ExerciseQuestion {...props}
     free_response="In this free response, I will..."
+  />;
+export const FreeResponsePreviewEntered = () =>
+  <ExerciseQuestion {...props}
+    free_response={exampleText}
+    previewMode
+  />;
+export const FreeResponseRightComponent = () =>
+  <ExerciseQuestion {...props}
+    free_response={exampleText.repeat(3)}
+    rightSideSlot={
+      <div style={{width: '300rem', padding: '2rem'}}>{QuestionsComponents.Default()}</div>
+    }
+    previewMode
   />;
 export const MultipleAttemptsAllLeft = () =>
   <ExerciseQuestion {...props}
