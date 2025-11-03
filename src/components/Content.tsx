@@ -13,6 +13,7 @@ export interface ContentProps<T extends ComponentType | undefined> {
   html: string;
   block?: boolean;
 }
+
 function enhanceImagesForAccessibility(rootEl: HTMLElement) {
   rootEl.querySelectorAll('img').forEach((img) => {
     if (img.closest('button')) {
@@ -31,6 +32,7 @@ function enhanceImagesForAccessibility(rootEl: HTMLElement) {
     button.appendChild(img);
   });
 }
+
 export const Content = (<T extends ComponentType | undefined>(
   { html, component, block = false, ...props }: ContentProps<T>
 ) => {
