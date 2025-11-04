@@ -13,6 +13,7 @@ export interface ContentProps<T extends ComponentType | undefined> {
   html: string;
   block?: boolean;
 }
+  const mediaModalManager = createMediaModalManager();
 
 function enhanceImagesForAccessibility(rootEl: HTMLElement) {
   rootEl.querySelectorAll('img').forEach((img) => {
@@ -40,6 +41,7 @@ export const Content = (<T extends ComponentType | undefined>(
   const divRef = useRef<HTMLDivElement>(null);
   const spanRef = useRef<HTMLSpanElement>(null);
   const mediaModalManager = createMediaModalManager();
+  const MediaModalPortal = mediaModalManager.MediaModalPortal;
 
   useEffect(() => {
     const container = block ? divRef.current : spanRef.current;
@@ -66,7 +68,7 @@ export const Content = (<T extends ComponentType | undefined>(
       ) : (
         <span ref={spanRef} dangerouslySetInnerHTML={{ __html: html }} {...props} />
       )}
-      <mediaModalManager.MediaModalPortal />
+      <MediaModalPortal />
     </>
   );
 });
