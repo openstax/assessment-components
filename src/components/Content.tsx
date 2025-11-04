@@ -13,7 +13,6 @@ export interface ContentProps<T extends ComponentType | undefined> {
   html: string;
   block?: boolean;
 }
-  const mediaModalManager = createMediaModalManager();
 
 function enhanceImagesForAccessibility(rootEl: HTMLElement) {
   rootEl.querySelectorAll('img').forEach((img) => {
