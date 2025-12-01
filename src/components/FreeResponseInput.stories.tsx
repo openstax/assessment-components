@@ -1,22 +1,11 @@
+import React, { useState } from 'react';
 import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 
-const updateValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-  props.defaultValue = event.target.value
-};
-
-const leftInfoComponent = (
-  <div>
-      <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>
-  </div>
-  );
-
-const props: FreeResponseProps = {
+const baseProps: Omit<FreeResponseProps, 'value' | 'onChange' | 'textHasChanged'> = {
   readOnly: false,
   wordLimit: 5,
-  defaultValue: '',
   cancelHandler: () => null,
   saveHandler: () => null,
-  onChange: updateValue,
   questionNumber: 1,
   question: {
     id: '1',
@@ -24,24 +13,79 @@ const props: FreeResponseProps = {
     collaborator_solutions: [],
     formats: [],
     stimulus_html: '',
-    answers: [{
-      id: '1',
-      correctness: undefined,
-      content_html: 'True',
-    }, {
-      id: '2',
-      correctness: undefined,
-      content_html: 'False',
-    }],
+    answers: [
+      { id: '1', correctness: undefined, content_html: 'True' },
+      { id: '2', correctness: undefined, content_html: 'False' },
+    ],
     is_answer_order_important: false,
   },
   availablePoints: undefined,
   isSubmitDisabled: false,
-  textHasChanged: false,
   submitBtnLabel: 'Next',
 };
 
-export const Default = () => <FreeResponseInput {...props} />;
-export const OverWordLimit = () => <FreeResponseInput {...props} textHasChanged={true}  defaultValue='response goes over the word limit' />;
-export const SubmittedDate = () => <FreeResponseInput {...props} infoRowChildren={leftInfoComponent} />;
+const leftInfoComponent = (
+  <div>
+    <span className="last-submitted">Last submitted on July 26 at 4:00 pm</span>
+  </div>
+);
 
+
+
+export const Default = () => {
+  const [value, setValue] = useState('');
+  const [textHasChanged, setTextHasChanged] = useState(false);
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+    setTextHasChanged(event.target.value !== '');
+  };
+
+  return (
+    <FreeResponseInput
+      {...baseProps}
+      value={value}
+      textHasChanged={textHasChanged}
+      onChange={handleChange}
+    />
+  );
+};
+
+export const OverWordLimit = () => {
+  const [value, setValue] = useState('response goes over the word limit');
+  const [textHasChanged, setTextHasChanged] = useState(true);
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+    setTextHasChanged(true);
+  };
+
+  return (
+    <FreeResponseInput
+      {...baseProps}
+      value={value}
+      textHasChanged={textHasChanged}
+      onChange={handleChange}
+    />
+  );
+};
+
+export const SubmittedDate = () => {
+  const [value, setValue] = useState('');
+  const [textHasChanged, setTextHasChanged] = useState(false);
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+    setTextHasChanged(event.target.value !== '');
+  };
+
+  return (
+    <FreeResponseInput
+      {...baseProps}
+      value={value}
+      textHasChanged={textHasChanged}
+      onChange={handleChange}
+      infoRowChildren={leftInfoComponent}
+    />
+  );
+};
