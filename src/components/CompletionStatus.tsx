@@ -17,6 +17,7 @@ export interface CompletionStatusProps {
   scoreSoFar?: string;
   savedScore?: string;
   handleRetry?: () => void;
+  isRetrying?: boolean;
 }
 
 const CompletionStatusCard = styled(InnerStepCard)`
@@ -83,7 +84,8 @@ export const CompletionStatus = styled(({
   className,
   scoreSoFar,
   savedScore,
-  handleRetry
+  handleRetry,
+  isRetrying
 }: CompletionStatusProps) => {
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
@@ -141,6 +143,7 @@ export const CompletionStatus = styled(({
             <RetryResumeButton
               data-test-id="retry-resume-btn"
               onClick={onRetryResumeClick}
+              disabled={isRetrying}
             >
               {retryOrResume}
             </RetryResumeButton>

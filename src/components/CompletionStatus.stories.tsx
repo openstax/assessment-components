@@ -23,4 +23,4 @@ export const unlimitedComplete = () => <CompletionStatus {...unlimitedProps} num
 export const unlimitedPartial = () => <CompletionStatus {...unlimitedProps} numberCompleted={5} />
 export const unlimitedCompletedNoScore = () => <CompletionStatus {...unlimitedProps} scoreSoFar={undefined} savedScore={undefined} numberCompleted={15}/>;
 export const unlimitedPartialNoProgress = () => <CompletionStatus {...unlimitedProps} savedScore='0/15'  scoreSoFar='0/15' numberCompleted={0}/>;
-
+export const unlimitedCompleteRetrying = () => <CompletionStatus {...unlimitedProps} savedScore='4/15'  scoreSoFar='4/15' numberCompleted={15} isRetrying={true}/>
