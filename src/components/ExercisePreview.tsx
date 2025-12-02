@@ -95,6 +95,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
       canAnswer: true,
       needsSaved: true,
       hasMultipleAttempts: false,
+      hasUnlimitedAttempts: false,
       onAnswerChange: () => undefined,
       onAnswerSave: () => undefined,
       onNextStep: () => undefined,

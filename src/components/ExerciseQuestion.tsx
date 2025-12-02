@@ -15,6 +15,7 @@ export interface ExerciseQuestionProps {
   questionNumber: number;
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;
+  hasUnlimitedAttempts: boolean;
   onAnswerChange: () => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
   onNextStep: ExerciseBaseProps['onNextStep'];
@@ -47,6 +48,12 @@ export interface ExerciseQuestionProps {
 const AttemptsRemaining = ({ count }: { count: number }) => {
   return (
     <div>{count} attempt{count === 1 ? '' : 's'} left</div>
+  );
+}
+
+const UnlimitedAttempts = () => {
+  return (
+    <div>Unlimited quiz attempts left</div>
   );
 }
 
@@ -89,7 +96,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
   const {
     question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
-    answer_id, hasMultipleAttempts, attempts_remaining, published_comments, detailedSolution,
+    answer_id, hasMultipleAttempts, hasUnlimitedAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
     displaySolution, available_points, free_response, labelAnswers, show_all_feedback, tableFeedbackEnabled,
     hasFeedback, previewMode
@@ -139,7 +146,10 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
                 {hasMultipleAttempts &&
                   attempts_remaining > 0 &&
                   <AttemptsRemaining count={attempts_remaining} />}
+                  { hasUnlimitedAttempts ? <UnlimitedAttempts/>: null}
+
               </span>
+              
               <PublishedComments published_comments={published_comments} />
               {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
             </div>

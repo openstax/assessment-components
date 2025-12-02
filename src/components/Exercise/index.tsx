@@ -129,6 +129,8 @@ export interface ExerciseBaseProps {
   /** A boolean that enables showing the amount of attempts remaining. */
   hasMultipleAttempts: boolean;
   /** A callback with the question_id when the Submit/Re-submit button is clicked. */
+  hasUnlimitedAttempts: boolean;
+  /** A boolean that enables labeling for unlimited attempts. */
   onAnswerSave: (question_id: number) => void;
   /** A callback with the current question index when the Next/Continue button is clicked. */
   onNextStep: (currentIndex: number) => void;

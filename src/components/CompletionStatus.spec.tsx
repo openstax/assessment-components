@@ -9,7 +9,8 @@ describe('CompletionStatus', () => {
     props = {
       numberOfQuestions: 15,
       numberCompleted: 0,
-      handleClick: () => {console.log('click')}
+      handleNext: () => {console.log('next')},
+      handleContinue: () => {console.log('continue')}
     }
   });
 
@@ -37,7 +38,7 @@ describe('CompletionStatus', () => {
   it('clicking triggers handler', () => {
     const mockEv = jest.fn();
     const component = renderer.create(
-      <CompletionStatus {...props} handleClick={mockEv} />
+      <CompletionStatus {...props} handleContinue={mockEv} />
     );
 
     renderer.act(() => {
