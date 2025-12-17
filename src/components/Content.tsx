@@ -44,7 +44,7 @@ export const Content = (<T extends ComponentType | undefined>(
   const MediaModalPortal = mediaModalManager.MediaModalPortal;
 
   useEffect(() => {
-    const container = block ? divRef.current : spanRef.current;
+    const container = ref.current;
     if (!container) return;
 
     typesetMath();
