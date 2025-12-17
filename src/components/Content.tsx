@@ -39,7 +39,6 @@ export const Content = (<T extends ComponentType | undefined>(
   const typesetMath = useTypesetMath();
   const ref = useRef<HTMLDivElement>(null);
   const DivOrSpan = block ? 'div' : 'span';
-  const spanRef = useRef<HTMLSpanElement>(null);
   const mediaModalManager = createMediaModalManager();
   const MediaModalPortal = mediaModalManager.MediaModalPortal;
 
