@@ -64,10 +64,6 @@ export const Content = (<T extends ComponentType | undefined>(
   return (
     <>
       <DivOrSpan ref={ref} dangerouslySetInnerHTML={{ __html: html }} {...props} />
-        <div ref={divRef} dangerouslySetInnerHTML={{ __html: html }} {...props} />
-      ) : (
-        <span ref={spanRef} dangerouslySetInnerHTML={{ __html: html }} {...props} />
-      )}
       <MediaModalPortal />
     </>
   );
