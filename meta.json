@@ -505,6 +505,16 @@
       "filePath": "src/components/Loader.stories.tsx",
       "meta": {}
     },
+    "media-modal--modal": {
+      "name": "Modal",
+      "levels": [
+        "Media modal"
+      ],
+      "locStart": 196,
+      "locEnd": 375,
+      "filePath": "src/components/MediaModal.stories.tsx",
+      "meta": {}
+    },
     "print--default": {
       "name": "Default",
       "levels": [
