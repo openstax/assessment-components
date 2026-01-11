@@ -14,18 +14,15 @@ export interface FreeResponseProps {
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
   saveHandler: MouseEventHandler<HTMLButtonElement>;
-  defaultValue: string;
+  value: string;
   isSubmitDisabled: boolean;
-  questionNumber: number,
-  question: ExerciseQuestionData,
-  availablePoints?: AvailablePoints,
+  questionNumber: number;
+  question: ExerciseQuestionData;
+  availablePoints?: AvailablePoints;
   textHasChanged: boolean;
   submitBtnLabel: string;
 }
 
-const TextAreaErrorStyle = css`
-  background-color: #f5e9ea;
-`;
 
 const StyledFreeResponse = styled.div`
   display: flex;
@@ -54,7 +51,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
   }
 
   div > span {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
 
     + span {
@@ -69,7 +66,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
   color: ${colors.palette.neutralThin};
 `;
 
-export const FreeResponseTextArea = styled.textarea<{ isOverWordLimit: boolean } & FreeResponseProps>`
+export const FreeResponseTextArea = styled.textarea<FreeResponseProps>`
   display: block;
   font-family: inherit;
   font-size: 1.8rem;
@@ -81,10 +78,6 @@ export const FreeResponseTextArea = styled.textarea<{ isOverWordLimit: boolean }
   padding: 0.5em;
   border: 1px solid ${colors.palette.neutral};
   color: ${colors.palette.neutralDark};
-  ${props => props.isOverWordLimit && TextAreaErrorStyle};
-  ${props => props.isOverWordLimit && css`
-    border: 2px solid ${colors.palette.danger};
-  `}
   background-color: ${props => props.readOnly && colors.palette.neutralCool};
 `;
 FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
@@ -102,7 +95,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     availablePoints,
     cancelHandler,
-    defaultValue,
+    value,
     infoRowChildren,
     isSubmitDisabled,
     question,
@@ -111,9 +104,24 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     submitBtnLabel,
     textHasChanged,
     wordLimit,
+    onChange,
   } = props;
 
-  const isOverWordLimit = countWords(defaultValue) > wordLimit;
+  const wordCount = countWords(value);
+  const isOverWordLimit = wordCount > wordLimit;
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
+    const raw = e.target.value;
+    const words = raw.trim().split(/\s+/);
+
+    if (words.length >= wordLimit) {
+      const limited = words.slice(0, wordLimit).join(' ');
+
+      e.target.value = limited;
+    }
+
+    onChange(e);
+  };
 
   const questionProps = {};
   if (questionNumber) { questionProps['data-question-number'] = questionNumber; }
@@ -127,7 +135,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
         </SyledQuestionStem>
         <FreeResponseTextArea
           {...props}
-          isOverWordLimit={isOverWordLimit}
+          onChange={handleChange}
           data-test-id="free-response-box"
           placeholder="Enter your response..."
           aria-label="question response text box"
@@ -135,8 +143,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
         <InfoRow hasChildren={!!infoRowChildren}>
           {infoRowChildren}
           <div>
-            <span>{countWords(defaultValue)} words</span>
-            {isOverWordLimit && <span className="word-limit-error-info">Maximum {wordLimit} words</span>}
+            {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
+            <span> Remaining words: {wordLimit - countWords(value)}</span>
           </div>
         </InfoRow>
       </div>
