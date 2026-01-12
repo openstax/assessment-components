@@ -24,9 +24,9 @@ export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
 
 export function countWords(text: string) {
   const trimmedText = text.trim();
-  //https://css-tricks.com/build-word-counter-app/
-  const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
-  if(!words) return 0;
+  if (!trimmedText) return 0;
+  // Count whitespace-separated tokens
+  const words = trimmedText.split(/\s+/);
   return words.length;
 }
 

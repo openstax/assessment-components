@@ -8,6 +8,8 @@ import { Answer } from '../types';
 import { IncludeRemoveQuestion } from './IncludeRemoveQuestion';
 import styled from 'styled-components';
 import { ExercisePreview } from './ExercisePreview';
+import { FreeResponseInput } from './FreeResponseInput';
+import { TaskStepCard } from './Card';
 
 const exerciseWithStepDataProps: ExerciseWithStepDataProps = {
   exercise: {
@@ -1160,6 +1162,262 @@ export const OverlayCard = () => {
         exercise={props2.exercise}
         showAllFeedback
       />
+    </TextResizerProvider>
+  );
+};
+
+// Free Response Question Stories
+const freeResponseQuestionData = {
+  id: '999',
+  collaborator_solutions: [],
+  formats: ['free-response'],
+  stimulus_html: '',
+  stem_html: 'Explain the difference between mitosis and meiosis in your own words.',
+  is_answer_order_important: false,
+  answers: [],
+};
+
+export const FreeResponseInitialState = () => {
+  const [value, setValue] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleSave = () => {
+    setIsSaving(true);
+    setTimeout(() => {
+      setIsSaving(false);
+      alert('Response saved!');
+    }, 1500);
+  };
+
+  const step = {
+    id: 1,
+    uid: '999@1',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  return (
+    <TextResizerProvider>
+      <TaskStepCard
+        step={step}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+      >
+        <FreeResponseInput
+          wordLimit={500}
+          value={value}
+          onChange={handleChange}
+          cancelHandler={() => setValue('')}
+          saveHandler={handleSave}
+          isSubmitDisabled={value.trim().length === 0}
+          isSaving={isSaving}
+          questionNumber={1}
+          question={freeResponseQuestionData}
+          submitBtnLabel="Submit"
+        />
+      </TaskStepCard>
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseUpdateState = () => {
+  const [value, setValue] = useState('Mitosis produces two identical diploid cells, while meiosis produces four haploid cells.');
+  const [originalValue] = useState('Mitosis produces two identical diploid cells, while meiosis produces four haploid cells.');
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleCancel = () => {
+    setValue(originalValue);
+  };
+
+  const handleUpdate = () => {
+    setIsSaving(true);
+    setTimeout(() => {
+      setIsSaving(false);
+      alert('Response updated!');
+    }, 1500);
+  };
+
+  const step = {
+    id: 1,
+    uid: '999@1',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  return (
+    <TextResizerProvider>
+      <TaskStepCard
+        step={step}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+      >
+        <FreeResponseInput
+          wordLimit={500}
+          value={value}
+          onChange={handleChange}
+          cancelHandler={handleCancel}
+          saveHandler={handleUpdate}
+          isSubmitDisabled={false}
+          isSaving={isSaving}
+          isSubmitted={true}
+          questionNumber={1}
+          question={freeResponseQuestionData}
+          submitBtnLabel="Update"
+          submissionInfo="Last submitted on December 15 at 2:30 pm"
+        />
+      </TaskStepCard>
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseReviewState = () => {
+  const shortAnswer = 'Mitosis produces two identical diploid cells.';
+  const longAnswer = 'Mitosis and meiosis are both types of cell division, but they serve different purposes and produce different results. Mitosis is the process by which a single cell divides to produce two identical diploid daughter cells, each containing the same number of chromosomes as the parent cell. This type of division is used for growth, repair, and asexual reproduction in organisms. On the other hand, meiosis is a specialized form of cell division that produces four non-identical haploid cells, each containing half the number of chromosomes as the parent cell. Meiosis is essential for sexual reproduction because it creates gametes (sex cells) that can combine during fertilization to restore the diploid number. The key differences include: the number of divisions (mitosis has one, meiosis has two), the number of daughter cells produced (two vs four), whether daughter cells are identical or different (identical vs varied due to crossing over and independent assortment), and the chromosome number in daughter cells (diploid vs haploid).';
+
+  const step1 = {
+    id: 1,
+    uid: '999@1',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  const step2 = {
+    id: 2,
+    uid: '999@2',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  return (
+    <TextResizerProvider>
+      <TaskStepCard
+        step={step1}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+      >
+        <FreeResponseInput
+          wordLimit={500}
+          value={shortAnswer}
+          onChange={() => {}}
+          cancelHandler={() => {}}
+          saveHandler={() => {}}
+          isSubmitDisabled={true}
+          isReviewed={true}
+          questionNumber={1}
+          question={freeResponseQuestionData}
+          score="7/10"
+          feedback="Good start, but your answer lacks detail about the process differences."
+          submitBtnLabel="Next"
+          onNext={() => alert('Moving to next question')}
+        />
+      </TaskStepCard>
+
+      <div style={{ marginTop: '2rem' }}>
+        <TaskStepCard
+          step={step2}
+          questionNumber={2}
+          numberOfQuestions={1}
+          showTotalQuestions={false}
+        >
+          <FreeResponseInput
+            wordLimit={500}
+            value={longAnswer}
+            onChange={() => {}}
+            cancelHandler={() => {}}
+            saveHandler={() => {}}
+            isSubmitDisabled={true}
+            isReviewed={true}
+            questionNumber={2}
+            question={freeResponseQuestionData}
+            score="10/10"
+            feedback="Excellent comprehensive answer with clear explanations!"
+            submitBtnLabel="Next"
+            onNext={() => alert('Moving to next question')}
+          />
+        </TaskStepCard>
+      </div>
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseSavingState = () => {
+  const step = {
+    id: 1,
+    uid: '999@1',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  return (
+    <TextResizerProvider>
+      <TaskStepCard
+        step={step}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+      >
+        <FreeResponseInput
+          wordLimit={500}
+          value="Mitosis produces two identical cells while meiosis produces four different cells."
+          onChange={() => {}}
+          cancelHandler={() => {}}
+          saveHandler={() => {}}
+          isSubmitDisabled={false}
+          isSaving={true}
+          questionNumber={1}
+          question={freeResponseQuestionData}
+          submitBtnLabel="Submit"
+        />
+      </TaskStepCard>
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseWordLimitReached = () => {
+  const [value, setValue] = useState('word '.repeat(500).trim());
+
+  const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+    setValue(event.target.value);
+  };
+
+  const step = {
+    id: 1,
+    uid: '999@1',
+    type: 'exercise' as const,
+    available_points: '10.0',
+  };
+
+  return (
+    <TextResizerProvider>
+      <TaskStepCard
+        step={step}
+        questionNumber={1}
+        numberOfQuestions={1}
+        showTotalQuestions={false}
+      >
+        <FreeResponseInput
+          wordLimit={500}
+          value={value}
+          onChange={handleChange}
+          cancelHandler={() => setValue('')}
+          saveHandler={() => alert('Saved!')}
+          isSubmitDisabled={false}
+          questionNumber={1}
+          question={freeResponseQuestionData}
+          submitBtnLabel="Submit"
+        />
+      </TaskStepCard>
     </TextResizerProvider>
   );
 };
