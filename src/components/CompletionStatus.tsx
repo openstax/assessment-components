@@ -8,14 +8,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export interface Score {
+  current?: string;
+  saved?: string;
+}
+
 export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
   handleContinue: () => void;
   handleNext: () => void;
   className?: string;
-  scoreSoFar?: string;
-  savedScore?: string;
+  score?: Score;
   handleRetry?: () => void;
   isRetrying?: boolean;
 }
@@ -82,8 +86,7 @@ export const CompletionStatus = styled(({
   handleContinue,
   handleNext,
   className,
-  scoreSoFar,
-  savedScore,
+  score,
   handleRetry,
   isRetrying
 }: CompletionStatusProps) => {
@@ -124,7 +127,7 @@ export const CompletionStatus = styled(({
             <p>{allCompleted ? unlimitedDone : unlimitedCurrent}</p>
             <ScoreGroup>
               <p>
-                <b>Current Score:</b> {scoreSoFar ?? 'Score unavailable'} | <b>Saved Score:</b> {savedScore ?? 'Score unavailable'}
+                <b>Current Score:</b> {score?.current ?? 'Score unavailable'} | <b>Saved Score:</b> {score?.saved ?? 'Score unavailable'}
               </p>
             </ScoreGroup>
           </div>
