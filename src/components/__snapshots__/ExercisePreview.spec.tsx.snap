@@ -2,14 +2,14 @@
 
 exports[`ExercisePreview using questionStates matches snapshot with chosen answer 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card "
     >
       <div>
         <div
@@ -63,12 +63,12 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer"
+                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -196,14 +196,14 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
 
 exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card "
     >
       <div>
         <div
@@ -257,12 +257,12 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer"
+                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -301,7 +301,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 role="status"
                               >
                                 <div
-                                  className="sc-iBkjds hrBrya"
+                                  className="sc-iqcoie egDBZj"
                                 >
                                   <span>
                                     Correct Answer
@@ -397,14 +397,14 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
 
 exports[`ExercisePreview using questionStates matches snapshot without chosen answer 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card "
     >
       <div>
         <div
@@ -458,12 +458,12 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer"
+                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -591,14 +591,14 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -657,12 +657,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer"
+                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -787,14 +787,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -853,12 +853,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body"
+                  className="sc-evZas bgIoZz openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -983,14 +983,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -1049,12 +1049,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body"
+                  className="sc-evZas bgIoZz openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -1179,14 +1179,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-dIouRR oNBeO"
+  className="sc-bBrHrO ihULve"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-idiyUo fvRBBg sc-hHLeRK sc-dmRaPn fvyQYT bJgTAQ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn sc-cxabCf joNzek hkSCMd preview-card "
     >
       <div>
         <div
@@ -1240,12 +1240,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer"
+                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-ftvSup kOowjp"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
                       <div
@@ -1379,7 +1379,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                   </div>
                 </div>
                 <div
-                  className="sc-jqUVSM dLzWcr step-card-footer"
+                  className="sc-breuTD gtohXR step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1409,7 +1409,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="controls"
                     >
                       <button
-                        className="sc-gKXOVf fTCarG"
+                        className="sc-kDDrLX dibnqc"
                         data-test-id="submit-answer-btn"
                         disabled={true}
                         onClick={[Function]}

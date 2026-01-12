@@ -2,12 +2,12 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -118,12 +118,12 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -234,12 +234,12 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -359,12 +359,12 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -475,12 +475,12 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -596,12 +596,12 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div
@@ -724,12 +724,12 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-dkzDqf hJHAwW openstax-question"
+  className="sc-iBkjds ieUlSt openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gsnTZi eueHwK"
+    className="sc-gKXOVf iVucFo"
   >
     <div>
       <div

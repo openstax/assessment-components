@@ -2,6 +2,27 @@ import { colors } from "../../theme";
 import { css } from "styled-components";
 
 export const exerciseStyles = css`
+  .image-button-wrapper {
+    /* Remove default button styles for media modal img wrapper */
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .image-button-wrapper:focus {
+    outline: 1px solid Highlight;
+    outline: 1px solid -webkit-focus-ring-color;
+    outline-offset: 2px;
+  }
+
+  .image-button-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
   &.is-selected {
     background-color: ${colors.card.header.background};
     border-width: 0.2rem;
@@ -130,5 +151,6 @@ export const exerciseStyles = css`
       font-weight: bold;
       font-size: 1.6rem;
     }
+
   }
 `;
