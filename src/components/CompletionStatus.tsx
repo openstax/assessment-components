@@ -1,18 +1,27 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { InnerStepCard } from "./Card";
 import Button from "./Button";
-
+import { colors } from '../theme';
 const GlobalStyle = createGlobalStyle`
   :root {
     --content-text-scale: 1;
   }
 `;
 
+export interface Score {
+  current?: string;
+  saved?: string;
+}
+
 export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
-  handleClick: () => void;
+  handleContinue: () => void;
+  handleNext: () => void;
   className?: string;
+  score?: Score;
+  handleRetry?: () => void;
+  isRetrying?: boolean;
 }
 
 const CompletionStatusCard = styled(InnerStepCard)`
@@ -22,7 +31,6 @@ const CompletionStatusCard = styled(InnerStepCard)`
   display: block;
 
   button {
-    min-width: 160px;
     height: 48px;
   }
 
@@ -36,24 +44,122 @@ const CompletionHeader = styled.h2`
   margin: 0;
 `;
 
-export const CompletionStatus = styled(({
-  numberOfQuestions, numberCompleted, handleClick, className
-}: CompletionStatusProps) => {
+const ButtonGroup = styled.div`
+  display: flex;
+  margin: 0;
+  gap: 1rem;
 
+  button {
+    height: 48px;
+  }
+`;
+
+const ScoreGroup = styled.div`
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+`;
+
+const RetryResumeButton = styled(Button)`
+  background-color: ${colors.palette.white};
+  color: ${colors.palette.black};
+  border: 1px solid ${colors.palette.pale};
+  font-weight: normal;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${colors.palette.neutralBright} !important;
+    color: ${colors.palette.black} !important;
+    border: 1px solid ${colors.palette.pale} !important;
+  }
+
+  &:active {
+    background-color: ${colors.palette.neutralLight} !important;
+    color: ${colors.palette.black} !important;
+    border: 1px solid ${colors.palette.pale} !important;
+  }
+`;
+
+export const CompletionStatus = styled(({
+  numberOfQuestions,
+  numberCompleted,
+  handleContinue,
+  handleNext,
+  className,
+  score,
+  handleRetry,
+  isRetrying
+}: CompletionStatusProps) => {
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
-  const buttonText = allCompleted ? 'Next' : (
-      someCompleted ? 'Continue' : 'Start'
-  );
 
-  return <>
-    <GlobalStyle />
-    <CompletionStatusCard className={className}>
-      <CompletionHeader>{allCompleted ? 'You are done.' : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}</CompletionHeader>
-      <p>{allCompleted ? 'Great job answering all the questions.' : (someCompleted ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.` : 'Begin working on the quiz.')}</p>
-      <Button data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`} onClick={() => handleClick()}>
-        {buttonText}
-      </Button>
-    </CompletionStatusCard>
-  </>
+  const buttonText = allCompleted || (numberCompleted === 0 && handleRetry) || (someCompleted && handleRetry) ? 'Next' : (someCompleted ? 'Continue' : 'Start');
+
+  const retryOrResume = allCompleted ? 'Retry Quiz' : 'Resume Quiz';
+  const unlimitedDone = "Attempts for this quiz are unlimited. Your highest score will be saved.";
+  const unlimitedCurrent = "You are in the middle of a quiz attempt. Attempts for this quiz are unlimited. Your highest score will be saved.";
+
+  // When allCompleted, clicking Retry/Resume should create a new attempt (handleRetry)
+  // When not completed, clicking Retry/Resume should resume (handleContinue)
+  const onRetryResumeClick = allCompleted
+    ? handleRetry
+    : handleContinue;
+
+  // if unlimited attempts (handleRetry) is active always show next button
+  // if all is completed show next button
+  // if not unlimited and incomplete show and handle continue
+  const onNextContinueClick = allCompleted ||  handleRetry
+    ? handleNext
+    : handleContinue;
+
+  return (
+    <>
+      <GlobalStyle />
+      <CompletionStatusCard className={className}>
+        <CompletionHeader>
+          {allCompleted
+            ? 'You are done.'
+            : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
+        </CompletionHeader>
+
+        {handleRetry ? (
+          <div>
+            <p>{allCompleted ? unlimitedDone : unlimitedCurrent}</p>
+            <ScoreGroup>
+              <p>
+                <b>Current Score:</b> {score?.current ?? 'Score unavailable'} | <b>Saved Score:</b> {score?.saved ?? 'Score unavailable'}
+              </p>
+            </ScoreGroup>
+          </div>
+        ) : (
+          <p>
+            {allCompleted
+              ? 'Great job answering all the questions.'
+              : (someCompleted
+                ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
+                : 'Begin working on the quiz.')}
+          </p>
+        )}
+
+        <ButtonGroup>
+          {handleRetry ? (
+            <RetryResumeButton
+              data-test-id="retry-resume-btn"
+              onClick={onRetryResumeClick}
+              disabled={isRetrying}
+            >
+              {retryOrResume}
+            </RetryResumeButton>
+          ) : null}
+
+          <Button
+            data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
+            onClick={onNextContinueClick}
+          >
+            {buttonText}
+          </Button>
+        </ButtonGroup>
+      </CompletionStatusCard>
+    </>
+  );
 })``;
