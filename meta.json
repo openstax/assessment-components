@@ -160,8 +160,8 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 11,
-      "locEnd": 11,
+      "locStart": 23,
+      "locEnd": 23,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -170,8 +170,8 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 9,
-      "locEnd": 9,
+      "locStart": 21,
+      "locEnd": 21,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -180,8 +180,58 @@
       "levels": [
         "Completion status"
       ],
-      "locStart": 10,
-      "locEnd": 10,
+      "locStart": 22,
+      "locEnd": 22,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--unlimited-complete": {
+      "name": "Unlimited complete",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 24,
+      "locEnd": 24,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--unlimited-complete-retrying": {
+      "name": "Unlimited complete retrying",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 28,
+      "locEnd": 28,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--unlimited-completed-no-score": {
+      "name": "Unlimited completed no score",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 26,
+      "locEnd": 26,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--unlimited-partial": {
+      "name": "Unlimited partial",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 25,
+      "locEnd": 25,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--unlimited-partial-no-progress": {
+      "name": "Unlimited partial no progress",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 27,
+      "locEnd": 27,
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
@@ -190,8 +240,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 217,
-      "locEnd": 235,
+      "locStart": 219,
+      "locEnd": 237,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -200,8 +250,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 267,
-      "locEnd": 296,
+      "locStart": 269,
+      "locEnd": 298,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -210,8 +260,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 298,
-      "locEnd": 324,
+      "locStart": 300,
+      "locEnd": 326,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -220,8 +270,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 198,
-      "locEnd": 215,
+      "locStart": 200,
+      "locEnd": 217,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -230,8 +280,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 237,
-      "locEnd": 263,
+      "locStart": 239,
+      "locEnd": 265,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -240,8 +290,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 265,
-      "locEnd": 265,
+      "locStart": 267,
+      "locEnd": 267,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -250,8 +300,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 510,
-      "locEnd": 540,
+      "locStart": 513,
+      "locEnd": 543,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -260,8 +310,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 326,
-      "locEnd": 357,
+      "locStart": 328,
+      "locEnd": 359,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -270,8 +320,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 359,
-      "locEnd": 393,
+      "locStart": 361,
+      "locEnd": 395,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -280,8 +330,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 542,
-      "locEnd": 721,
+      "locStart": 545,
+      "locEnd": 724,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -290,8 +340,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 395,
-      "locEnd": 508,
+      "locStart": 397,
+      "locEnd": 511,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -300,8 +350,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 996,
-      "locEnd": 1165,
+      "locStart": 999,
+      "locEnd": 1168,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -310,8 +360,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 752,
-      "locEnd": 984,
+      "locStart": 755,
+      "locEnd": 987,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -320,8 +370,8 @@
       "levels": [
         "Exercise"
       ],
-      "locStart": 986,
-      "locEnd": 994,
+      "locStart": 989,
+      "locEnd": 997,
       "filePath": "src/components/Exercise.stories.tsx",
       "meta": {}
     },
@@ -330,8 +380,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 67,
-      "locEnd": 67,
+      "locStart": 68,
+      "locEnd": 68,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -340,8 +390,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 68,
-      "locEnd": 71,
+      "locStart": 69,
+      "locEnd": 72,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -350,8 +400,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 72,
-      "locEnd": 76,
+      "locStart": 73,
+      "locEnd": 77,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -360,8 +410,8 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 77,
-      "locEnd": 84,
+      "locStart": 78,
+      "locEnd": 85,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -370,18 +420,18 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 85,
-      "locEnd": 90,
+      "locStart": 86,
+      "locEnd": 92,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
-    "exercise-question--multiple-attempts-none-left": {
-      "name": "Multiple attempts none left",
+    "exercise-question--multiple-attempts-none-left-and-unlimited": {
+      "name": "Multiple attempts none left and unlimited",
       "levels": [
         "Exercise question"
       ],
-      "locStart": 101,
-      "locEnd": 111,
+      "locStart": 117,
+      "locEnd": 128,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -390,8 +440,28 @@
       "levels": [
         "Exercise question"
       ],
-      "locStart": 91,
-      "locEnd": 100,
+      "locStart": 93,
+      "locEnd": 103,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--multiple-attempts-one-left-and-unlimited": {
+      "name": "Multiple attempts one left and unlimited",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 105,
+      "locEnd": 115,
+      "filePath": "src/components/ExerciseQuestion.stories.tsx",
+      "meta": {}
+    },
+    "exercise-question--unlimited-attempts-only": {
+      "name": "Unlimited attempts only",
+      "levels": [
+        "Exercise question"
+      ],
+      "locStart": 130,
+      "locEnd": 141,
       "filePath": "src/components/ExerciseQuestion.stories.tsx",
       "meta": {}
     },
@@ -510,8 +580,8 @@
       "levels": [
         "Media modal"
       ],
-      "locStart": 196,
-      "locEnd": 375,
+      "locStart": 198,
+      "locEnd": 377,
       "filePath": "src/components/MediaModal.stories.tsx",
       "meta": {}
     },
@@ -521,7 +591,7 @@
         "Print"
       ],
       "locStart": 64,
-      "locEnd": 101,
+      "locEnd": 102,
       "filePath": "src/components/Print.stories.tsx",
       "meta": {}
     },
