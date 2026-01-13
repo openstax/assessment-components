@@ -30,6 +30,7 @@ describe('ExerciseQuestion', () => {
       questionNumber: 1,
       choicesEnabled: false,
       hasMultipleAttempts: false,
+      hasUnlimitedAttempts: false,
       onAnswerChange: () => null,
       onAnswerSave: () => null,
       onNextStep: () => null,

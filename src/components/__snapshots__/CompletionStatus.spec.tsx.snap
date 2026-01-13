@@ -2,7 +2,7 @@
 
 exports[`CompletionStatus matches snapshot 1`] = `
 <div
-  className="sc-bczRLJ sc-iBkjds fZGYwW isUsEZ sc-papXJ"
+  className="sc-bczRLJ sc-iBkjds fZGYwW hVuZpc sc-iqcoie"
 >
   <h2
     className="sc-ftvSup iFRSyk"
@@ -12,19 +12,23 @@ exports[`CompletionStatus matches snapshot 1`] = `
   <p>
     Begin working on the quiz.
   </p>
-  <button
-    className="sc-gKXOVf fTCarG"
-    data-test-id="start-btn"
-    onClick={[Function]}
+  <div
+    className="sc-papXJ cCDzwv"
   >
-    Start
-  </button>
+    <button
+      className="sc-gKXOVf fTCarG"
+      data-test-id="start-btn"
+      onClick={[Function]}
+    >
+      Start
+    </button>
+  </div>
 </div>
 `;
 
 exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-iBkjds fZGYwW isUsEZ sc-papXJ"
+  className="sc-bczRLJ sc-iBkjds fZGYwW hVuZpc sc-iqcoie"
 >
   <h2
     className="sc-ftvSup iFRSyk"
@@ -34,19 +38,23 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
   <p>
     Great job answering all the questions.
   </p>
-  <button
-    className="sc-gKXOVf fTCarG"
-    data-test-id="next-btn"
-    onClick={[Function]}
+  <div
+    className="sc-papXJ cCDzwv"
   >
-    Next
-  </button>
+    <button
+      className="sc-gKXOVf fTCarG"
+      data-test-id="next-btn"
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
 </div>
 `;
 
 exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 <div
-  className="sc-bczRLJ sc-iBkjds fZGYwW isUsEZ sc-papXJ"
+  className="sc-bczRLJ sc-iBkjds fZGYwW hVuZpc sc-iqcoie"
 >
   <h2
     className="sc-ftvSup iFRSyk"
@@ -56,12 +64,16 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
   <p>
     You've completed 5 of 15 questions.
   </p>
-  <button
-    className="sc-gKXOVf fTCarG"
-    data-test-id="continue-btn"
-    onClick={[Function]}
+  <div
+    className="sc-papXJ cCDzwv"
   >
-    Continue
-  </button>
+    <button
+      className="sc-gKXOVf fTCarG"
+      data-test-id="continue-btn"
+      onClick={[Function]}
+    >
+      Continue
+    </button>
+  </div>
 </div>
 `;
