@@ -10,7 +10,7 @@ describe('Free Response Input', () => {
   let props: FreeResponseProps;
 
   const updateValue = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    props.defaultValue = event.target.value
+    props.value = event.target.value
   };
 
   const leftInfoComponent = (
@@ -24,7 +24,7 @@ describe('Free Response Input', () => {
       readOnly: false,
       wordLimit: 5,
       onChange: updateValue,
-      defaultValue: '',
+      value: '',
       cancelHandler: () => null,
       saveHandler: () => null,
       availablePoints: '1.0' as const,
@@ -68,7 +68,7 @@ describe('Free Response Input', () => {
 
   it('renders word limit error', () => {
     const tree = renderer.create(
-      <FreeResponseInput {...props} defaultValue='response has more than five words' />
+      <FreeResponseInput {...props} value='response has more than five words' />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
