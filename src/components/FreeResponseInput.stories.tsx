@@ -20,7 +20,6 @@ const baseProps: Omit<FreeResponseProps, 'value' | 'onChange'> = {
   },
   score: undefined,
   isSubmitDisabled: false,
-  submitBtnLabel: 'Next',
 };
 
 const submissionInfoText = 'Last submitted on July 26 at 4:00 pm';

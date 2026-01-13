@@ -3,7 +3,6 @@ import { countWords } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
 import { ExerciseQuestionData } from 'src/types';
-import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
 
@@ -19,7 +18,6 @@ export interface FreeResponseProps {
   questionNumber: number;
   question: ExerciseQuestionData;
   score?: string;
-  submitBtnLabel: string;
   isSubmitted?: boolean;
   isReviewed?: boolean;
   feedback?: string;
@@ -35,12 +33,6 @@ const StyledFreeResponse = styled.div`
     ${mixins.stepCardPadding()}
     padding-bottom: 1rem;
   }
-`;
-
-const SyledQuestionStem = styled.div`
-  font-size: 2rem;
-  line-height: 1.68em;
-  position: relative;
 `;
 
 const InfoRow = styled.div<{ hasChildren: boolean }>`
@@ -178,8 +170,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     submissionInfo,
     isSubmitDisabled,
     isSaving = false,
-    question,
-    questionNumber,
     saveHandler,
     wordLimit,
     onChange,
@@ -238,18 +228,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     onChange(e);
   };
 
-  const questionProps = {};
-  if (questionNumber) { questionProps['data-question-number'] = questionNumber; }
-
   // State 3: Post-review (read-only with "Your answer" and Next button)
   if (isReviewed) {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
-          <SyledQuestionStem {...questionProps}>
-            {question.stem_html &&
-              <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-          </SyledQuestionStem>
           <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>
           <ReviewAnswerText
             ref={textRef}
@@ -289,10 +272,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
-          <SyledQuestionStem {...questionProps}>
-            {question.stem_html &&
-              <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-          </SyledQuestionStem>
           <FreeResponseTextArea
             {...props}
             onChange={handleChange}
@@ -333,10 +312,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   return (
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
-        <SyledQuestionStem {...questionProps}>
-          {question.stem_html &&
-            <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-        </SyledQuestionStem>
         <FreeResponseTextArea
           {...props}
           onChange={handleChange}
