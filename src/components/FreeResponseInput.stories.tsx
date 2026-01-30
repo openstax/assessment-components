@@ -172,7 +172,7 @@ export const PreviewModeUnanswered = () => {
       onAnswerChange={() => {}}
       onAnswerSave={() => {}}
       onNextStep={() => {}}
-      onGradingSave={(data) => console.log('Grading saved:', data)}
+      onGradingSave={(questionId, data) => console.log('Grading saved for question', questionId, ':', data)}
     />
   );
 };
@@ -191,7 +191,7 @@ export const PreviewModeWithAnswer = () => {
       onAnswerChange={() => {}}
       onAnswerSave={() => {}}
       onNextStep={() => {}}
-      onGradingSave={(data) => console.log('Grading updated:', data)}
+      onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data)}
     />
   );
 };
@@ -210,7 +210,7 @@ export const PreviewModeWithLongAnswer = () => {
       onAnswerChange={() => {}}
       onAnswerSave={() => {}}
       onNextStep={() => {}}
-      onGradingSave={(data) => console.log('Grading updated:', data)}
+      onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data)}
     />
   );
 };

@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StyledExercise = styled(Exercise)<{
   showAllFeedback?: boolean;
   showCorrectAnswer?: boolean;
-  onGradingSave?: (data: { score: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
   gradingComment?: string;
 }>`
   .step-card-footer {
@@ -30,7 +30,7 @@ export interface ExercisePreviewProps {
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
   rightSideSlot?: React.ReactNode;
-  onGradingSave?: (data: { score: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
   gradingComment?: string;
 }
 

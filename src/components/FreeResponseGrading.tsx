@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
+import { ID } from 'src/types';
 
 const GradingContainer = styled.div`
   display: flex;
@@ -89,15 +90,17 @@ const ButtonContainer = styled.div`
 `;
 
 export interface FreeResponseGradingProps {
+  questionId: ID;
   maxScore: number;
   score?: number;
   comment?: string;
   onChange?: (data: { score: number; comment: string }) => void;
-  onSave?: (data: { score: number; comment: string }) => void;
+  onSave?: (questionId: ID, data: { score: number; comment: string }) => void;
   disabled?: boolean;
 }
 
 export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
+  questionId,
   maxScore,
   score: initialScore,
   comment: initialComment,
@@ -137,7 +140,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   const handleSave = () => {
     const scoreNum = parseFloat(score);
     if (!isNaN(scoreNum) && scoreNum >= 0 && scoreNum <= maxScore && onSave) {
-      onSave({ score: scoreNum, comment });
+      onSave(questionId, { score: scoreNum, comment });
     }
   };
 

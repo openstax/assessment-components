@@ -1705,7 +1705,7 @@ export const FreeResponseGradingUnanswered = () => {
         exercise={exercise}
         questionStates={questionStates}
         showScoring={true}
-        onGradingSave={(data) => console.log('Grading saved:', data)}
+        onGradingSave={(questionId, data) => console.log('Grading saved for question', questionId, ':', data)}
       />
     </TextResizerProvider>
   );
@@ -1769,7 +1769,7 @@ export const FreeResponseGradingWithAnswer = () => {
         questionStates={questionStates}
         showScoring={true}
         showCorrectAnswer={true}
-        onGradingSave={(data) => console.log('Grading updated:', data)}
+        onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data)}
         gradingComment="Good overview, but could include more detail about checkpoints."
       />
     </TextResizerProvider>

@@ -1394,34 +1394,109 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 }
               />
               <div
-                className="sc-bBrHrO klxqqs"
-                data-test-id="student-free-response"
+                data-test-id="student-exercise-question"
               >
                 <div
-                  className="step-card-body"
+                  className="sc-evZas bgIoZz openstax-question step-card-body"
+                  data-question-number={1}
+                  data-test-id="question"
                 >
                   <div
-                    className="sc-ivTmOn kyKtfY"
-                  >
-                    
-                  </div>
-                  <textarea
-                    aria-label="question response text box"
-                    className="sc-llJcti gYtmwL"
-                    data-test-id="free-response-box"
-                    disabled={false}
-                    onChange={[Function]}
-                    placeholder="Enter your response..."
-                    value=""
-                  />
-                  <div
-                    className="sc-cxabCf gCzxEu"
+                    className="sc-crXcEl eikqY"
                   >
                     <div>
-                      <span>
-                         Remaining words: 
-                        100
-                      </span>
+                      <div
+                        aria-label="Answer choices"
+                        className="answers-table"
+                        role="radiogroup"
+                      >
+                        <div
+                          className="openstax-answer"
+                        >
+                          <section
+                            className="answers-answer disabled answer-selected"
+                          >
+                            <input
+                              checked={true}
+                              className="answer-input-box"
+                              disabled={true}
+                              id="1-option-0"
+                              name="1-options"
+                              onChange={[Function]}
+                              type="radio"
+                            />
+                            <label
+                              className="answer-label"
+                              htmlFor="1-option-0"
+                            >
+                              <span
+                                aria-label="Selected Choice A:"
+                                className="answer-letter-wrapper"
+                                data-answer-choice="A"
+                                data-test-id="answer-choice-A"
+                              />
+                              <div
+                                aria-atomic="true"
+                                aria-live="polite"
+                                className="answer-answer"
+                                role="status"
+                              >
+                                <span
+                                  className="answer-content"
+                                  dangerouslySetInnerHTML={
+                                    Object {
+                                      "__html": "True",
+                                    }
+                                  }
+                                />
+                              </div>
+                            </label>
+                          </section>
+                        </div>
+                        <div
+                          className="openstax-answer"
+                        >
+                          <section
+                            className="answers-answer disabled"
+                          >
+                            <input
+                              checked={false}
+                              className="answer-input-box"
+                              disabled={true}
+                              id="1-option-1"
+                              name="1-options"
+                              onChange={[Function]}
+                              type="radio"
+                            />
+                            <label
+                              className="answer-label"
+                              htmlFor="1-option-1"
+                            >
+                              <span
+                                aria-label="Choice B:"
+                                className="answer-letter-wrapper"
+                                data-answer-choice="B"
+                                data-test-id="answer-choice-B"
+                              />
+                              <div
+                                aria-atomic="true"
+                                aria-live="polite"
+                                className="answer-answer"
+                                role="status"
+                              >
+                                <span
+                                  className="answer-content"
+                                  dangerouslySetInnerHTML={
+                                    Object {
+                                      "__html": "False",
+                                    }
+                                  }
+                                />
+                              </div>
+                            </label>
+                          </section>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1431,17 +1506,23 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   <div
                     className="step-card-footer-inner"
                   >
-                    <div />
+                    <div
+                      className="points"
+                      role="status"
+                    >
+                      <span
+                        className="attempts-left"
+                      />
+                    </div>
                     <div
                       className="controls"
                     >
                       <button
                         className="sc-kDDrLX dibnqc"
-                        data-test-id="submit-answer-btn"
-                        disabled={true}
+                        data-test-id="continue-btn"
                         onClick={[Function]}
                       >
-                        Submit
+                        Next
                       </button>
                     </div>
                   </div>

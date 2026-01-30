@@ -2,7 +2,7 @@ import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
 import { countWords, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
-import { ExerciseQuestionData, Answer, ExerciseScoringData } from 'src/types';
+import { ExerciseQuestionData, Answer, ExerciseScoringData, ID } from 'src/types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
@@ -33,7 +33,7 @@ export interface FreeResponseProps {
   previewMode?: boolean;
 
   // Grading callbacks (for preview mode)
-  onGradingSave?: (data: { score: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
   gradingComment?: string;
 }
 
@@ -348,6 +348,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               </ResponseColumn>
               {previewMode &&
                 <FreeResponseGrading
+                  questionId={question.id}
                   maxScore={scoring?.maxScore || 1}
                   score={scoring?.score}
                   comment={gradingComment}
@@ -475,6 +476,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 <UnansweredText>Unanswered</UnansweredText>
               </ResponseColumn>
               <FreeResponseGrading
+                questionId={question.id}
                 maxScore={scoring?.maxScore || 1}
                 score={scoring?.score}
                 comment={gradingComment}

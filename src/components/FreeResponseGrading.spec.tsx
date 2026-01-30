@@ -6,8 +6,7 @@ describe('FreeResponseGrading', () => {
     const tree = renderer.create(
       <FreeResponseGrading
         maxScore={10}
-        onSave={() => {}}
-      />
+        onSave={() => { } } questionId={''}      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -17,8 +16,7 @@ describe('FreeResponseGrading', () => {
       <FreeResponseGrading
         maxScore={10}
         score={7}
-        onSave={() => {}}
-      />
+        onSave={() => { } } questionId={''}      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -29,8 +27,7 @@ describe('FreeResponseGrading', () => {
         maxScore={10}
         score={8.5}
         comment="Good work on this assignment."
-        onSave={() => {}}
-      />
+        onSave={() => { } } questionId={''}      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -42,8 +39,7 @@ describe('FreeResponseGrading', () => {
         score={7}
         comment="Grading is disabled"
         disabled={true}
-        onSave={() => {}}
-      />
+        onSave={() => { } } questionId={''}      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -53,8 +49,7 @@ describe('FreeResponseGrading', () => {
       <FreeResponseGrading
         maxScore={25}
         score={18}
-        onSave={() => {}}
-      />
+        onSave={() => { } } questionId={''}      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
