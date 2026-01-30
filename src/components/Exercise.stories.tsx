@@ -4,7 +4,7 @@ import {
   ExerciseWithStepDataProps,
   ExerciseWithQuestionStatesProps,
 } from './Exercise';
-import { Answer } from '../types';
+import { Answer, ExerciseData } from '../types';
 import { IncludeRemoveQuestion } from './IncludeRemoveQuestion';
 import styled from 'styled-components';
 import { ExercisePreview } from './ExercisePreview';
@@ -876,7 +876,7 @@ export const PreviewCardWithScore = () => {
             },
           ],
           hints: [],
-          formats: ['free-response', 'multiple-choice'],
+          formats: ['multiple-choice'],
           combo_choices: [],
           collaborator_solutions: [
             {
@@ -920,7 +920,7 @@ export const PreviewCardWithScore = () => {
             },
           ],
           hints: [],
-          formats: ['free-response', 'multiple-choice'],
+          formats: ['multiple-choice'],
           combo_choices: [],
           collaborator_solutions: [
             {
@@ -1001,7 +1001,7 @@ export const OverlayCard = () => {
   const props1: ExerciseWithQuestionStatesProps = {
     ...exerciseWithQuestionStatesProps('1@123'),
     questionStates: {
-      '1': {
+      '320733': {
         available_points: '1.0',
         is_completed: true,
         answer_id_order: ['1', '2', '3', '4'],
@@ -1089,13 +1089,14 @@ export const OverlayCard = () => {
             },
           ],
           hints: [],
-          formats: ['free-response', 'multiple-choice'],
+          formats: ['multiple-choice'],
           combo_choices: [],
         },
       ],
 
       versions: [4, 3, 2, 1],
     },
+    numberOfQuestions: 2,
   };
 
   const props2: ExerciseWithQuestionStatesProps = {
@@ -1162,6 +1163,677 @@ export const OverlayCard = () => {
         overlayChildren={includeRemoveQuestionComponent2}
         exercise={props2.exercise}
         showAllFeedback
+      />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseInitial = () => {
+  const [freeResponseText, setFreeResponseText] = useState<string>('');
+  const [apiIsPending, setApiIsPending] = useState(false);
+
+  const props: ExerciseWithQuestionStatesProps = {
+    exercise: {
+      uid: '1@1',
+      uuid: 'fr-initial-uuid',
+      group_uuid: 'fr-initial-group',
+      number: 1,
+      version: 1,
+      published_at: '2024-01-01T00:00:00.000Z',
+      context: '',
+      stimulus_html: '',
+      tags: [],
+      authors: [{ user_id: 1, name: 'OpenStax' }],
+      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+      derived_from: [],
+      is_vocab: false,
+      solutions_are_public: false,
+      versions: [1],
+      questions: [
+        {
+          id: 1,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Describe the process of photosynthesis and explain its importance to life on Earth.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 100,
+        },
+      ],
+    },
+    questionNumber: 1,
+    numberOfQuestions: 1,
+    hasMultipleAttempts: false,
+    hasUnlimitedAttempts: false,
+    onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+      setFreeResponseText(answer.content_html);
+    },
+    onAnswerSave: (question_id: number) => {
+      setApiIsPending(true);
+      setTimeout(() => setApiIsPending(false), 1000);
+    },
+    onNextStep: () => console.log('Next step'),
+    step: {
+      id: 1,
+      uid: '1@1',
+      available_points: '1.0',
+    },
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: false,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: freeResponseText,
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: freeResponseText.trim().length > 0,
+        apiIsPending: apiIsPending,
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props} />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseUpdateMode = () => {
+  const [freeResponseText, setFreeResponseText] = useState<string>('Photosynthesis is the process by which plants convert light energy into chemical energy.');
+  const [apiIsPending, setApiIsPending] = useState(false);
+
+  const props: ExerciseWithQuestionStatesProps = {
+    exercise: {
+      uid: '2@1',
+      uuid: 'fr-update-uuid',
+      group_uuid: 'fr-update-group',
+      number: 2,
+      version: 1,
+      published_at: '2024-01-01T00:00:00.000Z',
+      context: '',
+      stimulus_html: '',
+      tags: [],
+      authors: [{ user_id: 1, name: 'OpenStax' }],
+      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+      derived_from: [],
+      is_vocab: false,
+      solutions_are_public: false,
+      versions: [1],
+      questions: [
+        {
+          id: 1,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Explain the difference between mitosis and meiosis.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 100,
+        },
+      ],
+    },
+    questionNumber: 1,
+    numberOfQuestions: 1,
+    hasMultipleAttempts: false,
+    hasUnlimitedAttempts: false,
+    onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+      setFreeResponseText(answer.content_html);
+    },
+    onAnswerSave: (question_id: number) => {
+      setApiIsPending(true);
+      setTimeout(() => setApiIsPending(false), 1000);
+    },
+    onNextStep: () => console.log('Next step'),
+    step: {
+      id: 1,
+      uid: '2@1',
+      available_points: '1.0',
+    },
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: freeResponseText,
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: true,
+        apiIsPending: apiIsPending,
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props} />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponsePostReview = () => {
+  const props: ExerciseWithQuestionStatesProps = {
+    exercise: {
+      uid: '3@1',
+      uuid: 'fr-postreview-uuid',
+      group_uuid: 'fr-postreview-group',
+      number: 3,
+      version: 1,
+      published_at: '2024-01-01T00:00:00.000Z',
+      context: '',
+      stimulus_html: '',
+      tags: [],
+      authors: [{ user_id: 1, name: 'OpenStax' }],
+      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+      derived_from: [],
+      is_vocab: false,
+      solutions_are_public: false,
+      versions: [1],
+      questions: [
+        {
+          id: 1,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Discuss the role of DNA in heredity and explain how mutations can affect organisms.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 150,
+        },
+      ],
+    },
+    questionNumber: 1,
+    numberOfQuestions: 1,
+    hasMultipleAttempts: false,
+    hasUnlimitedAttempts: false,
+    onAnswerChange: () => {},
+    onAnswerSave: () => {},
+    onNextStep: () => console.log('Next step'),
+    step: {
+      id: 1,
+      uid: '3@1',
+      available_points: '1.0',
+    },
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: 'DNA contains genetic information that is passed from parents to offspring through heredity. It acts as a blueprint for building proteins and determining traits. Mutations are changes in the DNA sequence that can occur naturally or due to environmental factors. These mutations can have various effects on organisms - some are beneficial and lead to adaptations, some are neutral with no noticeable effect, and others can be harmful, potentially causing genetic disorders or diseases.',
+        feedback_html: '<p>Excellent answer! You provided a clear explanation of DNA\'s role in heredity and thoroughly discussed the different types of mutations and their effects. Consider adding more specific examples of genetic disorders for an even stronger response.</p>',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: false,
+        needsSaved: false,
+        apiIsPending: false,
+        scoring: { score: 9, maxScore: 10 },
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props} />
+    </TextResizerProvider>
+  );
+};
+
+export const MultipleFreeResponseQuestions = () => {
+  const [freeResponse1, setFreeResponse1] = useState<string>('');
+  const [freeResponse2, setFreeResponse2] = useState<string>('');
+  const [apiIsPending1, setApiIsPending1] = useState(false);
+  const [apiIsPending2, setApiIsPending2] = useState(false);
+
+  const props: ExerciseWithQuestionStatesProps = {
+    exercise: {
+      uid: '4@1',
+      uuid: 'fr-multiple-uuid',
+      group_uuid: 'fr-multiple-group',
+      number: 4,
+      version: 1,
+      published_at: '2024-01-01T00:00:00.000Z',
+      context: 'Answer the following questions about cellular biology.',
+      stimulus_html: '<b>Part A: Energy Production</b>',
+      tags: [],
+      authors: [{ user_id: 1, name: 'OpenStax' }],
+      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+      derived_from: [],
+      is_vocab: false,
+      solutions_are_public: false,
+      versions: [1],
+      questions: [
+        {
+          id: 1,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Describe the process of cellular respiration and where it occurs in the cell.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 75,
+        },
+        {
+          id: 2,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Explain how ATP is used as an energy currency in cells.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 50,
+        },
+      ],
+    },
+    questionNumber: 1,
+    numberOfQuestions: 2,
+    hasMultipleAttempts: false,
+    hasUnlimitedAttempts: false,
+    onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+      if (answer.question_id === 1) {
+        setFreeResponse1(answer.content_html);
+      } else if (answer.question_id === 2) {
+        setFreeResponse2(answer.content_html);
+      }
+    },
+    onAnswerSave: (question_id: number) => {
+      if (question_id === 1) {
+        setApiIsPending1(true);
+        setTimeout(() => setApiIsPending1(false), 1000);
+      } else if (question_id === 2) {
+        setApiIsPending2(true);
+        setTimeout(() => setApiIsPending2(false), 1000);
+      }
+    },
+    onNextStep: () => console.log('Next step'),
+    step: {
+      id: 1,
+      uid: '4@1',
+      available_points: '2.0',
+    },
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: false,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: freeResponse1,
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: freeResponse1.trim().length > 0,
+        apiIsPending: apiIsPending1,
+      },
+      '2': {
+        available_points: '1.0',
+        is_completed: false,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: freeResponse2,
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 0,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: freeResponse2.trim().length > 0,
+        apiIsPending: apiIsPending2,
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props} />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponsePreviewCompleted = () => {
+  const exercise: ExerciseData = {
+    uid: '5000@1',
+    uuid: 'free-response-uuid-123',
+    group_uuid: 'group-uuid-456',
+    number: 5000,
+    version: 1,
+    published_at: '2024-01-15T10:00:00.000Z',
+    context: '',
+    stimulus_html: '',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 1,
+        collaborator_solutions: [
+          {
+            solution_type: 'detailed',
+            content_html: '<p>A thorough explanation should discuss how photosynthesis converts light energy into chemical energy, the role of chlorophyll, and the production of glucose and oxygen as outputs.</p>',
+          },
+        ],
+        formats: ['free-response'],
+        stimulus_html: '',
+        stem_html: 'Explain the process of photosynthesis and its importance to life on Earth.',
+        is_answer_order_important: false,
+        answers: [],
+        word_limit: 100,
+      },
+    ],
+  };
+
+  const questionStates = {
+    '1': {
+      available_points: '10.0' as const,
+      is_completed: true,
+      answer_id_order: [],
+      answer_id: undefined,
+      free_response: 'Photosynthesis is the process by which plants convert sunlight into chemical energy. Using chlorophyll in their leaves, plants absorb light energy and combine carbon dioxide from the air with water from the soil to produce glucose and oxygen. This process is crucial for life on Earth because it generates oxygen that animals breathe and forms the base of most food chains.',
+      feedback_html: '<p>Excellent answer! You clearly explained the key components of photosynthesis and its importance to the ecosystem.</p>',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: 0,
+      canAnswer: false,
+      needsSaved: false,
+      apiIsPending: false,
+      scoring: { score: 9, maxScore: 10 },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <ExercisePreview
+        exercise={exercise}
+        showAllFeedback={true}
+        showCorrectAnswer={true}
+        questionStates={questionStates}
+        showScoring={true}
+      />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponsePreviewUnanswered = () => {
+  const exercise: ExerciseData = {
+    uid: '5001@1',
+    uuid: 'free-response-uuid-456',
+    group_uuid: 'group-uuid-789',
+    number: 5001,
+    version: 1,
+    published_at: '2024-01-15T10:00:00.000Z',
+    context: '',
+    stimulus_html: '',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 2,
+        collaborator_solutions: [
+          {
+            solution_type: 'detailed',
+            content_html: '<p>A complete answer should describe the structure of DNA (double helix), explain how genetic information is encoded in base sequences, and discuss how mutations in DNA can lead to changes in protein structure and function.</p>',
+          },
+        ],
+        formats: ['free-response'],
+        stimulus_html: '',
+        stem_html: 'Describe the structure of DNA and explain how mutations can affect an organism.',
+        is_answer_order_important: false,
+        answers: [],
+        word_limit: 150,
+      },
+    ],
+  };
+
+  const questionStates = {
+    '2': {
+      available_points: '10.0' as const,
+      is_completed: false,
+      answer_id_order: [],
+      answer_id: undefined,
+      free_response: '',
+      feedback_html: '',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 0,
+      incorrectAnswerId: 0,
+      canAnswer: true,
+      needsSaved: false,
+      apiIsPending: false,
+      scoring: {},
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <ExercisePreview
+        exercise={exercise}
+        showAllFeedback={false}
+        showCorrectAnswer={false}
+        questionStates={questionStates}
+        showScoring={false}
+      />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseGradingUnanswered = () => {
+  const exercise: ExerciseData = {
+    uid: '6000@1',
+    uuid: 'free-response-grading-uuid-123',
+    group_uuid: 'group-uuid-grading',
+    number: 6000,
+    version: 1,
+    published_at: '2024-01-20T10:00:00.000Z',
+    context: '',
+    stimulus_html: '',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 'fr-grade-1',
+        collaborator_solutions: [],
+        formats: ['free-response'],
+        stimulus_html: '',
+        stem_html: 'Explain the difference between prokaryotic and eukaryotic cells.',
+        is_answer_order_important: false,
+        answers: [],
+        word_limit: 100,
+      },
+    ],
+  };
+
+  const questionStates = {
+    'fr-grade-1': {
+      available_points: '10.0' as const,
+      is_completed: false,
+      answer_id_order: [],
+      answer_id: undefined,
+      free_response: '',
+      feedback_html: '',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 0,
+      incorrectAnswerId: 0,
+      canAnswer: true,
+      needsSaved: false,
+      apiIsPending: false,
+      scoring: { maxScore: 10 },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <ExercisePreview
+        exercise={exercise}
+        questionStates={questionStates}
+        showScoring={true}
+        onGradingSave={(data) => console.log('Grading saved:', data)}
+      />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseGradingWithAnswer = () => {
+  const exercise: ExerciseData = {
+    uid: '6001@1',
+    uuid: 'free-response-grading-uuid-456',
+    group_uuid: 'group-uuid-grading-2',
+    number: 6001,
+    version: 1,
+    published_at: '2024-01-20T10:00:00.000Z',
+    context: '',
+    stimulus_html: '',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 'fr-grade-2',
+        collaborator_solutions: [],
+        formats: ['free-response'],
+        stimulus_html: '',
+        stem_html: 'Describe the main stages of the cell cycle and what happens in each stage.',
+        is_answer_order_important: false,
+        answers: [],
+        word_limit: 150,
+      },
+    ],
+  };
+
+  const questionStates = {
+    'fr-grade-2': {
+      available_points: '15.0' as const,
+      is_completed: true,
+      answer_id_order: [],
+      answer_id: undefined,
+      free_response: 'The cell cycle consists of interphase and mitotic phase. Interphase includes G1 (cell growth), S (DNA replication), and G2 (preparation for division). The mitotic phase includes mitosis (nuclear division with prophase, metaphase, anaphase, and telophase) and cytokinesis (cytoplasm division). This cycle allows cells to grow and reproduce.',
+      feedback_html: '<p>Good overview, but could include more detail about checkpoints.</p>',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: 0,
+      canAnswer: false,
+      needsSaved: false,
+      apiIsPending: false,
+      scoring: { score: 12, maxScore: 15 },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <ExercisePreview
+        exercise={exercise}
+        questionStates={questionStates}
+        showScoring={true}
+        showCorrectAnswer={true}
+        onGradingSave={(data) => console.log('Grading updated:', data)}
+        gradingComment="Good overview, but could include more detail about checkpoints."
+      />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponsePreviewWithoutGrading = () => {
+  const exercise: ExerciseData = {
+    uid: '6002@1',
+    uuid: 'free-response-preview-uuid-789',
+    group_uuid: 'group-uuid-preview',
+    number: 6002,
+    version: 1,
+    published_at: '2024-01-20T10:00:00.000Z',
+    context: '',
+    stimulus_html: '',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 'fr-preview-1',
+        collaborator_solutions: [],
+        formats: ['free-response'],
+        stimulus_html: '',
+        stem_html: 'Explain how enzymes function as biological catalysts.',
+        is_answer_order_important: false,
+        answers: [],
+        word_limit: 120,
+      },
+    ],
+  };
+
+  const questionStates = {
+    'fr-preview-1': {
+      available_points: '10.0' as const,
+      is_completed: true,
+      answer_id_order: [],
+      answer_id: undefined,
+      free_response: 'Enzymes are biological catalysts that speed up chemical reactions by lowering the activation energy required. They have specific active sites that bind to substrates, forming enzyme-substrate complexes. After the reaction, products are released and the enzyme can be reused.',
+      feedback_html: '<p>Clear explanation of enzyme function.</p>',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 1,
+      incorrectAnswerId: 0,
+      canAnswer: false,
+      needsSaved: false,
+      apiIsPending: false,
+      scoring: { score: 9, maxScore: 10 },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <ExercisePreview
+        exercise={exercise}
+        questionStates={questionStates}
+        showScoring={true}
+        showCorrectAnswer={true}
       />
     </TextResizerProvider>
   );

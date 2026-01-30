@@ -1,27 +1,40 @@
 import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
-import { countWords } from '../utils';
+import { countWords, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
-import { ExerciseQuestionData } from 'src/types';
+import { ExerciseQuestionData, Answer, ExerciseScoringData } from 'src/types';
+import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
+import { FreeResponseGrading } from './FreeResponseGrading';
 
 export interface FreeResponseProps {
-  wordLimit: number;
-  submissionInfo?: string;
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  cancelHandler: MouseEventHandler<HTMLButtonElement>;
-  saveHandler: MouseEventHandler<HTMLButtonElement>;
-  value: string;
-  isSubmitDisabled: boolean;
-  isSaving?: boolean;
+  // Core state
+  is_completed: boolean;
+  canAnswer: boolean;
+  apiIsPending: boolean;
+  free_response: string;
+
+  // Standard callbacks
+  onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
+  onAnswerSave: (question_id: number) => void;
+  onNextStep: (currentIndex: number) => void;
+
+  // Question data
   questionNumber: number;
   question: ExerciseQuestionData;
-  score?: string;
-  isSubmitted?: boolean;
-  isReviewed?: boolean;
-  feedback?: string;
-  onNext?: MouseEventHandler<HTMLButtonElement>;
+
+  // Domain-specific to free response
+  wordLimit: number;
+  scoring?: ExerciseScoringData;
+  feedback_html?: string;
+  submissionInfo?: string;
+  cancelHandler: MouseEventHandler<HTMLButtonElement>;
+  previewMode?: boolean;
+
+  // Grading callbacks (for preview mode)
+  onGradingSave?: (data: { score: number; comment: string }) => void;
+  gradingComment?: string;
 }
 
 
@@ -33,6 +46,12 @@ const StyledFreeResponse = styled.div`
     ${mixins.stepCardPadding()}
     padding-bottom: 1rem;
   }
+`;
+
+const SyledQuestionStem = styled.div`
+  font-size: 2rem;
+  line-height: 1.68em;
+  position: relative;
 `;
 
 const InfoRow = styled.div<{ hasChildren: boolean }>`
@@ -124,11 +143,10 @@ const ReadMoreButton = styled.button`
   }
 `;
 
-const ReviewPointsText = styled.div`
+const ReviewScoreText = styled.div`
   font-size: 1.4rem;
   font-weight: bold;
   color: ${colors.palette.neutralDarker};
-
 `;
 
 const FeedbackText = styled.div`
@@ -139,6 +157,23 @@ const FeedbackText = styled.div`
     color: ${colors.palette.neutralDarker};
     font-weight: bold;
   }
+`;
+
+const ResponseGradingLayout = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 2.5rem;
+`;
+
+const ResponseColumn = styled.div`
+  flex: 1;
+`;
+
+const UnansweredText = styled.p`
+  font-size: 1.8rem;
+  color: ${colors.palette.neutralThin};
+  margin: 0;
 `;
 
 const CancelButton = styled(Button)`
@@ -164,146 +199,263 @@ const RevertButton = (props: {
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
-    score,
-    cancelHandler,
-    value,
-    submissionInfo,
-    isSubmitDisabled,
-    isSaving = false,
-    saveHandler,
+    is_completed,
+    canAnswer,
+    apiIsPending,
+    free_response,
+    onAnswerChange,
+    onAnswerSave,
+    onNextStep,
+    questionNumber,
+    question,
     wordLimit,
-    onChange,
-    isSubmitted = false,
-    isReviewed = false,
-    feedback,
-    onNext,
+    scoring,
+    feedback_html,
+    submissionInfo,
+    cancelHandler,
+    previewMode = false,
+    onGradingSave,
+    gradingComment,
   } = props;
+
+  // Format score for display
+  const scoreDisplay = scoring && typeof scoring.score === 'number' && typeof scoring.maxScore === 'number'
+    ? `${scoring.score}/${scoring.maxScore}`
+    : undefined;
 
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const [originalValue, setOriginalValue] = useState('');
-  const hasSetOriginalValue = useRef(false);
+  const [originalSubmittedValue, setOriginalSubmittedValue] = useState('');
 
-  // When entering update mode, capture the original submitted value once
+  // Derive three render states from QuestionState
+  const isUpdateMode = is_completed && canAnswer;
+  const isPostReview = is_completed && !canAnswer;
+
+  // Track original value for change detection in update mode
   useLayoutEffect(() => {
-    if (isSubmitted && !isReviewed && !hasSetOriginalValue.current) {
-      setOriginalValue(value);
-      hasSetOriginalValue.current = true;
+    if (isUpdateMode && !originalSubmittedValue) {
+      setOriginalSubmittedValue(free_response || '');
     }
-    // Reset when leaving update mode
-    if (!isSubmitted || isReviewed) {
-      hasSetOriginalValue.current = false;
+    if (!isUpdateMode) {
+      setOriginalSubmittedValue('');
     }
-  }, [isSubmitted, isReviewed, value]);
+  }, [isUpdateMode, free_response, originalSubmittedValue]);
 
-  // Determine if text has changed
-  const textHasChanged = isSubmitted ? value !== originalValue : value.trim().length > 0;
+  // Check if text has changed
+  const textHasChanged = isUpdateMode
+    ? (free_response || '') !== originalSubmittedValue
+    : (free_response || '').trim().length > 0;
 
-  const wordCount = countWords(value);
+  const wordCount = countWords(free_response || '');
   const isOverWordLimit = wordCount > wordLimit;
 
   // Check if the review answer text is overflowing
   useLayoutEffect(() => {
-    if (isReviewed && textRef.current) {
-      const isTextOverflowing =
-        !expanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10;
-      setIsOverflowing(isTextOverflowing);
-    }
-  }, [value, isReviewed, expanded]);
+    const checkOverflow = () => {
+      if (isPostReview && textRef.current) {
+        const isTextOverflowing =
+          !expanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10;
+        setIsOverflowing(isTextOverflowing);
+      }
+    };
+
+    checkOverflow();
+
+    // Re-check on window resize
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [free_response, isPostReview, expanded]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
     const raw = e.target.value;
     const trimmed = raw.trim();
 
+    let limitedValue = raw;
     if (trimmed) {
       const words = trimmed.split(/\s+/);
-
       if (words.length > wordLimit) {
-        const limited = words.slice(0, wordLimit).join(' ');
-        e.target.value = limited;
+        limitedValue = words.slice(0, wordLimit).join(' ');
+        e.target.value = limitedValue;
       }
     }
 
-    onChange(e);
+    // Call parent's onAnswerChange with Answer structure
+    onAnswerChange({
+      id: numberfyId(question.id),
+      question_id: numberfyId(question.id),
+      content_html: limitedValue,
+      correctness: undefined,
+    });
+  };
+
+  // Save handler
+  const handleSave = () => {
+    onAnswerSave(numberfyId(question.id));
+  };
+
+  // Next handler
+  const handleNext = () => {
+    onNextStep(questionNumber - 1);
+  };
+
+  // Cancel handler - calls onAnswerChange with original value
+  const handleCancel: MouseEventHandler<HTMLButtonElement> = (e) => {
+    onAnswerChange({
+      id: numberfyId(question.id),
+      question_id: numberfyId(question.id),
+      content_html: originalSubmittedValue,
+      correctness: undefined,
+    });
+    cancelHandler(e);
   };
 
   // State 3: Post-review (read-only with "Your answer" and Next button)
-  if (isReviewed) {
+  if (isPostReview) {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
-          <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>
-          <ReviewAnswerText
-            ref={textRef}
-            expanded={expanded}
-            isOverflowing={isOverflowing}
-          >
-            {value}
-          </ReviewAnswerText>
-          {(isOverflowing || expanded) && (
-            <ReadMoreButton onClick={() => setExpanded(!expanded)}>
-              {expanded ? 'read less' : 'read more'}
-            </ReadMoreButton>
+          <SyledQuestionStem>
+            {question.stem_html &&
+              <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
+          </SyledQuestionStem>
+          {!previewMode && <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>}
+          {previewMode && onGradingSave ? (
+            <ResponseGradingLayout>
+              <ResponseColumn>
+                <ReviewAnswerText
+                  ref={textRef}
+                  expanded={expanded}
+                  isOverflowing={isOverflowing}
+                >
+                  {free_response || ''}
+                </ReviewAnswerText>
+                {(isOverflowing || expanded) && (
+                  <ReadMoreButton onClick={() => setExpanded(!expanded)}>
+                    {expanded ? 'read less' : 'read more'}
+                  </ReadMoreButton>
+                )}
+                {previewMode && (
+                  <div style={{ marginTop: '1.6rem' }}>
+                    {scoreDisplay && <ReviewScoreText role="status">Score: {scoreDisplay}</ReviewScoreText>}
+                    {feedback_html && (
+                      <FeedbackText>
+                        <QuestionHtml type="stem" html={`Feedback: ${feedback_html}`} hidden={false} />
+                      </FeedbackText>
+                    )}
+                  </div>
+                )}
+              </ResponseColumn>
+              {previewMode &&
+                <FreeResponseGrading
+                  maxScore={scoring?.maxScore || 1}
+                  score={scoring?.score}
+                  comment={gradingComment}
+                  onSave={onGradingSave}
+                />
+              }
+            </ResponseGradingLayout>
+          ) : (
+            <>
+              <ReviewAnswerText
+                ref={textRef}
+                expanded={expanded}
+                isOverflowing={isOverflowing}
+              >
+                {free_response || ''}
+              </ReviewAnswerText>
+              {(isOverflowing || expanded) && (
+                <ReadMoreButton onClick={() => setExpanded(!expanded)}>
+                  {expanded ? 'read less' : 'read more'}
+                </ReadMoreButton>
+              )}
+              {previewMode && (
+                <div style={{ marginTop: '1.6rem' }}>
+                  {scoreDisplay && <ReviewScoreText role="status">Score: {scoreDisplay}</ReviewScoreText>}
+                  {feedback_html && (
+                    <FeedbackText>
+                      <span className="feedback-label">Feedback:</span>{' '}
+                      <QuestionHtml type="stem" html={feedback_html} hidden={false} />
+                    </FeedbackText>
+                  )}
+                </div>
+              )}
+            </>
           )}
         </div>
-        <StepCardFooter>
-          <div className='step-card-footer-inner'>
-            <div>
-                {score && <ReviewPointsText role="status">Points: {score}</ReviewPointsText>}
-                {feedback && <FeedbackText><span className="feedback-label">Feedback:</span> {feedback}</FeedbackText>}
+        {!previewMode && (
+          <StepCardFooter>
+            <div className='step-card-footer-inner'>
+              <div>
+                {scoreDisplay && <ReviewScoreText role="status">Score: {scoreDisplay}</ReviewScoreText>}
+                {feedback_html && (
+                  <FeedbackText>
+                    <span className="feedback-label">Feedback:</span>{' '}
+                    <QuestionHtml type="stem" html={feedback_html} hidden={false} />
+                  </FeedbackText>
+                )}
               </div>
               <div className="controls">
                 <Button
                   data-test-id="next-btn"
-                  onClick={onNext}
+                  onClick={handleNext}
                 >
                   Next
                 </Button>
               </div>
-          </div>
-        </StepCardFooter>
+            </div>
+          </StepCardFooter>
+        )}
       </StyledFreeResponse>
     );
   }
 
   // State 2: Update mode (user has submitted and is editing)
-  if (isSubmitted) {
+  if (isUpdateMode) {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
+          <SyledQuestionStem>
+            {question.stem_html &&
+              <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
+          </SyledQuestionStem>
           <FreeResponseTextArea
-            {...props}
+            value={free_response || ''}
             onChange={handleChange}
             data-test-id="free-response-box"
             placeholder="Enter your response..."
             aria-label="question response text box"
+            disabled={previewMode || apiIsPending}
           />
-          <InfoRow hasChildren={!!submissionInfo}>
-            {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
-            <div>
-              {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-              <span> Remaining words: {wordLimit - countWords(value)}</span>
-            </div>
-          </InfoRow>
+          {!previewMode && (
+            <InfoRow hasChildren={!!submissionInfo}>
+              {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
+              <div>
+                {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
+                <span> Remaining words: {wordLimit - wordCount}</span>
+              </div>
+            </InfoRow>
+          )}
         </div>
-        <StepCardFooter className="step-card-footer">
-          <div className='step-card-footer-inner'>
-            <div />
-            <div className="controls">
-              <RevertButton disabled={!textHasChanged || isSubmitDisabled} onClick={cancelHandler} />
-              <Button
-                data-test-id="update-answer-btn"
-                disabled={!textHasChanged || isSubmitDisabled || isOverWordLimit}
-                isWaiting={isSaving}
-                waitingText="Saving..."
-                onClick={saveHandler}
-              >
-                Update
-              </Button>
+        {!previewMode && (
+          <StepCardFooter className="step-card-footer">
+            <div className='step-card-footer-inner'>
+              <div />
+              <div className="controls">
+                <RevertButton disabled={!textHasChanged || apiIsPending} onClick={handleCancel} />
+                <Button
+                  data-test-id="update-answer-btn"
+                  disabled={!textHasChanged || apiIsPending || isOverWordLimit}
+                  isWaiting={apiIsPending}
+                  waitingText="Saving..."
+                  onClick={handleSave}
+                >
+                  Update
+                </Button>
+              </div>
             </div>
-          </div>
-        </StepCardFooter>
+          </StepCardFooter>
+        )}
       </StyledFreeResponse>
     );
   }
@@ -312,39 +464,64 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   return (
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
-        <FreeResponseTextArea
-          {...props}
-          onChange={handleChange}
-          data-test-id="free-response-box"
-          placeholder="Enter your response..."
-          aria-label="question response text box"
-        />
-        <InfoRow hasChildren={!!submissionInfo}>
-          {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
-          <div>
-            {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-            <span> Remaining words: {wordLimit - countWords(value)}</span>
-          </div>
-        </InfoRow>
+        <SyledQuestionStem>
+          {question.stem_html &&
+            <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
+        </SyledQuestionStem>
+        {previewMode ? (
+          onGradingSave ? (
+            <ResponseGradingLayout>
+              <ResponseColumn>
+                <UnansweredText>Unanswered</UnansweredText>
+              </ResponseColumn>
+              <FreeResponseGrading
+                maxScore={scoring?.maxScore || 1}
+                score={scoring?.score}
+                comment={gradingComment}
+                onSave={onGradingSave}
+              />
+            </ResponseGradingLayout>
+          ) : (
+            <UnansweredText>Unanswered</UnansweredText>
+          )
+        ) : (
+          <FreeResponseTextArea
+            value={free_response || ''}
+            onChange={handleChange}
+            data-test-id="free-response-box"
+            placeholder="Enter your response..."
+            aria-label="question response text box"
+            disabled={previewMode || apiIsPending}
+          />
+        )}
+        {!previewMode && (
+          <InfoRow hasChildren={!!submissionInfo}>
+            {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
+            <div>
+              {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
+              <span> Remaining words: {wordLimit - wordCount}</span>
+            </div>
+          </InfoRow>
+        )}
       </div>
-      <StepCardFooter className="step-card-footer">
-        <div className='step-card-footer-inner'>
-          {score
-            ? <div className="points" role="status"><strong>Points: {score}</strong></div>
-            : <div />}
-          <div className="controls">
-            <Button
-              data-test-id="submit-answer-btn"
-              disabled={isSubmitDisabled || isOverWordLimit}
-              isWaiting={isSaving}
-              waitingText="Saving..."
-              onClick={saveHandler}
-            >
-              Submit
-            </Button>
+      {!previewMode && (
+        <StepCardFooter className="step-card-footer">
+          <div className='step-card-footer-inner'>
+            <div />
+            <div className="controls">
+              <Button
+                data-test-id="submit-answer-btn"
+                disabled={apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
+                isWaiting={apiIsPending}
+                waitingText="Saving..."
+                onClick={handleSave}
+              >
+                Submit
+              </Button>
+            </div>
           </div>
-        </div>
-      </StepCardFooter>
+        </StepCardFooter>
+      )}
     </StyledFreeResponse>
   );
 }

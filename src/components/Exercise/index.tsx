@@ -5,6 +5,7 @@ import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from 
 import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
 import { Content } from '../Content';
 import { ExerciseQuestion } from '../ExerciseQuestion';
+import { FreeResponseInput } from '../FreeResponseInput';
 import { typesetMath } from '../../helpers/mathjax';
 import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
 import { breakpoints } from '../../theme';
@@ -128,9 +129,9 @@ export interface ExerciseBaseProps {
   questionNumber: number;
   /** A boolean that enables showing the amount of attempts remaining. */
   hasMultipleAttempts: boolean;
-  /** A callback with the question_id when the Submit/Re-submit button is clicked. */
-  hasUnlimitedAttempts: boolean;
   /** A boolean that enables labeling for unlimited attempts. */
+  hasUnlimitedAttempts: boolean;
+  /** A callback with the question_id when the Submit/Re-submit button is clicked. */
   onAnswerSave: (question_id: number) => void;
   /** A callback with the current question index when the Next/Continue button is clicked. */
   onNextStep: (currentIndex: number) => void;
@@ -183,12 +184,16 @@ export const Exercise = styled(({
   previewMode = false,
   showScoring = false,
   rightSideSlot,
+  onGradingSave,
+  gradingComment,
   ...props
 }: {
   className?: string,
   previewMode?: boolean,
   showScoring?: boolean,
   rightSideSlot?: React.ReactNode,
+  onGradingSave?: (data: { score: number; comment: string }) => void,
+  gradingComment?: string,
 } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
@@ -263,6 +268,28 @@ export const Exercise = styled(({
 
         {exercise.questions.map((q, i) => {
           const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
+
+          // Check if this is a free response question
+          const isFreeResponse = q.formats.includes('free-response');
+
+          if (isFreeResponse) {
+            return (
+              <FreeResponseInput
+                {...props}
+                {...{ ...state, available_points: undefined }}
+                ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
+                key={q.id}
+                question={q}
+                questionNumber={questionNumber + i}
+                wordLimit={q.word_limit || 100}
+                cancelHandler={() => {}}
+                previewMode={previewMode}
+                onGradingSave={previewMode ? onGradingSave : undefined}
+                gradingComment={previewMode ? gradingComment : undefined}
+              />
+            );
+          }
+
           return (
             <ExerciseQuestion
               {...props}

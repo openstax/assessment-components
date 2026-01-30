@@ -3,12 +3,15 @@ import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from 
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 
-const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrectAnswer?: boolean }>`
-  ${({ showAllFeedback }) => !showAllFeedback && `
-    .step-card-footer {
-      display: none;
-    }
-  `}
+const StyledExercise = styled(Exercise)<{
+  showAllFeedback?: boolean;
+  showCorrectAnswer?: boolean;
+  onGradingSave?: (data: { score: number; comment: string }) => void;
+  gradingComment?: string;
+}>`
+  .step-card-footer {
+    display: none;
+  }
   ${({ showCorrectAnswer }) => !showCorrectAnswer && `
     .answer-answer {
       font-weight: normal;
@@ -27,6 +30,8 @@ export interface ExercisePreviewProps {
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
   rightSideSlot?: React.ReactNode;
+  onGradingSave?: (data: { score: number; comment: string }) => void;
+  gradingComment?: string;
 }
 
 export const ExercisePreview = ({
@@ -39,7 +44,9 @@ export const ExercisePreview = ({
   showScoring = false,
   overlayChildren,
   questionStates,
-  rightSideSlot
+  rightSideSlot,
+  onGradingSave,
+  gradingComment
 }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
@@ -55,6 +62,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
     const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => {
       // Note: will only work as long as both ExerciseData and QuestionState use the same type for the IDs
       const questionState = (questionStates ?? {})[q.id];
+      const isFreeResponse = q.formats.includes('free-response');
 
       return {
         id: q.id,
@@ -64,22 +72,27 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
         scoring: questionState?.scoring ?? {},
+        free_response: isFreeResponse ? (questionState?.free_response || '') : '',
+        feedback_html: isFreeResponse ? (questionState?.feedback_html || '') : '',
       }
     });
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
+        const { id, answer_id, correct_answer_id, content_html, scoring, free_response, feedback_html } = answer;
         return {
           ...acc,
           [id]: {
             answer_id,
             correct_answer_id,
             is_completed: showCorrectAnswer,
+            canAnswer: !showCorrectAnswer,
             solution: {
               content_html,
             },
-            scoring
+            scoring,
+            free_response,
+            feedback_html,
           }
         };
       }, {}
@@ -119,6 +132,8 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}
       rightSideSlot={rightSideSlot}
+      onGradingSave={onGradingSave}
+      gradingComment={gradingComment}
     />
   );
 };

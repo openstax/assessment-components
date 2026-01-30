@@ -34,6 +34,7 @@ export interface ExerciseQuestionData {
   combo_choices?: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
   collaborator_solutions?: Solution[];
   community_solutions?: Solution[];
+  word_limit?: number;
 }
 
 export interface ExerciseQueryData {
