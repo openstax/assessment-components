@@ -269,8 +269,8 @@ export const Exercise = styled(({
         {exercise.questions.map((q, i) => {
           const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
 
-          // Check if this is a free response question
-          const isFreeResponse = q.formats.includes('free-response');
+          // Check if this is a free response question (not combined with multiple-choice)
+          const isFreeResponse = q.formats.length === 1 && q.formats.includes('free-response');
 
           if (isFreeResponse) {
             return (

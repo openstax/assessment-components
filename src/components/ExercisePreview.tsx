@@ -62,7 +62,6 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
     const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => {
       // Note: will only work as long as both ExerciseData and QuestionState use the same type for the IDs
       const questionState = (questionStates ?? {})[q.id];
-      const isFreeResponse = q.formats.includes('free-response');
 
       return {
         id: q.id,
@@ -72,14 +71,12 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
         scoring: questionState?.scoring ?? {},
-        free_response: isFreeResponse ? (questionState?.free_response || '') : '',
-        feedback_html: isFreeResponse ? (questionState?.feedback_html || '') : '',
       }
     });
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, answer_id, correct_answer_id, content_html, scoring, free_response, feedback_html } = answer;
+        const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
         return {
           ...acc,
           [id]: {
@@ -91,8 +88,6 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
               content_html,
             },
             scoring,
-            free_response,
-            feedback_html,
           }
         };
       }, {}
