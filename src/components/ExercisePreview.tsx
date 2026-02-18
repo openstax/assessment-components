@@ -7,7 +7,6 @@ const StyledExercise = styled(Exercise)<{
   showAllFeedback?: boolean;
   showCorrectAnswer?: boolean;
   onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
-  gradingComment?: string;
 }>`
   .step-card-footer {
     display: none;
@@ -29,9 +28,7 @@ export interface ExercisePreviewProps {
   overlayChildren?: React.ReactNode;
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
-  rightSideSlot?: React.ReactNode;
   onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
-  gradingComment?: string;
 }
 
 export const ExercisePreview = ({
@@ -44,9 +41,7 @@ export const ExercisePreview = ({
   showScoring = false,
   overlayChildren,
   questionStates,
-  rightSideSlot,
   onGradingSave,
-  gradingComment
 }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
@@ -77,6 +72,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
         const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
+        const questionState = (questionStates ?? {})[id];
         return {
           ...acc,
           [id]: {
@@ -88,6 +84,9 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
               content_html,
             },
             scoring,
+            free_response: questionState?.free_response || '',
+            feedback_html: questionState?.feedback_html || '',
+            gradingSubmissionInfo: questionState?.gradingSubmissionInfo,
           }
         };
       }, {}
@@ -126,9 +125,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
       showScoring={showScoring}
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}
-      rightSideSlot={rightSideSlot}
       onGradingSave={onGradingSave}
-      gradingComment={gradingComment}
     />
   );
 };

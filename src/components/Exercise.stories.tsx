@@ -725,32 +725,6 @@ bitterness. The discriminant <span data-math='b^2 - 4ac'></span> could perhaps a
 
 
 
-const RightComponent = (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '2rem',
-      textAlign: 'center',
-    }}
-  >
-    <span style={{ marginBottom: '1rem', fontWeight: 'bold' }}>Comment</span>
-    <textarea
-      style={{
-        width: '100%',
-        maxWidth: '400px',
-        height: '120px',
-        padding: '1rem',
-        fontSize: '1rem',
-        borderRadius: '4px',
-        border: '1px solid #ccc',
-        resize: 'vertical'
-      }}
-      placeholder="Write your comment here..."
-    />
-  </div>
-);
 
 export const PreviewCardWithScore = () => {
   const answer_id_order = [832300, 832303, 832301, 832302];
@@ -940,7 +914,6 @@ export const PreviewCardWithScore = () => {
   };
 
   const [showScoring, setShowScoring] = React.useState<boolean>(false);
-  const [showRightComp, setShowRightComp] = React.useState<boolean>(false);
   const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
   const [showChosenAnswer, setShowChosenAnswer] = React.useState<boolean>(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = React.useState<boolean>(false);
@@ -952,9 +925,6 @@ export const PreviewCardWithScore = () => {
       <h3>Answer labels require correctness to be on</h3>
       <button
         onClick={()=> setShowScoring(prev => !prev)}>{`Turn ${showScoring ? 'off': 'on'} scoring`}
-      </button>
-      <button
-        onClick={()=> setShowRightComp(prev => !prev)}>{`Turn ${showRightComp ? 'off': 'on'} right component`}
       </button>
       <button
         onClick={()=> setShowFeedback(prev => !prev)}>{`Turn ${showFeedback ? 'off': 'on'} feedback`}
@@ -980,7 +950,6 @@ export const PreviewCardWithScore = () => {
         labelAnswers={labelAnswers}
         questionStates={props1.questionStates}
         showScoring={showScoring}
-        rightSideSlot={showRightComp ? RightComponent : null}
       />
     </TextResizerProvider>
   );
@@ -1209,7 +1178,7 @@ export const FreeResponseInitial = () => {
     onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
       setFreeResponseText(answer.content_html);
     },
-    onAnswerSave: (question_id: number) => {
+    onAnswerSave: () => {
       setApiIsPending(true);
       setTimeout(() => setApiIsPending(false), 1000);
     },
@@ -1287,7 +1256,7 @@ export const FreeResponseUpdateMode = () => {
     onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
       setFreeResponseText(answer.content_html);
     },
-    onAnswerSave: (question_id: number) => {
+    onAnswerSave: () => {
       setApiIsPending(true);
       setTimeout(() => setApiIsPending(false), 1000);
     },
@@ -1359,8 +1328,8 @@ export const FreeResponsePostReview = () => {
     numberOfQuestions: 1,
     hasMultipleAttempts: false,
     hasUnlimitedAttempts: false,
-    onAnswerChange: () => {},
-    onAnswerSave: () => {},
+    onAnswerChange: () => undefined,
+    onAnswerSave: () => undefined,
     onNextStep: () => console.log('Next step'),
     step: {
       id: 1,
@@ -1738,6 +1707,7 @@ export const FreeResponseGradingWithAnswer = () => {
         is_answer_order_important: false,
         answers: [],
         word_limit: 150,
+        grading_comment: "Good overview, but could include more detail about checkpoints.",
       },
     ],
   };
@@ -1759,6 +1729,7 @@ export const FreeResponseGradingWithAnswer = () => {
       needsSaved: false,
       apiIsPending: false,
       scoring: { score: 12, maxScore: 15 },
+      gradingSubmissionInfo: 'Grade submitted on Jan 20 at 2:15 pm',
     },
   };
 
@@ -1770,8 +1741,86 @@ export const FreeResponseGradingWithAnswer = () => {
         showScoring={true}
         showCorrectAnswer={true}
         onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data)}
-        gradingComment="Good overview, but could include more detail about checkpoints."
       />
+    </TextResizerProvider>
+  );
+};
+
+export const FreeResponseWithSubmissionInfo = () => {
+  const [freeResponseText, setFreeResponseText] = useState<string>('Photosynthesis is the process by which green plants use sunlight to synthesize nutrients from carbon dioxide and water.');
+  const [apiIsPending, setApiIsPending] = useState(false);
+
+  const props: ExerciseWithQuestionStatesProps = {
+    exercise: {
+      uid: '7@1',
+      uuid: 'fr-submission-info-uuid',
+      group_uuid: 'fr-submission-info-group',
+      number: 7,
+      version: 1,
+      published_at: '2024-01-01T00:00:00.000Z',
+      context: '',
+      stimulus_html: '',
+      tags: [],
+      authors: [{ user_id: 1, name: 'OpenStax' }],
+      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+      derived_from: [],
+      is_vocab: false,
+      solutions_are_public: false,
+      versions: [1],
+      questions: [
+        {
+          id: 1,
+          collaborator_solutions: [],
+          formats: ['free-response'],
+          stimulus_html: '',
+          stem_html: 'Describe the process of photosynthesis.',
+          is_answer_order_important: false,
+          answers: [],
+          word_limit: 100,
+        },
+      ],
+    },
+    questionNumber: 1,
+    numberOfQuestions: 1,
+    hasMultipleAttempts: false,
+    hasUnlimitedAttempts: false,
+    onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => {
+      setFreeResponseText(answer.content_html);
+    },
+    onAnswerSave: () => {
+      setApiIsPending(true);
+      setTimeout(() => setApiIsPending(false), 1000);
+    },
+    onNextStep: () => console.log('Next step'),
+    step: {
+      id: 1,
+      uid: '7@1',
+      available_points: '1.0',
+    },
+    questionStates: {
+      '1': {
+        available_points: '1.0',
+        is_completed: true,
+        answer_id_order: [],
+        answer_id: undefined,
+        free_response: freeResponseText,
+        feedback_html: '',
+        correct_answer_id: '',
+        correct_answer_feedback_html: '',
+        attempts_remaining: 0,
+        attempt_number: 1,
+        incorrectAnswerId: 0,
+        canAnswer: true,
+        needsSaved: true,
+        apiIsPending: apiIsPending,
+        submissionInfo: 'Last submitted on Feb 3, 2024 at 2:30 PM',
+      },
+    },
+  };
+
+  return (
+    <TextResizerProvider>
+      <Exercise {...props} />
     </TextResizerProvider>
   );
 };

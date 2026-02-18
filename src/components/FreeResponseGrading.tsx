@@ -97,7 +97,13 @@ export interface FreeResponseGradingProps {
   onChange?: (data: { score: number; comment: string }) => void;
   onSave?: (questionId: ID, data: { score: number; comment: string }) => void;
   disabled?: boolean;
+  gradingSubmissionInfo?: string;
 }
+
+const SubmissionInfoText = styled.span`
+  font-size: 1.2rem;
+  color: ${colors.palette.neutralThin};
+`;
 
 export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   questionId,
@@ -107,6 +113,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   onChange,
   onSave,
   disabled = false,
+  gradingSubmissionInfo,
 }) => {
   const [score, setScore] = useState<string>(initialScore?.toString() || '');
   const [comment, setComment] = useState<string>(initialComment || '');
@@ -189,6 +196,9 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
           {hasExistingGrade ? 'Update' : 'Save'}
         </Button>
       </ButtonContainer>
+      {gradingSubmissionInfo && (
+        <SubmissionInfoText>{gradingSubmissionInfo}</SubmissionInfoText>
+      )}
     </GradingContainer>
   );
 };

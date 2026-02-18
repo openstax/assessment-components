@@ -34,7 +34,7 @@ export interface FreeResponseProps {
 
   // Grading callbacks (for preview mode)
   onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void;
-  gradingComment?: string;
+  gradingSubmissionInfo?: string;
 }
 
 
@@ -215,7 +215,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     cancelHandler,
     previewMode = false,
     onGradingSave,
-    gradingComment,
+    gradingSubmissionInfo,
   } = props;
 
   // Format score for display
@@ -351,8 +351,9 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                   questionId={question.id}
                   maxScore={scoring?.maxScore || 1}
                   score={scoring?.score}
-                  comment={gradingComment}
+                  comment={question.grading_comment}
                   onSave={onGradingSave}
+                  gradingSubmissionInfo={gradingSubmissionInfo}
                 />
               }
             </ResponseGradingLayout>
@@ -479,8 +480,9 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 questionId={question.id}
                 maxScore={scoring?.maxScore || 1}
                 score={scoring?.score}
-                comment={gradingComment}
+                comment={question.grading_comment}
                 onSave={onGradingSave}
+                gradingSubmissionInfo={gradingSubmissionInfo}
               />
             </ResponseGradingLayout>
           ) : (

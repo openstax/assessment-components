@@ -35,6 +35,7 @@ export interface ExerciseQuestionData {
   collaborator_solutions?: Solution[];
   community_solutions?: Solution[];
   word_limit?: number;
+  grading_comment?: string;
 }
 
 export interface ExerciseQueryData {
@@ -139,6 +140,10 @@ export type QuestionState = {
   apiIsPending: boolean;
   /** An object that contains the current score and maxScore of an answered question */
   scoring?: ExerciseScoringData;
+  /** A string that displays submission timestamp information (e.g., "Last submitted on Feb 3, 2024 at 2:30 PM") */
+  submissionInfo?: string;
+  /** A string that displays when the grade was submitted (e.g., "Grade submitted on Jan 15 at 3:45 pm") */
+  gradingSubmissionInfo?: string;
 };
 
 export interface Solution {

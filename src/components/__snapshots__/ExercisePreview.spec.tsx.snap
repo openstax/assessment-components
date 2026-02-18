@@ -2,14 +2,14 @@
 
 exports[`ExercisePreview using questionStates matches snapshot with chosen answer 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card "
     >
       <div>
         <div
@@ -196,14 +196,14 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
 
 exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card "
     >
       <div>
         <div
@@ -397,14 +397,14 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
 
 exports[`ExercisePreview using questionStates matches snapshot without chosen answer 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card "
     >
       <div>
         <div
@@ -591,14 +591,14 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -787,14 +787,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -983,14 +983,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -1179,14 +1179,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-cTQhss iAvxOH"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-efBctP bpSYAR sc-jOrMOR sc-dPyBCJ dNdtmQ jXcShB preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ sc-bBXxYQ gihTMJ ePwiYb preview-card "
     >
       <div>
         <div

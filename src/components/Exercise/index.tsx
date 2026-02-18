@@ -185,7 +185,6 @@ export const Exercise = styled(({
   showScoring = false,
   rightSideSlot,
   onGradingSave,
-  gradingComment,
   ...props
 }: {
   className?: string,
@@ -193,7 +192,6 @@ export const Exercise = styled(({
   showScoring?: boolean,
   rightSideSlot?: React.ReactNode,
   onGradingSave?: (questionId: ID, data: { score: number; comment: string }) => void,
-  gradingComment?: string,
 } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
@@ -282,10 +280,9 @@ export const Exercise = styled(({
                 question={q}
                 questionNumber={questionNumber + i}
                 wordLimit={q.word_limit || 100}
-                cancelHandler={() => {}}
+                cancelHandler={() => undefined}
                 previewMode={previewMode}
                 onGradingSave={previewMode ? onGradingSave : undefined}
-                gradingComment={previewMode ? gradingComment : undefined}
               />
             );
           }

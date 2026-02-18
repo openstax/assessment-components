@@ -23,6 +23,7 @@ export const WithInitialScoreAndComment = () => (
     maxScore={10}
     score={8.5}
     comment="Good work, but needs more detail on the second part."
+    gradingSubmissionInfo="Grade submitted on Jan 15 at 3:45 pm"
     onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
   />
 );
@@ -33,6 +34,7 @@ export const HighMaxScore = () => (
     maxScore={25}
     score={18}
     comment="Strong analysis with clear examples."
+    gradingSubmissionInfo="Grade submitted on Feb 2 at 10:30 am"
     onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
   />
 );
