@@ -1674,7 +1674,7 @@ export const FreeResponseGradingUnanswered = () => {
         exercise={exercise}
         questionStates={questionStates}
         showScoring={true}
-        onGradingSave={(questionId, data) => console.log('Grading saved for question', questionId, ':', data)}
+        onGradingSave={(questionId, data) => console.log('Grading saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
       />
     </TextResizerProvider>
   );
@@ -1740,7 +1740,7 @@ export const FreeResponseGradingWithAnswer = () => {
         questionStates={questionStates}
         showScoring={true}
         showCorrectAnswer={true}
-        onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data)}
+        onGradingSave={(questionId, data) => console.log('Grading updated for question', questionId, ':', data.score, '/', data.max, data.comment)}
       />
     </TextResizerProvider>
   );

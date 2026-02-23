@@ -95,7 +95,7 @@ export interface FreeResponseGradingProps {
   score?: number;
   comment?: string;
   onChange?: (data: { score: number; comment: string }) => void;
-  onSave?: (questionId: ID, data: { score: number; comment: string }) => void;
+  onSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
   disabled?: boolean;
   gradingSubmissionInfo?: string;
 }
@@ -147,7 +147,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   const handleSave = () => {
     const scoreNum = parseFloat(score);
     if (!isNaN(scoreNum) && scoreNum >= 0 && scoreNum <= maxScore && onSave) {
-      onSave(questionId, { score: scoreNum, comment });
+      onSave(questionId, { score: scoreNum, max: maxScore, comment });
     }
   };
 

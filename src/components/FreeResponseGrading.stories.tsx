@@ -4,7 +4,7 @@ export const Default = () => (
   <FreeResponseGrading
     questionId="test-question-1"
     maxScore={10}
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
 
@@ -13,7 +13,7 @@ export const WithInitialScore = () => (
     questionId="test-question-2"
     maxScore={10}
     score={7}
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
 
@@ -24,7 +24,7 @@ export const WithInitialScoreAndComment = () => (
     score={8.5}
     comment="Good work, but needs more detail on the second part."
     gradingSubmissionInfo="Grade submitted on Jan 15 at 3:45 pm"
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
 
@@ -35,7 +35,7 @@ export const HighMaxScore = () => (
     score={18}
     comment="Strong analysis with clear examples."
     gradingSubmissionInfo="Grade submitted on Feb 2 at 10:30 am"
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
 
@@ -46,7 +46,7 @@ export const Disabled = () => (
     score={7}
     comment="This grading interface is disabled."
     disabled={true}
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
 
@@ -56,6 +56,6 @@ export const WithOnChange = () => (
     maxScore={15}
     score={10}
     onChange={(data) => console.log('Changed:', data)}
-    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data)}
+    onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
