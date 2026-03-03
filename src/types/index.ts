@@ -65,6 +65,7 @@ export interface ExerciseData {
 export type Answer = {
   id: ID;
   question_id: number;
+  type?: 'multiple-choice' | 'free-response';
   correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;

@@ -284,6 +284,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     onAnswerChange({
       id: numberfyId(question.id),
       question_id: numberfyId(question.id),
+      type: 'free-response',
       content_html: limitedValue,
       correctness: undefined,
     });
@@ -304,6 +305,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     onAnswerChange({
       id: numberfyId(question.id),
       question_id: numberfyId(question.id),
+      type: 'free-response',
       content_html: originalSubmittedValue,
       correctness: undefined,
     });
