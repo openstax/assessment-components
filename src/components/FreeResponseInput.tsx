@@ -1,5 +1,5 @@
 import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
-import { countWords, numberfyId } from '../utils';
+import { countWords, formatTimestamp, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
 import { ExerciseQuestionData, Answer, ExerciseScoringData, ID } from 'src/types';
@@ -28,13 +28,13 @@ export interface FreeResponseProps {
   wordLimit: number;
   scoring?: ExerciseScoringData;
   feedback_html?: string;
-  submissionInfo?: string;
+  submissionTimestamp?: string | number;
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
   previewMode?: boolean;
 
   // Grading callbacks (for preview mode)
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
-  gradingSubmissionInfo?: string;
+  gradingTimestamp?: string | number;
 }
 
 
@@ -211,11 +211,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     wordLimit,
     scoring,
     feedback_html,
-    submissionInfo,
+    submissionTimestamp,
     cancelHandler,
     previewMode = false,
     onGradingSave,
-    gradingSubmissionInfo,
+    gradingTimestamp,
   } = props;
 
   // Format score for display
@@ -355,7 +355,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                   score={scoring?.score}
                   comment={question.grading_comment}
                   onSave={onGradingSave}
-                  gradingSubmissionInfo={gradingSubmissionInfo}
+                  gradingTimestamp={gradingTimestamp}
                 />
               }
             </ResponseGradingLayout>
@@ -432,8 +432,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             disabled={previewMode || apiIsPending}
           />
           {!previewMode && (
-            <InfoRow hasChildren={!!submissionInfo}>
-              {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
+            <InfoRow hasChildren={!!submissionTimestamp}>
+              {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
               <div>
                 {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
                 <span> Remaining words: {wordLimit - wordCount}</span>
@@ -484,7 +484,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 score={scoring?.score}
                 comment={question.grading_comment}
                 onSave={onGradingSave}
-                gradingSubmissionInfo={gradingSubmissionInfo}
+                gradingTimestamp={gradingTimestamp}
               />
             </ResponseGradingLayout>
           ) : (
@@ -501,8 +501,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           />
         )}
         {!previewMode && (
-          <InfoRow hasChildren={!!submissionInfo}>
-            {submissionInfo && <div><span className="last-submitted">{submissionInfo}</span></div>}
+          <InfoRow hasChildren={!!submissionTimestamp}>
+            {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
             <div>
               {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
               <span> Remaining words: {wordLimit - wordCount}</span>

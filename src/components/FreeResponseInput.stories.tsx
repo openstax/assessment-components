@@ -9,7 +9,6 @@ const mockQuestion = {
   stimulus_html: '',
   answers: [],
   is_answer_order_important: false,
-  word_limit: 50,
 };
 
 const baseQuestionState = {
@@ -64,7 +63,7 @@ export const SubmittedDate = () => {
       canAnswer={true}
       apiIsPending={false}
       free_response={freeResponse}
-      submissionInfo="Last submitted on July 26 at 4:00 pm"
+      submissionTimestamp="2024-07-26T16:00:00.000Z"
       onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
@@ -82,7 +81,7 @@ export const UpdateMode = () => {
       canAnswer={true}
       apiIsPending={false}
       free_response={freeResponse}
-      submissionInfo="Last submitted on July 26 at 4:00 pm"
+      submissionTimestamp="2024-07-26T16:00:00.000Z"
       onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
@@ -151,7 +150,7 @@ export const UpdateSavingState = () => {
       canAnswer={true}
       apiIsPending={true}
       free_response={freeResponse}
-      submissionInfo="Last submitted on July 26 at 4:00 pm"
+      submissionTimestamp="2024-07-26T16:00:00.000Z"
       onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
@@ -191,7 +190,7 @@ export const PreviewModeWithAnswer = () => {
       free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
       scoring={{ score: 8, maxScore: 10 }}
-      gradingSubmissionInfo="Grade submitted on Jan 15 at 3:45 pm"
+      gradingTimestamp="2024-01-15T15:45:00.000Z"
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
@@ -214,7 +213,7 @@ export const PreviewModeWithLongAnswer = () => {
       free_response="This is a much longer answer that demonstrates the read more/read less functionality with grading. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does."
       previewMode={true}
       scoring={{ score: 7, maxScore: 10 }}
-      gradingSubmissionInfo="Grade submitted on Jan 10 at 11:20 am"
+      gradingTimestamp="2024-01-10T11:20:00.000Z"
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}

@@ -753,7 +753,7 @@ export const PreviewCardWithScore = () => {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           solution_type: 'detailed',
         },
-        scoring: { score: 1.5, maxScore: 2.0}
+        score: { raw: 1.5, max: 2.0}
       },
       '320734': {
         available_points: '1.0',
@@ -776,7 +776,7 @@ export const PreviewCardWithScore = () => {
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
           solution_type: 'detailed',
         },
-        scoring: { score: 2.0, maxScore: 3.0}
+        score: { raw: 2.0, max: 3.0}
       },
     },
     exercise: {
@@ -1151,7 +1151,7 @@ export const FreeResponseInitial = () => {
       published_at: '2024-01-01T00:00:00.000Z',
       context: '',
       stimulus_html: '',
-      tags: [],
+      tags: ['response-size:small'],
       authors: [{ user_id: 1, name: 'OpenStax' }],
       copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
       derived_from: [],
@@ -1167,7 +1167,6 @@ export const FreeResponseInitial = () => {
           stem_html: 'Describe the process of photosynthesis and explain its importance to life on Earth.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 100,
         },
       ],
     },
@@ -1229,7 +1228,7 @@ export const FreeResponseUpdateMode = () => {
       published_at: '2024-01-01T00:00:00.000Z',
       context: '',
       stimulus_html: '',
-      tags: [],
+      tags: ['response-size:small'],
       authors: [{ user_id: 1, name: 'OpenStax' }],
       copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
       derived_from: [],
@@ -1245,7 +1244,6 @@ export const FreeResponseUpdateMode = () => {
           stem_html: 'Explain the difference between mitosis and meiosis.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 100,
         },
       ],
     },
@@ -1304,7 +1302,7 @@ export const FreeResponsePostReview = () => {
       published_at: '2024-01-01T00:00:00.000Z',
       context: '',
       stimulus_html: '',
-      tags: [],
+      tags: ['response-size:small'],
       authors: [{ user_id: 1, name: 'OpenStax' }],
       copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
       derived_from: [],
@@ -1320,7 +1318,6 @@ export const FreeResponsePostReview = () => {
           stem_html: 'Discuss the role of DNA in heredity and explain how mutations can affect organisms.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 150,
         },
       ],
     },
@@ -1352,7 +1349,7 @@ export const FreeResponsePostReview = () => {
         canAnswer: false,
         needsSaved: false,
         apiIsPending: false,
-        scoring: { score: 9, maxScore: 10 },
+        score: { raw: 9, max: 10 },
       },
     },
   };
@@ -1380,7 +1377,7 @@ export const MultipleFreeResponseQuestions = () => {
       published_at: '2024-01-01T00:00:00.000Z',
       context: 'Answer the following questions about cellular biology.',
       stimulus_html: '<b>Part A: Energy Production</b>',
-      tags: [],
+      tags: ['response-size:small'],
       authors: [{ user_id: 1, name: 'OpenStax' }],
       copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
       derived_from: [],
@@ -1396,7 +1393,6 @@ export const MultipleFreeResponseQuestions = () => {
           stem_html: 'Describe the process of cellular respiration and where it occurs in the cell.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 75,
         },
         {
           id: 2,
@@ -1406,7 +1402,6 @@ export const MultipleFreeResponseQuestions = () => {
           stem_html: 'Explain how ATP is used as an energy currency in cells.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 50,
         },
       ],
     },
@@ -1489,7 +1484,7 @@ export const FreeResponsePreviewCompleted = () => {
     published_at: '2024-01-15T10:00:00.000Z',
     context: '',
     stimulus_html: '',
-    tags: [],
+    tags: ['response-size:small'],
     authors: [{ user_id: 1, name: 'OpenStax' }],
     copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
     derived_from: [],
@@ -1510,7 +1505,6 @@ export const FreeResponsePreviewCompleted = () => {
         stem_html: 'Explain the process of photosynthesis and its importance to life on Earth.',
         is_answer_order_important: false,
         answers: [],
-        word_limit: 100,
       },
     ],
   };
@@ -1531,7 +1525,7 @@ export const FreeResponsePreviewCompleted = () => {
       canAnswer: false,
       needsSaved: false,
       apiIsPending: false,
-      scoring: { score: 9, maxScore: 10 },
+      score: { raw: 9, max: 10 },
     },
   };
 
@@ -1558,7 +1552,7 @@ export const FreeResponsePreviewUnanswered = () => {
     published_at: '2024-01-15T10:00:00.000Z',
     context: '',
     stimulus_html: '',
-    tags: [],
+    tags: ['response-size:small'],
     authors: [{ user_id: 1, name: 'OpenStax' }],
     copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
     derived_from: [],
@@ -1579,7 +1573,6 @@ export const FreeResponsePreviewUnanswered = () => {
         stem_html: 'Describe the structure of DNA and explain how mutations can affect an organism.',
         is_answer_order_important: false,
         answers: [],
-        word_limit: 150,
       },
     ],
   };
@@ -1600,7 +1593,7 @@ export const FreeResponsePreviewUnanswered = () => {
       canAnswer: true,
       needsSaved: false,
       apiIsPending: false,
-      scoring: {},
+      score: {},
     },
   };
 
@@ -1627,7 +1620,7 @@ export const FreeResponseGradingUnanswered = () => {
     published_at: '2024-01-20T10:00:00.000Z',
     context: '',
     stimulus_html: '',
-    tags: [],
+    tags: ['response-size:small'],
     authors: [{ user_id: 1, name: 'OpenStax' }],
     copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
     derived_from: [],
@@ -1643,7 +1636,6 @@ export const FreeResponseGradingUnanswered = () => {
         stem_html: 'Explain the difference between prokaryotic and eukaryotic cells.',
         is_answer_order_important: false,
         answers: [],
-        word_limit: 100,
       },
     ],
   };
@@ -1664,7 +1656,7 @@ export const FreeResponseGradingUnanswered = () => {
       canAnswer: true,
       needsSaved: false,
       apiIsPending: false,
-      scoring: { maxScore: 10 },
+      score: { max: 10 },
     },
   };
 
@@ -1690,7 +1682,7 @@ export const FreeResponseGradingWithAnswer = () => {
     published_at: '2024-01-20T10:00:00.000Z',
     context: '',
     stimulus_html: '',
-    tags: [],
+    tags: ['response-size:small'],
     authors: [{ user_id: 1, name: 'OpenStax' }],
     copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
     derived_from: [],
@@ -1706,7 +1698,6 @@ export const FreeResponseGradingWithAnswer = () => {
         stem_html: 'Describe the main stages of the cell cycle and what happens in each stage.',
         is_answer_order_important: false,
         answers: [],
-        word_limit: 150,
         grading_comment: "Good overview, but could include more detail about checkpoints.",
       },
     ],
@@ -1728,8 +1719,8 @@ export const FreeResponseGradingWithAnswer = () => {
       canAnswer: false,
       needsSaved: false,
       apiIsPending: false,
-      scoring: { score: 12, maxScore: 15 },
-      gradingSubmissionInfo: 'Grade submitted on Jan 20 at 2:15 pm',
+      score: { raw: 12, max: 15 },
+      gradingTimestamp: '2024-01-20T14:15:00.000Z',
     },
   };
 
@@ -1760,7 +1751,7 @@ export const FreeResponseWithSubmissionInfo = () => {
       published_at: '2024-01-01T00:00:00.000Z',
       context: '',
       stimulus_html: '',
-      tags: [],
+      tags: ['response-size:small'],
       authors: [{ user_id: 1, name: 'OpenStax' }],
       copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
       derived_from: [],
@@ -1776,7 +1767,6 @@ export const FreeResponseWithSubmissionInfo = () => {
           stem_html: 'Describe the process of photosynthesis.',
           is_answer_order_important: false,
           answers: [],
-          word_limit: 100,
         },
       ],
     },
@@ -1813,7 +1803,7 @@ export const FreeResponseWithSubmissionInfo = () => {
         canAnswer: true,
         needsSaved: true,
         apiIsPending: apiIsPending,
-        submissionInfo: 'Last submitted on Feb 3, 2024 at 2:30 PM',
+        submissionTimestamp: '2024-02-03T14:30:00.000Z',
       },
     },
   };
@@ -1835,7 +1825,7 @@ export const FreeResponsePreviewWithoutGrading = () => {
     published_at: '2024-01-20T10:00:00.000Z',
     context: '',
     stimulus_html: '',
-    tags: [],
+    tags: ['response-size:small'],
     authors: [{ user_id: 1, name: 'OpenStax' }],
     copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
     derived_from: [],
@@ -1851,7 +1841,6 @@ export const FreeResponsePreviewWithoutGrading = () => {
         stem_html: 'Explain how enzymes function as biological catalysts.',
         is_answer_order_important: false,
         answers: [],
-        word_limit: 120,
       },
     ],
   };
@@ -1872,7 +1861,7 @@ export const FreeResponsePreviewWithoutGrading = () => {
       canAnswer: false,
       needsSaved: false,
       apiIsPending: false,
-      scoring: { score: 9, maxScore: 10 },
+      score: { raw: 9, max: 10 },
     },
   };
 

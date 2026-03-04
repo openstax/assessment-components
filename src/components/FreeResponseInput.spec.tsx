@@ -54,7 +54,7 @@ describe('Free Response Input', () => {
     const tree = renderer.create(
       <FreeResponseInput
         {...baseProps}
-        submissionInfo="Last submitted on July 26 at 4:00 pm"
+        submissionTimestamp="2024-07-26T16:00:00.000Z"
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -81,7 +81,7 @@ describe('Free Response Input', () => {
         is_completed={true}
         canAnswer={true}
         free_response="Previously submitted answer"
-        submissionInfo="Last submitted on July 26 at 4:00 pm"
+        submissionTimestamp="2024-07-26T16:00:00.000Z"
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

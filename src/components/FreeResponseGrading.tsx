@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
 import { ID } from 'src/types';
+import { formatTimestamp } from '../utils';
 
 const GradingContainer = styled.div`
   display: flex;
@@ -97,7 +98,7 @@ export interface FreeResponseGradingProps {
   onChange?: (data: { score: number; comment: string }) => void;
   onSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
   disabled?: boolean;
-  gradingSubmissionInfo?: string;
+  gradingTimestamp?: string | number;
 }
 
 const SubmissionInfoText = styled.span`
@@ -113,7 +114,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   onChange,
   onSave,
   disabled = false,
-  gradingSubmissionInfo,
+  gradingTimestamp,
 }) => {
   const [score, setScore] = useState<string>(initialScore?.toString() || '');
   const [comment, setComment] = useState<string>(initialComment || '');
@@ -196,8 +197,8 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
           {hasExistingGrade ? 'Update' : 'Save'}
         </Button>
       </ButtonContainer>
-      {gradingSubmissionInfo && (
-        <SubmissionInfoText>{gradingSubmissionInfo}</SubmissionInfoText>
+      {gradingTimestamp && (
+        <SubmissionInfoText>Last graded on {formatTimestamp(gradingTimestamp)}</SubmissionInfoText>
       )}
     </GradingContainer>
   );

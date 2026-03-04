@@ -139,12 +139,12 @@ export type QuestionState = {
   needsSaved: boolean;
   /** A boolean that will change the Submit/Re-Submit button to a disabled "Saving..." button when true */
   apiIsPending: boolean;
-  /** An object that contains the current score and maxScore of an answered question */
-  scoring?: ExerciseScoringData;
-  /** A string that displays submission timestamp information (e.g., "Last submitted on Feb 3, 2024 at 2:30 PM") */
-  submissionInfo?: string;
-  /** A string that displays when the grade was submitted (e.g., "Grade submitted on Jan 15 at 3:45 pm") */
-  gradingSubmissionInfo?: string;
+  /** An object that contains the raw score and max score of an answered question */
+  score?: { raw?: number; max?: number };
+  /** Raw timestamp of the last submission, formatted by the component */
+  submissionTimestamp?: string | number;
+  /** Raw timestamp of when the grade was submitted, formatted by the component */
+  gradingTimestamp?: string | number;
 };
 
 export interface Solution {

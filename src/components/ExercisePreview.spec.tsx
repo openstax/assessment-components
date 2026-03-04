@@ -137,7 +137,7 @@ describe('ExercisePreview', () => {
             content_html: 'Detailed solution',
             solution_type: 'detailed',
           },
-          scoring: { score: 1.0, maxScore: 1.0}
+          score: { raw: 1.0, max: 1.0 }
         },
       };
     });

@@ -31,3 +31,13 @@ export function countWords(text: string) {
 }
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
+
+export const formatTimestamp = (timestamp: string | number) => new Date(timestamp).toLocaleString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true,
+  timeZone: 'UTC',
+});

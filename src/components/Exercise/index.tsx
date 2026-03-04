@@ -200,12 +200,12 @@ export const Exercise = styled(({
     React.useState<{ [key: ID]: QuestionState }>('questionStates' in props ? props['questionStates'] : {});
 
 
-  const handleScoringChange = (questionId: ID, score: number) => {
+  const handleScoringChange = (questionId: ID, rawScore: number) => {
     setQuestionStates(prev => ({
       ...prev,
       [questionId]: {
         ...prev[questionId],
-        scoring: { score, maxScore: prev[questionId]?.scoring?.maxScore }
+        score: { raw: rawScore, max: prev[questionId]?.score?.max }
       }
     }));
   };
@@ -231,14 +231,14 @@ export const Exercise = styled(({
     let isGraded = true;
 
     for (const q of exercise.questions) {
-      const scoring = questionStates[q.id]?.scoring;
+      const score = questionStates[q.id]?.score;
 
-      if (!scoring?.score || !scoring?.maxScore) {
+      if (!score?.raw || !score?.max) {
         isGraded = false;
         break;
       } else {
-        totalScoring.score += scoring.score;
-        totalScoring.maxScore += scoring.maxScore;
+        totalScoring.score += score.raw;
+        totalScoring.maxScore += score.max;
       }
     }
     return { totalScoring, isGraded };
@@ -271,6 +271,10 @@ export const Exercise = styled(({
           const isFreeResponse = q.formats.length === 1 && q.formats.includes('free-response');
 
           if (isFreeResponse) {
+            const responseSizeMap: Record<string, number> = { short: 100, medium: 200, long: 300 };
+            const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1];
+            const wordLimit = (responseSize && responseSizeMap[responseSize]) || 100;
+
             return (
               <FreeResponseInput
                 {...props}
@@ -279,7 +283,7 @@ export const Exercise = styled(({
                 key={q.id}
                 question={q}
                 questionNumber={questionNumber + i}
-                wordLimit={q.word_limit || 100}
+                wordLimit={wordLimit}
                 cancelHandler={() => undefined}
                 previewMode={previewMode}
                 onGradingSave={previewMode ? onGradingSave : undefined}
@@ -315,8 +319,8 @@ export const Exercise = styled(({
                     rightSideSlot,
                     {
                       key: q.id,
-                      score: questionStates[q.id]?.scoring?.score,
-                      maxScore: questionStates[q.id]?.scoring?.maxScore,
+                      score: questionStates[q.id]?.score?.raw,
+                      maxScore: questionStates[q.id]?.score?.max,
                       onChange: (score: number) => handleScoringChange(q.id, score)
                     }
                   )

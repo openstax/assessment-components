@@ -65,13 +65,12 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
         content_html:
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
-        scoring: questionState?.scoring ?? {},
       }
     });
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
+        const { id, answer_id, correct_answer_id, content_html } = answer;
         const questionState = (questionStates ?? {})[id];
         return {
           ...acc,
@@ -83,10 +82,10 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
             solution: {
               content_html,
             },
-            scoring,
+            score: questionState?.score,
             free_response: questionState?.free_response || '',
             feedback_html: questionState?.feedback_html || '',
-            gradingSubmissionInfo: questionState?.gradingSubmissionInfo,
+            gradingTimestamp: questionState?.gradingTimestamp,
           }
         };
       }, {}
