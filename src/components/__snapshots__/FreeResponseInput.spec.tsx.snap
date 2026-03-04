@@ -280,6 +280,18 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
             Score: 
             9/10
           </div>
+          <div
+            className="sc-fLlhyt cidRCh"
+          >
+            <div
+              className="question-stem"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Feedback: Good work overall.",
+                }
+              }
+            />
+          </div>
         </div>
       </div>
       <div

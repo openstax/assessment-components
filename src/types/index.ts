@@ -35,7 +35,6 @@ export interface ExerciseQuestionData {
   collaborator_solutions?: Solution[];
   community_solutions?: Solution[];
   word_limit?: number;
-  grading_comment?: string;
 }
 
 export interface ExerciseQueryData {

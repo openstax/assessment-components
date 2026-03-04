@@ -353,7 +353,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                   questionId={question.id}
                   maxScore={score?.max || 1}
                   score={score?.raw}
-                  comment={question.grading_comment}
+                  comment={feedback_html}
                   onSave={onGradingSave}
                   gradingTimestamp={gradingTimestamp}
                 />
@@ -482,7 +482,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 questionId={question.id}
                 maxScore={score?.max || 1}
                 score={score?.raw}
-                comment={question.grading_comment}
+                comment={feedback_html}
                 onSave={onGradingSave}
                 gradingTimestamp={gradingTimestamp}
               />

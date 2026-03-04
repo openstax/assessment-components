@@ -117,22 +117,12 @@ describe('Free Response Input', () => {
     const tree = renderer.create(
       <FreeResponseInput
         {...baseProps}
-        question={{
-          id: '1',
-          stem_html: 'Explain the process of photosynthesis.',
-          collaborator_solutions: [],
-          formats: ['free-response'],
-          stimulus_html: '',
-          answers: [],
-          is_answer_order_important: false,
-          word_limit: 50,
-          grading_comment: "Good work overall."
-        }}
         is_completed={true}
         canAnswer={false}
         previewMode={true}
         free_response="Photosynthesis converts sunlight into chemical energy."
         score={{ raw: 9, max: 10 }}
+        feedback_html="Good work overall."
         onGradingSave={jest.fn()}
       />
     ).toJSON();

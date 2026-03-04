@@ -1698,7 +1698,6 @@ export const FreeResponseGradingWithAnswer = () => {
         stem_html: 'Describe the main stages of the cell cycle and what happens in each stage.',
         is_answer_order_important: false,
         answers: [],
-        grading_comment: "Good overview, but could include more detail about checkpoints.",
       },
     ],
   };
