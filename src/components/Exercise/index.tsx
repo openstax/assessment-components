@@ -271,7 +271,7 @@ export const Exercise = styled(({
           const isFreeResponse = q.formats.length === 1 && q.formats.includes('free-response');
 
           if (isFreeResponse) {
-            const responseSizeMap: Record<string, number> = { short: 100, medium: 200, long: 300 };
+            const responseSizeMap: Record<string, number> = { short: 30, medium: 100, long: 1000 };
             const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1];
             const wordLimit = (responseSize && responseSizeMap[responseSize]) || 100;
 

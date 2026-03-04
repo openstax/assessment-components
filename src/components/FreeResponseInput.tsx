@@ -2,7 +2,7 @@ import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
 import { countWords, formatTimestamp, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
-import { ExerciseQuestionData, Answer, ExerciseScoringData, ID } from 'src/types';
+import { ExerciseQuestionData, Answer, ID } from 'src/types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
@@ -26,7 +26,7 @@ export interface FreeResponseProps {
 
   // Domain-specific to free response
   wordLimit: number;
-  scoring?: ExerciseScoringData;
+  score?: { raw?: number; max?: number };
   feedback_html?: string;
   submissionTimestamp?: string | number;
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
@@ -209,7 +209,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     questionNumber,
     question,
     wordLimit,
-    scoring,
+    score,
     feedback_html,
     submissionTimestamp,
     cancelHandler,
@@ -219,8 +219,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   } = props;
 
   // Format score for display
-  const scoreDisplay = scoring && typeof scoring.score === 'number' && typeof scoring.maxScore === 'number'
-    ? `${scoring.score}/${scoring.maxScore}`
+  const scoreDisplay = typeof score?.raw === 'number' && typeof score?.max === 'number'
+    ? `${score.raw}/${score.max}`
     : undefined;
 
   const [expanded, setExpanded] = useState(false);
@@ -351,8 +351,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               {previewMode &&
                 <FreeResponseGrading
                   questionId={question.id}
-                  maxScore={scoring?.maxScore || 1}
-                  score={scoring?.score}
+                  maxScore={score?.max || 1}
+                  score={score?.raw}
                   comment={question.grading_comment}
                   onSave={onGradingSave}
                   gradingTimestamp={gradingTimestamp}
@@ -480,8 +480,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               </ResponseColumn>
               <FreeResponseGrading
                 questionId={question.id}
-                maxScore={scoring?.maxScore || 1}
-                score={scoring?.score}
+                maxScore={score?.max || 1}
+                score={score?.raw}
                 comment={question.grading_comment}
                 onSave={onGradingSave}
                 gradingTimestamp={gradingTimestamp}

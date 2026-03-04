@@ -98,7 +98,7 @@ export const PostReviewShortAnswer = () => {
       apiIsPending={false}
       free_response="This is a short answer."
       feedback_html="<p>Good effort, but could use more detail.</p>"
-      scoring={{ score: 5, maxScore: 10 }}
+      score={{ raw: 5, max: 10 }}
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => console.log('Next clicked')}
@@ -115,7 +115,7 @@ export const PostReviewLongAnswer = () => {
       apiIsPending={false}
       free_response="This is a much longer answer that demonstrates the read more/read less functionality. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does. "
       feedback_html="<p>Excellent detailed response!</p>"
-      scoring={{ score: 8, maxScore: 10 }}
+      score={{ raw: 8, max: 10 }}
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => console.log('Next clicked')}
@@ -167,7 +167,7 @@ export const PreviewModeUnanswered = () => {
       apiIsPending={false}
       free_response=""
       previewMode={true}
-      scoring={{ maxScore: 10 }}
+      score={{ max: 10 }}
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
@@ -189,7 +189,7 @@ export const PreviewModeWithAnswer = () => {
       apiIsPending={false}
       free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
-      scoring={{ score: 8, maxScore: 10 }}
+      score={{ raw: 8, max: 10 }}
       gradingTimestamp="2024-01-15T15:45:00.000Z"
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
@@ -212,7 +212,7 @@ export const PreviewModeWithLongAnswer = () => {
       apiIsPending={false}
       free_response="This is a much longer answer that demonstrates the read more/read less functionality with grading. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does."
       previewMode={true}
-      scoring={{ score: 7, maxScore: 10 }}
+      score={{ raw: 7, max: 10 }}
       gradingTimestamp="2024-01-10T11:20:00.000Z"
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
@@ -231,7 +231,7 @@ export const PreviewModeUnansweredNoGrading = () => {
       apiIsPending={false}
       free_response=""
       previewMode={true}
-      scoring={{ maxScore: 10 }}
+      score={{ max: 10 }}
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
@@ -248,7 +248,7 @@ export const PreviewModeWithAnswerNoGrading = () => {
       apiIsPending={false}
       free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
-      scoring={{ score: 8, maxScore: 10 }}
+      score={{ raw: 8, max: 10 }}
       feedback_html="<p>Good explanation with clear details.</p>"
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
