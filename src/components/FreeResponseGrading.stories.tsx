@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FreeResponseGrading } from './FreeResponseGrading';
 
 export const Default = () => (
@@ -59,3 +60,30 @@ export const WithOnChange = () => (
     onSave={(questionId, data) => console.log('Saved for question', questionId, ':', data.score, '/', data.max, data.comment)}
   />
 );
+
+export const AsyncSave = () => {
+  const [savedScore, setSavedScore] = useState<number | undefined>(undefined);
+  const [savedComment, setSavedComment] = useState('');
+
+  const onSave = (_questionId: string | number, data: { score: number; max: number; comment: string }) =>
+    new Promise<void>(resolve => setTimeout(() => {
+      setSavedScore(data.score);
+      setSavedComment(data.comment);
+      resolve();
+    }, 2000));
+
+  return (
+    <div>
+      <FreeResponseGrading
+        questionId="test-question-async"
+        maxScore={10}
+        score={savedScore}
+        comment={savedComment}
+        onSave={onSave}
+      />
+      <p style={{ marginTop: '1rem', fontSize: '1.4rem' }}>
+        Simulates a 2-second API delay. Button should disable immediately on click and re-enable after save completes.
+      </p>
+    </div>
+  );
+};

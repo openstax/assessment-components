@@ -33,7 +33,7 @@ export interface FreeResponseProps {
   previewMode?: boolean;
 
   // Grading callbacks (for preview mode)
-  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
   gradingTimestamp?: string | number;
 }
 

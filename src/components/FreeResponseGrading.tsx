@@ -96,7 +96,7 @@ export interface FreeResponseGradingProps {
   score?: number;
   comment?: string;
   onChange?: (data: { score: number; comment: string }) => void;
-  onSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
+  onSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
   disabled?: boolean;
   gradingTimestamp?: string | number;
 }
@@ -119,6 +119,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   const [score, setScore] = useState<string>(initialScore?.toString() || '');
   const [comment, setComment] = useState<string>(initialComment || '');
   const [hasChanges, setHasChanges] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   // Check if initial score and comment exist (meaning it's already been graded)
   const hasExistingGrade = initialScore !== undefined;
@@ -145,16 +146,21 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
     setComment(e.target.value);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const scoreNum = parseFloat(score);
     if (!isNaN(scoreNum) && scoreNum >= 0 && scoreNum <= maxScore && onSave) {
-      onSave(questionId, { score: scoreNum, max: maxScore, comment });
+      setIsSaving(true);
+      try {
+        await onSave(questionId, { score: scoreNum, max: maxScore, comment });
+      } finally {
+        setIsSaving(false);
+      }
     }
   };
 
   const scoreNum = parseFloat(score);
   const isScoreValid = !isNaN(scoreNum) && scoreNum >= 0 && scoreNum <= maxScore;
-  const canSave = hasChanges && isScoreValid && !disabled;
+  const canSave = hasChanges && isScoreValid && !disabled && !isSaving;
 
   return (
     <GradingContainer>

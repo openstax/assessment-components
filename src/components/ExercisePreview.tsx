@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StyledExercise = styled(Exercise)<{
   showAllFeedback?: boolean;
   showCorrectAnswer?: boolean;
-  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
 }>`
   .step-card-footer {
     display: none;
@@ -28,7 +28,7 @@ export interface ExercisePreviewProps {
   overlayChildren?: React.ReactNode;
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
-  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void;
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
 }
 
 export const ExercisePreview = ({

@@ -191,7 +191,7 @@ export const Exercise = styled(({
   previewMode?: boolean,
   showScoring?: boolean,
   rightSideSlot?: React.ReactNode,
-  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => void,
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void,
 } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
