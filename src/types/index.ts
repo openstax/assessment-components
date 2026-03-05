@@ -68,6 +68,7 @@ export type Answer = {
   correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;
+  free_response?: string;
   selected_count?: number;
   feedback_html?: string;
 };

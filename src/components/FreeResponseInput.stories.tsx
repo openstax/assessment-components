@@ -28,7 +28,7 @@ export const Default = () => {
       canAnswer={true}
       apiIsPending={false}
       free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -45,7 +45,7 @@ export const WordLimitReached = () => {
       canAnswer={true}
       apiIsPending={false}
       free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
       wordLimit={5}
@@ -64,7 +64,7 @@ export const SubmittedDate = () => {
       apiIsPending={false}
       free_response={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -82,7 +82,7 @@ export const UpdateMode = () => {
       apiIsPending={false}
       free_response={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -133,7 +133,7 @@ export const SavingState = () => {
       canAnswer={true}
       apiIsPending={true}
       free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
     />
@@ -151,7 +151,7 @@ export const UpdateSavingState = () => {
       apiIsPending={true}
       free_response={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.content_html)}
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
     />

@@ -286,6 +286,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       question_id: numberfyId(question.id),
       type: 'free-response',
       content_html: limitedValue,
+      free_response: limitedValue,
       correctness: undefined,
     });
   };
@@ -307,6 +308,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       question_id: numberfyId(question.id),
       type: 'free-response',
       content_html: originalSubmittedValue,
+      free_response: originalSubmittedValue,
       correctness: undefined,
     });
     cancelHandler(e);
