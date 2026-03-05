@@ -68,16 +68,16 @@ const exampleText =
 export const Default = () => <ExerciseQuestion {...props} />;
 export const FreeResponseEntered = () =>
   <ExerciseQuestion {...props}
-    free_response="In this free response, I will..."
+    freeResponse="In this free response, I will..."
   />;
 export const FreeResponsePreviewEntered = () =>
   <ExerciseQuestion {...props}
-    free_response={exampleText}
+    freeResponse={exampleText}
     previewMode
   />;
 export const FreeResponseRightComponent = () =>
   <ExerciseQuestion {...props}
-    free_response={exampleText.repeat(3)}
+    freeResponse={exampleText.repeat(3)}
     rightSideSlot={
       <div style={{width: '300rem', padding: '2rem'}}>{QuestionsComponents.Default()}</div>
     }

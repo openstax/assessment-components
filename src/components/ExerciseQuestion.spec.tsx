@@ -173,7 +173,7 @@ describe('ExerciseQuestion', () => {
   it('renders free response', () => {
     const tree = renderer.create(
       <ExerciseQuestion {...props}
-        free_response='A free response'
+        freeResponse='A free response'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

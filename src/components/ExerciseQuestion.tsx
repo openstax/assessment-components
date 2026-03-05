@@ -36,7 +36,7 @@ export interface ExerciseQuestionProps {
   displaySolution: boolean;
   available_points?: AvailablePoints;
   exercise_uid: string;
-  free_response?: string;
+  freeResponse?: string;
   labelAnswers?: boolean;
   show_all_feedback?: boolean;
   tableFeedbackEnabled?: boolean;
@@ -98,7 +98,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
     is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
     answer_id, hasMultipleAttempts, hasUnlimitedAttempts, attempts_remaining, published_comments, detailedSolution,
     canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, labelAnswers, show_all_feedback, tableFeedbackEnabled,
+    displaySolution, available_points, freeResponse, labelAnswers, show_all_feedback, tableFeedbackEnabled,
     hasFeedback, previewMode
   } = props;
 
@@ -135,7 +135,7 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         previewMode={previewMode}
         rightSideSlot={props.rightSideSlot}
       >
-        <FreeResponseReview free_response={free_response} previewMode={previewMode} />
+        <FreeResponseReview free_response={freeResponse} previewMode={previewMode} />
       </Question>
       {(previewMode && detailedSolution) || !previewMode ?
         <StepCardFooter className="step-card-footer">

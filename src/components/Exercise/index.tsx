@@ -233,7 +233,7 @@ export const Exercise = styled(({
     for (const q of exercise.questions) {
       const score = questionStates[q.id]?.score;
 
-      if (!score?.raw || !score?.max) {
+      if (score?.raw === undefined || !score?.max) {
         isGraded = false;
         break;
       } else {

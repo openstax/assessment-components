@@ -27,8 +27,8 @@ export const Default = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
-      free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      freeResponse={freeResponse}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -44,8 +44,8 @@ export const WordLimitReached = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
-      free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      freeResponse={freeResponse}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
       wordLimit={5}
@@ -62,9 +62,9 @@ export const SubmittedDate = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
-      free_response={freeResponse}
+      freeResponse={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -80,9 +80,9 @@ export const UpdateMode = () => {
       is_completed={true}
       canAnswer={true}
       apiIsPending={false}
-      free_response={freeResponse}
+      freeResponse={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
@@ -96,7 +96,7 @@ export const PostReviewShortAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="This is a short answer."
+      freeResponse="This is a short answer."
       feedback_html="<p>Good effort, but could use more detail.</p>"
       score={{ raw: 5, max: 10 }}
       onAnswerChange={() => undefined}
@@ -113,7 +113,7 @@ export const PostReviewLongAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="This is a much longer answer that demonstrates the read more/read less functionality. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does. "
+      freeResponse="This is a much longer answer that demonstrates the read more/read less functionality. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does. "
       feedback_html="<p>Excellent detailed response!</p>"
       score={{ raw: 8, max: 10 }}
       onAnswerChange={() => undefined}
@@ -132,8 +132,8 @@ export const SavingState = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={true}
-      free_response={freeResponse}
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      freeResponse={freeResponse}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
     />
@@ -149,9 +149,9 @@ export const UpdateSavingState = () => {
       is_completed={true}
       canAnswer={true}
       apiIsPending={true}
-      free_response={freeResponse}
+      freeResponse={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerChange={(answer) => setFreeResponse(answer.freeResponse ?? '')}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
     />
@@ -165,7 +165,7 @@ export const PreviewModeUnanswered = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
-      free_response=""
+      freeResponse=""
       previewMode={true}
       score={{ max: 10 }}
       onAnswerChange={() => undefined}
@@ -183,7 +183,7 @@ export const PreviewModeWithAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
+      freeResponse="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
       score={{ raw: 8, max: 10 }}
       feedback_html="Good explanation, but could include more details about the chloroplast."
@@ -203,7 +203,7 @@ export const PreviewModeWithLongAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="This is a much longer answer that demonstrates the read more/read less functionality with grading. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does."
+      freeResponse="This is a much longer answer that demonstrates the read more/read less functionality with grading. The answer goes on and on with lots of detail about the topic at hand. It contains multiple sentences and paragraphs of information that would normally take up more than four lines when displayed on the screen. This allows us to test the expand and collapse functionality to ensure it works correctly. Here is even more text to make sure we exceed the character limit for the read more button to appear. We need to keep adding content to ensure this text is definitely longer than 400 characters so the read more button will show up properly in the component. Lets add one more line so the user can see. Well maybe we need another line so we see what the read more button does."
       previewMode={true}
       score={{ raw: 7, max: 10 }}
       feedback_html="Very thorough answer with good details."
@@ -223,7 +223,7 @@ export const PreviewModeUnansweredNoGrading = () => {
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
-      free_response=""
+      freeResponse=""
       previewMode={true}
       score={{ max: 10 }}
       onAnswerChange={() => undefined}
@@ -240,7 +240,7 @@ export const PreviewModeWithAnswerNoGrading = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
+      freeResponse="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
       score={{ raw: 8, max: 10 }}
       feedback_html="<p>Good explanation with clear details.</p>"

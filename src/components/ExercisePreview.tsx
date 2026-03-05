@@ -83,7 +83,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
               content_html,
             },
             score: questionState?.score,
-            free_response: questionState?.free_response || '',
+            freeResponse: questionState?.freeResponse || '',
             feedback_html: questionState?.feedback_html || '',
             gradingTimestamp: questionState?.gradingTimestamp,
           }

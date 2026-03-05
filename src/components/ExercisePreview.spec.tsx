@@ -123,7 +123,7 @@ describe('ExercisePreview', () => {
           is_completed: true,
           answer_id_order: ['1', '2'],
           answer_id: 1,
-          free_response: '',
+          freeResponse: '',
           feedback_html: 'Feedback for selected answer',
           correct_answer_id: '1',
           correct_answer_feedback_html: 'Feedback for correct answer',
