@@ -13,7 +13,7 @@ export interface FreeResponseProps {
   is_completed: boolean;
   canAnswer: boolean;
   apiIsPending: boolean;
-  freeResponse: string;
+  free_response: string;
 
   // Standard callbacks
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
@@ -202,7 +202,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     is_completed,
     canAnswer,
     apiIsPending,
-    freeResponse,
+    free_response,
     onAnswerChange,
     onAnswerSave,
     onNextStep,
@@ -235,19 +235,19 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   // Track original value for change detection in update mode
   useLayoutEffect(() => {
     if (isUpdateMode && !originalSubmittedValue) {
-      setOriginalSubmittedValue(freeResponse || '');
+      setOriginalSubmittedValue(free_response || '');
     }
     if (!isUpdateMode) {
       setOriginalSubmittedValue('');
     }
-  }, [isUpdateMode, freeResponse, originalSubmittedValue]);
+  }, [isUpdateMode, free_response, originalSubmittedValue]);
 
   // Check if text has changed
   const textHasChanged = isUpdateMode
-    ? (freeResponse || '') !== originalSubmittedValue
-    : (freeResponse || '').trim().length > 0;
+    ? (free_response || '') !== originalSubmittedValue
+    : (free_response || '').trim().length > 0;
 
-  const wordCount = countWords(freeResponse || '');
+  const wordCount = countWords(free_response || '');
   const isOverWordLimit = wordCount > wordLimit;
 
   // Check if the review answer text is overflowing
@@ -265,7 +265,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     // Re-check on window resize
     window.addEventListener('resize', checkOverflow);
     return () => window.removeEventListener('resize', checkOverflow);
-  }, [freeResponse, isPostReview, expanded]);
+  }, [free_response, isPostReview, expanded]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
     const raw = e.target.value;
@@ -286,7 +286,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       question_id: numberfyId(question.id),
       type: 'free-response',
       content_html: limitedValue,
-      freeResponse: limitedValue,
+      free_response: limitedValue,
       correctness: undefined,
     });
   };
@@ -308,7 +308,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       question_id: numberfyId(question.id),
       type: 'free-response',
       content_html: originalSubmittedValue,
-      freeResponse: originalSubmittedValue,
+      free_response: originalSubmittedValue,
       correctness: undefined,
     });
     cancelHandler(e);
@@ -332,7 +332,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                   expanded={expanded}
                   isOverflowing={isOverflowing}
                 >
-                  {freeResponse || ''}
+                  {free_response || ''}
                 </ReviewAnswerText>
                 {(isOverflowing || expanded) && (
                   <ReadMoreButton onClick={() => setExpanded(!expanded)}>
@@ -368,7 +368,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 expanded={expanded}
                 isOverflowing={isOverflowing}
               >
-                {freeResponse || ''}
+                {free_response || ''}
               </ReviewAnswerText>
               {(isOverflowing || expanded) && (
                 <ReadMoreButton onClick={() => setExpanded(!expanded)}>
@@ -426,7 +426,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
           </SyledQuestionStem>
           <FreeResponseTextArea
-            value={freeResponse || ''}
+            value={free_response || ''}
             onChange={handleChange}
             data-test-id="free-response-box"
             placeholder="Enter your response..."
@@ -494,7 +494,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           )
         ) : (
           <FreeResponseTextArea
-            value={freeResponse || ''}
+            value={free_response || ''}
             onChange={handleChange}
             data-test-id="free-response-box"
             placeholder="Enter your response..."
@@ -519,7 +519,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             <div className="controls">
               <Button
                 data-test-id="submit-answer-btn"
-                disabled={apiIsPending || isOverWordLimit || (freeResponse || '').trim().length === 0}
+                disabled={apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
                 isWaiting={apiIsPending}
                 waitingText="Saving..."
                 onClick={handleSave}

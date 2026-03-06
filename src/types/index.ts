@@ -68,7 +68,7 @@ export type Answer = {
   correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;
-  freeResponse?: string;
+  free_response?: string;
   selected_count?: number;
   feedback_html?: string;
 };
@@ -117,7 +117,7 @@ export type QuestionState = {
   /** An array of Answer IDs that specify the order to display them when hasMultipleAttempts is true. */
   answer_id_order: ID[];
   /** A string of the user's written response, used in two-step/WRM */
-  freeResponse: string;
+  free_response: string;
   /** A string of HTML to display below the incorrect answer */
   feedback_html: string;
   /** An ID of the answer to mark as correct. is_complete must also be true for this to display. */

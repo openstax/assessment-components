@@ -13,7 +13,7 @@ describe('Free Response Input', () => {
       is_completed: false,
       canAnswer: true,
       apiIsPending: false,
-      freeResponse: '',
+      free_response: '',
       onAnswerChange: jest.fn(),
       onAnswerSave: jest.fn(),
       onNextStep: jest.fn(),
@@ -44,7 +44,7 @@ describe('Free Response Input', () => {
     const tree = renderer.create(
       <FreeResponseInput
         {...baseProps}
-        freeResponse="Photosynthesis converts light energy into chemical energy."
+        free_response="Photosynthesis converts light energy into chemical energy."
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -66,7 +66,7 @@ describe('Free Response Input', () => {
         {...baseProps}
         is_completed={true}
         canAnswer={false}
-        freeResponse="Photosynthesis is the process by which plants convert light energy into chemical energy."
+        free_response="Photosynthesis is the process by which plants convert light energy into chemical energy."
         score={{ raw: 8, max: 10 }}
         feedback_html="<p>Good explanation!</p>"
       />
@@ -80,7 +80,7 @@ describe('Free Response Input', () => {
         {...baseProps}
         is_completed={true}
         canAnswer={true}
-        freeResponse="Previously submitted answer"
+        free_response="Previously submitted answer"
         submissionTimestamp="2024-07-26T16:00:00.000Z"
       />
     ).toJSON();
@@ -105,7 +105,7 @@ describe('Free Response Input', () => {
         is_completed={true}
         canAnswer={false}
         previewMode={true}
-        freeResponse="Photosynthesis converts sunlight into chemical energy."
+        free_response="Photosynthesis converts sunlight into chemical energy."
         score={{ raw: 9, max: 10 }}
         feedback_html="<p>Excellent work!</p>"
       />
@@ -120,7 +120,7 @@ describe('Free Response Input', () => {
         is_completed={true}
         canAnswer={false}
         previewMode={true}
-        freeResponse="Photosynthesis converts sunlight into chemical energy."
+        free_response="Photosynthesis converts sunlight into chemical energy."
         score={{ raw: 9, max: 10 }}
         feedback_html="Good work overall."
         onGradingSave={jest.fn()}
@@ -134,7 +134,7 @@ describe('Free Response Input', () => {
       <FreeResponseInput
         {...baseProps}
         apiIsPending={true}
-        freeResponse="This is being saved"
+        free_response="This is being saved"
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
