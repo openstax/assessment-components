@@ -26,7 +26,6 @@ describe('Free Response Input', () => {
         stimulus_html: '',
         answers: [],
         is_answer_order_important: false,
-        word_limit: 50,
       },
       wordLimit: 50,
       cancelHandler: jest.fn(),

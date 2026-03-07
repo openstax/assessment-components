@@ -183,14 +183,12 @@ export const Exercise = styled(({
   labelAnswers = true,
   previewMode = false,
   showScoring = false,
-  rightSideSlot,
   onGradingSave,
   ...props
 }: {
   className?: string,
   previewMode?: boolean,
   showScoring?: boolean,
-  rightSideSlot?: React.ReactNode,
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void,
 } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
@@ -199,16 +197,6 @@ export const Exercise = styled(({
   const [questionStates, setQuestionStates] =
     React.useState<{ [key: ID]: QuestionState }>('questionStates' in props ? props['questionStates'] : {});
 
-
-  const handleScoringChange = (questionId: ID, rawScore: number) => {
-    setQuestionStates(prev => ({
-      ...prev,
-      [questionId]: {
-        ...prev[questionId],
-        score: { raw: rawScore, max: prev[questionId]?.score?.max }
-      }
-    }));
-  };
 
   const typesetExercise = React.useCallback(() => {
     if (container.current) {
@@ -225,6 +213,14 @@ export const Exercise = styled(({
 
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
+
+
+  const propsQuestionStates = 'questionStates' in props ? props['questionStates'] : undefined;
+  React.useEffect(() => {
+    if (propsQuestionStates) {
+      setQuestionStates(propsQuestionStates);
+    }
+  }, [propsQuestionStates]);
 
   const { totalScoring, isGraded } = React.useMemo(() => {
     const totalScoring = { score: 0, maxScore: 0 };
@@ -315,19 +311,6 @@ export const Exercise = styled(({
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
               previewMode={previewMode}
-              rightSideSlot={
-                React.isValidElement(rightSideSlot)
-                  ? React.cloneElement(
-                    rightSideSlot,
-                    {
-                      key: q.id,
-                      score: questionStates[q.id]?.score?.raw,
-                      maxScore: questionStates[q.id]?.score?.max,
-                      onChange: (score: number) => handleScoringChange(q.id, score)
-                    }
-                  )
-                  : undefined
-              }
             />
           )
         }

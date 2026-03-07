@@ -74,7 +74,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -288,7 +288,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -502,7 +502,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -676,7 +676,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1019,7 +1019,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1402,7 +1402,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1605,7 +1605,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div

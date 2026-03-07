@@ -48,7 +48,7 @@ const StyledFreeResponse = styled.div`
   }
 `;
 
-const SyledQuestionStem = styled.div`
+const StyledQuestionStem = styled.div`
   font-size: 2rem;
   line-height: 1.68em;
   position: relative;
@@ -319,10 +319,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
-          <SyledQuestionStem>
+          <StyledQuestionStem>
             {question.stem_html &&
               <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-          </SyledQuestionStem>
+          </StyledQuestionStem>
           {!previewMode && <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>}
           {previewMode && onGradingSave ? (
             <ResponseGradingLayout>
@@ -421,10 +421,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
-          <SyledQuestionStem>
+          <StyledQuestionStem>
             {question.stem_html &&
               <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-          </SyledQuestionStem>
+          </StyledQuestionStem>
           <FreeResponseTextArea
             value={free_response || ''}
             onChange={handleChange}
@@ -470,10 +470,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   return (
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
-        <SyledQuestionStem>
+        <StyledQuestionStem>
           {question.stem_html &&
             <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
-        </SyledQuestionStem>
+        </StyledQuestionStem>
         {previewMode ? (
           onGradingSave ? (
             <ResponseGradingLayout>

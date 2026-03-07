@@ -51,18 +51,6 @@ const ScoreInput = styled.input`
     cursor: not-allowed;
   }
 
-  /* Remove spinner arrows for a cleaner look if desired */
-  /* Uncomment to hide arrows:
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &[type=number] {
-    -moz-appearance: textfield;
-  }
-  */
 `;
 
 const CommentTextarea = styled.textarea`
@@ -130,6 +118,11 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
     const commentChanged = comment !== (initialComment || '');
     setHasChanges(scoreChanged || commentChanged);
   }, [score, comment, initialScore, initialComment]);
+
+  useEffect(() => {
+    setScore(initialScore?.toString() || '');
+    setComment(initialComment || '');
+  }, [initialScore, initialComment]);
 
   useEffect(() => {
     if (onChange && !isNaN(parseFloat(score))) {

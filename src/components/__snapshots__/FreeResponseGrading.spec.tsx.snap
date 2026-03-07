@@ -18,7 +18,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi eeCjUy"
+        className="sc-jSMfEi dYcIBx"
         disabled={false}
         id="score-input"
         max={10}
@@ -86,7 +86,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi eeCjUy"
+        className="sc-jSMfEi dYcIBx"
         disabled={true}
         id="score-input"
         max={10}
@@ -154,7 +154,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi eeCjUy"
+        className="sc-jSMfEi dYcIBx"
         disabled={false}
         id="score-input"
         max={25}
@@ -222,7 +222,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi eeCjUy"
+        className="sc-jSMfEi dYcIBx"
         disabled={false}
         id="score-input"
         max={10}
@@ -290,7 +290,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi eeCjUy"
+        className="sc-jSMfEi dYcIBx"
         disabled={false}
         id="score-input"
         max={10}

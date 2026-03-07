@@ -68,7 +68,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -262,7 +262,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -463,7 +463,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -662,7 +662,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -858,7 +858,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1054,7 +1054,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1245,7 +1245,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div

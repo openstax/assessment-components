@@ -311,7 +311,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
             </label>
             <input
               aria-label="Score"
-              className="sc-evZas cLaCOf"
+              className="sc-evZas bSrzsE"
               disabled={false}
               id="score-input"
               max={10}
