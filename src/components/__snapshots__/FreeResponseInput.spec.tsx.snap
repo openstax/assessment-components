@@ -465,7 +465,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
           className="last-submitted"
         >
           Last submitted on 
-          Jul 26, 2024, 4:00 PM
+          Jul 26, 2024, 9:00 AM
         </span>
       </div>
       <div>
@@ -608,7 +608,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
           className="last-submitted"
         >
           Last submitted on 
-          Jul 26, 2024, 4:00 PM
+          Jul 26, 2024, 9:00 AM
         </span>
       </div>
       <div>
