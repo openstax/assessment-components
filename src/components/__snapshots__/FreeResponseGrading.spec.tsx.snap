@@ -8,17 +8,17 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <div
-      className="sc-eCYdqJ gyrjjV"
+      className="sc-eCYdqJ ldOqjj"
     >
       <label
-        className="sc-hKMtZM dkNZPQ"
+        className="sc-hKMtZM dwUXki"
         htmlFor="score-input"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dYcIBx"
+        className="sc-jSMfEi dJuvUv"
         disabled={false}
         id="score-input"
         max={10}
@@ -39,14 +39,14 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <label
-      className="sc-hKMtZM dkNZPQ"
+      className="sc-hKMtZM dwUXki"
       htmlFor="comment-input"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf dHUgSl"
+      className="sc-gKXOVf bbxjYD"
       disabled={false}
       id="comment-input"
       onChange={[Function]}
@@ -76,17 +76,17 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <div
-      className="sc-eCYdqJ gyrjjV"
+      className="sc-eCYdqJ ldOqjj"
     >
       <label
-        className="sc-hKMtZM dkNZPQ"
+        className="sc-hKMtZM dwUXki"
         htmlFor="score-input"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dYcIBx"
+        className="sc-jSMfEi dJuvUv"
         disabled={true}
         id="score-input"
         max={10}
@@ -107,14 +107,14 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <label
-      className="sc-hKMtZM dkNZPQ"
+      className="sc-hKMtZM dwUXki"
       htmlFor="comment-input"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf dHUgSl"
+      className="sc-gKXOVf bbxjYD"
       disabled={true}
       id="comment-input"
       onChange={[Function]}
@@ -144,17 +144,17 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <div
-      className="sc-eCYdqJ gyrjjV"
+      className="sc-eCYdqJ ldOqjj"
     >
       <label
-        className="sc-hKMtZM dkNZPQ"
+        className="sc-hKMtZM dwUXki"
         htmlFor="score-input"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dYcIBx"
+        className="sc-jSMfEi dJuvUv"
         disabled={false}
         id="score-input"
         max={25}
@@ -175,14 +175,14 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <label
-      className="sc-hKMtZM dkNZPQ"
+      className="sc-hKMtZM dwUXki"
       htmlFor="comment-input"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf dHUgSl"
+      className="sc-gKXOVf bbxjYD"
       disabled={false}
       id="comment-input"
       onChange={[Function]}
@@ -212,17 +212,17 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <div
-      className="sc-eCYdqJ gyrjjV"
+      className="sc-eCYdqJ ldOqjj"
     >
       <label
-        className="sc-hKMtZM dkNZPQ"
+        className="sc-hKMtZM dwUXki"
         htmlFor="score-input"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dYcIBx"
+        className="sc-jSMfEi dJuvUv"
         disabled={false}
         id="score-input"
         max={10}
@@ -243,14 +243,14 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <label
-      className="sc-hKMtZM dkNZPQ"
+      className="sc-hKMtZM dwUXki"
       htmlFor="comment-input"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf dHUgSl"
+      className="sc-gKXOVf bbxjYD"
       disabled={false}
       id="comment-input"
       onChange={[Function]}
@@ -280,17 +280,17 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <div
-      className="sc-eCYdqJ gyrjjV"
+      className="sc-eCYdqJ ldOqjj"
     >
       <label
-        className="sc-hKMtZM dkNZPQ"
+        className="sc-hKMtZM dwUXki"
         htmlFor="score-input"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dYcIBx"
+        className="sc-jSMfEi dJuvUv"
         disabled={false}
         id="score-input"
         max={10}
@@ -311,14 +311,14 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
     className="sc-dkzDqf gNmSNg"
   >
     <label
-      className="sc-hKMtZM dkNZPQ"
+      className="sc-hKMtZM dwUXki"
       htmlFor="comment-input"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf dHUgSl"
+      className="sc-gKXOVf bbxjYD"
       disabled={false}
       id="comment-input"
       onChange={[Function]}
