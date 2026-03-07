@@ -1,5 +1,4 @@
 import { ExerciseQuestion } from './ExerciseQuestion';
-import * as QuestionsComponents from './Question.stories';
 
 const props = {
   question: {
