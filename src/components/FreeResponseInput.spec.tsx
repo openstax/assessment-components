@@ -5,6 +5,11 @@ jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
 }));
 
+jest.mock('../utils', () => ({
+  ...jest.requireActual('../utils'),
+  formatTimestamp: () => 'Jul 26, 2024, 9:00 AM',
+}));
+
 describe('Free Response Input', () => {
   let baseProps: FreeResponseProps;
 
