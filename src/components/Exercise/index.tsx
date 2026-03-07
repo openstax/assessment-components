@@ -278,7 +278,8 @@ export const Exercise = styled(({
             return (
               <FreeResponseInput
                 {...props}
-                {...{ ...state, available_points: undefined }}
+                {...state}
+                available_points={undefined}
                 ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
                 key={q.id}
                 question={q}
@@ -294,7 +295,8 @@ export const Exercise = styled(({
           return (
             <ExerciseQuestion
               {...props}
-              {...{ ...state, available_points: undefined }}
+              {...state}
+              available_points={undefined}
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
               exercise_uid={exercise.uid}
               key={q.id}
