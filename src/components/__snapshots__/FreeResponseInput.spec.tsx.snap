@@ -283,11 +283,17 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           <div
             className="sc-fLlhyt cBmmaP"
           >
+            <span
+              className="feedback-label"
+            >
+              Feedback:
+            </span>
+             
             <div
               className="question-stem"
               dangerouslySetInnerHTML={
                 Object {
-                  "__html": "Feedback: Good work overall.",
+                  "__html": "Good work overall.",
                 }
               }
             />

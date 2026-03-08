@@ -9,13 +9,10 @@ import { StepCardFooter } from './StepCardFooter';
 import { FreeResponseGrading } from './FreeResponseGrading';
 
 export interface FreeResponseProps {
-  // Core state
   is_completed: boolean;
   canAnswer: boolean;
   apiIsPending: boolean;
   free_response: string;
-
-  // Standard callbacks
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
   onAnswerSave: (question_id: number) => void;
   onNextStep: (currentIndex: number) => void;
@@ -24,7 +21,7 @@ export interface FreeResponseProps {
   questionNumber: number;
   question: ExerciseQuestionData;
 
-  // Domain-specific to free response
+  // Specific to free response
   wordLimit: number;
   score?: { raw?: number; max?: number };
   feedback_html?: string;
@@ -291,12 +288,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     });
   };
 
-  // Save handler
   const handleSave = () => {
     onAnswerSave(numberfyId(question.id));
   };
 
-  // Next handler
   const handleNext = () => {
     onNextStep(questionNumber - 1);
   };
@@ -314,7 +309,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     cancelHandler(e);
   };
 
-  // State 3: Post-review (read-only with "Your answer" and Next button)
+  // Post-review state (read-only with "Your answer" and Next button)
   if (isPostReview) {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
@@ -344,7 +339,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                     {scoreDisplay && <ReviewScoreText role="status">Score: {scoreDisplay}</ReviewScoreText>}
                     {feedback_html && (
                       <FeedbackText>
-                        <QuestionHtml type="stem" html={`Feedback: ${feedback_html}`} hidden={false} />
+                        <span className="feedback-label">Feedback:</span>{' '}
+                        <QuestionHtml type="stem" html={feedback_html} hidden={false} />
                       </FeedbackText>
                     )}
                   </div>
@@ -416,7 +412,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     );
   }
 
-  // State 2: Update mode (user has submitted and is editing)
+  // Update mode (user has submitted and can editing)
   if (isUpdateMode) {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
@@ -466,7 +462,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     );
   }
 
-  // State 1: Initial state (not submitted yet)
+  // Initial state, not submitted yet
   return (
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
