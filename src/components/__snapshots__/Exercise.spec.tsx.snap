@@ -2,14 +2,14 @@
 
 exports[`Exercise using step data matches snapshot 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div>
         <div
@@ -74,7 +74,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -211,14 +211,14 @@ exports[`Exercise using step data matches snapshot 1`] = `
 
 exports[`Exercise with overlay rendering matches snapshot 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div
         onBlur={[Function]}
@@ -288,7 +288,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -425,14 +425,14 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 
 exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div
         onBlur={[Function]}
@@ -502,7 +502,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -610,14 +610,14 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
 
 exports[`Exercise with question state data matches snapshot 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div>
         <div
@@ -676,7 +676,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -813,10 +813,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 
 exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
-    className="sc-bjUoiL cRQrEB"
+    className="sc-ciZhAO iHSpLo"
   >
     <a
       href="https://openstax.org"
@@ -874,7 +874,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div>
         <div
@@ -905,20 +905,20 @@ exports[`Exercise with question state data renders header icons with multiple ch
             </div>
             <div>
               <div
-                className="sc-dmRaPn jZWOJd"
+                className="sc-iAvgwm gifHgq"
               >
                 <a
                   aria-label="View topic in textbook"
-                  className="sc-idiyUo gRUYzA"
+                  className="sc-jdAMXn ldJVan"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-dIouRR eZrGXY"
+                    className="sc-bZnhIo gtnNkX"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-book-open sc-kgflAQ kgRqqE"
+                      className="svg-inline--fa fa-book-open sc-efBctP degJhs"
                       data-icon="book-open"
                       data-prefix="fas"
                       focusable="false"
@@ -934,7 +934,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       />
                     </svg>
                     <div
-                      className="sc-hHLeRK gWdWPN popover right"
+                      className="sc-iTONeN kPcVLO popover right"
                     >
                       <div
                         className="arrow"
@@ -949,16 +949,16 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 </a>
                 <a
                   aria-label="Suggest a correction"
-                  className="sc-idiyUo gRUYzA"
+                  className="sc-jdAMXn ldJVan"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-dIouRR eZrGXY"
+                    className="sc-bZnhIo gtnNkX"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-triangle-exclamation sc-kgflAQ kgRqqE"
+                      className="svg-inline--fa fa-triangle-exclamation sc-efBctP degJhs"
                       data-icon="triangle-exclamation"
                       data-prefix="fas"
                       focusable="false"
@@ -974,7 +974,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       />
                     </svg>
                     <div
-                      className="sc-hHLeRK gWdWPN popover right"
+                      className="sc-iTONeN kPcVLO popover right"
                     >
                       <div
                         className="arrow"
@@ -1019,7 +1019,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1156,10 +1156,10 @@ exports[`Exercise with question state data renders header icons with multiple ch
 
 exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
-    className="sc-bjUoiL cRQrEB"
+    className="sc-ciZhAO iHSpLo"
   >
     <a
       href="https://openstax.org"
@@ -1217,7 +1217,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div>
         <div
@@ -1248,20 +1248,20 @@ exports[`Exercise with question state data renders header icons with two-step ex
             </div>
             <div>
               <div
-                className="sc-dmRaPn jZWOJd"
+                className="sc-iAvgwm gifHgq"
               >
                 <a
                   aria-label="View topic in textbook"
-                  className="sc-idiyUo gRUYzA"
+                  className="sc-jdAMXn ldJVan"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-dIouRR eZrGXY"
+                    className="sc-bZnhIo gtnNkX"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-book-open sc-kgflAQ kgRqqE"
+                      className="svg-inline--fa fa-book-open sc-efBctP degJhs"
                       data-icon="book-open"
                       data-prefix="fas"
                       focusable="false"
@@ -1277,7 +1277,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-hHLeRK gWdWPN popover right"
+                      className="sc-iTONeN kPcVLO popover right"
                     >
                       <div
                         className="arrow"
@@ -1292,16 +1292,16 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 </a>
                 <a
                   aria-label="Suggest a correction"
-                  className="sc-idiyUo gRUYzA"
+                  className="sc-jdAMXn ldJVan"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-dIouRR eZrGXY"
+                    className="sc-bZnhIo gtnNkX"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-triangle-exclamation sc-kgflAQ kgRqqE"
+                      className="svg-inline--fa fa-triangle-exclamation sc-efBctP degJhs"
                       data-icon="triangle-exclamation"
                       data-prefix="fas"
                       focusable="false"
@@ -1317,7 +1317,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-hHLeRK gWdWPN popover right"
+                      className="sc-iTONeN kPcVLO popover right"
                     >
                       <div
                         className="arrow"
@@ -1332,14 +1332,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 </a>
                 <div
                   aria-label="In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. Recalling the answer to a question from memory helps you to retain things longer."
-                  className="sc-idiyUo gRUYzA"
+                  className="sc-jdAMXn ldJVan"
                 >
                   <div
-                    className="sc-dIouRR eZrGXY"
+                    className="sc-bZnhIo gtnNkX"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-circle-info sc-kgflAQ kgRqqE"
+                      className="svg-inline--fa fa-circle-info sc-efBctP degJhs"
                       data-icon="circle-info"
                       data-prefix="fas"
                       focusable="false"
@@ -1357,7 +1357,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-hHLeRK gWdWPN popover right"
+                      className="sc-iTONeN kPcVLO popover right"
                     >
                       <div
                         className="arrow"
@@ -1402,7 +1402,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div
@@ -1539,14 +1539,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
 
 exports[`Exercise with question state data shows a detailed solution 1`] = `
 <div
-  className="sc-bBrHrO ihULve"
+  className="sc-jOrMOR iFuexS"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-fLlhyt bPXDAE sc-ivTmOn joNzek"
+      className="sc-bczRLJ fZGYwW exercise-step sc-cTQhss cmXTlp sc-dPyBCJ gihTMJ"
     >
       <div>
         <div
@@ -1605,7 +1605,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl eikqY"
+                    className="sc-crXcEl jVCfod"
                   >
                     <div>
                       <div

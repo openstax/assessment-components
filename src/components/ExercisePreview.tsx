@@ -3,12 +3,14 @@ import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from 
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 
-const StyledExercise = styled(Exercise)<{ showAllFeedback?: boolean; showCorrectAnswer?: boolean }>`
-  ${({ showAllFeedback }) => !showAllFeedback && `
-    .step-card-footer {
-      display: none;
-    }
-  `}
+const StyledExercise = styled(Exercise)<{
+  showAllFeedback?: boolean;
+  showCorrectAnswer?: boolean;
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
+}>`
+  .step-card-footer {
+    display: none;
+  }
   ${({ showCorrectAnswer }) => !showCorrectAnswer && `
     .answer-answer {
       font-weight: normal;
@@ -26,7 +28,7 @@ export interface ExercisePreviewProps {
   overlayChildren?: React.ReactNode;
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
-  rightSideSlot?: React.ReactNode;
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
 }
 
 export const ExercisePreview = ({
@@ -39,7 +41,7 @@ export const ExercisePreview = ({
   showScoring = false,
   overlayChildren,
   questionStates,
-  rightSideSlot
+  onGradingSave,
 }: ExercisePreviewProps) => {
 
   const hideAnswerFeedback = (exercise: ExerciseData) => {
@@ -63,23 +65,27 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
         content_html:
           showAllFeedback &&
           q.collaborator_solutions?.find(solution => solution.solution_type === 'detailed')?.content_html,
-        scoring: questionState?.scoring ?? {},
       }
     });
 
     const questionStateFields = formatAnswerData(exercise.questions).reduce(
       (acc, answer) => {
-        const { id, answer_id, correct_answer_id, content_html, scoring } = answer;
+        const { id, answer_id, correct_answer_id, content_html } = answer;
+        const questionState = (questionStates ?? {})[id];
         return {
           ...acc,
           [id]: {
             answer_id,
             correct_answer_id,
             is_completed: showCorrectAnswer,
+            canAnswer: !showCorrectAnswer,
             solution: {
               content_html,
             },
-            scoring
+            score: questionState?.score,
+            free_response: questionState?.free_response || '',
+            feedback_html: questionState?.feedback_html || '',
+            gradingTimestamp: questionState?.gradingTimestamp,
           }
         };
       }, {}
@@ -118,7 +124,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
       showScoring={showScoring}
       overlayChildren={overlayChildren}
       {...exercisePreviewProps(exercise)}
-      rightSideSlot={rightSideSlot}
+      onGradingSave={onGradingSave}
     />
   );
 };

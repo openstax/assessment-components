@@ -1,5 +1,4 @@
 import { ExerciseQuestion } from './ExerciseQuestion';
-import * as QuestionsComponents from './Question.stories';
 
 const props = {
   question: {
@@ -73,14 +72,6 @@ export const FreeResponseEntered = () =>
 export const FreeResponsePreviewEntered = () =>
   <ExerciseQuestion {...props}
     free_response={exampleText}
-    previewMode
-  />;
-export const FreeResponseRightComponent = () =>
-  <ExerciseQuestion {...props}
-    free_response={exampleText.repeat(3)}
-    rightSideSlot={
-      <div style={{width: '300rem', padding: '2rem'}}>{QuestionsComponents.Default()}</div>
-    }
     previewMode
   />;
 export const MultipleAttemptsAllLeft = () =>

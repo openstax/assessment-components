@@ -24,10 +24,19 @@ export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
 
 export function countWords(text: string) {
   const trimmedText = text.trim();
-  //https://css-tricks.com/build-word-counter-app/
-  const words = trimmedText.match(/\b[-?(\w+)?]+\b/gi);
-  if(!words) return 0;
+  if (!trimmedText) return 0;
+  // Count whitespace-separated tokens
+  const words = trimmedText.split(/\s+/);
   return words.length;
 }
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
+
+export const formatTimestamp = (timestamp: string | number) => new Date(timestamp).toLocaleString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true,
+});

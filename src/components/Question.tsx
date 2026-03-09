@@ -7,15 +7,7 @@ import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
 const StyledBodyContainer = styled.div`
-  display: flex;
   width: 100%;
-  gap: 2rem;
-
-  .step-card-body,
-  .right-side-slot {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
 `;
 
 const StyledQuestion = styled.div`
@@ -240,7 +232,6 @@ export interface QuestionProps {
   answerIdOrder?: ID[];
   choicesEnabled?: boolean;
   previewMode?: boolean;
-  rightSideSlot?: React.ReactNode;
 }
 
 export const Question = React.forwardRef((props: QuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
@@ -248,7 +239,7 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
 
   const {
     question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber,
-    context, task, hidePreambles, rightSideSlot
+    context, task, hidePreambles
   } = props;
 
   const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
@@ -315,9 +306,6 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
           {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
           {exerciseUid}
         </div>
-        {rightSideSlot && (
-          <div className="right-side-slot">{rightSideSlot}</div>
-        )}
       </StyledBodyContainer>
     </StyledQuestion>
   );

@@ -63,9 +63,11 @@ export interface ExerciseData {
 export type Answer = {
   id: ID;
   question_id: number;
+  type?: 'multiple-choice' | 'free-response';
   correctness?: string | null | undefined;
   isCorrect?: boolean;
   content_html: string;
+  free_response?: string;
   selected_count?: number;
   feedback_html?: string;
 };
@@ -136,8 +138,12 @@ export type QuestionState = {
   needsSaved: boolean;
   /** A boolean that will change the Submit/Re-Submit button to a disabled "Saving..." button when true */
   apiIsPending: boolean;
-  /** An object that contains the current score and maxScore of an answered question */
-  scoring?: ExerciseScoringData;
+  /** An object that contains the raw score and max score of an answered question */
+  score?: { raw?: number; max?: number };
+  /** Raw timestamp of the last submission, formatted by the component */
+  submissionTimestamp?: string | number;
+  /** Raw timestamp of when the grade was submitted, formatted by the component */
+  gradingTimestamp?: string | number;
 };
 
 export interface Solution {

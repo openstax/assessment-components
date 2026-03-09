@@ -5,6 +5,7 @@ import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from 
 import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
 import { Content } from '../Content';
 import { ExerciseQuestion } from '../ExerciseQuestion';
+import { FreeResponseInput } from '../FreeResponseInput';
 import { typesetMath } from '../../helpers/mathjax';
 import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
 import { breakpoints } from '../../theme';
@@ -128,9 +129,9 @@ export interface ExerciseBaseProps {
   questionNumber: number;
   /** A boolean that enables showing the amount of attempts remaining. */
   hasMultipleAttempts: boolean;
-  /** A callback with the question_id when the Submit/Re-submit button is clicked. */
-  hasUnlimitedAttempts: boolean;
   /** A boolean that enables labeling for unlimited attempts. */
+  hasUnlimitedAttempts: boolean;
+  /** A callback with the question_id when the Submit/Re-submit button is clicked. */
   onAnswerSave: (question_id: number) => void;
   /** A callback with the current question index when the Next/Continue button is clicked. */
   onNextStep: (currentIndex: number) => void;
@@ -182,13 +183,13 @@ export const Exercise = styled(({
   labelAnswers = true,
   previewMode = false,
   showScoring = false,
-  rightSideSlot,
+  onGradingSave,
   ...props
 }: {
   className?: string,
   previewMode?: boolean,
   showScoring?: boolean,
-  rightSideSlot?: React.ReactNode,
+  onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void,
 } & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
   const legacyStepRender = 'feedback_html' in step;
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
@@ -196,16 +197,6 @@ export const Exercise = styled(({
   const [questionStates, setQuestionStates] =
     React.useState<{ [key: ID]: QuestionState }>('questionStates' in props ? props['questionStates'] : {});
 
-
-  const handleScoringChange = (questionId: ID, score: number) => {
-    setQuestionStates(prev => ({
-      ...prev,
-      [questionId]: {
-        ...prev[questionId],
-        scoring: { score, maxScore: prev[questionId]?.scoring?.maxScore }
-      }
-    }));
-  };
 
   const typesetExercise = React.useCallback(() => {
     if (container.current) {
@@ -223,19 +214,27 @@ export const Exercise = styled(({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
+
+  const propsQuestionStates = 'questionStates' in props ? props['questionStates'] : undefined;
+  React.useEffect(() => {
+    if (propsQuestionStates) {
+      setQuestionStates(propsQuestionStates);
+    }
+  }, [propsQuestionStates]);
+
   const { totalScoring, isGraded } = React.useMemo(() => {
     const totalScoring = { score: 0, maxScore: 0 };
     let isGraded = true;
 
     for (const q of exercise.questions) {
-      const scoring = questionStates[q.id]?.scoring;
+      const score = questionStates[q.id]?.score;
 
-      if (!scoring?.score || !scoring?.maxScore) {
+      if (score?.raw === undefined || !score?.max) {
         isGraded = false;
         break;
       } else {
-        totalScoring.score += scoring.score;
-        totalScoring.maxScore += scoring.maxScore;
+        totalScoring.score += score.raw;
+        totalScoring.maxScore += score.max;
       }
     }
     return { totalScoring, isGraded };
@@ -263,10 +262,37 @@ export const Exercise = styled(({
 
         {exercise.questions.map((q, i) => {
           const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
+
+          // Check if this is a free response question (not combined with multiple-choice)
+          const isFreeResponse = q.formats.length === 1 && q.formats.includes('free-response');
+
+          if (isFreeResponse) {
+            const responseSizeMap: Record<string, number> = { short: 30, medium: 100, long: 1000 };
+            const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1];
+            const wordLimit = (responseSize && responseSizeMap[responseSize]) || 100;
+
+            return (
+              <FreeResponseInput
+                {...props}
+                {...state}
+                available_points={undefined}
+                ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
+                key={q.id}
+                question={q}
+                questionNumber={questionNumber + i}
+                wordLimit={wordLimit}
+                cancelHandler={() => undefined}
+                previewMode={previewMode}
+                onGradingSave={previewMode ? onGradingSave : undefined}
+              />
+            );
+          }
+
           return (
             <ExerciseQuestion
               {...props}
-              {...{ ...state, available_points: undefined }}
+              {...state}
+              available_points={undefined}
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
               exercise_uid={exercise.uid}
               key={q.id}
@@ -285,19 +311,6 @@ export const Exercise = styled(({
                   props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
               previewMode={previewMode}
-              rightSideSlot={
-                React.isValidElement(rightSideSlot)
-                  ? React.cloneElement(
-                    rightSideSlot,
-                    {
-                      key: q.id,
-                      score: questionStates[q.id]?.scoring?.score,
-                      maxScore: questionStates[q.id]?.scoring?.maxScore,
-                      onChange: (score: number) => handleScoringChange(q.id, score)
-                    }
-                  )
-                  : undefined
-              }
             />
           )
         }

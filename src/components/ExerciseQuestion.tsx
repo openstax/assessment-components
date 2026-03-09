@@ -42,7 +42,6 @@ export interface ExerciseQuestionProps {
   tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
   previewMode?: boolean;
-  rightSideSlot?: React.ReactNode;
 }
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
@@ -133,7 +132,6 @@ export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, 
         show_all_feedback={show_all_feedback}
         tableFeedbackEnabled={tableFeedbackEnabled}
         previewMode={previewMode}
-        rightSideSlot={props.rightSideSlot}
       >
         <FreeResponseReview free_response={free_response} previewMode={previewMode} />
       </Question>

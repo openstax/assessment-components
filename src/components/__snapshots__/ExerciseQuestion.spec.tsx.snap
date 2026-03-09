@@ -10,7 +10,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -162,7 +162,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -322,7 +322,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -482,7 +482,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -642,7 +642,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -801,7 +801,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -960,7 +960,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -1145,7 +1145,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -1302,7 +1302,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div
@@ -1461,7 +1461,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds kzijku"
+      className="sc-iBkjds gYtkAT"
     >
       <div>
         <div

@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FreeResponseGrading matches snapshot 1`] = `
+<div
+  className="sc-gsnTZi cSdbEu"
+>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <div
+      className="sc-eCYdqJ ldOqjj"
+    >
+      <label
+        className="sc-hKMtZM dwUXki"
+        htmlFor="score-input"
+      >
+        Points
+      </label>
+      <input
+        aria-label="Score"
+        className="sc-jSMfEi dJuvUv"
+        disabled={false}
+        id="score-input"
+        max={10}
+        min={0}
+        onChange={[Function]}
+        placeholder="0"
+        step={1}
+        type="number"
+        value=""
+      />
+      <span>
+        out of 
+        10
+      </span>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <label
+      className="sc-hKMtZM dwUXki"
+      htmlFor="comment-input"
+    >
+      Comment
+    </label>
+    <textarea
+      aria-label="Comment"
+      className="sc-gKXOVf bbxjYD"
+      disabled={false}
+      id="comment-input"
+      onChange={[Function]}
+      placeholder="Enter feedback for the student..."
+      value=""
+    />
+  </div>
+  <div
+    className="sc-iBkjds crHxek"
+  >
+    <button
+      className="sc-bczRLJ fLTvYy"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
+<div
+  className="sc-gsnTZi cSdbEu"
+>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <div
+      className="sc-eCYdqJ ldOqjj"
+    >
+      <label
+        className="sc-hKMtZM dwUXki"
+        htmlFor="score-input"
+      >
+        Points
+      </label>
+      <input
+        aria-label="Score"
+        className="sc-jSMfEi dJuvUv"
+        disabled={true}
+        id="score-input"
+        max={10}
+        min={0}
+        onChange={[Function]}
+        placeholder="0"
+        step={1}
+        type="number"
+        value="7"
+      />
+      <span>
+        out of 
+        10
+      </span>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <label
+      className="sc-hKMtZM dwUXki"
+      htmlFor="comment-input"
+    >
+      Comment
+    </label>
+    <textarea
+      aria-label="Comment"
+      className="sc-gKXOVf bbxjYD"
+      disabled={true}
+      id="comment-input"
+      onChange={[Function]}
+      placeholder="Enter feedback for the student..."
+      value="Grading is disabled"
+    />
+  </div>
+  <div
+    className="sc-iBkjds crHxek"
+  >
+    <button
+      className="sc-bczRLJ fLTvYy"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
+<div
+  className="sc-gsnTZi cSdbEu"
+>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <div
+      className="sc-eCYdqJ ldOqjj"
+    >
+      <label
+        className="sc-hKMtZM dwUXki"
+        htmlFor="score-input"
+      >
+        Points
+      </label>
+      <input
+        aria-label="Score"
+        className="sc-jSMfEi dJuvUv"
+        disabled={false}
+        id="score-input"
+        max={25}
+        min={0}
+        onChange={[Function]}
+        placeholder="0"
+        step={1}
+        type="number"
+        value="18"
+      />
+      <span>
+        out of 
+        25
+      </span>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <label
+      className="sc-hKMtZM dwUXki"
+      htmlFor="comment-input"
+    >
+      Comment
+    </label>
+    <textarea
+      aria-label="Comment"
+      className="sc-gKXOVf bbxjYD"
+      disabled={false}
+      id="comment-input"
+      onChange={[Function]}
+      placeholder="Enter feedback for the student..."
+      value=""
+    />
+  </div>
+  <div
+    className="sc-iBkjds crHxek"
+  >
+    <button
+      className="sc-bczRLJ fLTvYy"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
+<div
+  className="sc-gsnTZi cSdbEu"
+>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <div
+      className="sc-eCYdqJ ldOqjj"
+    >
+      <label
+        className="sc-hKMtZM dwUXki"
+        htmlFor="score-input"
+      >
+        Points
+      </label>
+      <input
+        aria-label="Score"
+        className="sc-jSMfEi dJuvUv"
+        disabled={false}
+        id="score-input"
+        max={10}
+        min={0}
+        onChange={[Function]}
+        placeholder="0"
+        step={1}
+        type="number"
+        value="7"
+      />
+      <span>
+        out of 
+        10
+      </span>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <label
+      className="sc-hKMtZM dwUXki"
+      htmlFor="comment-input"
+    >
+      Comment
+    </label>
+    <textarea
+      aria-label="Comment"
+      className="sc-gKXOVf bbxjYD"
+      disabled={false}
+      id="comment-input"
+      onChange={[Function]}
+      placeholder="Enter feedback for the student..."
+      value=""
+    />
+  </div>
+  <div
+    className="sc-iBkjds crHxek"
+  >
+    <button
+      className="sc-bczRLJ fLTvYy"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;
+
+exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
+<div
+  className="sc-gsnTZi cSdbEu"
+>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <div
+      className="sc-eCYdqJ ldOqjj"
+    >
+      <label
+        className="sc-hKMtZM dwUXki"
+        htmlFor="score-input"
+      >
+        Points
+      </label>
+      <input
+        aria-label="Score"
+        className="sc-jSMfEi dJuvUv"
+        disabled={false}
+        id="score-input"
+        max={10}
+        min={0}
+        onChange={[Function]}
+        placeholder="0"
+        step={1}
+        type="number"
+        value="8.5"
+      />
+      <span>
+        out of 
+        10
+      </span>
+    </div>
+  </div>
+  <div
+    className="sc-dkzDqf gNmSNg"
+  >
+    <label
+      className="sc-hKMtZM dwUXki"
+      htmlFor="comment-input"
+    >
+      Comment
+    </label>
+    <textarea
+      aria-label="Comment"
+      className="sc-gKXOVf bbxjYD"
+      disabled={false}
+      id="comment-input"
+      onChange={[Function]}
+      placeholder="Enter feedback for the student..."
+      value="Good work on this assignment."
+    />
+  </div>
+  <div
+    className="sc-iBkjds crHxek"
+  >
+    <button
+      className="sc-bczRLJ fLTvYy"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Update
+    </button>
+  </div>
+</div>
+`;

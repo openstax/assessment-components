@@ -1,242 +1,649 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Free Response Input matches snapshot 1`] = `
+exports[`Free Response Input matches snapshot - completed state 1`] = `
 <div
-  className="sc-jqUVSM crDAat"
+  className="sc-fnykZs jKoZYo"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-kDDrLX xmRrO"
-      data-question-number={1}
+      className="sc-fEOsli hISZaf"
     >
       <div
         className="question-stem"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "Is this a question?",
+            "__html": "Explain the process of photosynthesis.",
           }
         }
       />
     </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-crXcEl gDzNQA"
-      data-test-id="free-response-box"
-      defaultValue=""
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      readOnly={true}
-    />
     <div
-      className="sc-iqcoie cJiYdJ"
+      className="sc-dIouRR bQySUj"
     >
-      <div>
-        <span>
-          0
-           words
-        </span>
-      </div>
+      Your answer
+    </div>
+    <div
+      className="sc-hHLeRK llNcA-d"
+    >
+      Photosynthesis is the process by which plants convert light energy into chemical energy.
     </div>
   </div>
   <div
     className="sc-papXJ hujQqm"
   >
     <div
-      className="points"
-      role="status"
+      className="step-card-footer-inner"
     >
-      <strong>
-        Points: 
-        1.0
-      </strong>
-    </div>
-    <div
-      className="controls"
-    >
-      <button
-        className="sc-ftvSup gRHhHP"
-        disabled={true}
-        onClick={[Function]}
+      <div>
+        <div
+          className="sc-kgflAQ jmqgyi"
+          role="status"
+        >
+          Score: 
+          8/10
+        </div>
+        <div
+          className="sc-fLlhyt cBmmaP"
+        >
+          <span
+            className="feedback-label"
+          >
+            Feedback:
+          </span>
+           
+          <div
+            className="question-stem"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<p>Good explanation!</p>",
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="controls"
       >
-        Cancel
-      </button>
-      <button
-        className="sc-ftvSup gRHhHP"
-        data-test-id="submit-answer-btn"
-        disabled={false}
-        onClick={[Function]}
-      >
-        Next
-      </button>
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="next-btn"
+          onClick={[Function]}
+        >
+          Next
+        </button>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Free Response Input renders leftInfoComponent component 1`] = `
+exports[`Free Response Input matches snapshot - initial state 1`] = `
 <div
-  className="sc-jqUVSM crDAat"
+  className="sc-fnykZs jKoZYo"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-kDDrLX xmRrO"
-      data-question-number={1}
+      className="sc-fEOsli hISZaf"
     >
       <div
         className="question-stem"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "Is this a question?",
+            "__html": "Explain the process of photosynthesis.",
           }
         }
       />
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-crXcEl kcVOIg"
+      className="sc-idiyUo kvDpsO"
       data-test-id="free-response-box"
-      defaultValue=""
+      disabled={false}
       onChange={[Function]}
       placeholder="Enter your response..."
-      readOnly={false}
+      value=""
     />
     <div
-      className="sc-iqcoie fjWNFn"
+      className="sc-bjUoiL dpMbSK"
+    >
+      <div>
+        <span>
+           Remaining words: 
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-papXJ hujQqm step-card-footer"
+  >
+    <div
+      className="step-card-footer-inner"
+    >
+      <div />
+      <div
+        className="controls"
+      >
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="submit-answer-btn"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <div
+      className="sc-fEOsli hISZaf"
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <p
+      className="sc-cxabCf leMZGC"
+    >
+      Unanswered
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <div
+      className="sc-fEOsli hISZaf"
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-hHLeRK llNcA-d"
+    >
+      Photosynthesis converts sunlight into chemical energy.
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "1.6rem",
+        }
+      }
+    >
+      <div
+        className="sc-kgflAQ jmqgyi"
+        role="status"
+      >
+        Score: 
+        9/10
+      </div>
+      <div
+        className="sc-fLlhyt cBmmaP"
+      >
+        <span
+          className="feedback-label"
+        >
+          Feedback:
+        </span>
+         
+        <div
+          className="question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Excellent work!</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <div
+      className="sc-fEOsli hISZaf"
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <div
+      className="sc-bBrHrO fslSVg"
+    >
+      <div
+        className="sc-ivTmOn lmJbRV"
+      >
+        <div
+          className="sc-hHLeRK llNcA-d"
+        >
+          Photosynthesis converts sunlight into chemical energy.
+        </div>
+        <div
+          style={
+            Object {
+              "marginTop": "1.6rem",
+            }
+          }
+        >
+          <div
+            className="sc-kgflAQ jmqgyi"
+            role="status"
+          >
+            Score: 
+            9/10
+          </div>
+          <div
+            className="sc-fLlhyt cBmmaP"
+          >
+            <span
+              className="feedback-label"
+            >
+              Feedback:
+            </span>
+             
+            <div
+              className="question-stem"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "Good work overall.",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-jqUVSM jIqmLJ"
+      >
+        <div
+          className="sc-kDDrLX jeAafv"
+        >
+          <div
+            className="sc-crXcEl gpANJs"
+          >
+            <label
+              className="sc-iqcoie kktHJP"
+              htmlFor="score-input"
+            >
+              Points
+            </label>
+            <input
+              aria-label="Score"
+              className="sc-evZas jVhdfK"
+              disabled={false}
+              id="score-input"
+              max={10}
+              min={0}
+              onChange={[Function]}
+              placeholder="0"
+              step={1}
+              type="number"
+              value="9"
+            />
+            <span>
+              out of 
+              10
+            </span>
+          </div>
+        </div>
+        <div
+          className="sc-kDDrLX jeAafv"
+        >
+          <label
+            className="sc-iqcoie kktHJP"
+            htmlFor="comment-input"
+          >
+            Comment
+          </label>
+          <textarea
+            aria-label="Comment"
+            className="sc-breuTD gpbziE"
+            disabled={false}
+            id="comment-input"
+            onChange={[Function]}
+            placeholder="Enter feedback for the student..."
+            value="Good work overall."
+          />
+        </div>
+        <div
+          className="sc-ksZaOG cxStGS"
+        >
+          <button
+            className="sc-ftvSup gRHhHP"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - saving state 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <div
+      className="sc-fEOsli hISZaf"
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <textarea
+      aria-label="question response text box"
+      className="sc-idiyUo kvDpsO"
+      data-test-id="free-response-box"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      value="This is being saved"
+    />
+    <div
+      className="sc-bjUoiL dpMbSK"
+    >
+      <div>
+        <span>
+           Remaining words: 
+          46
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-papXJ hujQqm step-card-footer"
+  >
+    <div
+      className="step-card-footer-inner"
+    >
+      <div />
+      <div
+        className="controls"
+      >
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="submit-answer-btn"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Saving...
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - update mode 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
+    <div
+      className="sc-fEOsli hISZaf"
+    >
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <textarea
+      aria-label="question response text box"
+      className="sc-idiyUo kvDpsO"
+      data-test-id="free-response-box"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      value="Previously submitted answer"
+    />
+    <div
+      className="sc-bjUoiL gwhDCs"
     >
       <div>
         <span
           className="last-submitted"
         >
-          Last submitted on July 26 at 4:00 pm
+          Last submitted on 
+          Jul 26, 2024, 9:00 AM
         </span>
       </div>
       <div>
         <span>
-          0
-           words
+           Remaining words: 
+          47
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
-      className="points"
-      role="status"
+      className="step-card-footer-inner"
     >
-      <strong>
-        Points: 
-        1.0
-      </strong>
-    </div>
-    <div
-      className="controls"
-    >
-      <button
-        className="sc-ftvSup gRHhHP"
-        disabled={true}
-        onClick={[Function]}
+      <div />
+      <div
+        className="controls"
       >
-        Cancel
-      </button>
-      <button
-        className="sc-ftvSup gRHhHP"
-        data-test-id="submit-answer-btn"
-        disabled={false}
-        onClick={[Function]}
-      >
-        Next
-      </button>
+        <button
+          className="sc-ftvSup gRHhHP sc-llJcti gWdZPG"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Cancel
+        </button>
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="update-answer-btn"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Update
+        </button>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Free Response Input renders word limit error 1`] = `
+exports[`Free Response Input matches snapshot - with free response text 1`] = `
 <div
-  className="sc-jqUVSM crDAat"
+  className="sc-fnykZs jKoZYo"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-kDDrLX xmRrO"
-      data-question-number={1}
+      className="sc-fEOsli hISZaf"
     >
       <div
         className="question-stem"
         dangerouslySetInnerHTML={
           Object {
-            "__html": "Is this a question?",
+            "__html": "Explain the process of photosynthesis.",
           }
         }
       />
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-crXcEl gwOXPr"
+      className="sc-idiyUo kvDpsO"
       data-test-id="free-response-box"
-      defaultValue="response has more than five words"
+      disabled={false}
       onChange={[Function]}
       placeholder="Enter your response..."
-      readOnly={false}
+      value="Photosynthesis converts light energy into chemical energy."
     />
     <div
-      className="sc-iqcoie cJiYdJ"
+      className="sc-bjUoiL dpMbSK"
     >
       <div>
         <span>
-          6
-           words
-        </span>
-        <span
-          className="word-limit-error-info"
-        >
-          Maximum 
-          5
-           words
+           Remaining words: 
+          43
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm"
+    className="sc-papXJ hujQqm step-card-footer"
   >
     <div
-      className="points"
-      role="status"
+      className="step-card-footer-inner"
     >
-      <strong>
-        Points: 
-        1.0
-      </strong>
+      <div />
+      <div
+        className="controls"
+      >
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="submit-answer-btn"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Submit
+        </button>
+      </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - with submission info 1`] = `
+<div
+  className="sc-fnykZs jKoZYo"
+  data-test-id="student-free-response"
+>
+  <div
+    className="step-card-body"
+  >
     <div
-      className="controls"
+      className="sc-fEOsli hISZaf"
     >
-      <button
-        className="sc-ftvSup gRHhHP"
-        disabled={true}
-        onClick={[Function]}
+      <div
+        className="question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <textarea
+      aria-label="question response text box"
+      className="sc-idiyUo kvDpsO"
+      data-test-id="free-response-box"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="Enter your response..."
+      value=""
+    />
+    <div
+      className="sc-bjUoiL gwhDCs"
+    >
+      <div>
+        <span
+          className="last-submitted"
+        >
+          Last submitted on 
+          Jul 26, 2024, 9:00 AM
+        </span>
+      </div>
+      <div>
+        <span>
+           Remaining words: 
+          50
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-papXJ hujQqm step-card-footer"
+  >
+    <div
+      className="step-card-footer-inner"
+    >
+      <div />
+      <div
+        className="controls"
       >
-        Cancel
-      </button>
-      <button
-        className="sc-ftvSup gRHhHP"
-        data-test-id="submit-answer-btn"
-        disabled={true}
-        onClick={[Function]}
-      >
-        Next
-      </button>
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="submit-answer-btn"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   </div>
 </div>

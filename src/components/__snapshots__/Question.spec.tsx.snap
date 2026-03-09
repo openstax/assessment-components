@@ -7,7 +7,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -123,7 +123,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -239,7 +239,7 @@ exports[`Question defaults formats 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -364,7 +364,7 @@ exports[`Question matches snapshot 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -480,7 +480,7 @@ exports[`Question renders exercise uid 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -601,7 +601,7 @@ exports[`Question renders formats 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
@@ -729,7 +729,7 @@ exports[`Question renders solutions 1`] = `
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf iVucFo"
+    className="sc-gKXOVf bVVSER"
   >
     <div>
       <div
