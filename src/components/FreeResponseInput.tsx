@@ -226,18 +226,16 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
   const [originalSubmittedValue, setOriginalSubmittedValue] = useState(free_response || '');
-  const prevNeedsSaved = useRef(needsSaved);
 
   // Derive three render states from QuestionState
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
 
-  // Update the saved baseline when needsSaved transitions true -> false (save completed)
+  // Sync baseline to current free_response whenever there are no unsaved changes
   useLayoutEffect(() => {
-    if (isUpdateMode && prevNeedsSaved.current && !needsSaved) {
+    if (isUpdateMode && !needsSaved) {
       setOriginalSubmittedValue(free_response || '');
     }
-    prevNeedsSaved.current = needsSaved;
   }, [needsSaved, isUpdateMode, free_response]);
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
