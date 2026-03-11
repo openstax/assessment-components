@@ -660,8 +660,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 21,
-      "locEnd": 36,
+      "locStart": 22,
+      "locEnd": 37,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -670,8 +670,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 109,
-      "locEnd": 124,
+      "locStart": 151,
+      "locEnd": 166,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -680,8 +680,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 92,
-      "locEnd": 107,
+      "locStart": 134,
+      "locEnd": 149,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -690,8 +690,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 161,
-      "locEnd": 177,
+      "locStart": 203,
+      "locEnd": 219,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -700,8 +700,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 219,
-      "locEnd": 234,
+      "locStart": 261,
+      "locEnd": 276,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -710,8 +710,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 179,
-      "locEnd": 197,
+      "locStart": 221,
+      "locEnd": 239,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -720,8 +720,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 236,
-      "locEnd": 252,
+      "locStart": 278,
+      "locEnd": 294,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -730,8 +730,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 199,
-      "locEnd": 217,
+      "locStart": 241,
+      "locEnd": 259,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -740,8 +740,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 126,
-      "locEnd": 141,
+      "locStart": 168,
+      "locEnd": 183,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -750,8 +750,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 56,
-      "locEnd": 72,
+      "locStart": 57,
+      "locEnd": 73,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -760,8 +760,18 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 74,
-      "locEnd": 90,
+      "locStart": 75,
+      "locEnd": 92,
+      "filePath": "src/components/FreeResponseInput.stories.tsx",
+      "meta": {}
+    },
+    "free-response-input--update-mode-with-save-cycle": {
+      "name": "Update mode with save cycle",
+      "levels": [
+        "Free response input"
+      ],
+      "locStart": 94,
+      "locEnd": 132,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -770,8 +780,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 143,
-      "locEnd": 159,
+      "locStart": 185,
+      "locEnd": 201,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
@@ -780,8 +790,8 @@
       "levels": [
         "Free response input"
       ],
-      "locStart": 38,
-      "locEnd": 54,
+      "locStart": 39,
+      "locEnd": 55,
       "filePath": "src/components/FreeResponseInput.stories.tsx",
       "meta": {}
     },
