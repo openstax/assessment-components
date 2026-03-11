@@ -442,7 +442,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 <RevertButton disabled={!textHasChanged || apiIsPending} onClick={handleCancel} />
                 <Button
                   data-test-id="update-answer-btn"
-                  disabled={!textHasChanged || apiIsPending || isOverWordLimit}
+                  disabled={!textHasChanged || apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
                   isWaiting={apiIsPending}
                   waitingText="Saving..."
                   onClick={handleSave}
