@@ -15,6 +15,7 @@ const baseQuestionState = {
   questionNumber: 1,
   question: mockQuestion,
   wordLimit: 50,
+  needsSaved: false,
   cancelHandler: () => null,
 };
 
@@ -86,6 +87,46 @@ export const UpdateMode = () => {
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
     />
+  );
+};
+
+export const UpdateModeWithSaveCycle = () => {
+  const [freeResponse, setFreeResponse] = useState('First submitted answer.');
+  const [needsSaved, setNeedsSaved] = useState(false);
+  const [apiIsPending, setApiIsPending] = useState(false);
+
+  const handleChange = (answer: { free_response?: string }) => {
+    setFreeResponse(answer.free_response ?? '');
+    setNeedsSaved(true);
+  };
+
+  const handleSave = () => {
+    setApiIsPending(true);
+    // Simulate API call completing after 1 second
+    setTimeout(() => {
+      setApiIsPending(false);
+      setNeedsSaved(false);
+    }, 1000);
+  };
+
+  return (
+    <div>
+      <p style={{ fontSize: '14px', color: '#666', marginBottom: '1rem' }}>
+        Edit the text, click Update, then edit again. Cancel should revert to the last saved value, not the original.
+      </p>
+      <FreeResponseInput
+        {...baseQuestionState}
+        is_completed={true}
+        canAnswer={true}
+        needsSaved={needsSaved}
+        apiIsPending={apiIsPending}
+        free_response={freeResponse}
+        submissionTimestamp="2024-07-26T16:00:00.000Z"
+        onAnswerChange={handleChange}
+        onAnswerSave={handleSave}
+        onNextStep={() => console.log('Next')}
+      />
+    </div>
   );
 };
 

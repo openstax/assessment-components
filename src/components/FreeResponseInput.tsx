@@ -11,6 +11,7 @@ import { FreeResponseGrading } from './FreeResponseGrading';
 export interface FreeResponseProps {
   is_completed: boolean;
   canAnswer: boolean;
+  needsSaved: boolean;
   apiIsPending: boolean;
   free_response: string;
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
@@ -198,6 +199,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     is_completed,
     canAnswer,
+    needsSaved,
     apiIsPending,
     free_response,
     onAnswerChange,
@@ -223,26 +225,22 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const [originalSubmittedValue, setOriginalSubmittedValue] = useState('');
+  const [originalSubmittedValue, setOriginalSubmittedValue] = useState(free_response || '');
+  const prevNeedsSaved = useRef(needsSaved);
 
   // Derive three render states from QuestionState
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
 
-  // Track original value for change detection in update mode
+  // Update the saved baseline when needsSaved transitions true -> false (save completed)
   useLayoutEffect(() => {
-    if (isUpdateMode && !originalSubmittedValue) {
+    if (isUpdateMode && prevNeedsSaved.current && !needsSaved) {
       setOriginalSubmittedValue(free_response || '');
     }
-    if (!isUpdateMode) {
-      setOriginalSubmittedValue('');
-    }
-  }, [isUpdateMode, free_response, originalSubmittedValue]);
+    prevNeedsSaved.current = needsSaved;
+  }, [needsSaved, isUpdateMode, free_response]);
 
-  // Check if text has changed
-  const textHasChanged = isUpdateMode
-    ? (free_response || '') !== originalSubmittedValue
-    : (free_response || '').trim().length > 0;
+  const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
   const wordCount = countWords(free_response || '');
   const isOverWordLimit = wordCount > wordLimit;
@@ -296,7 +294,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     onNextStep(questionNumber - 1);
   };
 
-  // Cancel handler - calls onAnswerChange with original value
   const handleCancel: MouseEventHandler<HTMLButtonElement> = (e) => {
     onAnswerChange({
       id: numberfyId(question.id),

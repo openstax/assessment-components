@@ -33,6 +33,7 @@ describe('Free Response Input', () => {
         is_answer_order_important: false,
       },
       wordLimit: 50,
+      needsSaved: false,
       cancelHandler: jest.fn(),
     };
   });
