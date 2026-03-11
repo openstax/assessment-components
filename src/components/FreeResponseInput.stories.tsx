@@ -80,6 +80,7 @@ export const UpdateMode = () => {
       {...baseQuestionState}
       is_completed={true}
       canAnswer={true}
+      needsSaved={true}
       apiIsPending={false}
       free_response={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
