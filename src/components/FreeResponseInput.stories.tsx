@@ -138,8 +138,8 @@ export const PostReviewShortAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="This is a short answer."
-      feedback_html="<p>Good effort, but could use more detail.</p>"
+      free_response={"1. banana\n2. apple\n3. orange\n4. grape\n5. blueberry"}
+      feedback_html={"Good effort, but could use more detail.\nTry to explain why each fruit was chosen."}
       score={{ raw: 5, max: 10 }}
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
@@ -225,7 +225,7 @@ export const PreviewModeWithAnswer = () => {
       is_completed={true}
       canAnswer={false}
       apiIsPending={false}
-      free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
+      free_response={"1. Photosynthesis converts light energy into chemical energy\n2. Plants produce oxygen and glucose from carbon dioxide and water\n3. This is crucial for the ecosystem\n4. It provides oxygen for other organisms\n5. It forms the base of most food chains"}
       previewMode={true}
       score={{ raw: 8, max: 10 }}
       feedback_html="Good explanation, but could include more details about the chloroplast."
