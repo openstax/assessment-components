@@ -26,7 +26,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
       Your answer
     </div>
     <div
-      className="sc-hHLeRK llNcA-d"
+      className="sc-hHLeRK fpWa"
     >
       Photosynthesis is the process by which plants convert light energy into chemical energy.
     </div>
@@ -46,7 +46,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
           8/10
         </div>
         <div
-          className="sc-fLlhyt cBmmaP"
+          className="sc-fLlhyt bCYZgk"
         >
           <span
             className="feedback-label"
@@ -194,7 +194,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       />
     </div>
     <div
-      className="sc-hHLeRK llNcA-d"
+      className="sc-hHLeRK fpWa"
     >
       Photosynthesis converts sunlight into chemical energy.
     </div>
@@ -213,7 +213,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
         9/10
       </div>
       <div
-        className="sc-fLlhyt cBmmaP"
+        className="sc-fLlhyt bCYZgk"
       >
         <span
           className="feedback-label"
@@ -262,7 +262,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
         className="sc-ivTmOn lmJbRV"
       >
         <div
-          className="sc-hHLeRK llNcA-d"
+          className="sc-hHLeRK fpWa"
         >
           Photosynthesis converts sunlight into chemical energy.
         </div>
@@ -281,7 +281,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
             9/10
           </div>
           <div
-            className="sc-fLlhyt cBmmaP"
+            className="sc-fLlhyt bCYZgk"
           >
             <span
               className="feedback-label"

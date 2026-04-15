@@ -111,6 +111,7 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   line-height: 1.6;
   font-size: calc(1.8rem * var(--content-text-scale));
   color: ${colors.palette.neutralDark};
+  white-space: pre-wrap;
 
   ${({ expanded, isOverflowing }) =>
     !expanded && isOverflowing
@@ -150,6 +151,7 @@ const ReviewScoreText = styled.div`
 const FeedbackText = styled.div`
   font-size: calc(1.4rem * var(--content-text-scale));
   color: ${colors.palette.neutralDarker};
+  white-space: pre-wrap;
 
   .feedback-label {
     color: ${colors.palette.neutralDarker};
