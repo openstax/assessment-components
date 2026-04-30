@@ -22,6 +22,7 @@ export interface CompletionStatusProps {
   score?: Score;
   handleRetry?: () => void;
   isRetrying?: boolean;
+  handleEditResponses?: () => void;
 }
 
 const CompletionStatusCard = styled(InnerStepCard)`
@@ -88,10 +89,45 @@ export const CompletionStatus = styled(({
   className,
   score,
   handleRetry,
-  isRetrying
+  isRetrying,
+  handleEditResponses,
 }: CompletionStatusProps) => {
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
+
+  if (handleEditResponses) {
+    return (
+      <>
+        <GlobalStyle />
+        <CompletionStatusCard className={className}>
+          <CompletionHeader>You are done.</CompletionHeader>
+          <p>Your written responses can be edited until they have been scored.</p>
+          <ButtonGroup>
+            <RetryResumeButton
+              data-test-id="edit-responses-btn"
+              onClick={handleEditResponses}
+            >
+              Edit responses
+            </RetryResumeButton>
+            {handleRetry ? (
+              <RetryResumeButton
+                data-test-id="retry-btn"
+                onClick={handleRetry}
+              >
+                Retry Quiz
+              </RetryResumeButton>
+            ) : null}
+            <Button
+              data-test-id="next-btn"
+              onClick={handleNext}
+            >
+              Next
+            </Button>
+          </ButtonGroup>
+        </CompletionStatusCard>
+      </>
+    );
+  }
 
   const buttonText = allCompleted || (numberCompleted === 0 && handleRetry) || (someCompleted && handleRetry) ? 'Next' : (someCompleted ? 'Continue' : 'Start');
 
@@ -108,7 +144,7 @@ export const CompletionStatus = styled(({
   // if unlimited attempts (handleRetry) is active always show next button
   // if all is completed show next button
   // if not unlimited and incomplete show and handle continue
-  const onNextContinueClick = allCompleted ||  handleRetry
+  const onNextContinueClick = allCompleted || handleRetry
     ? handleNext
     : handleContinue;
 
