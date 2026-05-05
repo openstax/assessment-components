@@ -101,7 +101,7 @@ export const CompletionStatus = styled(({
         <GlobalStyle />
         <CompletionStatusCard className={className}>
           <CompletionHeader>You are done.</CompletionHeader>
-          <p>Your written responses can be edited until they have been scored.</p>
+          <p>Your ungraded responses can be edited until they have been graded.</p>
           <ButtonGroup>
             <RetryResumeButton
               data-test-id="edit-responses-btn"

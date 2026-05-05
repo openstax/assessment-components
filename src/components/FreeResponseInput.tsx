@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
+import { MouseEventHandler, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { countWords, formatTimestamp, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
@@ -303,13 +303,22 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     });
   };
 
+  const [shouldContinue, setShouldContinue] = useState(false);
+
+  useEffect(() => {
+    if (shouldContinue && is_completed) {
+      setShouldContinue(false);
+      onNextStep(questionNumber - 1);
+    }
+  }, [shouldContinue, is_completed, onNextStep, questionNumber]);
+
   const handleSave = () => {
     onAnswerSave(numberfyId(question.id));
   };
 
   const handleSubmit = () => {
+    setShouldContinue(true);
     onAnswerSave(numberfyId(question.id));
-    onNextStep(questionNumber - 1);
   };
 
   const handleNext = () => {
@@ -536,8 +545,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             <div className="controls">
               <Button
                 data-test-id="submit-answer-btn"
-                disabled={apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
-                isWaiting={apiIsPending}
+                disabled={apiIsPending || shouldContinue || isOverWordLimit || (free_response || '').trim().length === 0}
+                isWaiting={apiIsPending || shouldContinue}
                 waitingText="Saving..."
                 onClick={handleSubmit}
               >
