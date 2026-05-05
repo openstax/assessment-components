@@ -306,11 +306,11 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const [shouldContinue, setShouldContinue] = useState(false);
 
   useEffect(() => {
-    if (shouldContinue && is_completed) {
+    if (shouldContinue && is_completed && !apiIsPending) {
       setShouldContinue(false);
       onNextStep(questionNumber - 1);
     }
-  }, [shouldContinue, is_completed, onNextStep, questionNumber]);
+  }, [shouldContinue, is_completed, apiIsPending, onNextStep, questionNumber]);
 
   const handleSave = () => {
     onAnswerSave(numberfyId(question.id));
