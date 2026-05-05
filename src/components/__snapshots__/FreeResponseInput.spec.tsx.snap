@@ -89,6 +89,48 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     className="step-card-body"
   >
     <div
+      className="sc-llJcti qDfoj"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          height="16"
+          id="mask0_4564_440"
+          maskUnits="userSpaceOnUse"
+          style={
+            Object {
+              "maskType": "luminance",
+            }
+          }
+          width="16"
+          x="0"
+          y="0"
+        >
+          <path
+            clipRule="evenodd"
+            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+            fill="white"
+            fillRule="evenodd"
+          />
+        </mask>
+        <g
+          mask="url(#mask0_4564_440)"
+        >
+          <rect
+            fill="#976502"
+            height="16"
+            width="16"
+          />
+        </g>
+      </svg>
+      You can come back and edit your response until it has been graded.
+    </div>
+    <div
       className="sc-fEOsli hISZaf"
     >
       <div
@@ -317,13 +359,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
             </label>
             <input
               aria-label="Score"
-              className="sc-evZas jVhdfK"
+              className="sc-evZas dkKVKh"
               disabled={false}
               id="score-input"
               max={10}
               min={0}
               onChange={[Function]}
-              placeholder="0"
+              placeholder="--"
               step={1}
               type="number"
               value="9"
@@ -378,6 +420,48 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
   <div
     className="step-card-body"
   >
+    <div
+      className="sc-llJcti qDfoj"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          height="16"
+          id="mask0_4564_440"
+          maskUnits="userSpaceOnUse"
+          style={
+            Object {
+              "maskType": "luminance",
+            }
+          }
+          width="16"
+          x="0"
+          y="0"
+        >
+          <path
+            clipRule="evenodd"
+            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+            fill="white"
+            fillRule="evenodd"
+          />
+        </mask>
+        <g
+          mask="url(#mask0_4564_440)"
+        >
+          <rect
+            fill="#976502"
+            height="16"
+            width="16"
+          />
+        </g>
+      </svg>
+      You can come back and edit your response until it has been graded.
+    </div>
     <div
       className="sc-fEOsli hISZaf"
     >
@@ -443,6 +527,48 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     className="step-card-body"
   >
     <div
+      className="sc-llJcti qDfoj"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          height="16"
+          id="mask0_4564_440"
+          maskUnits="userSpaceOnUse"
+          style={
+            Object {
+              "maskType": "luminance",
+            }
+          }
+          width="16"
+          x="0"
+          y="0"
+        >
+          <path
+            clipRule="evenodd"
+            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+            fill="white"
+            fillRule="evenodd"
+          />
+        </mask>
+        <g
+          mask="url(#mask0_4564_440)"
+        >
+          <rect
+            fill="#976502"
+            height="16"
+            width="16"
+          />
+        </g>
+      </svg>
+      You can come back and edit your response until it has been graded.
+    </div>
+    <div
       className="sc-fEOsli hISZaf"
     >
       <div
@@ -493,7 +619,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP sc-llJcti gWdZPG"
+          className="sc-ftvSup gRHhHP sc-iIPllB fCpaUQ"
           disabled={true}
           onClick={[Function]}
         >
@@ -506,6 +632,14 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
           onClick={[Function]}
         >
           Update
+        </button>
+        <button
+          className="sc-ftvSup gRHhHP"
+          data-test-id="next-btn"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Next
         </button>
       </div>
     </div>
@@ -521,6 +655,48 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
   <div
     className="step-card-body"
   >
+    <div
+      className="sc-llJcti qDfoj"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          height="16"
+          id="mask0_4564_440"
+          maskUnits="userSpaceOnUse"
+          style={
+            Object {
+              "maskType": "luminance",
+            }
+          }
+          width="16"
+          x="0"
+          y="0"
+        >
+          <path
+            clipRule="evenodd"
+            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+            fill="white"
+            fillRule="evenodd"
+          />
+        </mask>
+        <g
+          mask="url(#mask0_4564_440)"
+        >
+          <rect
+            fill="#976502"
+            height="16"
+            width="16"
+          />
+        </g>
+      </svg>
+      You can come back and edit your response until it has been graded.
+    </div>
     <div
       className="sc-fEOsli hISZaf"
     >
@@ -585,6 +761,48 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
   <div
     className="step-card-body"
   >
+    <div
+      className="sc-llJcti qDfoj"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <mask
+          height="16"
+          id="mask0_4564_440"
+          maskUnits="userSpaceOnUse"
+          style={
+            Object {
+              "maskType": "luminance",
+            }
+          }
+          width="16"
+          x="0"
+          y="0"
+        >
+          <path
+            clipRule="evenodd"
+            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+            fill="white"
+            fillRule="evenodd"
+          />
+        </mask>
+        <g
+          mask="url(#mask0_4564_440)"
+        >
+          <rect
+            fill="#976502"
+            height="16"
+            width="16"
+          />
+        </g>
+      </svg>
+      You can come back and edit your response until it has been graded.
+    </div>
     <div
       className="sc-fEOsli hISZaf"
     >

@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState, useRef, useLayoutEffect } from 'react';
+import { MouseEventHandler, useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { countWords, formatTimestamp, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
@@ -7,6 +7,7 @@ import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';
 import { FreeResponseGrading } from './FreeResponseGrading';
+import ExclamationCircle from '../assets/exclamation-circle';
 
 export interface FreeResponseProps {
   is_completed: boolean;
@@ -176,6 +177,15 @@ const UnansweredText = styled.p`
   margin: 0;
 `;
 
+const EditableNotice = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+`;
+
 const CancelButton = styled(Button)`
   background-color: ${colors.palette.darkGray};
 
@@ -233,6 +243,13 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
 
+  const editableNotice = !previewMode ? (
+    <EditableNotice>
+      <ExclamationCircle />
+      You can come back and edit your response until it has been graded.
+    </EditableNotice>
+  ) : null;
+
   // Sync baseline to current free_response whenever there are no unsaved changes
   useLayoutEffect(() => {
     if (isUpdateMode && !needsSaved) {
@@ -286,8 +303,22 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     });
   };
 
+  const [shouldContinue, setShouldContinue] = useState(false);
+
+  useEffect(() => {
+    if (shouldContinue && is_completed && !apiIsPending) {
+      setShouldContinue(false);
+      onNextStep(questionNumber - 1);
+    }
+  }, [shouldContinue, is_completed, apiIsPending, onNextStep, questionNumber]);
+
   const handleSave = () => {
     onAnswerSave(numberfyId(question.id));
+  };
+
+  const handleSubmit = () => {
+    onAnswerSave(numberfyId(question.id));
+    setShouldContinue(true);
   };
 
   const handleNext = () => {
@@ -414,6 +445,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     return (
       <StyledFreeResponse data-test-id="student-free-response">
         <div className="step-card-body">
+          {editableNotice}
           <StyledQuestionStem>
             {question.stem_html &&
               <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
@@ -451,6 +483,13 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 >
                   Update
                 </Button>
+                <Button
+                  data-test-id="next-btn"
+                  disabled={apiIsPending || textHasChanged}
+                  onClick={handleNext}
+                >
+                  Next
+                </Button>
               </div>
             </div>
           </StepCardFooter>
@@ -463,6 +502,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   return (
     <StyledFreeResponse data-test-id="student-free-response">
       <div className="step-card-body">
+        {editableNotice}
         <StyledQuestionStem>
           {question.stem_html &&
             <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
@@ -512,10 +552,10 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             <div className="controls">
               <Button
                 data-test-id="submit-answer-btn"
-                disabled={apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
-                isWaiting={apiIsPending}
+                disabled={apiIsPending || shouldContinue || isOverWordLimit || (free_response || '').trim().length === 0}
+                isWaiting={apiIsPending || shouldContinue}
                 waitingText="Saving..."
-                onClick={handleSave}
+                onClick={handleSubmit}
               >
                 Submit
               </Button>
