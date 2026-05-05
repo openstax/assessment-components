@@ -485,7 +485,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 </Button>
                 <Button
                   data-test-id="next-btn"
-                  disabled={apiIsPending}
+                  disabled={apiIsPending || textHasChanged}
                   onClick={handleNext}
                 >
                   Next
