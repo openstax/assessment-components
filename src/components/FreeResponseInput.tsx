@@ -314,11 +314,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
 
   const handleSave = () => {
     onAnswerSave(numberfyId(question.id));
-  };
-
-  const handleSubmit = () => {
     setShouldContinue(true);
-    onAnswerSave(numberfyId(question.id));
   };
 
   const handleNext = () => {
@@ -476,8 +472,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 <RevertButton disabled={!textHasChanged || apiIsPending} onClick={handleCancel} />
                 <Button
                   data-test-id="update-answer-btn"
-                  disabled={!textHasChanged || apiIsPending || isOverWordLimit || (free_response || '').trim().length === 0}
-                  isWaiting={apiIsPending}
+                  disabled={!textHasChanged || apiIsPending || shouldContinue || isOverWordLimit || (free_response || '').trim().length === 0}
+                  isWaiting={apiIsPending || shouldContinue}
                   waitingText="Saving..."
                   onClick={handleSave}
                 >
@@ -548,7 +544,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
                 disabled={apiIsPending || shouldContinue || isOverWordLimit || (free_response || '').trim().length === 0}
                 isWaiting={apiIsPending || shouldContinue}
                 waitingText="Saving..."
-                onClick={handleSubmit}
+                onClick={handleSave}
               >
                 Submit
               </Button>
