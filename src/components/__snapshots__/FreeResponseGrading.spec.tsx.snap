@@ -18,13 +18,13 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dJuvUv"
+        className="sc-jSMfEi iGMKCY"
         disabled={false}
         id="score-input"
         max={10}
         min={0}
         onChange={[Function]}
-        placeholder="0"
+        placeholder="--"
         step={1}
         type="number"
         value=""
@@ -86,13 +86,13 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dJuvUv"
+        className="sc-jSMfEi iGMKCY"
         disabled={true}
         id="score-input"
         max={10}
         min={0}
         onChange={[Function]}
-        placeholder="0"
+        placeholder="--"
         step={1}
         type="number"
         value="7"
@@ -154,13 +154,13 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dJuvUv"
+        className="sc-jSMfEi iGMKCY"
         disabled={false}
         id="score-input"
         max={25}
         min={0}
         onChange={[Function]}
-        placeholder="0"
+        placeholder="--"
         step={1}
         type="number"
         value="18"
@@ -222,13 +222,13 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dJuvUv"
+        className="sc-jSMfEi iGMKCY"
         disabled={false}
         id="score-input"
         max={10}
         min={0}
         onChange={[Function]}
-        placeholder="0"
+        placeholder="--"
         step={1}
         type="number"
         value="7"
@@ -290,13 +290,13 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi dJuvUv"
+        className="sc-jSMfEi iGMKCY"
         disabled={false}
         id="score-input"
         max={10}
         min={0}
         onChange={[Function]}
-        placeholder="0"
+        placeholder="--"
         step={1}
         type="number"
         value="8.5"

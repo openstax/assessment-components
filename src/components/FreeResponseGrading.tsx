@@ -41,6 +41,12 @@ const ScoreInput = styled.input`
   border-radius: 4px;
   text-align: center;
 
+  &::placeholder {
+    color: #6F6F6F;
+    text-align: center;
+    line-height: normal;
+  }
+
   &:focus {
     outline: none;
     border-color: ${colors.palette.blue};
@@ -50,7 +56,6 @@ const ScoreInput = styled.input`
     background-color: ${colors.palette.neutralLighter};
     cursor: not-allowed;
   }
-
 `;
 
 const CommentTextarea = styled.textarea`
@@ -169,7 +174,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
             min={0}
             max={maxScore}
             step={1}
-            placeholder="0"
+            placeholder="--"
             aria-label="Score"
           />
           <span>out of {maxScore}</span>
