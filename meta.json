@@ -185,6 +185,26 @@
       "filePath": "src/components/CompletionStatus.stories.tsx",
       "meta": {}
     },
+    "completion-status--ungraded-response-complete": {
+      "name": "Ungraded response complete",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 30,
+      "locEnd": 30,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
+    "completion-status--ungraded-response-complete-with-retry": {
+      "name": "Ungraded response complete with retry",
+      "levels": [
+        "Completion status"
+      ],
+      "locStart": 31,
+      "locEnd": 31,
+      "filePath": "src/components/CompletionStatus.stories.tsx",
+      "meta": {}
+    },
     "completion-status--unlimited-complete": {
       "name": "Unlimited complete",
       "levels": [
