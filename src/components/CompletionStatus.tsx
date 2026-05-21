@@ -100,8 +100,18 @@ export const CompletionStatus = styled(({
       <>
         <GlobalStyle />
         <CompletionStatusCard className={className}>
-          <CompletionHeader>You are done.</CompletionHeader>
-          <p>Your ungraded responses can be edited until they have been graded.</p>
+          <CompletionHeader>
+            {allCompleted
+              ? 'You are done.'
+              : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
+          </CompletionHeader>
+          <p>
+            {allCompleted
+              ? 'Your ungraded responses can be edited until they have been graded.'
+              : (someCompleted
+                ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
+                : 'Begin working on the quiz.')}
+          </p>
           <ButtonGroup>
             <RetryResumeButton
               data-test-id="edit-responses-btn"
@@ -109,7 +119,7 @@ export const CompletionStatus = styled(({
             >
               Edit responses
             </RetryResumeButton>
-            {handleRetry ? (
+            {allCompleted && handleRetry ? (
               <RetryResumeButton
                 data-test-id="retry-btn"
                 onClick={handleRetry}
