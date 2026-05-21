@@ -32,7 +32,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm"
+    className="sc-papXJ fuPttR"
   >
     <div
       className="step-card-footer-inner"
@@ -163,7 +163,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm step-card-footer"
+    className="sc-papXJ fuPttR step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -495,7 +495,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm step-card-footer"
+    className="sc-papXJ fuPttR step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -609,7 +609,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm step-card-footer"
+    className="sc-papXJ fuPttR step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -730,7 +730,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm step-card-footer"
+    className="sc-papXJ fuPttR step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -844,7 +844,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ hujQqm step-card-footer"
+    className="sc-papXJ fuPttR step-card-footer"
   >
     <div
       className="step-card-footer-inner"
