@@ -113,12 +113,21 @@ export const CompletionStatus = styled(({
                 : 'Begin working on the quiz.')}
           </p>
           <ButtonGroup>
-            <RetryResumeButton
-              data-test-id="edit-responses-btn"
-              onClick={handleEditResponses}
-            >
-              Edit responses
-            </RetryResumeButton>
+            {allCompleted ? (
+              <RetryResumeButton
+                data-test-id="edit-responses-btn"
+                onClick={handleEditResponses}
+              >
+                Edit responses
+              </RetryResumeButton>
+            ) : someCompleted ? (
+              <RetryResumeButton
+                data-test-id="resume-btn"
+                onClick={handleContinue}
+              >
+                Continue
+              </RetryResumeButton>
+            ) : null}
             {allCompleted && handleRetry ? (
               <RetryResumeButton
                 data-test-id="retry-btn"
