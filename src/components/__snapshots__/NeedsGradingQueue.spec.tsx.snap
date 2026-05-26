@@ -2,10 +2,10 @@
 
 exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 <div
-  className="sc-ezWOiH hLFkgM"
+  className="sc-bZkfAO idNEOU"
 >
   <div
-    className="sc-bZkfAO kJYsxS"
+    className="sc-kLLXSd eWmSPZ"
   >
     All responses have been graded.
   </div>
@@ -14,13 +14,13 @@ exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 
 exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 <div
-  className="sc-ezWOiH hLFkgM"
+  className="sc-bZkfAO idNEOU"
 >
   <div
     className="sc-dIouRR dDtjZn"
   >
     <div
-      className="sc-hHLeRK kSEXSM"
+      className="sc-hHLeRK gTEijY"
     >
       <button
         aria-expanded={true}
@@ -28,7 +28,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         onClick={[Function]}
       >
         <span
-          className="sc-bBrHrO hSJIzl"
+          className="sc-crXcEl jrEnlp"
         />
         <h3
           className="sc-kgflAQ icrCrO"
@@ -38,7 +38,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         </h3>
       </button>
       <span
-        className="sc-fLlhyt dkzgPW"
+        className="sc-fLlhyt jiYUGd"
       >
         0
         /
@@ -47,10 +47,10 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       </span>
     </div>
     <div
-      className="sc-cxabCf xfqEz"
+      className="sc-llJcti jnzCxm"
     >
       <div
-        className="sc-llJcti eqIWDw"
+        className="sc-iIPllB ixviWC"
         dangerouslySetInnerHTML={
           Object {
             "__html": "<p>Describe Newton's first law.</p>",
@@ -59,17 +59,17 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       />
     </div>
     <div
-      className="sc-iIPllB gZWspx"
+      className="sc-gicCDI eLkWoA"
     >
       <button
-        className="sc-ivTmOn iCQWyd"
+        className="sc-cxabCf gmfzIb"
         onClick={[Function]}
       >
         Collapse all answers
       </button>
     </div>
     <div
-      className="sc-gicCDI cRgeWL"
+      className="sc-ezWOiH oWJnm"
     >
       <div
         className="sc-papXJ fqoXnn"

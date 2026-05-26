@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
-import { NeedsGradingStudentRow, NeedsGradingStudentRowProps } from './NeedsGradingStudentRow';
+import { NeedsGradingStudentRow, NeedsGradingStudentRowProps, ChevronIcon } from './NeedsGradingStudentRow';
 
 export interface NeedsGradingQuestionProps {
   questionNumber: number;
@@ -22,7 +22,7 @@ const QuestionHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 1.6rem;
-  background-color: #DBF3F8;
+  background-color: ${colors.card.header.background};
 `;
 
 const QuestionHeaderLeft = styled.button`
@@ -47,28 +47,19 @@ const GradedCount = styled.span`
   font-size: calc(1.3rem * var(--content-text-scale));
   font-weight: 600;
   color: ${colors.palette.white};
-  background-color: #757575;
+  background-color: ${colors.palette.darkGray};
   border-radius: 5px;
   padding: 0.2rem 0.8rem;
 `;
 
-const ChevronIcon = styled.span<{ expanded: boolean }>`
-  display: inline-block;
-  width: 0;
-  height: 0;
-  flex-shrink: 0;
-  ${({ expanded }) => expanded
-    ? `
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 6px solid ${colors.palette.neutralDark};
-    `
-    : `
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 6px solid ${colors.palette.neutralDark};
-    `
-  }
+const QuestionIdSeparator = styled.span`
+  font-weight: normal;
+  margin: 0 0.4rem;
+`;
+
+const QuestionIdText = styled.span`
+  font-weight: normal;
+  font-size: calc(1.4rem * var(--content-text-scale));
 `;
 
 const ExpandToggleButton = styled.button`
@@ -160,10 +151,8 @@ export const NeedsGradingQuestion = ({
             Question {questionNumber}
             {questionId && (
               <>
-                <span style={{ fontWeight: 'normal', margin: '0 0.4rem' }}>|</span>
-                <span style={{ fontWeight: 'normal', fontSize: 'calc(1.4rem * var(--content-text-scale))' }}>
-                  ID: {questionId}
-                </span>
+                <QuestionIdSeparator>|</QuestionIdSeparator>
+                <QuestionIdText>ID: {questionId}</QuestionIdText>
               </>
             )}
           </QuestionTitle>

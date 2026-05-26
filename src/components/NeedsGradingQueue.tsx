@@ -9,9 +9,7 @@ export interface NeedsGradingQueueProps {
 const QueueWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0;
 `;
-
 
 const EmptyState = styled.div`
   padding: 4rem 0;

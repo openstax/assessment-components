@@ -67,7 +67,7 @@ const PointsLabel = styled.span`
   }
 `;
 
-const ChevronIcon = styled.span<{ expanded: boolean }>`
+export const ChevronIcon = styled.span<{ expanded: boolean }>`
   display: inline-block;
   width: 0;
   height: 0;
@@ -191,7 +191,7 @@ export const NeedsGradingStudentRow = ({
 
   useLayoutEffect(() => {
     if (textRef.current) {
-      const overflows = !textExpanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10;
+      const overflows = !textExpanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
       setIsOverflowing(overflows);
     }
   }, [freeResponse, textExpanded, expanded]);
