@@ -41,10 +41,15 @@ export const StepCardFooter = styled.div`
 
     .controls {
         display: flex;
-        flex-flow: column wrap-reverse;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        gap: 0.8rem;
 
+        button:has(~ button),
         button + button {
-            margin: 0.8rem 0 0 0;
+            flex-shrink: 1;
+            min-width: 0;
+            width: 100px;
         }
     }
 
@@ -54,15 +59,6 @@ export const StepCardFooter = styled.div`
 
         .points {
             max-width: 400px;
-        }
-
-        .controls {
-            flex-flow: row;
-            justify-content: flex-end;
-
-            button + button {
-                margin: 0 0 0 0.8rem;
-            }
         }
     `}
 `;
