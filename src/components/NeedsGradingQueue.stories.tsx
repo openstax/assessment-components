@@ -112,7 +112,6 @@ export const TextResizer = () => (
   <TextResizerProvider>
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
       <NeedsGradingQueue
-        ungradedCount={3}
         questions={questions}
       />
     </div>
