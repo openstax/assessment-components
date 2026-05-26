@@ -170,7 +170,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
             type="number"
             value={score}
             onChange={handleScoreChange}
-            disabled={disabled}
+            disabled={disabled || isSaving}
             min={0}
             max={maxScore}
             step={1}
@@ -187,7 +187,7 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
           id="comment-input"
           value={comment}
           onChange={handleCommentChange}
-          disabled={disabled}
+          disabled={disabled || isSaving}
           placeholder="Enter feedback for the student..."
           aria-label="Comment"
         />
