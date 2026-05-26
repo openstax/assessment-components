@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`] = `
+<div
+  className="sc-papXJ fqoXnn"
+>
+  <button
+    aria-expanded={true}
+    className="sc-jqUVSM jfgTeu"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-crXcEl jrEnlp"
+    />
+    <span
+      className="sc-kDDrLX huIAKc"
+    >
+      Ada Lovelace
+    </span>
+    <span
+      className="sc-iqcoie cgZTnQ"
+    >
+      <strong>
+        Points:
+      </strong>
+       
+      8
+       out of 
+      10
+    </span>
+  </button>
+  <div
+    className="sc-evZas cTOCWP"
+  >
+    <div
+      className="sc-breuTD EtWdd"
+    >
+      <div
+        className="sc-ksZaOG gvZIGE"
+      >
+        An object at rest stays at rest.
+      </div>
+      <div
+        className="sc-fEOsli kKkhzh"
+      >
+        <div
+          className="sc-bjUoiL iFfhCP"
+        >
+          Score: 
+          8
+          /
+          10
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-gsnTZi cSdbEu"
+    >
+      <div
+        className="sc-dkzDqf gNmSNg"
+      >
+        <div
+          className="sc-eCYdqJ ldOqjj"
+        >
+          <label
+            className="sc-hKMtZM dwUXki"
+            htmlFor="score-input"
+          >
+            Points
+          </label>
+          <input
+            aria-label="Score"
+            className="sc-jSMfEi iGMKCY"
+            disabled={false}
+            id="score-input"
+            max={10}
+            min={0}
+            onChange={[Function]}
+            placeholder="--"
+            step={1}
+            type="number"
+            value="8"
+          />
+          <span>
+            out of 
+            10
+          </span>
+        </div>
+      </div>
+      <div
+        className="sc-dkzDqf gNmSNg"
+      >
+        <label
+          className="sc-hKMtZM dwUXki"
+          htmlFor="comment-input"
+        >
+          Comment
+        </label>
+        <textarea
+          aria-label="Comment"
+          className="sc-gKXOVf bbxjYD"
+          disabled={false}
+          id="comment-input"
+          onChange={[Function]}
+          placeholder="Enter feedback for the student..."
+          value=""
+        />
+      </div>
+      <div
+        className="sc-iBkjds crHxek"
+      >
+        <button
+          className="sc-bczRLJ fLTvYy"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by default) 1`] = `
+<div
+  className="sc-papXJ fqoXnn"
+>
+  <button
+    aria-expanded={false}
+    className="sc-jqUVSM jfgTeu"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-crXcEl XODye"
+    />
+    <span
+      className="sc-kDDrLX huIAKc"
+    >
+      Ada Lovelace
+    </span>
+    <span
+      className="sc-iqcoie cgZTnQ"
+    >
+      <strong>
+        Points:
+      </strong>
+       
+      8
+       out of 
+      10
+    </span>
+  </button>
+</div>
+`;
+
+exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by default) 1`] = `
+<div
+  className="sc-papXJ fqoXnn"
+>
+  <button
+    aria-expanded={true}
+    className="sc-jqUVSM jfgTeu"
+    onClick={[Function]}
+  >
+    <span
+      className="sc-crXcEl jrEnlp"
+    />
+    <span
+      className="sc-kDDrLX huIAKc"
+    >
+      Ada Lovelace
+    </span>
+    <span
+      className="sc-iqcoie cgZTnQ"
+    >
+      <strong>
+        Points:
+      </strong>
+       
+      --
+       out of 
+      10
+    </span>
+  </button>
+  <div
+    className="sc-evZas cTOCWP"
+  >
+    <div
+      className="sc-breuTD EtWdd"
+    >
+      <div
+        className="sc-ksZaOG gvZIGE"
+      >
+        An object at rest stays at rest.
+      </div>
+    </div>
+    <div
+      className="sc-gsnTZi cSdbEu"
+    >
+      <div
+        className="sc-dkzDqf gNmSNg"
+      >
+        <div
+          className="sc-eCYdqJ ldOqjj"
+        >
+          <label
+            className="sc-hKMtZM dwUXki"
+            htmlFor="score-input"
+          >
+            Points
+          </label>
+          <input
+            aria-label="Score"
+            className="sc-jSMfEi iGMKCY"
+            disabled={false}
+            id="score-input"
+            max={10}
+            min={0}
+            onChange={[Function]}
+            placeholder="--"
+            step={1}
+            type="number"
+            value=""
+          />
+          <span>
+            out of 
+            10
+          </span>
+        </div>
+      </div>
+      <div
+        className="sc-dkzDqf gNmSNg"
+      >
+        <label
+          className="sc-hKMtZM dwUXki"
+          htmlFor="comment-input"
+        >
+          Comment
+        </label>
+        <textarea
+          aria-label="Comment"
+          className="sc-gKXOVf bbxjYD"
+          disabled={false}
+          id="comment-input"
+          onChange={[Function]}
+          placeholder="Enter feedback for the student..."
+          value=""
+        />
+      </div>
+      <div
+        className="sc-iBkjds crHxek"
+      >
+        <button
+          className="sc-bczRLJ fLTvYy"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

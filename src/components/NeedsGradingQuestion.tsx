@@ -7,7 +7,6 @@ export interface NeedsGradingQuestionProps {
   questionNumber: number;
   questionStemHtml: string;
   students: NeedsGradingStudentRowProps[];
-  /** Optional exercise UID displayed next to the question number (e.g. "3065081") */
   questionId?: string;
 }
 
@@ -116,12 +115,12 @@ const initExpandedSet = (students: NeedsGradingStudentRowProps[]): Set<string> =
   return ids;
 };
 
-export const NeedsGradingQuestion: React.FC<NeedsGradingQuestionProps> = ({
+export const NeedsGradingQuestion = ({
   questionNumber,
   questionStemHtml,
   students,
   questionId,
-}) => {
+}: NeedsGradingQuestionProps) => {
   const [cardExpanded, setCardExpanded] = useState(true);
   const [expandedIds, setExpandedIds] = useState<Set<string>>(() => initExpandedSet(students));
 

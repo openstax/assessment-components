@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { FreeResponseGrading, FreeResponseGradingProps } from './FreeResponseGrading';
@@ -19,8 +19,6 @@ export interface NeedsGradingStudentRowProps {
   onSave?: FreeResponseGradingProps['onSave'];
   disabled?: boolean;
   gradingTimestamp?: string | number;
-  /** Controlled expanded state. When omitted the row manages its own state,
-   *  defaulting to expanded for ungraded rows and collapsed for graded rows. */
   expanded?: boolean;
   onToggle?: () => void;
 }
@@ -168,7 +166,7 @@ const FeedbackText = styled.div`
   }
 `;
 
-export const NeedsGradingStudentRow: React.FC<NeedsGradingStudentRowProps> = ({
+export const NeedsGradingStudentRow = ({
   student,
   freeResponse,
   questionId,
@@ -180,7 +178,7 @@ export const NeedsGradingStudentRow: React.FC<NeedsGradingStudentRowProps> = ({
   gradingTimestamp,
   expanded: controlledExpanded,
   onToggle,
-}) => {
+}: NeedsGradingStudentRowProps) => {
   const isControlled = controlledExpanded !== undefined;
   const isGraded = score !== undefined;
   const [internalExpanded, setInternalExpanded] = useState(!isGraded);

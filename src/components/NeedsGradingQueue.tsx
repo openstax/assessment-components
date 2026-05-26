@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import { NeedsGradingQuestion, NeedsGradingQuestionProps } from './NeedsGradingQuestion';
@@ -21,9 +20,9 @@ const EmptyState = styled.div`
   color: ${colors.palette.neutralThin};
 `;
 
-export const NeedsGradingQueue: React.FC<NeedsGradingQueueProps> = ({
+export const NeedsGradingQueue = ({
   questions,
-}) => {
+}: NeedsGradingQueueProps) => {
   return (
     <QueueWrapper>
       {questions.length === 0
