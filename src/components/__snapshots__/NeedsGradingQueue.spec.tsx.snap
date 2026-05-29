@@ -2,10 +2,10 @@
 
 exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 <div
-  className="sc-bZkfAO idNEOU"
+  className="sc-gXmSlM kmWwUD"
 >
   <div
-    className="sc-kLLXSd eWmSPZ"
+    className="sc-cCsOjp kIbToD"
   >
     All responses have been graded.
   </div>
@@ -14,31 +14,31 @@ exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 
 exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 <div
-  className="sc-bZkfAO idNEOU"
+  className="sc-gXmSlM kmWwUD"
 >
   <div
-    className="sc-dIouRR dDtjZn"
+    className="sc-bBrHrO jcvfiz"
   >
     <div
-      className="sc-hHLeRK gTEijY"
+      className="sc-ivTmOn boYlwj"
     >
       <button
         aria-expanded={true}
-        className="sc-dmRaPn cjvqiR"
+        className="sc-cxabCf cGVVSY"
         onClick={[Function]}
       >
         <span
           className="sc-crXcEl jrEnlp"
         />
         <h3
-          className="sc-kgflAQ icrCrO"
+          className="sc-llJcti htsHqU"
         >
           Question 
           1
         </h3>
       </button>
       <span
-        className="sc-fLlhyt jiYUGd"
+        className="sc-iIPllB lgzNKY"
       >
         0
         /
@@ -47,29 +47,32 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       </span>
     </div>
     <div
-      className="sc-llJcti jnzCxm"
+      className="sc-kLLXSd jbhjEG"
     >
       <div
-        className="sc-iIPllB ixviWC"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<p>Describe Newton's first law.</p>",
+        className="sc-ikZpkk ieuQag"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Describe Newton's first law.</p>",
+            }
           }
-        }
-      />
+        />
+      </div>
     </div>
     <div
-      className="sc-gicCDI eLkWoA"
+      className="sc-jIZahH fVRulT"
     >
       <button
-        className="sc-cxabCf gmfzIb"
+        className="sc-bZkfAO kIEOzl"
         onClick={[Function]}
       >
         Collapse all answers
       </button>
     </div>
     <div
-      className="sc-ezWOiH oWJnm"
+      className="sc-himrzO fnevcv"
     >
       <div
         className="sc-papXJ fqoXnn"
@@ -122,7 +125,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
               >
                 <label
                   className="sc-hKMtZM dwUXki"
-                  htmlFor="score-input"
+                  htmlFor="frg-0-score"
                 >
                   Points
                 </label>
@@ -130,7 +133,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
                   aria-label="Score"
                   className="sc-jSMfEi iGMKCY"
                   disabled={false}
-                  id="score-input"
+                  id="frg-0-score"
                   max={10}
                   min={0}
                   onChange={[Function]}
@@ -150,7 +153,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
             >
               <label
                 className="sc-hKMtZM dwUXki"
-                htmlFor="comment-input"
+                htmlFor="frg-0-comment"
               >
                 Comment
               </label>
@@ -158,7 +161,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
                 aria-label="Comment"
                 className="sc-gKXOVf bbxjYD"
                 disabled={false}
-                id="comment-input"
+                id="frg-0-comment"
                 onChange={[Function]}
                 placeholder="Enter feedback for the student..."
                 value=""

@@ -12,7 +12,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
     >
       <label
         className="sc-hKMtZM dwUXki"
-        htmlFor="score-input"
+        htmlFor="frg-0-score"
       >
         Points
       </label>
@@ -20,7 +20,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
         aria-label="Score"
         className="sc-jSMfEi iGMKCY"
         disabled={false}
-        id="score-input"
+        id="frg-0-score"
         max={10}
         min={0}
         onChange={[Function]}
@@ -40,7 +40,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
   >
     <label
       className="sc-hKMtZM dwUXki"
-      htmlFor="comment-input"
+      htmlFor="frg-0-comment"
     >
       Comment
     </label>
@@ -48,7 +48,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
       aria-label="Comment"
       className="sc-gKXOVf bbxjYD"
       disabled={false}
-      id="comment-input"
+      id="frg-0-comment"
       onChange={[Function]}
       placeholder="Enter feedback for the student..."
       value=""
@@ -80,7 +80,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
     >
       <label
         className="sc-hKMtZM dwUXki"
-        htmlFor="score-input"
+        htmlFor="frg-3-score"
       >
         Points
       </label>
@@ -88,7 +88,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
         aria-label="Score"
         className="sc-jSMfEi iGMKCY"
         disabled={true}
-        id="score-input"
+        id="frg-3-score"
         max={10}
         min={0}
         onChange={[Function]}
@@ -108,7 +108,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
   >
     <label
       className="sc-hKMtZM dwUXki"
-      htmlFor="comment-input"
+      htmlFor="frg-3-comment"
     >
       Comment
     </label>
@@ -116,7 +116,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
       aria-label="Comment"
       className="sc-gKXOVf bbxjYD"
       disabled={true}
-      id="comment-input"
+      id="frg-3-comment"
       onChange={[Function]}
       placeholder="Enter feedback for the student..."
       value="Grading is disabled"
@@ -148,7 +148,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
     >
       <label
         className="sc-hKMtZM dwUXki"
-        htmlFor="score-input"
+        htmlFor="frg-4-score"
       >
         Points
       </label>
@@ -156,7 +156,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
         aria-label="Score"
         className="sc-jSMfEi iGMKCY"
         disabled={false}
-        id="score-input"
+        id="frg-4-score"
         max={25}
         min={0}
         onChange={[Function]}
@@ -176,7 +176,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
   >
     <label
       className="sc-hKMtZM dwUXki"
-      htmlFor="comment-input"
+      htmlFor="frg-4-comment"
     >
       Comment
     </label>
@@ -184,7 +184,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
       aria-label="Comment"
       className="sc-gKXOVf bbxjYD"
       disabled={false}
-      id="comment-input"
+      id="frg-4-comment"
       onChange={[Function]}
       placeholder="Enter feedback for the student..."
       value=""
@@ -216,7 +216,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
     >
       <label
         className="sc-hKMtZM dwUXki"
-        htmlFor="score-input"
+        htmlFor="frg-1-score"
       >
         Points
       </label>
@@ -224,7 +224,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
         aria-label="Score"
         className="sc-jSMfEi iGMKCY"
         disabled={false}
-        id="score-input"
+        id="frg-1-score"
         max={10}
         min={0}
         onChange={[Function]}
@@ -244,7 +244,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
   >
     <label
       className="sc-hKMtZM dwUXki"
-      htmlFor="comment-input"
+      htmlFor="frg-1-comment"
     >
       Comment
     </label>
@@ -252,7 +252,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
       aria-label="Comment"
       className="sc-gKXOVf bbxjYD"
       disabled={false}
-      id="comment-input"
+      id="frg-1-comment"
       onChange={[Function]}
       placeholder="Enter feedback for the student..."
       value=""
@@ -284,7 +284,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
     >
       <label
         className="sc-hKMtZM dwUXki"
-        htmlFor="score-input"
+        htmlFor="frg-2-score"
       >
         Points
       </label>
@@ -292,7 +292,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
         aria-label="Score"
         className="sc-jSMfEi iGMKCY"
         disabled={false}
-        id="score-input"
+        id="frg-2-score"
         max={10}
         min={0}
         onChange={[Function]}
@@ -312,7 +312,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
   >
     <label
       className="sc-hKMtZM dwUXki"
-      htmlFor="comment-input"
+      htmlFor="frg-2-comment"
     >
       Comment
     </label>
@@ -320,7 +320,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
       aria-label="Comment"
       className="sc-gKXOVf bbxjYD"
       disabled={false}
-      id="comment-input"
+      id="frg-2-comment"
       onChange={[Function]}
       placeholder="Enter feedback for the student..."
       value="Good work on this assignment."

@@ -64,7 +64,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
         >
           <label
             className="sc-hKMtZM dwUXki"
-            htmlFor="score-input"
+            htmlFor="frg-1-score"
           >
             Points
           </label>
@@ -72,7 +72,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
             aria-label="Score"
             className="sc-jSMfEi iGMKCY"
             disabled={false}
-            id="score-input"
+            id="frg-1-score"
             max={10}
             min={0}
             onChange={[Function]}
@@ -92,7 +92,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
       >
         <label
           className="sc-hKMtZM dwUXki"
-          htmlFor="comment-input"
+          htmlFor="frg-1-comment"
         >
           Comment
         </label>
@@ -100,7 +100,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
           aria-label="Comment"
           className="sc-gKXOVf bbxjYD"
           disabled={false}
-          id="comment-input"
+          id="frg-1-comment"
           onChange={[Function]}
           placeholder="Enter feedback for the student..."
           value=""
@@ -206,7 +206,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
         >
           <label
             className="sc-hKMtZM dwUXki"
-            htmlFor="score-input"
+            htmlFor="frg-0-score"
           >
             Points
           </label>
@@ -214,7 +214,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
             aria-label="Score"
             className="sc-jSMfEi iGMKCY"
             disabled={false}
-            id="score-input"
+            id="frg-0-score"
             max={10}
             min={0}
             onChange={[Function]}
@@ -234,7 +234,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
       >
         <label
           className="sc-hKMtZM dwUXki"
-          htmlFor="comment-input"
+          htmlFor="frg-0-comment"
         >
           Comment
         </label>
@@ -242,7 +242,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
           aria-label="Comment"
           className="sc-gKXOVf bbxjYD"
           disabled={false}
-          id="comment-input"
+          id="frg-0-comment"
           onChange={[Function]}
           placeholder="Enter feedback for the student..."
           value=""

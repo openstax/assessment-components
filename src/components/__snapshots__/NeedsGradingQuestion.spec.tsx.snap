@@ -2,28 +2,28 @@
 
 exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 <div
-  className="sc-dIouRR dDtjZn"
+  className="sc-bBrHrO jcvfiz"
 >
   <div
-    className="sc-hHLeRK gTEijY"
+    className="sc-ivTmOn boYlwj"
   >
     <button
       aria-expanded={true}
-      className="sc-dmRaPn cjvqiR"
+      className="sc-cxabCf cGVVSY"
       onClick={[Function]}
     >
       <span
         className="sc-crXcEl jrEnlp"
       />
       <h3
-        className="sc-kgflAQ icrCrO"
+        className="sc-llJcti htsHqU"
       >
         Question 
         2
       </h3>
     </button>
     <span
-      className="sc-fLlhyt jiYUGd"
+      className="sc-iIPllB lgzNKY"
     >
       2
       /
@@ -32,29 +32,32 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
     </span>
   </div>
   <div
-    className="sc-llJcti jnzCxm"
+    className="sc-kLLXSd jbhjEG"
   >
     <div
-      className="sc-iIPllB ixviWC"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>Describe Newton's first law.</p>",
+      className="sc-ikZpkk ieuQag"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Describe Newton's first law.</p>",
+          }
         }
-      }
-    />
+      />
+    </div>
   </div>
   <div
-    className="sc-gicCDI eLkWoA"
+    className="sc-jIZahH fVRulT"
   >
     <button
-      className="sc-cxabCf gmfzIb"
+      className="sc-bZkfAO kIEOzl"
       onClick={[Function]}
     >
       Expand all answers
     </button>
   </div>
   <div
-    className="sc-ezWOiH oWJnm"
+    className="sc-himrzO fnevcv"
   >
     <div
       className="sc-papXJ fqoXnn"
@@ -120,28 +123,28 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 
 exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded students 1`] = `
 <div
-  className="sc-dIouRR dDtjZn"
+  className="sc-bBrHrO jcvfiz"
 >
   <div
-    className="sc-hHLeRK gTEijY"
+    className="sc-ivTmOn boYlwj"
   >
     <button
       aria-expanded={true}
-      className="sc-dmRaPn cjvqiR"
+      className="sc-cxabCf cGVVSY"
       onClick={[Function]}
     >
       <span
         className="sc-crXcEl jrEnlp"
       />
       <h3
-        className="sc-kgflAQ icrCrO"
+        className="sc-llJcti htsHqU"
       >
         Question 
         1
       </h3>
     </button>
     <span
-      className="sc-fLlhyt jiYUGd"
+      className="sc-iIPllB lgzNKY"
     >
       1
       /
@@ -150,29 +153,32 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
     </span>
   </div>
   <div
-    className="sc-llJcti jnzCxm"
+    className="sc-kLLXSd jbhjEG"
   >
     <div
-      className="sc-iIPllB ixviWC"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "<p>Describe Newton's first law.</p>",
+      className="sc-ikZpkk ieuQag"
+    >
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<p>Describe Newton's first law.</p>",
+          }
         }
-      }
-    />
+      />
+    </div>
   </div>
   <div
-    className="sc-gicCDI eLkWoA"
+    className="sc-jIZahH fVRulT"
   >
     <button
-      className="sc-cxabCf gmfzIb"
+      className="sc-bZkfAO kIEOzl"
       onClick={[Function]}
     >
       Expand all answers
     </button>
   </div>
   <div
-    className="sc-ezWOiH oWJnm"
+    className="sc-himrzO fnevcv"
   >
     <div
       className="sc-papXJ fqoXnn"
@@ -225,7 +231,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
             >
               <label
                 className="sc-hKMtZM dwUXki"
-                htmlFor="score-input"
+                htmlFor="frg-0-score"
               >
                 Points
               </label>
@@ -233,7 +239,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
                 aria-label="Score"
                 className="sc-jSMfEi iGMKCY"
                 disabled={false}
-                id="score-input"
+                id="frg-0-score"
                 max={10}
                 min={0}
                 onChange={[Function]}
@@ -253,7 +259,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
           >
             <label
               className="sc-hKMtZM dwUXki"
-              htmlFor="comment-input"
+              htmlFor="frg-0-comment"
             >
               Comment
             </label>
@@ -261,7 +267,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
               aria-label="Comment"
               className="sc-gKXOVf bbxjYD"
               disabled={false}
-              id="comment-input"
+              id="frg-0-comment"
               onChange={[Function]}
               placeholder="Enter feedback for the student..."
               value=""

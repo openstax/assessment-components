@@ -353,7 +353,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           >
             <label
               className="sc-iqcoie kktHJP"
-              htmlFor="score-input"
+              htmlFor="frg-0-score"
             >
               Points
             </label>
@@ -361,7 +361,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
               aria-label="Score"
               className="sc-evZas dkKVKh"
               disabled={false}
-              id="score-input"
+              id="frg-0-score"
               max={10}
               min={0}
               onChange={[Function]}
@@ -381,7 +381,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
         >
           <label
             className="sc-iqcoie kktHJP"
-            htmlFor="comment-input"
+            htmlFor="frg-0-comment"
           >
             Comment
           </label>
@@ -389,7 +389,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
             aria-label="Comment"
             className="sc-breuTD gpbziE"
             disabled={false}
-            id="comment-input"
+            id="frg-0-comment"
             onChange={[Function]}
             placeholder="Enter feedback for the student..."
             value="Good work overall."

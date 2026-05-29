@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import { NeedsGradingStudentRow, NeedsGradingStudentRowProps, ChevronIcon } from './NeedsGradingStudentRow';
+import { Content } from './Content';
 
 export interface NeedsGradingQuestionProps {
   questionNumber: number;
@@ -163,7 +164,9 @@ export const NeedsGradingQuestion = ({
       {cardExpanded && (
         <>
           <QuestionStemRow>
-            <QuestionStemText dangerouslySetInnerHTML={{ __html: questionStemHtml }} />
+            <QuestionStemText>
+              <Content html={questionStemHtml} block />
+            </QuestionStemText>
           </QuestionStemRow>
           <ExpandToggleRow>
             <ExpandToggleButton onClick={handleExpandToggleAll}>

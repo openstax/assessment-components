@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+let instanceCounter = 0;
 import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
@@ -109,6 +111,9 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   disabled = false,
   gradingTimestamp,
 }) => {
+  const id = useRef(`frg-${instanceCounter++}`);
+  const scoreInputId = `${id.current}-score`;
+  const commentInputId = `${id.current}-comment`;
   const [score, setScore] = useState<string>(initialScore?.toString() || '');
   const [comment, setComment] = useState<string>(initialComment || '');
   const [hasChanges, setHasChanges] = useState(false);
@@ -164,9 +169,9 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
     <GradingContainer>
       <FieldGroup>
         <ScoreRow>
-        <Label htmlFor="score-input">Points</Label>
+        <Label htmlFor={scoreInputId}>Points</Label>
           <ScoreInput
-            id="score-input"
+            id={scoreInputId}
             type="number"
             value={score}
             onChange={handleScoreChange}
@@ -182,9 +187,9 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
       </FieldGroup>
 
       <FieldGroup>
-        <Label htmlFor="comment-input">Comment</Label>
+        <Label htmlFor={commentInputId}>Comment</Label>
         <CommentTextarea
-          id="comment-input"
+          id={commentInputId}
           value={comment}
           onChange={handleCommentChange}
           disabled={disabled || isSaving}
