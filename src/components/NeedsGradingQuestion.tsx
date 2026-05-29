@@ -7,7 +7,7 @@ import { Content } from './Content';
 export interface NeedsGradingQuestionProps {
   questionNumber: number;
   questionStemHtml: string;
-  students: NeedsGradingStudentRowProps[];
+  students: Array<Omit<NeedsGradingStudentRowProps, 'expanded' | 'onToggle'>>;
   questionId?: string;
 }
 
