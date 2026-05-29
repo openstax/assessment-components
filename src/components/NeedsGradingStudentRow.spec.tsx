@@ -1,6 +1,11 @@
 import renderer from 'react-test-renderer';
 import { NeedsGradingStudentRow } from './NeedsGradingStudentRow';
 
+jest.mock('../utils', () => ({
+  ...jest.requireActual('../utils'),
+  formatTimestamp: () => 'Mar 1, 2024, 10:00 AM',
+}));
+
 const student = { name: 'Ada Lovelace', userId: 'user-1' };
 const onSave = jest.fn();
 
