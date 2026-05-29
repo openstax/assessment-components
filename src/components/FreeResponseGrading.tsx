@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-let instanceCounter = 0;
 import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
 import { ID } from 'src/types';
 import { formatTimestamp } from '../utils';
+
+let instanceCounter = 0;
 
 const GradingContainer = styled.div`
   display: flex;
