@@ -37,7 +37,7 @@ const QuestionHeaderLeft = styled.button`
   text-align: left;
 `;
 
-const QuestionTitle = styled.h3`
+const QuestionTitle = styled.span`
   font-size: calc(1.6rem * var(--content-text-scale));
   font-weight: 600;
   color: ${colors.palette.neutralDarker};
@@ -144,6 +144,7 @@ export const NeedsGradingQuestion = ({
     <QuestionCard>
       <QuestionHeader>
         <QuestionHeaderLeft
+          type="button"
           onClick={() => setCardExpanded(prev => !prev)}
           aria-expanded={cardExpanded}
         >
@@ -169,7 +170,7 @@ export const NeedsGradingQuestion = ({
             </QuestionStemText>
           </QuestionStemRow>
           <ExpandToggleRow>
-            <ExpandToggleButton onClick={handleExpandToggleAll}>
+            <ExpandToggleButton type="button" onClick={handleExpandToggleAll}>
               {allExpanded ? 'Collapse all answers' : 'Expand all answers'}
             </ExpandToggleButton>
           </ExpandToggleRow>

@@ -111,7 +111,10 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   disabled = false,
   gradingTimestamp,
 }) => {
-  const id = useRef(`frg-${instanceCounter++}`);
+  const id = useRef<string | null>(null);
+  if (id.current === null) {
+    id.current = `frg-${instanceCounter++}`;
+  }
   const scoreInputId = `${id.current}-score`;
   const commentInputId = `${id.current}-comment`;
   const [score, setScore] = useState<string>(initialScore?.toString() || '');

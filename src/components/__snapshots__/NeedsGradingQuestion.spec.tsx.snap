@@ -11,16 +11,17 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
       aria-expanded={true}
       className="sc-cxabCf cGVVSY"
       onClick={[Function]}
+      type="button"
     >
       <span
         className="sc-crXcEl jrEnlp"
       />
-      <h3
+      <span
         className="sc-llJcti htsHqU"
       >
         Question 
         2
-      </h3>
+      </span>
     </button>
     <span
       className="sc-iIPllB lgzNKY"
@@ -52,6 +53,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
     <button
       className="sc-bZkfAO kIEOzl"
       onClick={[Function]}
+      type="button"
     >
       Expand all answers
     </button>
@@ -66,6 +68,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
         aria-expanded={false}
         className="sc-jqUVSM jfgTeu"
         onClick={[Function]}
+        type="button"
       >
         <span
           className="sc-crXcEl XODye"
@@ -95,6 +98,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
         aria-expanded={false}
         className="sc-jqUVSM jfgTeu"
         onClick={[Function]}
+        type="button"
       >
         <span
           className="sc-crXcEl XODye"
@@ -132,16 +136,17 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
       aria-expanded={true}
       className="sc-cxabCf cGVVSY"
       onClick={[Function]}
+      type="button"
     >
       <span
         className="sc-crXcEl jrEnlp"
       />
-      <h3
+      <span
         className="sc-llJcti htsHqU"
       >
         Question 
         1
-      </h3>
+      </span>
     </button>
     <span
       className="sc-iIPllB lgzNKY"
@@ -173,6 +178,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
     <button
       className="sc-bZkfAO kIEOzl"
       onClick={[Function]}
+      type="button"
     >
       Expand all answers
     </button>
@@ -187,6 +193,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
         aria-expanded={true}
         className="sc-jqUVSM jfgTeu"
         onClick={[Function]}
+        type="button"
       >
         <span
           className="sc-crXcEl jrEnlp"
@@ -294,6 +301,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
         aria-expanded={false}
         className="sc-jqUVSM jfgTeu"
         onClick={[Function]}
+        type="button"
       >
         <span
           className="sc-crXcEl XODye"

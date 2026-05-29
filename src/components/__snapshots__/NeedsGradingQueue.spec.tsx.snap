@@ -26,16 +26,17 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         aria-expanded={true}
         className="sc-cxabCf cGVVSY"
         onClick={[Function]}
+        type="button"
       >
         <span
           className="sc-crXcEl jrEnlp"
         />
-        <h3
+        <span
           className="sc-llJcti htsHqU"
         >
           Question 
           1
-        </h3>
+        </span>
       </button>
       <span
         className="sc-iIPllB lgzNKY"
@@ -67,6 +68,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       <button
         className="sc-bZkfAO kIEOzl"
         onClick={[Function]}
+        type="button"
       >
         Collapse all answers
       </button>
@@ -81,6 +83,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
           aria-expanded={true}
           className="sc-jqUVSM jfgTeu"
           onClick={[Function]}
+          type="button"
         >
           <span
             className="sc-crXcEl jrEnlp"

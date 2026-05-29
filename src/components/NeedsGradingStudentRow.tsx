@@ -206,7 +206,7 @@ export const NeedsGradingStudentRow = ({
 
   return (
     <RowWrapper>
-      <RowHeader onClick={handleToggle} aria-expanded={expanded}>
+      <RowHeader type="button" onClick={handleToggle} aria-expanded={expanded}>
         <ChevronIcon expanded={expanded} />
         <StudentName>{student.name}</StudentName>
         <PointsLabel>
@@ -229,7 +229,7 @@ export const NeedsGradingStudentRow = ({
                     {freeResponse}
                   </AnswerText>
                   {(isOverflowing || textExpanded) && (
-                    <ReadMoreButton onClick={() => setTextExpanded(prev => !prev)}>
+                    <ReadMoreButton type="button" onClick={() => setTextExpanded(prev => !prev)}>
                       {textExpanded ? 'read less' : 'read more'}
                     </ReadMoreButton>
                   )}

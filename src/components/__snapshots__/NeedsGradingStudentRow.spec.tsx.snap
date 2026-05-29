@@ -8,6 +8,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
     aria-expanded={true}
     className="sc-jqUVSM jfgTeu"
     onClick={[Function]}
+    type="button"
   >
     <span
       className="sc-crXcEl jrEnlp"
@@ -130,6 +131,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
     aria-expanded={false}
     className="sc-jqUVSM jfgTeu"
     onClick={[Function]}
+    type="button"
   >
     <span
       className="sc-crXcEl XODye"
@@ -162,6 +164,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
     aria-expanded={true}
     className="sc-jqUVSM jfgTeu"
     onClick={[Function]}
+    type="button"
   >
     <span
       className="sc-crXcEl jrEnlp"
