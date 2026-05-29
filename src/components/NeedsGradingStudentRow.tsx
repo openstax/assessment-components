@@ -215,8 +215,7 @@ export const NeedsGradingStudentRow = ({
         </PointsLabel>
       </RowHeader>
 
-      {expanded && (
-        <RowBody>
+      <RowBody style={{ display: expanded ? undefined : 'none' }}>
           <AnswerColumn>
             {freeResponse
               ? (
@@ -259,8 +258,7 @@ export const NeedsGradingStudentRow = ({
             disabled={disabled}
             gradingTimestamp={gradingTimestamp}
           />
-        </RowBody>
-      )}
+      </RowBody>
     </RowWrapper>
   );
 };

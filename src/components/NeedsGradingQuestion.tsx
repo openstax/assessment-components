@@ -162,8 +162,7 @@ export const NeedsGradingQuestion = ({
         <GradedCount>{gradedCount}/{students.length} Graded</GradedCount>
       </QuestionHeader>
 
-      {cardExpanded && (
-        <>
+      <div style={{ display: cardExpanded ? undefined : 'none' }}>
           <QuestionStemRow>
             <QuestionStemText>
               <Content html={questionStemHtml} block />
@@ -187,8 +186,7 @@ export const NeedsGradingQuestion = ({
               );
             })}
           </StudentList>
-        </>
-      )}
+      </div>
     </QuestionCard>
   );
 };
