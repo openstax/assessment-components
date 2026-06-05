@@ -100,6 +100,28 @@ export const Default = () => (
   </div>
 );
 
+export const WithMath = () => (
+  <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
+    <NeedsGradingQueue
+      questions={[{
+        questionNumber: 1,
+        questionId: '3065083',
+        questionStemHtml:
+          '<p>Given the equation <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow></math>, explain what each variable represents and the significance of this relationship.</p>',
+        students: [
+          {
+            student: { name: 'Student Name', userId: 'user-1' },
+            freeResponse: 'E is energy, m is mass, and c is the speed of light. This shows mass-energy equivalence.',
+            questionId: 'q-math-1',
+            maxScore: 5,
+            onSave,
+          },
+        ],
+      }]}
+    />
+  </div>
+);
+
 export const Empty = () => (
   <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
     <NeedsGradingQueue
