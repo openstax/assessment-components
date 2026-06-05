@@ -1,5 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
+import { typesetMath } from '../helpers/mathjax';
+import { TypesetMathContext } from '../hooks/useTypesetMath';
 import { NeedsGradingQuestion, NeedsGradingQuestionProps } from './NeedsGradingQuestion';
 
 export interface NeedsGradingQueueProps {
@@ -21,14 +24,21 @@ const EmptyState = styled.div`
 export const NeedsGradingQueue = ({
   questions,
 }: NeedsGradingQueueProps) => {
+  const container = React.useRef<HTMLDivElement>(null);
+  const typesetQueue = React.useCallback(() => {
+    if (container.current) typesetMath(container.current);
+  }, []);
+
   return (
-    <QueueWrapper>
-      {questions.length === 0
-        ? <EmptyState>All responses have been graded.</EmptyState>
-        : questions.map((questionProps, i) => (
-          <NeedsGradingQuestion key={i} {...questionProps} />
-        ))
-      }
-    </QueueWrapper>
+    <TypesetMathContext.Provider value={typesetQueue}>
+      <QueueWrapper ref={container}>
+        {questions.length === 0
+          ? <EmptyState>All responses have been graded.</EmptyState>
+          : questions.map((questionProps, i) => (
+            <NeedsGradingQuestion key={i} {...questionProps} />
+          ))
+        }
+      </QueueWrapper>
+    </TypesetMathContext.Provider>
   );
 };
