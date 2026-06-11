@@ -1,34 +1,4 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
 import { NeedsGradingQueue } from './NeedsGradingQueue';
-
-type TextResizerValue = -2 | -1 | 0 | 1 | 2 | 3;
-const textResizerScales = [0.75, 0.9, 1, 1.25, 1.5, 2];
-const textResizerValues: TextResizerValue[] = [-2, -1, 0, 1, 2, 3];
-const textResizerValueMap = new Map(
-  textResizerValues.map((v, i) => [v, textResizerScales[i]]),
-);
-
-const ScaleWrapper = styled.div<{ textSize: TextResizerValue }>`
-  ${(props) => `--content-text-scale: ${textResizerValueMap.get(props.textSize)};`}
-`;
-
-const TextResizerProvider = ({ children }: { children: React.ReactNode }) => {
-  const [index, setIndex] = useState(2);
-  return (
-    <ScaleWrapper textSize={textResizerValues[index]}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem', placeContent: 'center' }}>
-        <h3>Text Size</h3>
-        <button onClick={() => setIndex(i => Math.max(i - 1, 0))}>- Decrease</button>
-        <span style={{ display: 'inline-block', width: '3rem', textAlign: 'center' }}>
-          <b>{textResizerScales[index]}</b>
-        </span>
-        <button onClick={() => setIndex(i => Math.min(i + 1, textResizerValues.length - 1))}>+ Increase</button>
-      </div>
-      {children}
-    </ScaleWrapper>
-  );
-};
 
 const onSave = (id: unknown, data: unknown) => console.log('saved', id, data);
 
@@ -128,14 +98,4 @@ export const Empty = () => (
       questions={[]}
     />
   </div>
-);
-
-export const TextResizer = () => (
-  <TextResizerProvider>
-    <div style={{ maxWidth: 800, margin: '0 auto', padding: '2rem' }}>
-      <NeedsGradingQueue
-        questions={questions}
-      />
-    </div>
-  </TextResizerProvider>
 );
