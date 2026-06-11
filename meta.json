@@ -875,6 +875,106 @@
       "filePath": "src/components/MediaModal.stories.tsx",
       "meta": {}
     },
+    "needs-grading-question--all-graded": {
+      "name": "All graded",
+      "levels": [
+        "Needs grading question"
+      ],
+      "locStart": 54,
+      "locEnd": 61,
+      "filePath": "src/components/NeedsGradingQuestion.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-question--default": {
+      "name": "Default",
+      "levels": [
+        "Needs grading question"
+      ],
+      "locStart": 45,
+      "locEnd": 52,
+      "filePath": "src/components/NeedsGradingQuestion.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-question--single-student": {
+      "name": "Single student",
+      "levels": [
+        "Needs grading question"
+      ],
+      "locStart": 63,
+      "locEnd": 70,
+      "filePath": "src/components/NeedsGradingQuestion.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-queue--default": {
+      "name": "Default",
+      "levels": [
+        "Needs grading queue"
+      ],
+      "locStart": 65,
+      "locEnd": 71,
+      "filePath": "src/components/NeedsGradingQueue.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-queue--empty": {
+      "name": "Empty",
+      "levels": [
+        "Needs grading queue"
+      ],
+      "locStart": 95,
+      "locEnd": 101,
+      "filePath": "src/components/NeedsGradingQueue.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-queue--with-math": {
+      "name": "With math",
+      "levels": [
+        "Needs grading queue"
+      ],
+      "locStart": 73,
+      "locEnd": 93,
+      "filePath": "src/components/NeedsGradingQueue.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-student-row--graded": {
+      "name": "Graded",
+      "levels": [
+        "Needs grading student row"
+      ],
+      "locStart": 22,
+      "locEnd": 33,
+      "filePath": "src/components/NeedsGradingStudentRow.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-student-row--graded-expanded": {
+      "name": "Graded expanded",
+      "levels": [
+        "Needs grading student row"
+      ],
+      "locStart": 35,
+      "locEnd": 48,
+      "filePath": "src/components/NeedsGradingStudentRow.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-student-row--unanswered": {
+      "name": "Unanswered",
+      "levels": [
+        "Needs grading student row"
+      ],
+      "locStart": 50,
+      "locEnd": 57,
+      "filePath": "src/components/NeedsGradingStudentRow.stories.tsx",
+      "meta": {}
+    },
+    "needs-grading-student-row--ungraded": {
+      "name": "Ungraded",
+      "levels": [
+        "Needs grading student row"
+      ],
+      "locStart": 12,
+      "locEnd": 20,
+      "filePath": "src/components/NeedsGradingStudentRow.stories.tsx",
+      "meta": {}
+    },
     "print--default": {
       "name": "Default",
       "levels": [
