@@ -1,0 +1,657 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
+<div
+  className="sc-bBrHrO jcvfiz"
+>
+  <div
+    className="sc-ivTmOn boYlwj"
+  >
+    <button
+      aria-expanded={true}
+      className="sc-cxabCf cGVVSY"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sc-crXcEl jrEnlp"
+      />
+      <span
+        className="sc-llJcti htsHqU"
+      >
+        Question 
+        2
+      </span>
+    </button>
+    <span
+      className="sc-iIPllB lgzNKY"
+    >
+      2
+      /
+      2
+       Graded
+    </span>
+  </div>
+  <div
+    style={
+      Object {
+        "display": undefined,
+      }
+    }
+  >
+    <div
+      className="sc-kLLXSd jbhjEG"
+    >
+      <div
+        className="sc-ikZpkk ieuQag"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Describe Newton's first law.</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="sc-jIZahH fVRulT"
+    >
+      <button
+        className="sc-bZkfAO kIEOzl"
+        onClick={[Function]}
+        type="button"
+      >
+        Expand all answers
+      </button>
+    </div>
+    <div
+      className="sc-himrzO fnevcv"
+    >
+      <div
+        className="sc-papXJ fqoXnn"
+      >
+        <button
+          aria-expanded={false}
+          className="sc-jqUVSM jfgTeu"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sc-crXcEl XODye"
+          />
+          <span
+            className="sc-kDDrLX huIAKc"
+          >
+            Ada Lovelace
+          </span>
+          <span
+            className="sc-iqcoie cgZTnQ"
+          >
+            <strong>
+              Points:
+            </strong>
+             
+            8
+             out of 
+            10
+          </span>
+        </button>
+        <div
+          className="sc-evZas cTOCWP"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        >
+          <div
+            className="sc-breuTD EtWdd"
+          >
+            <div
+              className="sc-ksZaOG gvZIGE"
+            >
+              An object at rest stays at rest.
+            </div>
+            <div
+              className="sc-fEOsli kKkhzh"
+            >
+              <div
+                className="sc-bjUoiL iFfhCP"
+              >
+                Score: 
+                8
+                /
+                10
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-gsnTZi cSdbEu"
+          >
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <div
+                className="sc-eCYdqJ ldOqjj"
+              >
+                <label
+                  className="sc-hKMtZM dwUXki"
+                  htmlFor="frg-8-score"
+                >
+                  Points
+                </label>
+                <input
+                  aria-label="Score"
+                  className="sc-jSMfEi iGMKCY"
+                  disabled={false}
+                  id="frg-8-score"
+                  max={10}
+                  min={0}
+                  onChange={[Function]}
+                  placeholder="--"
+                  step={1}
+                  type="number"
+                  value="8"
+                />
+                <span>
+                  out of 
+                  10
+                </span>
+              </div>
+            </div>
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <label
+                className="sc-hKMtZM dwUXki"
+                htmlFor="frg-8-comment"
+              >
+                Comment
+              </label>
+              <textarea
+                aria-label="Comment"
+                className="sc-gKXOVf bbxjYD"
+                disabled={false}
+                id="frg-8-comment"
+                onChange={[Function]}
+                placeholder="Enter feedback for the student..."
+                value=""
+              />
+            </div>
+            <div
+              className="sc-iBkjds crHxek"
+            >
+              <button
+                className="sc-bczRLJ fLTvYy"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-papXJ fqoXnn"
+      >
+        <button
+          aria-expanded={false}
+          className="sc-jqUVSM jfgTeu"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sc-crXcEl XODye"
+          />
+          <span
+            className="sc-kDDrLX huIAKc"
+          >
+            Grace Hopper
+          </span>
+          <span
+            className="sc-iqcoie cgZTnQ"
+          >
+            <strong>
+              Points:
+            </strong>
+             
+            8
+             out of 
+            10
+          </span>
+        </button>
+        <div
+          className="sc-evZas cTOCWP"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        >
+          <div
+            className="sc-breuTD EtWdd"
+          >
+            <div
+              className="sc-ksZaOG gvZIGE"
+            >
+              Things keep doing what they're doing.
+            </div>
+            <div
+              className="sc-fEOsli kKkhzh"
+            >
+              <div
+                className="sc-bjUoiL iFfhCP"
+              >
+                Score: 
+                8
+                /
+                10
+              </div>
+              <div
+                className="sc-idiyUo bUdvoz"
+              >
+                <span
+                  className="feedback-label"
+                >
+                  Comment:
+                </span>
+                 
+                Good answer.
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-gsnTZi cSdbEu"
+          >
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <div
+                className="sc-eCYdqJ ldOqjj"
+              >
+                <label
+                  className="sc-hKMtZM dwUXki"
+                  htmlFor="frg-9-score"
+                >
+                  Points
+                </label>
+                <input
+                  aria-label="Score"
+                  className="sc-jSMfEi iGMKCY"
+                  disabled={false}
+                  id="frg-9-score"
+                  max={10}
+                  min={0}
+                  onChange={[Function]}
+                  placeholder="--"
+                  step={1}
+                  type="number"
+                  value="8"
+                />
+                <span>
+                  out of 
+                  10
+                </span>
+              </div>
+            </div>
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <label
+                className="sc-hKMtZM dwUXki"
+                htmlFor="frg-9-comment"
+              >
+                Comment
+              </label>
+              <textarea
+                aria-label="Comment"
+                className="sc-gKXOVf bbxjYD"
+                disabled={false}
+                id="frg-9-comment"
+                onChange={[Function]}
+                placeholder="Enter feedback for the student..."
+                value="Good answer."
+              />
+            </div>
+            <div
+              className="sc-iBkjds crHxek"
+            >
+              <button
+                className="sc-bczRLJ fLTvYy"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded students 1`] = `
+<div
+  className="sc-bBrHrO jcvfiz"
+>
+  <div
+    className="sc-ivTmOn boYlwj"
+  >
+    <button
+      aria-expanded={true}
+      className="sc-cxabCf cGVVSY"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sc-crXcEl jrEnlp"
+      />
+      <span
+        className="sc-llJcti htsHqU"
+      >
+        Question 
+        1
+      </span>
+    </button>
+    <span
+      className="sc-iIPllB lgzNKY"
+    >
+      1
+      /
+      2
+       Graded
+    </span>
+  </div>
+  <div
+    style={
+      Object {
+        "display": undefined,
+      }
+    }
+  >
+    <div
+      className="sc-kLLXSd jbhjEG"
+    >
+      <div
+        className="sc-ikZpkk ieuQag"
+      >
+        <div
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>Describe Newton's first law.</p>",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="sc-jIZahH fVRulT"
+    >
+      <button
+        className="sc-bZkfAO kIEOzl"
+        onClick={[Function]}
+        type="button"
+      >
+        Expand all answers
+      </button>
+    </div>
+    <div
+      className="sc-himrzO fnevcv"
+    >
+      <div
+        className="sc-papXJ fqoXnn"
+      >
+        <button
+          aria-expanded={true}
+          className="sc-jqUVSM jfgTeu"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sc-crXcEl jrEnlp"
+          />
+          <span
+            className="sc-kDDrLX huIAKc"
+          >
+            Ada Lovelace
+          </span>
+          <span
+            className="sc-iqcoie cgZTnQ"
+          >
+            <strong>
+              Points:
+            </strong>
+             
+            --
+             out of 
+            10
+          </span>
+        </button>
+        <div
+          className="sc-evZas cTOCWP"
+          style={
+            Object {
+              "display": undefined,
+            }
+          }
+        >
+          <div
+            className="sc-breuTD EtWdd"
+          >
+            <div
+              className="sc-ksZaOG gvZIGE"
+            >
+              An object at rest stays at rest.
+            </div>
+          </div>
+          <div
+            className="sc-gsnTZi cSdbEu"
+          >
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <div
+                className="sc-eCYdqJ ldOqjj"
+              >
+                <label
+                  className="sc-hKMtZM dwUXki"
+                  htmlFor="frg-0-score"
+                >
+                  Points
+                </label>
+                <input
+                  aria-label="Score"
+                  className="sc-jSMfEi iGMKCY"
+                  disabled={false}
+                  id="frg-0-score"
+                  max={10}
+                  min={0}
+                  onChange={[Function]}
+                  placeholder="--"
+                  step={1}
+                  type="number"
+                  value=""
+                />
+                <span>
+                  out of 
+                  10
+                </span>
+              </div>
+            </div>
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <label
+                className="sc-hKMtZM dwUXki"
+                htmlFor="frg-0-comment"
+              >
+                Comment
+              </label>
+              <textarea
+                aria-label="Comment"
+                className="sc-gKXOVf bbxjYD"
+                disabled={false}
+                id="frg-0-comment"
+                onChange={[Function]}
+                placeholder="Enter feedback for the student..."
+                value=""
+              />
+            </div>
+            <div
+              className="sc-iBkjds crHxek"
+            >
+              <button
+                className="sc-bczRLJ fLTvYy"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-papXJ fqoXnn"
+      >
+        <button
+          aria-expanded={false}
+          className="sc-jqUVSM jfgTeu"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="sc-crXcEl XODye"
+          />
+          <span
+            className="sc-kDDrLX huIAKc"
+          >
+            Grace Hopper
+          </span>
+          <span
+            className="sc-iqcoie cgZTnQ"
+          >
+            <strong>
+              Points:
+            </strong>
+             
+            9
+             out of 
+            10
+          </span>
+        </button>
+        <div
+          className="sc-evZas cTOCWP"
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        >
+          <div
+            className="sc-breuTD EtWdd"
+          >
+            <div
+              className="sc-ksZaOG gvZIGE"
+            >
+              Things keep doing what they're doing.
+            </div>
+            <div
+              className="sc-fEOsli kKkhzh"
+            >
+              <div
+                className="sc-bjUoiL iFfhCP"
+              >
+                Score: 
+                9
+                /
+                10
+              </div>
+              <div
+                className="sc-idiyUo bUdvoz"
+              >
+                <span
+                  className="feedback-label"
+                >
+                  Comment:
+                </span>
+                 
+                Good answer.
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-gsnTZi cSdbEu"
+          >
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <div
+                className="sc-eCYdqJ ldOqjj"
+              >
+                <label
+                  className="sc-hKMtZM dwUXki"
+                  htmlFor="frg-1-score"
+                >
+                  Points
+                </label>
+                <input
+                  aria-label="Score"
+                  className="sc-jSMfEi iGMKCY"
+                  disabled={false}
+                  id="frg-1-score"
+                  max={10}
+                  min={0}
+                  onChange={[Function]}
+                  placeholder="--"
+                  step={1}
+                  type="number"
+                  value="9"
+                />
+                <span>
+                  out of 
+                  10
+                </span>
+              </div>
+            </div>
+            <div
+              className="sc-dkzDqf gNmSNg"
+            >
+              <label
+                className="sc-hKMtZM dwUXki"
+                htmlFor="frg-1-comment"
+              >
+                Comment
+              </label>
+              <textarea
+                aria-label="Comment"
+                className="sc-gKXOVf bbxjYD"
+                disabled={false}
+                id="frg-1-comment"
+                onChange={[Function]}
+                placeholder="Enter feedback for the student..."
+                value="Good answer."
+              />
+            </div>
+            <div
+              className="sc-iBkjds crHxek"
+            >
+              <button
+                className="sc-bczRLJ fLTvYy"
+                disabled={true}
+                onClick={[Function]}
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

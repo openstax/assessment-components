@@ -11,3 +11,6 @@ export * from './components/Loader';
 export * from './components/ExerciseToolbar';
 export * from './components/IncludeRemoveQuestion';
 export * from './components/ExercisePreview';
+export * from './components/NeedsGradingStudentRow';
+export * from './components/NeedsGradingQuestion';
+export * from './components/NeedsGradingQueue';

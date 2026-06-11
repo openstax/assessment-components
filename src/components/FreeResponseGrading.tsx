@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
 import { ID } from 'src/types';
 import { formatTimestamp } from '../utils';
+
+let instanceCounter = 0;
 
 const GradingContainer = styled.div`
   display: flex;
@@ -109,6 +111,12 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
   disabled = false,
   gradingTimestamp,
 }) => {
+  const id = useRef<string | null>(null);
+  if (id.current === null) {
+    id.current = `frg-${instanceCounter++}`;
+  }
+  const scoreInputId = `${id.current}-score`;
+  const commentInputId = `${id.current}-comment`;
   const [score, setScore] = useState<string>(initialScore?.toString() || '');
   const [comment, setComment] = useState<string>(initialComment || '');
   const [hasChanges, setHasChanges] = useState(false);
@@ -164,13 +172,13 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
     <GradingContainer>
       <FieldGroup>
         <ScoreRow>
-        <Label htmlFor="score-input">Points</Label>
+        <Label htmlFor={scoreInputId}>Points</Label>
           <ScoreInput
-            id="score-input"
+            id={scoreInputId}
             type="number"
             value={score}
             onChange={handleScoreChange}
-            disabled={disabled}
+            disabled={disabled || isSaving}
             min={0}
             max={maxScore}
             step={1}
@@ -182,12 +190,12 @@ export const FreeResponseGrading: React.FC<FreeResponseGradingProps> = ({
       </FieldGroup>
 
       <FieldGroup>
-        <Label htmlFor="comment-input">Comment</Label>
+        <Label htmlFor={commentInputId}>Comment</Label>
         <CommentTextarea
-          id="comment-input"
+          id={commentInputId}
           value={comment}
           onChange={handleCommentChange}
-          disabled={disabled}
+          disabled={disabled || isSaving}
           placeholder="Enter feedback for the student..."
           aria-label="Comment"
         />
