@@ -1,7 +1,7 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../../src/types';
+import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../types';
 import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
 import { Content } from '../Content';
 import { ExerciseQuestion } from '../ExerciseQuestion';

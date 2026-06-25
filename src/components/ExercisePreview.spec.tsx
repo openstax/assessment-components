@@ -1,6 +1,6 @@
 import { ExercisePreview } from './ExercisePreview';
 import renderer from 'react-test-renderer';
-import { ExerciseData, QuestionState } from 'src/types';
+import { ExerciseData, QuestionState } from '../types';
 
 describe('ExercisePreview', () => {
   describe('using step data', () => {

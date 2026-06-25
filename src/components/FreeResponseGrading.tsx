@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { colors } from '../theme';
 import Button from './Button';
-import { ID } from 'src/types';
+import { ID } from '../types';
 import { formatTimestamp } from '../utils';
 
 let instanceCounter = 0;

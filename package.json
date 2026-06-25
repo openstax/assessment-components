@@ -2,24 +2,37 @@
   "name": "@openstax/assessment-components",
   "version": "1.4.6",
   "license": "MIT",
-  "source": "./src/index.ts",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
   "exports": {
-    "require": "./dist/index.js",
-    "default": "./dist/index.modern.mjs"
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "browser": "./dist/esm/index.js",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/esm/*",
+        "dist/esm/*.d.ts",
+        "dist/esm/*/index.d.ts"
+      ]
+    }
   },
   "files": [
     "dist",
     "src"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.module.js",
-  "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "build": "microbundle",
-    "dist": "rm -rf ./dist && microbundle && sed -i '' 's/jsx-runtime/jsx-runtime.js/g' ./dist/index.modern.mjs",
+    "build": "./scripts/build.bash",
+    "clean": "rm -rf ./dist",
+    "build:clean": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build",
+    "dev": "./scripts/build.bash --watch",
     "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false",
-    "dev": "microbundle watch --no-compress",
     "download-json": "yarn build-download-json && yarn run-download-json",
     "run-download-json": "node dist/scripts/download-json.js",
     "generate-pdf": "rollup scripts/generate-pdf.ts -o dist/scripts/generate-pdf.mjs && node dist/scripts/generate-pdf.mjs",

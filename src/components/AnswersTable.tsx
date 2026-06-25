@@ -1,5 +1,5 @@
 import { defaultAnswerType } from "../constants";
-import { Answer as AnswerType, AnswerDisplayType, ID, ExerciseQuestionData } from "src/types";
+import { Answer as AnswerType, AnswerDisplayType, ID, ExerciseQuestionData } from "../types";
 import { Answer } from "./Answer";
 import { Feedback } from "./Feedback";
 

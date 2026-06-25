@@ -1,5 +1,5 @@
 import React from "react";
-import { numberfyId } from "../../src/utils";
+import { numberfyId } from "../utils";
 import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
 import Button from "./Button";
 import { Content } from "./Content";
