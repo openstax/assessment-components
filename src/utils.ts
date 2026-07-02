@@ -1,4 +1,4 @@
-import { Answer, ID } from '../src/types';
+import { Answer, ID } from './types';
 
 export const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 

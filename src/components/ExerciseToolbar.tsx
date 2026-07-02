@@ -1,4 +1,4 @@
-import { colors, layouts, breakpoints } from "../../src/theme";
+import { colors, layouts, breakpoints } from "../theme";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";

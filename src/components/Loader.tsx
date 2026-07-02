@@ -1,5 +1,5 @@
 import { BulletList } from "react-content-loader";
-import { colors } from "../../src/theme";
+import { colors } from "../theme";
 import styled from "styled-components";
 
 const Wrapper = styled.div`

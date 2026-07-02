@@ -1,4 +1,4 @@
-import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../../src/types';
+import { ExerciseData, ExerciseQueryData, ExerciseQuestionData, StepBase } from '../types';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import data from '../../exercises.json';

@@ -2,7 +2,7 @@ import { MouseEventHandler, useState, useRef, useLayoutEffect, useEffect } from 
 import { countWords, formatTimestamp, numberfyId } from '../utils';
 import styled, { css } from 'styled-components';
 import { colors, mixins } from '../theme';
-import { ExerciseQuestionData, Answer, ID } from 'src/types';
+import { ExerciseQuestionData, Answer, ID } from '../types';
 import { QuestionHtml } from './Question';
 import Button from './Button';
 import { StepCardFooter } from './StepCardFooter';

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
-import { ID, ExerciseQuestionData, Task } from 'src/types';
+import { ID, ExerciseQuestionData, Task } from '../types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
 

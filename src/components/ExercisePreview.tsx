@@ -1,5 +1,5 @@
 import React from "react";
-import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "src/types";
+import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "../types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
 

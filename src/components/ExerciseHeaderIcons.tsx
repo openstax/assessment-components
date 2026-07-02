@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { breakpoints, colors, mixins } from '../../src/theme';
-import { ExerciseData } from '../../src/types';
+import { breakpoints, colors, mixins } from '../theme';
+import { ExerciseData } from '../types';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTriangleExclamation';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';

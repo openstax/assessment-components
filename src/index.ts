@@ -14,3 +14,24 @@ export * from './components/ExercisePreview';
 export * from './components/NeedsGradingStudentRow';
 export * from './components/NeedsGradingQuestion';
 export * from './components/NeedsGradingQueue';
+// Public data types. `Answer` is intentionally omitted here because
+// `./components/Answer` already exports a component named `Answer`; the data
+// shape remains available as `AnswerData`.
+export type {
+  ExercisePersonData,
+  ExerciseScoringData,
+  ExerciseAnswerData,
+  ExerciseTagData,
+  ExerciseQuestionData,
+  ExerciseQueryData,
+  ExerciseData,
+  Answer as AnswerData,
+  StepBase,
+  StepWithData,
+  QuestionState,
+  Solution,
+  Task,
+  AnswerDisplayType,
+  ID,
+  AvailablePoints,
+} from './types';
