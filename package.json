@@ -1,6 +1,10 @@
 {
   "name": "@openstax/assessment-components",
   "version": "1.5.0",
+  "repository": "https://github.com/openstax/assessment-components.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
   "main": "./dist/cjs/index.js",
   "module": "index.js",
@@ -29,15 +33,15 @@
   "scripts": {
     "build": "./scripts/build.bash",
     "clean": "rm -rf ./dist",
-    "build:clean": "yarn clean && yarn build",
-    "dist": "yarn clean && yarn build",
+    "build:clean": "npm run clean && npm run build",
+    "dist": "npm run clean && npm run build",
     "dev": "./scripts/build.bash --watch",
     "build-download-json": "microbundle scripts/download-json.ts -o dist/scripts/download-json.js --target node --format cjs --sourcemap false",
-    "download-json": "yarn build-download-json && yarn run-download-json",
+    "download-json": "npm run build-download-json && npm run run-download-json",
     "run-download-json": "node dist/scripts/download-json.js",
     "generate-pdf": "rollup scripts/generate-pdf.ts -o dist/scripts/generate-pdf.mjs && node dist/scripts/generate-pdf.mjs",
-    "download-json-to-pdf": "yarn download-json",
-    "postdownload-json-to-pdf": "yarn generate-pdf",
+    "download-json-to-pdf": "npm run download-json",
+    "postdownload-json-to-pdf": "npm run generate-pdf",
     "generate-eoc-pdfs": "node scripts/generate-eoc-pdfs.js",
     "generate-chapter-reading-homework-pdfs": "microbundle scripts/generate-chapter-reading-homework-pdfs.ts -o dist/scripts/generate-chapter-reading-homework-pdfs.js --target node --format cjs --sourcemap false && node dist/scripts/generate-chapter-reading-homework-pdfs.js $@",
     "test": "jest --coverage .",

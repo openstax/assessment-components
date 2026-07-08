@@ -18,7 +18,7 @@ import fetch from 'node-fetch';
   const token = spliceOption('-t');
 
   if (process.argv.length < 3 || token === undefined) {
-    console.error('Usage: yarn run-download-json [-o "Anatomy & Physiology 2e Section 1.6"] [-t token] <query>');
+    console.error('Usage: npm run run-download-json -- [-o "Anatomy & Physiology 2e Section 1.6"] [-t token] <query>');
     process.exit(1);
   }
 

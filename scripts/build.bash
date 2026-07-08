@@ -8,8 +8,8 @@ cd "$project_dir"
 
 tsc_args=(--noEmit false --declaration "$@")
 
-yarn -s tsc --project tsconfig.without-specs.esm.json "${tsc_args[@]}"
+npx tsc --project tsconfig.without-specs.esm.json "${tsc_args[@]}"
 rsync -av --prune-empty-dirs --include="*.css" --include="*/" --exclude="*" src/ dist/esm/
 
-yarn -s tsc --project tsconfig.without-specs.cjs.json "${tsc_args[@]}"
+npx tsc --project tsconfig.without-specs.cjs.json "${tsc_args[@]}"
 rsync -av --prune-empty-dirs --include="*.css" --include="*/" --exclude="*" src/ dist/cjs/
