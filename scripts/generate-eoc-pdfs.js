@@ -61,7 +61,7 @@ fetch(bookUrl)
     for (const { orn, title, number } of chapters) {
       const opts = `-o "${bookTitle}: ${title}" -t ${token} tag:\\"assessment:practice:${orn}\\"`;
       console.log(`Generating ${title}...`);
-      await exec(`yarn download-json-to-pdf ${opts}`).then(({ stdout, stderr }) => {
+      await exec(`npm run download-json-to-pdf -- ${opts}`).then(({ stdout, stderr }) => {
         if (debugMode) {
           console.log(stdout);
           console.error(stderr);

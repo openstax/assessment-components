@@ -59,7 +59,7 @@ const splitByAssignmentType = (group: ExerciseData[]) => {
 const generatePDF = async (exercises: ExerciseData[], filename: string) => {
   const mainJsonPath = path.join(__dirname, '..', '..', 'exercises.json');
   await writeFile(mainJsonPath, JSON.stringify({ exercises: exercises })).catch(console.error);
-  const { stdout, stderr } = await exec(`yarn generate-pdf ${filename}`);
+  const { stdout, stderr } = await exec(`npm run generate-pdf -- ${filename}`);
   console.log(stdout);
   if (stderr) {
     console.error(stderr);
