@@ -144,7 +144,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo kvDpsO"
+      className="sc-idiyUo hZPFqN"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -476,7 +476,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo kvDpsO"
+      className="sc-idiyUo hZPFqN"
       data-test-id="free-response-box"
       disabled={true}
       onChange={[Function]}
@@ -582,7 +582,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo kvDpsO"
+      className="sc-idiyUo hZPFqN"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -711,7 +711,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo kvDpsO"
+      className="sc-idiyUo hZPFqN"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -817,7 +817,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo kvDpsO"
+      className="sc-idiyUo hZPFqN"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
