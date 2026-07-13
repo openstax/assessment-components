@@ -79,7 +79,7 @@ const StepCardHeader = styled.div`
 
     span {
       font-size: 1.2rem;
-      font-weight: normal;
+      font-weight: bold;
       text-transform: uppercase;
     }
   }
@@ -162,7 +162,6 @@ const StyledUngraded = styled.div`
 
   span {
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
     line-height: 1.5rem;
     text-transform: uppercase;
     color: ${colors.palette.white};

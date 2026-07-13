@@ -16,7 +16,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -210,7 +210,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -411,7 +411,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -610,7 +610,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -806,7 +806,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -1002,7 +1002,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
@@ -1193,7 +1193,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
           id="step-card"
         >
           <div
-            className="sc-dkzDqf eWUzRx step-card-header"
+            className="sc-dkzDqf kfrDtP step-card-header"
           >
             <div>
               <h2
