@@ -1,0 +1,1 @@
+{"version":3,"file":"useTypesetMath.js","sourceRoot":"","sources":["../../../src/hooks/useTypesetMath.ts"],"names":[],"mappings":";;;;;;AAAA,kDAA0B;AAEb,QAAA,kBAAkB,GAAG,eAAK,CAAC,aAAa,CAAa,GAAG,EAAE,GAAG,MAAM,IAAI,KAAK,CAAC,yBAAyB,CAAC,CAAA,CAAC,CAAC,CAAC,CAAC;AACjH,MAAM,cAAc,GAAG,GAAG,EAAE,CAAC,eAAK,CAAC,UAAU,CAAC,0BAAkB,CAAC,CAAC;AAA5D,QAAA,cAAc,kBAA8C"}
