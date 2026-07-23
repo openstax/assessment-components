@@ -89,7 +89,7 @@ export const FreeResponseTextArea = styled.textarea`
   margin: 2.5rem 0 0 0;
   padding: 0.5em;
   border: 1px solid ${colors.palette.neutral};
-  color: ${colors.palette.neutralDark};
+  color: ${colors.palette.neutralDarker};
 `;
 FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
 
