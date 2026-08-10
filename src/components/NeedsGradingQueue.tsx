@@ -21,6 +21,30 @@ const EmptyState = styled.div`
   color: ${colors.palette.neutralThin};
 `;
 
+const StyledGradingNotice = styled.div`
+  background-color: ${colors.notice.background};
+  border: 1px solid ${colors.notice.border};
+  color: ${colors.notice.text};
+  padding: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: calc(1.4rem * var(--content-text-scale));
+
+  .grading-notice-label,
+  .grading-notice-emphasis {
+    font-weight: bold;
+  }
+`;
+
+export const GradingNotice = () => (
+  <StyledGradingNotice data-test-id="grading-notice">
+    <span className="grading-notice-label">NOTE:</span>{' '}
+    Once an item is manually graded, the student can no longer update their answers.
+    We <span className="grading-notice-emphasis">strongly recommend</span> waiting
+    until the due date has passed before grading submissions.
+  </StyledGradingNotice>
+);
+
 export const NeedsGradingQueue = ({
   questions,
 }: NeedsGradingQueueProps) => {
@@ -34,9 +58,12 @@ export const NeedsGradingQueue = ({
       <QueueWrapper ref={container}>
         {questions.length === 0
           ? <EmptyState>All responses have been graded.</EmptyState>
-          : questions.map((questionProps, i) => (
-            <NeedsGradingQuestion key={i} {...questionProps} />
-          ))
+          : <>
+            <GradingNotice />
+            {questions.map((questionProps, i) => (
+              <NeedsGradingQuestion key={i} {...questionProps} />
+            ))}
+          </>
         }
       </QueueWrapper>
     </TypesetMathContext.Provider>

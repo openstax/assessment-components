@@ -1,6 +1,7 @@
 import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "../types";
 import { Exercise } from "./Exercise";
+import { GradingNotice } from "./NeedsGradingQueue";
 import styled from "styled-components";
 
 const StyledExercise = styled(Exercise)<{
@@ -117,14 +118,17 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
   };
 
   return (
-    <StyledExercise
-      exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
-      className={`preview-card ${selected ? 'is-selected' : ''}`}
-      previewMode
-      showScoring={showScoring}
-      overlayChildren={overlayChildren}
-      {...exercisePreviewProps(exercise)}
-      onGradingSave={onGradingSave}
-    />
+    <>
+      {onGradingSave && <GradingNotice />}
+      <StyledExercise
+        exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
+        className={`preview-card ${selected ? 'is-selected' : ''}`}
+        previewMode
+        showScoring={showScoring}
+        overlayChildren={overlayChildren}
+        {...exercisePreviewProps(exercise)}
+        onGradingSave={onGradingSave}
+      />
+    </>
   );
 };
