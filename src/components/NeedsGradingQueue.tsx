@@ -29,18 +29,13 @@ const StyledGradingNotice = styled.div`
   margin-bottom: 2rem;
   line-height: 1.5;
   font-size: calc(1.4rem * var(--content-text-scale));
-
-  .grading-notice-label,
-  .grading-notice-emphasis {
-    font-weight: bold;
-  }
 `;
 
 export const GradingNotice = () => (
-  <StyledGradingNotice data-test-id="grading-notice">
-    <span className="grading-notice-label">NOTE:</span>{' '}
+  <StyledGradingNotice role="note" aria-label="Grading note" data-test-id="grading-notice">
+    <strong>NOTE:</strong>{' '}
     Once an item is manually graded, the student can no longer update their answers.
-    We <span className="grading-notice-emphasis">strongly recommend</span> waiting
+    We <strong>strongly recommend</strong> waiting
     until the due date has passed before grading submissions.
   </StyledGradingNotice>
 );

@@ -17,21 +17,19 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   className="sc-gXmSlM kmWwUD"
 >
   <div
-    className="sc-ciZhAO smiMi"
+    aria-label="Grading note"
+    className="sc-ciZhAO cydBxi"
     data-test-id="grading-notice"
+    role="note"
   >
-    <span
-      className="grading-notice-label"
-    >
+    <strong>
       NOTE:
-    </span>
+    </strong>
      
     Once an item is manually graded, the student can no longer update their answers. We 
-    <span
-      className="grading-notice-emphasis"
-    >
+    <strong>
       strongly recommend
-    </span>
+    </strong>
      waiting until the due date has passed before grading submissions.
   </div>
   <div
