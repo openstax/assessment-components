@@ -59,7 +59,8 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
   justify-content: ${props => props.hasChildren ? 'space-between' : 'flex-end'};
   line-height: 1.6rem;
 
-  .word-limit-error-info {
+  .word-limit-error-info,
+  .words-remaining-negative {
     color: ${colors.palette.danger};
   }
 
@@ -260,7 +261,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
   const wordCount = countWords(free_response || '');
-  const isOverWordLimit = wordCount > wordLimit;
+  const remainingWords = wordLimit - wordCount;
+  const isOverWordLimit = remainingWords < 0;
 
   // Check if the review answer text is overflowing
   useLayoutEffect(() => {
@@ -280,25 +282,16 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   }, [free_response, isPostReview, expanded]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
-    const raw = e.target.value;
-    const trimmed = raw.trim();
-
-    let limitedValue = raw;
-    if (trimmed) {
-      const words = trimmed.split(/\s+/);
-      if (words.length > wordLimit) {
-        limitedValue = words.slice(0, wordLimit).join(' ');
-        e.target.value = limitedValue;
-      }
-    }
+    // Students may type or paste past the word limit; submission is blocked instead of truncating
+    const value = e.target.value;
 
     // Call parent's onAnswerChange with Answer structure
     onAnswerChange({
       id: numberfyId(question.id),
       question_id: numberfyId(question.id),
       type: 'free-response',
-      content_html: limitedValue,
-      free_response: limitedValue,
+      content_html: value,
+      free_response: value,
       correctness: undefined,
     });
   };
@@ -463,7 +456,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
               {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
               <div>
                 {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-                <span> Remaining words: {wordLimit - wordCount}</span>
+                <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
               </div>
             </InfoRow>
           )}
@@ -540,7 +533,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
             <div>
               {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-              <span> Remaining words: {wordLimit - wordCount}</span>
+              <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
             </div>
           </InfoRow>
         )}
