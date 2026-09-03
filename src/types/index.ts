@@ -142,6 +142,10 @@ export type QuestionState = {
   score?: { raw?: number; max?: number };
   /** Raw timestamp of the last submission, formatted by the component */
   submissionTimestamp?: string | number;
+  /** Raw timestamp of the last autosaved free response draft, formatted by the component */
+  draftTimestamp?: string | number;
+  /** The last submitted free response, used as the baseline when free_response holds a draft */
+  submittedResponse?: string;
   /** Raw timestamp of when the grade was submitted, formatted by the component */
   gradingTimestamp?: string | number;
 };

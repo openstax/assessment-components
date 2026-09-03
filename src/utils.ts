@@ -32,10 +32,12 @@ export function countWords(text: string) {
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 
+// e.g. "10/3/24, 10:55 AM" — shared by the submitted, draft-saved and graded timestamps so
+// they read consistently when two of them appear on the same screen
 export const formatTimestamp = (timestamp: string | number) => new Date(timestamp).toLocaleString('en-US', {
-  month: 'short',
+  month: 'numeric',
   day: 'numeric',
-  year: 'numeric',
+  year: '2-digit',
   hour: 'numeric',
   minute: '2-digit',
   hour12: true,
