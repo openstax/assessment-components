@@ -36,8 +36,9 @@ export const Default = () => {
   );
 };
 
-export const WordLimitReached = () => {
-  const [freeResponse, setFreeResponse] = useState('response goes over the limit');
+export const WordLimitExceeded = () => {
+  // 10 words against a limit of 5, so "Remaining words: -5" shows in red
+  const [freeResponse, setFreeResponse] = useState('this response goes well over the limit by five words');
 
   return (
     <FreeResponseInput
