@@ -47,6 +47,11 @@ export const colors = {
     partialCredit: '#976502',
     neutralDark: '#5f6163'
   },
+  notice: {
+    background: "#FFF5E0",
+    border: "#FDBD3E",
+    text: "#976502",
+  },
   popover: {
     arrowOuterColor: "rgba(0, 0, 0, 0.25)",
     borderColor: "rgba(0, 0, 0, 0.2)",
