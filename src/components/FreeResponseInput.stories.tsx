@@ -72,6 +72,70 @@ export const SubmittedDate = () => {
   );
 };
 
+export const DraftSaved = () => {
+  const [freeResponse, setFreeResponse] = useState('A partial thought, autosaved but not submitted.');
+
+  return (
+    <FreeResponseInput
+      {...baseQuestionState}
+      is_completed={false}
+      canAnswer={true}
+      apiIsPending={false}
+      free_response={freeResponse}
+      draftTimestamp="2024-10-03T15:55:00.000Z"
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerSave={() => console.log('Save')}
+      onNextStep={() => console.log('Next')}
+    />
+  );
+};
+
+/*
+ * The student submitted, edited afterwards, and the edit was autosaved. The draft is newer so it
+ * wins the status line, and submittedResponse keeps Update enabled — without it the restored
+ * draft would look unchanged and could not be submitted.
+ */
+export const DraftNewerThanSubmission = () => {
+  const [freeResponse, setFreeResponse] = useState('An edit made after submitting, autosaved.');
+
+  return (
+    <FreeResponseInput
+      {...baseQuestionState}
+      is_completed={true}
+      canAnswer={true}
+      needsSaved={true}
+      apiIsPending={false}
+      free_response={freeResponse}
+      submittedResponse="The originally submitted answer."
+      submissionTimestamp="2024-10-03T14:00:00.000Z"
+      draftTimestamp="2024-10-03T15:55:00.000Z"
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerSave={() => console.log('Save')}
+      onNextStep={() => console.log('Next')}
+    />
+  );
+};
+
+// The fallback half of the precedence rule: a draft left behind by an earlier submit stays hidden.
+export const DraftOlderThanSubmission = () => {
+  const [freeResponse, setFreeResponse] = useState('The submitted answer.');
+
+  return (
+    <FreeResponseInput
+      {...baseQuestionState}
+      is_completed={true}
+      canAnswer={true}
+      apiIsPending={false}
+      free_response={freeResponse}
+      submissionTimestamp="2024-10-03T15:55:00.000Z"
+      draftTimestamp="2024-10-03T14:00:00.000Z"
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerSave={() => console.log('Save')}
+      onNextStep={() => console.log('Next')}
+    />
+  );
+};
+
 export const UpdateMode = () => {
   const [freeResponse, setFreeResponse] = useState('Previously submitted answer.');
 

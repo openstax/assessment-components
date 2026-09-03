@@ -1,4 +1,4 @@
-import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
+import { formatTimestamp, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
 import { Answer } from './types';
 
 describe('isAnswerCorrect', () => {
@@ -84,5 +84,21 @@ describe('numberfyId', () => {
   it('converts an ID string to a number or returns the value', () => {
     expect(numberfyId('1')).toBe(1);
     expect(numberfyId(1)).toBe(1);
+  });
+});
+
+describe('formatTimestamp', () => {
+  it('renders a numeric short date with a 12 hour time', () => {
+    // fixed offset so the assertion does not depend on the runner's timezone
+    expect(formatTimestamp('2024-10-03T10:55:00-05:00')).toBe(
+      new Date('2024-10-03T10:55:00-05:00').toLocaleString('en-US', {
+        month: 'numeric', day: 'numeric', year: '2-digit',
+        hour: 'numeric', minute: '2-digit', hour12: true,
+      })
+    );
+  });
+
+  it('matches the 10/3/24, 10:55 AM shape', () => {
+    expect(formatTimestamp('2024-10-03T10:55:00Z')).toMatch(/^\d{1,2}\/\d{1,2}\/\d{2}, \d{1,2}:\d{2} (AM|PM)$/);
   });
 });

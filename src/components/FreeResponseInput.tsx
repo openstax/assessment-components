@@ -15,6 +15,12 @@ export interface FreeResponseProps {
   needsSaved: boolean;
   apiIsPending: boolean;
   free_response: string;
+  /*
+   * The last text the student actually submitted, used as the baseline for "has this changed?".
+   * Defaults to free_response. These differ when free_response holds a restored autosaved draft:
+   * without the distinction the Update button stays disabled on the very text just restored.
+   */
+  submittedResponse?: string;
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
   onAnswerSave: (question_id: number) => void;
   onNextStep: (currentIndex: number) => void;
@@ -28,6 +34,7 @@ export interface FreeResponseProps {
   score?: { raw?: number; max?: number };
   feedback_html?: string;
   submissionTimestamp?: string | number;
+  draftTimestamp?: string | number;
   cancelHandler: MouseEventHandler<HTMLButtonElement>;
   previewMode?: boolean;
 
@@ -206,6 +213,41 @@ const RevertButton = (props: {
   </CancelButton>
 );
 
+/*
+ * The word count, plus whichever of the two timestamps is more recent — a draft newer than the
+ * last submission is the state the student most needs confirmed, so it wins.
+ *
+ * The API already applies this rule, and only sends a draft timestamp that beats the submission.
+ * The re-check here is so the component stays correct for callers that pass both raw, such as
+ * the stories and the preview/review screens. Keep the two rules in step if either changes.
+ */
+const ResponseInfoRow = ({ submissionTimestamp, draftTimestamp, wordCount, wordLimit }: {
+  submissionTimestamp?: string | number;
+  draftTimestamp?: string | number;
+  wordCount: number;
+  wordLimit: number;
+}) => {
+  const showDraft = draftTimestamp !== undefined
+    && (submissionTimestamp === undefined
+      || new Date(draftTimestamp).getTime() > new Date(submissionTimestamp).getTime());
+
+  const status = showDraft
+    ? `Draft last saved ${formatTimestamp(draftTimestamp)}`
+    : submissionTimestamp !== undefined
+      ? `Last submitted on ${formatTimestamp(submissionTimestamp)}`
+      : undefined;
+
+  return (
+    <InfoRow hasChildren={!!status}>
+      {status && <div><span className="last-submitted">{status}</span></div>}
+      <div>
+        {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
+        <span> Remaining words: {wordLimit - wordCount}</span>
+      </div>
+    </InfoRow>
+  );
+};
+
 
 export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
@@ -214,6 +256,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     needsSaved,
     apiIsPending,
     free_response,
+    submittedResponse,
     onAnswerChange,
     onAnswerSave,
     onNextStep,
@@ -223,6 +266,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     score,
     feedback_html,
     submissionTimestamp,
+    draftTimestamp,
     cancelHandler,
     previewMode = false,
     onGradingSave,
@@ -237,7 +281,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const [originalSubmittedValue, setOriginalSubmittedValue] = useState(free_response || '');
+  const [originalSubmittedValue, setOriginalSubmittedValue] = useState(submittedResponse ?? free_response ?? '');
 
   // Derive three render states from QuestionState
   const isUpdateMode = is_completed && canAnswer;
@@ -250,12 +294,12 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     </EditableNotice>
   ) : null;
 
-  // Sync baseline to current free_response whenever there are no unsaved changes
+  // Sync baseline to the submitted text whenever there are no unsaved changes
   useLayoutEffect(() => {
     if (isUpdateMode && !needsSaved) {
-      setOriginalSubmittedValue(free_response || '');
+      setOriginalSubmittedValue(submittedResponse ?? free_response ?? '');
     }
-  }, [needsSaved, isUpdateMode, free_response]);
+  }, [needsSaved, isUpdateMode, free_response, submittedResponse]);
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
@@ -459,13 +503,12 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
             disabled={previewMode || apiIsPending}
           />
           {!previewMode && (
-            <InfoRow hasChildren={!!submissionTimestamp}>
-              {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
-              <div>
-                {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-                <span> Remaining words: {wordLimit - wordCount}</span>
-              </div>
-            </InfoRow>
+            <ResponseInfoRow
+              submissionTimestamp={submissionTimestamp}
+              draftTimestamp={draftTimestamp}
+              wordCount={wordCount}
+              wordLimit={wordLimit}
+            />
           )}
         </div>
         {!previewMode && (
@@ -536,13 +579,12 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
           />
         )}
         {!previewMode && (
-          <InfoRow hasChildren={!!submissionTimestamp}>
-            {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
-            <div>
-              {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-              <span> Remaining words: {wordLimit - wordCount}</span>
-            </div>
-          </InfoRow>
+          <ResponseInfoRow
+            submissionTimestamp={submissionTimestamp}
+            draftTimestamp={draftTimestamp}
+            wordCount={wordCount}
+            wordLimit={wordLimit}
+          />
         )}
       </div>
       {!previewMode && (
