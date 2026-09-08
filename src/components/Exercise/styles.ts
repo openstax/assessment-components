@@ -54,10 +54,6 @@ export const exerciseStyles = css`
       line-height: 2rem;
     }
 
-    .step-card-header {
-      border-bottom: 1px solid ${colors.palette.pale};
-    }
-
     .step-card-footer {
       padding: 0 var(--spacing) var(--spacing);
     }
