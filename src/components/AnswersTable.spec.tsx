@@ -2,6 +2,7 @@ import { AnswersTable, AnswersTableProps } from './AnswersTable';
 import renderer from 'react-test-renderer';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
+import { Feedback } from './Feedback';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -101,6 +102,67 @@ describe('AnswersTable', () => {
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('renders an empty live region per answer before there is any feedback', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props} />
+    );
+    const regions = tree.root.findAllByProps({ className: 'question-feedback-live-region' });
+
+    expect(regions.length).toBe(2);
+    regions.forEach((region) => {
+      expect(region.props['aria-live']).toBe('polite');
+      expect(region.props['aria-atomic']).toBe('true');
+      expect(region.props.children).toBeNull();
+    });
+    expect(tree.root.findAllByType(Feedback).length).toBe(0);
+  });
+
+  it('renders feedback into the live region of its own answer', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        answer_id="1"
+        correct_answer_id="1"
+        correct_answer_feedback_html="Feedback"
+        hasCorrectAnswer={true}
+      />
+    );
+    const regions = tree.root.findAllByProps({ className: 'question-feedback-live-region' });
+
+    expect(regions.length).toBe(2);
+    expect(regions[0].findAllByType(Feedback).map((f) => f.props.id)).toEqual(['feedback-1-0']);
+    expect(regions[1].findAllByType(Feedback).length).toBe(0);
+  });
+
+  it('labels the feedback for screen readers', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        answer_id="1"
+        correct_answer_id="1"
+        correct_answer_feedback_html="Feedback"
+        hasCorrectAnswer={true}
+      />
+    );
+    const region = tree.root.findAllByProps({ className: 'question-feedback-live-region' })[0];
+
+    expect(region.findAllByType(Feedback)[0].findAll(
+      (node) => node.children.includes('Answer feedback:')
+    ).length).toBeGreaterThan(0);
+  });
+
+  it('only points aria-details at feedback that exists', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        answer_id="1"
+        correct_answer_id="1"
+        correct_answer_feedback_html="Feedback"
+        hasCorrectAnswer={true}
+      />
+    );
+
+    expect(tree.root.findAllByType(Answer).map((a) => a.props.feedbackId))
+      .toEqual(['feedback-1-0', undefined]);
   });
 
   it('hides answers', () => {
