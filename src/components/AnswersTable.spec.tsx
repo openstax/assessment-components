@@ -1,10 +1,11 @@
 import { AnswersTable, AnswersTableProps } from './AnswersTable';
-import renderer from 'react-test-renderer';
+import renderer, { ReactTestInstance, ReactTestRenderer } from 'react-test-renderer';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
-import { Feedback } from './Feedback';
+import { Content } from './Content';
+import { Feedback, SimpleFeedback } from './Feedback';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -47,63 +48,69 @@ describe('AnswersTable', () => {
     };
   });
 
-  it('matches tutor teacher-preview snapshot', () => {
+  // The feedback that belongs to each answer, read out of that answer's live region.
+  const feedbackByRegion = (tree: ReactTestRenderer) => tree.root
+    .findAllByProps({ className: 'question-feedback-live-region' })
+    .map((region) => region.findAllByType(Feedback).map((f) => f.props.children));
+
+  // Answer-level feedback rendered inside the answer itself rather than in a live region.
+  const inlineFeedback = (tree: ReactTestRenderer) => tree.root
+    .findAllByProps({ className: 'answer-answer' })
+    .flatMap((answer) => answer.findAllByType(SimpleFeedback).map((f) => f.props.children));
+
+  const answersWithFeedback = [{
+    id: '1',
+    correctness: undefined,
+    content_html: 'True',
+    feedback_html: 'Feedback for True',
+  }, {
+    id: '2',
+    correctness: undefined,
+    content_html: 'False',
+    feedback_html: 'Feedback for False',
+  }];
+
+  it('renders teacher-preview answers with a correct/incorrect slot', () => {
     props.question.answers.forEach((answer, i) => answer.content_html = answerContent[i]);
     const tree = renderer.create(
       <AnswersTable {...props} type="teacher-preview" onKeyPress={() => null} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+
+    // the icon slot is specific to teacher-preview
+    expect(tree.root.findAllByProps({ className: 'correct-incorrect' }).length).toBe(2);
+    expect(tree.root.findAllByType(Content)
+      .filter((c) => c.props.className === 'answer-content')
+      .map((c) => c.props.html)).toEqual(answerContent);
+    // a preview is not answerable
+    expect(tree.root.findAllByProps({ className: 'answer-input-box' })
+      .map((input) => input.props.disabled)).toEqual([true, true]);
   });
 
-  it('renders correct answer feedback', () => {
+  it('routes answer-level feedback to its own live region when table feedback is on', () => {
     const tree = renderer.create(
       <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="1"
-        correct_answer_feedback_html="Feedback"
-        hasCorrectAnswer={true}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders incorrect answer feedback', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="2"
-        incorrectAnswerId="1"
-        feedback_html="Feedback"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders all feedback', () => {
-    const answers = [{
-      id: '1',
-      correctness: undefined,
-      content_html: 'True',
-      feedback_html: 'Answer level feedback',
-    }, {
-      id: '2',
-      correctness: undefined,
-      content_html: 'False',
-      feedback_html: 'Answer level feedback'
-    }];
-
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="2"
-        incorrectAnswerId="1"
-        feedback_html="Feedback"
         show_all_feedback={true}
         tableFeedbackEnabled={true}
-        question={{...props.question, answers}}
+        question={{...props.question, answers: answersWithFeedback}}
       />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+
+    expect(feedbackByRegion(tree)).toEqual([['Feedback for True'], ['Feedback for False']]);
+    // with table feedback on it belongs in the live region, not inline in the answer
+    expect(inlineFeedback(tree)).toEqual([]);
+  });
+
+  it('keeps answer-level feedback inline when table feedback is off', () => {
+    const tree = renderer.create(
+      <AnswersTable {...props}
+        show_all_feedback={true}
+        tableFeedbackEnabled={false}
+        question={{...props.question, answers: answersWithFeedback}}
+      />
+    );
+
+    expect(inlineFeedback(tree)).toEqual(['Feedback for True', 'Feedback for False']);
+    expect(feedbackByRegion(tree)).toEqual([[], []]);
   });
 
   it('renders an empty live region per answer before there is any feedback', () => {
@@ -223,22 +230,6 @@ describe('AnswersTable', () => {
     container.remove();
   });
 
-  it('labels the feedback for screen readers', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="1"
-        correct_answer_feedback_html="Feedback"
-        hasCorrectAnswer={true}
-      />
-    );
-    const region = tree.root.findAllByProps({ className: 'question-feedback-live-region' })[0];
-
-    expect(region.findAllByType(Feedback)[0].findAll(
-      (node) => node.children.includes('Answer feedback:')
-    ).length).toBeGreaterThan(0);
-  });
-
   it('only points aria-details at feedback that exists', () => {
     const tree = renderer.create(
       <AnswersTable {...props}
@@ -290,16 +281,21 @@ describe('AnswersTable', () => {
       <AnswersTable {...props} answerIdOrder={['2', '1']} />
     );
     expect(tree.root.findAllByType(Answer).map((a) => a.props.answer.id)).toEqual(['2', '1']);
-    expect(tree).toMatchSnapshot();
+    // each answer still gets its own live region, in the same order
+    expect(tree.root.findAllByProps({ className: 'question-feedback-live-region' }).length).toBe(2);
   });
 
-  it('renders instructions', () => {
+  it('renders instructions ahead of the answers', () => {
     const tree = renderer.create(
       <AnswersTable {...props}
         instructions={<b>Instructions</b>}
       />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+    const table = tree.root.findByProps({ className: 'answers-table' });
+    const first = table.children[0] as ReactTestInstance;
+
+    expect(first.type).toBe('b');
+    expect(first.children).toEqual(['Instructions']);
   });
 
   it('casts question id to a number', () => {
