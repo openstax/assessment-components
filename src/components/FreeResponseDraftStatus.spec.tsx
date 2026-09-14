@@ -1,7 +1,6 @@
 import renderer from 'react-test-renderer';
 import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 
-// the status line is a plain text node, so serializing the tree is enough to assert on it
 const statusText = (element: React.ReactElement) =>
   JSON.stringify(renderer.create(element).toJSON());
 
@@ -9,7 +8,6 @@ jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
 }));
 
-// echoes its input so each assertion can tell which of the two timestamps was rendered
 jest.mock('../utils', () => ({
   ...jest.requireActual('../utils'),
   formatTimestamp: (timestamp: string | number) => `<${timestamp}>`,
@@ -82,7 +80,6 @@ describe('free response status line', () => {
     expect(text).not.toContain('Last submitted on');
   });
 
-  // a draft left over from before the last submit must not present itself as the newer state
   it('prefers the submission when the draft is older', () => {
     const text = statusText(
       <FreeResponseInput
@@ -128,8 +125,6 @@ describe('restored draft baseline', () => {
     return tree.root.findByProps({'data-test-id': 'update-answer-btn'}).props.disabled;
   };
 
-  // the trap this prop exists to avoid: baseline taken from free_response makes the restored
-  // draft look unchanged, leaving the student unable to submit it
   it('enables Update when a restored draft differs from the submitted text', () => {
     expect(updateButtonDisabled(submittedProps({submittedResponse: 'the original answer'}))).toBe(false);
   });

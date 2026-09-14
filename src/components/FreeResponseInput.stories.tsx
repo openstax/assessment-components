@@ -89,12 +89,6 @@ export const DraftSaved = () => {
     />
   );
 };
-
-/*
- * The student submitted, edited afterwards, and the edit was autosaved. The draft is newer so it
- * wins the status line, and submittedResponse keeps Update enabled — without it the restored
- * draft would look unchanged and could not be submitted.
- */
 export const DraftNewerThanSubmission = () => {
   const [freeResponse, setFreeResponse] = useState('An edit made after submitting, autosaved.');
 
@@ -116,7 +110,6 @@ export const DraftNewerThanSubmission = () => {
   );
 };
 
-// The fallback half of the precedence rule: a draft left behind by an earlier submit stays hidden.
 export const DraftOlderThanSubmission = () => {
   const [freeResponse, setFreeResponse] = useState('The submitted answer.');
 

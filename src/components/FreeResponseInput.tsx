@@ -15,11 +15,6 @@ export interface FreeResponseProps {
   needsSaved: boolean;
   apiIsPending: boolean;
   free_response: string;
-  /*
-   * The last text the student actually submitted, used as the baseline for "has this changed?".
-   * Defaults to free_response. These differ when free_response holds a restored autosaved draft:
-   * without the distinction the Update button stays disabled on the very text just restored.
-   */
   submittedResponse?: string;
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
   onAnswerSave: (question_id: number) => void;
@@ -213,14 +208,6 @@ const RevertButton = (props: {
   </CancelButton>
 );
 
-/*
- * The word count, plus whichever of the two timestamps is more recent — a draft newer than the
- * last submission is the state the student most needs confirmed, so it wins.
- *
- * The API already applies this rule, and only sends a draft timestamp that beats the submission.
- * The re-check here is so the component stays correct for callers that pass both raw, such as
- * the stories and the preview/review screens. Keep the two rules in step if either changes.
- */
 const ResponseInfoRow = ({ submissionTimestamp, draftTimestamp, wordCount, wordLimit }: {
   submissionTimestamp?: string | number;
   draftTimestamp?: string | number;
