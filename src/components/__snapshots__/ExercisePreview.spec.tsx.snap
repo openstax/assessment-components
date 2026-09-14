@@ -2,14 +2,14 @@
 
 exports[`ExercisePreview using questionStates matches snapshot with chosen answer 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card "
     >
       <div>
         <div
@@ -63,12 +63,12 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -118,25 +118,36 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="sc-iqcoie ilkYTA"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -180,6 +191,11 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -196,14 +212,14 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
 
 exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card "
     >
       <div>
         <div
@@ -257,12 +273,12 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -301,7 +317,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 role="status"
                               >
                                 <div
-                                  className="sc-iqcoie egDBZj"
+                                  className="sc-crXcEl jLxbEM"
                                 >
                                   <span>
                                     Correct Answer
@@ -319,25 +335,36 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="sc-iqcoie ilkYTA"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -381,6 +408,11 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -397,14 +429,14 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
 
 exports[`ExercisePreview using questionStates matches snapshot without chosen answer 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card "
     >
       <div>
         <div
@@ -458,12 +490,12 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -513,25 +545,36 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="sc-iqcoie ilkYTA"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -575,6 +618,11 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -591,14 +639,14 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -657,12 +705,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -712,6 +760,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -754,6 +807,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                       <div
                         className="detailed-solution"
@@ -787,14 +845,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -853,12 +911,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -908,6 +966,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -950,6 +1013,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                       <div
                         className="detailed-solution"
@@ -983,14 +1051,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -1049,12 +1117,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -1104,6 +1172,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -1146,6 +1219,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                       <div
                         className="detailed-solution"
@@ -1179,14 +1257,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bBXxYQ gOCPop"
 >
   <div
     className="sc-gsnTZi dxdISE"
     data-task-step-id={1}
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-bczRLJ fZGYwW exercise-step sc-dPyBCJ koyhlh sc-cOFTSb sc-dsQDmV fbaAiI dhlyrK preview-card "
     >
       <div>
         <div
@@ -1240,12 +1318,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-breuTD bxGaEM openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-evZas csYxrp"
                   >
                     <div>
                       <div
@@ -1295,25 +1373,36 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="sc-iqcoie ilkYTA"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -1357,6 +1446,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                       <div
                         className="detailed-solution"
@@ -1379,7 +1473,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                   </div>
                 </div>
                 <div
-                  className="sc-breuTD gsiMJy step-card-footer"
+                  className="sc-ksZaOG glyfMN step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"

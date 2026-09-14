@@ -2,14 +2,14 @@
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -21,32 +21,32 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
       />
     </div>
     <div
-      className="sc-dIouRR bQySUj"
+      className="sc-hHLeRK uMaAE"
     >
       Your answer
     </div>
     <div
-      className="sc-hHLeRK fpWa"
+      className="sc-dmRaPn dBIgUS"
     >
       Photosynthesis is the process by which plants convert light energy into chemical energy.
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR"
+    className="sc-jqUVSM hlzBGY"
   >
     <div
       className="step-card-footer-inner"
     >
       <div>
         <div
-          className="sc-kgflAQ jmqgyi"
+          className="sc-fLlhyt hVFqvz"
           role="status"
         >
           Score: 
           8/10
         </div>
         <div
-          className="sc-fLlhyt bCYZgk"
+          className="sc-bBrHrO dEEcyw"
         >
           <span
             className="feedback-label"
@@ -68,7 +68,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="next-btn"
           onClick={[Function]}
         >
@@ -82,14 +82,14 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-llJcti dhmFHo"
+      className="sc-iIPllB jpotfG"
     >
       <svg
         fill="none"
@@ -131,7 +131,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
       You can come back and edit your response until it has been graded.
     </div>
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -144,7 +144,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
+      className="sc-dIouRR cGYpwF"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -152,7 +152,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
       value=""
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-idiyUo jpZbvG"
     >
       <div>
         <span>
@@ -163,7 +163,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-jqUVSM hlzBGY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -173,7 +173,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -188,14 +188,14 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -207,7 +207,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
       />
     </div>
     <p
-      className="sc-cxabCf leMZGC"
+      className="sc-llJcti hBWDIT"
     >
       Unanswered
     </p>
@@ -217,14 +217,14 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -236,7 +236,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       />
     </div>
     <div
-      className="sc-hHLeRK fpWa"
+      className="sc-dmRaPn dBIgUS"
     >
       Photosynthesis converts sunlight into chemical energy.
     </div>
@@ -248,14 +248,14 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       }
     >
       <div
-        className="sc-kgflAQ jmqgyi"
+        className="sc-fLlhyt hVFqvz"
         role="status"
       >
         Score: 
         9/10
       </div>
       <div
-        className="sc-fLlhyt bCYZgk"
+        className="sc-bBrHrO dEEcyw"
       >
         <span
           className="feedback-label"
@@ -279,14 +279,14 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -298,13 +298,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
       />
     </div>
     <div
-      className="sc-bBrHrO fslSVg"
+      className="sc-ivTmOn GXmuI"
     >
       <div
-        className="sc-ivTmOn lmJbRV"
+        className="sc-cxabCf enODfn"
       >
         <div
-          className="sc-hHLeRK fpWa"
+          className="sc-dmRaPn dBIgUS"
         >
           Photosynthesis converts sunlight into chemical energy.
         </div>
@@ -316,14 +316,14 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           }
         >
           <div
-            className="sc-kgflAQ jmqgyi"
+            className="sc-fLlhyt hVFqvz"
             role="status"
           >
             Score: 
             9/10
           </div>
           <div
-            className="sc-fLlhyt bCYZgk"
+            className="sc-bBrHrO dEEcyw"
           >
             <span
               className="feedback-label"
@@ -343,23 +343,23 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
         </div>
       </div>
       <div
-        className="sc-jqUVSM jIqmLJ"
+        className="sc-kDDrLX bkrdiC"
       >
         <div
-          className="sc-kDDrLX jeAafv"
+          className="sc-iqcoie Bndfy"
         >
           <div
-            className="sc-crXcEl gpANJs"
+            className="sc-evZas bBzCRk"
           >
             <label
-              className="sc-iqcoie kktHJP"
+              className="sc-crXcEl fQPIDk"
               htmlFor="frg-0-score"
             >
               Points
             </label>
             <input
               aria-label="Score"
-              className="sc-evZas dkKVKh"
+              className="sc-breuTD jspuFG"
               disabled={false}
               id="frg-0-score"
               max={10}
@@ -377,17 +377,17 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           </div>
         </div>
         <div
-          className="sc-kDDrLX jeAafv"
+          className="sc-iqcoie Bndfy"
         >
           <label
-            className="sc-iqcoie kktHJP"
+            className="sc-crXcEl fQPIDk"
             htmlFor="frg-0-comment"
           >
             Comment
           </label>
           <textarea
             aria-label="Comment"
-            className="sc-breuTD gpbziE"
+            className="sc-ksZaOG jJmnhz"
             disabled={false}
             id="frg-0-comment"
             onChange={[Function]}
@@ -396,10 +396,10 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           />
         </div>
         <div
-          className="sc-ksZaOG cxStGS"
+          className="sc-hAZoDl eVNbrF"
         >
           <button
-            className="sc-ftvSup gRHhHP"
+            className="sc-papXJ jTyQce"
             disabled={true}
             onClick={[Function]}
           >
@@ -414,14 +414,14 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 
 exports[`Free Response Input matches snapshot - saving state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-llJcti dhmFHo"
+      className="sc-iIPllB jpotfG"
     >
       <svg
         fill="none"
@@ -463,7 +463,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
       You can come back and edit your response until it has been graded.
     </div>
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -476,7 +476,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
+      className="sc-dIouRR cGYpwF"
       data-test-id="free-response-box"
       disabled={true}
       onChange={[Function]}
@@ -484,7 +484,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
       value="This is being saved"
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-idiyUo jpZbvG"
     >
       <div>
         <span>
@@ -495,7 +495,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-jqUVSM hlzBGY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -505,7 +505,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -520,14 +520,14 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-llJcti dhmFHo"
+      className="sc-iIPllB jpotfG"
     >
       <svg
         fill="none"
@@ -569,7 +569,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       You can come back and edit your response until it has been graded.
     </div>
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -582,7 +582,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
+      className="sc-dIouRR cGYpwF"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -590,7 +590,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       value="Previously submitted answer"
     />
     <div
-      className="sc-bjUoiL gwhDCs"
+      className="sc-idiyUo lgGOMk"
     >
       <div>
         <span
@@ -609,7 +609,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-jqUVSM hlzBGY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -619,14 +619,14 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP sc-iIPllB fCpaUQ"
+          className="sc-papXJ jTyQce sc-gicCDI cjOdKZ"
           disabled={true}
           onClick={[Function]}
         >
           Cancel
         </button>
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="update-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -634,7 +634,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
           Update
         </button>
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="next-btn"
           disabled={false}
           onClick={[Function]}
@@ -649,14 +649,14 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-llJcti dhmFHo"
+      className="sc-iIPllB jpotfG"
     >
       <svg
         fill="none"
@@ -698,7 +698,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
       You can come back and edit your response until it has been graded.
     </div>
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -711,7 +711,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
+      className="sc-dIouRR cGYpwF"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -719,7 +719,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
       value="Photosynthesis converts light energy into chemical energy."
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-idiyUo jpZbvG"
     >
       <div>
         <span>
@@ -730,7 +730,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-jqUVSM hlzBGY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -740,7 +740,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
@@ -755,14 +755,14 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fEOsli brblUh"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-llJcti dhmFHo"
+      className="sc-iIPllB jpotfG"
     >
       <svg
         fill="none"
@@ -804,7 +804,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       You can come back and edit your response until it has been graded.
     </div>
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-bjUoiL hqGcEG"
     >
       <div
         className="question-stem"
@@ -817,7 +817,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
     </div>
     <textarea
       aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
+      className="sc-dIouRR cGYpwF"
       data-test-id="free-response-box"
       disabled={false}
       onChange={[Function]}
@@ -825,7 +825,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       value=""
     />
     <div
-      className="sc-bjUoiL gwhDCs"
+      className="sc-idiyUo lgGOMk"
     >
       <div>
         <span
@@ -844,7 +844,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-jqUVSM hlzBGY step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -854,7 +854,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-papXJ jTyQce"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
