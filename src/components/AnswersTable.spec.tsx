@@ -153,6 +153,36 @@ describe('AnswersTable', () => {
       .toEqual(['feedback-1-0', undefined]);
   });
 
+  it('renders incorrect answer feedback into the live region on submit', () => {
+    // The incorrect branch picks its html from feedback_html/incorrectAnswerId rather than
+    // correct_answer_feedback_html, so it reaches the region by a different path and needs
+    // its own transition case.
+    const tree = renderer.create(
+      <AnswersTable {...props} />
+    );
+    const findRegions = () => tree.root.findAllByProps({ className: 'question-feedback-live-region' });
+
+    expect(findRegions().length).toBe(2);
+    expect(tree.root.findAllByType(Feedback).length).toBe(0);
+
+    renderer.act(() => {
+      tree.update(
+        <AnswersTable {...props}
+          answer_id="1"
+          correct_answer_id="2"
+          incorrectAnswerId="1"
+          feedback_html="Feedback"
+        />
+      );
+    });
+
+    const regions = findRegions();
+    expect(regions.length).toBe(2);
+    expect(regions[0].findAllByType(Feedback).map((f) => f.props.id)).toEqual(['feedback-1-0']);
+    expect(regions[0].findByType(Feedback).props.children).toBe('Feedback');
+    expect(regions[1].findAllByType(Feedback).length).toBe(0);
+  });
+
   it('keeps the same live region element when the feedback arrives', () => {
     // Rendered into a real container so the element identity can be checked: if React
     // unmounts and remounts the region along with its content there is nothing for a
