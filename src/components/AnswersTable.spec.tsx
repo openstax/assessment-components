@@ -1,5 +1,7 @@
 import { AnswersTable, AnswersTableProps } from './AnswersTable';
 import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
 import { Feedback } from './Feedback';
@@ -120,19 +122,75 @@ describe('AnswersTable', () => {
   });
 
   it('renders feedback into the live region of its own answer', () => {
+    // Mount without feedback first: the fix depends on the empty region already being in
+    // the tree when the answer is submitted, so the feedback has to arrive by updating an
+    // existing region rather than by mounting a region that comes with its content.
     const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="1"
-        correct_answer_feedback_html="Feedback"
-        hasCorrectAnswer={true}
-      />
+      <AnswersTable {...props} />
     );
-    const regions = tree.root.findAllByProps({ className: 'question-feedback-live-region' });
+    const findRegions = () => tree.root.findAllByProps({ className: 'question-feedback-live-region' });
 
+    expect(findRegions().length).toBe(2);
+    expect(tree.root.findAllByType(Feedback).length).toBe(0);
+
+    renderer.act(() => {
+      tree.update(
+        <AnswersTable {...props}
+          answer_id="1"
+          correct_answer_id="1"
+          correct_answer_feedback_html="Feedback"
+          hasCorrectAnswer={true}
+        />
+      );
+    });
+
+    const regions = findRegions();
     expect(regions.length).toBe(2);
     expect(regions[0].findAllByType(Feedback).map((f) => f.props.id)).toEqual(['feedback-1-0']);
+    expect(regions[0].findByType(Feedback).props.children).toBe('Feedback');
     expect(regions[1].findAllByType(Feedback).length).toBe(0);
+    expect(tree.root.findAllByType(Answer).map((a) => a.props.feedbackId))
+      .toEqual(['feedback-1-0', undefined]);
+  });
+
+  it('keeps the same live region element when the feedback arrives', () => {
+    // Rendered into a real container so the element identity can be checked: if React
+    // unmounts and remounts the region along with its content there is nothing for a
+    // screen reader to observe changing, and the feedback goes unannounced again.
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+
+    act(() => { ReactDOM.render(<AnswersTable {...props} />, container); });
+
+    const before = container.querySelectorAll('.question-feedback-live-region');
+    expect(before.length).toBe(2);
+    expect(before[0].textContent).toBe('');
+
+    act(() => {
+      ReactDOM.render(
+        <AnswersTable {...props}
+          answer_id="1"
+          correct_answer_id="1"
+          correct_answer_feedback_html="Feedback"
+          hasCorrectAnswer={true}
+        />,
+        container
+      );
+    });
+
+    const after = container.querySelectorAll('.question-feedback-live-region');
+    expect(after.length).toBe(2);
+    expect(after[0]).toBe(before[0]);
+    expect(after[1]).toBe(before[1]);
+    expect(after[0].getAttribute('aria-live')).toBe('polite');
+    expect(after[0].getAttribute('aria-atomic')).toBe('true');
+    expect(after[0].textContent).toContain('Answer feedback:');
+    expect(after[0].textContent).toContain('Feedback');
+    expect(after[0].querySelector('#feedback-1-0')).not.toBeNull();
+    expect(after[1].textContent).toBe('');
+
+    act(() => { ReactDOM.unmountComponentAtNode(container); });
+    container.remove();
   });
 
   it('labels the feedback for screen readers', () => {
