@@ -40,6 +40,7 @@ export interface FreeResponseProps {
 const StyledFreeResponse = styled.div`
   display: flex;
   flex-direction: column;
+  border-top: 1px solid ${colors.palette.pale};
 
   .step-card-body {
     ${mixins.stepCardPadding()}
