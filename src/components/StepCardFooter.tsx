@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const StepCardFooter = styled.div`
     ${mixins.stepCardPadding()}
-    padding-top: 0;
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
