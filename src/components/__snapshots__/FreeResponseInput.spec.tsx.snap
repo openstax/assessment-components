@@ -152,12 +152,14 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
       value=""
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-bjUoiL chdSAM"
     >
       <div>
         <span>
            Remaining words: 
-          50
+          <span>
+            50
+          </span>
         </span>
       </div>
     </div>
@@ -484,12 +486,14 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
       value="This is being saved"
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-bjUoiL chdSAM"
     >
       <div>
         <span>
            Remaining words: 
-          46
+          <span>
+            46
+          </span>
         </span>
       </div>
     </div>
@@ -590,7 +594,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       value="Previously submitted answer"
     />
     <div
-      className="sc-bjUoiL gwhDCs"
+      className="sc-bjUoiL dTRDiO"
     >
       <div>
         <span
@@ -603,7 +607,9 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       <div>
         <span>
            Remaining words: 
-          47
+          <span>
+            47
+          </span>
         </span>
       </div>
     </div>
@@ -719,12 +725,14 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
       value="Photosynthesis converts light energy into chemical energy."
     />
     <div
-      className="sc-bjUoiL dpMbSK"
+      className="sc-bjUoiL chdSAM"
     >
       <div>
         <span>
            Remaining words: 
-          43
+          <span>
+            43
+          </span>
         </span>
       </div>
     </div>
@@ -825,7 +833,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       value=""
     />
     <div
-      className="sc-bjUoiL gwhDCs"
+      className="sc-bjUoiL dTRDiO"
     >
       <div>
         <span
@@ -838,7 +846,9 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       <div>
         <span>
            Remaining words: 
-          50
+          <span>
+            50
+          </span>
         </span>
       </div>
     </div>
