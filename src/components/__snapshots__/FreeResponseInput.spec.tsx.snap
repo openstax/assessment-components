@@ -2,7 +2,7 @@
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -32,7 +32,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR"
+    className="sc-papXJ kUEGWx"
   >
     <div
       className="step-card-footer-inner"
@@ -82,7 +82,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -165,7 +165,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-papXJ kUEGWx step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -190,7 +190,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -219,7 +219,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -281,7 +281,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -416,7 +416,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 
 exports[`Free Response Input matches snapshot - saving state 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -499,7 +499,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-papXJ kUEGWx step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -524,7 +524,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -615,7 +615,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-papXJ kUEGWx step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -655,7 +655,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -738,7 +738,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-papXJ kUEGWx step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -763,7 +763,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
 <div
-  className="sc-fnykZs jKoZYo"
+  className="sc-fnykZs fHdFcE"
   data-test-id="student-free-response"
 >
   <div
@@ -854,7 +854,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ fuPttR step-card-footer"
+    className="sc-papXJ kUEGWx step-card-footer"
   >
     <div
       className="step-card-footer-inner"
