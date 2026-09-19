@@ -1,7 +1,8 @@
 import { colors, breakpoints, mixins } from "../theme";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { CompactDisplayProps } from "./compactDisplay";
 
-export const StepCardFooter = styled.div`
+export const StepCardFooter = styled.div<CompactDisplayProps>`
     ${mixins.stepCardPadding()}
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
@@ -44,6 +45,9 @@ export const StepCardFooter = styled.div`
         flex-flow: row nowrap;
         justify-content: flex-end;
         gap: 0.8rem;
+        /* the left region renders nothing when there is nothing to say, so the controls
+           hold the right-hand edge themselves rather than relying on a spacer */
+        margin-left: auto;
 
         button:has(~ button),
         button + button {
@@ -59,6 +63,16 @@ export const StepCardFooter = styled.div`
 
         .points {
             max-width: 400px;
+        }
+    `}
+
+    ${props => props.compactDisplay && css`
+        && {
+            padding: 0 var(--spacing, 0.8rem) var(--spacing, 0.8rem);
+        }
+
+        .step-card-footer-inner {
+            padding-top: var(--spacing, 0.8rem);
         }
     `}
 `;

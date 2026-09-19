@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
+import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
-import { ID, ExerciseQuestionData, Task } from '../types';
+import { Answer as AnswerType, ID, ExerciseQuestionData } from '../types';
 import React, { ReactNode } from 'react';
 import { Content } from './Content';
 
@@ -10,7 +11,7 @@ const StyledBodyContainer = styled.div`
   width: 100%;
 `;
 
-const StyledQuestion = styled.div`
+const StyledQuestion = styled.div<CompactDisplayProps>`
 &.step-card-body {
   ${mixins.stepCardPadding()};
 }
@@ -205,12 +206,72 @@ const StyledQuestion = styled.div`
     padding: 6px 8px;
   }
 }
+
+${props => props.compactDisplay && css`
+  &&&.step-card-body {
+    background-color: ${colors.palette.white};
+    padding: var(--spacing, 0.8rem);
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &&&.openstax-question {
+    .answers-table {
+      margin: 0;
+    }
+
+    .question-stem {
+      color: ${colors.palette.neutralDarker};
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    .question-feedback-content {
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    .question-feedback {
+      max-width: unset;
+    }
+
+    .openstax-answer {
+      padding: 0;
+      border: none;
+
+      .answer-label {
+        padding-top: var(--spacing, 0.8rem);
+      }
+
+      .answer-letter-wrapper {
+        .answer-answer {
+          margin-left: var(--spacing, 0.8rem);
+        }
+
+        &::before {
+          min-width: 2.3rem;
+          min-height: 2.3rem;
+          width: 2.3rem;
+          height: 2.3rem;
+        }
+      }
+
+      .answer-letter {
+        min-width: 2.8rem;
+        min-height: 2.8rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        display: flex;
+      }
+    }
+  }
+`}
 `;
 
 export interface QuestionProps {
   question: ExerciseQuestionData,
   answer_id?: ID;
-  task?: Task | null,
   correct_answer_id: ID | null;
   incorrectAnswerId: ID;
   hideAnswers: boolean;
@@ -219,52 +280,48 @@ export interface QuestionProps {
   displayFormats: boolean,
   className: string;
   questionNumber: number;
-  displaySolution: boolean;
+  /**
+   * @deprecated The detailed solution is composed in rather than rendered from the question.
+   * Pass a `QuestionLevelFeedback` as `feedback`.
+   */
+  displaySolution?: boolean;
   context?: string;
   correct_answer_feedback_html?: string;
   contentRenderer?: JSX.Element;
   feedback_html: string;
-  onChange: () => void;
+  onChange: (answer: AnswerType) => void;
   labelAnswers?: boolean;
   show_all_feedback?: boolean;
-  tableFeedbackEnabled?: boolean;
   children?: ReactNode;
-  answerIdOrder?: ID[];
+  /** rendered at the bottom of the body, below the answers */
+  feedback?: ReactNode;
   choicesEnabled?: boolean;
   previewMode?: boolean;
 }
 
-export const Question = React.forwardRef((props: QuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
-  let exerciseUid, solution;
+export type QuestionPropsWithCompactDisplay = QuestionProps & CompactDisplayProps;
+
+export const Question = React.forwardRef((
+  props: QuestionPropsWithCompactDisplay, ref: React.ForwardedRef<HTMLDivElement>
+) => {
+  let exerciseUid;
 
   const {
     question, correct_answer_id, incorrectAnswerId, exercise_uid, className, questionNumber,
-    context, task, hidePreambles
+    context, hidePreambles
   } = props;
 
-  const { stem_html, collaborator_solutions = [], formats, stimulus_html } = question;
+  const compact = useCompactDisplay(props.compactDisplay);
+
+  const { stem_html, formats, stimulus_html } = question;
 
   const hasCorrectAnswer = !!correct_answer_id;
   const hasIncorrectAnswer = !!incorrectAnswerId;
 
-  const taskIsDeleted = (task != null ? task.is_deleted : undefined)
-  const taskIsHomework = ((task != null ? task.type : undefined) === 'homework');
-
   const classes = classnames('openstax-question', className, {
-    'has-correct-answer': hasCorrectAnswer && !(taskIsDeleted && taskIsHomework),
+    'has-correct-answer': hasCorrectAnswer,
     'has-incorrect-answer': hasIncorrectAnswer,
   });
-
-  const hasSolution = () => {
-    const { displaySolution } = props;
-    const { collaborator_solutions = [] } = question;
-
-    return (
-      displaySolution &&
-      collaborator_solutions &&
-      collaborator_solutions.find(s => s['content_html'] !== undefined)
-    );
-  };
 
   if (exercise_uid != null) {
     exerciseUid = (
@@ -274,21 +331,15 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
     );
   }
 
-  if (hasSolution()) {
-    solution =
-      <div className="detailed-solution">
-        <div className="header">
-          Detailed solution:
-        </div>
-        <Content
-          className="solution"
-          block={true}
-          html={collaborator_solutions.map(s => s['content_html']).join('')} />
-      </div>;
-  }
-
   return (
-    <StyledQuestion ref={ref} className={classes} data-question-number={questionNumber} data-test-id="question">
+    <CompactDisplayProvider compactDisplay={compact}>
+    <StyledQuestion
+      ref={ref}
+      className={classes}
+      data-question-number={questionNumber}
+      data-test-id="question"
+      compactDisplay={compact}
+    >
       <StyledBodyContainer>
         <div>
           <QuestionHtml type="context" html={context} hidden={hidePreambles} />
@@ -302,12 +353,13 @@ export const Question = React.forwardRef((props: QuestionProps, ref: React.Forwa
             hasCorrectAnswer={hasCorrectAnswer}
           />
 
-          {solution}
+          {props.feedback}
           {props.displayFormats ? <FormatsListing formats={formats} /> : undefined}
           {exerciseUid}
         </div>
       </StyledBodyContainer>
     </StyledQuestion>
+    </CompactDisplayProvider>
   );
 });
 

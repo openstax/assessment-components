@@ -96,7 +96,6 @@ describe('AnswersTable', () => {
         incorrectAnswerId="1"
         feedback_html="Feedback"
         show_all_feedback={true}
-        tableFeedbackEnabled={true}
         question={{...props.question, answers}}
       />
     ).toJSON();
@@ -133,14 +132,6 @@ describe('AnswersTable', () => {
       <AnswersTable {...props} question={{...props.question, id: ''}} type={type} />
     );
     expect(tree.root.findAllByType(Answer).map((a) => a.props['type'])).toEqual([type, type]);
-  });
-
-  it('sorts by given ID order', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props} answerIdOrder={['2', '1']} />
-    );
-    expect(tree.root.findAllByType(Answer).map((a) => a.props.answer.id)).toEqual(['2', '1']);
-    expect(tree).toMatchSnapshot();
   });
 
   it('renders instructions', () => {

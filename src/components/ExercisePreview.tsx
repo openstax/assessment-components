@@ -2,12 +2,16 @@ import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "../types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
+import { colors } from "../theme";
 
 const StyledExercise = styled(Exercise)<{
   showAllFeedback?: boolean;
   showCorrectAnswer?: boolean;
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
 }>`
+  /* a parent positioning one card out of a list, and marking the one that is selected */
+  margin: 0 auto auto auto !important;
+
   .step-card-footer {
     display: none;
   }
@@ -16,6 +20,23 @@ const StyledExercise = styled(Exercise)<{
       font-weight: normal;
     }
   `}
+
+  &.is-selected {
+    background-color: ${colors.card.header.background};
+    border-width: 0.2rem;
+
+    /* the card and question set these backgrounds themselves, so reaching down from the
+       container is always racing them */
+    .step-card-footer,
+    .step-card-body,
+    .step-card-header {
+      background-color: ${colors.card.header.background} !important;
+    }
+
+    .openstax-question {
+      border-width: 0.2rem !important;
+    }
+  }
 `;
 
 export interface ExercisePreviewProps {
@@ -23,6 +44,7 @@ export interface ExercisePreviewProps {
   selected?: boolean;
   showAllFeedback?: boolean;
   showChosenAnswer?: boolean;
+  /** @deprecated Defaults to true; every caller passes true. */
   showCorrectAnswer?: boolean;
   labelAnswers?: boolean;
   overlayChildren?: React.ReactNode;
@@ -36,7 +58,7 @@ export const ExercisePreview = ({
   selected,
   showAllFeedback = false,
   showChosenAnswer = false,
-  showCorrectAnswer = false,
+  showCorrectAnswer = true,
   labelAnswers = false,
   showScoring = false,
   overlayChildren,
@@ -44,14 +66,17 @@ export const ExercisePreview = ({
   onGradingSave,
 }: ExercisePreviewProps) => {
 
-  const hideAnswerFeedback = (exercise: ExerciseData) => {
-    exercise.questions.map(question =>
-      question.answers.map(a => {
-        a.feedback_html = '';
-        a.correctness = showCorrectAnswer ? a.correctness : undefined;
-      }));
-    return exercise;
-  };
+  const hideAnswerFeedback = (exercise: ExerciseData): ExerciseData => ({
+    ...exercise,
+    questions: exercise.questions.map(question => ({
+      ...question,
+      answers: question.answers.map(a => ({
+        ...a,
+        feedback_html: '',
+        correctness: showCorrectAnswer ? a.correctness : undefined,
+      })),
+    })),
+  });
 
 const exercisePreviewProps = (exercise: ExerciseData) => {
     const formatAnswerData = (questions: ExerciseQuestionData[]) => questions.map((q) => {
@@ -120,6 +145,8 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
     <StyledExercise
       exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
       className={`preview-card ${selected ? 'is-selected' : ''}`}
+      compactDisplay
+      displaySolution={false}
       previewMode
       showScoring={showScoring}
       overlayChildren={overlayChildren}

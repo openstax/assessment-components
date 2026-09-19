@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { ALPHABET, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from '../utils';
 import { Answer as AnswerType, ID } from '../types';
 import { Content } from './Content';
-import { SimpleFeedback } from './Feedback';
 import styled from 'styled-components';
 import { colors } from '../theme';
 
@@ -46,8 +45,6 @@ export interface AnswerProps {
   radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
   labelAnswers?: boolean;
-  show_all_feedback?: boolean;
-  tableFeedbackEnabled?: boolean;
   feedbackId?: string;
 }
 
@@ -56,8 +53,6 @@ type AnswerAnswerProps = Pick<
   'answer' |
   'contentRenderer' |
   'labelAnswers' |
-  'show_all_feedback' |
-  'tableFeedbackEnabled' |
   'hasCorrectAnswer' |
   'isCorrect' |
   'isIncorrect' |
@@ -67,11 +62,9 @@ type AnswerAnswerProps = Pick<
 // labelAnswers defaults to true, must be explicitly false to disable
 const AnswerAnswer = (props: AnswerAnswerProps) => {
   const {
-    answer: { content_html, feedback_html },
+    answer: { content_html },
     contentRenderer,
     labelAnswers,
-    show_all_feedback,
-    tableFeedbackEnabled,
     hasCorrectAnswer,
     isCorrect,
     isIncorrect,
@@ -87,10 +80,6 @@ const AnswerAnswer = (props: AnswerAnswerProps) => {
       {labelAnswers !== false && <AnswerIndicator hasCorrectAnswer={hasCorrectAnswer} isCorrect={isCorrect}
                                                   isIncorrect={isIncorrect} isSelected={isSelected} />}
       <Content className="answer-content" component={contentRenderer} html={content_html} />
-      {show_all_feedback && feedback_html && !tableFeedbackEnabled &&
-        <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
-          {feedback_html}
-        </SimpleFeedback>}
     </div>
   )
 }
@@ -109,8 +98,6 @@ const TeacherReview = (props: AnswerBodyProps) => {
     isCorrect,
     contentRenderer,
     iter,
-    show_all_feedback,
-    tableFeedbackEnabled,
   } = props;
   const percent = answer.selected_count && answered_count
     ? Math.round((answer.selected_count / answered_count) * 100)
@@ -130,9 +117,7 @@ const TeacherReview = (props: AnswerBodyProps) => {
       </div>
       <AnswerAnswer
         answer={answer}
-        contentRenderer={contentRenderer}
-        show_all_feedback={show_all_feedback}
-        tableFeedbackEnabled={tableFeedbackEnabled} />
+        contentRenderer={contentRenderer} />
     </div>
   );
 }
@@ -152,8 +137,6 @@ const AnswerChoice = (props: AnswerBodyProps) => {
     isCorrect,
     isIncorrect,
     hasCorrectAnswer,
-    show_all_feedback,
-    tableFeedbackEnabled,
     labelAnswers = true,
   } = props;
   const ariaLabel = `${isSelected ? 'Selected ' : ''}Choice ${ALPHABET[iter]}:`;
@@ -198,8 +181,6 @@ const AnswerChoice = (props: AnswerBodyProps) => {
         answer={answer}
         contentRenderer={contentRenderer}
         labelAnswers={labelAnswers}
-        show_all_feedback={show_all_feedback}
-        tableFeedbackEnabled={tableFeedbackEnabled}
         hasCorrectAnswer={hasCorrectAnswer}
         isCorrect={isCorrect}
         isIncorrect={isIncorrect}

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`] = `
+<div
+  className="sc-ftvSup gdUAsD"
+  role="status"
+>
+  <div
+    className="sc-gKXOVf fAYPtj"
+  >
+    Score: 
+    9/10
+  </div>
+  <div
+    className="sc-iBkjds kOdEpG"
+  >
+    <span
+      className="feedback-label"
+    >
+      Feedback:
+    </span>
+     
+    <span
+      className="sc-jSMfEi buOdRb"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Good work overall.",
+        }
+      }
+    />
+  </div>
+  <div
+    className="detailed-solution"
+  >
+    <div
+      className="header"
+    >
+      Detailed solution:
+    </div>
+    <div
+      className="sc-jSMfEi buOdRb solution"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Because eleven has no divisors but itself and one.",
+        }
+      }
+    />
+  </div>
+</div>
+`;

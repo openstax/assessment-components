@@ -41,7 +41,6 @@ describe('ExerciseQuestion', () => {
       incorrectAnswerId: '',
       answer_id: '',
       attempts_remaining: 2,
-      published_comments: '',
       detailedSolution: '',
       canAnswer: false,
       needsSaved: false,
@@ -49,7 +48,6 @@ describe('ExerciseQuestion', () => {
       attempt_number: 0,
       apiIsPending: false,
       displaySolution: false,
-      available_points: '1.0',
       exercise_uid: '',
       hasFeedback: true,
     }
@@ -154,7 +152,7 @@ describe('ExerciseQuestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders detailed solution and published comments', () => {
+  it('renders detailed solution', () => {
     const tree = renderer.create(
       <ExerciseQuestion {...props}
         choicesEnabled={false}
@@ -164,7 +162,6 @@ describe('ExerciseQuestion', () => {
         canAnswer={false}
         needsSaved={false}
         detailedSolution='A detailed solution'
-        published_comments='Teacher feedback'
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -203,8 +200,7 @@ describe('ExerciseQuestion', () => {
     const tree = renderer.create(
       <ExerciseQuestion
         {...props}
-        needsSaved={false}
-        canAnswer={true}
+        canAnswer={false}
         onNextStep={mockFn}
       />
     );
@@ -215,24 +211,35 @@ describe('ExerciseQuestion', () => {
     expect(mockFn).toHaveBeenCalledWith(0);
   });
 
-  it('passes question index on submit button click when there is not feedback', () => {
+  it('advances after submitting when there is no feedback to stop on', () => {
     const mockFn = jest.fn();
 
-    // This combination of props should never happen: `is_completed` should not 
-    // be true at the same time as `needsSaved`. This combination allows the 
-    // test to work correctly without simulating waiting for api calls
     const tree = renderer.create(
       <ExerciseQuestion
         {...props}
-        needsSaved={true}
         canAnswer={true}
+        answer_id='1'
         hasFeedback={false}
-        is_completed={true}
+        is_completed={false}
         onNextStep={mockFn}
       />
     );
     renderer.act(() => {
       tree.root.findByType(SaveButton).props.onClick();
+    });
+
+    // the response lands, and the footer advances on its own
+    renderer.act(() => {
+      tree.update(
+        <ExerciseQuestion
+          {...props}
+          canAnswer={true}
+          answer_id='1'
+          hasFeedback={false}
+          is_completed={true}
+          onNextStep={mockFn}
+        />
+      );
     });
 
     expect(mockFn).toHaveBeenCalledWith(0);
