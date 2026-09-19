@@ -189,7 +189,7 @@ Array [
           disabled={true}
           onClick={[Function]}
         >
-          Submit & continue
+          Submit
         </button>
       </div>
     </div>
@@ -728,7 +728,7 @@ Array [
           disabled={false}
           onClick={[Function]}
         >
-          Submit & continue
+          Submit
         </button>
       </div>
     </div>
@@ -845,7 +845,7 @@ Array [
           disabled={true}
           onClick={[Function]}
         >
-          Submit & continue
+          Submit
         </button>
       </div>
     </div>

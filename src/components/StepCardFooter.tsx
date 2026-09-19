@@ -68,11 +68,11 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
 
     ${props => props.compactDisplay && css`
         && {
-            padding: 0 var(--spacing) var(--spacing);
+            padding: 0 var(--spacing, 0.8rem) var(--spacing, 0.8rem);
         }
 
         .step-card-footer-inner {
-            padding-top: var(--spacing);
+            padding-top: var(--spacing, 0.8rem);
         }
     `}
 `;

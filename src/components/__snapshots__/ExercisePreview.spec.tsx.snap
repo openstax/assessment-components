@@ -16,7 +16,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -40,10 +40,10 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -65,7 +65,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -212,7 +212,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -236,10 +236,10 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -261,7 +261,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -415,7 +415,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -439,10 +439,10 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -464,7 +464,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -616,7 +616,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -640,10 +640,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -665,7 +665,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -797,7 +797,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -821,10 +821,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -846,7 +846,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -978,7 +978,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -1002,10 +1002,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -1027,7 +1027,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1154,7 +1154,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
           className="step-card"
         >
           <div
-            className="sc-papXJ iZjlOD step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -1178,10 +1178,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
             </div>
           </div>
           <div
-            className="sc-kDDrLX ntrKq"
+            className="sc-kDDrLX hlpklK"
           >
             <div
-              className="sc-gKXOVf gOZNcg"
+              className="sc-gKXOVf ixMVEw"
             >
               <div
                 className="sc-jSMfEi buOdRb step-card-body exercise-context"
@@ -1203,7 +1203,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk eCrLOY openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
@@ -1325,7 +1325,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi ejfBZt step-card-footer"
+                  className="sc-BeQoi fXsfUh step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"

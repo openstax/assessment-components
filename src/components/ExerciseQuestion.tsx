@@ -103,7 +103,7 @@ export const ExerciseQuestion = React.forwardRef((
           attempt_number={attempt_number}
           attemptsRemaining={hasMultipleAttempts ? attempts_remaining : undefined}
           hasUnlimitedAttempts={hasUnlimitedAttempts}
-          hasFeedback={hasFeedback}
+          hasFeedback={hasFeedback ?? false}
           onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
           onNextStep={() => onNextStep(questionNumber - 1)}
           footerChildren={footerChildren}

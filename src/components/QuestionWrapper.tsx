@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
-import { CompactDisplayProps, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
 import { StepCardFooter } from './StepCardFooter';
 
 export const SaveButton = (props: {
@@ -87,8 +87,8 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
   hasUnlimitedAttempts?: boolean;
   /**
    * @deprecated Navigation belongs to the host: advance when your response POST completes.
-   * While this is passed, `false` keeps the old behaviour — the button reads
-   * "Submit & continue" and the footer advances by itself once the response lands.
+   * Pass `false` to keep the old behaviour — the button reads "Submit & continue" and the
+   * footer advances by itself once the response lands. Omitting it means the host navigates.
    */
   hasFeedback?: boolean;
 
@@ -132,7 +132,9 @@ export const QuestionWrapper = ({
   // holds Submit in its waiting state after a click until the response lands, then advances.
   // Deprecated along with `hasFeedback`: a host that omits it drives navigation itself.
   const [shouldContinue, setShouldContinue] = React.useState(false);
-  const willContinue = !hasFeedback;
+  // only an explicit `false` opts into the deprecated auto-advance; omitting it leaves
+  // navigation to the host, which is what a new consumer gets
+  const willContinue = hasFeedback === false;
 
   React.useEffect(() => {
     if (shouldContinue && is_completed && !apiIsPending) {
@@ -195,7 +197,7 @@ export const QuestionWrapper = ({
   const leftRegion = attempts || footerChildren;
 
   return (
-    <>
+    <CompactDisplayProvider compactDisplay={compact}>
       {children}
       <StepCardFooter className="step-card-footer" compactDisplay={compact}>
         <div className="step-card-footer-inner">
@@ -205,7 +207,7 @@ export const QuestionWrapper = ({
           </div>
         </div>
       </StepCardFooter>
-    </>
+    </CompactDisplayProvider>
   );
 };
 

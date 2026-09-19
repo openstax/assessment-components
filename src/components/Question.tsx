@@ -210,7 +210,7 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
 ${props => props.compactDisplay && css`
   &&&.step-card-body {
     background-color: ${colors.palette.white};
-    padding: var(--spacing);
+    padding: var(--spacing, 0.8rem);
     font-size: 1.6rem;
     line-height: 2rem;
   }
@@ -241,12 +241,12 @@ ${props => props.compactDisplay && css`
       border: none;
 
       .answer-label {
-        padding-top: var(--spacing);
+        padding-top: var(--spacing, 0.8rem);
       }
 
       .answer-letter-wrapper {
         .answer-answer {
-          margin-left: var(--spacing);
+          margin-left: var(--spacing, 0.8rem);
         }
 
         &::before {

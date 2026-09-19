@@ -132,7 +132,27 @@ describe('QuestionWrapper', () => {
       expect(onNextStep).toHaveBeenCalled();
     });
 
-    it('leaves navigation to the host when hasFeedback is omitted', () => {
+    it('does not advance when hasFeedback is omitted, which is the host-driven path', () => {
+      const onNextStep = jest.fn();
+      const onAnswerSave = jest.fn();
+      const tree = renderer.create(
+        <QuestionWrapper {...props} onNextStep={onNextStep} onAnswerSave={onAnswerSave} />
+      );
+      // a plain Submit: the host owns what happens after its own POST returns
+      expect(textOf(tree, 'submit-answer-btn')).toEqual('Submit');
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      renderer.act(() => {
+        tree.update(<QuestionWrapper {...props} onNextStep={onNextStep} onAnswerSave={onAnswerSave} is_completed={true} />);
+      });
+
+      expect(onAnswerSave).toHaveBeenCalled();
+      expect(onNextStep).not.toHaveBeenCalled();
+    });
+
+    it('leaves navigation to the host when hasFeedback is true', () => {
       const onNextStep = jest.fn();
       const onAnswerSave = jest.fn();
       const tree = renderer.create(

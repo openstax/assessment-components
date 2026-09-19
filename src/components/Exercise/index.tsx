@@ -245,7 +245,8 @@ export const Exercise = ({
                 attempt_number={isFreeResponse ? undefined : state.attempt_number}
                 attemptsRemaining={props.hasMultipleAttempts && !isFreeResponse ? state.attempts_remaining : undefined}
                 hasUnlimitedAttempts={props.hasUnlimitedAttempts}
-                hasFeedback={props.hasFeedback}
+                // `Exercise` has always read an absent hasFeedback as "advance"
+                hasFeedback={props.hasFeedback ?? false}
                 onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
                 onNextStep={() => props.onNextStep(questionNumber + i - 1)}
                 onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}

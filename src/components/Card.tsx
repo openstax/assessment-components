@@ -163,7 +163,7 @@ const StepCardHeader = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
     && {
       background-color: ${colors.palette.white};
-      padding: var(--spacing);
+      padding: var(--spacing, 0.8rem);
       font-size: 1.6rem;
       line-height: 2rem;
     }
@@ -217,7 +217,7 @@ const StepCardQuestion = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
     && .step-card-body {
       background-color: ${colors.palette.white};
-      padding: var(--spacing);
+      padding: var(--spacing, 0.8rem);
       font-size: 1.6rem;
       line-height: 2rem;
     }

@@ -35,7 +35,7 @@ Array [
           disabled={false}
           onClick={[Function]}
         >
-          Submit & continue
+          Submit
         </button>
       </div>
     </div>

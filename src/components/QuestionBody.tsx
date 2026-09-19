@@ -25,7 +25,7 @@ export const StyledFreeResponse = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
     && .step-card-body {
       background-color: ${colors.palette.white};
-      padding: var(--spacing);
+      padding: var(--spacing, 0.8rem);
       font-size: 1.6rem;
       line-height: 2rem;
     }
@@ -353,7 +353,7 @@ const FreeResponseBody = React.forwardRef((
       data-test-id="free-response-box"
       placeholder="Enter your response..."
       aria-label="question response text box"
-      disabled={previewMode || apiIsPending}
+      disabled={previewMode || apiIsPending || !canAnswer}
     />
   );
 

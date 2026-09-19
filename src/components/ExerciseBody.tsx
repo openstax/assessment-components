@@ -15,10 +15,10 @@ const StyledExerciseBody = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
     .exercise-context {
       .os-title {
-        margin: 0 0 var(--spacing);
+        margin: 0 0 var(--spacing, 0.8rem);
       }
       .os-subtitle {
-        margin: var(--spacing) 0;
+        margin: var(--spacing, 0.8rem) 0;
       }
       figure {
         float: left;
