@@ -1,206 +1,215 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
           }
-        }
-      />
+        />
+      </div>
+      <div
+        className="sc-fLlhyt eyYuf"
+      >
+        Your answer
+      </div>
+      <div
+        className="sc-bBrHrO cGVwzt"
+      >
+        Photosynthesis is the process by which plants convert light energy into chemical energy.
+      </div>
     </div>
-    <div
-      className="sc-dIouRR bQySUj"
-    >
-      Your answer
-    </div>
-    <div
-      className="sc-hHLeRK fpWa"
-    >
-      Photosynthesis is the process by which plants convert light energy into chemical energy.
-    </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div>
+      <div
+        className="points"
+      >
         <div
-          className="sc-kgflAQ jmqgyi"
+          className="sc-ikZpkk bYyNzB"
           role="status"
         >
-          Score: 
-          8/10
-        </div>
-        <div
-          className="sc-fLlhyt bCYZgk"
-        >
-          <span
-            className="feedback-label"
-          >
-            Feedback:
-          </span>
-           
           <div
-            className="question-stem"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<p>Good explanation!</p>",
+            className="sc-bZkfAO GxfWv"
+          >
+            Score: 
+            8/10
+          </div>
+          <div
+            className="sc-kLLXSd ibpWvX"
+          >
+            <span
+              className="feedback-label"
+            >
+              Feedback:
+            </span>
+             
+            <span
+              className="sc-fnykZs felUKW"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "<p>Good explanation!</p>",
+                }
               }
-            }
-          />
+            />
+          </div>
         </div>
       </div>
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
-          data-test-id="next-btn"
+          className="sc-bczRLJ fLTvYy"
+          data-test-id="continue-btn"
           onClick={[Function]}
         >
           Next
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-llJcti dhmFHo"
-    >
-      <svg
-        fill="none"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <mask
-          height="16"
-          id="mask0_4564_440"
-          maskUnits="userSpaceOnUse"
-          style={
-            Object {
-              "maskType": "luminance",
-            }
-          }
-          width="16"
-          x="0"
-          y="0"
-        >
-          <path
-            clipRule="evenodd"
-            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
-            fill="white"
-            fillRule="evenodd"
-          />
-        </mask>
-        <g
-          mask="url(#mask0_4564_440)"
-        >
-          <rect
-            fill="#976502"
-            height="16"
-            width="16"
-          />
-        </g>
-      </svg>
-      You can come back and edit your response until it has been graded.
-    </div>
-    <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
+        className="sc-gicCDI bOhQgT"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            height="16"
+            id="mask0_4564_440"
+            maskUnits="userSpaceOnUse"
+            style={
+              Object {
+                "maskType": "luminance",
+              }
+            }
+            width="16"
+            x="0"
+            y="0"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+              fill="white"
+              fillRule="evenodd"
+            />
+          </mask>
+          <g
+            mask="url(#mask0_4564_440)"
+          >
+            <rect
+              fill="#976502"
+              height="16"
+              width="16"
+            />
+          </g>
+        </svg>
+        You can come back and edit your response until it has been graded.
+      </div>
+      <div
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
           }
-        }
+        />
+      </div>
+      <textarea
+        aria-label="question response text box"
+        className="sc-kgflAQ eaFulQ"
+        data-test-id="free-response-box"
+        disabled={false}
+        onChange={[Function]}
+        placeholder="Enter your response..."
+        value=""
       />
-    </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
-      data-test-id="free-response-box"
-      disabled={false}
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      value=""
-    />
-    <div
-      className="sc-bjUoiL chdSAM"
-    >
-      <div>
-        <span>
-           Remaining words: 
+      <div
+        className="sc-dmRaPn bqloFr"
+      >
+        <div>
           <span>
-            50
+             Remaining words: 
+            <span>
+              50
+            </span>
           </span>
-        </span>
+        </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div />
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-bczRLJ fLTvYy"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
         >
-          Submit
+          Submit & continue
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 <div
-  className="sc-fnykZs fHdFcE"
+  className="sc-dIouRR cFtMLn"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-hHLeRK iiUBNd"
     >
       <div
-        className="question-stem"
+        className="sc-fnykZs felUKW question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -209,7 +218,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
       />
     </div>
     <p
-      className="sc-cxabCf leMZGC"
+      className="sc-iIPllB daxIyd"
     >
       Unanswered
     </p>
@@ -219,17 +228,17 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 <div
-  className="sc-fnykZs fHdFcE"
+  className="sc-dIouRR cFtMLn"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-hHLeRK iiUBNd"
     >
       <div
-        className="question-stem"
+        className="sc-fnykZs felUKW question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -238,26 +247,22 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       />
     </div>
     <div
-      className="sc-hHLeRK fpWa"
+      className="sc-bBrHrO cGVwzt"
     >
       Photosynthesis converts sunlight into chemical energy.
     </div>
     <div
-      style={
-        Object {
-          "marginTop": "1.6rem",
-        }
-      }
+      className="sc-ikZpkk bYyNzB"
+      role="status"
     >
       <div
-        className="sc-kgflAQ jmqgyi"
-        role="status"
+        className="sc-bZkfAO GxfWv"
       >
         Score: 
         9/10
       </div>
       <div
-        className="sc-fLlhyt bCYZgk"
+        className="sc-kLLXSd ibpWvX"
       >
         <span
           className="feedback-label"
@@ -265,8 +270,8 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
           Feedback:
         </span>
          
-        <div
-          className="question-stem"
+        <span
+          className="sc-fnykZs felUKW"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Excellent work!</p>",
@@ -281,17 +286,17 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
 <div
-  className="sc-fnykZs fHdFcE"
+  className="sc-dIouRR cFtMLn"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-fEOsli hISZaf"
+      className="sc-hHLeRK iiUBNd"
     >
       <div
-        className="question-stem"
+        className="sc-fnykZs felUKW question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -300,68 +305,35 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
       />
     </div>
     <div
-      className="sc-bBrHrO fslSVg"
+      className="sc-cxabCf bCymYa"
     >
       <div
-        className="sc-ivTmOn lmJbRV"
+        className="sc-llJcti hVapre"
       >
         <div
-          className="sc-hHLeRK fpWa"
+          className="sc-bBrHrO cGVwzt"
         >
           Photosynthesis converts sunlight into chemical energy.
         </div>
-        <div
-          style={
-            Object {
-              "marginTop": "1.6rem",
-            }
-          }
-        >
-          <div
-            className="sc-kgflAQ jmqgyi"
-            role="status"
-          >
-            Score: 
-            9/10
-          </div>
-          <div
-            className="sc-fLlhyt bCYZgk"
-          >
-            <span
-              className="feedback-label"
-            >
-              Feedback:
-            </span>
-             
-            <div
-              className="question-stem"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "Good work overall.",
-                }
-              }
-            />
-          </div>
-        </div>
       </div>
       <div
-        className="sc-jqUVSM jIqmLJ"
+        className="sc-gsnTZi cSdbEu"
       >
         <div
-          className="sc-kDDrLX jeAafv"
+          className="sc-dkzDqf gNmSNg"
         >
           <div
-            className="sc-crXcEl gpANJs"
+            className="sc-eCYdqJ ldOqjj"
           >
             <label
-              className="sc-iqcoie kktHJP"
+              className="sc-hKMtZM dwUXki"
               htmlFor="frg-0-score"
             >
               Points
             </label>
             <input
               aria-label="Score"
-              className="sc-evZas dkKVKh"
+              className="sc-jSMfEi iGMKCY"
               disabled={false}
               id="frg-0-score"
               max={10}
@@ -379,17 +351,17 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           </div>
         </div>
         <div
-          className="sc-kDDrLX jeAafv"
+          className="sc-dkzDqf gNmSNg"
         >
           <label
-            className="sc-iqcoie kktHJP"
+            className="sc-hKMtZM dwUXki"
             htmlFor="frg-0-comment"
           >
             Comment
           </label>
           <textarea
             aria-label="Comment"
-            className="sc-breuTD gpbziE"
+            className="sc-gKXOVf bbxjYD"
             disabled={false}
             id="frg-0-comment"
             onChange={[Function]}
@@ -398,10 +370,10 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           />
         </div>
         <div
-          className="sc-ksZaOG cxStGS"
+          className="sc-iBkjds crHxek"
         >
           <button
-            className="sc-ftvSup gRHhHP"
+            className="sc-bczRLJ fLTvYy"
             disabled={true}
             onClick={[Function]}
           >
@@ -415,224 +387,226 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 `;
 
 exports[`Free Response Input matches snapshot - saving state 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-llJcti dhmFHo"
-    >
-      <svg
-        fill="none"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <mask
-          height="16"
-          id="mask0_4564_440"
-          maskUnits="userSpaceOnUse"
-          style={
-            Object {
-              "maskType": "luminance",
-            }
-          }
-          width="16"
-          x="0"
-          y="0"
-        >
-          <path
-            clipRule="evenodd"
-            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
-            fill="white"
-            fillRule="evenodd"
-          />
-        </mask>
-        <g
-          mask="url(#mask0_4564_440)"
-        >
-          <rect
-            fill="#976502"
-            height="16"
-            width="16"
-          />
-        </g>
-      </svg>
-      You can come back and edit your response until it has been graded.
-    </div>
-    <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
+        className="sc-gicCDI bOhQgT"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            height="16"
+            id="mask0_4564_440"
+            maskUnits="userSpaceOnUse"
+            style={
+              Object {
+                "maskType": "luminance",
+              }
+            }
+            width="16"
+            x="0"
+            y="0"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+              fill="white"
+              fillRule="evenodd"
+            />
+          </mask>
+          <g
+            mask="url(#mask0_4564_440)"
+          >
+            <rect
+              fill="#976502"
+              height="16"
+              width="16"
+            />
+          </g>
+        </svg>
+        You can come back and edit your response until it has been graded.
+      </div>
+      <div
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
           }
-        }
+        />
+      </div>
+      <textarea
+        aria-label="question response text box"
+        className="sc-kgflAQ eaFulQ"
+        data-test-id="free-response-box"
+        disabled={true}
+        onChange={[Function]}
+        placeholder="Enter your response..."
+        value="This is being saved"
       />
-    </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
-      data-test-id="free-response-box"
-      disabled={true}
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      value="This is being saved"
-    />
-    <div
-      className="sc-bjUoiL chdSAM"
-    >
-      <div>
-        <span>
-           Remaining words: 
+      <div
+        className="sc-dmRaPn bqloFr"
+      >
+        <div>
           <span>
-            46
+             Remaining words: 
+            <span>
+              46
+            </span>
           </span>
-        </span>
+        </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div />
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-bczRLJ fLTvYy"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
         >
-          Saving...
+          Saving…
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-llJcti dhmFHo"
-    >
-      <svg
-        fill="none"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <mask
-          height="16"
-          id="mask0_4564_440"
-          maskUnits="userSpaceOnUse"
-          style={
-            Object {
-              "maskType": "luminance",
-            }
-          }
-          width="16"
-          x="0"
-          y="0"
-        >
-          <path
-            clipRule="evenodd"
-            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
-            fill="white"
-            fillRule="evenodd"
-          />
-        </mask>
-        <g
-          mask="url(#mask0_4564_440)"
-        >
-          <rect
-            fill="#976502"
-            height="16"
-            width="16"
-          />
-        </g>
-      </svg>
-      You can come back and edit your response until it has been graded.
-    </div>
-    <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
-          }
-        }
-      />
-    </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
-      data-test-id="free-response-box"
-      disabled={false}
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      value="Previously submitted answer"
-    />
-    <div
-      className="sc-bjUoiL dTRDiO"
-    >
-      <div>
-        <span
-          className="last-submitted"
+        className="sc-gicCDI bOhQgT"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          Last submitted on 
-          Jul 26, 2024, 9:00 AM
-        </span>
+          <mask
+            height="16"
+            id="mask0_4564_440"
+            maskUnits="userSpaceOnUse"
+            style={
+              Object {
+                "maskType": "luminance",
+              }
+            }
+            width="16"
+            x="0"
+            y="0"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+              fill="white"
+              fillRule="evenodd"
+            />
+          </mask>
+          <g
+            mask="url(#mask0_4564_440)"
+          >
+            <rect
+              fill="#976502"
+              height="16"
+              width="16"
+            />
+          </g>
+        </svg>
+        You can come back and edit your response until it has been graded.
       </div>
-      <div>
-        <span>
-           Remaining words: 
-          <span>
-            47
+      <div
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
+          }
+        />
+      </div>
+      <textarea
+        aria-label="question response text box"
+        className="sc-kgflAQ eaFulQ"
+        data-test-id="free-response-box"
+        disabled={false}
+        onChange={[Function]}
+        placeholder="Enter your response..."
+        value="Previously submitted answer"
+      />
+      <div
+        className="sc-dmRaPn kYZzhV"
+      >
+        <div>
+          <span
+            className="last-submitted"
+          >
+            Last submitted on 
+            Jul 26, 2024, 9:00 AM
           </span>
-        </span>
+        </div>
+        <div>
+          <span>
+             Remaining words: 
+            <span>
+              47
+            </span>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div />
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP sc-iIPllB fCpaUQ"
+          className="sc-bczRLJ fLTvYy sc-himrzO iuzGPh"
           disabled={true}
           onClick={[Function]}
         >
           Cancel
         </button>
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-bczRLJ fLTvYy"
           data-test-id="update-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -640,8 +614,8 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
           Update
         </button>
         <button
-          className="sc-ftvSup gRHhHP"
-          data-test-id="next-btn"
+          className="sc-bczRLJ fLTvYy"
+          data-test-id="continue-btn"
           disabled={false}
           onClick={[Function]}
         >
@@ -649,230 +623,232 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-llJcti dhmFHo"
-    >
-      <svg
-        fill="none"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <mask
-          height="16"
-          id="mask0_4564_440"
-          maskUnits="userSpaceOnUse"
-          style={
-            Object {
-              "maskType": "luminance",
-            }
-          }
-          width="16"
-          x="0"
-          y="0"
-        >
-          <path
-            clipRule="evenodd"
-            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
-            fill="white"
-            fillRule="evenodd"
-          />
-        </mask>
-        <g
-          mask="url(#mask0_4564_440)"
-        >
-          <rect
-            fill="#976502"
-            height="16"
-            width="16"
-          />
-        </g>
-      </svg>
-      You can come back and edit your response until it has been graded.
-    </div>
-    <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
+        className="sc-gicCDI bOhQgT"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask
+            height="16"
+            id="mask0_4564_440"
+            maskUnits="userSpaceOnUse"
+            style={
+              Object {
+                "maskType": "luminance",
+              }
+            }
+            width="16"
+            x="0"
+            y="0"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+              fill="white"
+              fillRule="evenodd"
+            />
+          </mask>
+          <g
+            mask="url(#mask0_4564_440)"
+          >
+            <rect
+              fill="#976502"
+              height="16"
+              width="16"
+            />
+          </g>
+        </svg>
+        You can come back and edit your response until it has been graded.
+      </div>
+      <div
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
           }
-        }
+        />
+      </div>
+      <textarea
+        aria-label="question response text box"
+        className="sc-kgflAQ eaFulQ"
+        data-test-id="free-response-box"
+        disabled={false}
+        onChange={[Function]}
+        placeholder="Enter your response..."
+        value="Photosynthesis converts light energy into chemical energy."
       />
-    </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
-      data-test-id="free-response-box"
-      disabled={false}
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      value="Photosynthesis converts light energy into chemical energy."
-    />
-    <div
-      className="sc-bjUoiL chdSAM"
-    >
-      <div>
-        <span>
-           Remaining words: 
+      <div
+        className="sc-dmRaPn bqloFr"
+      >
+        <div>
           <span>
-            43
+             Remaining words: 
+            <span>
+              43
+            </span>
           </span>
-        </span>
+        </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div />
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-bczRLJ fLTvYy"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
         >
-          Submit
+          Submit & continue
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
-<div
-  className="sc-fnykZs fHdFcE"
-  data-test-id="student-free-response"
->
+Array [
   <div
-    className="step-card-body"
+    className="sc-dIouRR cFtMLn"
+    data-test-id="student-free-response"
   >
     <div
-      className="sc-llJcti dhmFHo"
-    >
-      <svg
-        fill="none"
-        height="16"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <mask
-          height="16"
-          id="mask0_4564_440"
-          maskUnits="userSpaceOnUse"
-          style={
-            Object {
-              "maskType": "luminance",
-            }
-          }
-          width="16"
-          x="0"
-          y="0"
-        >
-          <path
-            clipRule="evenodd"
-            d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
-            fill="white"
-            fillRule="evenodd"
-          />
-        </mask>
-        <g
-          mask="url(#mask0_4564_440)"
-        >
-          <rect
-            fill="#976502"
-            height="16"
-            width="16"
-          />
-        </g>
-      </svg>
-      You can come back and edit your response until it has been graded.
-    </div>
-    <div
-      className="sc-fEOsli hISZaf"
+      className="step-card-body"
     >
       <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
-          }
-        }
-      />
-    </div>
-    <textarea
-      aria-label="question response text box"
-      className="sc-idiyUo hZPFqN"
-      data-test-id="free-response-box"
-      disabled={false}
-      onChange={[Function]}
-      placeholder="Enter your response..."
-      value=""
-    />
-    <div
-      className="sc-bjUoiL dTRDiO"
-    >
-      <div>
-        <span
-          className="last-submitted"
+        className="sc-gicCDI bOhQgT"
+      >
+        <svg
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          Last submitted on 
-          Jul 26, 2024, 9:00 AM
-        </span>
+          <mask
+            height="16"
+            id="mask0_4564_440"
+            maskUnits="userSpaceOnUse"
+            style={
+              Object {
+                "maskType": "luminance",
+              }
+            }
+            width="16"
+            x="0"
+            y="0"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8 0C3.58203 0 0 3.58332 0 8C0 12.4193 3.58203 16 8 16C12.418 16 16 12.4193 16 8C16 3.58332 12.418 0 8 0ZM8 3.54835C8.74825 3.54835 9.35482 4.15493 9.35482 4.90318C9.35482 5.65143 8.74825 6.25801 8 6.25801C7.25175 6.25801 6.64518 5.65143 6.64518 4.90318C6.64518 4.15493 7.25175 3.54835 8 3.54835ZM9.80648 11.7419C9.80648 11.9557 9.63315 12.129 9.41937 12.129H6.58062C6.36685 12.129 6.19352 11.9557 6.19352 11.7419V10.9677C6.19352 10.754 6.36685 10.5806 6.58062 10.5806H6.96773V8.51611H6.58062C6.36685 8.51611 6.19352 8.34279 6.19352 8.12901V7.35482C6.19352 7.14104 6.36685 6.96772 6.58062 6.96772H8.64517C8.85895 6.96772 9.03227 7.14104 9.03227 7.35482V10.5806H9.41937C9.63315 10.5806 9.80648 10.754 9.80648 10.9677V11.7419Z"
+              fill="white"
+              fillRule="evenodd"
+            />
+          </mask>
+          <g
+            mask="url(#mask0_4564_440)"
+          >
+            <rect
+              fill="#976502"
+              height="16"
+              width="16"
+            />
+          </g>
+        </svg>
+        You can come back and edit your response until it has been graded.
       </div>
-      <div>
-        <span>
-           Remaining words: 
-          <span>
-            50
+      <div
+        className="sc-hHLeRK iiUBNd"
+      >
+        <div
+          className="sc-fnykZs felUKW question-stem"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Explain the process of photosynthesis.",
+            }
+          }
+        />
+      </div>
+      <textarea
+        aria-label="question response text box"
+        className="sc-kgflAQ eaFulQ"
+        data-test-id="free-response-box"
+        disabled={false}
+        onChange={[Function]}
+        placeholder="Enter your response..."
+        value=""
+      />
+      <div
+        className="sc-dmRaPn kYZzhV"
+      >
+        <div>
+          <span
+            className="last-submitted"
+          >
+            Last submitted on 
+            Jul 26, 2024, 9:00 AM
           </span>
-        </span>
+        </div>
+        <div>
+          <span>
+             Remaining words: 
+            <span>
+              50
+            </span>
+          </span>
+        </div>
       </div>
     </div>
-  </div>
+  </div>,
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div />
       <div
         className="controls"
       >
         <button
-          className="sc-ftvSup gRHhHP"
+          className="sc-bczRLJ fLTvYy"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
         >
-          Submit
+          Submit & continue
         </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

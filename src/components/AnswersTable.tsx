@@ -9,14 +9,12 @@ export interface AnswersTableProps {
   answer_id?: ID;
   correct_answer_id?: ID | null;
   incorrectAnswerId?: ID;
-  answerIdOrder?: ID[],
   feedback_html: string;
   correct_answer_feedback_html?: string;
   answered_count?: number;
   show_all_feedback?: boolean;
   labelAnswers?: boolean;
-  tableFeedbackEnabled?: boolean;
-  onChangeAnswer: () => void;
+  onChangeAnswer: (answer: AnswerType) => void;
   hideAnswers: boolean;
   hasCorrectAnswer?: boolean;
   onChangeAttempt?: () => void;
@@ -33,18 +31,13 @@ export const AnswersTable = (props: AnswersTableProps) => {
   const {
     question, hideAnswers, type = defaultAnswerType, answered_count, choicesEnabled, correct_answer_id,
     incorrectAnswerId, answer_id, feedback_html, correct_answer_feedback_html, previewMode,
-    labelAnswers, show_all_feedback = false, tableFeedbackEnabled, hasCorrectAnswer, onChangeAnswer, onKeyPress, answerIdOrder, instructions
+    labelAnswers, show_all_feedback = false, hasCorrectAnswer, onChangeAnswer, onKeyPress, instructions
   } = props;
   if (hideAnswers) { return null; }
 
   const { id } = question;
 
   const feedback: { index: number, html: string, id: string }[] = [];
-
-  const sortedAnswersByIdOrder = (idOrder: ID[]) => {
-    const { answers } = question;
-    return answers.slice().sort((a, b) => idOrder.indexOf(a.id) - idOrder.indexOf(b.id));
-  }
 
   const questionAnswerProps = {
     qid: id || `auto-${idCounter++}`,
@@ -58,13 +51,10 @@ export const AnswersTable = (props: AnswersTableProps) => {
     disabled: previewMode || !choicesEnabled,
     labelAnswers,
     show_all_feedback,
-    tableFeedbackEnabled,
     onKeyPress
   };
 
-  const answers = answerIdOrder ? sortedAnswersByIdOrder(answerIdOrder) : question.answers;
-
-  const answersHtml = answers.map((answer, i) => {
+  const answersHtml = question.answers.map((answer, i) => {
     const additionalProps: { answer: AnswerType, iter: number, key: string }
       = {
       answer: {
@@ -78,7 +68,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     let html: string | undefined;
     let feedbackId: string | undefined;
 
-    if (show_all_feedback && answer.feedback_html && tableFeedbackEnabled) {
+    if (show_all_feedback && answer.feedback_html) {
       html = answer.feedback_html;
     } else if (answer.id === incorrectAnswerId && feedback_html) {
       html = feedback_html;

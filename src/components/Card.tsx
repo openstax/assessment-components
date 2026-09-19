@@ -1,10 +1,14 @@
 import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
 import { breakpoints, colors, layouts, mixins } from "../theme";
-import { AvailablePoints, ExerciseScoringData, StepBase, StepWithData } from "../types";
-import styled from "styled-components";
+import { AvailablePoints, ExerciseScoringData, StepBase } from "../types";
+import styled, { css } from "styled-components";
 import cn from "classnames";
+import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from "./compactDisplay";
 
-export const InnerStepCard = styled.div`
+export const InnerStepCard = styled.div<CompactDisplayProps>`
+  ${props => props.compactDisplay && css`
+    --spacing: 0.8rem;
+  `}
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,7 +24,14 @@ export const InnerStepCard = styled.div`
   `}
 `;
 
-export const OuterStepCard = styled.div`
+export const OuterStepCard = styled.div.attrs({
+  className: 'step-card-outer',
+  /**
+   * @deprecated Legacy hook, kept only so existing `[data-task-step-id]` stylesheets keep
+   * matching. The value is meaningless — select on `.step-card-outer` instead.
+   */
+  'data-task-step-id': '0',
+})`
   padding: ${layouts.card.spacing};
 
   ${breakpoints.mobile`
@@ -28,7 +39,7 @@ export const OuterStepCard = styled.div`
   `}
 `;
 
-const StepCardHeader = styled.div`
+const StepCardHeader = styled.div<CompactDisplayProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -148,6 +159,26 @@ const StepCardHeader = styled.div`
           margin-right: ${breakpoints.margins.mobile};
       }
   `}
+
+  ${props => props.compactDisplay && css`
+    && {
+      background-color: ${colors.palette.white};
+      padding: var(--spacing);
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+
+    h2.question-info {
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+
+    .question-id {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+  `}
 `;
 
 const StyledUngraded = styled.div`
@@ -170,7 +201,7 @@ const StyledUngraded = styled.div`
 
 StepCardHeader.displayName = 'StepCardHeader';
 
-const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
+const StepCardQuestion = styled.div<CompactDisplayProps>`
   .step-card-body {
     ${mixins.stepCardPadding()}
     overflow: auto;
@@ -182,6 +213,15 @@ const StepCardQuestion = styled.div<{ unpadded?: boolean }>`
       align-items: center;
     }
   }
+
+  ${props => props.compactDisplay && css`
+    && .step-card-body {
+      background-color: ${colors.palette.white};
+      padding: var(--spacing);
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  `}
 
     & + div .step-card-body {
         padding-top: 0;
@@ -240,21 +280,17 @@ export const StyledOverlay = styled.div`
 interface SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
-  showTotalQuestions: boolean;
   leftHeaderChildren?: ReactNode;
   rightHeaderChildren?: ReactNode;
   headerTitleChildren?: ReactNode;
 }
 
-export interface StepCardProps extends SharedProps {
-  unpadded: boolean;
+export interface StepCardProps extends SharedProps, CompactDisplayProps {
   className?: string;
   children?: ReactNode;
-  stepType: StepWithData['type'];
   availablePoints?: AvailablePoints;
   questionId?: string;
   multipartBadge?: ReactNode;
-  isHomework: boolean;
   overlayChildren?: React.ReactNode;
   totalScoring?: ExerciseScoringData;
   showScoring?: boolean;
@@ -264,11 +300,8 @@ export interface StepCardProps extends SharedProps {
 const StepCard = ({
   questionNumber,
   numberOfQuestions,
-  showTotalQuestions,
-  stepType,
-  isHomework,
   availablePoints,
-  unpadded, // currently does nothing; may need to restore if this causes tutor stepcard regression
+  compactDisplay,
   className,
   children,
   questionId,
@@ -284,6 +317,7 @@ const StepCard = ({
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
+  const compact = useCompactDisplay(compactDisplay);
 
   const formattedQuestionNumber = numberOfQuestions > 1
     ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
@@ -300,7 +334,9 @@ const StepCard = ({
   }, []);
 
   const hideFocusableElements = useCallback(() => {
-    const focusableElements = Array.from(document.getElementById("step-card")?.querySelectorAll(
+    // scoped to this card: several cards render at once in a list, and reaching through the
+    // document found the first one every time
+    const focusableElements = Array.from(overlayRef.current?.querySelector(".step-card")?.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
     ) || []);
 
@@ -321,9 +357,10 @@ const StepCard = ({
   }, [overlayChildren, overlayRef, handleOverlayFocus, hideFocusableElements]);
 
   return (
+    <CompactDisplayProvider compactDisplay={compact}>
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard className={className}>
+      <InnerStepCard className={className} compactDisplay={compact}>
         <div
           ref={overlayRef}
           {
@@ -342,15 +379,14 @@ const StepCard = ({
               {overlayChildren}
             </StyledOverlay>
           }
-          <div id="step-card">
-            {questionNumber && isHomework && stepType === 'exercise' &&
-              <StepCardHeader className="step-card-header">
+          <div className="step-card">
+            {questionNumber &&
+              <StepCardHeader className="step-card-header" compactDisplay={compact}>
                 <div>
                   {leftHeaderChildren}
                   <h2 className="question-info">
                     {headerTitleChildren}
                     <span>{formattedQuestionNumber}</span>
-                    {showTotalQuestions ? <span className="num-questions">&nbsp;/ {numberOfQuestions}</span> : null}
                     <span className="separator">|</span>
                     <span className="question-id">ID: {questionId}</span>
                   </h2>
@@ -368,20 +404,22 @@ const StepCard = ({
                 </div> : null}
               </StepCardHeader>
             }
-            <StepCardQuestion unpadded={unpadded}>{children}</StepCardQuestion>
+            <StepCardQuestion compactDisplay={compact}>{children}</StepCardQuestion>
           </div>
         </div>
       </InnerStepCard>
     </OuterStepCard>
+    </CompactDisplayProvider>
   )
 };
 StepCard.displayName = 'OSStepCard';
 
-export interface TaskStepCardProps extends SharedProps {
+export interface TaskStepCardProps extends SharedProps, CompactDisplayProps {
   className?: string;
   children?: ReactNode;
   tabIndex?: number;
-  step: StepBase | StepWithData;
+  /** @deprecated Pass `questionId` to `ExerciseWrapper` instead. */
+  step: StepBase;
   questionNumber: number;
   numberOfQuestions: number;
   overlayChildren?: React.ReactNode;
@@ -400,15 +438,9 @@ const TaskStepCard = ({
   ...otherProps
 }: TaskStepCardProps) =>
 (<StepCard {...otherProps}
-  unpadded={true}
   questionNumber={questionNumber}
   numberOfQuestions={numberOfQuestions}
-  stepType={'type' in step ? step.type : 'exercise'}
-  isHomework={'task' in step ? (step.task === undefined || step.task.type === 'homework') : true}
-  data-task-step-id={step.id}
-  // uncomment next line to display available points on exercise questions
-  // availablePoints={step.available_points}
-  className={cn(`${('type' in step ? step.type : 'exercise')}-step`, className)}
+  className={cn('exercise-step', className)}
   questionId={step.uid}
   overlayChildren={overlayChildren}
 >

@@ -42,7 +42,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<ol>
@@ -94,7 +94,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           role="status"
         >
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<ol>
@@ -152,14 +152,14 @@ exports[`AnswersTable renders all feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-jSMfEi faCGeG"
+            className="sc-gKXOVf dWxWHr"
           >
             <span>
               Incorrect Answer
             </span>
           </div>
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "True",
@@ -180,7 +180,7 @@ exports[`AnswersTable renders all feedback 1`] = `
     />
     <aside>
       <div
-        className="question-feedback-content has-html"
+        className="sc-jSMfEi buOdRb question-feedback-content has-html"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Answer level feedback",
@@ -222,14 +222,14 @@ exports[`AnswersTable renders all feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-jSMfEi ecLwSd"
+            className="sc-gKXOVf QPaPs"
           >
             <span>
               Correct Answer
             </span>
           </div>
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "False",
@@ -250,7 +250,7 @@ exports[`AnswersTable renders all feedback 1`] = `
     />
     <aside>
       <div
-        className="question-feedback-content has-html"
+        className="sc-jSMfEi buOdRb question-feedback-content has-html"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Answer level feedback",
@@ -301,14 +301,14 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-jSMfEi ecLwSd"
+            className="sc-gKXOVf QPaPs"
           >
             <span>
               Correct Answer
             </span>
           </div>
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "True",
@@ -329,7 +329,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
     />
     <aside>
       <div
-        className="question-feedback-content has-html"
+        className="sc-jSMfEi buOdRb question-feedback-content has-html"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Feedback",
@@ -370,7 +370,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           role="status"
         >
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "False",
@@ -423,14 +423,14 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-jSMfEi faCGeG"
+            className="sc-gKXOVf dWxWHr"
           >
             <span>
               Incorrect Answer
             </span>
           </div>
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "True",
@@ -451,7 +451,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
     />
     <aside>
       <div
-        className="question-feedback-content has-html"
+        className="sc-jSMfEi buOdRb question-feedback-content has-html"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Feedback",
@@ -492,14 +492,14 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           role="status"
         >
           <div
-            className="sc-jSMfEi ecLwSd"
+            className="sc-gKXOVf QPaPs"
           >
             <span>
               Correct Answer
             </span>
           </div>
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "False",
@@ -554,7 +554,7 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "True",
@@ -597,105 +597,10 @@ exports[`AnswersTable renders instructions 1`] = `
           role="status"
         >
           <span
-            className="answer-content"
+            className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "False",
-              }
-            }
-          />
-        </div>
-      </label>
-    </section>
-  </div>
-</div>
-`;
-
-exports[`AnswersTable sorts by given ID order 1`] = `
-<div
-  aria-label="Answer choices"
-  className="answers-table"
-  role="radiogroup"
->
-  <div
-    className="openstax-answer"
-  >
-    <section
-      className="answers-answer disabled"
-    >
-      <input
-        checked={false}
-        className="answer-input-box"
-        disabled={true}
-        id="1-option-0"
-        name="1-options"
-        onChange={[Function]}
-        type="radio"
-      />
-      <label
-        className="answer-label"
-        htmlFor="1-option-0"
-      >
-        <span
-          aria-label="Choice A:"
-          className="answer-letter-wrapper"
-          data-answer-choice="A"
-          data-test-id="answer-choice-A"
-        />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
-        >
-          <span
-            className="answer-content"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "False",
-              }
-            }
-          />
-        </div>
-      </label>
-    </section>
-  </div>
-  <div
-    className="openstax-answer"
-  >
-    <section
-      className="answers-answer disabled"
-    >
-      <input
-        checked={false}
-        className="answer-input-box"
-        disabled={true}
-        id="1-option-1"
-        name="1-options"
-        onChange={[Function]}
-        type="radio"
-      />
-      <label
-        className="answer-label"
-        htmlFor="1-option-1"
-      >
-        <span
-          aria-label="Choice B:"
-          className="answer-letter-wrapper"
-          data-answer-choice="B"
-          data-test-id="answer-choice-B"
-        />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
-        >
-          <span
-            className="answer-content"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "True",
               }
             }
           />

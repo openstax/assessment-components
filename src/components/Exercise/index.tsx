@@ -1,129 +1,31 @@
 import React from 'react';
+import cn from 'classnames';
 import scrollToElement from 'scroll-to-element';
-import styled, { createGlobalStyle, css } from 'styled-components';
-import { Answer, ExerciseData, ID, QuestionState, StepBase, StepWithData } from '../../types';
-import { InnerStepCard, OuterStepCard, TaskStepCard, TaskStepCardProps } from '../Card';
-import { Content } from '../Content';
-import { ExerciseQuestion } from '../ExerciseQuestion';
-import { FreeResponseInput } from '../FreeResponseInput';
-import { typesetMath } from '../../helpers/mathjax';
-import { ExerciseToolbar, StyledToolbar } from '../ExerciseToolbar';
-import { breakpoints } from '../../theme';
-import { ExerciseHeaderIcons } from '../ExerciseHeaderIcons';
-import { TypesetMathContext } from '../../hooks/useTypesetMath';
-import { exerciseStyles } from './styles';
+import { Answer, ExerciseData, ID, QuestionState, StepBase } from '../../types';
+import { CompactDisplayProps } from '../compactDisplay';
+import { ExerciseBody } from '../ExerciseBody';
+import { ExerciseWrapper } from '../ExerciseWrapper';
+import { isFreeResponseQuestion, QuestionBody } from '../QuestionBody';
+import { QuestionLevelFeedback } from '../QuestionLevelFeedback';
+import { QuestionWrapper } from '../QuestionWrapper';
+import { numberfyId } from '../../utils';
+import type { ExerciseIcons } from '../ExerciseHeaderIcons';
 
-const StyledTaskStepCard = styled(TaskStepCard)`
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
-`;
-
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --content-text-scale: 1;
-  }
-`;
-
-const ToolbarWrapper = styled.div<{
-  desktopToolbarEnabled: boolean;
-  mobileToolbarEnabled: boolean;
-}>`
-  ${props => props.desktopToolbarEnabled && css`
-    ${breakpoints.desktop`
-      ${StyledTaskStepCard} {
-        margin-left: 6.8rem;
-      }
-    `}
-    ${breakpoints.tablet`
-      ${StyledTaskStepCard} {
-        margin-left: 4.8rem;
-      }
-    `}
-    ${breakpoints.mobile`
-      ${StyledTaskStepCard} {
-        margin-left: 0;
-      }
-    `}
-  `}
-
-  ${props => props.mobileToolbarEnabled && css`
-    ${breakpoints.mobile`
-      ${StyledToolbar} + ${OuterStepCard} ${InnerStepCard} {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-      }
-    `}
-  `}
-`;
-
-const TaskStepCardWithToolbar = (props: React.PropsWithChildren<TaskStepCardProps> &
-  Pick<ExerciseBaseProps, 'exerciseIcons'> & {
-    desktopToolbarEnabled: boolean;
-    mobileToolbarEnabled: boolean;
-    overlayChildren?: React.ReactNode;
-  }
-) => (
-  <ToolbarWrapper
-    desktopToolbarEnabled={props.desktopToolbarEnabled}
-    mobileToolbarEnabled={props.mobileToolbarEnabled}
-  >
-    <ExerciseToolbar icons={props.exerciseIcons} />
-    <StyledTaskStepCard overlayChildren={props.overlayChildren} {...props} />
-  </ToolbarWrapper>
-);
-
-const Preamble = ({ exercise }: { exercise: ExerciseData }) => {
-  return (
-    <>
-      {exercise.context &&
-        <Content className="step-card-body exercise-context"
-          block html={exercise.context} />}
-
-      {exercise.stimulus_html &&
-        <Content className="step-card-body exercise-stimulus"
-          block html={exercise.stimulus_html} />}
-    </>
-  );
-};
-
-interface ExerciseIconLocation {
-  desktop: boolean;
-  mobile: boolean;
-}
-
-interface ExerciseIcon {
-  location?: {
-    /**
-     * @default {
-     *   desktop: true,
-     *   mobile: false
-     * }
-     **/
-    header?: ExerciseIconLocation;
-    /**
-     * @default {
-     *   desktop: false,
-     *   mobile: true
-     * }
-     **/
-    toolbar?: ExerciseIconLocation;
-  }
-}
-
-export interface ExerciseIcons {
-  /** An object containing a URL for the errata form for this exercise and settings for rendering the icon. */
-  errata?: ExerciseIcon & { url: string };
-  /** An object containing a URL for textbook content relevant to the exercise and settings for rendering the icon. */
-  topic?: ExerciseIcon & { url: string };
-  /** An object of settings for rendering the info icon that describes the exercise type (multiple-choice, two-step, etc.) */
-  info?: ExerciseIcon;
-}
+export type { ExerciseIcon, ExerciseIcons, ExerciseType } from '../ExerciseHeaderIcons';
 
 export interface ExerciseBaseProps {
-  /** An object containing a Step ID and Exercise UID */
-  step: StepBase;
+  /**
+   * An object containing a Step ID and Exercise UID.
+   * @deprecated Pass `questionId` instead; nothing else on a step is read.
+   */
+  step?: StepBase;
+  /** The exercise UID rendered in the header as `ID: …`. Falls back to `step.uid`. */
+  questionId?: string;
   /** An exercise object from the Exercises API */
   exercise: ExerciseData;
+  /**
+   * @deprecated The count comes from `exercise.questions.length`; this value is ignored.
+   */
   numberOfQuestions: number;
   /** The current question index. For multipart questions this is the first question number.  */
   questionNumber: number;
@@ -139,6 +41,8 @@ export interface ExerciseBaseProps {
   labelAnswers?: boolean;
   /** A boolean that enables always showing every answer feedback_html field. */
   show_all_feedback?: boolean;
+  /** Whether the detailed solution from the exercise definition is rendered. Defaults to true. */
+  displaySolution?: boolean;
   /** The question number to scroll into view when the component renders. */
   scrollToQuestion?: number;
   /** An object containing data for how to render the following icons:
@@ -147,62 +51,72 @@ export interface ExerciseBaseProps {
    * - A topic icon linking to the relevant textbook location
    */
   exerciseIcons?: ExerciseIcons;
+  /**
+   * @deprecated Navigation belongs to the host: advance when your own response POST completes.
+   * While this is passed, `false` keeps the old behaviour — the button reads
+   * "Submit & continue" and the exercise advances by itself once the response lands.
+   */
   hasFeedback?: boolean;
-}
-
-export interface ExerciseWithStepDataProps extends ExerciseBaseProps {
-  /** A Tutor Step object */
-  step: StepWithData;
-  canAnswer: boolean;
-  needsSaved: boolean;
-  apiIsPending: boolean;
-  onAnswerChange: (answer: Answer) => void;
-  canUpdateCurrentStep: boolean;
-  answer_id_order?: ID[];
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
   questionStates: { [key: ID]: QuestionState };
   /** A callback with the IDs of the answer and question */
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
+  /**
+   * Whether a completed question's Next button reads "Continue". Defaults to true for every
+   * question but the last.
+   */
+  canUpdateCurrentStep?: boolean;
+  /** @deprecated Shadowed by `QuestionState.apiIsPending`, which is what takes effect. */
+  apiIsPending?: boolean;
+  /** @deprecated Shadowed by `QuestionState.canAnswer`, which is what takes effect. */
+  canAnswer?: boolean;
+  /** @deprecated Shadowed by `QuestionState.needsSaved`, which is what takes effect. */
+  needsSaved?: boolean;
 }
 
 export interface OverlayProps {
   overlayChildren?: React.ReactNode;
 }
 
-export const Exercise = styled(({
-  numberOfQuestions,
+type QuestionStatus = { canSubmit?: boolean; dirty?: boolean };
+
+/**
+ * An exercise as the assessment system renders it: the card, its questions and their controls.
+ *
+ * Composed from `ExerciseWrapper`, `ExerciseBody`, `QuestionWrapper` and `QuestionBody`, which
+ * are exported individually for a host that wants its own chrome around this content.
+ */
+export const Exercise = ({
+  numberOfQuestions, // eslint-disable-line @typescript-eslint/no-unused-vars
   questionNumber,
   step,
+  questionId,
   exercise,
   show_all_feedback,
   scrollToQuestion,
   exerciseIcons,
   overlayChildren,
   labelAnswers = true,
+  displaySolution = true,
   previewMode = false,
   showScoring = false,
+  compactDisplay,
   onGradingSave,
+  className,
   ...props
 }: {
   className?: string,
   previewMode?: boolean,
   showScoring?: boolean,
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void,
-} & (ExerciseWithStepDataProps | ExerciseWithQuestionStatesProps) & OverlayProps) => {
-  const legacyStepRender = 'feedback_html' in step;
+} & CompactDisplayProps & ExerciseWithQuestionStatesProps & OverlayProps) => {
   const questionsRef = React.useRef<Array<HTMLDivElement>>([]);
-  const container = React.useRef<HTMLDivElement>(null);
   const [questionStates, setQuestionStates] =
-    React.useState<{ [key: ID]: QuestionState }>('questionStates' in props ? props['questionStates'] : {});
-
-
-  const typesetExercise = React.useCallback(() => {
-    if (container.current) {
-      typesetMath(container.current);
-    }
-  }, []);
+    React.useState<{ [key: ID]: QuestionState }>(props.questionStates);
+  const [statuses, setStatuses] = React.useState<{ [key: ID]: QuestionStatus }>({});
+  const cancelHandles = React.useRef<{ [key: ID]: () => void }>({});
 
   React.useEffect(() => {
     const el = scrollToQuestion && questionsRef.current[scrollToQuestion];
@@ -211,11 +125,7 @@ export const Exercise = styled(({
     }
   }, [scrollToQuestion, exercise]);
 
-  const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
-  const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
-
-
-  const propsQuestionStates = 'questionStates' in props ? props['questionStates'] : undefined;
+  const propsQuestionStates = props.questionStates;
   React.useEffect(() => {
     if (propsQuestionStates) {
       setQuestionStates(propsQuestionStates);
@@ -240,84 +150,118 @@ export const Exercise = styled(({
     return { totalScoring, isGraded };
   }, [exercise.questions, questionStates]);
 
-  return <TypesetMathContext.Provider value={typesetExercise}>
-    <GlobalStyle />
-    <TaskStepCardWithToolbar
-      step={step}
+  const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1] as
+    'short' | 'medium' | 'long' | undefined;
+
+  const onStatusChange = React.useCallback((id: ID, next: QuestionStatus) => setStatuses(
+    (current) => current[id] && current[id].canSubmit === next.canSubmit && current[id].dirty === next.dirty
+      ? current
+      : { ...current, [id]: next }
+  ), []);
+
+  return (
+    <ExerciseWrapper
       questionNumber={questionNumber}
-      numberOfQuestions={legacyStepRender ? numberOfQuestions : exercise.questions.length}
-      rightHeaderChildren={exerciseIcons ? <ExerciseHeaderIcons exercise={exercise} icons={exerciseIcons} /> : null}
-      showTotalQuestions={legacyStepRender}
-      desktopToolbarEnabled={desktopToolbarEnabled}
-      mobileToolbarEnabled={mobileToolbarEnabled}
-      {...(exerciseIcons ? { exerciseIcons: exerciseIcons } : null)}
-      className={props.className}
+      numberOfQuestions={exercise.questions.length}
+      questionId={questionId ?? step?.uid}
+      exerciseIcons={exerciseIcons}
+      className={cn('exercise-step', className)}
       showScoring={showScoring}
       isGraded={isGraded}
-      totalScoring={legacyStepRender && 'scoring' in step ? step.scoring : totalScoring}
+      totalScoring={totalScoring}
       overlayChildren={overlayChildren}
+      compactDisplay={compactDisplay}
     >
-      <div ref={container} >
-        <Preamble exercise={exercise} />
-
+      <ExerciseBody context={exercise.context} stimulus_html={exercise.stimulus_html}>
         {exercise.questions.map((q, i) => {
-          const state = { ...(legacyStepRender ? step : props['questionStates'][q.id]) };
+          const state = { ...props.questionStates[q.id] };
+          const status = statuses[q.id] || {};
+          const isFreeResponse = isFreeResponseQuestion(q);
+          const isPostReview = state.is_completed && !state.canAnswer;
 
-          // Check if this is a free response question (not combined with multiple-choice)
-          const isFreeResponse = q.formats.length === 1 && q.formats.includes('free-response');
+          // The detailed solution reaches the body from the exercise definition and the footer
+          // from the question's state — two routes for the same content through the server, and
+          // each renders where it renders today.
+          const definitionSolution = displaySolution && !isFreeResponse
+            && q.collaborator_solutions?.find(s => s['content_html'] !== undefined)
+            ? q.collaborator_solutions.map(s => s['content_html']).join('')
+            : undefined;
 
-          if (isFreeResponse) {
-            const responseSizeMap: Record<string, number> = { short: 30, medium: 100, long: 1000 };
-            const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1];
-            const wordLimit = (responseSize && responseSizeMap[responseSize]) || 100;
+          const bodyFeedback = isFreeResponse
+            ? (previewMode && isPostReview && !onGradingSave
+              ? <QuestionLevelFeedback score={state.score} gradingComments={state.feedback_html} />
+              : undefined)
+            : (definitionSolution
+              ? <QuestionLevelFeedback detailedSolution={definitionSolution} />
+              : undefined);
 
-            return (
-              <FreeResponseInput
-                {...props}
-                {...state}
-                available_points={undefined}
-                ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
-                key={q.id}
-                question={q}
-                questionNumber={questionNumber + i}
-                wordLimit={wordLimit}
-                cancelHandler={() => undefined}
-                previewMode={previewMode}
-                onGradingSave={previewMode ? onGradingSave : undefined}
-              />
-            );
-          }
+          const footerFeedback = isFreeResponse
+            ? (!previewMode && isPostReview && (state.score || state.feedback_html)
+              ? <QuestionLevelFeedback score={state.score} gradingComments={state.feedback_html} />
+              : undefined)
+            // the multiple choice footer shows no score today, so only the solution crosses
+            : (state.solution?.content_html
+              ? <QuestionLevelFeedback detailedSolution={state.solution.content_html} />
+              : undefined);
 
-          return (
-            <ExerciseQuestion
-              {...props}
-              {...state}
-              available_points={undefined}
+          const body = (
+            <QuestionBody
               ref={(el: HTMLDivElement) => questionsRef.current[questionNumber + i] = el}
-              exercise_uid={exercise.uid}
-              key={q.id}
               question={q}
+              state={state}
+              apiIsPending={state.apiIsPending}
+              needsSaved={state.needsSaved}
               questionNumber={questionNumber + i}
-              choicesEnabled={state.canAnswer}
-              displaySolution={true}
-              detailedSolution={state.solution?.content_html}
+              responseSize={responseSize}
+              previewMode={previewMode}
               show_all_feedback={show_all_feedback}
               labelAnswers={labelAnswers}
-              tableFeedbackEnabled={show_all_feedback && !legacyStepRender}
-              canUpdateCurrentStep={
-                // misleading prop name, we want to show a continue button for completed questions
-                // that aren't the last question, which requires this prop to be true
-                'canUpdateCurrentStep' in props ?
-                  props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
-              }
-              previewMode={previewMode}
+              onGradingSave={previewMode ? onGradingSave : undefined}
+              onAnswerChange={props.onAnswerChange}
+              onStatusChange={(next) => onStatusChange(q.id, next)}
+              registerCancel={(cancel) => { cancelHandles.current[q.id] = cancel; }}
+              feedback={bodyFeedback}
             />
-          )
-        }
-        )}
-      </div>
-    </TaskStepCardWithToolbar>
-  </TypesetMathContext.Provider>;
-})`
-  ${exerciseStyles}
-`;
+          );
+
+          // preview renders no controls, so the footer only survives when it carries feedback
+          const wrapped = previewMode && !footerFeedback
+            ? body
+            : (
+              <QuestionWrapper
+                question_id={q.id}
+                questionIndex={questionNumber + i - 1}
+                is_completed={state.is_completed}
+                canAnswer={state.canAnswer}
+                canSubmit={status.canSubmit}
+                dirty={status.dirty}
+                apiIsPending={state.apiIsPending}
+                canUpdateCurrentStep={
+                  // misleading prop name, we want to show a continue button for completed questions
+                  // that aren't the last question, which requires this prop to be true
+                  props.canUpdateCurrentStep !== undefined
+                    ? props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+                }
+                attempt_number={isFreeResponse ? undefined : state.attempt_number}
+                attemptsRemaining={props.hasMultipleAttempts && !isFreeResponse ? state.attempts_remaining : undefined}
+                hasUnlimitedAttempts={props.hasUnlimitedAttempts}
+                hasFeedback={props.hasFeedback}
+                onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
+                onNextStep={() => props.onNextStep(questionNumber + i - 1)}
+                onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
+                footerChildren={footerFeedback}
+              >
+                {body}
+              </QuestionWrapper>
+            );
+
+          return isFreeResponse
+            ? <React.Fragment key={q.id}>{wrapped}</React.Fragment>
+            : <div key={q.id} data-test-id="student-exercise-question">{wrapped}</div>;
+        })}
+      </ExerciseBody>
+    </ExerciseWrapper>
+  );
+};
+
+Exercise.displayName = 'OSExercise';

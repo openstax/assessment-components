@@ -2,6 +2,7 @@
 
 exports[`Content matches snapshot 1`] = `
 <span
+  className="sc-jSMfEi buOdRb"
   dangerouslySetInnerHTML={
     Object {
       "__html": "<b>Content with HTML</b>",

@@ -5,16 +5,16 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -59,7 +59,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -102,7 +102,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -118,24 +118,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -157,16 +144,16 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -211,7 +198,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -254,14 +241,14 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -277,24 +264,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -317,16 +291,16 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -371,7 +345,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -414,14 +388,14 @@ exports[`ExerciseQuestion renders Save button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -437,24 +411,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -477,16 +438,16 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -531,7 +492,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -574,14 +535,14 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -597,24 +558,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -637,16 +585,16 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -691,7 +639,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -734,7 +682,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -750,21 +698,17 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
       <div
         className="points"
-        role="status"
       >
-        <strong>
-          Points: 
-          1.0
-        </strong>
         <span
           className="attempts-left"
+          role="status"
         >
           <div>
             2
@@ -773,7 +717,6 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
              left
           </div>
         </span>
-        
       </div>
       <div
         className="controls"
@@ -796,16 +739,16 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -850,7 +793,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -893,14 +836,14 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -916,24 +859,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -950,21 +880,21 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
 </div>
 `;
 
-exports[`ExerciseQuestion renders detailed solution and published comments 1`] = `
+exports[`ExerciseQuestion renders detailed solution 1`] = `
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1009,14 +939,14 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf QPaPs"
+                    className="sc-fEOsli iJgkjJ"
                   >
                     <span>
                       Correct Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1059,14 +989,14 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1082,41 +1012,35 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
       <div
         className="points"
-        role="status"
       >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        <div>
-          <strong>
-            Feedback:
-          </strong>
-           
-          Teacher feedback
-        </div>
-        <div>
-          <strong>
-            Detailed solution:
-          </strong>
-           
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "A detailed solution",
+        <div
+          className="sc-ikZpkk bYyNzB"
+          role="status"
+        >
+          <div
+            className="detailed-solution"
+          >
+            <div
+              className="header"
+            >
+              Detailed solution:
+            </div>
+            <div
+              className="sc-fnykZs felUKW solution"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "A detailed solution",
+                }
               }
-            }
-          />
+            />
+          </div>
         </div>
       </div>
       <div
@@ -1140,16 +1064,16 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1158,7 +1082,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
           data-question-number={1}
         />
         <div
-          className="sc-jqUVSM ibsNGN"
+          className="sc-papXJ dcabis"
         >
           A free response
         </div>
@@ -1199,7 +1123,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1242,7 +1166,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1258,24 +1182,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -1297,16 +1208,16 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1351,7 +1262,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1394,14 +1305,14 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1417,24 +1328,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
-      <div
-        className="points"
-        role="status"
-      >
-        <strong>
-          Points: 
-          1.0
-        </strong>
-        <span
-          className="attempts-left"
-        />
-        
-      </div>
       <div
         className="controls"
       >
@@ -1456,16 +1354,16 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-bjUoiL fbQKcx"
     >
       <div>
         <div
-          className="question-stem"
+          className="sc-fnykZs felUKW question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1510,7 +1408,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1553,14 +1451,14 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-fEOsli gIZKme"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="answer-content"
+                    className="sc-fnykZs felUKW answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1576,21 +1474,17 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jIZahH eISIrg step-card-footer"
   >
     <div
       className="step-card-footer-inner"
     >
       <div
         className="points"
-        role="status"
       >
-        <strong>
-          Points: 
-          1.0
-        </strong>
         <span
           className="attempts-left"
+          role="status"
         >
           <div>
             1
@@ -1599,7 +1493,6 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
              left
           </div>
         </span>
-        
       </div>
       <div
         className="controls"

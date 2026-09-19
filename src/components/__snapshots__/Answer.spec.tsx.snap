@@ -34,7 +34,7 @@ exports[`Answer matches snapshot 1`] = `
         role="status"
       >
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -86,7 +86,7 @@ exports[`Answer renders a checked answer 1`] = `
         role="status"
       >
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -138,14 +138,14 @@ exports[`Answer renders a correct answer 1`] = `
         role="status"
       >
         <div
-          className="sc-jSMfEi ecLwSd"
+          className="sc-gKXOVf QPaPs"
         >
           <span>
             Correct Answer
           </span>
         </div>
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -197,14 +197,14 @@ exports[`Answer renders an incorrect answer 1`] = `
         role="status"
       >
         <div
-          className="sc-jSMfEi faCGeG"
+          className="sc-gKXOVf dWxWHr"
         >
           <span>
             Incorrect Answer
           </span>
         </div>
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -216,68 +216,6 @@ exports[`Answer renders an incorrect answer 1`] = `
             }
           }
         />
-      </div>
-    </label>
-  </section>
-</div>
-`;
-
-exports[`Answer renders feedback 1`] = `
-<div
-  className="openstax-answer"
->
-  <section
-    className="answers-answer"
-  >
-    <input
-      checked={false}
-      className="answer-input-box"
-      disabled={false}
-      id="1-option-1"
-      name="1-options"
-      onChange={[Function]}
-      type="radio"
-    />
-    <label
-      className="answer-label"
-      htmlFor="1-option-1"
-      onKeyPress={[Function]}
-    >
-      <span
-        aria-label="Choice B:"
-        className="answer-letter-wrapper"
-        data-answer-choice="B"
-        data-test-id="answer-choice-B"
-      />
-      <div
-        aria-atomic="true"
-        aria-live="polite"
-        className="answer-answer"
-        role="status"
-      >
-        <span
-          className="answer-content"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<ol>
-  <li>matter is moving at speeds of less than roughly 1% the speed of light,</li>
-  <li>objects are too small to be seen with the naked eye, and</li>
-  <li>there is the involvement of only a weak gravitational field</li>
-</ol>
-",
-            }
-          }
-        />
-        <aside>
-          <div
-            className="question-feedback-content has-html"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<div>Insightful commentary</div>",
-              }
-            }
-          />
-        </aside>
       </div>
     </label>
   </section>
@@ -325,14 +263,14 @@ exports[`Answer renders teacher preview 1`] = `
         role="status"
       >
         <div
-          className="sc-jSMfEi ecLwSd"
+          className="sc-gKXOVf QPaPs"
         >
           <span>
             Correct Answer
           </span>
         </div>
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -382,7 +320,7 @@ exports[`Answer renders teacher review 1`] = `
         role="status"
       >
         <span
-          className="answer-content"
+          className="sc-jSMfEi buOdRb answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
