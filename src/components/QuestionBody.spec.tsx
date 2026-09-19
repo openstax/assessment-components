@@ -78,8 +78,10 @@ describe('QuestionBody', () => {
       );
     });
 
+    expect(submit).toBeDefined();
+
     let response;
-    renderer.act(() => { response = submit!(); });
+    renderer.act(() => { response = submit ? submit() : undefined; });
     expect(response).toBeNull();
 
     const message = tree.root.findByProps({ className: 'validation-message' });
