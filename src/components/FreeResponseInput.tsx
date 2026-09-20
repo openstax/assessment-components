@@ -112,9 +112,9 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       hasFeedback={hasFeedback}
       onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
       onNextStep={() => onNextStep(questionNumber - 1)}
-      onCancel={() => {
+      onCancel={(event) => {
         cancelHandle.current?.();
-        cancelHandler?.(undefined as unknown as React.MouseEvent<HTMLButtonElement>);
+        cancelHandler?.(event);
       }}
       footerChildren={footerChildren}
       compactDisplay={compactDisplay}

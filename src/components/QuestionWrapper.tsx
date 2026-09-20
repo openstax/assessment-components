@@ -94,7 +94,8 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
 
   onAnswerSave: () => void;
   onNextStep: () => void;
-  onCancel?: () => void;
+  /** receives the Cancel button's own click event */
+  onCancel?: React.MouseEventHandler<HTMLButtonElement>;
 
   /**
    * Compat slot: where `Exercise` keeps its feedback block so its footer DOM is unchanged.

@@ -114,6 +114,25 @@ describe('QuestionWrapper', () => {
     });
   });
 
+  describe('cancelling', () => {
+    it('hands the Cancel click event to the handler', () => {
+      const onCancel = jest.fn();
+      const tree = renderer.create(
+        <QuestionWrapper {...props} is_completed={true} dirty={true} onCancel={onCancel} />
+      );
+      const event = { preventDefault: jest.fn() };
+
+      // the Cancel button carries no test id, so it is found the way a learner sees it
+      const cancel = tree.root.findAll(
+        (node) => node.type === 'button' && node.props.children === 'Cancel'
+      )[0];
+
+      renderer.act(() => { cancel.props.onClick(event); });
+
+      expect(onCancel).toHaveBeenCalledWith(event);
+    });
+  });
+
   describe('navigation', () => {
     it('advances by itself while hasFeedback is false', () => {
       const onNextStep = jest.fn();
