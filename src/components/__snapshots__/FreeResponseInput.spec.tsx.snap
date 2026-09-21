@@ -2,7 +2,7 @@
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -32,7 +32,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY"
+    className="sc-jqUVSM jkesEk"
   >
     <div
       className="step-card-footer-inner"
@@ -82,7 +82,7 @@ exports[`Free Response Input matches snapshot - completed state 1`] = `
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -152,18 +152,20 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
       value=""
     />
     <div
-      className="sc-idiyUo jpZbvG"
+      className="sc-idiyUo foyiXk"
     >
       <div>
         <span>
            Remaining words: 
-          50
+          <span>
+            50
+          </span>
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -188,7 +190,7 @@ exports[`Free Response Input matches snapshot - initial state 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -217,7 +219,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -279,7 +281,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -414,7 +416,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 
 exports[`Free Response Input matches snapshot - saving state 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -484,18 +486,20 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
       value="This is being saved"
     />
     <div
-      className="sc-idiyUo jpZbvG"
+      className="sc-idiyUo foyiXk"
     >
       <div>
         <span>
            Remaining words: 
-          46
+          <span>
+            46
+          </span>
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -520,7 +524,7 @@ exports[`Free Response Input matches snapshot - saving state 1`] = `
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -590,7 +594,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       value="Previously submitted answer"
     />
     <div
-      className="sc-idiyUo lgGOMk"
+      className="sc-idiyUo icvoEq"
     >
       <div>
         <span
@@ -603,13 +607,15 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
       <div>
         <span>
            Remaining words: 
-          47
+          <span>
+            47
+          </span>
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -649,7 +655,7 @@ exports[`Free Response Input matches snapshot - update mode 1`] = `
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -719,18 +725,20 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
       value="Photosynthesis converts light energy into chemical energy."
     />
     <div
-      className="sc-idiyUo jpZbvG"
+      className="sc-idiyUo foyiXk"
     >
       <div>
         <span>
            Remaining words: 
-          43
+          <span>
+            43
+          </span>
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -755,7 +763,7 @@ exports[`Free Response Input matches snapshot - with free response text 1`] = `
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
 <div
-  className="sc-fEOsli brblUh"
+  className="sc-fEOsli iyivpJ"
   data-test-id="student-free-response"
 >
   <div
@@ -825,7 +833,7 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       value=""
     />
     <div
-      className="sc-idiyUo lgGOMk"
+      className="sc-idiyUo icvoEq"
     >
       <div>
         <span
@@ -838,13 +846,15 @@ exports[`Free Response Input matches snapshot - with submission info 1`] = `
       <div>
         <span>
            Remaining words: 
-          50
+          <span>
+            50
+          </span>
         </span>
       </div>
     </div>
   </div>
   <div
-    className="sc-jqUVSM hlzBGY step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"

@@ -183,7 +183,7 @@ exports[`Exercise using step data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -407,7 +407,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -815,7 +815,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1168,7 +1168,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1561,7 +1561,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1774,7 +1774,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-ksZaOG glyfMN step-card-footer"
+                  className="sc-ksZaOG hujzCp step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
