@@ -5,12 +5,12 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-papXJ gxaQjj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -71,6 +71,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -113,12 +118,17 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -157,12 +167,12 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -223,6 +233,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -254,7 +269,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -272,12 +287,17 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -317,12 +337,12 @@ exports[`ExerciseQuestion renders Save button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -383,6 +403,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -414,7 +439,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -432,12 +457,17 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -477,12 +507,12 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -543,6 +573,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -574,7 +609,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -592,12 +627,17 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -637,12 +677,12 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-papXJ gxaQjj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -703,6 +743,11 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -745,12 +790,17 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -796,12 +846,12 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -862,6 +912,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -893,7 +948,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -911,12 +966,17 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -955,12 +1015,12 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -1009,7 +1069,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf QPaPs"
+                    className="sc-iBkjds hrBrya"
                   >
                     <span>
                       Correct Answer
@@ -1027,6 +1087,11 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
           <div
             className="openstax-answer"
           >
@@ -1059,7 +1124,7 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -1077,12 +1142,17 @@ exports[`ExerciseQuestion renders detailed solution and published comments 1`] =
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1140,12 +1210,12 @@ exports[`ExerciseQuestion renders free response 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body"
+    className="sc-papXJ gxaQjj openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -1158,7 +1228,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
           data-question-number={1}
         />
         <div
-          className="sc-jqUVSM ibsNGN"
+          className="sc-kDDrLX dpkkPO"
         >
           A free response
         </div>
@@ -1211,6 +1281,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -1253,12 +1328,17 @@ exports[`ExerciseQuestion renders free response 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1297,12 +1377,12 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -1363,6 +1443,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -1394,7 +1479,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -1412,12 +1497,17 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1456,12 +1546,12 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-ftvSup iNyEe openstax-question step-card-body has-incorrect-answer"
+    className="sc-papXJ gxaQjj openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-iBkjds gYtkAT"
+      className="sc-ftvSup laBHLg"
     >
       <div>
         <div
@@ -1522,6 +1612,11 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -1553,7 +1648,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-gKXOVf dWxWHr"
+                    className="sc-iBkjds YtrER"
                   >
                     <span>
                       Incorrect Answer
@@ -1571,12 +1666,17 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
   </div>
   <div
-    className="sc-papXJ kUEGWx step-card-footer"
+    className="sc-jqUVSM jkesEk step-card-footer"
   >
     <div
       className="step-card-footer-inner"

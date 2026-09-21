@@ -2,12 +2,12 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -68,6 +68,11 @@ exports[`Question defaults QuestionHtml html 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -110,6 +115,11 @@ exports[`Question defaults QuestionHtml html 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
     </div>
   </div>
@@ -118,12 +128,12 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -184,6 +194,11 @@ exports[`Question defaults collaborator_solutions 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -226,6 +241,11 @@ exports[`Question defaults collaborator_solutions 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
     </div>
   </div>
@@ -234,12 +254,12 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -300,6 +320,11 @@ exports[`Question defaults formats 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -342,6 +367,11 @@ exports[`Question defaults formats 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
       <div
         className="formats-listing"
@@ -359,12 +389,12 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -425,6 +455,11 @@ exports[`Question matches snapshot 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -467,6 +502,11 @@ exports[`Question matches snapshot 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
     </div>
   </div>
@@ -475,12 +515,12 @@ exports[`Question matches snapshot 1`] = `
 
 exports[`Question renders exercise uid 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -541,6 +581,11 @@ exports[`Question renders exercise uid 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -583,6 +628,11 @@ exports[`Question renders exercise uid 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
       <div
         className="exercise-uid"
@@ -596,12 +646,12 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -662,6 +712,11 @@ exports[`Question renders formats 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -704,6 +759,11 @@ exports[`Question renders formats 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
       <div
         className="formats-listing"
@@ -724,12 +784,12 @@ exports[`Question renders formats 1`] = `
 
 exports[`Question renders solutions 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-ftvSup iNyEe openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-iBkjds gYtkAT"
   >
     <div>
       <div
@@ -790,6 +850,11 @@ exports[`Question renders solutions 1`] = `
           </section>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <section
@@ -832,6 +897,11 @@ exports[`Question renders solutions 1`] = `
             </label>
           </section>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
       <div
         className="detailed-solution"
