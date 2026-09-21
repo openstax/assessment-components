@@ -108,6 +108,53 @@ describe('Exercise', () => {
       expect(tree.root.findByProps({ "data-test-id": "continue-btn" }).props['children']).toContain('Next');
     });
 
+    it('advances after a free response submission whatever hasFeedback says', () => {
+      // free response has always auto-advanced, and this entry point holds that contract:
+      // `QuestionWrapper` gates the behaviour on hasFeedback and knows nothing about formats
+      const onNextStep = jest.fn();
+      props.exercise.questions[0].formats = ['free-response'];
+      props.questionStates['1'].canAnswer = true;
+      props.questionStates['1'].needsSaved = true;
+      props.questionStates['1'].free_response = 'an answer';
+
+      let tree!: renderer.ReactTestRenderer;
+      renderer.act(() => {
+        tree = renderer.create(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      renderer.act(() => {
+        props.questionStates['1'].is_completed = true;
+        tree.update(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      expect(onNextStep).toHaveBeenCalledWith(0);
+    });
+
+    it('leaves multiple choice to hasFeedback', () => {
+      const onNextStep = jest.fn();
+      props.questionStates['1'].canAnswer = true;
+      props.questionStates['1'].needsSaved = true;
+      props.questionStates['1'].answer_id = '1';
+
+      let tree!: renderer.ReactTestRenderer;
+      renderer.act(() => {
+        tree = renderer.create(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      renderer.act(() => {
+        props.questionStates['1'].is_completed = true;
+        tree.update(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      expect(onNextStep).not.toHaveBeenCalled();
+    });
+
     it('shows a detailed solution', () => {
       props.questionStates['1'].solution = { content_html: 'Detailed solution', solution_type: 'detailed' };
       const tree = renderer.create(

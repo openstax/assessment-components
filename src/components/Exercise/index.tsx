@@ -245,8 +245,13 @@ export const Exercise = ({
                 attempt_number={isFreeResponse ? undefined : state.attempt_number}
                 attemptsRemaining={props.hasMultipleAttempts && !isFreeResponse ? state.attempts_remaining : undefined}
                 hasUnlimitedAttempts={props.hasUnlimitedAttempts}
-                // `Exercise` has always read an absent hasFeedback as "advance"
-                hasFeedback={props.hasFeedback ?? false}
+                /*
+                 * Free response has always advanced after a submission whatever the assignment's
+                 * feedback setting says, and multiple choice has always read an absent
+                 * `hasFeedback` as "advance". `QuestionWrapper` knows nothing about formats, so
+                 * this entry point — the one with the standing contract — holds both.
+                 */
+                hasFeedback={isFreeResponse ? false : (props.hasFeedback ?? false)}
                 onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
                 onNextStep={() => props.onNextStep(questionNumber + i - 1)}
                 onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
