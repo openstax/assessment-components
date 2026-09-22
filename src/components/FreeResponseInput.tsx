@@ -268,7 +268,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const [originalSubmittedValue, setOriginalSubmittedValue] = useState(submittedResponse ?? free_response ?? '');
+  const [lastSettledValue, setLastSettledValue] = useState(free_response || '');
 
   // Derive three render states from QuestionState
   const isUpdateMode = is_completed && canAnswer;
@@ -281,12 +281,14 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     </EditableNotice>
   ) : null;
 
-  // Sync baseline to the submitted text whenever there are no unsaved changes
   useLayoutEffect(() => {
     if (isUpdateMode && !needsSaved) {
-      setOriginalSubmittedValue(submittedResponse ?? free_response ?? '');
+      setLastSettledValue(free_response || '');
     }
-  }, [needsSaved, isUpdateMode, free_response, submittedResponse]);
+  }, [needsSaved, isUpdateMode, free_response]);
+
+  // Cancel reverts to the submitted answer, so the baseline is derived rather than cached:
+  const originalSubmittedValue = submittedResponse ?? lastSettledValue;
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 

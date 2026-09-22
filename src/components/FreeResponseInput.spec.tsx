@@ -144,4 +144,68 @@ describe('Free Response Input', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  describe('reverting a restored draft', () => {
+    const SUBMITTED = 'my submitted answer';
+    const DRAFT = 'an abandoned revision';
+
+    // the Cancel button carries no data-test-id, so it is matched on its label
+    const findCancel = (tree: renderer.ReactTestRenderer) =>
+      tree.root.findAllByType('button').filter(node => node.props.children === 'Cancel')[0];
+
+    const findUpdate = (tree: renderer.ReactTestRenderer) =>
+      tree.root.findAllByType('button').filter(node => node.props['data-test-id'] === 'update-answer-btn')[0];
+
+    let draftProps: FreeResponseProps;
+
+    beforeEach(() => {
+      draftProps = {
+        ...baseProps,
+        is_completed: true,
+        canAnswer: true,
+        needsSaved: true,
+        free_response: DRAFT,
+        submittedResponse: SUBMITTED,
+      };
+    });
+
+    it('enables Update when a restored draft differs from the submitted answer', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} />);
+
+      expect(findUpdate(tree).props.disabled).toBe(false);
+    });
+
+    it('reverts to the submitted answer rather than the draft', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} />);
+
+      renderer.act(() => { findCancel(tree).props.onClick({}); });
+
+      expect(draftProps.onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: SUBMITTED })
+      );
+      expect(draftProps.cancelHandler).toHaveBeenCalled();
+    });
+
+    // the component mounts before the question state hash is populated, so the submitted text
+    // arrives on a later render. a baseline cached at mount would be stuck on the empty value.
+    it('reverts to the submitted answer when it arrives after mount', () => {
+      const tree = renderer.create(
+        <FreeResponseInput
+          {...draftProps}
+          is_completed={undefined as unknown as boolean}
+          canAnswer={undefined as unknown as boolean}
+          free_response={undefined as unknown as string}
+          submittedResponse={undefined}
+          needsSaved={undefined as unknown as boolean}
+        />
+      );
+
+      renderer.act(() => { tree.update(<FreeResponseInput {...draftProps} />); });
+      renderer.act(() => { findCancel(tree).props.onClick({}); });
+
+      expect(draftProps.onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: SUBMITTED })
+      );
+    });
+  });
 });
