@@ -87,4 +87,48 @@ describe('QuestionBody', () => {
     const message = tree.root.findByProps({ className: 'validation-message' });
     expect(message.props.role).toEqual('alert');
   });
+
+  describe('autosaved drafts', () => {
+    const SUBMITTED = '2024-10-03T10:00:00.000Z';
+    const DRAFT = '2024-10-03T10:55:00.000Z';
+
+    it('shows the draft time when the draft is newer than the submission', () => {
+      const tree = renderer.create(
+        <QuestionBody
+          question={freeResponse}
+          state={{
+            is_completed: true, canAnswer: true, free_response: 'a draft',
+            submissionTimestamp: SUBMITTED, draftTimestamp: DRAFT,
+          }}
+          onAnswerChange={() => undefined}
+        />
+      );
+      const status = tree.root.findByProps({ className: 'last-submitted' });
+      expect(status.children.join('')).toContain('Draft last saved');
+    });
+
+    it('cancels back to the submitted response rather than the draft', () => {
+      const onAnswerChange = jest.fn();
+      let cancel: (() => void) | undefined;
+      renderer.act(() => {
+        renderer.create(
+          <QuestionBody
+            question={freeResponse}
+            state={{
+              is_completed: true, canAnswer: true, free_response: 'a draft',
+              submittedResponse: 'the submitted answer', draftTimestamp: DRAFT,
+            }}
+            needsSaved={true}
+            onAnswerChange={onAnswerChange}
+            registerCancel={(fn) => { cancel = fn; }}
+          />
+        );
+      });
+
+      renderer.act(() => { cancel?.(); });
+      expect(onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: 'the submitted answer' })
+      );
+    });
+  });
 });

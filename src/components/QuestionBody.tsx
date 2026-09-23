@@ -235,7 +235,8 @@ const FreeResponseBody = React.forwardRef((
     registerSubmit, registerCancel, responseSize, previewMode = false, feedback, compactDisplay,
   } = props;
   const {
-    is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, gradingTimestamp,
+    is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, draftTimestamp,
+    submittedResponse: submittedText, gradingTimestamp,
   } = state;
 
   const compact = useCompactDisplay(compactDisplay);
@@ -246,7 +247,7 @@ const FreeResponseBody = React.forwardRef((
   const [isOverflowing, setIsOverflowing] = React.useState(false);
   const [validation, setValidation] = React.useState<ValidationKey | null>(null);
   const textRef = React.useRef<HTMLDivElement>(null);
-  const [originalSubmittedValue, setOriginalSubmittedValue] = React.useState(free_response || '');
+  const [lastSettledValue, setLastSettledValue] = React.useState(free_response || '');
 
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
@@ -258,12 +259,15 @@ const FreeResponseBody = React.forwardRef((
     </EditableNotice>
   ) : null;
 
-  // Sync baseline to current free_response whenever there are no unsaved changes
   React.useLayoutEffect(() => {
     if (isUpdateMode && !needsSaved) {
-      setOriginalSubmittedValue(free_response || '');
+      setLastSettledValue(free_response || '');
     }
   }, [needsSaved, isUpdateMode, free_response]);
+
+  // Cancel reverts to the submitted answer, so the baseline is derived rather than cached:
+  // when free_response holds an autosaved draft, the draft is not what cancel should restore
+  const originalSubmittedValue = submittedText ?? lastSettledValue;
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
@@ -357,9 +361,19 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
+  const showDraft = draftTimestamp !== undefined
+    && (submissionTimestamp === undefined
+      || new Date(draftTimestamp).getTime() > new Date(submissionTimestamp).getTime());
+
+  const responseStatus = showDraft
+    ? `Draft last saved ${formatTimestamp(draftTimestamp)}`
+    : submissionTimestamp !== undefined
+      ? `Last submitted on ${formatTimestamp(submissionTimestamp)}`
+      : undefined;
+
   const infoRow = !previewMode && (
-    <InfoRow hasChildren={!!submissionTimestamp}>
-      {submissionTimestamp && <div><span className="last-submitted">Last submitted on {formatTimestamp(submissionTimestamp)}</span></div>}
+    <InfoRow hasChildren={!!responseStatus}>
+      {responseStatus && <div><span className="last-submitted">{responseStatus}</span></div>}
       <div>
         {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
         <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
