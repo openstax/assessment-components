@@ -2,10 +2,10 @@
 
 exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 <div
-  className="sc-gXmSlM kmWwUD"
+  className="sc-cCsOjp bJlyxh"
 >
   <div
-    className="sc-cCsOjp kIbToD"
+    className="sc-ciZhAO bCEQpj"
   >
     All responses have been graded.
   </div>
@@ -14,11 +14,11 @@ exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 
 exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 <div
-  className="sc-gXmSlM kmWwUD"
+  className="sc-cCsOjp bJlyxh"
 >
   <div
     aria-label="Grading note"
-    className="sc-ciZhAO cydBxi"
+    className="sc-jdAMXn esqbns"
     data-test-id="grading-notice"
     role="note"
   >
@@ -33,14 +33,14 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
      waiting until the due date has passed before grading submissions.
   </div>
   <div
-    className="sc-bBrHrO jcvfiz"
+    className="sc-ivTmOn hrZoZT"
   >
     <div
-      className="sc-ivTmOn boYlwj"
+      className="sc-cxabCf lcSeVF"
     >
       <button
         aria-expanded={true}
-        className="sc-cxabCf cGVVSY"
+        className="sc-llJcti kEWlOR"
         onClick={[Function]}
         type="button"
       >
@@ -48,14 +48,14 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
           className="sc-crXcEl jrEnlp"
         />
         <span
-          className="sc-llJcti htsHqU"
+          className="sc-iIPllB cyTxDe"
         >
           Question 
           1
         </span>
       </button>
       <span
-        className="sc-iIPllB lgzNKY"
+        className="sc-gicCDI jCMVed"
       >
         0
         /
@@ -71,12 +71,13 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       }
     >
       <div
-        className="sc-kLLXSd jbhjEG"
+        className="sc-ikZpkk AiAC"
       >
         <div
-          className="sc-ikZpkk ieuQag"
+          className="sc-jIZahH fnHdag"
         >
           <div
+            className="sc-bBrHrO cbuXtO"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Describe Newton's first law.</p>",
@@ -86,10 +87,10 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         </div>
       </div>
       <div
-        className="sc-jIZahH fVRulT"
+        className="sc-himrzO isCGPg"
       >
         <button
-          className="sc-bZkfAO kIEOzl"
+          className="sc-kLLXSd kHVjOq"
           onClick={[Function]}
           type="button"
         >
@@ -97,7 +98,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         </button>
       </div>
       <div
-        className="sc-himrzO fnevcv"
+        className="sc-gXmSlM gUdLJA"
       >
         <div
           className="sc-papXJ fqoXnn"

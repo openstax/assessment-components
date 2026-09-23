@@ -1,3 +1,4 @@
+import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 import { Question, QuestionProps } from './Question';
 import renderer from 'react-test-renderer';
 
@@ -27,10 +28,6 @@ describe('Question', () => {
           content_html: 'False',
         }],
       },
-      task: {
-        is_deleted: false,
-        type: 'homework'
-      },
       correct_answer_id: '',
       incorrectAnswerId: '',
       hideAnswers: false,
@@ -53,12 +50,12 @@ describe('Question', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders solutions', () => {
-    props.question.collaborator_solutions = [
-      { content_html: 'Content HTML', solution_type: 'detailed' }
-    ];
+  it('renders composed feedback below the answers', () => {
     const tree = renderer.create(
-      <Question {...props} displaySolution={true} />
+      <Question
+        {...props}
+        feedback={<QuestionLevelFeedback detailedSolution='Content HTML' />}
+      />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -93,18 +90,7 @@ describe('Question', () => {
     expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).toContain('has-correct-answer');
 
     tree = renderer.create(
-      <Question {...props} task={{ is_deleted: true, type: 'homework' }} correct_answer_id='1' />
-    );
-    expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).not.toContain('has-correct-answer');
-
-    props.task = null;
-    tree = renderer.create(
-      <Question {...props} task={null} correct_answer_id='1' />
-    );
-    expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).toContain('has-correct-answer'); // Possible bug here?
-
-    tree = renderer.create(
-      <Question {...props} task={{ is_deleted: false, type: undefined }} />
+      <Question {...props} correct_answer_id={null} />
     );
     expect(tree.root.findByProps({ 'data-test-id': 'question' }).props['className']).not.toContain('has-correct-answer');
   });

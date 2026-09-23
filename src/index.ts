@@ -6,6 +6,13 @@ export * from './components/FreeResponseInput';
 export * from './components/FreeResponseReview/FreeResponseReview';
 export * from './components/Card';
 export * from './components/Exercise';
+export * from './components/ExerciseBody';
+export * from './components/ExerciseWrapper';
+export * from './components/ExerciseQuestion';
+export * from './components/QuestionBody';
+export * from './components/QuestionWrapper';
+export * from './components/QuestionLevelFeedback';
+export * from './components/compactDisplay';
 export * from './components/ProgressBar';
 export * from './components/Loader';
 export * from './components/ExerciseToolbar';
@@ -27,10 +34,9 @@ export type {
   ExerciseData,
   Answer as AnswerData,
   StepBase,
-  StepWithData,
   QuestionState,
+  QuestionBodyState,
   Solution,
-  Task,
   AnswerDisplayType,
   ID,
   AvailablePoints,

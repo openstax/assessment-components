@@ -2,14 +2,14 @@
 
 exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 <div
-  className="sc-bBrHrO jcvfiz"
+  className="sc-ivTmOn hrZoZT"
 >
   <div
-    className="sc-ivTmOn boYlwj"
+    className="sc-cxabCf lcSeVF"
   >
     <button
       aria-expanded={true}
-      className="sc-cxabCf cGVVSY"
+      className="sc-llJcti kEWlOR"
       onClick={[Function]}
       type="button"
     >
@@ -17,14 +17,14 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
         className="sc-crXcEl jrEnlp"
       />
       <span
-        className="sc-llJcti htsHqU"
+        className="sc-iIPllB cyTxDe"
       >
         Question 
         2
       </span>
     </button>
     <span
-      className="sc-iIPllB lgzNKY"
+      className="sc-gicCDI jCMVed"
     >
       2
       /
@@ -40,12 +40,13 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
     }
   >
     <div
-      className="sc-kLLXSd jbhjEG"
+      className="sc-ikZpkk AiAC"
     >
       <div
-        className="sc-ikZpkk ieuQag"
+        className="sc-jIZahH fnHdag"
       >
         <div
+          className="sc-bBrHrO cbuXtO"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Describe Newton's first law.</p>",
@@ -55,10 +56,10 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
       </div>
     </div>
     <div
-      className="sc-jIZahH fVRulT"
+      className="sc-himrzO isCGPg"
     >
       <button
-        className="sc-bZkfAO kIEOzl"
+        className="sc-kLLXSd kHVjOq"
         onClick={[Function]}
         type="button"
       >
@@ -66,7 +67,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
       </button>
     </div>
     <div
-      className="sc-himrzO fnevcv"
+      className="sc-gXmSlM gUdLJA"
     >
       <div
         className="sc-papXJ fqoXnn"
@@ -336,14 +337,14 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 
 exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded students 1`] = `
 <div
-  className="sc-bBrHrO jcvfiz"
+  className="sc-ivTmOn hrZoZT"
 >
   <div
-    className="sc-ivTmOn boYlwj"
+    className="sc-cxabCf lcSeVF"
   >
     <button
       aria-expanded={true}
-      className="sc-cxabCf cGVVSY"
+      className="sc-llJcti kEWlOR"
       onClick={[Function]}
       type="button"
     >
@@ -351,14 +352,14 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
         className="sc-crXcEl jrEnlp"
       />
       <span
-        className="sc-llJcti htsHqU"
+        className="sc-iIPllB cyTxDe"
       >
         Question 
         1
       </span>
     </button>
     <span
-      className="sc-iIPllB lgzNKY"
+      className="sc-gicCDI jCMVed"
     >
       1
       /
@@ -374,12 +375,13 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
     }
   >
     <div
-      className="sc-kLLXSd jbhjEG"
+      className="sc-ikZpkk AiAC"
     >
       <div
-        className="sc-ikZpkk ieuQag"
+        className="sc-jIZahH fnHdag"
       >
         <div
+          className="sc-bBrHrO cbuXtO"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Describe Newton's first law.</p>",
@@ -389,10 +391,10 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
       </div>
     </div>
     <div
-      className="sc-jIZahH fVRulT"
+      className="sc-himrzO isCGPg"
     >
       <button
-        className="sc-bZkfAO kIEOzl"
+        className="sc-kLLXSd kHVjOq"
         onClick={[Function]}
         type="button"
       >
@@ -400,7 +402,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
       </button>
     </div>
     <div
-      className="sc-himrzO fnevcv"
+      className="sc-gXmSlM gUdLJA"
     >
       <div
         className="sc-papXJ fqoXnn"
