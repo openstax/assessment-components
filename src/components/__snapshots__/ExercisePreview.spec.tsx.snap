@@ -2,21 +2,21 @@
 
 exports[`ExercisePreview using questionStates matches snapshot with chosen answer 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
     >
       <div>
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -40,11 +40,13 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -52,7 +54,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -63,12 +65,12 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -107,7 +109,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -128,7 +130,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                           />
                           <aside>
                             <div
-                              className="question-feedback-content has-html"
+                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
                               dangerouslySetInnerHTML={
                                 Object {
                                   "__html": "Feedback",
@@ -169,7 +171,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -196,21 +198,21 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
 
 exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
     >
       <div>
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -234,11 +236,13 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -246,7 +250,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -257,12 +261,12 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -301,14 +305,14 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 role="status"
                               >
                                 <div
-                                  className="sc-iqcoie egDBZj"
+                                  className="sc-bZkfAO ASJIE"
                                 >
                                   <span>
                                     Correct Answer
                                   </span>
                                 </div>
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -329,7 +333,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                           />
                           <aside>
                             <div
-                              className="question-feedback-content has-html"
+                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
                               dangerouslySetInnerHTML={
                                 Object {
                                   "__html": "Feedback",
@@ -370,7 +374,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -397,21 +401,21 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
 
 exports[`ExercisePreview using questionStates matches snapshot without chosen answer 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
     >
       <div>
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -435,11 +439,13 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -447,7 +453,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -458,12 +464,12 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -502,7 +508,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -523,7 +529,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                           />
                           <aside>
                             <div
-                              className="question-feedback-content has-html"
+                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
                               dangerouslySetInnerHTML={
                                 Object {
                                   "__html": "Feedback",
@@ -564,7 +570,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -591,14 +597,14 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -607,10 +613,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
         tabIndex={0}
       >
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -634,11 +640,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -646,7 +654,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -657,12 +665,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -700,7 +708,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -743,7 +751,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -754,23 +762,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             </label>
                           </section>
                         </div>
-                      </div>
-                      <div
-                        className="detailed-solution"
-                      >
-                        <div
-                          className="header"
-                        >
-                          Detailed solution:
-                        </div>
-                        <div
-                          className="solution"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -787,14 +778,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -803,10 +794,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
         tabIndex={0}
       >
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -830,11 +821,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -842,7 +835,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -853,12 +846,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -896,7 +889,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -939,7 +932,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -950,23 +943,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
-                      </div>
-                      <div
-                        className="detailed-solution"
-                      >
-                        <div
-                          className="header"
-                        >
-                          Detailed solution:
-                        </div>
-                        <div
-                          className="solution"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -983,14 +959,14 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -999,10 +975,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
         tabIndex={0}
       >
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -1026,11 +1002,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -1038,7 +1016,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -1049,12 +1027,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -1092,7 +1070,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -1135,7 +1113,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -1146,23 +1124,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
-                      </div>
-                      <div
-                        className="detailed-solution"
-                      >
-                        <div
-                          className="header"
-                        >
-                          Detailed solution:
-                        </div>
-                        <div
-                          className="solution"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
-                            }
-                          }
-                        />
                       </div>
                     </div>
                   </div>
@@ -1179,21 +1140,21 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
 <div
-  className="sc-dPyBCJ fGYwZD"
+  className="sc-bjUoiL cNSnhS"
 >
   <div
-    className="sc-gsnTZi dxdISE"
-    data-task-step-id={1}
+    className="sc-ftvSup dWrzXD step-card-outer"
+    data-task-step-id="0"
   >
     <div
-      className="sc-bczRLJ fZGYwW exercise-step sc-jOrMOR byVHlg sc-bBXxYQ sc-hNKHps hmjLoD bYATfZ preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
     >
       <div>
         <div
-          id="step-card"
+          className="step-card"
         >
           <div
-            className="sc-dkzDqf kfrDtP step-card-header"
+            className="sc-papXJ cfFAmn step-card-header"
           >
             <div>
               <h2
@@ -1217,11 +1178,13 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
             </div>
           </div>
           <div
-            className="sc-eCYdqJ eSWpyp"
+            className="sc-kDDrLX hlpklK"
           >
-            <div>
+            <div
+              className="sc-gKXOVf ixMVEw"
+            >
               <div
-                className="step-card-body exercise-context"
+                className="sc-jSMfEi buOdRb step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -1229,7 +1192,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 }
               />
               <div
-                className="step-card-body exercise-stimulus"
+                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -1240,12 +1203,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-evZas bgIoZz openstax-question step-card-body has-correct-answer"
+                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-crXcEl jVCfod"
+                    className="sc-kLLXSd bGXPbi"
                   >
                     <div>
                       <div
@@ -1284,7 +1247,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -1305,7 +1268,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                           />
                           <aside>
                             <div
-                              className="question-feedback-content has-html"
+                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
                               dangerouslySetInnerHTML={
                                 Object {
                                   "__html": "Feedback",
@@ -1346,7 +1309,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 role="status"
                               >
                                 <span
-                                  className="answer-content"
+                                  className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -1358,58 +1321,46 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                           </section>
                         </div>
                       </div>
-                      <div
-                        className="detailed-solution"
-                      >
-                        <div
-                          className="header"
-                        >
-                          Detailed solution:
-                        </div>
-                        <div
-                          className="solution"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span><span data-math='e^{\\\\text{Blue}}'></span>",
-                            }
-                          }
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="sc-breuTD gsiMJy step-card-footer"
+                  className="sc-BeQoi fXsfUh step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
                   >
                     <div
                       className="points"
-                      role="status"
                     >
-                      <span
-                        className="attempts-left"
-                      />
-                      <div>
-                        <strong>
-                          Detailed solution:
-                        </strong>
-                         
-                        <span
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "<span data-math='e^{\\\\text{Blue}}'></span>",
+                      <div
+                        className="sc-cOFTSb jWtkWy"
+                        role="status"
+                      >
+                        <div
+                          className="detailed-solution"
+                        >
+                          <div
+                            className="header"
+                          >
+                            Detailed solution:
+                          </div>
+                          <div
+                            className="sc-jSMfEi buOdRb solution"
+                            dangerouslySetInnerHTML={
+                              Object {
+                                "__html": "<span data-math='e^{\\\\text{Blue}}'></span>",
+                              }
                             }
-                          }
-                        />
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
                       className="controls"
                     >
                       <button
-                        className="sc-kDDrLX dibnqc"
+                        className="sc-idiyUo iiCZLe"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >

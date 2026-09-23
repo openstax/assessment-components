@@ -1,6 +1,36 @@
 import React, { useEffect, useRef } from "react";
+import styled from "styled-components";
 import { useTypesetMath } from "../hooks/useTypesetMath";
 import { createMediaModalManager } from "./modalManager";
+
+/**
+ * `enhanceImagesForAccessibility` below wraps every image in a button so the media modal has
+ * a click target, so the rules that stop that button looking like a button belong here, beside
+ * the markup that creates it.
+ */
+const StyledContent = styled.div`
+  .image-button-wrapper {
+    /* Remove default button styles for media modal img wrapper */
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .image-button-wrapper:focus {
+    outline: 1px solid Highlight;
+    outline: 1px solid -webkit-focus-ring-color;
+    outline-offset: 2px;
+  }
+
+  .image-button-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+`;
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 type ComponentType = keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>;
@@ -62,7 +92,7 @@ export const Content = (<T extends ComponentType | undefined>(
 
   return (
     <>
-      <DivOrSpan ref={ref} dangerouslySetInnerHTML={{ __html: html }} {...props} />
+      <StyledContent as={DivOrSpan} ref={ref} dangerouslySetInnerHTML={{ __html: html }} {...props} />
       <MediaModalPortal />
     </>
   );

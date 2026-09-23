@@ -2,16 +2,16 @@
 
 exports[`Question defaults QuestionHtml html 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -56,7 +56,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -99,7 +99,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -118,16 +118,16 @@ exports[`Question defaults QuestionHtml html 1`] = `
 
 exports[`Question defaults collaborator_solutions 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -172,7 +172,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -215,7 +215,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -234,16 +234,16 @@ exports[`Question defaults collaborator_solutions 1`] = `
 
 exports[`Question defaults formats 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -288,7 +288,7 @@ exports[`Question defaults formats 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -331,7 +331,7 @@ exports[`Question defaults formats 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -359,16 +359,16 @@ exports[`Question defaults formats 1`] = `
 
 exports[`Question matches snapshot 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -413,7 +413,7 @@ exports[`Question matches snapshot 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -456,7 +456,7 @@ exports[`Question matches snapshot 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -473,18 +473,18 @@ exports[`Question matches snapshot 1`] = `
 </div>
 `;
 
-exports[`Question renders exercise uid 1`] = `
+exports[`Question renders composed feedback below the answers 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -529,7 +529,7 @@ exports[`Question renders exercise uid 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -572,7 +572,145 @@ exports[`Question renders exercise uid 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "False",
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </section>
+        </div>
+      </div>
+      <div
+        className="sc-ftvSup gdUAsD"
+        role="status"
+      >
+        <div
+          className="detailed-solution"
+        >
+          <div
+            className="header"
+          >
+            Detailed solution:
+          </div>
+          <div
+            className="sc-jSMfEi buOdRb solution"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "Content HTML",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Question renders exercise uid 1`] = `
+<div
+  className="sc-kDDrLX nHyWc openstax-question"
+  data-question-number={1}
+  data-test-id="question"
+>
+  <div
+    className="sc-jqUVSM jjphog"
+  >
+    <div>
+      <div
+        className="sc-jSMfEi buOdRb question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Is this a question?",
+          }
+        }
+        data-question-number={1}
+      />
+      <div
+        aria-label="Answer choices"
+        className="answers-table"
+        role="radiogroup"
+      >
+        <div
+          className="openstax-answer"
+        >
+          <section
+            className="answers-answer disabled"
+          >
+            <input
+              checked={false}
+              className="answer-input-box"
+              disabled={true}
+              id="1-option-0"
+              name="1-options"
+              onChange={[Function]}
+              type="radio"
+            />
+            <label
+              className="answer-label"
+              htmlFor="1-option-0"
+            >
+              <span
+                aria-label="Choice A:"
+                className="answer-letter-wrapper"
+                data-answer-choice="A"
+                data-test-id="answer-choice-A"
+              />
+              <div
+                aria-atomic="true"
+                aria-live="polite"
+                className="answer-answer"
+                role="status"
+              >
+                <span
+                  className="sc-jSMfEi buOdRb answer-content"
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "True",
+                    }
+                  }
+                />
+              </div>
+            </label>
+          </section>
+        </div>
+        <div
+          className="openstax-answer"
+        >
+          <section
+            className="answers-answer disabled"
+          >
+            <input
+              checked={false}
+              className="answer-input-box"
+              disabled={true}
+              id="1-option-1"
+              name="1-options"
+              onChange={[Function]}
+              type="radio"
+            />
+            <label
+              className="answer-label"
+              htmlFor="1-option-1"
+            >
+              <span
+                aria-label="Choice B:"
+                className="answer-letter-wrapper"
+                data-answer-choice="B"
+                data-test-id="answer-choice-B"
+              />
+              <div
+                aria-atomic="true"
+                aria-live="polite"
+                className="answer-answer"
+                role="status"
+              >
+                <span
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -596,16 +734,16 @@ exports[`Question renders exercise uid 1`] = `
 
 exports[`Question renders formats 1`] = `
 <div
-  className="sc-iBkjds ieUlSt openstax-question"
+  className="sc-kDDrLX nHyWc openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-gKXOVf bVVSER"
+    className="sc-jqUVSM jjphog"
   >
     <div>
       <div
-        className="question-stem"
+        className="sc-jSMfEi buOdRb question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -650,7 +788,7 @@ exports[`Question renders formats 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -693,7 +831,7 @@ exports[`Question renders formats 1`] = `
                 role="status"
               >
                 <span
-                  className="answer-content"
+                  className="sc-jSMfEi buOdRb answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -716,139 +854,6 @@ exports[`Question renders formats 1`] = `
         <span>
           true-false
         </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Question renders solutions 1`] = `
-<div
-  className="sc-iBkjds ieUlSt openstax-question"
-  data-question-number={1}
-  data-test-id="question"
->
-  <div
-    className="sc-gKXOVf bVVSER"
-  >
-    <div>
-      <div
-        className="question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Is this a question?",
-          }
-        }
-        data-question-number={1}
-      />
-      <div
-        aria-label="Answer choices"
-        className="answers-table"
-        role="radiogroup"
-      >
-        <div
-          className="openstax-answer"
-        >
-          <section
-            className="answers-answer disabled"
-          >
-            <input
-              checked={false}
-              className="answer-input-box"
-              disabled={true}
-              id="1-option-0"
-              name="1-options"
-              onChange={[Function]}
-              type="radio"
-            />
-            <label
-              className="answer-label"
-              htmlFor="1-option-0"
-            >
-              <span
-                aria-label="Choice A:"
-                className="answer-letter-wrapper"
-                data-answer-choice="A"
-                data-test-id="answer-choice-A"
-              />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
-              >
-                <span
-                  className="answer-content"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "True",
-                    }
-                  }
-                />
-              </div>
-            </label>
-          </section>
-        </div>
-        <div
-          className="openstax-answer"
-        >
-          <section
-            className="answers-answer disabled"
-          >
-            <input
-              checked={false}
-              className="answer-input-box"
-              disabled={true}
-              id="1-option-1"
-              name="1-options"
-              onChange={[Function]}
-              type="radio"
-            />
-            <label
-              className="answer-label"
-              htmlFor="1-option-1"
-            >
-              <span
-                aria-label="Choice B:"
-                className="answer-letter-wrapper"
-                data-answer-choice="B"
-                data-test-id="answer-choice-B"
-              />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
-              >
-                <span
-                  className="answer-content"
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "False",
-                    }
-                  }
-                />
-              </div>
-            </label>
-          </section>
-        </div>
-      </div>
-      <div
-        className="detailed-solution"
-      >
-        <div
-          className="header"
-        >
-          Detailed solution:
-        </div>
-        <div
-          className="solution"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "Content HTML",
-            }
-          }
-        />
       </div>
     </div>
   </div>

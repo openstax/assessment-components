@@ -30,7 +30,6 @@ describe('Answer', () => {
       correctAnswerId: 2,
       incorrectAnswerId: 0,
       answered_count: 10,
-      show_all_feedback: false
     };
   });
 
@@ -54,15 +53,6 @@ describe('Answer', () => {
     );
     const tree = renderer.create(
       <Answer {...props} contentRenderer={<CustomRenderer />} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders feedback', () => {
-    props.show_all_feedback = true;
-    props.answer.feedback_html = '<div>Insightful commentary</div>';
-    const tree = renderer.create(
-      <Answer {...props} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
