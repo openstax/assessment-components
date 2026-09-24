@@ -1,8 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button isWaiting state matches snapshot 1`] = `
+.c0 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c0:not([disabled]) {
+  cursor: pointer;
+}
+
+.c0:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c0:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c0:disabled {
+  opacity: 0.4;
+}
+
 <button
-  className="sc-bczRLJ fLTvYy"
+  className="c0"
   disabled={true}
 >
   Submitting...
@@ -10,8 +54,52 @@ exports[`Button isWaiting state matches snapshot 1`] = `
 `;
 
 exports[`Button matches snapshot 1`] = `
+.c0 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c0:not([disabled]) {
+  cursor: pointer;
+}
+
+.c0:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c0:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c0:disabled {
+  opacity: 0.4;
+}
+
 <button
-  className="sc-bczRLJ fLTvYy"
+  className="c0"
 >
   Click Me
 </button>

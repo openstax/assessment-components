@@ -2,18 +2,93 @@
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c1 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #6f6f6f;
+  margin: 2.5rem 0 1rem 0;
+}
+
+.c4 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 1rem 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c1"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -22,19 +97,228 @@ Array [
         />
       </div>
       <div
-        className="sc-fLlhyt eyYuf"
+        className="c3"
       >
         Your answer
       </div>
       <div
-        className="sc-bBrHrO cGVwzt"
+        className="c4"
       >
         Photosynthesis is the process by which plants convert light energy into chemical energy.
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c4 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c4 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c4 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c2 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: bold;
+  color: #424242;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+  white-space: pre-wrap;
+}
+
+.c3 .feedback-label {
+  color: #424242;
+  font-weight: bold;
+}
+
+.c1 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c1 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c1 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -43,17 +327,17 @@ Array [
         className="points"
       >
         <div
-          className="sc-ikZpkk bYyNzB"
+          className="c1"
           role="status"
         >
           <div
-            className="sc-bZkfAO GxfWv"
+            className="c2"
           >
             Score: 
             8/10
           </div>
           <div
-            className="sc-kLLXSd ibpWvX"
+            className="c3"
           >
             <span
               className="feedback-label"
@@ -62,7 +346,7 @@ Array [
             </span>
              
             <span
-              className="sc-fnykZs felUKW"
+              className="c4"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "<p>Good explanation!</p>",
@@ -76,7 +360,7 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -90,15 +374,130 @@ Array [
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c2 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  margin: 8px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  line-height: 1.6rem;
+  color: #6f6f6f;
+}
+
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
+  color: #c2002f;
+}
+
+.c5 div > span {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  line-height: 16px;
+}
+
+.c5 div > span + span {
+  margin-left: 1rem;
+}
+
+.c5 .last-submitted + * {
+  margin-top: 0.8rem;
+}
+
+.c4 {
+  display: block;
+  font-family: inherit;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  width: 100%;
+  min-height: 10.5em;
+  line-height: 1.5em;
+  margin: 2.5rem 0 0 0;
+  padding: 0.5em;
+  border: 1px solid #818181;
+  color: #424242;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-gicCDI bOhQgT"
+        className="c1"
       >
         <svg
           fill="none"
@@ -140,10 +539,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c2"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -153,7 +552,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="sc-kgflAQ eaFulQ"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -161,7 +560,7 @@ Array [
         value=""
       />
       <div
-        className="sc-dmRaPn bqloFr"
+        className="c5"
       >
         <div>
           <span>
@@ -174,8 +573,160 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c1 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c1:not([disabled]) {
+  cursor: pointer;
+}
+
+.c1:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c1:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c1:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -184,7 +735,7 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -198,18 +749,79 @@ Array [
 `;
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c1 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c3 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  color: #6f6f6f;
+  margin: 0;
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-dIouRR cFtMLn"
+  className="c0"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-hHLeRK iiUBNd"
+      className="c1"
     >
       <div
-        className="sc-fnykZs felUKW question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -218,7 +830,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
       />
     </div>
     <p
-      className="sc-iIPllB daxIyd"
+      className="c3"
     >
       Unanswered
     </p>
@@ -227,18 +839,122 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c1 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c3 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 1rem 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c5 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: bold;
+  color: #424242;
+}
+
+.c6 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+  white-space: pre-wrap;
+}
+
+.c6 .feedback-label {
+  color: #424242;
+  font-weight: bold;
+}
+
+.c4 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c4 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c4 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-dIouRR cFtMLn"
+  className="c0"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-hHLeRK iiUBNd"
+      className="c1"
     >
       <div
-        className="sc-fnykZs felUKW question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -247,22 +963,22 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       />
     </div>
     <div
-      className="sc-bBrHrO cGVwzt"
+      className="c3"
     >
       Photosynthesis converts sunlight into chemical energy.
     </div>
     <div
-      className="sc-ikZpkk bYyNzB"
+      className="c4"
       role="status"
     >
       <div
-        className="sc-bZkfAO GxfWv"
+        className="c5"
       >
         Score: 
         9/10
       </div>
       <div
-        className="sc-kLLXSd ibpWvX"
+        className="c6"
       >
         <span
           className="feedback-label"
@@ -271,7 +987,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
         </span>
          
         <span
-          className="sc-fnykZs felUKW"
+          className="c2"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>Excellent work!</p>",
@@ -285,18 +1001,264 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
+.c13 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c13:not([disabled]) {
+  cursor: pointer;
+}
+
+.c13:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c13:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c13:disabled {
+  opacity: 0.4;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c9 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c10 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c10::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c10::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c10:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c10::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c10:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c10:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c11 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c11:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c11:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c1 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 1rem 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-top: 2.5rem;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-dIouRR cFtMLn"
+  className="c0"
   data-test-id="student-free-response"
 >
   <div
     className="step-card-body"
   >
     <div
-      className="sc-hHLeRK iiUBNd"
+      className="c1"
     >
       <div
-        className="sc-fnykZs felUKW question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -305,35 +1267,35 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
       />
     </div>
     <div
-      className="sc-cxabCf bCymYa"
+      className="c3"
     >
       <div
-        className="sc-llJcti hVapre"
+        className="c4"
       >
         <div
-          className="sc-bBrHrO cGVwzt"
+          className="c5"
         >
           Photosynthesis converts sunlight into chemical energy.
         </div>
       </div>
       <div
-        className="sc-gsnTZi cSdbEu"
+        className="c6"
       >
         <div
-          className="sc-dkzDqf gNmSNg"
+          className="c7"
         >
           <div
-            className="sc-eCYdqJ ldOqjj"
+            className="c8"
           >
             <label
-              className="sc-hKMtZM dwUXki"
+              className="c9"
               htmlFor="frg-0-score"
             >
               Points
             </label>
             <input
               aria-label="Score"
-              className="sc-jSMfEi iGMKCY"
+              className="c10"
               disabled={false}
               id="frg-0-score"
               max={10}
@@ -351,17 +1313,17 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           </div>
         </div>
         <div
-          className="sc-dkzDqf gNmSNg"
+          className="c7"
         >
           <label
-            className="sc-hKMtZM dwUXki"
+            className="c9"
             htmlFor="frg-0-comment"
           >
             Comment
           </label>
           <textarea
             aria-label="Comment"
-            className="sc-gKXOVf bbxjYD"
+            className="c11"
             disabled={false}
             id="frg-0-comment"
             onChange={[Function]}
@@ -370,10 +1332,10 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
           />
         </div>
         <div
-          className="sc-iBkjds crHxek"
+          className="c12"
         >
           <button
-            className="sc-bczRLJ fLTvYy"
+            className="c13"
             disabled={true}
             onClick={[Function]}
           >
@@ -388,15 +1350,130 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 
 exports[`Free Response Input matches snapshot - saving state 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c2 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  margin: 8px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  line-height: 1.6rem;
+  color: #6f6f6f;
+}
+
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
+  color: #c2002f;
+}
+
+.c5 div > span {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  line-height: 16px;
+}
+
+.c5 div > span + span {
+  margin-left: 1rem;
+}
+
+.c5 .last-submitted + * {
+  margin-top: 0.8rem;
+}
+
+.c4 {
+  display: block;
+  font-family: inherit;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  width: 100%;
+  min-height: 10.5em;
+  line-height: 1.5em;
+  margin: 2.5rem 0 0 0;
+  padding: 0.5em;
+  border: 1px solid #818181;
+  color: #424242;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-gicCDI bOhQgT"
+        className="c1"
       >
         <svg
           fill="none"
@@ -438,10 +1515,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c2"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -451,7 +1528,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="sc-kgflAQ eaFulQ"
+        className="c4"
         data-test-id="free-response-box"
         disabled={true}
         onChange={[Function]}
@@ -459,7 +1536,7 @@ Array [
         value="This is being saved"
       />
       <div
-        className="sc-dmRaPn bqloFr"
+        className="c5"
       >
         <div>
           <span>
@@ -472,8 +1549,160 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c1 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c1:not([disabled]) {
+  cursor: pointer;
+}
+
+.c1:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c1:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c1:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -482,7 +1711,7 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -497,15 +1726,130 @@ Array [
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c2 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  margin: 8px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 1.6rem;
+  color: #6f6f6f;
+}
+
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
+  color: #c2002f;
+}
+
+.c5 div > span {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  line-height: 16px;
+}
+
+.c5 div > span + span {
+  margin-left: 1rem;
+}
+
+.c5 .last-submitted + * {
+  margin-top: 0.8rem;
+}
+
+.c4 {
+  display: block;
+  font-family: inherit;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  width: 100%;
+  min-height: 10.5em;
+  line-height: 1.5em;
+  margin: 2.5rem 0 0 0;
+  padding: 0.5em;
+  border: 1px solid #818181;
+  color: #424242;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-gicCDI bOhQgT"
+        className="c1"
       >
         <svg
           fill="none"
@@ -547,10 +1891,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c2"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -560,7 +1904,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="sc-kgflAQ eaFulQ"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -568,7 +1912,7 @@ Array [
         value="Previously submitted answer"
       />
       <div
-        className="sc-dmRaPn kYZzhV"
+        className="c5"
       >
         <div>
           <span
@@ -589,8 +1933,172 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c1 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c1:not([disabled]) {
+  cursor: pointer;
+}
+
+.c1:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c1:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c1:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+.c2 {
+  background-color: #757575;
+}
+
+.c2:hover:not(:disabled) {
+  background-color: #818181;
+}
+
+.c2:active:not(:disabled) {
+  background-color: #5f6163;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -599,14 +2107,14 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy sc-himrzO iuzGPh"
+          className="c1 c2"
           disabled={true}
           onClick={[Function]}
         >
           Cancel
         </button>
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="update-answer-btn"
           disabled={true}
           onClick={[Function]}
@@ -614,7 +2122,7 @@ Array [
           Update
         </button>
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="continue-btn"
           disabled={false}
           onClick={[Function]}
@@ -629,15 +2137,130 @@ Array [
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c2 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  margin: 8px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  line-height: 1.6rem;
+  color: #6f6f6f;
+}
+
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
+  color: #c2002f;
+}
+
+.c5 div > span {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  line-height: 16px;
+}
+
+.c5 div > span + span {
+  margin-left: 1rem;
+}
+
+.c5 .last-submitted + * {
+  margin-top: 0.8rem;
+}
+
+.c4 {
+  display: block;
+  font-family: inherit;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  width: 100%;
+  min-height: 10.5em;
+  line-height: 1.5em;
+  margin: 2.5rem 0 0 0;
+  padding: 0.5em;
+  border: 1px solid #818181;
+  color: #424242;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-gicCDI bOhQgT"
+        className="c1"
       >
         <svg
           fill="none"
@@ -679,10 +2302,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c2"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -692,7 +2315,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="sc-kgflAQ eaFulQ"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -700,7 +2323,7 @@ Array [
         value="Photosynthesis converts light energy into chemical energy."
       />
       <div
-        className="sc-dmRaPn bqloFr"
+        className="c5"
       >
         <div>
           <span>
@@ -713,8 +2336,160 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c1 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c1:not([disabled]) {
+  cursor: pointer;
+}
+
+.c1:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c1:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c1:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -723,7 +2498,7 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
@@ -738,15 +2513,130 @@ Array [
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
 Array [
-  <div
-    className="sc-dIouRR cFtMLn"
+  .c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c0 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  padding-bottom: 1rem;
+}
+
+.c2 {
+  font-size: calc(2rem * var(--content-text-scale));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  margin: 8px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  line-height: 1.6rem;
+  color: #6f6f6f;
+}
+
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
+  color: #c2002f;
+}
+
+.c5 div > span {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  line-height: 16px;
+}
+
+.c5 div > span + span {
+  margin-left: 1rem;
+}
+
+.c5 .last-submitted + * {
+  margin-top: 0.8rem;
+}
+
+.c4 {
+  display: block;
+  font-family: inherit;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  width: 100%;
+  min-height: 10.5em;
+  line-height: 1.5em;
+  margin: 2.5rem 0 0 0;
+  padding: 0.5em;
+  border: 1px solid #818181;
+  color: #424242;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFF5E0;
+  padding-left: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
+@media (max-width:999px) {
+  .c0 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+<div
+    className="c0"
     data-test-id="student-free-response"
   >
     <div
       className="step-card-body"
     >
       <div
-        className="sc-gicCDI bOhQgT"
+        className="c1"
       >
         <svg
           fill="none"
@@ -788,10 +2678,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="sc-hHLeRK iiUBNd"
+        className="c2"
       >
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -801,7 +2691,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="sc-kgflAQ eaFulQ"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -809,7 +2699,7 @@ Array [
         value=""
       />
       <div
-        className="sc-dmRaPn kYZzhV"
+        className="c5"
       >
         <div>
           <span
@@ -830,8 +2720,160 @@ Array [
       </div>
     </div>
   </div>,
-  <div
-    className="sc-jIZahH eISIrg step-card-footer"
+  .c1 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c1:not([disabled]) {
+  cursor: pointer;
+}
+
+.c1:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c1:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c1:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c0 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c0 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c0 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c0 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c0 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c0 .controls button:has(~ button),
+.c0 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c0 .points {
+    max-width: 400px;
+  }
+}
+
+<div
+    className="c0 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -840,7 +2882,7 @@ Array [
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c1"
           data-test-id="submit-answer-btn"
           disabled={true}
           onClick={[Function]}

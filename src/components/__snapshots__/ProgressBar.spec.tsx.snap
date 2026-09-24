@@ -1,24 +1,281 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProgressBar matches snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c2:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #0D7741;
+  background-color: #E8F4D8;
+}
+
+.c5:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  box-shadow: 0px 1px 4px 0px #00000066;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c6 + [data-icon] {
+  bottom: 0;
+  right: 0;
+}
+
+.c6:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #976502;
+  background-color: #FEDE9F;
+}
+
+.c7:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  background-color: #e5e5e5;
+}
+
+.c8:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #ffffff;
+  background-color: #424242;
+}
+
+.c10:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c3 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c9 {
+  color: #5f6163;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c4 {
+  background-color: #026AA1;
+  border: 0.2rem solid #ffffff;
+  position: absolute;
+  top: 0.1rem;
+  left: 3.2rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 1.6rem 0.8rem;
+  }
+}
+
 <nav
   aria-label="Breadcrumbs"
-  className="sc-bczRLJ bFkqgV"
+  className="c0"
 >
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -43,23 +300,23 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 2 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf kKjkNT"
+      className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
       data-prefix="fas"
@@ -84,19 +341,19 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="location"
       aria-label="Question 3"
-      className="sc-dkzDqf hBCaja"
+      className="c6"
       onClick={[Function]}
     >
       3
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -121,23 +378,23 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 4 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -162,19 +419,19 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf kQysdn"
+      className="c7"
       onClick={[Function]}
     >
       5
     </button>
     <svg
       aria-label="Partial credit"
-      className="svg-inline--fa fa-p sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
       data-prefix="fas"
@@ -199,19 +456,19 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf btPlio"
+      className="c8"
       onClick={[Function]}
     >
       6
     </button>
     <svg
       aria-label="Not yet graded"
-      className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
+      className="svg-inline--fa fa-circle c9"
       color="#5f6163"
       data-icon="circle"
       data-prefix="fas"
@@ -236,12 +493,12 @@ exports[`ProgressBar matches snapshot 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf jIIHtX"
+      className="c10"
       onClick={[Function]}
     >
       <svg
@@ -262,24 +519,293 @@ exports[`ProgressBar matches snapshot 1`] = `
 `;
 
 exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c2:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #0D7741;
+  background-color: #E8F4D8;
+}
+
+.c5:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  box-shadow: 0px 1px 4px 0px #00000066;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c7 + [data-icon] {
+  bottom: 0;
+  right: 0;
+}
+
+.c7:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #976502;
+  background-color: #FEDE9F;
+}
+
+.c8:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  background-color: #e5e5e5;
+}
+
+.c9:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #ffffff;
+  background-color: #424242;
+}
+
+.c11:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c3 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c10 {
+  color: #5f6163;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c4 {
+  background-color: #026AA1;
+  border: 0.2rem solid #ffffff;
+  position: absolute;
+  top: 0.1rem;
+  left: 3.2rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
+}
+
+.c6 {
+  background-color: #026AA1;
+  border: 0.2rem solid #ffffff;
+  position: absolute;
+  top: 0.1rem;
+  left: 3.8rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 1.6rem 0.8rem;
+  }
+}
+
 <nav
   aria-label="Breadcrumbs"
-  className="sc-bczRLJ bFkqgV"
+  className="c0"
 >
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -304,23 +830,23 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 2 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf kKjkNT"
+      className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
       data-prefix="fas"
@@ -345,19 +871,19 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 3"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -382,23 +908,23 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 4 - Feedback"
-      className="sc-eCYdqJ jxvaNZ"
+      className="c6"
     />
     <button
       aria-current="location"
       aria-label="Question 4"
-      className="sc-dkzDqf hBCaja"
+      className="c7"
       onClick={[Function]}
     >
       4
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -423,19 +949,19 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf kQysdn"
+      className="c8"
       onClick={[Function]}
     >
       5
     </button>
     <svg
       aria-label="Partial credit"
-      className="svg-inline--fa fa-p sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
       data-prefix="fas"
@@ -460,19 +986,19 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf btPlio"
+      className="c9"
       onClick={[Function]}
     >
       6
     </button>
     <svg
       aria-label="Not yet graded"
-      className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
+      className="svg-inline--fa fa-circle c10"
       color="#5f6163"
       data-icon="circle"
       data-prefix="fas"
@@ -497,12 +1023,12 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf jIIHtX"
+      className="c11"
       onClick={[Function]}
     >
       <svg
@@ -523,24 +1049,251 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
 `;
 
 exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c2:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #0D7741;
+  background-color: #E8F4D8;
+}
+
+.c5:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  box-shadow: 0px 1px 4px 0px #00000066;
+  color: #976502;
+  background-color: #FEDE9F;
+}
+
+.c6 + [data-icon] {
+  bottom: 0;
+  right: 0;
+}
+
+.c6:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  background-color: #e5e5e5;
+}
+
+.c7:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #ffffff;
+  background-color: #424242;
+}
+
+.c9:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c3 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c8 {
+  color: #5f6163;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c4 {
+  background-color: #026AA1;
+  border: 0.2rem solid #ffffff;
+  position: absolute;
+  top: 0.1rem;
+  left: 3.2rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 1.6rem 0.8rem;
+  }
+}
+
 <nav
   aria-label="Breadcrumbs"
-  className="sc-bczRLJ bFkqgV"
+  className="c0"
 >
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -565,23 +1318,23 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 2 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf kKjkNT"
+      className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
       data-prefix="fas"
@@ -606,19 +1359,19 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 3"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -643,23 +1396,23 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 4 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -684,19 +1437,19 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="location"
       aria-label="Question 5"
-      className="sc-dkzDqf iEiZmZ"
+      className="c6"
       onClick={[Function]}
     >
       5
     </button>
     <svg
       aria-label="Partial credit"
-      className="svg-inline--fa fa-p sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
       data-prefix="fas"
@@ -721,19 +1474,19 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf btPlio"
+      className="c7"
       onClick={[Function]}
     >
       6
     </button>
     <svg
       aria-label="Not yet graded"
-      className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
+      className="svg-inline--fa fa-circle c8"
       color="#5f6163"
       data-icon="circle"
       data-prefix="fas"
@@ -758,12 +1511,12 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Assignment status"
-      className="sc-dkzDqf jIIHtX"
+      className="c9"
       onClick={[Function]}
     >
       <svg
@@ -784,24 +1537,251 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
 `;
 
 exports[`ProgressBar matches snapshot when status step is active 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c1:last-child {
+  margin-right: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #C22032;
+  background-color: #F8E8EA;
+}
+
+.c2:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #0D7741;
+  background-color: #E8F4D8;
+}
+
+.c5:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  color: #976502;
+  background-color: #FEDE9F;
+}
+
+.c6:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 0.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  background-color: #e5e5e5;
+}
+
+.c7:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #424242;
+  box-shadow: 0px 1px 4px 0px #00000066;
+  color: #ffffff;
+  background-color: #424242;
+}
+
+.c9 + [data-icon] {
+  bottom: 0;
+  right: 0;
+}
+
+.c9:hover {
+  box-shadow: 0px 1px 4px 0px #00000066;
+}
+
+.c3 {
+  color: #ffffff;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c8 {
+  color: #5f6163;
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.3rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+.c4 {
+  background-color: #026AA1;
+  border: 0.2rem solid #ffffff;
+  position: absolute;
+  top: 0.1rem;
+  left: 3.2rem;
+  height: 1rem;
+  width: 1rem;
+  padding: 0.2rem;
+  border-radius: 80%;
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 1.6rem 0.8rem;
+  }
+}
+
 <nav
   aria-label="Breadcrumbs"
-  className="sc-bczRLJ bFkqgV"
+  className="c0"
 >
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 1"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -826,23 +1806,23 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 2 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 2"
-      className="sc-dkzDqf kKjkNT"
+      className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
       aria-label="Correct"
-      className="svg-inline--fa fa-check sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
       data-prefix="fas"
@@ -867,19 +1847,19 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 3"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -904,23 +1884,23 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-label="Question 4 - Feedback"
-      className="sc-eCYdqJ fTgISf"
+      className="c4"
     />
     <button
       aria-current="false"
       aria-label="Question 4"
-      className="sc-dkzDqf jNtHoM"
+      className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
       aria-label="Incorrect"
-      className="svg-inline--fa fa-xmark sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
       data-prefix="fas"
@@ -945,19 +1925,19 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 5"
-      className="sc-dkzDqf kQysdn"
+      className="c6"
       onClick={[Function]}
     >
       5
     </button>
     <svg
       aria-label="Partial credit"
-      className="svg-inline--fa fa-p sc-hKMtZM eLvEnh"
+      className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
       data-prefix="fas"
@@ -982,19 +1962,19 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="false"
       aria-label="Question 6"
-      className="sc-dkzDqf btPlio"
+      className="c7"
       onClick={[Function]}
     >
       6
     </button>
     <svg
       aria-label="Not yet graded"
-      className="svg-inline--fa fa-circle sc-hKMtZM fMzUPg"
+      className="svg-inline--fa fa-circle c8"
       color="#5f6163"
       data-icon="circle"
       data-prefix="fas"
@@ -1019,12 +1999,12 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
     </svg>
   </span>
   <span
-    className="sc-gsnTZi cxjQPl"
+    className="c1"
   >
     <button
       aria-current="location"
       aria-label="Assignment status"
-      className="sc-dkzDqf gCxTmh"
+      className="c9"
       onClick={[Function]}
     >
       <svg
