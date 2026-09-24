@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useTypesetMath } from "../hooks/useTypesetMath";
 import { createMediaModalManager } from "./modalManager";
 
@@ -39,6 +39,9 @@ export const Content = (<T extends ComponentType | undefined>(
   const typesetMath = useTypesetMath();
   const ref = useRef<HTMLDivElement>(null);
   const DivOrSpan = block ? 'div' : 'span';
+  // React 19 compares this prop by identity and resets innerHTML when it changes, which
+  // discards typeset math on every re-render; keep the same object until the html changes
+  const innerHtml = useMemo(() => ({ __html: html }), [html]);
   const mediaModalManager = createMediaModalManager();
   const MediaModalPortal = mediaModalManager.MediaModalPortal;
 
@@ -62,7 +65,7 @@ export const Content = (<T extends ComponentType | undefined>(
 
   return (
     <>
-      <DivOrSpan ref={ref} dangerouslySetInnerHTML={{ __html: html }} {...props} />
+      <DivOrSpan ref={ref} dangerouslySetInnerHTML={innerHtml} {...props} />
       <MediaModalPortal />
     </>
   );
