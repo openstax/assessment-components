@@ -1,6 +1,7 @@
-import { ExercisePreview } from './ExercisePreview';
+import { ExercisePreview, ExercisePreviewProps } from './ExercisePreview';
 import renderer from 'react-test-renderer';
 import { ExerciseData, QuestionState } from '../types';
+import { byClass, findAllNodes, textOf } from '../test/utils';
 
 describe('ExercisePreview', () => {
   describe('using step data', () => {
@@ -142,44 +143,37 @@ describe('ExercisePreview', () => {
       };
     });
 
-    it('matches snapshot without chosen answer', () => {
-      const tree = renderer.create(
-        <ExercisePreview
-          exercise={exercise}
-          questionStates={questionStates}
-          showAllFeedback={true}
-          showChosenAnswer={false}
-          showCorrectAnswer={true}
-        />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+    const render = (overrides: Partial<ExercisePreviewProps> = {}) => renderer.create(
+      <ExercisePreview
+        exercise={exercise}
+        questionStates={questionStates}
+        showAllFeedback={true}
+        showCorrectAnswer={true}
+        {...overrides}
+      />
+    ).toJSON();
+
+    const checkedAnswers = (tree: ReturnType<typeof render>) =>
+      findAllNodes(tree, node => node.type === 'input').map(input => !!input.props.checked);
+
+    // labelAnswers is what turns on the Correct/Incorrect indicator and its live region
+    const indicators = (tree: ReturnType<typeof render>) =>
+      findAllNodes(tree, byClass('answer-indicator-live')).map(textOf);
+
+    it('does not mark the chosen answer unless asked', () => {
+      expect(checkedAnswers(render({ showChosenAnswer: false }))).toEqual([false, false]);
     });
 
-    it('matches snapshot with chosen answer', () => {
-      const tree = renderer.create(
-        <ExercisePreview
-          exercise={exercise}
-          questionStates={questionStates}
-          showAllFeedback={true}
-          showChosenAnswer={true}
-          showCorrectAnswer={true}
-        />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+    it('marks the chosen answer', () => {
+      expect(checkedAnswers(render({ showChosenAnswer: true }))).toEqual([true, false]);
     });
 
-    it('matches snapshot with labeled answers', () => {
-      const tree = renderer.create(
-        <ExercisePreview
-          exercise={exercise}
-          questionStates={questionStates}
-          showAllFeedback={true}
-          showChosenAnswer={true}
-          showCorrectAnswer={true}
-          labelAnswers={true}
-        />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+    it('labels answers only when asked', () => {
+      // the default: no indicator, and so no live region to announce one
+      expect(indicators(render({ showChosenAnswer: true }))).toEqual([]);
+
+      expect(indicators(render({ showChosenAnswer: true, labelAnswers: true })))
+        .toEqual(['Correct Answer', '']);
     });
   });
 });
