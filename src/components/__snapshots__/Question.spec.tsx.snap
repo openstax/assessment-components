@@ -22,6 +22,18 @@ exports[`Question defaults QuestionHtml html 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -96,10 +108,6 @@ exports[`Question defaults QuestionHtml html 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -380,7 +388,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -397,17 +405,25 @@ exports[`Question defaults QuestionHtml html 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -418,12 +434,12 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -440,17 +456,25 @@ exports[`Question defaults QuestionHtml html 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -461,7 +485,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -491,6 +515,18 @@ exports[`Question defaults collaborator_solutions 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -565,10 +601,6 @@ exports[`Question defaults collaborator_solutions 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -849,7 +881,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -866,17 +898,25 @@ exports[`Question defaults collaborator_solutions 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -887,12 +927,12 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -909,17 +949,25 @@ exports[`Question defaults collaborator_solutions 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -930,7 +978,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -960,6 +1008,18 @@ exports[`Question defaults formats 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -1034,10 +1094,6 @@ exports[`Question defaults formats 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -1318,7 +1374,7 @@ exports[`Question defaults formats 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -1335,17 +1391,25 @@ exports[`Question defaults formats 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -1356,12 +1420,12 @@ exports[`Question defaults formats 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -1378,17 +1442,25 @@ exports[`Question defaults formats 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -1399,7 +1471,7 @@ exports[`Question defaults formats 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -1438,6 +1510,18 @@ exports[`Question matches snapshot 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -1512,10 +1596,6 @@ exports[`Question matches snapshot 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -1796,7 +1876,7 @@ exports[`Question matches snapshot 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -1813,17 +1893,25 @@ exports[`Question matches snapshot 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -1834,12 +1922,12 @@ exports[`Question matches snapshot 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -1856,17 +1944,25 @@ exports[`Question matches snapshot 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -1877,7 +1973,7 @@ exports[`Question matches snapshot 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -1907,11 +2003,11 @@ exports[`Question renders composed feedback below the answers 1`] = `
   height: auto;
 }
 
-.c3 .detailed-solution {
+.c4 .detailed-solution {
   margin-bottom: 1rem;
 }
 
-.c3 .detailed-solution .header {
+.c4 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -1921,9 +2017,21 @@ exports[`Question renders composed feedback below the answers 1`] = `
   flex-basis: 0;
 }
 
-.c3 .detailed-solution .solution {
+.c4 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
+}
+
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c1 {
@@ -2000,10 +2108,6 @@ exports[`Question renders composed feedback below the answers 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -2284,7 +2388,7 @@ exports[`Question renders composed feedback below the answers 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -2301,17 +2405,25 @@ exports[`Question renders composed feedback below the answers 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -2322,12 +2434,12 @@ exports[`Question renders composed feedback below the answers 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -2344,17 +2456,25 @@ exports[`Question renders composed feedback below the answers 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -2365,11 +2485,11 @@ exports[`Question renders composed feedback below the answers 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
       <div
-        className="c3"
+        className="c4"
         role="status"
       >
         <div
@@ -2417,6 +2537,18 @@ exports[`Question renders exercise uid 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -2491,10 +2623,6 @@ exports[`Question renders exercise uid 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -2775,7 +2903,7 @@ exports[`Question renders exercise uid 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -2792,17 +2920,25 @@ exports[`Question renders exercise uid 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -2813,12 +2949,12 @@ exports[`Question renders exercise uid 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -2835,17 +2971,25 @@ exports[`Question renders exercise uid 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -2856,7 +3000,7 @@ exports[`Question renders exercise uid 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
       <div
@@ -2891,6 +3035,18 @@ exports[`Question renders formats 1`] = `
   height: auto;
 }
 
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c1 {
   width: 100%;
 }
@@ -2965,10 +3121,6 @@ exports[`Question renders formats 1`] = `
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -3249,7 +3401,7 @@ exports[`Question renders formats 1`] = `
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -3266,17 +3418,25 @@ exports[`Question renders formats 1`] = `
               htmlFor="1-option-0"
             >
               <span
-                aria-label="Choice A:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="A"
                 data-test-id="answer-choice-A"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice A:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -3287,12 +3447,12 @@ exports[`Question renders formats 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
         <div
           className="openstax-answer"
         >
-          <section
+          <div
             className="answers-answer disabled"
           >
             <input
@@ -3309,17 +3469,25 @@ exports[`Question renders formats 1`] = `
               htmlFor="1-option-1"
             >
               <span
-                aria-label="Choice B:"
+                aria-hidden="true"
                 className="answer-letter-wrapper"
                 data-answer-choice="B"
                 data-test-id="answer-choice-B"
               />
-              <div
-                aria-atomic="true"
-                aria-live="polite"
-                className="answer-answer"
-                role="status"
+              <span
+                className="c3 answer-choice-label"
               >
+                Choice B:
+              </span>
+              <div
+                className="answer-answer"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-live="polite"
+                  className="answer-indicator-live"
+                  role="status"
+                />
                 <span
                   className="c2 answer-content"
                   dangerouslySetInnerHTML={
@@ -3330,7 +3498,7 @@ exports[`Question renders formats 1`] = `
                 />
               </div>
             </label>
-          </section>
+          </div>
         </div>
       </div>
       <div
