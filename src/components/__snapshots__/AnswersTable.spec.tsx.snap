@@ -9,7 +9,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled"
     >
       <div
@@ -30,17 +30,25 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
         onKeyPress={[Function]}
       >
         <span
-          aria-label="Choice A:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="A"
           data-test-id="answer-choice-A"
         />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
         >
+          Choice A:
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
+          />
           <span
             className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
@@ -56,12 +64,12 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled"
     >
       <div
@@ -82,17 +90,25 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
         onKeyPress={[Function]}
       >
         <span
-          aria-label="Choice B:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="B"
           data-test-id="answer-choice-B"
         />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
         >
+          Choice B:
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
+          />
           <span
             className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
@@ -108,7 +124,7 @@ exports[`AnswersTable matches tutor teacher-preview snapshot 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
 </div>
 `;
@@ -122,7 +138,7 @@ exports[`AnswersTable renders all feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
@@ -140,23 +156,32 @@ exports[`AnswersTable renders all feedback 1`] = `
         htmlFor="1-option-0"
       >
         <span
-          aria-label="Selected Choice A:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="A"
           data-test-id="answer-choice-A"
         />
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
+        >
+          Choice A:
+        </span>
         <div
-          aria-atomic="true"
-          aria-live="polite"
           className="answer-answer"
-          role="status"
         >
           <div
-            className="sc-gKXOVf dWxWHr"
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
           >
-            <span>
-              Incorrect Answer
-            </span>
+            <div
+              className="sc-iBkjds YtrER"
+            >
+              <span>
+                Incorrect Answer
+              </span>
+            </div>
           </div>
           <span
             className="sc-jSMfEi buOdRb answer-content"
@@ -168,7 +193,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <aside
     className="question-feedback bottom"
@@ -192,7 +217,7 @@ exports[`AnswersTable renders all feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled answer-correct"
     >
       <input
@@ -210,23 +235,32 @@ exports[`AnswersTable renders all feedback 1`] = `
         htmlFor="1-option-1"
       >
         <span
-          aria-label="Choice B:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="B"
           data-test-id="answer-choice-B"
         />
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
+        >
+          Choice B:
+        </span>
         <div
-          aria-atomic="true"
-          aria-live="polite"
           className="answer-answer"
-          role="status"
         >
           <div
-            className="sc-gKXOVf QPaPs"
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
           >
-            <span>
-              Correct Answer
-            </span>
+            <div
+              className="sc-iBkjds hrBrya"
+            >
+              <span>
+                Correct Answer
+              </span>
+            </div>
           </div>
           <span
             className="sc-jSMfEi buOdRb answer-content"
@@ -238,7 +272,7 @@ exports[`AnswersTable renders all feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <aside
     className="question-feedback bottom"
@@ -271,7 +305,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled answer-selected answer-correct"
     >
       <input
@@ -289,23 +323,32 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
         htmlFor="1-option-0"
       >
         <span
-          aria-label="Selected Choice A:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="A"
           data-test-id="answer-choice-A"
         />
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
+        >
+          Choice A:
+        </span>
         <div
-          aria-atomic="true"
-          aria-live="polite"
           className="answer-answer"
-          role="status"
         >
           <div
-            className="sc-gKXOVf QPaPs"
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
           >
-            <span>
-              Correct Answer
-            </span>
+            <div
+              className="sc-iBkjds hrBrya"
+            >
+              <span>
+                Correct Answer
+              </span>
+            </div>
           </div>
           <span
             className="sc-jSMfEi buOdRb answer-content"
@@ -317,7 +360,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <aside
     className="question-feedback bottom"
@@ -341,7 +384,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled"
     >
       <input
@@ -358,17 +401,25 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
         htmlFor="1-option-1"
       >
         <span
-          aria-label="Choice B:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="B"
           data-test-id="answer-choice-B"
         />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
         >
+          Choice B:
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
+          />
           <span
             className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
@@ -379,7 +430,7 @@ exports[`AnswersTable renders correct answer feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
 </div>
 `;
@@ -393,7 +444,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled answer-selected answer-incorrect"
     >
       <input
@@ -411,23 +462,32 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         htmlFor="1-option-0"
       >
         <span
-          aria-label="Selected Choice A:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="A"
           data-test-id="answer-choice-A"
         />
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
+        >
+          Choice A:
+        </span>
         <div
-          aria-atomic="true"
-          aria-live="polite"
           className="answer-answer"
-          role="status"
         >
           <div
-            className="sc-gKXOVf dWxWHr"
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
           >
-            <span>
-              Incorrect Answer
-            </span>
+            <div
+              className="sc-iBkjds YtrER"
+            >
+              <span>
+                Incorrect Answer
+              </span>
+            </div>
           </div>
           <span
             className="sc-jSMfEi buOdRb answer-content"
@@ -439,7 +499,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <aside
     className="question-feedback bottom"
@@ -463,7 +523,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled answer-correct"
     >
       <input
@@ -480,23 +540,32 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
         htmlFor="1-option-1"
       >
         <span
-          aria-label="Choice B:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="B"
           data-test-id="answer-choice-B"
         />
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
+        >
+          Choice B:
+        </span>
         <div
-          aria-atomic="true"
-          aria-live="polite"
           className="answer-answer"
-          role="status"
         >
           <div
-            className="sc-gKXOVf QPaPs"
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
           >
-            <span>
-              Correct Answer
-            </span>
+            <div
+              className="sc-iBkjds hrBrya"
+            >
+              <span>
+                Correct Answer
+              </span>
+            </div>
           </div>
           <span
             className="sc-jSMfEi buOdRb answer-content"
@@ -508,7 +577,7 @@ exports[`AnswersTable renders incorrect answer feedback 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
 </div>
 `;
@@ -525,7 +594,7 @@ exports[`AnswersTable renders instructions 1`] = `
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled"
     >
       <input
@@ -542,17 +611,25 @@ exports[`AnswersTable renders instructions 1`] = `
         htmlFor="1-option-0"
       >
         <span
-          aria-label="Choice A:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="A"
           data-test-id="answer-choice-A"
         />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
         >
+          Choice A:
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
+          />
           <span
             className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
@@ -563,12 +640,12 @@ exports[`AnswersTable renders instructions 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
   <div
     className="openstax-answer"
   >
-    <section
+    <div
       className="answers-answer disabled"
     >
       <input
@@ -585,17 +662,25 @@ exports[`AnswersTable renders instructions 1`] = `
         htmlFor="1-option-1"
       >
         <span
-          aria-label="Choice B:"
+          aria-hidden="true"
           className="answer-letter-wrapper"
           data-answer-choice="B"
           data-test-id="answer-choice-B"
         />
-        <div
-          aria-atomic="true"
-          aria-live="polite"
-          className="answer-answer"
-          role="status"
+        <span
+          className="sc-gKXOVf hSoFAv answer-choice-label"
         >
+          Choice B:
+        </span>
+        <div
+          className="answer-answer"
+        >
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="answer-indicator-live"
+            role="status"
+          />
           <span
             className="sc-jSMfEi buOdRb answer-content"
             dangerouslySetInnerHTML={
@@ -606,7 +691,7 @@ exports[`AnswersTable renders instructions 1`] = `
           />
         </div>
       </label>
-    </section>
+    </div>
   </div>
 </div>
 `;

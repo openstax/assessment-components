@@ -9,7 +9,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div>
         <div
@@ -65,12 +65,12 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -79,7 +79,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected answer-correct"
                           >
                             <input
@@ -97,16 +97,18 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -118,7 +120,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <aside
                           className="question-feedback bottom"
@@ -142,7 +144,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -159,16 +161,18 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -180,7 +184,7 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -205,7 +209,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div>
         <div
@@ -261,12 +265,12 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -275,7 +279,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected answer-correct"
                           >
                             <input
@@ -293,23 +297,32 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <div
-                                  className="sc-bZkfAO ASJIE"
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
                                 >
-                                  <span>
-                                    Correct Answer
-                                  </span>
+                                  <div
+                                    className="sc-kLLXSd jiBthn"
+                                  >
+                                    <span>
+                                      Correct Answer
+                                    </span>
+                                  </div>
                                 </div>
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -321,7 +334,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <aside
                           className="question-feedback bottom"
@@ -345,7 +358,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -362,17 +375,25 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
                                   dangerouslySetInnerHTML={
@@ -383,7 +404,7 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -408,7 +429,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div>
         <div
@@ -464,12 +485,12 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -478,7 +499,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-correct"
                           >
                             <input
@@ -496,16 +517,18 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -517,7 +540,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <aside
                           className="question-feedback bottom"
@@ -541,7 +564,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -558,16 +581,18 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -579,7 +604,7 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -604,7 +629,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -665,12 +690,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -679,7 +704,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-correct"
                           >
                             <input
@@ -696,16 +721,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -717,12 +744,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -739,16 +766,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -760,7 +789,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -785,7 +814,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div
         onBlur={[Function]}
@@ -846,12 +875,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -860,7 +889,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -877,16 +906,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -898,12 +929,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -920,16 +951,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -941,7 +974,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -966,7 +999,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -1027,12 +1060,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -1041,7 +1074,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1058,16 +1091,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1079,12 +1114,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1101,16 +1136,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1122,7 +1159,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1147,7 +1184,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div>
         <div
@@ -1203,12 +1240,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -1217,7 +1254,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-correct"
                           >
                             <input
@@ -1235,16 +1272,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1256,7 +1295,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <aside
                           className="question-feedback bottom"
@@ -1280,7 +1319,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1297,16 +1336,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1318,14 +1359,14 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi fXsfUh step-card-footer"
+                  className="sc-kgUAyh fvLnvc step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1334,7 +1375,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="points"
                     >
                       <div
-                        className="sc-cOFTSb jWtkWy"
+                        className="sc-BeQoi euMCBl"
                         role="status"
                       >
                         <div
