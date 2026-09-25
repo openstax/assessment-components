@@ -1,600 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ExercisePreview using questionStates matches snapshot with chosen answer 1`] = `
-<div
-  className="sc-bjUoiL cNSnhS"
->
-  <div
-    className="sc-ftvSup dWrzXD step-card-outer"
-    data-task-step-id="0"
-  >
-    <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
-    >
-      <div>
-        <div
-          className="step-card"
-        >
-          <div
-            className="sc-papXJ cfFAmn step-card-header"
-          >
-            <div>
-              <h2
-                className="question-info"
-              >
-                <span>
-                  Question 1
-                </span>
-                <span
-                  className="separator"
-                >
-                  |
-                </span>
-                <span
-                  className="question-id"
-                >
-                  ID: 
-                  1@1
-                </span>
-              </h2>
-            </div>
-          </div>
-          <div
-            className="sc-kDDrLX hlpklK"
-          >
-            <div
-              className="sc-gKXOVf ixMVEw"
-            >
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Context",
-                  }
-                }
-              />
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<b>Stimulus HTML</b>",
-                  }
-                }
-              />
-              <div
-                data-test-id="student-exercise-question"
-              >
-                <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
-                  data-question-number={1}
-                  data-test-id="question"
-                >
-                  <div
-                    className="sc-kLLXSd bGXPbi"
-                  >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled answer-selected answer-correct"
-                          >
-                            <input
-                              aria-details="feedback-1234@5-0"
-                              checked={true}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
-                            >
-                              <span
-                                aria-label="Selected Choice A:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
-                        >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
-                            <div
-                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
-                            />
-                          </aside>
-                        </aside>
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled"
-                          >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
-                            >
-                              <span
-                                aria-label="Choice B:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ExercisePreview using questionStates matches snapshot with labeled answers 1`] = `
-<div
-  className="sc-bjUoiL cNSnhS"
->
-  <div
-    className="sc-ftvSup dWrzXD step-card-outer"
-    data-task-step-id="0"
-  >
-    <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
-    >
-      <div>
-        <div
-          className="step-card"
-        >
-          <div
-            className="sc-papXJ cfFAmn step-card-header"
-          >
-            <div>
-              <h2
-                className="question-info"
-              >
-                <span>
-                  Question 1
-                </span>
-                <span
-                  className="separator"
-                >
-                  |
-                </span>
-                <span
-                  className="question-id"
-                >
-                  ID: 
-                  1@1
-                </span>
-              </h2>
-            </div>
-          </div>
-          <div
-            className="sc-kDDrLX hlpklK"
-          >
-            <div
-              className="sc-gKXOVf ixMVEw"
-            >
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Context",
-                  }
-                }
-              />
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<b>Stimulus HTML</b>",
-                  }
-                }
-              />
-              <div
-                data-test-id="student-exercise-question"
-              >
-                <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
-                  data-question-number={1}
-                  data-test-id="question"
-                >
-                  <div
-                    className="sc-kLLXSd bGXPbi"
-                  >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled answer-selected answer-correct"
-                          >
-                            <input
-                              aria-details="feedback-1234@5-0"
-                              checked={true}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
-                            >
-                              <span
-                                aria-label="Selected Choice A:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <div
-                                  className="sc-bZkfAO ASJIE"
-                                >
-                                  <span>
-                                    Correct Answer
-                                  </span>
-                                </div>
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
-                        >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
-                            <div
-                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
-                            />
-                          </aside>
-                        </aside>
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled"
-                          >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
-                            >
-                              <span
-                                aria-label="Choice B:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ExercisePreview using questionStates matches snapshot without chosen answer 1`] = `
-<div
-  className="sc-bjUoiL cNSnhS"
->
-  <div
-    className="sc-ftvSup dWrzXD step-card-outer"
-    data-task-step-id="0"
-  >
-    <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
-    >
-      <div>
-        <div
-          className="step-card"
-        >
-          <div
-            className="sc-papXJ cfFAmn step-card-header"
-          >
-            <div>
-              <h2
-                className="question-info"
-              >
-                <span>
-                  Question 1
-                </span>
-                <span
-                  className="separator"
-                >
-                  |
-                </span>
-                <span
-                  className="question-id"
-                >
-                  ID: 
-                  1@1
-                </span>
-              </h2>
-            </div>
-          </div>
-          <div
-            className="sc-kDDrLX hlpklK"
-          >
-            <div
-              className="sc-gKXOVf ixMVEw"
-            >
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Context",
-                  }
-                }
-              />
-              <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "<b>Stimulus HTML</b>",
-                  }
-                }
-              />
-              <div
-                data-test-id="student-exercise-question"
-              >
-                <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
-                  data-question-number={1}
-                  data-test-id="question"
-                >
-                  <div
-                    className="sc-kLLXSd bGXPbi"
-                  >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled answer-correct"
-                          >
-                            <input
-                              aria-details="feedback-1234@5-0"
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
-                            >
-                              <span
-                                aria-label="Choice A:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
-                        >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
-                            <div
-                              className="sc-jSMfEi buOdRb question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
-                            />
-                          </aside>
-                        </aside>
-                        <div
-                          className="openstax-answer"
-                        >
-                          <section
-                            className="answers-answer disabled"
-                          >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
-                            >
-                              <span
-                                aria-label="Choice B:"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
-                              />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
-                              >
-                                <span
-                                  className="sc-jSMfEi buOdRb answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
 <div
   className="sc-bjUoiL cNSnhS"
@@ -604,7 +9,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -665,12 +70,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -679,7 +84,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-correct"
                           >
                             <input
@@ -696,16 +101,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -717,12 +124,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -739,16 +146,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -760,7 +169,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -785,7 +194,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div
         onBlur={[Function]}
@@ -846,12 +255,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -860,7 +269,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -877,16 +286,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -898,12 +309,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -920,16 +331,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -941,7 +354,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -966,7 +379,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card is-selected"
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -1027,12 +440,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -1041,7 +454,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1058,16 +471,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1079,12 +494,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1101,16 +516,18 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1122,7 +539,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1147,7 +564,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-hTtwUo bULZdT preview-card "
+      className="sc-iBkjds fOGIsS sc-fEOsli jfmfTB exercise-step sc-jgbSNz ekFuqu preview-card "
     >
       <div>
         <div
@@ -1203,12 +620,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk bsPWnU openstax-question step-card-body has-correct-answer"
+                  className="sc-jIZahH bTzMzF openstax-question step-card-body has-correct-answer"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="sc-ikZpkk hfCyky"
                   >
                     <div>
                       <div
@@ -1217,7 +634,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-correct"
                           >
                             <input
@@ -1235,16 +652,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice A:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1256,7 +675,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <aside
                           className="question-feedback bottom"
@@ -1280,7 +699,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1297,16 +716,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
+                              <span
+                                className="sc-bZkfAO dGA-DVb answer-choice-label"
+                              >
+                                Choice B:
+                              </span>
                               <div
-                                aria-atomic="true"
-                                aria-live="polite"
                                 className="answer-answer"
-                                role="status"
                               >
                                 <span
                                   className="sc-jSMfEi buOdRb answer-content"
@@ -1318,14 +739,14 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi fXsfUh step-card-footer"
+                  className="sc-kgUAyh fvLnvc step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1334,7 +755,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="points"
                     >
                       <div
-                        className="sc-cOFTSb jWtkWy"
+                        className="sc-BeQoi euMCBl"
                         role="status"
                       >
                         <div
