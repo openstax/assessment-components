@@ -1,11 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  padding: 4rem 0;
+  text-align: center;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  color: #6f6f6f;
+}
+
 <div
-  className="sc-cCsOjp bJlyxh"
+  className="c0"
 >
   <div
-    className="sc-ciZhAO bCEQpj"
+    className="c1"
   >
     All responses have been graded.
   </div>
@@ -13,12 +30,399 @@ exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 `;
 
 exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
+.c28 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c28:not([disabled]) {
+  cursor: pointer;
+}
+
+.c28:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c28:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c28:disabled {
+  opacity: 0.4;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c24 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c25 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c25::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c25::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c25:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c25::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c25:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c25:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c26 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c26:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c26:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c14 {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c14:last-child {
+  border-bottom: none;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+  text-align: left;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+}
+
+.c15:hover {
+  background-color: #f9f9f9;
+}
+
+.c16 {
+  font-weight: 600;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c17 {
+  font-size: calc(1.3rem * var(--content-text-scale));
+  color: #6f6f6f;
+  white-space: nowrap;
+}
+
+.c17 strong {
+  font-weight: 700;
+  color: #424242;
+}
+
+.c5 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #5f6163;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: 1px solid #f1f1f1;
+}
+
+.c19 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.6rem;
+  min-width: 0;
+}
+
+.c20 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 0 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c10 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c10 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c10 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c2 {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.2rem 1.6rem;
+  background-color: #daf3f8;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.c6 {
+  font-size: calc(1.6rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+  margin: 0;
+}
+
+.c7 {
+  font-size: calc(1.3rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #757575;
+  border-radius: 5px;
+  padding: 0.2rem 0.8rem;
+}
+
+.c12 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: calc(1.2rem * var(--content-text-scale));
+  color: #007da4;
+  padding: 0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12:hover {
+  color: #026AA1;
+}
+
+.c8 {
+  padding: 1.6rem 1.6rem 0;
+  background-color: #fdfdfd;
+}
+
+.c9 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+}
+
+.c11 {
+  padding: 0.8rem 1.6rem 1.2rem;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fdfdfd;
+}
+
+.c13 {
+  background-color: #fdfdfd;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
+  background-color: #FFF5E0;
+  border: 1px solid #FDBD3E;
+  color: #976502;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: calc(1.4rem * var(--content-text-scale));
+}
+
 <div
-  className="sc-cCsOjp bJlyxh"
+  className="c0"
 >
   <div
     aria-label="Grading note"
-    className="sc-jdAMXn esqbns"
+    className="c1"
     data-test-id="grading-notice"
     role="note"
   >
@@ -33,29 +437,29 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
      waiting until the due date has passed before grading submissions.
   </div>
   <div
-    className="sc-ivTmOn hrZoZT"
+    className="c2"
   >
     <div
-      className="sc-cxabCf lcSeVF"
+      className="c3"
     >
       <button
         aria-expanded={true}
-        className="sc-llJcti kEWlOR"
+        className="c4"
         onClick={[Function]}
         type="button"
       >
         <span
-          className="sc-crXcEl jrEnlp"
+          className="c5"
         />
         <span
-          className="sc-iIPllB cyTxDe"
+          className="c6"
         >
           Question 
           1
         </span>
       </button>
       <span
-        className="sc-gicCDI jCMVed"
+        className="c7"
       >
         0
         /
@@ -71,13 +475,13 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
       }
     >
       <div
-        className="sc-ikZpkk AiAC"
+        className="c8"
       >
         <div
-          className="sc-jIZahH fnHdag"
+          className="c9"
         >
           <div
-            className="sc-bBrHrO cbuXtO"
+            className="c10"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "<p>Describe Newton's first law.</p>",
@@ -87,10 +491,10 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         </div>
       </div>
       <div
-        className="sc-himrzO isCGPg"
+        className="c11"
       >
         <button
-          className="sc-kLLXSd kHVjOq"
+          className="c12"
           onClick={[Function]}
           type="button"
         >
@@ -98,27 +502,27 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
         </button>
       </div>
       <div
-        className="sc-gXmSlM gUdLJA"
+        className="c13"
       >
         <div
-          className="sc-papXJ fqoXnn"
+          className="c14"
         >
           <button
             aria-expanded={true}
-            className="sc-jqUVSM jfgTeu"
+            className="c15"
             onClick={[Function]}
             type="button"
           >
             <span
-              className="sc-crXcEl jrEnlp"
+              className="c5"
             />
             <span
-              className="sc-kDDrLX huIAKc"
+              className="c16"
             >
               Ada Lovelace
             </span>
             <span
-              className="sc-iqcoie cgZTnQ"
+              className="c17"
             >
               <strong>
                 Points:
@@ -130,7 +534,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
             </span>
           </button>
           <div
-            className="sc-evZas cTOCWP"
+            className="c18"
             style={
               Object {
                 "display": undefined,
@@ -138,32 +542,32 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
             }
           >
             <div
-              className="sc-breuTD EtWdd"
+              className="c19"
             >
               <div
-                className="sc-ksZaOG gvZIGE"
+                className="c20"
               >
                 An object at rest stays at rest.
               </div>
             </div>
             <div
-              className="sc-gsnTZi cSdbEu"
+              className="c21"
             >
               <div
-                className="sc-dkzDqf gNmSNg"
+                className="c22"
               >
                 <div
-                  className="sc-eCYdqJ ldOqjj"
+                  className="c23"
                 >
                   <label
-                    className="sc-hKMtZM dwUXki"
+                    className="c24"
                     htmlFor="frg-0-score"
                   >
                     Points
                   </label>
                   <input
                     aria-label="Score"
-                    className="sc-jSMfEi iGMKCY"
+                    className="c25"
                     disabled={false}
                     id="frg-0-score"
                     max={10}
@@ -181,17 +585,17 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
                 </div>
               </div>
               <div
-                className="sc-dkzDqf gNmSNg"
+                className="c22"
               >
                 <label
-                  className="sc-hKMtZM dwUXki"
+                  className="c24"
                   htmlFor="frg-0-comment"
                 >
                   Comment
                 </label>
                 <textarea
                   aria-label="Comment"
-                  className="sc-gKXOVf bbxjYD"
+                  className="c26"
                   disabled={false}
                   id="frg-0-comment"
                   onChange={[Function]}
@@ -200,10 +604,10 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
                 />
               </div>
               <div
-                className="sc-iBkjds crHxek"
+                className="c27"
               >
                 <button
-                  className="sc-bczRLJ fLTvYy"
+                  className="c28"
                   disabled={true}
                   onClick={[Function]}
                 >

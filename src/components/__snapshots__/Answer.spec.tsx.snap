@@ -1,6 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Answer matches snapshot 1`] = `
+.c0 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c0 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c0 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 <div
   className="openstax-answer"
 >
@@ -34,7 +55,7 @@ exports[`Answer matches snapshot 1`] = `
         role="status"
       >
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c0 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -53,6 +74,27 @@ exports[`Answer matches snapshot 1`] = `
 `;
 
 exports[`Answer renders a checked answer 1`] = `
+.c0 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c0 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c0 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 <div
   className="openstax-answer"
 >
@@ -86,7 +128,7 @@ exports[`Answer renders a checked answer 1`] = `
         role="status"
       >
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c0 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -105,6 +147,34 @@ exports[`Answer renders a checked answer 1`] = `
 `;
 
 exports[`Answer renders a correct answer 1`] = `
+.c1 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c1 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c1 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  color: #0D7741;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
 <div
   className="openstax-answer"
 >
@@ -138,14 +208,14 @@ exports[`Answer renders a correct answer 1`] = `
         role="status"
       >
         <div
-          className="sc-gKXOVf QPaPs"
+          className="c0"
         >
           <span>
             Correct Answer
           </span>
         </div>
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c1 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -164,6 +234,34 @@ exports[`Answer renders a correct answer 1`] = `
 `;
 
 exports[`Answer renders an incorrect answer 1`] = `
+.c1 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c1 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c1 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
 <div
   className="openstax-answer"
 >
@@ -197,14 +295,14 @@ exports[`Answer renders an incorrect answer 1`] = `
         role="status"
       >
         <div
-          className="sc-gKXOVf dWxWHr"
+          className="c0"
         >
           <span>
             Incorrect Answer
           </span>
         </div>
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c1 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -223,6 +321,34 @@ exports[`Answer renders an incorrect answer 1`] = `
 `;
 
 exports[`Answer renders teacher preview 1`] = `
+.c1 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c1 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c1 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c0 {
+  color: #0D7741;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
 <div
   className="openstax-answer"
 >
@@ -263,14 +389,14 @@ exports[`Answer renders teacher preview 1`] = `
         role="status"
       >
         <div
-          className="sc-gKXOVf QPaPs"
+          className="c0"
         >
           <span>
             Correct Answer
           </span>
         </div>
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c1 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>
@@ -289,6 +415,27 @@ exports[`Answer renders teacher preview 1`] = `
 `;
 
 exports[`Answer renders teacher review 1`] = `
+.c0 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c0 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c0 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 <div
   className="openstax-answer"
 >
@@ -320,7 +467,7 @@ exports[`Answer renders teacher review 1`] = `
         role="status"
       >
         <span
-          className="sc-jSMfEi buOdRb answer-content"
+          className="c0 answer-content"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<ol>

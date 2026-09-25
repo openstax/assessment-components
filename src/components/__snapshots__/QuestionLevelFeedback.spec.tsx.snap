@@ -1,18 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`] = `
+.c3 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c3 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c3 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: bold;
+  color: #424242;
+}
+
+.c2 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+  white-space: pre-wrap;
+}
+
+.c2 .feedback-label {
+  color: #424242;
+  font-weight: bold;
+}
+
+.c0 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
 <div
-  className="sc-ftvSup gdUAsD"
+  className="c0"
   role="status"
 >
   <div
-    className="sc-gKXOVf fAYPtj"
+    className="c1"
   >
     Score: 
     9/10
   </div>
   <div
-    className="sc-iBkjds kOdEpG"
+    className="c2"
   >
     <span
       className="feedback-label"
@@ -21,7 +78,7 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
     </span>
      
     <span
-      className="sc-jSMfEi buOdRb"
+      className="c3"
       dangerouslySetInnerHTML={
         Object {
           "__html": "Good work overall.",
@@ -38,7 +95,7 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
       Detailed solution:
     </div>
     <div
-      className="sc-jSMfEi buOdRb solution"
+      className="c3 solution"
       dangerouslySetInnerHTML={
         Object {
           "__html": "Because eleven has no divisors but itself and one.",
