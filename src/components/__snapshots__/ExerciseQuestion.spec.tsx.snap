@@ -576,6 +576,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -618,6 +623,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -1227,6 +1237,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -1276,6 +1291,11 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -1886,6 +1906,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -1935,6 +1960,11 @@ exports[`ExerciseQuestion renders Save button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -2545,6 +2575,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -2594,6 +2629,11 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -3197,6 +3237,11 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -3239,6 +3284,11 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -3863,6 +3913,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -3912,6 +3967,11 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -4554,6 +4614,11 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -4603,6 +4668,11 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -5243,6 +5313,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -5285,6 +5360,11 @@ exports[`ExerciseQuestion renders free response 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -5894,6 +5974,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -5943,6 +6028,11 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>
@@ -6552,6 +6642,11 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
             </section>
           </div>
           <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
+          <div
             className="openstax-answer"
           >
             <section
@@ -6601,6 +6696,11 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
               </label>
             </section>
           </div>
+          <div
+            aria-atomic="true"
+            aria-live="polite"
+            className="question-feedback-live-region"
+          />
         </div>
       </div>
     </div>

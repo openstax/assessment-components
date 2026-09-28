@@ -231,6 +231,18 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
+.c11 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c10 {
   width: 100%;
 }
@@ -874,25 +886,36 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="c8 question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="c11"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="c8 question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -936,6 +959,11 @@ exports[`ExercisePreview using questionStates matches snapshot with chosen answe
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1186,6 +1214,18 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
   text-transform: uppercase;
   font-size: calc(1.1rem * var(--content-text-scale));
   font-weight: bold;
+}
+
+.c12 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c10 {
@@ -1838,25 +1878,36 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="c8 question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="c12"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="c8 question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -1900,6 +1951,11 @@ exports[`ExercisePreview using questionStates matches snapshot with labeled answ
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2143,6 +2199,18 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
 .c2 {
   font-size: calc(1.8rem * var(--content-text-scale));
   line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c11 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c10 {
@@ -2788,25 +2856,36 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="c8 question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="c11"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="c8 question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -2850,6 +2929,11 @@ exports[`ExercisePreview using questionStates matches snapshot without chosen an
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -3743,6 +3827,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -3785,6 +3874,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -4678,6 +4772,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -4720,6 +4819,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -5613,6 +5717,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -5655,6 +5764,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -5900,7 +6014,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c13 {
+.c14 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -5928,20 +6042,32 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c13:not([disabled]) {
+.c14:not([disabled]) {
   cursor: pointer;
 }
 
-.c13:not([disabled]):hover {
+.c14:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c13:not([disabled]):active {
+.c14:not([disabled]):active {
   background: #C5400B;
 }
 
-.c13:disabled {
+.c14:disabled {
   opacity: 0.4;
+}
+
+.c11 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c10 {
@@ -6322,11 +6448,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   display: flex;
 }
 
-.c12 .detailed-solution {
+.c13 .detailed-solution {
   margin-bottom: 1rem;
 }
 
-.c12 .detailed-solution .header {
+.c13 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -6336,12 +6462,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   flex-basis: 0;
 }
 
-.c12 .detailed-solution .solution {
+.c13 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
 }
 
-.c11 {
+.c12 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -6361,19 +6487,19 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   overflow: auto;
 }
 
-.c11 > * {
+.c12 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c11 button {
+.c12 button {
   width: 160px;
   height: 48px;
 }
 
-.c11 .step-card-footer-inner {
+.c12 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6386,12 +6512,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   gap: 1.6rem;
 }
 
-.c11 .points .attempts-left {
+.c12 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c11 .controls {
+.c12 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6407,8 +6533,8 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   margin-left: auto;
 }
 
-.c11 .controls button:has(~ button),
-.c11 .controls button + button {
+.c12 .controls button:has(~ button),
+.c12 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -6416,11 +6542,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   width: 100px;
 }
 
-.c11.c11 {
+.c12.c12 {
   padding: 0 var(--spacing,0.8rem) var(--spacing,0.8rem);
 }
 
-.c11 .step-card-footer-inner {
+.c12 .step-card-footer-inner {
   padding-top: var(--spacing,0.8rem);
 }
 
@@ -6571,19 +6697,19 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 @media (max-width:999px) {
-  .c11 {
+  .c12 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c11 {
+  .c12 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c11 .step-card-footer-inner {
+  .c12 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -6591,14 +6717,14 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 @media (min-width:1000px) {
-  .c11 {
+  .c12 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c11 .points {
+  .c12 .points {
     max-width: 400px;
   }
 }
@@ -6722,25 +6848,36 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             </label>
                           </section>
                         </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
                         >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
                             <div
-                              className="c8 question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
+                              aria-hidden="true"
+                              className="arrow"
                             />
+                            <span
+                              className="c11"
+                            >
+                              Answer feedback:
+                            </span>
+                            <aside>
+                              <div
+                                className="c8 question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
                           </aside>
-                        </aside>
+                        </div>
                         <div
                           className="openstax-answer"
                         >
@@ -6784,12 +6921,17 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="c11 step-card-footer"
+                  className="c12 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -6798,7 +6940,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="points"
                     >
                       <div
-                        className="c12"
+                        className="c13"
                         role="status"
                       >
                         <div
@@ -6824,7 +6966,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="controls"
                     >
                       <button
-                        className="c13"
+                        className="c14"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >

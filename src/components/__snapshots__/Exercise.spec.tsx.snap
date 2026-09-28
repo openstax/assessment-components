@@ -896,6 +896,11 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -938,6 +943,11 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1713,6 +1723,11 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -1755,6 +1770,11 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2660,6 +2680,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -2702,6 +2727,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -4020,6 +4050,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -4062,6 +4097,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -5420,6 +5460,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -5462,6 +5507,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
@@ -6405,6 +6455,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                           </section>
                         </div>
                         <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
+                        <div
                           className="openstax-answer"
                         >
                           <section
@@ -6447,6 +6502,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             </label>
                           </section>
                         </div>
+                        <div
+                          aria-atomic="true"
+                          aria-live="polite"
+                          className="question-feedback-live-region"
+                        />
                       </div>
                     </div>
                   </div>
