@@ -1,25 +1,289 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`] = `
+.c17 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c17:not([disabled]) {
+  cursor: pointer;
+}
+
+.c17:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c17:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c17:disabled {
+  opacity: 0.4;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c13 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c14 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c14::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c14::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c14:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c14::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c14:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c14:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c15 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c15:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c15:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c0:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+  text-align: left;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+}
+
+.c1:hover {
+  background-color: #f9f9f9;
+}
+
+.c3 {
+  font-weight: 600;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-size: calc(1.3rem * var(--content-text-scale));
+  color: #6f6f6f;
+  white-space: nowrap;
+}
+
+.c4 strong {
+  font-weight: 700;
+  color: #424242;
+}
+
+.c2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #5f6163;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: 1px solid #f1f1f1;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.6rem;
+  min-width: 0;
+}
+
+.c7 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 0 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c8 {
+  margin-top: 1.6rem;
+}
+
+.c9 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: bold;
+  color: #424242;
+}
+
 <div
-  className="sc-papXJ fqoXnn"
+  className="c0"
 >
   <button
     aria-expanded={true}
-    className="sc-jqUVSM jfgTeu"
+    className="c1"
     onClick={[Function]}
     type="button"
   >
     <span
-      className="sc-crXcEl jrEnlp"
+      className="c2"
     />
     <span
-      className="sc-kDDrLX huIAKc"
+      className="c3"
     >
       Ada Lovelace
     </span>
     <span
-      className="sc-iqcoie cgZTnQ"
+      className="c4"
     >
       <strong>
         Points:
@@ -31,7 +295,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
     </span>
   </button>
   <div
-    className="sc-evZas cTOCWP"
+    className="c5"
     style={
       Object {
         "display": undefined,
@@ -39,18 +303,18 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
     }
   >
     <div
-      className="sc-breuTD EtWdd"
+      className="c6"
     >
       <div
-        className="sc-ksZaOG gvZIGE"
+        className="c7"
       >
         An object at rest stays at rest.
       </div>
       <div
-        className="sc-fEOsli kKkhzh"
+        className="c8"
       >
         <div
-          className="sc-bjUoiL iFfhCP"
+          className="c9"
         >
           Score: 
           8
@@ -60,23 +324,23 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
       </div>
     </div>
     <div
-      className="sc-gsnTZi cSdbEu"
+      className="c10"
     >
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c11"
       >
         <div
-          className="sc-eCYdqJ ldOqjj"
+          className="c12"
         >
           <label
-            className="sc-hKMtZM dwUXki"
+            className="c13"
             htmlFor="frg-2-score"
           >
             Points
           </label>
           <input
             aria-label="Score"
-            className="sc-jSMfEi iGMKCY"
+            className="c14"
             disabled={false}
             id="frg-2-score"
             max={10}
@@ -94,17 +358,17 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
         </div>
       </div>
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c11"
       >
         <label
-          className="sc-hKMtZM dwUXki"
+          className="c13"
           htmlFor="frg-2-comment"
         >
           Comment
         </label>
         <textarea
           aria-label="Comment"
-          className="sc-gKXOVf bbxjYD"
+          className="c15"
           disabled={false}
           id="frg-2-comment"
           onChange={[Function]}
@@ -113,10 +377,10 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
         />
       </div>
       <div
-        className="sc-iBkjds crHxek"
+        className="c16"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c17"
           disabled={true}
           onClick={[Function]}
         >
@@ -129,25 +393,305 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
 `;
 
 exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by default) 1`] = `
+.c18 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c18:not([disabled]) {
+  cursor: pointer;
+}
+
+.c18:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c18:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c18:disabled {
+  opacity: 0.4;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c14 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c15 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c15::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c15::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c15:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c15::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c15:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c15:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c16 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c16:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c16:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c19 {
+  font-size: calc(1.2rem * var(--content-text-scale));
+  color: #6f6f6f;
+}
+
+.c0 {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c0:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+  text-align: left;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+}
+
+.c1:hover {
+  background-color: #f9f9f9;
+}
+
+.c3 {
+  font-weight: 600;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-size: calc(1.3rem * var(--content-text-scale));
+  color: #6f6f6f;
+  white-space: nowrap;
+}
+
+.c4 strong {
+  font-weight: 700;
+  color: #424242;
+}
+
+.c2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #5f6163;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: 1px solid #f1f1f1;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.6rem;
+  min-width: 0;
+}
+
+.c7 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 0 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c8 {
+  margin-top: 1.6rem;
+}
+
+.c9 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: bold;
+  color: #424242;
+}
+
+.c10 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+  white-space: pre-wrap;
+  margin-top: 0.4rem;
+}
+
+.c10 .feedback-label {
+  font-weight: bold;
+}
+
 <div
-  className="sc-papXJ fqoXnn"
+  className="c0"
 >
   <button
     aria-expanded={false}
-    className="sc-jqUVSM jfgTeu"
+    className="c1"
     onClick={[Function]}
     type="button"
   >
     <span
-      className="sc-crXcEl XODye"
+      className="c2"
     />
     <span
-      className="sc-kDDrLX huIAKc"
+      className="c3"
     >
       Ada Lovelace
     </span>
     <span
-      className="sc-iqcoie cgZTnQ"
+      className="c4"
     >
       <strong>
         Points:
@@ -159,7 +703,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
     </span>
   </button>
   <div
-    className="sc-evZas cTOCWP"
+    className="c5"
     style={
       Object {
         "display": "none",
@@ -167,18 +711,18 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
     }
   >
     <div
-      className="sc-breuTD EtWdd"
+      className="c6"
     >
       <div
-        className="sc-ksZaOG gvZIGE"
+        className="c7"
       >
         An object at rest stays at rest.
       </div>
       <div
-        className="sc-fEOsli kKkhzh"
+        className="c8"
       >
         <div
-          className="sc-bjUoiL iFfhCP"
+          className="c9"
         >
           Score: 
           8
@@ -186,7 +730,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
           10
         </div>
         <div
-          className="sc-idiyUo bUdvoz"
+          className="c10"
         >
           <span
             className="feedback-label"
@@ -199,23 +743,23 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
       </div>
     </div>
     <div
-      className="sc-gsnTZi cSdbEu"
+      className="c11"
     >
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c12"
       >
         <div
-          className="sc-eCYdqJ ldOqjj"
+          className="c13"
         >
           <label
-            className="sc-hKMtZM dwUXki"
+            className="c14"
             htmlFor="frg-1-score"
           >
             Points
           </label>
           <input
             aria-label="Score"
-            className="sc-jSMfEi iGMKCY"
+            className="c15"
             disabled={false}
             id="frg-1-score"
             max={10}
@@ -233,17 +777,17 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
         </div>
       </div>
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c12"
       >
         <label
-          className="sc-hKMtZM dwUXki"
+          className="c14"
           htmlFor="frg-1-comment"
         >
           Comment
         </label>
         <textarea
           aria-label="Comment"
-          className="sc-gKXOVf bbxjYD"
+          className="c16"
           disabled={false}
           id="frg-1-comment"
           onChange={[Function]}
@@ -252,10 +796,10 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
         />
       </div>
       <div
-        className="sc-iBkjds crHxek"
+        className="c17"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c18"
           disabled={true}
           onClick={[Function]}
         >
@@ -263,7 +807,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
         </button>
       </div>
       <span
-        className="sc-ftvSup fIDLEK"
+        className="c19"
       >
         Last graded on 
         Mar 1, 2024, 10:00 AM
@@ -274,25 +818,279 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 `;
 
 exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by default) 1`] = `
+.c15 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c15:not([disabled]) {
+  cursor: pointer;
+}
+
+.c15:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c15:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c15:disabled {
+  opacity: 0.4;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c11 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c12 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c12::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c12::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c12:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c12::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c12:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c12:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c13 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c13:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c13:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.c0:last-child {
+  border-bottom: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 1rem;
+  text-align: left;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  color: #424242;
+}
+
+.c1:hover {
+  background-color: #f9f9f9;
+}
+
+.c3 {
+  font-weight: 600;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  font-size: calc(1.3rem * var(--content-text-scale));
+  color: #6f6f6f;
+  white-space: nowrap;
+}
+
+.c4 strong {
+  font-weight: 700;
+  color: #424242;
+}
+
+.c2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #5f6163;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: 1px solid #f1f1f1;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.6rem;
+  min-width: 0;
+}
+
+.c7 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 0 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
 <div
-  className="sc-papXJ fqoXnn"
+  className="c0"
 >
   <button
     aria-expanded={true}
-    className="sc-jqUVSM jfgTeu"
+    className="c1"
     onClick={[Function]}
     type="button"
   >
     <span
-      className="sc-crXcEl jrEnlp"
+      className="c2"
     />
     <span
-      className="sc-kDDrLX huIAKc"
+      className="c3"
     >
       Ada Lovelace
     </span>
     <span
-      className="sc-iqcoie cgZTnQ"
+      className="c4"
     >
       <strong>
         Points:
@@ -304,7 +1102,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
     </span>
   </button>
   <div
-    className="sc-evZas cTOCWP"
+    className="c5"
     style={
       Object {
         "display": undefined,
@@ -312,32 +1110,32 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
     }
   >
     <div
-      className="sc-breuTD EtWdd"
+      className="c6"
     >
       <div
-        className="sc-ksZaOG gvZIGE"
+        className="c7"
       >
         An object at rest stays at rest.
       </div>
     </div>
     <div
-      className="sc-gsnTZi cSdbEu"
+      className="c8"
     >
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c9"
       >
         <div
-          className="sc-eCYdqJ ldOqjj"
+          className="c10"
         >
           <label
-            className="sc-hKMtZM dwUXki"
+            className="c11"
             htmlFor="frg-0-score"
           >
             Points
           </label>
           <input
             aria-label="Score"
-            className="sc-jSMfEi iGMKCY"
+            className="c12"
             disabled={false}
             id="frg-0-score"
             max={10}
@@ -355,17 +1153,17 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
         </div>
       </div>
       <div
-        className="sc-dkzDqf gNmSNg"
+        className="c9"
       >
         <label
-          className="sc-hKMtZM dwUXki"
+          className="c11"
           htmlFor="frg-0-comment"
         >
           Comment
         </label>
         <textarea
           aria-label="Comment"
-          className="sc-gKXOVf bbxjYD"
+          className="c13"
           disabled={false}
           id="frg-0-comment"
           onChange={[Function]}
@@ -374,10 +1172,10 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
         />
       </div>
       <div
-        className="sc-iBkjds crHxek"
+        className="c14"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c15"
           disabled={true}
           onClick={[Function]}
         >

@@ -1,19 +1,278 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StepCard matches snapshot 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c2 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c2 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c2 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c2 .num-questions,
+.c2 .points {
+  display: none;
+}
+
+.c2 .exercise-id,
+.c2 .separator {
+  font-weight: normal;
+}
+
+.c2 .separator {
+  margin: 0 0.4rem;
+}
+
+.c2 .exercise-id {
+  height: 28px;
+}
+
+.c2 button {
+  color: #5e5e5e;
+}
+
+.c2 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c2 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c2 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c2 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c2 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c4 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c4 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c4.exercise-context,
+.c4.exercise-stimulus,
+.c4.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c3 {
+  padding: 0;
+}
+
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c2 button.ox-icon-angle-left,
+  .c2 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c2 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c2 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c2 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c2 .num-questions,
+  .c2 points {
+    display: inherit;
+  }
+
+  .c2 .exercise-id {
+    display: none;
+  }
+
+  .c2 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4.c4 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c4.c4 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c3 .openstax-exercise-badges,
+  .interactive-step .c4 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
 <div
-  className="sc-gsnTZi dxdISE step-card-outer"
+  className="c0 step-card-outer"
   data-task-step-id="0"
 >
   <div
-    className="sc-bczRLJ jcXbjw"
+    className="c1"
   >
     <div>
       <div
         className="step-card"
       >
         <div
-          className="sc-dkzDqf THfGg step-card-header"
+          className="c2 step-card-header"
         >
           <div>
             <h2
@@ -44,7 +303,7 @@ exports[`StepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-eCYdqJ kAHvtW"
+          className="c3 c4"
         >
           Question content
         </div>
@@ -55,19 +314,278 @@ exports[`StepCard matches snapshot 1`] = `
 `;
 
 exports[`StepCard matches snapshot with more than one question 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c2 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c2 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c2 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c2 .num-questions,
+.c2 .points {
+  display: none;
+}
+
+.c2 .exercise-id,
+.c2 .separator {
+  font-weight: normal;
+}
+
+.c2 .separator {
+  margin: 0 0.4rem;
+}
+
+.c2 .exercise-id {
+  height: 28px;
+}
+
+.c2 button {
+  color: #5e5e5e;
+}
+
+.c2 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c2 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c2 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c2 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c2 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c4 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c4 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c4.exercise-context,
+.c4.exercise-stimulus,
+.c4.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c3 {
+  padding: 0;
+}
+
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c2 button.ox-icon-angle-left,
+  .c2 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c2 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c2 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c2 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c2 .num-questions,
+  .c2 points {
+    display: inherit;
+  }
+
+  .c2 .exercise-id {
+    display: none;
+  }
+
+  .c2 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4.c4 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c4.c4 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c3 .openstax-exercise-badges,
+  .interactive-step .c4 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
 <div
-  className="sc-gsnTZi dxdISE step-card-outer"
+  className="c0 step-card-outer"
   data-task-step-id="0"
 >
   <div
-    className="sc-bczRLJ jcXbjw"
+    className="c1"
   >
     <div>
       <div
         className="step-card"
       >
         <div
-          className="sc-dkzDqf THfGg step-card-header"
+          className="c2 step-card-header"
         >
           <div>
             <h2
@@ -98,7 +616,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
           </div>
         </div>
         <div
-          className="sc-eCYdqJ kAHvtW"
+          className="c3 c4"
         >
           Question content
         </div>
@@ -109,19 +627,278 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
 `;
 
 exports[`TaskStepCard matches snapshot 1`] = `
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c2 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c2 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c2 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c2 .num-questions,
+.c2 .points {
+  display: none;
+}
+
+.c2 .exercise-id,
+.c2 .separator {
+  font-weight: normal;
+}
+
+.c2 .separator {
+  margin: 0 0.4rem;
+}
+
+.c2 .exercise-id {
+  height: 28px;
+}
+
+.c2 button {
+  color: #5e5e5e;
+}
+
+.c2 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c2 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c2 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c2 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c2 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c4 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c4 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c4.exercise-context,
+.c4.exercise-stimulus,
+.c4.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c3 {
+  padding: 0;
+}
+
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c2 button.ox-icon-angle-left,
+  .c2 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c2 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c2 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c2 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c2 .num-questions,
+  .c2 points {
+    display: inherit;
+  }
+
+  .c2 .exercise-id {
+    display: none;
+  }
+
+  .c2 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c2 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4.c4 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c4.c4 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c3 .openstax-exercise-badges,
+  .interactive-step .c4 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
 <div
-  className="sc-gsnTZi dxdISE step-card-outer"
+  className="c0 step-card-outer"
   data-task-step-id="0"
 >
   <div
-    className="sc-bczRLJ jcXbjw exercise-step"
+    className="c1 exercise-step"
   >
     <div>
       <div
         className="step-card"
       >
         <div
-          className="sc-dkzDqf THfGg step-card-header"
+          className="c2 step-card-header"
         >
           <div>
             <h2
@@ -145,7 +922,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-eCYdqJ kAHvtW"
+          className="c3 c4"
         />
       </div>
     </div>

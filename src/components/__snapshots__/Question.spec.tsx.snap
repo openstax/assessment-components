@@ -1,17 +1,370 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Question defaults QuestionHtml html 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -56,7 +409,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -99,7 +452,7 @@ exports[`Question defaults QuestionHtml html 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -117,17 +470,370 @@ exports[`Question defaults QuestionHtml html 1`] = `
 `;
 
 exports[`Question defaults collaborator_solutions 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -172,7 +878,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -215,7 +921,7 @@ exports[`Question defaults collaborator_solutions 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -233,17 +939,370 @@ exports[`Question defaults collaborator_solutions 1`] = `
 `;
 
 exports[`Question defaults formats 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -288,7 +1347,7 @@ exports[`Question defaults formats 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -331,7 +1390,7 @@ exports[`Question defaults formats 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -358,17 +1417,370 @@ exports[`Question defaults formats 1`] = `
 `;
 
 exports[`Question matches snapshot 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -413,7 +1825,7 @@ exports[`Question matches snapshot 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -456,7 +1868,7 @@ exports[`Question matches snapshot 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -474,17 +1886,389 @@ exports[`Question matches snapshot 1`] = `
 `;
 
 exports[`Question renders composed feedback below the answers 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c3 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c3 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -529,7 +2313,7 @@ exports[`Question renders composed feedback below the answers 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -572,7 +2356,7 @@ exports[`Question renders composed feedback below the answers 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -585,7 +2369,7 @@ exports[`Question renders composed feedback below the answers 1`] = `
         </div>
       </div>
       <div
-        className="sc-ftvSup gdUAsD"
+        className="c3"
         role="status"
       >
         <div
@@ -597,7 +2381,7 @@ exports[`Question renders composed feedback below the answers 1`] = `
             Detailed solution:
           </div>
           <div
-            className="sc-jSMfEi buOdRb solution"
+            className="c2 solution"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Content HTML",
@@ -612,17 +2396,370 @@ exports[`Question renders composed feedback below the answers 1`] = `
 `;
 
 exports[`Question renders exercise uid 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -667,7 +2804,7 @@ exports[`Question renders exercise uid 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -710,7 +2847,7 @@ exports[`Question renders exercise uid 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",
@@ -733,17 +2870,370 @@ exports[`Question renders exercise uid 1`] = `
 `;
 
 exports[`Question renders formats 1`] = `
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-kDDrLX nHyWc openstax-question"
+  className="c0 openstax-question"
   data-question-number={1}
   data-test-id="question"
 >
   <div
-    className="sc-jqUVSM jjphog"
+    className="c1"
   >
     <div>
       <div
-        className="sc-jSMfEi buOdRb question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Is this a question?",
@@ -788,7 +3278,7 @@ exports[`Question renders formats 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "True",
@@ -831,7 +3321,7 @@ exports[`Question renders formats 1`] = `
                 role="status"
               >
                 <span
-                  className="sc-jSMfEi buOdRb answer-content"
+                  className="c2 answer-content"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "False",

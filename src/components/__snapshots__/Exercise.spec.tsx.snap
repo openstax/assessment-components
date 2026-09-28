@@ -1,15 +1,784 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Exercise with overlay rendering matches snapshot 1`] = `
+.c6 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c6 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c6 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c3 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c3 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c3 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c3 .num-questions,
+.c3 .points {
+  display: none;
+}
+
+.c3 .exercise-id,
+.c3 .separator {
+  font-weight: normal;
+}
+
+.c3 .separator {
+  margin: 0 0.4rem;
+}
+
+.c3 .exercise-id {
+  height: 28px;
+}
+
+.c3 button {
+  color: #5e5e5e;
+}
+
+.c3 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c3 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c3 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c3 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c3 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c5 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c5 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c5.exercise-context,
+.c5.exercise-stimulus,
+.c5.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c4 {
+  padding: 0;
+}
+
+.c5.c5.c5 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c2 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c10 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c10:not([disabled]) {
+  cursor: pointer;
+}
+
+.c10:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c10:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c10:disabled {
+  opacity: 0.4;
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c7.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c7.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c7.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c7.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c7.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c7.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c7.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c7.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c7.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c7.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c7.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c9 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c9 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c9 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c9 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c9 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c9 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c9 .controls button:has(~ button),
+.c9 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c3 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c3 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c3 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c3 .num-questions,
+  .c3 points {
+    display: inherit;
+  }
+
+  .c3 .exercise-id {
+    display: none;
+  }
+
+  .c3 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c5 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5.c5 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c5.c5 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c4 .openstax-exercise-badges,
+  .interactive-step .c5 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c7.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c7.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c9 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c9 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c9 .points {
+    max-width: 400px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c0 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c1 c2 exercise-step"
     >
       <div
         onBlur={[Function]}
@@ -21,7 +790,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -45,13 +814,13 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c4 c5"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c6 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -59,7 +828,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c6 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -70,12 +839,12 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c7 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c8"
                   >
                     <div>
                       <div
@@ -115,7 +884,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -158,7 +927,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -174,7 +943,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi hwKBKs step-card-footer"
+                  className="c9 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -183,7 +952,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-idiyUo iiCZLe"
+                        className="c10"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -203,15 +972,632 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 `;
 
 exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] = `
+.c6 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c6 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c6 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c3 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c3 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c3 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c3 .num-questions,
+.c3 .points {
+  display: none;
+}
+
+.c3 .exercise-id,
+.c3 .separator {
+  font-weight: normal;
+}
+
+.c3 .separator {
+  margin: 0 0.4rem;
+}
+
+.c3 .exercise-id {
+  height: 28px;
+}
+
+.c3 button {
+  color: #5e5e5e;
+}
+
+.c3 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c3 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c3 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c3 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c3 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c5 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c5 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c5.exercise-context,
+.c5.exercise-stimulus,
+.c5.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c4 {
+  padding: 0;
+}
+
+.c5.c5.c5 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c2 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c7.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c7.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c7.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c7.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c7.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c7.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c7.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c7.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c7.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c7.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c7.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c3 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c3 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c3 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c3 .num-questions,
+  .c3 points {
+    display: inherit;
+  }
+
+  .c3 .exercise-id {
+    display: none;
+  }
+
+  .c3 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c5 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5.c5 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c5.c5 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c4 .openstax-exercise-badges,
+  .interactive-step .c5 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c7.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c7.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c0 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c1 c2 exercise-step"
     >
       <div
         onBlur={[Function]}
@@ -223,7 +1609,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -247,13 +1633,13 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c4 c5"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c6 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -261,7 +1647,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c6 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -272,12 +1658,12 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c7 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c8"
                   >
                     <div>
                       <div
@@ -315,7 +1701,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -358,7 +1744,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -384,22 +1770,791 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
 `;
 
 exports[`Exercise with question state data matches snapshot 1`] = `
+.c6 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c6 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c6 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c3 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c3 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c3 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c3 .num-questions,
+.c3 .points {
+  display: none;
+}
+
+.c3 .exercise-id,
+.c3 .separator {
+  font-weight: normal;
+}
+
+.c3 .separator {
+  margin: 0 0.4rem;
+}
+
+.c3 .exercise-id {
+  height: 28px;
+}
+
+.c3 button {
+  color: #5e5e5e;
+}
+
+.c3 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c3 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c3 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c3 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c3 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c5 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c5 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c5.exercise-context,
+.c5.exercise-stimulus,
+.c5.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c4 {
+  padding: 0;
+}
+
+.c5.c5.c5 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c2 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c10 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c10:not([disabled]) {
+  cursor: pointer;
+}
+
+.c10:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c10:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c10:disabled {
+  opacity: 0.4;
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c7.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c7.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c7.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c7.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c7.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c7.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c7.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c7.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c7.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c7.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c7.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c9 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c9 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c9 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c9 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c9 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c9 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c9 .controls button:has(~ button),
+.c9 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c3 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c3 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c3 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c3 .num-questions,
+  .c3 points {
+    display: inherit;
+  }
+
+  .c3 .exercise-id {
+    display: none;
+  }
+
+  .c3 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c5 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5.c5 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c5.c5 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c4 .openstax-exercise-badges,
+  .interactive-step .c5 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c7.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c7.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c9 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c9 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c9 .points {
+    max-width: 400px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c0 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c1 c2 exercise-step"
     >
       <div>
         <div
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -423,13 +2578,13 @@ exports[`Exercise with question state data matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c4 c5"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c6 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -437,7 +2592,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c6 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -448,12 +2603,12 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c7 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c8"
                   >
                     <div>
                       <div
@@ -493,7 +2648,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -536,7 +2691,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -552,7 +2707,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi hwKBKs step-card-footer"
+                  className="c9 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -561,7 +2716,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-idiyUo iiCZLe"
+                        className="c10"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -581,11 +2736,1034 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 `;
 
 exports[`Exercise with question state data renders header icons with multiple choice explanation 1`] = `
+.c12 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c12 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c12 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c1 {
+  padding: 2rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c4 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c4 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c4 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c4 .num-questions,
+.c4 .points {
+  display: none;
+}
+
+.c4 .exercise-id,
+.c4 .separator {
+  font-weight: normal;
+}
+
+.c4 .separator {
+  margin: 0 0.4rem;
+}
+
+.c4 .exercise-id {
+  height: 28px;
+}
+
+.c4 button {
+  color: #5e5e5e;
+}
+
+.c4 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c4 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c4 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c4 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c4 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c11 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c11 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c11.exercise-context,
+.c11.exercise-stimulus,
+.c11.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c10 {
+  padding: 0;
+}
+
+.c11.c11.c11 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c6 {
+  padding: 0.6rem 0.9rem;
+}
+
+.c6 .popover {
+  display: none;
+}
+
+.c6:hover svg path {
+  fill: #026AA1;
+}
+
+.c6:hover .popover {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  top: 3rem;
+  width: 20rem;
+  position: absolute;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.c9 .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c9 .arrow::before,
+.c9 .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c9 .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c9 .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c9.right {
+  right: calc(-9px - 1px);
+}
+
+.c9.right .arrow {
+  right: 9px;
+}
+
+.c9 > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c5 {
+  max-width: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  color: #757575;
+  height: 1em;
+}
+
+.c0 {
+  position: absolute;
+  background: #fff;
+  width: 4.5rem;
+  border: 1px solid #e4e4e4;
+  background: #fff;
+  margin: 2rem 0 0 2rem;
+  z-index: 1;
+}
+
+.c0 > * {
+  height: 4.7rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #818181;
+  background: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 > *:after {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.c0 > * svg {
+  width: 4.3rem;
+  height: 1.6rem;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+}
+
+.c0 > * span {
+  display: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 1.4rem;
+  color: #424242;
+}
+
+.c0 > *:hover {
+  box-shadow: rgba(0,0,0,0.2) 0px 0px 2px;
+  width: 20rem;
+}
+
+.c0 > *:hover svg {
+  color: #424242;
+}
+
+.c0 > *:hover span {
+  display: block;
+}
+
+.c3 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c16 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c16:not([disabled]) {
+  cursor: pointer;
+}
+
+.c16:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c16:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c16:disabled {
+  opacity: 0.4;
+}
+
+.c14 {
+  width: 100%;
+}
+
+.c13.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c13.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c13.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c13.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c13.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c13.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c13.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c13.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c13.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c13.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c13.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c13.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c13.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c15 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c15 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c15 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c15 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c15 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c15 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c15 .controls button:has(~ button),
+.c15 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (min-width:1000px) {
+  .c2 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 button.ox-icon-angle-left,
+  .c4 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c4 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c4 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c4 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c4 .num-questions,
+  .c4 points {
+    display: inherit;
+  }
+
+  .c4 .exercise-id {
+    display: none;
+  }
+
+  .c4 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c11 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c11 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c11.c11 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c11.c11 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c10 .openstax-exercise-badges,
+  .interactive-step .c11 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c11 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    display: block;
+    position: relative;
+    width: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .c0:not(:last-child) {
+    border-bottom: 0;
+  }
+
+  .c0 > * {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem 1.8rem 0.6rem;
+    height: auto;
+    min-height: 4.8rem;
+  }
+
+  .c0 > *:hover {
+    width: auto;
+  }
+
+  .c0 > * span {
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.2rem;
+    color: #818181;
+    text-align: center;
+  }
+
+  .c0 > * + * {
+    border-left: 1px solid #e4e4e4;
+  }
+}
+
+@media (max-width:999px) {
+  .c13.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c13.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c15 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c15 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c15 .points {
+    max-width: 400px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-fnykZs kPBOMp"
+    className="c0"
   >
     <a
       href="https://openstax.org"
@@ -639,18 +3817,18 @@ exports[`Exercise with question state data renders header icons with multiple ch
     </a>
   </div>
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c1 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c2 c3 exercise-step"
     >
       <div>
         <div
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c4 step-card-header"
           >
             <div>
               <h2
@@ -674,20 +3852,20 @@ exports[`Exercise with question state data renders header icons with multiple ch
             </div>
             <div>
               <div
-                className="sc-ksZaOG hsALcy"
+                className="c5"
               >
                 <a
                   aria-label="View topic in textbook"
-                  className="sc-crXcEl bBRFmQ"
+                  className="c6"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-evZas idORtE"
+                    className="c7"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-book-open sc-hAZoDl jRGmFW"
+                      className="svg-inline--fa fa-book-open c8"
                       data-icon="book-open"
                       data-prefix="fas"
                       focusable="false"
@@ -703,7 +3881,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       />
                     </svg>
                     <div
-                      className="sc-breuTD cZEZEt popover right"
+                      className="c9 popover right"
                     >
                       <div
                         className="arrow"
@@ -718,16 +3896,16 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 </a>
                 <a
                   aria-label="Suggest a correction"
-                  className="sc-crXcEl bBRFmQ"
+                  className="c6"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-evZas idORtE"
+                    className="c7"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-triangle-exclamation sc-hAZoDl jRGmFW"
+                      className="svg-inline--fa fa-triangle-exclamation c8"
                       data-icon="triangle-exclamation"
                       data-prefix="fas"
                       focusable="false"
@@ -743,7 +3921,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       />
                     </svg>
                     <div
-                      className="sc-breuTD cZEZEt popover right"
+                      className="c9 popover right"
                     >
                       <div
                         className="arrow"
@@ -760,13 +3938,13 @@ exports[`Exercise with question state data renders header icons with multiple ch
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c10 c11"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c12 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -774,7 +3952,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c12 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -785,12 +3963,12 @@ exports[`Exercise with question state data renders header icons with multiple ch
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c13 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c14"
                   >
                     <div>
                       <div
@@ -830,7 +4008,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c12 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -873,7 +4051,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c12 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -889,7 +4067,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi hwKBKs step-card-footer"
+                  className="c15 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -898,7 +4076,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       className="controls"
                     >
                       <button
-                        className="sc-idiyUo iiCZLe"
+                        className="c16"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -918,11 +4096,1034 @@ exports[`Exercise with question state data renders header icons with multiple ch
 `;
 
 exports[`Exercise with question state data renders header icons with two-step explanation 1`] = `
+.c12 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c12 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c12 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c1 {
+  padding: 2rem;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c4 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c4 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c4 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c4 .num-questions,
+.c4 .points {
+  display: none;
+}
+
+.c4 .exercise-id,
+.c4 .separator {
+  font-weight: normal;
+}
+
+.c4 .separator {
+  margin: 0 0.4rem;
+}
+
+.c4 .exercise-id {
+  height: 28px;
+}
+
+.c4 button {
+  color: #5e5e5e;
+}
+
+.c4 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c4 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c4 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c4 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c4 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c11 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c11 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c11 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c11.exercise-context,
+.c11.exercise-stimulus,
+.c11.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c10 {
+  padding: 0;
+}
+
+.c11.c11.c11 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c6 {
+  padding: 0.6rem 0.9rem;
+}
+
+.c6 .popover {
+  display: none;
+}
+
+.c6:hover svg path {
+  fill: #026AA1;
+}
+
+.c6:hover .popover {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c9 {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  top: 3rem;
+  width: 20rem;
+  position: absolute;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.c9 .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c9 .arrow::before,
+.c9 .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c9 .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c9 .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c9.right {
+  right: calc(-9px - 1px);
+}
+
+.c9.right .arrow {
+  right: 9px;
+}
+
+.c9 > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c5 {
+  max-width: 200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  color: #757575;
+  height: 1em;
+}
+
+.c0 {
+  position: absolute;
+  background: #fff;
+  width: 4.5rem;
+  border: 1px solid #e4e4e4;
+  background: #fff;
+  margin: 2rem 0 0 2rem;
+  z-index: 1;
+}
+
+.c0 > * {
+  height: 4.7rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #818181;
+  background: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c0 > *:after {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.c0 > * svg {
+  width: 4.3rem;
+  height: 1.6rem;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+}
+
+.c0 > * span {
+  display: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 1.4rem;
+  color: #424242;
+}
+
+.c0 > *:hover {
+  box-shadow: rgba(0,0,0,0.2) 0px 0px 2px;
+  width: 20rem;
+}
+
+.c0 > *:hover svg {
+  color: #424242;
+}
+
+.c0 > *:hover span {
+  display: block;
+}
+
+.c3 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c16 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c16:not([disabled]) {
+  cursor: pointer;
+}
+
+.c16:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c16:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c16:disabled {
+  opacity: 0.4;
+}
+
+.c14 {
+  width: 100%;
+}
+
+.c13.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c13.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c13.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c13.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c13.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c13.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c13.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c13.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c13.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c13.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c13.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c13.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c13.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c13.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c15 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c15 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c15 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c15 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c15 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c15 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c15 .controls button:has(~ button),
+.c15 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (min-width:1000px) {
+  .c2 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 button.ox-icon-angle-left,
+  .c4 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c4 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c4 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c4 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c4 .num-questions,
+  .c4 points {
+    display: inherit;
+  }
+
+  .c4 .exercise-id {
+    display: none;
+  }
+
+  .c4 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c4 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c11 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c11 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c11.c11 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c11.c11 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c10 .openstax-exercise-badges,
+  .interactive-step .c11 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c11 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    display: block;
+    position: relative;
+    width: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .c0:not(:last-child) {
+    border-bottom: 0;
+  }
+
+  .c0 > * {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem 1.8rem 0.6rem;
+    height: auto;
+    min-height: 4.8rem;
+  }
+
+  .c0 > *:hover {
+    width: auto;
+  }
+
+  .c0 > * span {
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.2rem;
+    color: #818181;
+    text-align: center;
+  }
+
+  .c0 > * + * {
+    border-left: 1px solid #e4e4e4;
+  }
+}
+
+@media (max-width:999px) {
+  .c13.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c13.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c15 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c15 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c15 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c15 .points {
+    max-width: 400px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-fnykZs kPBOMp"
+    className="c0"
   >
     <a
       href="https://openstax.org"
@@ -976,18 +5177,18 @@ exports[`Exercise with question state data renders header icons with two-step ex
     </a>
   </div>
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c1 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c2 c3 exercise-step"
     >
       <div>
         <div
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c4 step-card-header"
           >
             <div>
               <h2
@@ -1011,20 +5212,20 @@ exports[`Exercise with question state data renders header icons with two-step ex
             </div>
             <div>
               <div
-                className="sc-ksZaOG hsALcy"
+                className="c5"
               >
                 <a
                   aria-label="View topic in textbook"
-                  className="sc-crXcEl bBRFmQ"
+                  className="c6"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-evZas idORtE"
+                    className="c7"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-book-open sc-hAZoDl jRGmFW"
+                      className="svg-inline--fa fa-book-open c8"
                       data-icon="book-open"
                       data-prefix="fas"
                       focusable="false"
@@ -1040,7 +5241,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-breuTD cZEZEt popover right"
+                      className="c9 popover right"
                     >
                       <div
                         className="arrow"
@@ -1055,16 +5256,16 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 </a>
                 <a
                   aria-label="Suggest a correction"
-                  className="sc-crXcEl bBRFmQ"
+                  className="c6"
                   href="https://openstax.org"
                   target="_blank"
                 >
                   <div
-                    className="sc-evZas idORtE"
+                    className="c7"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-triangle-exclamation sc-hAZoDl jRGmFW"
+                      className="svg-inline--fa fa-triangle-exclamation c8"
                       data-icon="triangle-exclamation"
                       data-prefix="fas"
                       focusable="false"
@@ -1080,7 +5281,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-breuTD cZEZEt popover right"
+                      className="c9 popover right"
                     >
                       <div
                         className="arrow"
@@ -1095,14 +5296,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 </a>
                 <div
                   aria-label="In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. Recalling the answer to a question from memory helps you to retain things longer."
-                  className="sc-crXcEl bBRFmQ"
+                  className="c6"
                 >
                   <div
-                    className="sc-evZas idORtE"
+                    className="c7"
                   >
                     <svg
                       aria-hidden="true"
-                      className="svg-inline--fa fa-circle-info sc-hAZoDl jRGmFW"
+                      className="svg-inline--fa fa-circle-info c8"
                       data-icon="circle-info"
                       data-prefix="fas"
                       focusable="false"
@@ -1120,7 +5321,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       />
                     </svg>
                     <div
-                      className="sc-breuTD cZEZEt popover right"
+                      className="c9 popover right"
                     >
                       <div
                         className="arrow"
@@ -1137,13 +5338,13 @@ exports[`Exercise with question state data renders header icons with two-step ex
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c10 c11"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c12 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -1151,7 +5352,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c12 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -1162,12 +5363,12 @@ exports[`Exercise with question state data renders header icons with two-step ex
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c13 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c14"
                   >
                     <div>
                       <div
@@ -1207,7 +5408,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c12 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -1250,7 +5451,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c12 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -1266,7 +5467,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi hwKBKs step-card-footer"
+                  className="c15 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1275,7 +5476,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       className="controls"
                     >
                       <button
-                        className="sc-idiyUo iiCZLe"
+                        className="c16"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -1295,22 +5496,810 @@ exports[`Exercise with question state data renders header icons with two-step ex
 `;
 
 exports[`Exercise with question state data shows a detailed solution 1`] = `
+.c6 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c6 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c6 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c0 {
+  padding: 2rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.6rem 2.4rem;
+  background: #daf3f8;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  -webkit-letter-spacing: -0.72px;
+  -moz-letter-spacing: -0.72px;
+  -ms-letter-spacing: -0.72px;
+  letter-spacing: -0.72px;
+}
+
+.c3 h2.question-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  font-size: inherit;
+  margin: inherit;
+  text-transform: uppercase;
+}
+
+.c3 h2.question-info .question-id {
+  font-weight: normal;
+}
+
+.c3 h2.question-info .ox-icon-lock {
+  margin-right: 1rem;
+}
+
+.c3 .num-questions,
+.c3 .points {
+  display: none;
+}
+
+.c3 .exercise-id,
+.c3 .separator {
+  font-weight: normal;
+}
+
+.c3 .separator {
+  margin: 0 0.4rem;
+}
+
+.c3 .exercise-id {
+  height: 28px;
+}
+
+.c3 button {
+  color: #5e5e5e;
+}
+
+.c3 .scoring {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.c3 .scoring span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.c3 .openstax-exercise-badges {
+  margin: 0;
+  line-height: 2rem;
+}
+
+.c3 .openstax-exercise-badges svg {
+  display: block;
+}
+
+.c3 .openstax-exercise-badges svg:not(.interactive) {
+  margin: 0 0 0 6px !important;
+}
+
+.c5 .step-card-body {
+  padding: 4.8rem 14rem 0;
+  overflow: auto;
+  background: #fdfdfd;
+}
+
+.c5 .step-card-body.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 + div .step-card-body {
+  padding-top: 0;
+}
+
+.c5.exercise-context,
+.c5.exercise-stimulus,
+.c5.exercise-stem {
+  padding-bottom: 0;
+}
+
+.reading-step .c4 {
+  padding: 0;
+}
+
+.c5.c5.c5 .openstax-has-html .splash .frame-wrapper {
+  margin-top: 0;
+}
+
+.c2 {
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+}
+
+.c11 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c11:not([disabled]) {
+  cursor: pointer;
+}
+
+.c11:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c11:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c11:disabled {
+  opacity: 0.4;
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c7.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c7.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c7.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c7.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c7.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c7.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c7.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c7.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c7.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c7.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c7.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c7.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c7.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c10 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c10 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c10 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c9 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c9 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c9 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c9 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c9 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c9 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c9 .controls button:has(~ button),
+.c9 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (min-width:1000px) {
+  .c1 {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    padding: 0;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
+    display: none;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .c3 svg.ox-icon {
+    display: inherit;
+    margin: 0;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 24px;
+  }
+
+  .c3 button.ox-icon-angle-right {
+    margin-left: 24px;
+  }
+
+  .c3 .openstax-exercise-badges svg {
+    display: none;
+  }
+
+  .c3 .num-questions,
+  .c3 points {
+    display: inherit;
+  }
+
+  .c3 .exercise-id {
+    display: none;
+  }
+
+  .c3 button[class^='ox-icon-angle']:hover {
+    box-shadow: none;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 10px 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+
+  .c3 button.ox-icon-angle-left {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c5 .step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5.c5 .question-feedback {
+    margin-left: 0;
+  }
+
+  .c5.c5 .question-feedback .arrow {
+    margin-left: 12px;
+  }
+}
+
+@media (min-width:1000px) {
+  .video-step .c4 .openstax-exercise-badges,
+  .interactive-step .c5 .openstax-exercise-badges {
+    margin-right: 3.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .openstax-exercise-badges svg {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c7.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c7.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c9 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c9 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c9 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c9 .points {
+    max-width: 400px;
+  }
+}
+
 <div
-  className="sc-bjUoiL cNSnhS"
+  className=""
 >
   <div
-    className="sc-ftvSup dWrzXD step-card-outer"
+    className="c0 step-card-outer"
     data-task-step-id="0"
   >
     <div
-      className="sc-iBkjds ksmEEW sc-fEOsli jfmfTB exercise-step"
+      className="c1 c2 exercise-step"
     >
       <div>
         <div
           className="step-card"
         >
           <div
-            className="sc-papXJ izXhfp step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -1334,13 +6323,13 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
             </div>
           </div>
           <div
-            className="sc-kDDrLX jhDvRL"
+            className="c4 c5"
           >
             <div
-              className="sc-gKXOVf dgdQVN"
+              className=""
             >
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-context"
+                className="c6 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -1348,7 +6337,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 }
               />
               <div
-                className="sc-jSMfEi buOdRb step-card-body exercise-stimulus"
+                className="c6 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -1359,12 +6348,12 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="sc-ikZpkk folkqN openstax-question step-card-body"
+                  className="c7 openstax-question step-card-body"
                   data-question-number={1}
                   data-test-id="question"
                 >
                   <div
-                    className="sc-kLLXSd bGXPbi"
+                    className="c8"
                   >
                     <div>
                       <div
@@ -1404,7 +6393,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "True",
@@ -1447,7 +6436,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                                 role="status"
                               >
                                 <span
-                                  className="sc-jSMfEi buOdRb answer-content"
+                                  className="c6 answer-content"
                                   dangerouslySetInnerHTML={
                                     Object {
                                       "__html": "False",
@@ -1463,7 +6452,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   </div>
                 </div>
                 <div
-                  className="sc-BeQoi hwKBKs step-card-footer"
+                  className="c9 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -1472,7 +6461,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="points"
                     >
                       <div
-                        className="sc-cOFTSb jWtkWy"
+                        className="c10"
                         role="status"
                       >
                         <div
@@ -1484,7 +6473,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             Detailed solution:
                           </div>
                           <div
-                            className="sc-jSMfEi buOdRb solution"
+                            className="c6 solution"
                             dangerouslySetInnerHTML={
                               Object {
                                 "__html": "Detailed solution",
@@ -1498,7 +6487,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="controls"
                     >
                       <button
-                        className="sc-idiyUo iiCZLe"
+                        className="c11"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >

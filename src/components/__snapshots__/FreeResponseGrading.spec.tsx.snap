@@ -1,24 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FreeResponseGrading matches snapshot 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c4 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c4:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c5:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="sc-gsnTZi cSdbEu"
+  className="c0"
 >
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <div
-      className="sc-eCYdqJ ldOqjj"
+      className="c2"
     >
       <label
-        className="sc-hKMtZM dwUXki"
+        className="c3"
         htmlFor="frg-0-score"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi iGMKCY"
+        className="c4"
         disabled={false}
         id="frg-0-score"
         max={10}
@@ -36,17 +195,17 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <label
-      className="sc-hKMtZM dwUXki"
+      className="c3"
       htmlFor="frg-0-comment"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf bbxjYD"
+      className="c5"
       disabled={false}
       id="frg-0-comment"
       onChange={[Function]}
@@ -55,10 +214,10 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
     />
   </div>
   <div
-    className="sc-iBkjds crHxek"
+    className="c6"
   >
     <button
-      className="sc-bczRLJ fLTvYy"
+      className="c7"
       disabled={true}
       onClick={[Function]}
     >
@@ -69,24 +228,183 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
 `;
 
 exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c4 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c4:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c5:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="sc-gsnTZi cSdbEu"
+  className="c0"
 >
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <div
-      className="sc-eCYdqJ ldOqjj"
+      className="c2"
     >
       <label
-        className="sc-hKMtZM dwUXki"
+        className="c3"
         htmlFor="frg-3-score"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi iGMKCY"
+        className="c4"
         disabled={true}
         id="frg-3-score"
         max={10}
@@ -104,17 +422,17 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <label
-      className="sc-hKMtZM dwUXki"
+      className="c3"
       htmlFor="frg-3-comment"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf bbxjYD"
+      className="c5"
       disabled={true}
       id="frg-3-comment"
       onChange={[Function]}
@@ -123,10 +441,10 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
     />
   </div>
   <div
-    className="sc-iBkjds crHxek"
+    className="c6"
   >
     <button
-      className="sc-bczRLJ fLTvYy"
+      className="c7"
       disabled={true}
       onClick={[Function]}
     >
@@ -137,24 +455,183 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
 `;
 
 exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c4 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c4:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c5:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="sc-gsnTZi cSdbEu"
+  className="c0"
 >
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <div
-      className="sc-eCYdqJ ldOqjj"
+      className="c2"
     >
       <label
-        className="sc-hKMtZM dwUXki"
+        className="c3"
         htmlFor="frg-4-score"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi iGMKCY"
+        className="c4"
         disabled={false}
         id="frg-4-score"
         max={25}
@@ -172,17 +649,17 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <label
-      className="sc-hKMtZM dwUXki"
+      className="c3"
       htmlFor="frg-4-comment"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf bbxjYD"
+      className="c5"
       disabled={false}
       id="frg-4-comment"
       onChange={[Function]}
@@ -191,10 +668,10 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
     />
   </div>
   <div
-    className="sc-iBkjds crHxek"
+    className="c6"
   >
     <button
-      className="sc-bczRLJ fLTvYy"
+      className="c7"
       disabled={true}
       onClick={[Function]}
     >
@@ -205,24 +682,183 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
 `;
 
 exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c4 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c4:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c5:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="sc-gsnTZi cSdbEu"
+  className="c0"
 >
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <div
-      className="sc-eCYdqJ ldOqjj"
+      className="c2"
     >
       <label
-        className="sc-hKMtZM dwUXki"
+        className="c3"
         htmlFor="frg-1-score"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi iGMKCY"
+        className="c4"
         disabled={false}
         id="frg-1-score"
         max={10}
@@ -240,17 +876,17 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <label
-      className="sc-hKMtZM dwUXki"
+      className="c3"
       htmlFor="frg-1-comment"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf bbxjYD"
+      className="c5"
       disabled={false}
       id="frg-1-comment"
       onChange={[Function]}
@@ -259,10 +895,10 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
     />
   </div>
   <div
-    className="sc-iBkjds crHxek"
+    className="c6"
   >
     <button
-      className="sc-bczRLJ fLTvYy"
+      className="c7"
       disabled={true}
       onClick={[Function]}
     >
@@ -273,24 +909,183 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
 `;
 
 exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 1px solid #f1f1f1;
+  min-width: 300px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.c3 {
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-weight: 600;
+  color: #424242;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+}
+
+.c4 {
+  width: 6rem;
+  padding: 0.8rem;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  border: 1px solid #818181;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::-moz-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:-ms-input-placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4::placeholder {
+  color: #6F6F6F;
+  text-align: center;
+  line-height: normal;
+}
+
+.c4:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c4:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.c5:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c5:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-  className="sc-gsnTZi cSdbEu"
+  className="c0"
 >
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <div
-      className="sc-eCYdqJ ldOqjj"
+      className="c2"
     >
       <label
-        className="sc-hKMtZM dwUXki"
+        className="c3"
         htmlFor="frg-2-score"
       >
         Points
       </label>
       <input
         aria-label="Score"
-        className="sc-jSMfEi iGMKCY"
+        className="c4"
         disabled={false}
         id="frg-2-score"
         max={10}
@@ -308,17 +1103,17 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
     </div>
   </div>
   <div
-    className="sc-dkzDqf gNmSNg"
+    className="c1"
   >
     <label
-      className="sc-hKMtZM dwUXki"
+      className="c3"
       htmlFor="frg-2-comment"
     >
       Comment
     </label>
     <textarea
       aria-label="Comment"
-      className="sc-gKXOVf bbxjYD"
+      className="c5"
       disabled={false}
       id="frg-2-comment"
       onChange={[Function]}
@@ -327,10 +1122,10 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
     />
   </div>
   <div
-    className="sc-iBkjds crHxek"
+    className="c6"
   >
     <button
-      className="sc-bczRLJ fLTvYy"
+      className="c7"
       disabled={true}
       onClick={[Function]}
     >
