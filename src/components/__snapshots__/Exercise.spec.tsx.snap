@@ -860,6 +860,11 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -910,6 +915,11 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -1662,6 +1672,11 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -1712,6 +1727,11 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2582,6 +2602,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -2632,6 +2657,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -3915,6 +3945,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -3965,6 +4000,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -5288,6 +5328,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -5338,6 +5383,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -6242,6 +6292,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -6292,6 +6347,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
