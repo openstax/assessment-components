@@ -125,6 +125,15 @@ describe('ProgressBar', () => {
     expect(feedbackDots(root)).toHaveLength(count);
   });
 
+  it('lets clicks pass through the feedback dot to the question button', () => {
+    const item = renderer.create(
+      <ProgressBarItem index={0} isActive={false} step={{variant: 'isCorrect', hasFeedback: true}} goToStep={() => null} />
+    ).toJSON() as renderer.ReactTestRendererJSON;
+    const dot = item.children?.find(child => typeof child !== 'string' && child.type === 'span');
+
+    expect(dot).toHaveStyleRule('pointer-events', 'none');
+  });
+
   it('calls goToStep with the index and step when clicked', () => {
     const goToStep = jest.fn();
     const step: Step = {variant: 'isCorrect'};

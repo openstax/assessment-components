@@ -112,14 +112,14 @@ const StyledFeedbackNotification = styled.span<{ isActive: boolean }>`
   width: 1rem;
   padding: 0.2rem;
   border-radius: 80%;
+  pointer-events: none;
 `;
 
-const variantLabels: Record<string, string> = {
+const variantLabels: Record<Exclude<NonNullable<ProgressBarItemVariant>, 'isStatus'>, string> = {
   isCorrect: 'Correct',
   isIncorrect: 'Incorrect',
   isIncomplete: 'Incomplete',
   isPartialCredit: 'Partial credit',
-  null: 'Not yet graded',
 };
 
 const itemLabel = (index: number, step: {variant: ProgressBarItemVariant; hasFeedback?: boolean}) => {
@@ -127,7 +127,7 @@ const itemLabel = (index: number, step: {variant: ProgressBarItemVariant; hasFee
     return 'Assignment status';
   }
 
-  const status = variantLabels[String(step.variant)];
+  const status = step.variant === null ? 'Not yet graded' : variantLabels[step.variant];
   const feedback = step.hasFeedback && step.variant ? 'feedback available' : undefined;
 
   return [`Question ${index + 1}`, status, feedback].filter(Boolean).join(', ');
