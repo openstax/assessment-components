@@ -101,7 +101,8 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   border-radius: 50%;
 `;
 
-const StyledFeedbackNotification = styled.button<{ isActive: boolean }>`
+const StyledFeedbackNotification = styled.span<{ isActive: boolean }>`
+  box-sizing: border-box;
   background-color: ${colors.palette.mediumBlue};
   border: 0.2rem solid ${colors.palette.white};
   position: absolute;
@@ -112,6 +113,25 @@ const StyledFeedbackNotification = styled.button<{ isActive: boolean }>`
   padding: 0.2rem;
   border-radius: 80%;
 `;
+
+const variantLabels: Record<string, string> = {
+  isCorrect: 'Correct',
+  isIncorrect: 'Incorrect',
+  isIncomplete: 'Incomplete',
+  isPartialCredit: 'Partial credit',
+  null: 'Not yet graded',
+};
+
+const itemLabel = (index: number, step: {variant: ProgressBarItemVariant; hasFeedback?: boolean}) => {
+  if (step.variant === 'isStatus') {
+    return 'Assignment status';
+  }
+
+  const status = variantLabels[String(step.variant)];
+  const feedback = step.hasFeedback && step.variant ? 'feedback available' : undefined;
+
+  return [`Question ${index + 1}`, status, feedback].filter(Boolean).join(', ');
+};
 
 const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
   if (variant === 'isStatus') {
@@ -126,35 +146,30 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
       background: colors.answer.correct,
       color: colors.palette.white,
       padding: defaultPadding,
-      label: 'Correct',
     },
     isIncorrect: {
       icon: faXmark,
       background: colors.answer.incorrect,
       color: colors.palette.white,
       padding: defaultPadding,
-      label: 'Incorrect',
     },
     isIncomplete: {
       icon: faQuestion,
       background: colors.answer.neutral,
       color: colors.palette.white,
       padding: defaultPadding,
-      label: 'Incomplete'
     },
     isPartialCredit: {
       icon: faP,
       background: colors.answer.partialCredit,
       color: colors.palette.white,
       padding: '0.1rem 0.1rem 0.1rem 0.2rem',
-      label: 'Partial credit'
     },
     null: {
       icon: faCircle,
       background: colors.answer.neutral,
       color: colors.answer.neutralDark,
       padding: defaultPadding,
-      label: 'Not yet graded'
     }
   }[String(variant)];
 
@@ -166,8 +181,7 @@ const ItemIcon = ({ variant }: { variant: ProgressBarItemVariant }) => {
     style={{ background: variantData.background, padding: variantData.padding }}
     height='16px'
     width='16px'
-    aria-label={variantData.label}
-    aria-hidden={undefined}
+    aria-hidden='true'
   />;
 }
 
@@ -189,7 +203,7 @@ export type ProgressBarItemVariant = 'isCorrect' | 'isIncorrect' | 'isStatus' | 
 export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant; hasFeedback?: boolean}>({index, isActive, step, goToStep}: ProgressBarItemProps<S>) =>
   <StyledItemWrapper>
     {step.hasFeedback && step.variant && step.variant !== 'isStatus' 
-      ? <StyledFeedbackNotification isActive={isActive} aria-label={`Question ${index + 1} - Feedback`} /> 
+      ? <StyledFeedbackNotification isActive={isActive} aria-hidden='true' />
       : null
     }
     <StyledItem
@@ -197,7 +211,7 @@ export const ProgressBarItem = <S extends {variant: ProgressBarItemVariant; hasF
       isActive={isActive}
       onClick={() => goToStep(index, step)}
       aria-current={isActive ? 'location' : 'false'}
-      aria-label={step.variant === 'isStatus' ? 'Assignment status' : `Question ${index + 1}` }
+      aria-label={itemLabel(index, step)}
     >
       {step.variant === 'isStatus' ? <FlagIcon /> : index + 1}
     </StyledItem>
