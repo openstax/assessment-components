@@ -241,6 +241,7 @@ exports[`ProgressBar matches snapshot 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   background-color: #026AA1;
   border: 0.2rem solid #ffffff;
   position: absolute;
@@ -267,14 +268,14 @@ exports[`ProgressBar matches snapshot 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 1"
+      aria-label="Question 1, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -302,20 +303,20 @@ exports[`ProgressBar matches snapshot 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 2 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 2"
+      aria-label="Question 2, Correct, feedback available"
       className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
-      aria-label="Correct"
+      aria-hidden="true"
       className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
@@ -345,14 +346,14 @@ exports[`ProgressBar matches snapshot 1`] = `
   >
     <button
       aria-current="location"
-      aria-label="Question 3"
+      aria-label="Question 3, Incorrect"
       className="c6"
       onClick={[Function]}
     >
       3
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -380,20 +381,20 @@ exports[`ProgressBar matches snapshot 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 4 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 4"
+      aria-label="Question 4, Incorrect, feedback available"
       className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -423,14 +424,14 @@ exports[`ProgressBar matches snapshot 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 5"
+      aria-label="Question 5, Partial credit"
       className="c7"
       onClick={[Function]}
     >
       5
     </button>
     <svg
-      aria-label="Partial credit"
+      aria-hidden="true"
       className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
@@ -460,14 +461,14 @@ exports[`ProgressBar matches snapshot 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 6"
+      aria-label="Question 6, Not yet graded"
       className="c8"
       onClick={[Function]}
     >
       6
     </button>
     <svg
-      aria-label="Not yet graded"
+      aria-hidden="true"
       className="svg-inline--fa fa-circle c9"
       color="#5f6163"
       data-icon="circle"
@@ -759,6 +760,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   background-color: #026AA1;
   border: 0.2rem solid #ffffff;
   position: absolute;
@@ -771,6 +773,7 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   background-color: #026AA1;
   border: 0.2rem solid #ffffff;
   position: absolute;
@@ -797,14 +800,14 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 1"
+      aria-label="Question 1, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -832,20 +835,20 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 2 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 2"
+      aria-label="Question 2, Correct, feedback available"
       className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
-      aria-label="Correct"
+      aria-hidden="true"
       className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
@@ -875,14 +878,14 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 3"
+      aria-label="Question 3, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -910,20 +913,20 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 4 - Feedback"
+    <span
+      aria-hidden="true"
       className="c6"
     />
     <button
       aria-current="location"
-      aria-label="Question 4"
+      aria-label="Question 4, Incorrect, feedback available"
       className="c7"
       onClick={[Function]}
     >
       4
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -953,14 +956,14 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 5"
+      aria-label="Question 5, Partial credit"
       className="c8"
       onClick={[Function]}
     >
       5
     </button>
     <svg
-      aria-label="Partial credit"
+      aria-hidden="true"
       className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
@@ -990,14 +993,14 @@ exports[`ProgressBar matches snapshot when active step is incomplete 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 6"
+      aria-label="Question 6, Not yet graded"
       className="c9"
       onClick={[Function]}
     >
       6
     </button>
     <svg
-      aria-label="Not yet graded"
+      aria-hidden="true"
       className="svg-inline--fa fa-circle c10"
       color="#5f6163"
       data-icon="circle"
@@ -1259,6 +1262,7 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   background-color: #026AA1;
   border: 0.2rem solid #ffffff;
   position: absolute;
@@ -1285,14 +1289,14 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 1"
+      aria-label="Question 1, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1320,20 +1324,20 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 2 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 2"
+      aria-label="Question 2, Correct, feedback available"
       className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
-      aria-label="Correct"
+      aria-hidden="true"
       className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
@@ -1363,14 +1367,14 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 3"
+      aria-label="Question 3, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1398,20 +1402,20 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 4 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 4"
+      aria-label="Question 4, Incorrect, feedback available"
       className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1441,14 +1445,14 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   >
     <button
       aria-current="location"
-      aria-label="Question 5"
+      aria-label="Question 5, Partial credit"
       className="c6"
       onClick={[Function]}
     >
       5
     </button>
     <svg
-      aria-label="Partial credit"
+      aria-hidden="true"
       className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
@@ -1478,14 +1482,14 @@ exports[`ProgressBar matches snapshot when active step is partial credit 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 6"
+      aria-label="Question 6, Not yet graded"
       className="c7"
       onClick={[Function]}
     >
       6
     </button>
     <svg
-      aria-label="Not yet graded"
+      aria-hidden="true"
       className="svg-inline--fa fa-circle c8"
       color="#5f6163"
       data-icon="circle"
@@ -1747,6 +1751,7 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   background-color: #026AA1;
   border: 0.2rem solid #ffffff;
   position: absolute;
@@ -1773,14 +1778,14 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 1"
+      aria-label="Question 1, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       1
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1808,20 +1813,20 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 2 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 2"
+      aria-label="Question 2, Correct, feedback available"
       className="c5"
       onClick={[Function]}
     >
       2
     </button>
     <svg
-      aria-label="Correct"
+      aria-hidden="true"
       className="svg-inline--fa fa-check c3"
       color="#ffffff"
       data-icon="check"
@@ -1851,14 +1856,14 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 3"
+      aria-label="Question 3, Incorrect"
       className="c2"
       onClick={[Function]}
     >
       3
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1886,20 +1891,20 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   <span
     className="c1"
   >
-    <button
-      aria-label="Question 4 - Feedback"
+    <span
+      aria-hidden="true"
       className="c4"
     />
     <button
       aria-current="false"
-      aria-label="Question 4"
+      aria-label="Question 4, Incorrect, feedback available"
       className="c2"
       onClick={[Function]}
     >
       4
     </button>
     <svg
-      aria-label="Incorrect"
+      aria-hidden="true"
       className="svg-inline--fa fa-xmark c3"
       color="#ffffff"
       data-icon="xmark"
@@ -1929,14 +1934,14 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 5"
+      aria-label="Question 5, Partial credit"
       className="c6"
       onClick={[Function]}
     >
       5
     </button>
     <svg
-      aria-label="Partial credit"
+      aria-hidden="true"
       className="svg-inline--fa fa-p c3"
       color="#ffffff"
       data-icon="p"
@@ -1966,14 +1971,14 @@ exports[`ProgressBar matches snapshot when status step is active 1`] = `
   >
     <button
       aria-current="false"
-      aria-label="Question 6"
+      aria-label="Question 6, Not yet graded"
       className="c7"
       onClick={[Function]}
     >
       6
     </button>
     <svg
-      aria-label="Not yet graded"
+      aria-hidden="true"
       className="svg-inline--fa fa-circle c8"
       color="#5f6163"
       data-icon="circle"
