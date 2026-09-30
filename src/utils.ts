@@ -33,9 +33,9 @@ export function countWords(text: string) {
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 
 export const formatTimestamp = (timestamp: string | number) => new Date(timestamp).toLocaleString('en-US', {
-  month: 'short',
+  month: 'numeric',
   day: 'numeric',
-  year: 'numeric',
+  year: '2-digit',
   hour: 'numeric',
   minute: '2-digit',
   hour12: true,
