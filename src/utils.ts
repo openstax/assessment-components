@@ -22,13 +22,8 @@ export const isAnswerIncorrect = (answer: Answer, incorrectAnswerId?: ID) =>
 export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
    answer.id == answerId;
 
-export function countWords(text: string) {
-  const trimmedText = text.trim();
-  if (!trimmedText) return 0;
-  // Count whitespace-separated tokens
-  const words = trimmedText.split(/\s+/);
-  return words.length;
-}
+// Counts the same way cutie enforces `data-max-characters`, so limits carry over to QTI
+export const countCharacters = (text: string) => text.trim().length;
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 

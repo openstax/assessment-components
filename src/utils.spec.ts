@@ -1,4 +1,4 @@
-import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
+import { countCharacters, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
 import { Answer } from './types';
 
 describe('isAnswerCorrect', () => {
@@ -77,6 +77,21 @@ describe('isAnswerChecked', () => {
     expect(isAnswerChecked(answer, undefined)).toBe(false);
     expect(isAnswerChecked(answer)).toBe(false);
     expect(isAnswerChecked(answer, answer.id)).toBe(true);
+  });
+});
+
+describe('countCharacters', () => {
+  it('counts every character, including spaces and punctuation', () => {
+    expect(countCharacters('')).toBe(0);
+    expect(countCharacters('Hi, there!')).toBe(10);
+  });
+
+  it('ignores leading and trailing whitespace', () => {
+    expect(countCharacters('  Hi, there!\n')).toBe(10);
+  });
+
+  it('counts UTF-16 code units, as cutie does', () => {
+    expect(countCharacters('ok 😀')).toBe(5);
   });
 });
 

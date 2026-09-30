@@ -32,7 +32,6 @@ describe('Free Response Input', () => {
         answers: [],
         is_answer_order_important: false,
       },
-      wordLimit: 50,
       needsSaved: false,
       cancelHandler: jest.fn(),
     };
