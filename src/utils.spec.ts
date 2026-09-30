@@ -86,12 +86,12 @@ describe('countCharacters', () => {
     expect(countCharacters('Hi, there!')).toBe(10);
   });
 
-  it('counts an emoji as one character', () => {
-    expect(countCharacters('ok 😀')).toBe(4);
+  it('ignores leading and trailing whitespace', () => {
+    expect(countCharacters('  Hi, there!\n')).toBe(10);
   });
 
-  it('counts an accented letter as one character', () => {
-    expect(countCharacters('café')).toBe(4);
+  it('counts UTF-16 code units, as cutie does', () => {
+    expect(countCharacters('ok 😀')).toBe(5);
   });
 });
 

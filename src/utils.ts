@@ -22,8 +22,8 @@ export const isAnswerIncorrect = (answer: Answer, incorrectAnswerId?: ID) =>
 export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
    answer.id == answerId;
 
-// Counts Unicode code points, so an emoji counts as one character instead of two
-export const countCharacters = (text: string) => Array.from(text).length;
+// Counts the same way cutie enforces `data-max-characters`, so limits carry over to QTI
+export const countCharacters = (text: string) => text.trim().length;
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 

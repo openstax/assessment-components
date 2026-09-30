@@ -112,7 +112,7 @@ describe('QuestionBody', () => {
           onAnswerChange={() => undefined}
         />
       );
-      expect(remainingCharactersIn(tree)).toEqual(`${800 - 6}`);
+      expect(remainingCharactersIn(tree)).toEqual(`${800 - 7}`);
     });
 
     it('gives a small response size the short limit', () => {
