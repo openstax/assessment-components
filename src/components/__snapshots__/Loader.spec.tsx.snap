@@ -1,8 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loader matches snapshot 1`] = `
+.c0 {
+  max-width: 1000px;
+  padding: 2rem;
+  margin: 2rem;
+  border: 1px solid #e4e4e4;
+  border-radius: 0.25rem;
+  background-color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 > svg {
+  max-width: 600px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+@media (min-width:960px) {
+  .c0 {
+    min-height: 53.8rem;
+  }
+}
+
 <div
-  className="sc-bczRLJ hXcEew"
+  className="c0"
 >
   <svg
     aria-labelledby="OSLoader-aria"

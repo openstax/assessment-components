@@ -1,20 +1,525 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExerciseQuestion matches snapshot 1`] = `
+.c4 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c4:not([disabled]) {
+  cursor: pointer;
+}
+
+.c4:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c4:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c4:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c3 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c3 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c3 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c3 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c3 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c3 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c3 .controls button:has(~ button),
+.c3 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c3 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body"
+    className="c0 openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -59,7 +564,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -102,7 +607,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -118,7 +623,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c3 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -127,7 +632,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c4"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -140,20 +645,532 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
 `;
 
 exports[`ExerciseQuestion renders Re-submit button 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -198,7 +1215,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -241,14 +1258,14 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -264,7 +1281,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -273,7 +1290,7 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
@@ -287,20 +1304,532 @@ exports[`ExerciseQuestion renders Re-submit button 1`] = `
 `;
 
 exports[`ExerciseQuestion renders Save button 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -345,7 +1874,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -388,14 +1917,14 @@ exports[`ExerciseQuestion renders Save button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -411,7 +1940,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -420,7 +1949,7 @@ exports[`ExerciseQuestion renders Save button 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
@@ -434,20 +1963,532 @@ exports[`ExerciseQuestion renders Save button 1`] = `
 `;
 
 exports[`ExerciseQuestion renders Submit & continue button 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -492,7 +2533,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -535,14 +2576,14 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -558,7 +2599,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -567,7 +2608,7 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="submit-answer-btn"
           disabled={false}
           onClick={[Function]}
@@ -581,20 +2622,525 @@ exports[`ExerciseQuestion renders Submit & continue button 1`] = `
 `;
 
 exports[`ExerciseQuestion renders all attempts remaining 1`] = `
+.c4 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c4:not([disabled]) {
+  cursor: pointer;
+}
+
+.c4:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c4:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c4:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c3 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c3 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c3 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c3 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c3 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c3 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c3 .controls button:has(~ button),
+.c3 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c3 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c3 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c3 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c3 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body"
+    className="c0 openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -639,7 +3185,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -682,7 +3228,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -698,7 +3244,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c3 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -722,7 +3268,7 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c4"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -735,20 +3281,532 @@ exports[`ExerciseQuestion renders all attempts remaining 1`] = `
 `;
 
 exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -793,7 +3851,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -836,14 +3894,14 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -859,7 +3917,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -868,7 +3926,7 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -881,20 +3939,558 @@ exports[`ExerciseQuestion renders continue button (unused?) 1`] = `
 `;
 
 exports[`ExerciseQuestion renders detailed solution 1`] = `
+.c7 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c7:not([disabled]) {
+  cursor: pointer;
+}
+
+.c7:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c7:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c7:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #0D7741;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c4 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c6 .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c6 .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c6 .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c5 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c5 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c5 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c5 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c5 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c5 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c5 .controls button:has(~ button),
+.c5 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c5 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c5 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c5 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c5 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-correct-answer has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-correct-answer has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -939,14 +4535,14 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli iJgkjJ"
+                    className="c3"
                   >
                     <span>
                       Correct Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -989,14 +4585,14 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c4"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1012,7 +4608,7 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c5 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1021,7 +4617,7 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
         className="points"
       >
         <div
-          className="sc-ikZpkk bYyNzB"
+          className="c6"
           role="status"
         >
           <div
@@ -1033,7 +4629,7 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
               Detailed solution:
             </div>
             <div
-              className="sc-fnykZs felUKW solution"
+              className="c2 solution"
               dangerouslySetInnerHTML={
                 Object {
                   "__html": "A detailed solution",
@@ -1047,7 +4643,7 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c7"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -1060,20 +4656,532 @@ exports[`ExerciseQuestion renders detailed solution 1`] = `
 `;
 
 exports[`ExerciseQuestion renders free response 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c3 {
+  padding: 1rem 2.5rem;
+  margin: 1rem 0 1rem 1rem;
+  border-left: 1rem solid #f1f1f1;
+  font-style: italic;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body"
+    className="c0 openstax-question step-card-body"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1082,7 +5190,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
           data-question-number={1}
         />
         <div
-          className="sc-papXJ dcabis"
+          className="c3"
         >
           A free response
         </div>
@@ -1123,7 +5231,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1166,7 +5274,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1182,7 +5290,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1191,7 +5299,7 @@ exports[`ExerciseQuestion renders free response 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -1204,20 +5312,532 @@ exports[`ExerciseQuestion renders free response 1`] = `
 `;
 
 exports[`ExerciseQuestion renders no attempts remaining 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1262,7 +5882,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1305,14 +5925,14 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1328,7 +5948,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1337,7 +5957,7 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -1350,20 +5970,532 @@ exports[`ExerciseQuestion renders no attempts remaining 1`] = `
 `;
 
 exports[`ExerciseQuestion renders some attempts remaining 1`] = `
+.c5 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c5:not([disabled]) {
+  cursor: pointer;
+}
+
+.c5:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c5:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c5:disabled {
+  opacity: 0.4;
+}
+
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c3 {
+  color: #C22032;
+  text-transform: uppercase;
+  font-size: calc(1.1rem * var(--content-text-scale));
+  font-weight: bold;
+}
+
+.c1 {
+  width: 100%;
+}
+
+.c0.step-card-body {
+  padding: 4.8rem 14rem 0;
+}
+
+.c0.openstax-question {
+  border-top: 1px solid #d5d5d5;
+  font-size: calc(1.8rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .detailed-solution {
+  margin-bottom: 1rem;
+}
+
+.c0.openstax-question .detailed-solution .header {
+  display: inline;
+  margin-right: 0.5rem;
+  color: #5e6062;
+  font-weight: bold;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0.openstax-question .detailed-solution .solution {
+  display: inline;
+  color: #6f6f6f;
+}
+
+.c0.openstax-question img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+.c0.openstax-question .question-stem {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table {
+  margin-bottom: 20px;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+}
+
+.c0.openstax-question .instructions {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 10px;
+  color: #818181;
+  margin: 0;
+}
+
+.c0.openstax-question .instructions i {
+  margin-left: 5px;
+}
+
+.c0.openstax-question .instructions .text-info {
+  color: #0dc0dc;
+  padding-left: 5px;
+  cursor: pointer;
+  font-style: normal;
+}
+
+.c0.openstax-question .multiple-choice-prompt {
+  font-weight: 600;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer {
+  width: initial;
+  color: #424242;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
+  background-color: #f9f9f9;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  border-radius: calc(3.6rem / 2);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #c6c6c6;
+  color: #6f6f6f;
+  -webkit-transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out,border-color 0.1s ease-in-out,background-color 0.1s ease-in-out;
+  background-color: #ffffff;
+  font-family: "Neue Helvetica W01",Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-answer * {
+  margin: 0;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+  content: attr(data-answer-choice);
+  text-align: center;
+  padding: 0;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-label {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0 0 0;
+  margin: 0;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+  cursor: pointer;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+  font-weight: bold;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+  color: #026AA1;
+  border-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .answer-input-box {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #026AA1;
+  background-color: #026AA1;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #0D7741;
+  background-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+  color: #0D7741;
+  border-color: #0D7741;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+  color: #C22032;
+  border-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+  color: #fff;
+  border-color: #C22032;
+  background-color: #C22032;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback {
+  font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-align: start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: #ffffff;
+  background-clip: padding-box;
+  max-width: 325px;
+  margin: calc(8px - 14px) 0 1rem 8px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+  color: #6f6f6f;
+  font-size: calc(1.4rem * var(--content-text-scale));
+  max-width: 370px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 8px;
+  margin-left: 9px;
+  top: calc(8px * -1);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 calc(16px / 2) 8px calc(16px / 2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+  top: 0;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+  top: 1px;
+  border-bottom-color: #ffffff;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+  right: calc(-9px - 1px);
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+  right: 9px;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+  padding: 1rem 0.8rem;
+}
+
+.c0.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+  padding: 0.9rem 1.1rem;
+}
+
+.c0.openstax-question .openstax-answer {
+  border-top: 1px solid #d5d5d5;
+  margin: 10px 0;
+  padding: 6px 8px;
+}
+
+.c4 {
+  padding: 4.8rem 14rem 0;
+  border-top: 1px solid #d5d5d5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: calc(1.6rem * var(--content-text-scale));
+  line-height: calc(2rem * var(--content-text-scale));
+  background: #fdfdfd;
+  overflow: auto;
+}
+
+.c4 > * {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c4 button {
+  width: 160px;
+  height: 48px;
+}
+
+.c4 .step-card-footer-inner {
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.c4 .points .attempts-left {
+  color: #B03808;
+  font-weight: bold;
+}
+
+.c4 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.c4 .controls button:has(~ button),
+.c4 .controls button + button {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  width: 100px;
+}
+
+@media (max-width:999px) {
+  .c0.step-card-body {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0.step-card-body {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:999px) {
+  .c4 {
+    padding: 24px 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 {
+    padding: calc(8px * 2) 8px;
+  }
+}
+
+@media (max-width:600px) {
+  .c4 .step-card-footer-inner {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width:1000px) {
+  .c4 {
+    padding: 0 140px 32px 140px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .c4 .points {
+    max-width: 400px;
+  }
+}
+
 <div
   data-test-id="student-exercise-question"
 >
   <div
-    className="sc-idiyUo dCGiQG openstax-question step-card-body has-incorrect-answer"
+    className="c0 openstax-question step-card-body has-incorrect-answer"
     data-question-number={1}
     data-test-id="question"
   >
     <div
-      className="sc-bjUoiL fbQKcx"
+      className="c1"
     >
       <div>
         <div
-          className="sc-fnykZs felUKW question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Is this a question?",
@@ -1408,7 +6540,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
                   role="status"
                 >
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "True",
@@ -1451,14 +6583,14 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
                   role="status"
                 >
                   <div
-                    className="sc-fEOsli gIZKme"
+                    className="c3"
                   >
                     <span>
                       Incorrect Answer
                     </span>
                   </div>
                   <span
-                    className="sc-fnykZs felUKW answer-content"
+                    className="c2 answer-content"
                     dangerouslySetInnerHTML={
                       Object {
                         "__html": "False",
@@ -1474,7 +6606,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
     </div>
   </div>
   <div
-    className="sc-jIZahH eISIrg step-card-footer"
+    className="c4 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -1498,7 +6630,7 @@ exports[`ExerciseQuestion renders some attempts remaining 1`] = `
         className="controls"
       >
         <button
-          className="sc-bczRLJ fLTvYy"
+          className="c5"
           data-test-id="continue-btn"
           onClick={[Function]}
         >

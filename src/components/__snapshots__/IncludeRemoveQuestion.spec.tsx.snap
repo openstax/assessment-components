@@ -1,18 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IncludeRemoveQuestion matches snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  width: 7.4rem;
+  height: 8.7rem;
+  color: white;
+  border: none;
+}
+
+.c1:hover {
+  box-shadow: 0 0.1rem 0.4rem 0 #00000066;
+}
+
+.c1 span {
+  line-height: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.c1.include {
+  background-color: #026AA1;
+  padding-top: 1.4rem;
+}
+
+.c1.remove {
+  background-color: #D4450C;
+  padding-top: 1.4rem;
+}
+
+.c1.details {
+  background-color: #424242;
+}
+
+.c2 {
+  border-radius: 50%;
+  background-color: #ffffff;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0.5rem;
+  font-weight: 900;
+  line-height: 1.4rem;
+}
+
+.c2.include {
+  color: #026AA1;
+}
+
+.c2.remove {
+  color: #D4450C;
+}
+
+.c2.details {
+  color: #424242;
+}
+
 <div
-  className="sc-bczRLJ fXHYVE"
+  className="c0"
 >
   <button
     aria-label="include"
-    className="sc-gsnTZi gmAXwu include"
+    className="c1 include"
     onClick={[Function]}
   >
     <svg
       aria-hidden="true"
       aria-label="include question"
-      className="svg-inline--fa fa-plus fa-border fa-lg sc-dkzDqf bHPCba include"
+      className="svg-inline--fa fa-plus fa-border fa-lg c2 include"
       data-icon="plus"
       data-prefix="fas"
       focusable="false"
@@ -33,7 +96,7 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   </button>
   <button
     aria-label="details"
-    className="sc-gsnTZi gmAXwu details"
+    className="c1 details"
     onClick={
       [MockFunction] {
         "calls": Array [
@@ -50,7 +113,7 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf bHPCba details"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg c2 details"
       data-icon="ellipsis"
       data-prefix="fas"
       focusable="false"
@@ -73,18 +136,81 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
 `;
 
 exports[`IncludeRemoveQuestion matches snapshot 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c1 {
+  width: 7.4rem;
+  height: 8.7rem;
+  color: white;
+  border: none;
+}
+
+.c1:hover {
+  box-shadow: 0 0.1rem 0.4rem 0 #00000066;
+}
+
+.c1 span {
+  line-height: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.c1.include {
+  background-color: #026AA1;
+  padding-top: 1.4rem;
+}
+
+.c1.remove {
+  background-color: #D4450C;
+  padding-top: 1.4rem;
+}
+
+.c1.details {
+  background-color: #424242;
+}
+
+.c2 {
+  border-radius: 50%;
+  background-color: #ffffff;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0.5rem;
+  font-weight: 900;
+  line-height: 1.4rem;
+}
+
+.c2.include {
+  color: #026AA1;
+}
+
+.c2.remove {
+  color: #D4450C;
+}
+
+.c2.details {
+  color: #424242;
+}
+
 <div
-  className="sc-bczRLJ fXHYVE"
+  className="c0"
 >
   <button
     aria-label="remove"
-    className="sc-gsnTZi gmAXwu remove"
+    className="c1 remove"
     onClick={[Function]}
   >
     <svg
       aria-hidden="true"
       aria-label="remove question"
-      className="svg-inline--fa fa-minus fa-border fa-lg sc-dkzDqf bHPCba remove"
+      className="svg-inline--fa fa-minus fa-border fa-lg c2 remove"
       data-icon="minus"
       data-prefix="fas"
       focusable="false"
@@ -105,7 +231,7 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
   </button>
   <button
     aria-label="details"
-    className="sc-gsnTZi gmAXwu details"
+    className="c1 details"
     onClick={
       [MockFunction] {
         "calls": Array [
@@ -122,7 +248,7 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
   >
     <svg
       aria-hidden="true"
-      className="svg-inline--fa fa-ellipsis fa-border fa-lg sc-dkzDqf bHPCba details"
+      className="svg-inline--fa fa-ellipsis fa-border fa-lg c2 details"
       data-icon="ellipsis"
       data-prefix="fas"
       focusable="false"
