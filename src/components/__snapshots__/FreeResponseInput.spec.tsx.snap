@@ -431,8 +431,8 @@ Array [
   color: #6f6f6f;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -564,9 +564,9 @@ Array [
       >
         <div>
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              50
+              4000
             </span>
           </span>
         </div>
@@ -1407,8 +1407,8 @@ Array [
   color: #6f6f6f;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -1540,9 +1540,9 @@ Array [
       >
         <div>
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              46
+              3981
             </span>
           </span>
         </div>
@@ -1783,8 +1783,8 @@ Array [
   color: #6f6f6f;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -1924,9 +1924,9 @@ Array [
         </div>
         <div>
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              47
+              3973
             </span>
           </span>
         </div>
@@ -2194,8 +2194,8 @@ Array [
   color: #6f6f6f;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -2327,9 +2327,9 @@ Array [
       >
         <div>
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              43
+              3942
             </span>
           </span>
         </div>
@@ -2570,8 +2570,8 @@ Array [
   color: #6f6f6f;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -2711,9 +2711,9 @@ Array [
         </div>
         <div>
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              50
+              4000
             </span>
           </span>
         </div>

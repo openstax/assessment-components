@@ -5,7 +5,7 @@ import { Answer, ExerciseData, ID, QuestionState, StepBase } from '../../types';
 import { CompactDisplayProps } from '../compactDisplay';
 import { ExerciseBody } from '../ExerciseBody';
 import { ExerciseWrapper } from '../ExerciseWrapper';
-import { isFreeResponseQuestion, QuestionBody } from '../QuestionBody';
+import { CharacterLimitByResponseSize, isFreeResponseQuestion, QuestionBody, ResponseSize } from '../QuestionBody';
 import { QuestionLevelFeedback } from '../QuestionLevelFeedback';
 import { QuestionWrapper } from '../QuestionWrapper';
 import { numberfyId } from '../../utils';
@@ -57,6 +57,11 @@ export interface ExerciseBaseProps {
    * "Submit & continue" and the exercise advances by itself once the response lands.
    */
   hasFeedback?: boolean;
+  /**
+   * The free-response character limit for each `response-size:` tag value.
+   * Defaults to `DEFAULT_CHARACTER_LIMIT_BY_RESPONSE_SIZE`.
+   */
+  characterLimitByResponseSize?: CharacterLimitByResponseSize;
 }
 
 export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
@@ -105,6 +110,7 @@ export const Exercise = ({
   compactDisplay,
   onGradingSave,
   className,
+  characterLimitByResponseSize,
   ...props
 }: {
   className?: string,
@@ -151,7 +157,7 @@ export const Exercise = ({
   }, [exercise.questions, questionStates]);
 
   const responseSize = exercise.tags?.find(t => t.startsWith('response-size:'))?.split(':')[1] as
-    'short' | 'medium' | 'long' | undefined;
+    ResponseSize | undefined;
 
   const onStatusChange = React.useCallback((id: ID, next: QuestionStatus) => setStatuses(
     (current) => current[id] && current[id].canSubmit === next.canSubmit && current[id].dirty === next.dirty
@@ -213,6 +219,7 @@ export const Exercise = ({
               needsSaved={state.needsSaved}
               questionNumber={questionNumber + i}
               responseSize={responseSize}
+              characterLimitByResponseSize={characterLimitByResponseSize}
               previewMode={previewMode}
               show_all_feedback={show_all_feedback}
               labelAnswers={labelAnswers}

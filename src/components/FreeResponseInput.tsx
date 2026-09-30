@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 import { Answer, ExerciseQuestionData, ID } from '../types';
 import { CompactDisplayProps } from './compactDisplay';
-import { QuestionBody } from './QuestionBody';
+import { CharacterLimitByResponseSize, QuestionBody, ResponseSize } from './QuestionBody';
 import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 import { QuestionWrapper } from './QuestionWrapper';
 import { numberfyId } from '../utils';
@@ -23,9 +23,8 @@ export interface FreeResponseProps extends CompactDisplayProps {
   question: ExerciseQuestionData;
 
   // Specific to free response
-  /** @deprecated Pass the semantic `responseSize`; the word count behind it lives in this library. */
-  wordLimit?: number;
-  responseSize?: 'short' | 'medium' | 'long';
+  responseSize?: ResponseSize;
+  characterLimitByResponseSize?: CharacterLimitByResponseSize;
   score?: { raw?: number; max?: number };
   feedback_html?: string;
   submissionTimestamp?: string | number;
@@ -48,7 +47,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     is_completed, canAnswer, needsSaved, apiIsPending, free_response, onAnswerChange,
     onAnswerSave, onNextStep, questionNumber, question, responseSize, score, feedback_html,
-    submissionTimestamp, cancelHandler, previewMode = false, onGradingSave, gradingTimestamp, wordLimit,
+    submissionTimestamp, cancelHandler, previewMode = false, onGradingSave, gradingTimestamp, characterLimitByResponseSize,
     canUpdateCurrentStep = false, hasUnlimitedAttempts, hasFeedback, compactDisplay,
   } = props;
 
@@ -81,7 +80,7 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
       apiIsPending={apiIsPending}
       needsSaved={needsSaved}
       responseSize={responseSize}
-      wordLimit={wordLimit}
+      characterLimitByResponseSize={characterLimitByResponseSize}
       previewMode={previewMode}
       onGradingSave={previewMode ? onGradingSave : undefined}
       onAnswerChange={onAnswerChange}

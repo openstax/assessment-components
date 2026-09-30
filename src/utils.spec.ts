@@ -1,4 +1,4 @@
-import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
+import { countCharacters, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
 import { Answer } from './types';
 
 describe('isAnswerCorrect', () => {
@@ -77,6 +77,21 @@ describe('isAnswerChecked', () => {
     expect(isAnswerChecked(answer, undefined)).toBe(false);
     expect(isAnswerChecked(answer)).toBe(false);
     expect(isAnswerChecked(answer, answer.id)).toBe(true);
+  });
+});
+
+describe('countCharacters', () => {
+  it('counts every character, including spaces and punctuation', () => {
+    expect(countCharacters('')).toBe(0);
+    expect(countCharacters('Hi, there!')).toBe(10);
+  });
+
+  it('counts an emoji as one character', () => {
+    expect(countCharacters('ok 😀')).toBe(4);
+  });
+
+  it('counts an accented letter as one character', () => {
+    expect(countCharacters('café')).toBe(4);
   });
 });
 

@@ -22,13 +22,8 @@ export const isAnswerIncorrect = (answer: Answer, incorrectAnswerId?: ID) =>
 export const isAnswerChecked = (answer: Answer, answerId?: ID) =>
    answer.id == answerId;
 
-export function countWords(text: string) {
-  const trimmedText = text.trim();
-  if (!trimmedText) return 0;
-  // Count whitespace-separated tokens
-  const words = trimmedText.split(/\s+/);
-  return words.length;
-}
+// Counts Unicode code points, so an emoji counts as one character instead of two
+export const countCharacters = (text: string) => Array.from(text).length;
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 

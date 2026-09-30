@@ -133,6 +133,18 @@ describe('Exercise', () => {
       expect(onNextStep).toHaveBeenCalledWith(0);
     });
 
+    it('gives a free response the character limit for its response-size tag', () => {
+      props.exercise.tags = ['response-size:small'];
+      props.exercise.questions[0].formats = ['free-response'];
+      props.questionStates['1'].canAnswer = true;
+
+      const tree = renderer.create(<Exercise {...props} />);
+      const label = tree.root.find((node) => node.type === 'span' && node.children.includes(' Remaining characters: '));
+      const count = label.children[1];
+      if (typeof count === 'string') { throw new Error('expected the remaining count in its own span'); }
+      expect(count.children).toEqual(['800']);
+    });
+
     it('leaves multiple choice to hasFeedback', () => {
       const onNextStep = jest.fn();
       props.questionStates['1'].canAnswer = true;
