@@ -1,6 +1,7 @@
 import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 import { Question, QuestionProps } from './Question';
 import renderer from 'react-test-renderer';
+import { byClass, findAllNodes, findNode, textOf } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -43,6 +44,8 @@ describe('Question', () => {
     }
   });
 
+  // One deliberate whole-tree snapshot as a broad regression net; the rest assert the specific
+  // thing they are named for, so they do not churn when a nested component's markup changes.
   it('matches snapshot', () => {
     const tree = renderer.create(
       <Question {...props} />
@@ -50,37 +53,43 @@ describe('Question', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  const render = (overrides: Partial<QuestionProps> = {}) =>
+    renderer.create(<Question {...props} {...overrides} />).toJSON();
+
+  const sectionText = (tree: ReturnType<typeof render>, className: string) => {
+    const node = findNode(tree, byClass(className));
+    return node && textOf(node);
+  };
+
   it('renders composed feedback below the answers', () => {
-    const tree = renderer.create(
-      <Question
-        {...props}
-        feedback={<QuestionLevelFeedback detailedSolution='Content HTML' />}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render({ feedback: <QuestionLevelFeedback detailedSolution='Content HTML' /> });
+
+    expect(sectionText(tree, 'detailed-solution')).toBe('Detailed solution:Content HTML');
+    // the point of the prop: it lands after the answers, not before them
+    const order = findAllNodes(tree, node =>
+      byClass('answers-table')(node) || byClass('detailed-solution')(node));
+    expect(order.map(node => byClass('answers-table')(node))).toEqual([true, false]);
+
+    expect(sectionText(render(), 'detailed-solution')).toBeUndefined();
   });
 
   it('renders exercise uid', () => {
-    const tree = renderer.create(
-      <Question {...props} exercise_uid={'1@1'} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(sectionText(render({ exercise_uid: '1@1' }), 'exercise-uid')).toBe('1@1');
+    expect(sectionText(render(), 'exercise-uid')).toBeUndefined();
   });
 
   it('renders formats', () => {
     props.question.formats = ['true-false'];
-    const tree = renderer.create(
-      <Question {...props} displayFormats={true} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(sectionText(render({ displayFormats: true }), 'formats-listing')).toBe('Formats:true-false');
+    expect(sectionText(render({ displayFormats: false }), 'formats-listing')).toBeUndefined();
   });
 
   it('defaults formats', () => {
     (props as any).question.formats = undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
-    const tree = renderer.create(
-      <Question {...props} displayFormats={true} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+
+    // the listing still renders, just with nothing in it
+    expect(sectionText(render({ displayFormats: true }), 'formats-listing')).toBe('Formats:');
   });
 
   it('sets the correct classes', () => {
@@ -96,18 +105,18 @@ describe('Question', () => {
   });
 
   it('defaults QuestionHtml html', () => {
-    const tree = renderer.create(
-      <Question {...props} context={undefined} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    // an absent context renders nothing at all rather than an empty element
+    expect(sectionText(render({ context: undefined }), 'question-context')).toBeUndefined();
+    expect(sectionText(render({ context: 'Some context' }), 'question-context')).toBe('Some context');
   });
 
-  it('defaults collaborator_solutions', () => {
-    props.question.collaborator_solutions = undefined;
-    const tree = renderer.create(
-      <Question {...props} />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('ignores collaborator_solutions', () => {
+    // the detailed solution is composed in as `feedback` now; the question no longer reads it
+    props.question.collaborator_solutions = [
+      { content_html: 'Content HTML', solution_type: 'detailed' }
+    ];
+
+    expect(sectionText(render({ displaySolution: true }), 'detailed-solution')).toBeUndefined();
   });
 
 });
