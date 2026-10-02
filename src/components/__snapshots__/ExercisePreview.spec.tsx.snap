@@ -1356,17 +1356,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         </div>
                       </div>
                     </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="sc-idiyUo iiCZLe"
-                        data-test-id="continue-btn"
-                        onClick={[Function]}
-                      >
-                        Next
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>

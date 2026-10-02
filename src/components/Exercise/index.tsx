@@ -252,6 +252,7 @@ export const Exercise = ({
                  * this entry point — the one with the standing contract — holds both.
                  */
                 hasFeedback={isFreeResponse ? false : (props.hasFeedback ?? false)}
+                showControls={!previewMode}
                 onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
                 onNextStep={() => props.onNextStep(questionNumber + i - 1)}
                 onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
