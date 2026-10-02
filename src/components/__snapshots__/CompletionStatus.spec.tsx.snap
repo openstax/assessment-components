@@ -1,11 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CompletionStatus matches snapshot 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c4 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c4:not([disabled]) {
+  cursor: pointer;
+}
+
+.c4:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c4:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c4:disabled {
+  opacity: 0.4;
+}
+
+.c1 {
+  padding: 88px 72px;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(3rem * var(--content-text-scale));
+  display: block;
+}
+
+.c1 button {
+  height: 48px;
+}
+
+.c1 p {
+  margin: 16px 0 20px 0;
+}
+
+.c2 {
+  font-size: calc(2.4rem * var(--content-text-scale));
+  margin: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+}
+
+.c3 button {
+  height: 48px;
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    max-width: 1000px;
+  }
+}
+
 <div
-  className="sc-bczRLJ sc-iBkjds jcXbjw hVuZpc sc-iqcoie"
+  className="c0 c1 "
 >
   <h2
-    className="sc-ftvSup iFRSyk"
+    className="c2"
   >
     No questions have been answered.
   </h2>
@@ -13,10 +115,10 @@ exports[`CompletionStatus matches snapshot 1`] = `
     Begin working on the quiz.
   </p>
   <div
-    className="sc-papXJ cCDzwv"
+    className="c3"
   >
     <button
-      className="sc-gKXOVf fTCarG"
+      className="c4"
       data-test-id="start-btn"
       onClick={[Function]}
     >
@@ -27,11 +129,113 @@ exports[`CompletionStatus matches snapshot 1`] = `
 `;
 
 exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c4 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c4:not([disabled]) {
+  cursor: pointer;
+}
+
+.c4:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c4:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c4:disabled {
+  opacity: 0.4;
+}
+
+.c1 {
+  padding: 88px 72px;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(3rem * var(--content-text-scale));
+  display: block;
+}
+
+.c1 button {
+  height: 48px;
+}
+
+.c1 p {
+  margin: 16px 0 20px 0;
+}
+
+.c2 {
+  font-size: calc(2.4rem * var(--content-text-scale));
+  margin: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+}
+
+.c3 button {
+  height: 48px;
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    max-width: 1000px;
+  }
+}
+
 <div
-  className="sc-bczRLJ sc-iBkjds jcXbjw hVuZpc sc-iqcoie"
+  className="c0 c1 "
 >
   <h2
-    className="sc-ftvSup iFRSyk"
+    className="c2"
   >
     You are done.
   </h2>
@@ -39,10 +243,10 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
     Great job answering all the questions.
   </p>
   <div
-    className="sc-papXJ cCDzwv"
+    className="c3"
   >
     <button
-      className="sc-gKXOVf fTCarG"
+      className="c4"
       data-test-id="next-btn"
       onClick={[Function]}
     >
@@ -53,11 +257,113 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 `;
 
 exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
+.c0 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0 auto 5rem auto;
+  border: 0.1rem solid #d5d5d5;
+  border-radius: 0.25rem;
+  background-color: white;
+  overflow: hidden;
+}
+
+.c4 {
+  background-color: #D4450C;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 4rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.c4:not([disabled]) {
+  cursor: pointer;
+}
+
+.c4:not([disabled]):hover {
+  background: #E74B0D;
+}
+
+.c4:not([disabled]):active {
+  background: #C5400B;
+}
+
+.c4:disabled {
+  opacity: 0.4;
+}
+
+.c1 {
+  padding: 88px 72px;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(3rem * var(--content-text-scale));
+  display: block;
+}
+
+.c1 button {
+  height: 48px;
+}
+
+.c1 p {
+  margin: 16px 0 20px 0;
+}
+
+.c2 {
+  font-size: calc(2.4rem * var(--content-text-scale));
+  margin: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  gap: 1rem;
+}
+
+.c3 button {
+  height: 48px;
+}
+
+@media (min-width:1000px) {
+  .c0 {
+    max-width: 1000px;
+  }
+}
+
 <div
-  className="sc-bczRLJ sc-iBkjds jcXbjw hVuZpc sc-iqcoie"
+  className="c0 c1 "
 >
   <h2
-    className="sc-ftvSup iFRSyk"
+    className="c2"
   >
     Quiz is partially complete.
   </h2>
@@ -65,10 +371,10 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
     You've completed 5 of 15 questions.
   </p>
   <div
-    className="sc-papXJ cCDzwv"
+    className="c3"
   >
     <button
-      className="sc-gKXOVf fTCarG"
+      className="c4"
       data-test-id="continue-btn"
       onClick={[Function]}
     >

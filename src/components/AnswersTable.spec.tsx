@@ -2,6 +2,7 @@ import { AnswersTable, AnswersTableProps } from './AnswersTable';
 import renderer from 'react-test-renderer';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
+import { byClass, findAllNodes, findNode, textOf } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -44,6 +45,8 @@ describe('AnswersTable', () => {
     };
   });
 
+  // One deliberate whole-tree snapshot as a broad regression net; the rest assert the specific
+  // thing they are named for, so they do not churn when Answer's markup changes.
   it('matches tutor teacher-preview snapshot', () => {
     props.question.answers.forEach((answer, i) => answer.content_html = answerContent[i]);
     const tree = renderer.create(
@@ -52,28 +55,33 @@ describe('AnswersTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  const render = (overrides: Partial<AnswersTableProps> = {}) =>
+    renderer.create(<AnswersTable {...props} {...overrides} />).toJSON();
+
+  /**
+   * Each feedback block is associated with its answer by `aria-details` on the radio, so assert
+   * the pairing rather than the markup: which answer points at feedback, and what it says.
+   */
+  const feedbackByAnswer = (tree: ReturnType<typeof render>) => {
+    const feedback = new Map(findAllNodes(tree, byClass('question-feedback'))
+      .map(node => [node.props.id, textOf(node)]));
+
+    return findAllNodes(tree, node => node.type === 'input')
+      .map(input => input.props['aria-details'])
+      .map(id => (id === undefined ? null : feedback.get(id) ?? 'MISSING FEEDBACK'));
+  };
+
   it('renders correct answer feedback', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="1"
-        correct_answer_feedback_html="Feedback"
-        hasCorrectAnswer={true}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(feedbackByAnswer(render({
+      answer_id: '1', correct_answer_id: '1', correct_answer_feedback_html: 'Feedback',
+      hasCorrectAnswer: true,
+    }))).toEqual(['Feedback', null]);
   });
 
   it('renders incorrect answer feedback', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="2"
-        incorrectAnswerId="1"
-        feedback_html="Feedback"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(feedbackByAnswer(render({
+      answer_id: '1', correct_answer_id: '2', incorrectAnswerId: '1', feedback_html: 'Feedback',
+    }))).toEqual(['Feedback', null]);
   });
 
   it('renders all feedback', () => {
@@ -81,25 +89,24 @@ describe('AnswersTable', () => {
       id: '1',
       correctness: undefined,
       content_html: 'True',
-      feedback_html: 'Answer level feedback',
+      feedback_html: 'First answer feedback',
     }, {
       id: '2',
       correctness: undefined,
       content_html: 'False',
-      feedback_html: 'Answer level feedback'
+      feedback_html: 'Second answer feedback'
     }];
 
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        answer_id="1"
-        correct_answer_id="2"
-        incorrectAnswerId="1"
-        feedback_html="Feedback"
-        show_all_feedback={true}
-        question={{...props.question, answers}}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    // with show_all_feedback every answer gets its own feedback, not just the chosen one
+    expect(feedbackByAnswer(render({
+      answer_id: '1', correct_answer_id: '2', incorrectAnswerId: '1', feedback_html: 'Feedback',
+      show_all_feedback: true,
+      question: {...props.question, answers},
+    }))).toEqual(['First answer feedback', 'Second answer feedback']);
+  });
+
+  it('renders no feedback by default', () => {
+    expect(feedbackByAnswer(render())).toEqual([null, null]);
   });
 
   it('hides answers', () => {
@@ -135,12 +142,10 @@ describe('AnswersTable', () => {
   });
 
   it('renders instructions', () => {
-    const tree = renderer.create(
-      <AnswersTable {...props}
-        instructions={<b>Instructions</b>}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const table = findNode(render({ instructions: <b>Instructions</b> }), byClass('answers-table'));
+
+    expect(textOf(table || null)).toContain('Instructions');
+    expect(textOf(findNode(render(), byClass('answers-table')) || null)).not.toContain('Instructions');
   });
 
   it('casts question id to a number', () => {
