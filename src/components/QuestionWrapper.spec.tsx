@@ -57,6 +57,14 @@ describe('QuestionWrapper', () => {
       expect(textOf(tree, 'continue-btn')).toEqual('Next');
       expect(tree.root.findAllByType('button')).toHaveLength(3);
     });
+
+    it('renders no buttons when showControls is false', () => {
+      const tree = renderer.create(
+        <QuestionWrapper {...props} canAnswer={false} showControls={false} footerChildren={<div>solution</div>} />
+      );
+      expect(tree.root.findAllByType('button')).toHaveLength(0);
+      expect(tree.root.findAllByProps({ className: 'controls' })).toHaveLength(0);
+    });
   });
 
   describe('the left region', () => {

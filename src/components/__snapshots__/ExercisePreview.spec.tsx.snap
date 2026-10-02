@@ -3072,50 +3072,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c14 {
-  background-color: #D4450C;
-  color: #ffffff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 2rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 4rem;
-  padding: 0 3rem;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
-
-.c14:not([disabled]) {
-  cursor: pointer;
-}
-
-.c14:not([disabled]):hover {
-  background: #E74B0D;
-}
-
-.c14:not([disabled]):active {
-  background: #C5400B;
-}
-
-.c14:disabled {
-  opacity: 0.4;
-}
-
 .c11 {
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
@@ -4003,17 +3959,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                           />
                         </div>
                       </div>
-                    </div>
-                    <div
-                      className="controls"
-                    >
-                      <button
-                        className="c14"
-                        data-test-id="continue-btn"
-                        onClick={[Function]}
-                      >
-                        Next
-                      </button>
                     </div>
                   </div>
                 </div>
