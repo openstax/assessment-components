@@ -437,6 +437,11 @@ exports[`Question matches snapshot 1`] = `
           </div>
         </div>
         <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
+        <div
           className="openstax-answer"
         >
           <div
@@ -487,6 +492,11 @@ exports[`Question matches snapshot 1`] = `
             </label>
           </div>
         </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          className="question-feedback-live-region"
+        />
       </div>
     </div>
   </div>
