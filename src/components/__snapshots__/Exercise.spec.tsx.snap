@@ -179,7 +179,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c10 {
+.c11 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -207,20 +207,32 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c10:not([disabled]) {
+.c11:not([disabled]) {
   cursor: pointer;
 }
 
-.c10:not([disabled]):hover {
+.c11:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c10:not([disabled]):active {
+.c11:not([disabled]):active {
   background: #C5400B;
 }
 
-.c10:disabled {
+.c11:disabled {
   opacity: 0.4;
+}
+
+.c9 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c8 {
@@ -297,10 +309,6 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -543,7 +551,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c9 {
+.c10 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -563,19 +571,19 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   overflow: auto;
 }
 
-.c9 > * {
+.c10 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c9 button {
+.c10 button {
   width: 160px;
   height: 48px;
 }
 
-.c9 .step-card-footer-inner {
+.c10 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -588,12 +596,12 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   gap: 1.6rem;
 }
 
-.c9 .points .attempts-left {
+.c10 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c9 .controls {
+.c10 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -609,8 +617,8 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   margin-left: auto;
 }
 
-.c9 .controls button:has(~ button),
-.c9 .controls button + button {
+.c10 .controls button:has(~ button),
+.c10 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -738,19 +746,19 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 }
 
 @media (max-width:999px) {
-  .c9 {
+  .c10 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 {
+  .c10 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 .step-card-footer-inner {
+  .c10 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -758,14 +766,14 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 }
 
 @media (min-width:1000px) {
-  .c9 {
+  .c10 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c9 .points {
+  .c10 .points {
     max-width: 400px;
   }
 }
@@ -855,7 +863,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -872,17 +880,25 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -893,7 +909,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -903,7 +919,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -920,17 +936,25 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -941,7 +965,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -953,7 +977,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c9 step-card-footer"
+                  className="c10 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -962,7 +986,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
                       className="controls"
                     >
                       <button
-                        className="c10"
+                        className="c11"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -1160,6 +1184,18 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
+.c9 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .c8 {
   width: 100%;
 }
@@ -1234,10 +1270,6 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -1682,7 +1714,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -1699,17 +1731,25 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                               htmlFor="1234@5-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -1720,7 +1760,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -1730,7 +1770,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -1747,17 +1787,25 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                               htmlFor="1234@5-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -1768,7 +1816,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -1968,7 +2016,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c10 {
+.c11 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -1996,20 +2044,32 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c10:not([disabled]) {
+.c11:not([disabled]) {
   cursor: pointer;
 }
 
-.c10:not([disabled]):hover {
+.c11:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c10:not([disabled]):active {
+.c11:not([disabled]):active {
   background: #C5400B;
 }
 
-.c10:disabled {
+.c11:disabled {
   opacity: 0.4;
+}
+
+.c9 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c8 {
@@ -2086,10 +2146,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -2332,7 +2388,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c9 {
+.c10 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -2352,19 +2408,19 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   overflow: auto;
 }
 
-.c9 > * {
+.c10 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c9 button {
+.c10 button {
   width: 160px;
   height: 48px;
 }
 
-.c9 .step-card-footer-inner {
+.c10 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2377,12 +2433,12 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   gap: 1.6rem;
 }
 
-.c9 .points .attempts-left {
+.c10 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c9 .controls {
+.c10 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2398,8 +2454,8 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   margin-left: auto;
 }
 
-.c9 .controls button:has(~ button),
-.c9 .controls button + button {
+.c10 .controls button:has(~ button),
+.c10 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -2527,19 +2583,19 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 }
 
 @media (max-width:999px) {
-  .c9 {
+  .c10 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 {
+  .c10 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 .step-card-footer-inner {
+  .c10 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -2547,14 +2603,14 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 }
 
 @media (min-width:1000px) {
-  .c9 {
+  .c10 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c9 .points {
+  .c10 .points {
     max-width: 400px;
   }
 }
@@ -2639,7 +2695,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -2656,17 +2712,25 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                               htmlFor="1-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -2677,7 +2741,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -2687,7 +2751,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -2704,17 +2768,25 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                               htmlFor="1-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -2725,7 +2797,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -2737,7 +2809,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c9 step-card-footer"
+                  className="c10 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -2746,7 +2818,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                       className="controls"
                     >
                       <button
-                        className="c10"
+                        className="c11"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -3129,7 +3201,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c16 {
+.c17 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -3157,20 +3229,32 @@ exports[`Exercise with question state data renders header icons with multiple ch
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c16:not([disabled]) {
+.c17:not([disabled]) {
   cursor: pointer;
 }
 
-.c16:not([disabled]):hover {
+.c17:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c16:not([disabled]):active {
+.c17:not([disabled]):active {
   background: #C5400B;
 }
 
-.c16:disabled {
+.c17:disabled {
   opacity: 0.4;
+}
+
+.c15 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c14 {
@@ -3247,10 +3331,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
 .c13.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c13.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c13.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -3493,7 +3573,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   padding: 6px 8px;
 }
 
-.c15 {
+.c16 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -3513,19 +3593,19 @@ exports[`Exercise with question state data renders header icons with multiple ch
   overflow: auto;
 }
 
-.c15 > * {
+.c16 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c15 button {
+.c16 button {
   width: 160px;
   height: 48px;
 }
 
-.c15 .step-card-footer-inner {
+.c16 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3538,12 +3618,12 @@ exports[`Exercise with question state data renders header icons with multiple ch
   gap: 1.6rem;
 }
 
-.c15 .points .attempts-left {
+.c16 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c15 .controls {
+.c16 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3559,8 +3639,8 @@ exports[`Exercise with question state data renders header icons with multiple ch
   margin-left: auto;
 }
 
-.c15 .controls button:has(~ button),
-.c15 .controls button + button {
+.c16 .controls button:has(~ button),
+.c16 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -3757,19 +3837,19 @@ exports[`Exercise with question state data renders header icons with multiple ch
 }
 
 @media (max-width:999px) {
-  .c15 {
+  .c16 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c15 {
+  .c16 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c15 .step-card-footer-inner {
+  .c16 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -3777,14 +3857,14 @@ exports[`Exercise with question state data renders header icons with multiple ch
 }
 
 @media (min-width:1000px) {
-  .c15 {
+  .c16 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c15 .points {
+  .c16 .points {
     max-width: 400px;
   }
 }
@@ -4009,7 +4089,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -4026,17 +4106,25 @@ exports[`Exercise with question state data renders header icons with multiple ch
                               htmlFor="1-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c15 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c12 answer-content"
                                   dangerouslySetInnerHTML={
@@ -4047,7 +4135,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -4057,7 +4145,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -4074,17 +4162,25 @@ exports[`Exercise with question state data renders header icons with multiple ch
                               htmlFor="1-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c15 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c12 answer-content"
                                   dangerouslySetInnerHTML={
@@ -4095,7 +4191,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -4107,7 +4203,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                   </div>
                 </div>
                 <div
-                  className="c15 step-card-footer"
+                  className="c16 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -4116,7 +4212,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
                       className="controls"
                     >
                       <button
-                        className="c16"
+                        className="c17"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -4499,7 +4595,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c16 {
+.c17 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -4527,20 +4623,32 @@ exports[`Exercise with question state data renders header icons with two-step ex
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c16:not([disabled]) {
+.c17:not([disabled]) {
   cursor: pointer;
 }
 
-.c16:not([disabled]):hover {
+.c17:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c16:not([disabled]):active {
+.c17:not([disabled]):active {
   background: #C5400B;
 }
 
-.c16:disabled {
+.c17:disabled {
   opacity: 0.4;
+}
+
+.c15 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c14 {
@@ -4617,10 +4725,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
 .c13.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c13.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c13.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -4863,7 +4967,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   padding: 6px 8px;
 }
 
-.c15 {
+.c16 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -4883,19 +4987,19 @@ exports[`Exercise with question state data renders header icons with two-step ex
   overflow: auto;
 }
 
-.c15 > * {
+.c16 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c15 button {
+.c16 button {
   width: 160px;
   height: 48px;
 }
 
-.c15 .step-card-footer-inner {
+.c16 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4908,12 +5012,12 @@ exports[`Exercise with question state data renders header icons with two-step ex
   gap: 1.6rem;
 }
 
-.c15 .points .attempts-left {
+.c16 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c15 .controls {
+.c16 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4929,8 +5033,8 @@ exports[`Exercise with question state data renders header icons with two-step ex
   margin-left: auto;
 }
 
-.c15 .controls button:has(~ button),
-.c15 .controls button + button {
+.c16 .controls button:has(~ button),
+.c16 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -5127,19 +5231,19 @@ exports[`Exercise with question state data renders header icons with two-step ex
 }
 
 @media (max-width:999px) {
-  .c15 {
+  .c16 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c15 {
+  .c16 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c15 .step-card-footer-inner {
+  .c16 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -5147,14 +5251,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
 }
 
 @media (min-width:1000px) {
-  .c15 {
+  .c16 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c15 .points {
+  .c16 .points {
     max-width: 400px;
   }
 }
@@ -5419,7 +5523,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -5436,17 +5540,25 @@ exports[`Exercise with question state data renders header icons with two-step ex
                               htmlFor="1-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c15 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c12 answer-content"
                                   dangerouslySetInnerHTML={
@@ -5457,7 +5569,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -5467,7 +5579,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -5484,17 +5596,25 @@ exports[`Exercise with question state data renders header icons with two-step ex
                               htmlFor="1-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c15 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c12 answer-content"
                                   dangerouslySetInnerHTML={
@@ -5505,7 +5625,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -5517,7 +5637,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                   </div>
                 </div>
                 <div
-                  className="c15 step-card-footer"
+                  className="c16 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -5526,7 +5646,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
                       className="controls"
                     >
                       <button
-                        className="c16"
+                        className="c17"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
@@ -5724,7 +5844,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   line-height: calc(2.8rem * var(--content-text-scale));
 }
 
-.c11 {
+.c12 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -5752,20 +5872,32 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c11:not([disabled]) {
+.c12:not([disabled]) {
   cursor: pointer;
 }
 
-.c11:not([disabled]):hover {
+.c12:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c11:not([disabled]):active {
+.c12:not([disabled]):active {
   background: #C5400B;
 }
 
-.c11:disabled {
+.c12:disabled {
   opacity: 0.4;
+}
+
+.c9 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .c8 {
@@ -5842,10 +5974,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
-}
-
-.c7.openstax-question:not(.openstax-question-preview) .answers-answer:not(.disabled) .answer-label:focus {
-  background-color: #f9f9f9;
 }
 
 .c7.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
@@ -6088,11 +6216,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   padding: 6px 8px;
 }
 
-.c10 .detailed-solution {
+.c11 .detailed-solution {
   margin-bottom: 1rem;
 }
 
-.c10 .detailed-solution .header {
+.c11 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -6102,12 +6230,12 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   flex-basis: 0;
 }
 
-.c10 .detailed-solution .solution {
+.c11 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
 }
 
-.c9 {
+.c10 {
   padding: 4.8rem 14rem 0;
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -6127,19 +6255,19 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   overflow: auto;
 }
 
-.c9 > * {
+.c10 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c9 button {
+.c10 button {
   width: 160px;
   height: 48px;
 }
 
-.c9 .step-card-footer-inner {
+.c10 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6152,12 +6280,12 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   gap: 1.6rem;
 }
 
-.c9 .points .attempts-left {
+.c10 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c9 .controls {
+.c10 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6173,8 +6301,8 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   margin-left: auto;
 }
 
-.c9 .controls button:has(~ button),
-.c9 .controls button + button {
+.c10 .controls button:has(~ button),
+.c10 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -6302,19 +6430,19 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 }
 
 @media (max-width:999px) {
-  .c9 {
+  .c10 {
     padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 {
+  .c10 {
     padding: calc(8px * 2) 8px;
   }
 }
 
 @media (max-width:600px) {
-  .c9 .step-card-footer-inner {
+  .c10 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -6322,14 +6450,14 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 }
 
 @media (min-width:1000px) {
-  .c9 {
+  .c10 {
     padding: 0 140px 32px 140px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c9 .points {
+  .c10 .points {
     max-width: 400px;
   }
 }
@@ -6414,7 +6542,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled answer-selected"
                           >
                             <input
@@ -6431,17 +6559,25 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                               htmlFor="1-option-0"
                             >
                               <span
-                                aria-label="Selected Choice A:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="A"
                                 data-test-id="answer-choice-A"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice A:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -6452,7 +6588,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -6462,7 +6598,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                         <div
                           className="openstax-answer"
                         >
-                          <section
+                          <div
                             className="answers-answer disabled"
                           >
                             <input
@@ -6479,17 +6615,25 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                               htmlFor="1-option-1"
                             >
                               <span
-                                aria-label="Choice B:"
+                                aria-hidden="true"
                                 className="answer-letter-wrapper"
                                 data-answer-choice="B"
                                 data-test-id="answer-choice-B"
                               />
-                              <div
-                                aria-atomic="true"
-                                aria-live="polite"
-                                className="answer-answer"
-                                role="status"
+                              <span
+                                className="c9 answer-choice-label"
                               >
+                                Choice B:
+                              </span>
+                              <div
+                                className="answer-answer"
+                              >
+                                <div
+                                  aria-atomic="true"
+                                  aria-live="polite"
+                                  className="answer-indicator-live"
+                                  role="status"
+                                />
                                 <span
                                   className="c6 answer-content"
                                   dangerouslySetInnerHTML={
@@ -6500,7 +6644,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                                 />
                               </div>
                             </label>
-                          </section>
+                          </div>
                         </div>
                         <div
                           aria-atomic="true"
@@ -6512,7 +6656,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                   </div>
                 </div>
                 <div
-                  className="c9 step-card-footer"
+                  className="c10 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -6521,7 +6665,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="points"
                     >
                       <div
-                        className="c10"
+                        className="c11"
                         role="status"
                       >
                         <div
@@ -6547,7 +6691,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
                       className="controls"
                     >
                       <button
-                        className="c11"
+                        className="c12"
                         data-test-id="continue-btn"
                         onClick={[Function]}
                       >
