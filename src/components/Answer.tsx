@@ -3,9 +3,14 @@ import { ReactNode } from 'react';
 import { ALPHABET, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect } from '../utils';
 import { Answer as AnswerType, ID } from '../types';
 import { Content } from './Content';
-import { SimpleFeedback } from './Feedback';
 import styled from 'styled-components';
-import { colors } from '../theme';
+import { colors, mixins } from '../theme';
+
+// Styled here rather than in Question so that a standalone <Answer> or <AnswersTable> — which
+// both render without a Question ancestor — does not visibly print "Choice A:".
+const StyledChoiceLabel = styled.span`
+  ${mixins.visuallyHidden()}
+`;
 
 const StyledAnswerIndicator = styled.div<{ state: boolean }>`
   color: ${props => props.state ? colors.answer.correct : colors.answer.incorrect};
@@ -43,11 +48,8 @@ export interface AnswerProps {
   onKeyPress?: () => void;
   answered_count?: number;
   correctIncorrectIcon?: ReactNode,
-  radioBox?: ReactNode;
   contentRenderer?: JSX.Element;
   labelAnswers?: boolean;
-  show_all_feedback?: boolean;
-  tableFeedbackEnabled?: boolean;
   feedbackId?: string;
 }
 
@@ -56,8 +58,6 @@ type AnswerAnswerProps = Pick<
   'answer' |
   'contentRenderer' |
   'labelAnswers' |
-  'show_all_feedback' |
-  'tableFeedbackEnabled' |
   'hasCorrectAnswer' |
   'isCorrect' |
   'isIncorrect' |
@@ -67,30 +67,34 @@ type AnswerAnswerProps = Pick<
 // labelAnswers defaults to true, must be explicitly false to disable
 const AnswerAnswer = (props: AnswerAnswerProps) => {
   const {
-    answer: { content_html, feedback_html },
+    answer: { content_html },
     contentRenderer,
     labelAnswers,
-    show_all_feedback,
-    tableFeedbackEnabled,
     hasCorrectAnswer,
     isCorrect,
     isIncorrect,
     isSelected,
   } = props;
   return (
-    <div
-      className="answer-answer"
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-    >
-      {labelAnswers !== false && <AnswerIndicator hasCorrectAnswer={hasCorrectAnswer} isCorrect={isCorrect}
-                                                  isIncorrect={isIncorrect} isSelected={isSelected} />}
+    <div className="answer-answer">
+      {/*
+        The live region wraps only the indicator. It must not wrap the answer content: browsers
+        skip subtrees whose role does not support name-from-contents when computing the accessible
+        name of the enclosing label, so a role="status" around the content erases the answer text
+        from the radio's accessible name. It is rendered unconditionally (even while the indicator
+        itself is null) because a live region has to be present before it changes to be announced.
+      */}
+      {labelAnswers !== false &&
+        <div
+          className="answer-indicator-live"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <AnswerIndicator hasCorrectAnswer={hasCorrectAnswer} isCorrect={isCorrect}
+                           isIncorrect={isIncorrect} isSelected={isSelected} />
+        </div>}
       <Content className="answer-content" component={contentRenderer} html={content_html} />
-      {show_all_feedback && feedback_html && !tableFeedbackEnabled &&
-        <SimpleFeedback key="question-mc-feedback" contentRenderer={contentRenderer}>
-          {feedback_html}
-        </SimpleFeedback>}
     </div>
   )
 }
@@ -109,8 +113,6 @@ const TeacherReview = (props: AnswerBodyProps) => {
     isCorrect,
     contentRenderer,
     iter,
-    show_all_feedback,
-    tableFeedbackEnabled,
   } = props;
   const percent = answer.selected_count && answered_count
     ? Math.round((answer.selected_count / answered_count) * 100)
@@ -130,9 +132,7 @@ const TeacherReview = (props: AnswerBodyProps) => {
       </div>
       <AnswerAnswer
         answer={answer}
-        contentRenderer={contentRenderer}
-        show_all_feedback={show_all_feedback}
-        tableFeedbackEnabled={tableFeedbackEnabled} />
+        contentRenderer={contentRenderer} />
     </div>
   );
 }
@@ -152,11 +152,8 @@ const AnswerChoice = (props: AnswerBodyProps) => {
     isCorrect,
     isIncorrect,
     hasCorrectAnswer,
-    show_all_feedback,
-    tableFeedbackEnabled,
     labelAnswers = true,
   } = props;
-  const ariaLabel = `${isSelected ? 'Selected ' : ''}Choice ${ALPHABET[iter]}:`;
   let onChangeAnswer: AnswerProps['onChangeAnswer'];
 
   const onChange = () => onChangeAnswer && onChangeAnswer(answer);
@@ -187,19 +184,24 @@ const AnswerChoice = (props: AnswerBodyProps) => {
       onKeyPress={onKeyPress}
       htmlFor={`${qid}-option-${iter}`}
       className="answer-label">
+      {/*
+        The visible letter bubble is drawn with a ::before on data-answer-choice, so the span has no
+        text of its own. aria-label is not allowed on a generic element, so the choice is exposed as
+        real (visually hidden) text instead. No "Selected" prefix: the radio already reports its
+        checked state, and a name that changes with state is its own problem.
+      */}
       <span
         className="answer-letter-wrapper"
-        aria-label={ariaLabel}
+        aria-hidden="true"
         data-answer-choice={ALPHABET[iter]}
         data-test-id={`answer-choice-${ALPHABET[iter]}`}
       >
       </span>
+      <StyledChoiceLabel className="answer-choice-label">{`Choice ${ALPHABET[iter]}:`}</StyledChoiceLabel>
       <AnswerAnswer
         answer={answer}
         contentRenderer={contentRenderer}
         labelAnswers={labelAnswers}
-        show_all_feedback={show_all_feedback}
-        tableFeedbackEnabled={tableFeedbackEnabled}
         hasCorrectAnswer={hasCorrectAnswer}
         isCorrect={isCorrect}
         isIncorrect={isIncorrect}
@@ -246,13 +248,13 @@ export const Answer = (props: AnswerProps) => {
 
   return (
     <div className="openstax-answer">
-      <section className={classes}>
+      <div className={classes}>
         <AnswerBody
           {...props}
           isCorrect={isCorrect}
           isSelected={isSelected}
           isIncorrect={isIncorrect} />
-      </section>
+      </div>
     </div>
   );
 }

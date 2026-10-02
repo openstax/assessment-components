@@ -1,5 +1,6 @@
 import { ExerciseQuestion, ExerciseQuestionProps, SaveButton, NextButton } from './ExerciseQuestion';
 import renderer from 'react-test-renderer';
+import { byClass, findNode, textOf, textOfTestId } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -41,7 +42,6 @@ describe('ExerciseQuestion', () => {
       incorrectAnswerId: '',
       answer_id: '',
       attempts_remaining: 2,
-      published_comments: '',
       detailedSolution: '',
       canAnswer: false,
       needsSaved: false,
@@ -49,12 +49,14 @@ describe('ExerciseQuestion', () => {
       attempt_number: 0,
       apiIsPending: false,
       displaySolution: false,
-      available_points: '1.0',
       exercise_uid: '',
       hasFeedback: true,
     }
   });
 
+  // One deliberate whole-tree snapshot as a broad regression net. Everything below asserts the
+  // specific thing its name promises, so the test says what broke and does not churn when an
+  // unrelated component somewhere in the tree changes its markup.
   it('matches snapshot', () => {
     const tree = renderer.create(
       <ExerciseQuestion {...props} />
@@ -62,121 +64,92 @@ describe('ExerciseQuestion', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  const render = (overrides: Partial<ExerciseQuestionProps> = {}) =>
+    renderer.create(<ExerciseQuestion {...props} {...overrides} />).toJSON();
+
+  const attemptsText = (tree: ReturnType<typeof render>) =>
+    textOf(findNode(tree, byClass('attempts-left')) || null);
+
   it('renders all attempts remaining', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        hasMultipleAttempts={true}
-        choicesEnabled={true}
-        attempts_remaining={2}
-        attempt_number={0}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(attemptsText(render({
+      hasMultipleAttempts: true, choicesEnabled: true, attempts_remaining: 2, attempt_number: 0,
+    }))).toBe('2 attempts left');
   });
 
   it('renders some attempts remaining', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        hasMultipleAttempts={true}
-        choicesEnabled={true}
-        attempts_remaining={1}
-        attempt_number={1}
-        incorrectAnswerId='2'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    // singular, not "1 attempts left"
+    expect(attemptsText(render({
+      hasMultipleAttempts: true, choicesEnabled: true, attempts_remaining: 1, attempt_number: 1,
+      incorrectAnswerId: '2',
+    }))).toBe('1 attempt left');
   });
 
   it('renders no attempts remaining', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        hasMultipleAttempts={true}
-        choicesEnabled={false}
-        attempts_remaining={0}
-        attempt_number={2}
-        incorrectAnswerId='2'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(attemptsText(render({
+      hasMultipleAttempts: true, choicesEnabled: false, attempts_remaining: 0, attempt_number: 2,
+      incorrectAnswerId: '2',
+    }))).toBe('');
   });
 
+  it('counts attempts only for formats that have more than one', () => {
+    // ExerciseQuestion withholds attempts_remaining from the footer unless the format allows
+    // multiple attempts, so the count below must not reach the learner
+    expect(attemptsText(render({ hasMultipleAttempts: false, attempts_remaining: 2 }))).toBe('');
+  });
+
+  it('renders unlimited attempts', () => {
+    expect(attemptsText(render({ hasUnlimitedAttempts: true }))).toBe('Unlimited quiz attempts left');
+  });
+
+  const answering = {
+    choicesEnabled: true, incorrectAnswerId: '2', canAnswer: true, needsSaved: true, answer_id: '1',
+  } as const;
+
   it('renders Save button', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        choicesEnabled={true}
-        incorrectAnswerId='2'
-        canAnswer={true}
-        needsSaved={true}
-        answer_id='1'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = render({ ...answering });
+    expect(textOfTestId(tree, 'submit-answer-btn')).toBe('Submit');
+    expect(textOfTestId(tree, 'continue-btn')).toBeUndefined();
   });
 
   it('renders Re-submit button', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        choicesEnabled={true}
-        incorrectAnswerId='2'
-        canAnswer={true}
-        needsSaved={true}
-        attempt_number={1}
-        answer_id='1'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(textOfTestId(render({ ...answering, attempt_number: 1 }), 'submit-answer-btn'))
+      .toBe('Re-submit');
   });
 
   it('renders Submit & continue button', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        choicesEnabled={true}
-        incorrectAnswerId='2'
-        canAnswer={true}
-        needsSaved={true}
-        answer_id='1'
-        canUpdateCurrentStep={false}
-        hasFeedback={false}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    // with no feedback to show, saving continues straight on to the next step
+    expect(textOfTestId(
+      render({ ...answering, canUpdateCurrentStep: false, hasFeedback: false }), 'submit-answer-btn'
+    )).toBe('Submit & continue');
   });
 
   it('renders continue button (unused?)', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        choicesEnabled={false}
-        incorrectAnswerId='2'
-        canAnswer={false}
-        canUpdateCurrentStep={true}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    const notAnswering = { choicesEnabled: false, incorrectAnswerId: '2', canAnswer: false } as const;
+
+    expect(textOfTestId(render({ ...notAnswering, canUpdateCurrentStep: true }), 'continue-btn'))
+      .toBe('Continue');
+    expect(textOfTestId(render({ ...notAnswering, canUpdateCurrentStep: false }), 'continue-btn'))
+      .toBe('Next');
+    expect(textOfTestId(render(notAnswering), 'submit-answer-btn')).toBeUndefined();
   });
 
-  it('renders detailed solution and published comments', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        choicesEnabled={false}
-        incorrectAnswerId='2'
-        correct_answer_id='1'
-        is_completed={true}
-        canAnswer={false}
-        needsSaved={false}
-        detailedSolution='A detailed solution'
-        published_comments='Teacher feedback'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  const footerText = (tree: ReturnType<typeof render>) =>
+    textOf(findNode(tree, byClass('step-card-footer-inner')) || null);
+
+  it('renders detailed solution', () => {
+    expect(footerText(render({
+      choicesEnabled: false, incorrectAnswerId: '2', correct_answer_id: '1', is_completed: true,
+      canAnswer: false, needsSaved: false, detailedSolution: 'A detailed solution',
+    }))).toContain('Detailed solution:A detailed solution');
+  });
+
+  it('omits detailed solution when there is none', () => {
+    expect(footerText(render())).not.toContain('Detailed solution:');
   });
 
   it('renders free response', () => {
-    const tree = renderer.create(
-      <ExerciseQuestion {...props}
-        free_response='A free response'
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(textOf(render({ free_response: 'A free response' }))).toContain('A free response');
+    expect(textOf(render())).not.toContain('A free response');
   });
 
   it('converts question id as a number when saving', () => {
@@ -203,8 +176,7 @@ describe('ExerciseQuestion', () => {
     const tree = renderer.create(
       <ExerciseQuestion
         {...props}
-        needsSaved={false}
-        canAnswer={true}
+        canAnswer={false}
         onNextStep={mockFn}
       />
     );
@@ -215,24 +187,35 @@ describe('ExerciseQuestion', () => {
     expect(mockFn).toHaveBeenCalledWith(0);
   });
 
-  it('passes question index on submit button click when there is not feedback', () => {
+  it('advances after submitting when there is no feedback to stop on', () => {
     const mockFn = jest.fn();
 
-    // This combination of props should never happen: `is_completed` should not 
-    // be true at the same time as `needsSaved`. This combination allows the 
-    // test to work correctly without simulating waiting for api calls
     const tree = renderer.create(
       <ExerciseQuestion
         {...props}
-        needsSaved={true}
         canAnswer={true}
+        answer_id='1'
         hasFeedback={false}
-        is_completed={true}
+        is_completed={false}
         onNextStep={mockFn}
       />
     );
     renderer.act(() => {
       tree.root.findByType(SaveButton).props.onClick();
+    });
+
+    // the response lands, and the footer advances on its own
+    renderer.act(() => {
+      tree.update(
+        <ExerciseQuestion
+          {...props}
+          canAnswer={true}
+          answer_id='1'
+          hasFeedback={false}
+          is_completed={true}
+          onNextStep={mockFn}
+        />
+      );
     });
 
     expect(mockFn).toHaveBeenCalledWith(0);

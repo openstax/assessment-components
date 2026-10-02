@@ -1,15 +1,53 @@
 import styled, { css } from 'styled-components';
 import { breakpoints, colors, mixins } from '../theme';
-import { ExerciseData } from '../types';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen';
 import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons/faTriangleExclamation';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ExerciseIcons } from './Exercise';
 
-type ExplanationType = 'multiple-choice' | 'two-step';
+interface ExerciseIconLocation {
+  desktop: boolean;
+  mobile: boolean;
+}
 
-const TypeExplanations: { [key in ExplanationType]: string } = {
+export interface ExerciseIcon {
+  location?: {
+    /**
+     * @default {
+     *   desktop: true,
+     *   mobile: false
+     * }
+     **/
+    header?: ExerciseIconLocation;
+    /**
+     * @default {
+     *   desktop: false,
+     *   mobile: true
+     * }
+     **/
+    toolbar?: ExerciseIconLocation;
+  }
+}
+
+/**
+ * The kind of exercise the info icon explains. New types can be added as they are needed;
+ * `free-response` renders no icon, since there is no explanation behind it.
+ */
+export type ExerciseType = 'multiple-choice' | 'two-step' | 'free-response';
+
+export interface ExerciseIcons {
+  /** An object containing a URL for the errata form for this exercise and settings for rendering the icon. */
+  errata?: ExerciseIcon & { url: string };
+  /** An object containing a URL for textbook content relevant to the exercise and settings for rendering the icon. */
+  topic?: ExerciseIcon & { url: string };
+  /**
+   * Settings for the info icon that describes the exercise type. The explanation copy lives in
+   * this library; the caller states which type it is.
+   */
+  info?: ExerciseIcon & { type?: ExerciseType };
+}
+
+const TypeExplanations: { [key in Exclude<ExerciseType, 'free-response'>]: string } = {
   'multiple-choice': 'Select the best answer from the given list of distractors. Your instructor may or may not allow multiple attempts.',
   'two-step': 'In a two-step question, OpenStax asks for your own answer first, then gives multiple-choice options to help you assess your learnings. \
 Recalling the answer to a question from memory helps you to retain things longer.',
@@ -89,19 +127,14 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   height: 1em;
 `;
 
-export const ExerciseHeaderIcons = ({ exercise, icons }: {
-  exercise: ExerciseData, icons: ExerciseIcons
-}) => {
+export const ExerciseHeaderIcons = ({ icons }: { icons: ExerciseIcons }) => {
   const defaultHeaderLocation = { desktop: true, mobile: false };
   const items = [];
-  const isMultipleChoice = exercise.questions.every((q) => q.answers.length > 0);
-  let typeExplanation;
 
-  if (isMultipleChoice && exercise.questions.find((q) => q.formats.includes('free-response'))) {
-    typeExplanation = TypeExplanations['two-step'];
-  } else if (isMultipleChoice) {
-    typeExplanation = TypeExplanations['multiple-choice'];
-  }
+  // 'free-response' renders no icon: there is no explanation behind it. It is in the union so a
+  // caller can state the type without knowing which types happen to have copy attached.
+  const type = icons.info?.type;
+  const typeExplanation = type && type !== 'free-response' ? TypeExplanations[type] : undefined;
 
   if (icons.topic) {
     items.push(

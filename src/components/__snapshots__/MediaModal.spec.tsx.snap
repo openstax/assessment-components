@@ -1,23 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MediaModal matches snapshot 1`] = `
+.c0 {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  background: white;
+  max-width: 100vw;
+  max-height: calc(100vh - 10.4rem);
+  overflow: auto;
+}
+
+.c4 > img {
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: -4.7rem;
+  right: 0.5rem;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.c2 {
+  position: relative;
+  pointer-events: auto;
+}
+
+.c1 {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
 <div
-  className="sc-bczRLJ iteVFC"
+  className="c0"
   onClick={[MockFunction]}
 >
   <div
     aria-modal="true"
-    className="sc-eCYdqJ iZUGnZ"
+    className="c1"
     role="dialog"
   >
     <div
-      className="sc-hKMtZM qarJ"
+      className="c2"
       onClick={[Function]}
       tabIndex={-1}
     >
       <button
         aria-label="Close media preview"
-        className="sc-dkzDqf eiZLKs"
+        className="c3"
         onClick={[MockFunction]}
       >
         <svg
@@ -56,7 +116,7 @@ exports[`MediaModal matches snapshot 1`] = `
         </svg>
       </button>
       <div
-        className="sc-gsnTZi kqLvsl"
+        className="c4"
       >
         <div>
           Test Content
@@ -68,23 +128,83 @@ exports[`MediaModal matches snapshot 1`] = `
 `;
 
 exports[`MediaModal renders correctly when isOpen is true 1`] = `
+.c0 {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c4 {
+  background: white;
+  max-width: 100vw;
+  max-height: calc(100vh - 10.4rem);
+  overflow: auto;
+}
+
+.c4 > img {
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: -4.7rem;
+  right: 0.5rem;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.c2 {
+  position: relative;
+  pointer-events: auto;
+}
+
+.c1 {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
 <div
-  className="sc-bczRLJ iteVFC"
+  className="c0"
   onClick={[MockFunction]}
 >
   <div
     aria-modal="true"
-    className="sc-eCYdqJ iZUGnZ"
+    className="c1"
     role="dialog"
   >
     <div
-      className="sc-hKMtZM qarJ"
+      className="c2"
       onClick={[Function]}
       tabIndex={-1}
     >
       <button
         aria-label="Close media preview"
-        className="sc-dkzDqf eiZLKs"
+        className="c3"
         onClick={[MockFunction]}
       >
         <svg
@@ -123,7 +243,7 @@ exports[`MediaModal renders correctly when isOpen is true 1`] = `
         </svg>
       </button>
       <div
-        className="sc-gsnTZi kqLvsl"
+        className="c4"
       >
         <div>
           Test Content

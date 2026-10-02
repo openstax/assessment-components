@@ -1,86 +1,8 @@
-import { Exercise, ExerciseWithStepDataProps, ExerciseWithQuestionStatesProps, OverlayProps } from './Exercise';
+import { Exercise, ExerciseWithQuestionStatesProps, OverlayProps } from './Exercise';
 import renderer from 'react-test-renderer';
 import React from 'react';
 
 describe('Exercise', () => {
-  describe('using step data', () => {
-
-    let props: ExerciseWithStepDataProps;
-
-    beforeEach(() => {
-      props = {
-        exercise: {
-          uid: '1@1',
-          uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
-          group_uuid: '20e82bf6-232e-40c8-ba68-2d22c6498f69',
-          number: 1,
-          version: 1,
-          published_at: '2022-09-06T20:32:21.981Z',
-          context: 'Context',
-          stimulus_html: '<b>Stimulus HTML</b>',
-          tags: [],
-          authors: [{ user_id: 1, name: 'OpenStax' }],
-          copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
-          derived_from: [],
-          is_vocab: false,
-          solutions_are_public: false,
-          versions: [1],
-          questions: [{
-            id: '1234@5',
-            collaborator_solutions: [],
-            formats: ['true-false'],
-            stimulus_html: '',
-            stem_html: '',
-            is_answer_order_important: false,
-            answers: [{
-              id: '1',
-              correctness: undefined,
-              content_html: 'True',
-            }, {
-              id: '2',
-              correctness: undefined,
-              content_html: 'False',
-            }],
-          }],
-        },
-        questionNumber: 1,
-        hasMultipleAttempts: false,
-        hasUnlimitedAttempts: false,
-        onAnswerChange: () => null,
-        onAnswerSave: () => null,
-        onNextStep: () => null,
-        canAnswer: false,
-        needsSaved: false,
-        apiIsPending: false,
-        canUpdateCurrentStep: false,
-        step: {
-          uid: '1234@4',
-          id: 1,
-          available_points: '1.0',
-          is_completed: false,
-          answer_id_order: ['1', '2'],
-          answer_id: '1',
-          free_response: '',
-          feedback_html: '',
-          correct_answer_id: '',
-          correct_answer_feedback_html: '',
-          is_feedback_available: true,
-          attempts_remaining: 0,
-          attempt_number: 1,
-          incorrectAnswerId: 0
-        },
-        numberOfQuestions: 1
-      }
-    });
-
-    it('matches snapshot', () => {
-      const tree = renderer.create(
-        <Exercise {...props} show_all_feedback />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-  });
-
   describe('with question state data', () => {
     let props: ExerciseWithQuestionStatesProps;
 
@@ -186,6 +108,53 @@ describe('Exercise', () => {
       expect(tree.root.findByProps({ "data-test-id": "continue-btn" }).props['children']).toContain('Next');
     });
 
+    it('advances after a free response submission whatever hasFeedback says', () => {
+      // free response has always auto-advanced, and this entry point holds that contract:
+      // `QuestionWrapper` gates the behaviour on hasFeedback and knows nothing about formats
+      const onNextStep = jest.fn();
+      props.exercise.questions[0].formats = ['free-response'];
+      props.questionStates['1'].canAnswer = true;
+      props.questionStates['1'].needsSaved = true;
+      props.questionStates['1'].free_response = 'an answer';
+
+      let tree!: renderer.ReactTestRenderer;
+      renderer.act(() => {
+        tree = renderer.create(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      renderer.act(() => {
+        props.questionStates['1'].is_completed = true;
+        tree.update(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      expect(onNextStep).toHaveBeenCalledWith(0);
+    });
+
+    it('leaves multiple choice to hasFeedback', () => {
+      const onNextStep = jest.fn();
+      props.questionStates['1'].canAnswer = true;
+      props.questionStates['1'].needsSaved = true;
+      props.questionStates['1'].answer_id = '1';
+
+      let tree!: renderer.ReactTestRenderer;
+      renderer.act(() => {
+        tree = renderer.create(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      renderer.act(() => {
+        props.questionStates['1'].is_completed = true;
+        tree.update(<Exercise {...props} hasFeedback={true} onNextStep={onNextStep} />);
+      });
+
+      expect(onNextStep).not.toHaveBeenCalled();
+    });
+
     it('shows a detailed solution', () => {
       props.questionStates['1'].solution = { content_html: 'Detailed solution', solution_type: 'detailed' };
       const tree = renderer.create(
@@ -288,6 +257,7 @@ describe('Exercise', () => {
               }
             },
             info: {
+              type: 'two-step',
               location: {
                 header: {
                   mobile: true,
@@ -304,7 +274,7 @@ describe('Exercise', () => {
 
   describe('with overlay rendering', () => {
 
-    let props: ExerciseWithStepDataProps & OverlayProps;
+    let props: ExerciseWithQuestionStatesProps & OverlayProps;
 
     beforeEach(() => {
       props = {
@@ -349,25 +319,28 @@ describe('Exercise', () => {
         onAnswerChange: () => null,
         onAnswerSave: () => null,
         onNextStep: () => null,
-        canAnswer: false,
-        needsSaved: false,
-        apiIsPending: false,
         canUpdateCurrentStep: false,
         step: {
           uid: '1234@4',
           id: 1,
           available_points: '1.0',
-          is_completed: false,
-          answer_id_order: ['1', '2'],
-          answer_id: '1',
-          free_response: '',
-          feedback_html: '',
-          correct_answer_id: '',
-          correct_answer_feedback_html: '',
-          is_feedback_available: true,
-          attempts_remaining: 0,
-          attempt_number: 1,
-          incorrectAnswerId: 0
+        },
+        questionStates: {
+          '1234@5': {
+            available_points: '1.0',
+            is_completed: false,
+            answer_id: '1',
+            free_response: '',
+            feedback_html: '',
+            correct_answer_id: '',
+            correct_answer_feedback_html: '',
+            attempts_remaining: 0,
+            attempt_number: 1,
+            incorrectAnswerId: 0,
+            canAnswer: false,
+            needsSaved: false,
+            apiIsPending: false,
+          },
         },
         numberOfQuestions: 1
       }

@@ -1,22 +1,21 @@
 import React from "react";
-import { numberfyId } from "../utils";
-import { AvailablePoints, ID, ExerciseQuestionData, Task } from "../types";
-import Button from "./Button";
-import { Content } from "./Content";
+import { Answer as AnswerType, ExerciseQuestionData, ID } from "../types";
+import { CompactDisplayProps } from "./compactDisplay";
 import { ExerciseBaseProps } from "./Exercise";
-import { Question } from './Question';
-import { StepCardFooter } from "./StepCardFooter";
-import { FreeResponseReview } from "./FreeResponseReview/FreeResponseReview";
+import { QuestionBody, QuestionBodyProps } from "./QuestionBody";
+import { QuestionLevelFeedback } from "./QuestionLevelFeedback";
+import { QuestionWrapper } from "./QuestionWrapper";
+import { numberfyId } from "../utils";
 
-export interface ExerciseQuestionProps {
-  task?: Task;
+export { NextButton, SaveButton } from "./QuestionWrapper";
+
+export interface ExerciseQuestionProps extends CompactDisplayProps {
   question: ExerciseQuestionData;
-  answer_id_order?: ID[];
   questionNumber: number;
   choicesEnabled: boolean;
   hasMultipleAttempts: boolean;
   hasUnlimitedAttempts: boolean;
-  onAnswerChange: () => void;
+  onAnswerChange: (answer: AnswerType) => void;
   onAnswerSave: ExerciseBaseProps['onAnswerSave'];
   onNextStep: ExerciseBaseProps['onNextStep'];
   feedback_html: string;
@@ -26,149 +25,95 @@ export interface ExerciseQuestionProps {
   incorrectAnswerId: ID;
   answer_id?: ID;
   attempts_remaining: number;
-  published_comments?: string;
   detailedSolution?: string;
   canAnswer: boolean;
   needsSaved: boolean;
   canUpdateCurrentStep: boolean;
   attempt_number: number;
   apiIsPending: boolean;
-  displaySolution: boolean;
-  available_points?: AvailablePoints;
+  /**
+   * @deprecated The detailed solution is composed in rather than rendered from the question.
+   */
+  displaySolution?: boolean;
   exercise_uid: string;
   free_response?: string;
   labelAnswers?: boolean;
   show_all_feedback?: boolean;
-  tableFeedbackEnabled?: boolean;
   hasFeedback?: ExerciseBaseProps['hasFeedback'];
   previewMode?: boolean;
 }
 
-const AttemptsRemaining = ({ count }: { count: number }) => {
-  return (
-    <div>{count} attempt{count === 1 ? '' : 's'} left</div>
-  );
-}
-
-const UnlimitedAttempts = () => {
-  return (
-    <div>Unlimited quiz attempts left</div>
-  );
-}
-
-const PublishedComments = ({ published_comments }: { published_comments?: string }) => {
-  if (!published_comments) { return null; }
-
-  return (
-    <div>
-      <strong>Feedback:</strong> {published_comments}
-    </div>
-  );
-}
-
-export const SaveButton = (props: {
-  disabled: boolean, isWaiting: boolean, attempt_number: number, willContinue: boolean
-} & React.ComponentPropsWithoutRef<'button'>) => (
-  <Button
-    {...props}
-    waitingText="Saving…"
-    isWaiting={props.isWaiting}
-    data-test-id="submit-answer-btn"
-  >
-    {props.willContinue
-      ? 'Submit & continue'
-      : (props.attempt_number == 0 ? 'Submit' : 'Re-submit')}
-  </Button>
-);
-
-export const NextButton = (props: {
-  canUpdateCurrentStep: boolean,
-} & React.ComponentPropsWithoutRef<'button'>) => {
-  return (
-    <Button {...props} data-test-id="continue-btn">
-      {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
-    </Button>
-  );
-}
-
-export const ExerciseQuestion = React.forwardRef((props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>) => {
+/**
+ * A question and the controls around it — the composition `Exercise` used to render inline.
+ * New consumers compose `QuestionBody` and `QuestionWrapper` themselves.
+ */
+export const ExerciseQuestion = React.forwardRef((
+  props: ExerciseQuestionProps, ref: React.ForwardedRef<HTMLDivElement>
+) => {
   const {
-    question, task, answer_id_order, onAnswerChange, feedback_html, correct_answer_feedback_html,
-    is_completed, correct_answer_id, incorrectAnswerId, choicesEnabled, questionNumber,
-    answer_id, hasMultipleAttempts, hasUnlimitedAttempts, attempts_remaining, published_comments, detailedSolution,
-    canAnswer, needsSaved, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
-    displaySolution, available_points, free_response, labelAnswers, show_all_feedback, tableFeedbackEnabled,
-    hasFeedback, previewMode
+    question, onAnswerChange, feedback_html, correct_answer_feedback_html, choicesEnabled,
+    is_completed, correct_answer_id, incorrectAnswerId, questionNumber,
+    answer_id, hasMultipleAttempts, hasUnlimitedAttempts, attempts_remaining, detailedSolution,
+    canAnswer, attempt_number, apiIsPending, onAnswerSave, onNextStep, canUpdateCurrentStep,
+    free_response, labelAnswers, show_all_feedback, hasFeedback, previewMode, compactDisplay,
   } = props;
 
-  const [shouldContinue, setShouldContinue] = React.useState(false)
-  React.useEffect(() => {
-    if (shouldContinue && is_completed) {
-      onNextStep(questionNumber - 1);
-      setShouldContinue(false);
-    }
-  }, [onNextStep, questionNumber, shouldContinue, is_completed]);
+  const state = {
+    is_completed,
+    // this component's `choicesEnabled` is what enables the inputs; `canAnswer` drives the footer
+    canAnswer: choicesEnabled,
+    answer_id,
+    correct_answer_id,
+    incorrectAnswerId,
+    feedback_html,
+    correct_answer_feedback_html,
+    free_response,
+  };
+
+  const body = (
+    <QuestionBody
+      ref={ref}
+      question={question}
+      state={state}
+      questionNumber={questionNumber}
+      apiIsPending={apiIsPending}
+      onAnswerChange={onAnswerChange as QuestionBodyProps['onAnswerChange']}
+      labelAnswers={labelAnswers}
+      show_all_feedback={show_all_feedback}
+      previewMode={previewMode}
+      compactDisplay={compactDisplay}
+    />
+  );
+
+  const footerChildren = detailedSolution
+    ? <QuestionLevelFeedback detailedSolution={detailedSolution} />
+    : undefined;
 
   return (
     <div data-test-id="student-exercise-question">
-      <Question
-        ref={ref}
-        task={task}
-        question={question}
-        answerIdOrder={answer_id_order}
-        choicesEnabled={choicesEnabled}
-        answer_id={answer_id}
-        questionNumber={questionNumber}
-        onChange={onAnswerChange}
-        feedback_html={feedback_html}
-        correct_answer_feedback_html={correct_answer_feedback_html}
-        correct_answer_id={is_completed ? correct_answer_id : null}
-        incorrectAnswerId={incorrectAnswerId}
-        className="step-card-body"
-        hideAnswers={false}
-        displayFormats={false}
-        displaySolution={displaySolution}
-        labelAnswers={labelAnswers}
-        show_all_feedback={show_all_feedback}
-        tableFeedbackEnabled={tableFeedbackEnabled}
-        previewMode={previewMode}
-      >
-        <FreeResponseReview free_response={free_response} previewMode={previewMode} />
-      </Question>
       {(previewMode && detailedSolution) || !previewMode ?
-        <StepCardFooter className="step-card-footer">
-          <div className="step-card-footer-inner">
-            <div className="points" role="status" >
-              {available_points ? <strong>Points: {available_points}</strong> : null}
-              <span className="attempts-left">
-                {hasMultipleAttempts &&
-                  attempts_remaining > 0 &&
-                  <AttemptsRemaining count={attempts_remaining} />}
-                  { hasUnlimitedAttempts ? <UnlimitedAttempts/>: null}
-
-              </span>
-              
-              <PublishedComments published_comments={published_comments} />
-              {detailedSolution && (<div><strong>Detailed solution:</strong> <Content html={detailedSolution} /></div>)}
-            </div>
-            <div className="controls">
-              {(canAnswer && needsSaved) || shouldContinue ?
-                <SaveButton
-                  disabled={apiIsPending || !answer_id || shouldContinue}
-                  isWaiting={apiIsPending || shouldContinue}
-                  attempt_number={attempt_number}
-                  onClick={() => {
-                    onAnswerSave(numberfyId(question.id));
-                    if (!hasFeedback) {
-                      setShouldContinue(true);
-                    }
-                  }}
-                  willContinue={!hasFeedback}
-                /> :
-                <NextButton onClick={() => onNextStep(questionNumber - 1)} canUpdateCurrentStep={canUpdateCurrentStep} />}
-            </div>
-          </div>
-        </StepCardFooter> : null}
+        <QuestionWrapper
+          question_id={question.id}
+          questionIndex={questionNumber - 1}
+          is_completed={is_completed}
+          canAnswer={canAnswer}
+          canSubmit={!!answer_id}
+          apiIsPending={apiIsPending}
+          canUpdateCurrentStep={canUpdateCurrentStep}
+          attempt_number={attempt_number}
+          attemptsRemaining={hasMultipleAttempts ? attempts_remaining : undefined}
+          hasUnlimitedAttempts={hasUnlimitedAttempts}
+          hasFeedback={hasFeedback ?? false}
+          onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
+          onNextStep={() => onNextStep(questionNumber - 1)}
+          footerChildren={footerChildren}
+          compactDisplay={compactDisplay}
+        >
+          {body}
+        </QuestionWrapper>
+        : body}
     </div>
   );
 })
+
+ExerciseQuestion.displayName = 'OSExerciseQuestion';

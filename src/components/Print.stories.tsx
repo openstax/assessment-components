@@ -37,7 +37,8 @@ const ExerciseWrapper = styled.div`
   }
 `;
 
-const exercises = (data as ExerciseQueryData).exercises as ExerciseData[];
+const query = data as ExerciseQueryData;
+const exercises = query.exercises as ExerciseData[];
 
 const firstQuestionNumByExercise = exercises.reduce((acc, ex) => ({
     ...acc,
@@ -63,7 +64,7 @@ const questionStateFields = {
 
 export const Default = () => (
   <>
-    {data.title && <h2>Exercises for {data.title}</h2>}
+    {query.title && <h2>Exercises for {query.title}</h2>}
     {exercises.map(((exercise) => {
 
       const step: StepBase = {

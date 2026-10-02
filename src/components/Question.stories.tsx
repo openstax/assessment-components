@@ -18,10 +18,6 @@ const props: QuestionProps = {
       content_html: 'False',
     }],
   },
-  task: {
-    is_deleted: false,
-    type: 'homework'
-  },
   correct_answer_id: '',
   incorrectAnswerId: '',
   hideAnswers: false,
