@@ -108,7 +108,7 @@ Array [
       </div>
     </div>
   </div>,
-  .c5 {
+  .c4 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -136,41 +136,20 @@ Array [
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c5:not([disabled]) {
+.c4:not([disabled]) {
   cursor: pointer;
 }
 
-.c5:not([disabled]):hover {
+.c4:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c5:not([disabled]):active {
+.c4:not([disabled]):active {
   background: #C5400B;
 }
 
-.c5:disabled {
+.c4:disabled {
   opacity: 0.4;
-}
-
-.c4 .image-button-wrapper {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.c4 .image-button-wrapper:focus {
-  outline: 1px solid Highlight;
-  outline: 1px solid -webkit-focus-ring-color;
-  outline-offset: 2px;
-}
-
-.c4 .image-button-wrapper img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .c2 {
@@ -345,14 +324,7 @@ Array [
               Feedback:
             </span>
              
-            <span
-              className="c4"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<p>Good explanation!</p>",
-                }
-              }
-            />
+            Good explanation!
           </div>
         </div>
       </div>
@@ -360,7 +332,7 @@ Array [
         className="controls"
       >
         <button
-          className="c5"
+          className="c4"
           data-test-id="continue-btn"
           onClick={[Function]}
         >
@@ -986,14 +958,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
           Feedback:
         </span>
          
-        <span
-          className="c2"
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<p>Excellent work!</p>",
-            }
-          }
-        />
+        Excellent work!
       </div>
     </div>
   </div>

@@ -73,7 +73,7 @@ describe('Free Response Input', () => {
         canAnswer={false}
         free_response="Photosynthesis is the process by which plants convert light energy into chemical energy."
         score={{ raw: 8, max: 10 }}
-        feedback_html="<p>Good explanation!</p>"
+        feedback_html="Good explanation!"
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
@@ -112,7 +112,7 @@ describe('Free Response Input', () => {
         previewMode={true}
         free_response="Photosynthesis converts sunlight into chemical energy."
         score={{ raw: 9, max: 10 }}
-        feedback_html="<p>Excellent work!</p>"
+        feedback_html="Excellent work!"
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

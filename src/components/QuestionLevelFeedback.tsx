@@ -45,7 +45,10 @@ const StyledQuestionLevelFeedback = styled.div`
 
 export interface QuestionLevelFeedbackProps {
   score?: { raw?: number; max?: number };
-  /** the grader's manual-grading comment, rendered as "Feedback:" */
+  /**
+   * the grader's manual-grading comment, rendered as "Feedback:". Plain text, as typed into
+   * the grading textarea — it is not HTML and is not typeset.
+   */
   gradingComments?: string;
   /** from the exercise definition, rendered as "Detailed solution:" */
   detailedSolution?: string;
@@ -74,8 +77,7 @@ export const QuestionLevelFeedback = (props: QuestionLevelFeedbackProps) => {
       {scoreDisplay && <ReviewScoreText>Score: {scoreDisplay}</ReviewScoreText>}
       {gradingComments &&
         <FeedbackText>
-          <span className="feedback-label">Feedback:</span>{' '}
-          <Content html={gradingComments} block={false} />
+          <span className="feedback-label">Feedback:</span>{' '}{gradingComments}
         </FeedbackText>}
       {detailedSolution &&
         <div className="detailed-solution">
