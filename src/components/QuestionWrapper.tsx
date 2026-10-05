@@ -91,6 +91,8 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
    * footer advances by itself once the response lands. Omitting it means the host navigates.
    */
   hasFeedback?: boolean;
+  /** `false` renders the footer without its buttons, e.g. for a read-only preview. */
+  showControls?: boolean;
 
   onAnswerSave: () => void;
   onNextStep: () => void;
@@ -121,6 +123,7 @@ export const QuestionWrapper = ({
   attemptsRemaining,
   hasUnlimitedAttempts,
   hasFeedback,
+  showControls = true,
   onAnswerSave,
   onNextStep,
   onCancel,
@@ -203,9 +206,7 @@ export const QuestionWrapper = ({
       <StepCardFooter className="step-card-footer" compactDisplay={compact}>
         <div className="step-card-footer-inner">
           {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-          <div className="controls">
-            {controls()}
-          </div>
+          {showControls ? <div className="controls">{controls()}</div> : null}
         </div>
       </StepCardFooter>
     </CompactDisplayProvider>

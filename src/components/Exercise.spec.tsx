@@ -163,6 +163,20 @@ describe('Exercise', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('shows a detailed solution without controls in preview mode', () => {
+      props.questionStates['1'] = {
+        ...props.questionStates['1'],
+        is_completed: true,
+        canAnswer: false,
+        solution: { content_html: 'Detailed solution', solution_type: 'detailed' },
+      };
+      const tree = renderer.create(
+        <Exercise {...props} previewMode />
+      );
+      expect(tree.root.findAllByProps({ className: 'step-card-footer' })).not.toHaveLength(0);
+      expect(tree.root.findAllByType('button')).toHaveLength(0);
+    });
+
     it('shows a continue button when completed if there is another question', () => {
       props.exercise.questions.push({
         id: 2,

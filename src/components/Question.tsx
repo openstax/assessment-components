@@ -77,11 +77,6 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
   &:not(.openstax-question-preview) {
     .answers-answer {
       width: initial;
-      &:not(.disabled){
-        .answer-label:focus{
-          background-color: ${colors.palette.neutralLightest};
-        }
-      }
       &.answer-selected {
         font-weight: bold;
       }
