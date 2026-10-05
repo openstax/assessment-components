@@ -236,7 +236,7 @@ const FreeResponseBody = React.forwardRef((
   } = props;
   const {
     is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, draftTimestamp,
-    submittedResponse: submittedText, gradingTimestamp,
+    submittedResponse, gradingTimestamp,
   } = state;
 
   const compact = useCompactDisplay(compactDisplay);
@@ -267,7 +267,7 @@ const FreeResponseBody = React.forwardRef((
 
   // Cancel reverts to the submitted answer, so the baseline is derived rather than cached:
   // when free_response holds an autosaved draft, the draft is not what cancel should restore
-  const originalSubmittedValue = submittedText ?? lastSettledValue;
+  const originalSubmittedValue = submittedResponse ?? lastSettledValue;
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
@@ -392,7 +392,7 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
-  const submittedResponse = (
+  const reviewAnswer = (
     <>
       <ReviewAnswerText
         ref={textRef}
@@ -419,14 +419,14 @@ const FreeResponseBody = React.forwardRef((
           {previewMode && onGradingSave ? (
             <ResponseGradingLayout>
               <ResponseColumn>
-                {submittedResponse}
+                {reviewAnswer}
                 {feedback}
               </ResponseColumn>
               {gradingWidget}
             </ResponseGradingLayout>
           ) : (
             <>
-              {submittedResponse}
+              {reviewAnswer}
               {feedback}
             </>
           )}
