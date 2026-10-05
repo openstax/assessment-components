@@ -181,10 +181,11 @@ export const Exercise = ({
 
           // The detailed solution reaches the body from the exercise definition and the footer
           // from the question's state — two routes for the same content through the server, and
-          // each renders where it renders today.
+          // each renders where it renders today. Only the DETAILED solution is that content: a
+          // definition can carry others (a summary, say), which a learner is never shown, so
+          // rendering them here would preview something the learner will not see.
           const definitionSolution = displaySolution && !isFreeResponse
-            && q.collaborator_solutions?.find(s => s['content_html'] !== undefined)
-            ? q.collaborator_solutions.map(s => s['content_html']).join('')
+            ? q.collaborator_solutions?.find(s => s.solution_type === 'detailed')?.content_html || undefined
             : undefined;
 
           const bodyFeedback = isFreeResponse
