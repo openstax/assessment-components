@@ -39,9 +39,8 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
   }
 
   .answers-table {
-    margin-bottom: 20px;
-    font-size: calc(1.6rem * var(--content-text-scale));
-    line-height: calc(2rem * var(--content-text-scale));
+    font-size: calc(1.6rem * var(--content-text-scale, 1));
+    line-height: calc(2rem * var(--content-text-scale, 1));
   }
 
   .instructions {
@@ -193,14 +192,19 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
     margin: 10px 0;
     padding: 6px 8px;
   }
+
+  /* the last answer, or the feedback under it, ends flush: the frame adds the space below */
+  .answers-table > :last-child {
+    margin-bottom: 0;
+  }
+
+  .answers-table + * {
+    margin-top: 20px;
+  }
 }
 
 ${props => props.compactDisplay && css`
   &&&.openstax-question {
-    .answers-table {
-      margin: 0;
-    }
-
     .question-stem {
       color: ${colors.palette.neutralDarker};
       font-weight: bold;

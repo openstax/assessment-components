@@ -223,7 +223,7 @@ exports[`Answer renders a correct answer 1`] = `
 .c1 {
   color: #0D7741;
   text-transform: uppercase;
-  font-size: calc(1.1rem * var(--content-text-scale));
+  font-size: calc(1.1rem * var(--content-text-scale,1));
   font-weight: bold;
 }
 
@@ -331,7 +331,7 @@ exports[`Answer renders an incorrect answer 1`] = `
 .c1 {
   color: #C22032;
   text-transform: uppercase;
-  font-size: calc(1.1rem * var(--content-text-scale));
+  font-size: calc(1.1rem * var(--content-text-scale,1));
   font-weight: bold;
 }
 
@@ -439,7 +439,7 @@ exports[`Answer renders teacher preview 1`] = `
 .c1 {
   color: #0D7741;
   text-transform: uppercase;
-  font-size: calc(1.1rem * var(--content-text-scale));
+  font-size: calc(1.1rem * var(--content-text-scale,1));
   font-weight: bold;
 }
 

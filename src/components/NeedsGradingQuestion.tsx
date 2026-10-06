@@ -38,14 +38,14 @@ const QuestionHeaderLeft = styled.button`
 `;
 
 const QuestionTitle = styled.span`
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
   font-weight: 600;
   color: ${colors.palette.neutralDarker};
   margin: 0;
 `;
 
 const GradedCount = styled.span`
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale, 1));
   font-weight: 600;
   color: ${colors.palette.white};
   background-color: ${colors.palette.darkGray};
@@ -60,14 +60,14 @@ const QuestionIdSeparator = styled.span`
 
 const QuestionIdText = styled.span`
   font-weight: normal;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;
 
 const ExpandToggleButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale, 1));
   color: ${colors.palette.blue};
   padding: 0;
   text-decoration: underline;
@@ -83,7 +83,7 @@ const QuestionStemRow = styled.div`
 `;
 
 const QuestionStemText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDarker};
 `;
 

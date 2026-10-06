@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
@@ -51,6 +51,16 @@ const CancelButton = (props: {
     Cancel
   </StyledCancelButton>
 );
+
+/*
+ * The space below a question's content belongs to the frame, not the content: every format
+ * ends flush, and this adds the same room above the footer whatever was rendered inside.
+ */
+const QuestionBodySection = styled(StepCardBody)<CompactDisplayProps>`
+  ${props => !props.compactDisplay && css`
+    padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  `}
+`;
 
 const AttemptsRemaining = ({ count }: { count: number }) => {
   return (
@@ -204,9 +214,9 @@ export const QuestionWrapper = ({
 
   return (
     <CompactDisplayProvider compactDisplay={compact}>
-      <StepCardBody className="step-card-question" divided>
+      <QuestionBodySection className="step-card-question" divided compactDisplay={compact}>
         {children}
-      </StepCardBody>
+      </QuestionBodySection>
       {leftRegion || showControls ? (
         <StepCardFooter className="step-card-footer" compactDisplay={compact}>
           <div className="step-card-footer-inner">

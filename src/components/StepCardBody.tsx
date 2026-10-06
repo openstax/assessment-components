@@ -12,9 +12,7 @@ export const stepCardSection = css`
   overflow: auto;
 `;
 
-export const StepCardBody = styled.div.attrs<{ divided?: boolean }>(({ className }) => ({
-  className: className ? `step-card-body ${className}` : 'step-card-body',
-}))<{ divided?: boolean }>`
+export const StepCardBody = styled.div.attrs({ className: 'step-card-body' as string })<{ divided?: boolean }>`
   ${stepCardSection}
 
   ${props => props.divided && css`

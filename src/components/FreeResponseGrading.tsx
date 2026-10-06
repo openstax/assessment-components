@@ -23,7 +23,7 @@ const FieldGroup = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-weight: 600;
   color: ${colors.palette.neutralDarker};
 `;
@@ -32,13 +32,13 @@ const ScoreRow = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
 `;
 
 const ScoreInput = styled.input`
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
   border: 1px solid ${colors.palette.neutral};
   border-radius: 4px;
   text-align: center;
@@ -64,7 +64,7 @@ const CommentTextarea = styled.textarea`
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-family: inherit;
   border: 1px solid ${colors.palette.neutral};
   border-radius: 4px;
@@ -97,7 +97,7 @@ export interface FreeResponseGradingProps {
 }
 
 const SubmissionInfoText = styled.span`
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralThin};
 `;
 

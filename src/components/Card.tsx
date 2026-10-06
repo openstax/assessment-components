@@ -11,7 +11,8 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
      card's padding. */
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0;
+  /* with a unit, so the variable still works inside calc() */
+  --step-card-gutter-bottom: 0px;
   --step-card-surface: ${colors.card.body.background};
 
   ${breakpoints.tablet`
@@ -26,8 +27,8 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
     --step-card-gutter-bottom: calc(${breakpoints.margins.mobile} * 2);
   `}
 
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  line-height: calc(2.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDarker};
 
   /* doubled so it outranks the breakpoints above, which are emitted after it */

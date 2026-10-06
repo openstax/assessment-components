@@ -68,9 +68,8 @@ exports[`Question matches snapshot 1`] = `
 }
 
 .c0.openstax-question .answers-table {
-  margin-bottom: 20px;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
 }
 
 .c0.openstax-question .instructions {
@@ -286,7 +285,7 @@ exports[`Question matches snapshot 1`] = `
   margin: calc(8px - 14px) 0 1rem 8px;
   box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
   color: #6f6f6f;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   max-width: 370px;
 }
 
@@ -339,6 +338,14 @@ exports[`Question matches snapshot 1`] = `
   border-top: 1px solid #d5d5d5;
   margin: 10px 0;
   padding: 6px 8px;
+}
+
+.c0.openstax-question .answers-table > :last-child {
+  margin-bottom: 0;
+}
+
+.c0.openstax-question .answers-table + * {
+  margin-top: 20px;
 }
 
 <div

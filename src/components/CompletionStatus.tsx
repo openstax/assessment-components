@@ -1,12 +1,7 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { InnerStepCard } from "./Card";
 import Button from "./Button";
 import { colors } from '../theme';
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --content-text-scale: 1;
-  }
-`;
 
 export interface Score {
   current?: string;
@@ -27,8 +22,8 @@ export interface CompletionStatusProps {
 
 const CompletionStatusCard = styled(InnerStepCard)`
   padding: 88px 72px;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(3rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  line-height: calc(3rem * var(--content-text-scale, 1));
   display: block;
 
   button {
@@ -41,7 +36,7 @@ const CompletionStatusCard = styled(InnerStepCard)`
 `;
 
 const CompletionHeader = styled.h2`
-  font-size: calc(2.4rem * var(--content-text-scale));
+  font-size: calc(2.4rem * var(--content-text-scale, 1));
   margin: 0;
 `;
 
@@ -97,54 +92,51 @@ export const CompletionStatus = styled(({
 
   if (handleEditResponses) {
     return (
-      <>
-        <GlobalStyle />
-        <CompletionStatusCard className={className}>
-          <CompletionHeader>
-            {allCompleted
-              ? 'You are done.'
-              : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
-          </CompletionHeader>
-          <p>
-            {allCompleted
-              ? 'Your ungraded responses can be edited until they have been graded.'
-              : (someCompleted
-                ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
-                : 'Begin working on the quiz.')}
-          </p>
-          <ButtonGroup>
-            {allCompleted ? (
-              <RetryResumeButton
-                data-test-id="edit-responses-btn"
-                onClick={handleEditResponses}
-              >
-                Edit responses
-              </RetryResumeButton>
-            ) : someCompleted ? (
-              <RetryResumeButton
-                data-test-id="resume-btn"
-                onClick={handleContinue}
-              >
-                Continue
-              </RetryResumeButton>
-            ) : null}
-            {allCompleted && handleRetry ? (
-              <RetryResumeButton
-                data-test-id="retry-btn"
-                onClick={handleRetry}
-              >
-                Retry Quiz
-              </RetryResumeButton>
-            ) : null}
-            <Button
-              data-test-id="next-btn"
-              onClick={handleNext}
+      <CompletionStatusCard className={className}>
+        <CompletionHeader>
+          {allCompleted
+            ? 'You are done.'
+            : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
+        </CompletionHeader>
+        <p>
+          {allCompleted
+            ? 'Your ungraded responses can be edited until they have been graded.'
+            : (someCompleted
+              ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
+              : 'Begin working on the quiz.')}
+        </p>
+        <ButtonGroup>
+          {allCompleted ? (
+            <RetryResumeButton
+              data-test-id="edit-responses-btn"
+              onClick={handleEditResponses}
             >
-              Next
-            </Button>
-          </ButtonGroup>
-        </CompletionStatusCard>
-      </>
+              Edit responses
+            </RetryResumeButton>
+          ) : someCompleted ? (
+            <RetryResumeButton
+              data-test-id="resume-btn"
+              onClick={handleContinue}
+            >
+              Continue
+            </RetryResumeButton>
+          ) : null}
+          {allCompleted && handleRetry ? (
+            <RetryResumeButton
+              data-test-id="retry-btn"
+              onClick={handleRetry}
+            >
+              Retry Quiz
+            </RetryResumeButton>
+          ) : null}
+          <Button
+            data-test-id="next-btn"
+            onClick={handleNext}
+          >
+            Next
+          </Button>
+        </ButtonGroup>
+      </CompletionStatusCard>
     );
   }
 
@@ -168,53 +160,50 @@ export const CompletionStatus = styled(({
     : handleContinue;
 
   return (
-    <>
-      <GlobalStyle />
-      <CompletionStatusCard className={className}>
-        <CompletionHeader>
+    <CompletionStatusCard className={className}>
+      <CompletionHeader>
+        {allCompleted
+          ? 'You are done.'
+          : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
+      </CompletionHeader>
+
+      {handleRetry ? (
+        <div>
+          <p>{allCompleted ? unlimitedDone : unlimitedCurrent}</p>
+          <ScoreGroup>
+            <p>
+              <b>Current Score:</b> {score?.current ?? 'Score unavailable'} | <b>Saved Score:</b> {score?.saved ?? 'Score unavailable'}
+            </p>
+          </ScoreGroup>
+        </div>
+      ) : (
+        <p>
           {allCompleted
-            ? 'You are done.'
-            : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
-        </CompletionHeader>
+            ? 'Great job answering all the questions.'
+            : (someCompleted
+              ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
+              : 'Begin working on the quiz.')}
+        </p>
+      )}
 
+      <ButtonGroup>
         {handleRetry ? (
-          <div>
-            <p>{allCompleted ? unlimitedDone : unlimitedCurrent}</p>
-            <ScoreGroup>
-              <p>
-                <b>Current Score:</b> {score?.current ?? 'Score unavailable'} | <b>Saved Score:</b> {score?.saved ?? 'Score unavailable'}
-              </p>
-            </ScoreGroup>
-          </div>
-        ) : (
-          <p>
-            {allCompleted
-              ? 'Great job answering all the questions.'
-              : (someCompleted
-                ? `You've completed ${numberCompleted} of ${numberOfQuestions} questions.`
-                : 'Begin working on the quiz.')}
-          </p>
-        )}
-
-        <ButtonGroup>
-          {handleRetry ? (
-            <RetryResumeButton
-              data-test-id="retry-resume-btn"
-              onClick={onRetryResumeClick}
-              disabled={isRetrying}
-            >
-              {retryOrResume}
-            </RetryResumeButton>
-          ) : null}
-
-          <Button
-            data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
-            onClick={onNextContinueClick}
+          <RetryResumeButton
+            data-test-id="retry-resume-btn"
+            onClick={onRetryResumeClick}
+            disabled={isRetrying}
           >
-            {buttonText}
-          </Button>
-        </ButtonGroup>
-      </CompletionStatusCard>
-    </>
+            {retryOrResume}
+          </RetryResumeButton>
+        ) : null}
+
+        <Button
+          data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
+          onClick={onNextContinueClick}
+        >
+          {buttonText}
+        </Button>
+      </ButtonGroup>
+    </CompletionStatusCard>
   );
 })``;

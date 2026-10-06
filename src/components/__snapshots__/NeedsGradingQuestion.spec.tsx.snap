@@ -71,7 +71,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 }
 
 .c25 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -86,13 +86,13 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c26 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -136,7 +136,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -184,7 +184,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -200,7 +200,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 }
 
 .c16 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -262,7 +262,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -272,13 +272,13 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 }
 
 .c21 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c30 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
   margin-top: 0.4rem;
@@ -351,14 +351,14 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 }
 
 .c4 {
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
   margin: 0;
 }
 
 .c5 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #ffffff;
   background-color: #757575;
@@ -370,7 +370,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
   background: none;
   border: none;
   cursor: pointer;
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale,1));
   color: #007da4;
   padding: 0;
   -webkit-text-decoration: underline;
@@ -387,7 +387,7 @@ exports[`NeedsGradingQuestion matches snapshot with all graded students 1`] = `
 }
 
 .c7 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -806,7 +806,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
 }
 
 .c22 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -821,13 +821,13 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c23 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -871,7 +871,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -919,7 +919,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -935,7 +935,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
 }
 
 .c15 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -997,7 +997,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -1007,13 +1007,13 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
 }
 
 .c29 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c30 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
   margin-top: 0.4rem;
@@ -1086,14 +1086,14 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
 }
 
 .c4 {
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
   margin: 0;
 }
 
 .c5 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #ffffff;
   background-color: #757575;
@@ -1105,7 +1105,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
   background: none;
   border: none;
   cursor: pointer;
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale,1));
   color: #007da4;
   padding: 0;
   -webkit-text-decoration: underline;
@@ -1122,7 +1122,7 @@ exports[`NeedsGradingQuestion matches snapshot with mixed graded and ungraded st
 }
 
 .c7 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 

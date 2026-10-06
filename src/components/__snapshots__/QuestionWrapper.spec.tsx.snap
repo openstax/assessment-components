@@ -9,8 +9,12 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div>
       body
@@ -74,8 +78,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }

@@ -23,18 +23,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c4 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #6f6f6f;
   margin: 2.5rem 0 1rem 0;
@@ -48,7 +44,7 @@ Array [
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -60,11 +56,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -136,13 +136,13 @@ Array [
 }
 
 .c2 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
@@ -150,10 +150,6 @@ Array [
 .c3 .feedback-label {
   color: #424242;
   font-weight: bold;
-}
-
-.c1 .detailed-solution {
-  margin-bottom: 1rem;
 }
 
 .c1 .detailed-solution .header {
@@ -185,8 +181,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -338,18 +334,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c3 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c6 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -362,13 +354,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c6:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c6 .word-limit-error-info,
 .c6 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c6 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -383,7 +379,7 @@ Array [
 .c5 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -405,7 +401,7 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 .c0 {
@@ -415,11 +411,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -557,8 +557,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -663,7 +663,7 @@ Array [
 `;
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
-.c2 .image-button-wrapper {
+.c1 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -672,43 +672,39 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   cursor: pointer;
 }
 
-.c2 .image-button-wrapper:focus {
+.c1 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c2 .image-button-wrapper img {
+.c1 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 .c0 {
-  padding-bottom: 1rem;
-}
-
-.c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c3 {
-  font-size: calc(1.8rem * var(--content-text-scale));
+.c2 {
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #6f6f6f;
   margin: 0;
 }
 
 <div
-  className="c0"
+  className=""
   data-test-id="student-free-response"
 >
   <div
-    className="c1"
+    className="c0"
   >
     <div
-      className="c2 question-stem"
+      className="c1 question-stem"
       dangerouslySetInnerHTML={
         Object {
           "__html": "Explain the process of photosynthesis.",
@@ -717,7 +713,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
     />
   </div>
   <p
-    className="c3"
+    className="c2"
   >
     Unanswered
   </p>
@@ -725,7 +721,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
-.c2 .image-button-wrapper {
+.c1 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -734,29 +730,25 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   cursor: pointer;
 }
 
-.c2 .image-button-wrapper:focus {
+.c1 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c2 .image-button-wrapper img {
+.c1 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 .c0 {
-  padding-bottom: 1rem;
-}
-
-.c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c3 {
+.c2 {
   border-left: 16px solid #f1f1f1;
   padding-left: 1.6rem;
   margin: 1rem 0 1rem 1rem;
@@ -764,33 +756,29 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
 
-.c5 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+.c4 {
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
-.c6 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+.c5 {
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
 
-.c6 .feedback-label {
+.c5 .feedback-label {
   color: #424242;
   font-weight: bold;
 }
 
-.c4 .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c4 .detailed-solution .header {
+.c3 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -800,20 +788,20 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   flex-basis: 0;
 }
 
-.c4 .detailed-solution .solution {
+.c3 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
 }
 
 <div
-  className="c0"
+  className=""
   data-test-id="student-free-response"
 >
   <div
-    className="c1"
+    className="c0"
   >
     <div
-      className="c2 question-stem"
+      className="c1 question-stem"
       dangerouslySetInnerHTML={
         Object {
           "__html": "Explain the process of photosynthesis.",
@@ -822,22 +810,22 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
     />
   </div>
   <div
-    className="c3"
+    className="c2"
   >
     Photosynthesis converts sunlight into chemical energy.
   </div>
   <div
-    className="c4"
+    className="c3"
     role="status"
   >
     <div
-      className="c5"
+      className="c4"
     >
       Score: 
       9/10
     </div>
     <div
-      className="c6"
+      className="c5"
     >
       <span
         className="feedback-label"
@@ -852,7 +840,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
-.c13 {
+.c12 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -880,23 +868,23 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c13:not([disabled]) {
+.c12:not([disabled]) {
   cursor: pointer;
 }
 
-.c13:not([disabled]):hover {
+.c12:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c13:not([disabled]):active {
+.c12:not([disabled]):active {
   background: #C5400B;
 }
 
-.c13:disabled {
+.c12:disabled {
   opacity: 0.4;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -910,7 +898,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   min-width: 300px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -921,13 +909,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   gap: 0.8rem;
 }
 
-.c9 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+.c8 {
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -937,40 +925,61 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
-.c10 {
+.c9 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
 }
 
-.c10::-webkit-input-placeholder {
+.c9::-webkit-input-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c10::-moz-placeholder {
+.c9::-moz-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c10:-ms-input-placeholder {
+.c9:-ms-input-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
+}
+
+.c9:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c9:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c10 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .c10:focus {
@@ -984,34 +993,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 }
 
 .c11 {
-  width: 100%;
-  min-height: 12rem;
-  padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
-  font-family: inherit;
-  border: 1px solid #818181;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-.c11:focus {
-  outline: none;
-  border-color: #007da4;
-}
-
-.c11:disabled {
-  background-color: #f1f1f1;
-  cursor: not-allowed;
-}
-
-.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c2 .image-button-wrapper {
+.c1 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -1020,29 +1008,25 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   cursor: pointer;
 }
 
-.c2 .image-button-wrapper:focus {
+.c1 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c2 .image-button-wrapper img {
+.c1 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
 .c0 {
-  padding-bottom: 1rem;
-}
-
-.c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c5 {
+.c4 {
   border-left: 16px solid #f1f1f1;
   padding-left: 1.6rem;
   margin: 1rem 0 1rem 1rem;
@@ -1050,12 +1034,12 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1068,21 +1052,21 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   margin-top: 2.5rem;
 }
 
-.c4 {
+.c3 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
 <div
-  className="c0"
+  className=""
   data-test-id="student-free-response"
 >
   <div
-    className="c1"
+    className="c0"
   >
     <div
-      className="c2 question-stem"
+      className="c1 question-stem"
       dangerouslySetInnerHTML={
         Object {
           "__html": "Explain the process of photosynthesis.",
@@ -1091,35 +1075,35 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
     />
   </div>
   <div
-    className="c3"
+    className="c2"
   >
     <div
-      className="c4"
+      className="c3"
     >
       <div
-        className="c5"
+        className="c4"
       >
         Photosynthesis converts sunlight into chemical energy.
       </div>
     </div>
     <div
-      className="c6"
+      className="c5"
     >
       <div
-        className="c7"
+        className="c6"
       >
         <div
-          className="c8"
+          className="c7"
         >
           <label
-            className="c9"
+            className="c8"
             htmlFor="frg-0-score"
           >
             Points
           </label>
           <input
             aria-label="Score"
-            className="c10"
+            className="c9"
             disabled={false}
             id="frg-0-score"
             max={10}
@@ -1137,17 +1121,17 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
         </div>
       </div>
       <div
-        className="c7"
+        className="c6"
       >
         <label
-          className="c9"
+          className="c8"
           htmlFor="frg-0-comment"
         >
           Comment
         </label>
         <textarea
           aria-label="Comment"
-          className="c11"
+          className="c10"
           disabled={false}
           id="frg-0-comment"
           onChange={[Function]}
@@ -1156,10 +1140,10 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
         />
       </div>
       <div
-        className="c12"
+        className="c11"
       >
         <button
-          className="c13"
+          className="c12"
           disabled={true}
           onClick={[Function]}
         >
@@ -1194,18 +1178,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c3 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c6 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1218,13 +1198,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c6:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c6 .word-limit-error-info,
 .c6 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c6 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -1239,7 +1223,7 @@ Array [
 .c5 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -1261,7 +1245,7 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 .c0 {
@@ -1271,11 +1255,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -1413,8 +1401,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -1541,18 +1529,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c3 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c6 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1565,13 +1549,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c6:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c6 .word-limit-error-info,
 .c6 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c6 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -1586,7 +1574,7 @@ Array [
 .c5 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -1608,7 +1596,7 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 .c0 {
@@ -1618,11 +1606,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -1768,8 +1760,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -1923,18 +1915,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c3 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c6 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1947,13 +1935,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c6:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c6 .word-limit-error-info,
 .c6 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c6 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -1968,7 +1960,7 @@ Array [
 .c5 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -1990,7 +1982,7 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 .c0 {
@@ -2000,11 +1992,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -2142,8 +2138,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -2270,18 +2266,14 @@ Array [
   height: auto;
 }
 
-.c1 {
-  padding-bottom: 1rem;
-}
-
 .c3 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c6 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2294,13 +2286,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c6:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c6 .word-limit-error-info,
 .c6 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c6 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -2315,7 +2311,7 @@ Array [
 .c5 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -2337,7 +2333,7 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 .c0 {
@@ -2347,11 +2343,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
+.c1 {
+  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+}
+
 <div
-    className="c0 step-card-question step-card-body step-card-question"
+    className="c0 c1 step-card-question step-card-body"
   >
     <div
-      className="c1"
+      className=""
       data-test-id="student-free-response"
     >
       <div
@@ -2497,8 +2497,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }

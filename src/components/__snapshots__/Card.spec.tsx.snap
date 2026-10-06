@@ -4,10 +4,10 @@ exports[`StepCard matches snapshot 1`] = `
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0;
+  --step-card-gutter-bottom: 0px;
   --step-card-surface: #fdfdfd;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -287,10 +287,10 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0;
+  --step-card-gutter-bottom: 0px;
   --step-card-surface: #fdfdfd;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -570,10 +570,10 @@ exports[`TaskStepCard matches snapshot 1`] = `
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0;
+  --step-card-gutter-bottom: 0px;
   --step-card-surface: #fdfdfd;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
   position: relative;
   display: -webkit-box;

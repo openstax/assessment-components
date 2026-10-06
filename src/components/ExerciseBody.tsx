@@ -1,16 +1,10 @@
 import React from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { typesetMath } from '../helpers/mathjax';
 import { TypesetMathContext } from '../hooks/useTypesetMath';
 import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
 import { Content } from './Content';
 import { stepCardSection } from './StepCardBody';
-
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --content-text-scale: 1;
-  }
-`;
 
 const StyledExerciseBody = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
@@ -89,7 +83,6 @@ export const ExerciseBody = ({ context, stimulus_html, children, compactDisplay 
 
   return (
     <TypesetMathContext.Provider value={typesetExercise}>
-      <GlobalStyle />
       <CompactDisplayProvider compactDisplay={compact}>
         <StyledExerciseBody ref={container} compactDisplay={compact}>
           <Preamble context={context} stimulus_html={stimulus_html} />

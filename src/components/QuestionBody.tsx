@@ -13,10 +13,6 @@ const RESPONSE_SIZE_WORD_LIMITS: Record<string, number> = { short: 30, medium: 1
 const DEFAULT_WORD_LIMIT = 100;
 
 export const StyledFreeResponse = styled.div<CompactDisplayProps>`
-  ${props => !props.compactDisplay && css`
-    padding-bottom: 1rem;
-  `}
-
   ${props => props.compactDisplay && css`
     && .question-stem {
       color: ${colors.palette.neutralDarker};
@@ -28,16 +24,20 @@ export const StyledFreeResponse = styled.div<CompactDisplayProps>`
 `;
 
 const StyledQuestionStem = styled.div`
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale, 1));
   line-height: 1.68em;
   position: relative;
 `;
 
 const InfoRow = styled.div<{ hasChildren: boolean }>`
-  margin: 8px 0;
+  margin-top: 8px;
   display: flex;
   justify-content: ${props => props.hasChildren ? 'space-between' : 'flex-end'};
   line-height: 1.6rem;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
 
   .word-limit-error-info,
   .words-remaining-negative {
@@ -45,7 +45,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
   }
 
   div > span {
-    font-size: calc(1.4rem * var(--content-text-scale));
+    font-size: calc(1.4rem * var(--content-text-scale, 1));
     line-height: 16px;
 
     + span {
@@ -63,7 +63,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
 export const FreeResponseTextArea = styled.textarea`
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -77,7 +77,7 @@ FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
 const COLLAPSED_HEIGHT = 16.8; // rem
 
 const ReviewAnswerLabel = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-weight: 600;
   color: ${colors.palette.neutralThin};
   margin: 2.5rem 0 1rem 0;
@@ -91,7 +91,7 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
 
@@ -115,7 +115,7 @@ const ReadMoreButton = styled.button`
   padding: 0;
   margin: 0 0 0 1rem;
   cursor: pointer;
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale, 1));
   text-decoration: underline;
   white-space: nowrap;
 
@@ -136,7 +136,7 @@ const ResponseColumn = styled.div`
 `;
 
 const UnansweredText = styled.p`
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralThin};
   margin: 0;
 `;
@@ -147,12 +147,12 @@ const EditableNotice = styled.div`
   gap: 0.5rem;
   background-color: ${colors.notice.background};
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;
 
 const ValidationMessage = styled.div`
   color: ${colors.palette.danger};
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-weight: bold;
   margin-top: 0.8rem;
 `;

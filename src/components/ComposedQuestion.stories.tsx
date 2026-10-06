@@ -157,3 +157,33 @@ export const HostDrivenSubmit = () => {
     </ExerciseWrapper>
   );
 };
+
+/**
+ * The contract a host rendering its own item format relies on: only the two wrappers, with no
+ * `ExerciseBody` and no legacy question components. The card supplies the gutter and the type.
+ */
+const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }) => (
+  <ExerciseWrapper
+    questionNumber={1}
+    numberOfQuestions={1}
+    questionId="foreign@1"
+    compactDisplay={compactDisplay}
+  >
+    <QuestionWrapper
+      question_id="foreign"
+      questionIndex={0}
+      is_completed={false}
+      canAnswer={true}
+      apiIsPending={false}
+      canUpdateCurrentStep={false}
+      onAnswerSave={() => window.alert('the host submits')}
+      onNextStep={() => undefined}
+    >
+      <p>Markup from some other item format, styled only by what it inherits from the card.</p>
+      <label><input type="checkbox" /> An interaction the host renders itself</label>
+    </QuestionWrapper>
+  </ExerciseWrapper>
+);
+
+export const ForeignContent = () => <ForeignContentExercise />;
+export const ForeignContentCompact = () => <ForeignContentExercise compactDisplay />;

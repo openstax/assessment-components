@@ -43,7 +43,7 @@ const RowHeader = styled.button`
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDarker};
 
   &:hover {
@@ -57,7 +57,7 @@ const StudentName = styled.span`
 `;
 
 const PointsLabel = styled.span`
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralThin};
   white-space: nowrap;
 
@@ -106,7 +106,7 @@ const AnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean }>`
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
 
@@ -123,7 +123,7 @@ const AnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean }>`
 `;
 
 const UnansweredText = styled.p`
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralThin};
   margin: 0 0 1rem 0;
 `;
@@ -136,7 +136,7 @@ const ReadMoreButton = styled.button`
   padding: 0;
   margin: 0 0 0 1rem;
   cursor: pointer;
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale, 1));
   text-decoration: underline;
   white-space: nowrap;
 
@@ -150,13 +150,13 @@ const GradeDisplay = styled.div`
 `;
 
 const ReviewScoreText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-weight: bold;
   color: ${colors.palette.neutralDarker};
 `;
 
 const FeedbackText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDarker};
   white-space: pre-wrap;
   margin-top: 0.4rem;
