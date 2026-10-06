@@ -54,6 +54,14 @@ describe('CompletionStatus', () => {
         .toEqual([[testId, label]]);
     });
 
+    it('starts the quiz before anything has been answered', () => {
+      const tree = render({ numberCompleted: 0 });
+
+      click(tree, 'start-btn');
+      expect(props.handleContinue).toHaveBeenCalledTimes(1);
+      expect(props.handleNext).not.toHaveBeenCalled();
+    });
+
     it('continues the quiz while questions remain', () => {
       const tree = render({ numberCompleted: 5 });
 

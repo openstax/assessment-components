@@ -122,6 +122,10 @@ describe('NeedsGradingQuestion', () => {
       renderer.act(() => { cardHeader(tree).props.onClick(); });
       expect(cardHeader(tree).props['aria-expanded']).toBe(false);
       expect(isBodyHidden(tree)).toBe(true);
+
+      renderer.act(() => { cardHeader(tree).props.onClick(); });
+      expect(cardHeader(tree).props['aria-expanded']).toBe(true);
+      expect(isBodyHidden(tree)).toBe(false);
     });
   });
 
