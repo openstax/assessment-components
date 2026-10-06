@@ -1,5 +1,7 @@
 import { FreeResponseInput, FreeResponseProps } from './FreeResponseInput';
 import renderer from 'react-test-renderer';
+import { FreeResponseGrading } from './FreeResponseGrading';
+import { findAllNodes, textOf } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -38,60 +40,25 @@ describe('Free Response Input', () => {
     };
   });
 
+  const render = (overrides: Partial<FreeResponseProps> = {}) => {
+    let tree!: renderer.ReactTestRenderer;
+    renderer.act(() => { tree = renderer.create(<FreeResponseInput {...baseProps} {...overrides} />); });
+    return tree;
+  };
+
+  const textarea = (tree: renderer.ReactTestRenderer) => tree.root.findAll(node => node.type === 'textarea')[0];
+  const buttons = (tree: renderer.ReactTestRenderer) => tree.root.findAll(node => node.type === 'button');
+  const labels = (tree: renderer.ReactTestRenderer) => buttons(tree).map(b => b.children.join(''));
+  const button = (tree: renderer.ReactTestRenderer, testId: string) =>
+    buttons(tree).find(b => b.props['data-test-id'] === testId);
+  const text = (tree: renderer.ReactTestRenderer) => textOf(tree.toJSON());
+
   it('matches snapshot - initial state', () => {
     const tree = renderer.create(
       <FreeResponseInput {...baseProps} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('matches snapshot - with free response text', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        free_response="Photosynthesis converts light energy into chemical energy."
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('matches snapshot - with submission info', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        submissionTimestamp="2024-07-26T16:00:00.000Z"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('matches snapshot - completed state', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        is_completed={true}
-        canAnswer={false}
-        free_response="Photosynthesis is the process by which plants convert light energy into chemical energy."
-        score={{ raw: 8, max: 10 }}
-        feedback_html="Good explanation!"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('matches snapshot - update mode', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        is_completed={true}
-        canAnswer={true}
-        free_response="Previously submitted answer"
-        submissionTimestamp="2024-07-26T16:00:00.000Z"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('matches snapshot - preview mode unanswered', () => {
     const tree = renderer.create(
       <FreeResponseInput
@@ -126,31 +93,159 @@ describe('Free Response Input', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('matches snapshot - preview mode with grading', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        is_completed={true}
-        canAnswer={false}
-        previewMode={true}
-        free_response="Photosynthesis converts sunlight into chemical energy."
-        score={{ raw: 9, max: 10 }}
-        feedback_html="Good work overall."
-        onGradingSave={jest.fn()}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  describe('before a response is submitted', () => {
+    it('shows the question and an empty, editable response box', () => {
+      const tree = render();
+
+      expect(text(tree)).toContain('Explain the process of photosynthesis.');
+      expect(textarea(tree).props.value).toBe('');
+      expect(textarea(tree).props.disabled).toBe(false);
+    });
+
+    it('shows the response typed so far', () => {
+      const tree = render({ free_response: 'Photosynthesis converts light energy into chemical energy.' });
+
+      expect(textarea(tree).props.value).toBe('Photosynthesis converts light energy into chemical energy.');
+    });
+
+    it('counts the words remaining', () => {
+      expect(text(render())).toContain('Remaining words: 50');
+      expect(text(render({ free_response: 'one two three' }))).toContain('Remaining words: 47');
+    });
+
+    it('says when the response was last submitted', () => {
+      expect(text(render({ submissionTimestamp: '2024-07-26T16:00:00.000Z' })))
+        .toContain('Last submitted on Jul 26, 2024, 9:00 AM');
+      expect(text(render())).not.toContain('Last submitted');
+    });
+
+    it('offers only Submit, which stays disabled until there is a response', () => {
+      expect(labels(render())).toEqual(['Submit']);
+      expect(button(render(), 'submit-answer-btn')?.props.disabled).toBe(true);
+      expect(button(render({ free_response: 'An answer' }), 'submit-answer-btn')?.props.disabled).toBe(false);
+    });
+
+    it('hands the question id to the host when Submit is pressed', () => {
+      const tree = render({ free_response: 'An answer' });
+
+      renderer.act(() => { button(tree, 'submit-answer-btn')?.props.onClick(); });
+      expect(baseProps.onAnswerSave).toHaveBeenCalledWith(1);
+    });
   });
 
-  it('matches snapshot - saving state', () => {
-    const tree = renderer.create(
-      <FreeResponseInput
-        {...baseProps}
-        apiIsPending={true}
-        free_response="This is being saved"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  describe('while the response is being saved', () => {
+    it('shows Saving… on a disabled button and locks the response box', () => {
+      const tree = render({ apiIsPending: true, free_response: 'This is being saved' });
+
+      expect(labels(tree)).toEqual(['Saving…']);
+      expect(button(tree, 'submit-answer-btn')?.props.disabled).toBe(true);
+      expect(textarea(tree).props.disabled).toBe(true);
+    });
+  });
+
+  describe('once the response has been graded', () => {
+    const graded = {
+      is_completed: true,
+      canAnswer: false,
+      free_response: 'Photosynthesis is the process by which plants convert light energy into chemical energy.',
+      score: { raw: 8, max: 10 },
+      feedback_html: 'Good explanation!',
+    };
+
+    it('shows the response read-only, with no response box', () => {
+      const tree = render(graded);
+
+      expect(textarea(tree)).toBeUndefined();
+      expect(text(tree)).toContain('Your answer');
+      expect(text(tree)).toContain(graded.free_response);
+    });
+
+    it('shows the score and feedback in the footer', () => {
+      const footer = text(render(graded));
+
+      expect(footer).toContain('Score: 8/10');
+      expect(footer).toContain('Good explanation!');
+    });
+
+    it('shows no score or feedback when there is none', () => {
+      const footer = text(render({ ...graded, score: undefined, feedback_html: undefined }));
+
+      expect(footer).not.toContain('Score:');
+      expect(footer).not.toContain('Feedback:');
+    });
+
+    it('offers only Next, which moves the host on from this question', () => {
+      const tree = render({ ...graded, questionNumber: 3 });
+
+      expect(labels(tree)).toEqual(['Next']);
+      renderer.act(() => { button(tree, 'continue-btn')?.props.onClick(); });
+      expect(baseProps.onNextStep).toHaveBeenCalledWith(2);
+    });
+  });
+
+  describe('when the response can still be edited', () => {
+    const editable = {
+      is_completed: true,
+      canAnswer: true,
+      free_response: 'Previously submitted answer',
+      submissionTimestamp: '2024-07-26T16:00:00.000Z',
+    };
+
+    it('says it can be edited until it is graded, and keeps the response box open', () => {
+      const tree = render(editable);
+
+      expect(text(tree)).toContain('You can come back and edit your response until it has been graded.');
+      expect(textarea(tree).props.disabled).toBe(false);
+      expect(textarea(tree).props.value).toBe('Previously submitted answer');
+    });
+
+    it('offers Cancel, Update and Next, with Cancel and Update waiting for a change', () => {
+      const tree = render(editable);
+
+      expect(labels(tree)).toEqual(['Cancel', 'Update', 'Next']);
+      expect(buttons(tree)[0].props.disabled).toBe(true);
+      expect(button(tree, 'update-answer-btn')?.props.disabled).toBe(true);
+    });
+
+    it('restores the submitted response and tells the host when Cancel is pressed', () => {
+      const tree = render(editable);
+      const event = { type: 'click' };
+
+      renderer.act(() => { buttons(tree)[0].props.onClick(event); });
+
+      expect(baseProps.onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: 'Previously submitted answer' })
+      );
+      expect(baseProps.cancelHandler).toHaveBeenCalledWith(event);
+    });
+  });
+
+  describe('in preview mode', () => {
+    it('has no controls and no response box, and says the question is unanswered', () => {
+      const tree = render({ previewMode: true, score: { max: 10 } });
+
+      expect(buttons(tree)).toHaveLength(0);
+      expect(textarea(tree)).toBeUndefined();
+      expect(text(tree)).toContain('Unanswered');
+    });
+
+    it('shows the grading form instead of the feedback block when grading is possible', () => {
+      const tree = render({
+        is_completed: true,
+        canAnswer: false,
+        previewMode: true,
+        free_response: 'Photosynthesis converts sunlight into chemical energy.',
+        score: { raw: 9, max: 10 },
+        feedback_html: 'Good work overall.',
+        onGradingSave: jest.fn(),
+      });
+
+      expect(tree.root.findByType(FreeResponseGrading).props).toMatchObject({
+        questionId: '1', maxScore: 10, score: 9, comment: 'Good work overall.',
+      });
+      expect(findAllNodes(tree.toJSON(), node => node.type === 'button')).toHaveLength(1);
+      expect(text(tree)).not.toContain('Feedback:');
+    });
   });
 
   describe('reverting a restored draft', () => {
