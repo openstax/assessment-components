@@ -34,11 +34,11 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
 }
 
 .c7:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c7:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c7:disabled {
@@ -261,11 +261,11 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
 }
 
 .c7:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c7:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c7:disabled {
@@ -488,11 +488,11 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
 }
 
 .c7:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c7:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c7:disabled {
@@ -715,11 +715,11 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
 }
 
 .c7:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c7:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c7:disabled {
@@ -942,11 +942,11 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
 }
 
 .c7:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c7:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c7:disabled {

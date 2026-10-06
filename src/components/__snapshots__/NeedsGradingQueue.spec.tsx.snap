@@ -63,11 +63,11 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 }
 
 .c28:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c28:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c28:disabled {

@@ -66,8 +66,13 @@ export const colors = {
   },
   button: {
     background: palette.orange,
-    backgroundHover: "#E74B0D",
-    backgroundActive: "#C5400B"
+    backgroundHover: "#BE3C08",
+    backgroundActive: "#B03808",
+    secondary: {
+      background: palette.darkGray,
+      backgroundHover: "#646464",
+      backgroundActive: "#4C4C4C",
+    },
   },
   freeResponse: {
     color: palette.neutralDarker,

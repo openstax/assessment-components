@@ -34,11 +34,11 @@ exports[`Button isWaiting state matches snapshot 1`] = `
 }
 
 .c0:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c0:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c0:disabled {
@@ -87,11 +87,11 @@ exports[`Button matches snapshot 1`] = `
 }
 
 .c0:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c0:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c0:disabled {
