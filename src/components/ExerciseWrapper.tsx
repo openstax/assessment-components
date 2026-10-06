@@ -7,10 +7,8 @@ import { ExerciseHeaderIcons, ExerciseIcons } from './ExerciseHeaderIcons';
 import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
 import { breakpoints } from '../theme';
 
-const StyledStepCard = styled(StepCard)`
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
-`;
+// typography and the gutter belong to the card itself; this exists to be selected below
+const StyledStepCard = styled(StepCard)``;
 
 const ToolbarWrapper = styled.div<{
   desktopToolbarEnabled: boolean;

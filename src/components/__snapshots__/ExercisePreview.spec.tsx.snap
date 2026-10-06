@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExercisePreview using step data matches snapshot with overlay and correctness 1`] = `
-.c8 .image-button-wrapper {
+.c6 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -10,46 +10,79 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   cursor: pointer;
 }
 
-.c8 .image-button-wrapper:focus {
+.c6 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c8 .image-button-wrapper img {
+.c6 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c7 .exercise-context .os-title {
+.c8 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
 
-.c7 .exercise-context .os-subtitle {
+.c5 .exercise-context .os-subtitle {
   margin: var(--spacing,0.8rem) 0;
 }
 
-.c7 .exercise-context figure {
+.c5 .exercise-context figure {
   float: left;
   margin: 0;
 }
 
-.c7 .exercise-context img {
+.c5 .exercise-context img {
   max-width: 16rem;
 }
 
-.c7 .exercise-context p:last-child {
+.c5 .exercise-context p:last-child {
   margin-bottom: 0;
 }
 
-.c7 .question-info,
-.c7 .exercise-context {
+.c5 .question-info,
+.c5 .exercise-context {
   line-height: 2rem;
 }
 
+.c7 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+}
+
+.c7.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c1 {
-  --spacing: 0.8rem;
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 0;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -68,11 +101,21 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   overflow: hidden;
 }
 
+.c1.c1 {
+  --spacing: 0.8rem;
+  --step-card-gutter: var(--spacing);
+  --step-card-gutter-top: var(--spacing);
+  --step-card-gutter-bottom: var(--spacing);
+  --step-card-surface: #ffffff;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
 .c0 {
   padding: 2rem;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -95,7 +138,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   letter-spacing: -0.72px;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,126 +152,80 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   text-transform: uppercase;
 }
 
-.c4 h2.question-info .question-id {
+.c3 h2.question-info .question-id {
   font-weight: normal;
 }
 
-.c4 h2.question-info .ox-icon-lock {
+.c3 h2.question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
-.c4 .num-questions,
-.c4 .points {
+.c3 .num-questions,
+.c3 .points {
   display: none;
 }
 
-.c4 .exercise-id,
-.c4 .separator {
+.c3 .exercise-id,
+.c3 .separator {
   font-weight: normal;
 }
 
-.c4 .separator {
+.c3 .separator {
   margin: 0 0.4rem;
 }
 
-.c4 .exercise-id {
+.c3 .exercise-id {
   height: 28px;
 }
 
-.c4 button {
+.c3 button {
   color: #5e5e5e;
 }
 
-.c4 .scoring {
+.c3 .scoring {
   margin-left: auto;
   margin-right: 1rem;
 }
 
-.c4 .scoring span {
+.c3 .scoring span {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.c4 .openstax-exercise-badges {
+.c3 .openstax-exercise-badges {
   margin: 0;
   line-height: 2rem;
 }
 
-.c4 .openstax-exercise-badges svg {
+.c3 .openstax-exercise-badges svg {
   display: block;
 }
 
-.c4 .openstax-exercise-badges svg:not(.interactive) {
+.c3 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
 }
 
-.c4.c4 {
+.c3.c3 {
   background-color: #ffffff;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
 }
 
-.c4 .question-id {
+.c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
 }
 
-.c6 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c6 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6.c6 .step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-.c6 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c6.exercise-context,
-.c6.exercise-stimulus,
-.c6.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c5 {
-  padding: 0;
-}
-
-.c6.c6.c6 .openstax-has-html .splash .frame-wrapper {
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
-}
-
-.c2 {
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
 }
 
 .c11 {
@@ -245,15 +242,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 .c10 {
   width: 100%;
-}
-
-.c9.step-card-body {
-  padding: 4.8rem 14rem 0;
-}
-
-.c9.openstax-question {
-  border-top: 1px solid #d5d5d5;
-  font-size: calc(1.8rem * var(--content-text-scale));
 }
 
 .c9.openstax-question .detailed-solution {
@@ -559,13 +547,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   padding: 6px 8px;
 }
 
-.c9.c9.c9.step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
 .c9.c9.c9.openstax-question .answers-table {
   margin: 0;
 }
@@ -617,31 +598,47 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   display: flex;
 }
 
-.c3 {
+.c2 {
   margin: 0 auto auto auto !important;
 }
 
-.c3 .step-card-footer {
+.c2 .step-card-footer {
   display: none;
 }
 
-.c3 .answer-answer {
+.c2 .answer-answer {
   font-weight: normal;
 }
 
-.c3.is-selected {
+.c2.is-selected {
   background-color: #daf3f8;
   border-width: 0.2rem;
 }
 
-.c3.is-selected .step-card-footer,
-.c3.is-selected .step-card-body,
-.c3.is-selected .step-card-header {
+.c2.is-selected .step-card-footer,
+.c2.is-selected .step-card-body,
+.c2.is-selected .step-card-header {
   background-color: #daf3f8 !important;
 }
 
-.c3.is-selected .openstax-question {
-  border-width: 0.2rem !important;
+.c2.is-selected .step-card-question {
+  border-top-width: 0.2rem;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+    --step-card-gutter-bottom: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+    --step-card-gutter-bottom: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -657,109 +654,78 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 }
 
 @media (min-width:1000px) {
-  .c4 button.ox-icon-angle-left,
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
     display: none;
   }
 }
 
 @media (max-width:999px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2.5rem;
   }
 
-  .c4 svg.ox-icon {
+  .c3 svg.ox-icon {
     display: inherit;
     margin: 0;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 24px;
   }
 
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-right {
     margin-left: 24px;
   }
 
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     display: none;
   }
 
-  .c4 .num-questions,
-  .c4 points {
+  .c3 .num-questions,
+  .c3 points {
     display: inherit;
   }
 
-  .c4 .exercise-id {
+  .c3 .exercise-id {
     display: none;
   }
 
-  .c4 button[class^='ox-icon-angle']:hover {
+  .c3 button[class^='ox-icon-angle']:hover {
     box-shadow: none;
   }
 }
 
 @media (max-width:600px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2rem;
     padding: 10px 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c6 .step-card-body {
-    padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c6 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c6.c6 .question-feedback {
+  .c4.c4 .question-feedback {
     margin-left: 0;
   }
 
-  .c6.c6 .question-feedback .arrow {
+  .c4.c4 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c5 .openstax-exercise-badges,
-  .interactive-step .c6 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c6 .openstax-exercise-badges svg {
+  .c4 .openstax-exercise-badges svg {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c9.step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c9.step-card-body {
-    padding: calc(8px * 2) 8px;
   }
 }
 
@@ -771,7 +737,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
     data-task-step-id="0"
   >
     <div
-      className="c1 c2 exercise-step c3 preview-card is-selected"
+      className="c1 exercise-step c2 preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -783,7 +749,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
           className="step-card"
         >
           <div
-            className="c4 step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -807,13 +773,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
             </div>
           </div>
           <div
-            className="c5 c6"
+            className="c4"
           >
             <div
-              className="c7"
+              className="c5"
             >
               <div
-                className="c8 step-card-body exercise-context"
+                className="c6 c7 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -821,7 +787,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 }
               />
               <div
-                className="c8 step-card-body exercise-stimulus"
+                className="c6 c7 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -832,105 +798,109 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="c9 openstax-question step-card-body has-correct-answer"
-                  data-question-number={1}
-                  data-test-id="question"
+                  className="c8 step-card-question step-card-body step-card-question"
                 >
                   <div
-                    className="c10"
+                    className="c9 openstax-question has-correct-answer"
+                    data-question-number={1}
+                    data-test-id="question"
                   >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
+                    <div
+                      className="c10"
+                    >
+                      <div>
                         <div
-                          className="openstax-answer"
+                          className="answers-table"
                         >
                           <div
-                            className="answers-answer disabled answer-correct"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
+                            <div
+                              className="answers-answer disabled answer-correct"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-0"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice A:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-0"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="A"
+                                  data-test-id="answer-choice-A"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice A:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "True",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="openstax-answer"
-                        >
                           <div
-                            className="answers-answer disabled"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
+                            <div
+                              className="answers-answer disabled"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-1"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice B:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-1"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="B"
+                                  data-test-id="answer-choice-B"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice B:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "False",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -948,7 +918,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 `;
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected false 1`] = `
-.c8 .image-button-wrapper {
+.c6 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -957,46 +927,79 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   cursor: pointer;
 }
 
-.c8 .image-button-wrapper:focus {
+.c6 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c8 .image-button-wrapper img {
+.c6 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c7 .exercise-context .os-title {
+.c8 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
 
-.c7 .exercise-context .os-subtitle {
+.c5 .exercise-context .os-subtitle {
   margin: var(--spacing,0.8rem) 0;
 }
 
-.c7 .exercise-context figure {
+.c5 .exercise-context figure {
   float: left;
   margin: 0;
 }
 
-.c7 .exercise-context img {
+.c5 .exercise-context img {
   max-width: 16rem;
 }
 
-.c7 .exercise-context p:last-child {
+.c5 .exercise-context p:last-child {
   margin-bottom: 0;
 }
 
-.c7 .question-info,
-.c7 .exercise-context {
+.c5 .question-info,
+.c5 .exercise-context {
   line-height: 2rem;
 }
 
+.c7 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+}
+
+.c7.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c1 {
-  --spacing: 0.8rem;
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 0;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1015,11 +1018,21 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   overflow: hidden;
 }
 
+.c1.c1 {
+  --spacing: 0.8rem;
+  --step-card-gutter: var(--spacing);
+  --step-card-gutter-top: var(--spacing);
+  --step-card-gutter-bottom: var(--spacing);
+  --step-card-surface: #ffffff;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
 .c0 {
   padding: 2rem;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1042,7 +1055,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   letter-spacing: -0.72px;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1056,126 +1069,80 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   text-transform: uppercase;
 }
 
-.c4 h2.question-info .question-id {
+.c3 h2.question-info .question-id {
   font-weight: normal;
 }
 
-.c4 h2.question-info .ox-icon-lock {
+.c3 h2.question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
-.c4 .num-questions,
-.c4 .points {
+.c3 .num-questions,
+.c3 .points {
   display: none;
 }
 
-.c4 .exercise-id,
-.c4 .separator {
+.c3 .exercise-id,
+.c3 .separator {
   font-weight: normal;
 }
 
-.c4 .separator {
+.c3 .separator {
   margin: 0 0.4rem;
 }
 
-.c4 .exercise-id {
+.c3 .exercise-id {
   height: 28px;
 }
 
-.c4 button {
+.c3 button {
   color: #5e5e5e;
 }
 
-.c4 .scoring {
+.c3 .scoring {
   margin-left: auto;
   margin-right: 1rem;
 }
 
-.c4 .scoring span {
+.c3 .scoring span {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.c4 .openstax-exercise-badges {
+.c3 .openstax-exercise-badges {
   margin: 0;
   line-height: 2rem;
 }
 
-.c4 .openstax-exercise-badges svg {
+.c3 .openstax-exercise-badges svg {
   display: block;
 }
 
-.c4 .openstax-exercise-badges svg:not(.interactive) {
+.c3 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
 }
 
-.c4.c4 {
+.c3.c3 {
   background-color: #ffffff;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
 }
 
-.c4 .question-id {
+.c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
 }
 
-.c6 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c6 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6.c6 .step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-.c6 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c6.exercise-context,
-.c6.exercise-stimulus,
-.c6.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c5 {
-  padding: 0;
-}
-
-.c6.c6.c6 .openstax-has-html .splash .frame-wrapper {
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
-}
-
-.c2 {
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
 }
 
 .c11 {
@@ -1192,15 +1159,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c10 {
   width: 100%;
-}
-
-.c9.step-card-body {
-  padding: 4.8rem 14rem 0;
-}
-
-.c9.openstax-question {
-  border-top: 1px solid #d5d5d5;
-  font-size: calc(1.8rem * var(--content-text-scale));
 }
 
 .c9.openstax-question .detailed-solution {
@@ -1506,13 +1464,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding: 6px 8px;
 }
 
-.c9.c9.c9.step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
 .c9.c9.c9.openstax-question .answers-table {
   margin: 0;
 }
@@ -1564,31 +1515,47 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   display: flex;
 }
 
-.c3 {
+.c2 {
   margin: 0 auto auto auto !important;
 }
 
-.c3 .step-card-footer {
+.c2 .step-card-footer {
   display: none;
 }
 
-.c3 .answer-answer {
+.c2 .answer-answer {
   font-weight: normal;
 }
 
-.c3.is-selected {
+.c2.is-selected {
   background-color: #daf3f8;
   border-width: 0.2rem;
 }
 
-.c3.is-selected .step-card-footer,
-.c3.is-selected .step-card-body,
-.c3.is-selected .step-card-header {
+.c2.is-selected .step-card-footer,
+.c2.is-selected .step-card-body,
+.c2.is-selected .step-card-header {
   background-color: #daf3f8 !important;
 }
 
-.c3.is-selected .openstax-question {
-  border-width: 0.2rem !important;
+.c2.is-selected .step-card-question {
+  border-top-width: 0.2rem;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+    --step-card-gutter-bottom: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+    --step-card-gutter-bottom: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -1604,109 +1571,78 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 @media (min-width:1000px) {
-  .c4 button.ox-icon-angle-left,
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
     display: none;
   }
 }
 
 @media (max-width:999px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2.5rem;
   }
 
-  .c4 svg.ox-icon {
+  .c3 svg.ox-icon {
     display: inherit;
     margin: 0;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 24px;
   }
 
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-right {
     margin-left: 24px;
   }
 
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     display: none;
   }
 
-  .c4 .num-questions,
-  .c4 points {
+  .c3 .num-questions,
+  .c3 points {
     display: inherit;
   }
 
-  .c4 .exercise-id {
+  .c3 .exercise-id {
     display: none;
   }
 
-  .c4 button[class^='ox-icon-angle']:hover {
+  .c3 button[class^='ox-icon-angle']:hover {
     box-shadow: none;
   }
 }
 
 @media (max-width:600px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2rem;
     padding: 10px 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c6 .step-card-body {
-    padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c6 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c6.c6 .question-feedback {
+  .c4.c4 .question-feedback {
     margin-left: 0;
   }
 
-  .c6.c6 .question-feedback .arrow {
+  .c4.c4 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c5 .openstax-exercise-badges,
-  .interactive-step .c6 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c6 .openstax-exercise-badges svg {
+  .c4 .openstax-exercise-badges svg {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c9.step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c9.step-card-body {
-    padding: calc(8px * 2) 8px;
   }
 }
 
@@ -1718,7 +1654,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="c1 c2 exercise-step c3 preview-card "
+      className="c1 exercise-step c2 preview-card "
     >
       <div
         onBlur={[Function]}
@@ -1730,7 +1666,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           className="step-card"
         >
           <div
-            className="c4 step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -1754,13 +1690,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="c5 c6"
+            className="c4"
           >
             <div
-              className="c7"
+              className="c5"
             >
               <div
-                className="c8 step-card-body exercise-context"
+                className="c6 c7 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -1768,7 +1704,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 }
               />
               <div
-                className="c8 step-card-body exercise-stimulus"
+                className="c6 c7 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -1779,105 +1715,109 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="c9 openstax-question step-card-body"
-                  data-question-number={1}
-                  data-test-id="question"
+                  className="c8 step-card-question step-card-body step-card-question"
                 >
                   <div
-                    className="c10"
+                    className="c9 openstax-question"
+                    data-question-number={1}
+                    data-test-id="question"
                   >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
+                    <div
+                      className="c10"
+                    >
+                      <div>
                         <div
-                          className="openstax-answer"
+                          className="answers-table"
                         >
                           <div
-                            className="answers-answer disabled"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
+                            <div
+                              className="answers-answer disabled"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-0"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice A:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-0"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="A"
+                                  data-test-id="answer-choice-A"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice A:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "True",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="openstax-answer"
-                        >
                           <div
-                            className="answers-answer disabled"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
+                            <div
+                              className="answers-answer disabled"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-1"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice B:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-1"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="B"
+                                  data-test-id="answer-choice-B"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice B:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "False",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1895,7 +1835,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 `;
 
 exports[`ExercisePreview using step data matches snapshot with overlay and selected true 1`] = `
-.c8 .image-button-wrapper {
+.c6 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -1904,46 +1844,79 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   cursor: pointer;
 }
 
-.c8 .image-button-wrapper:focus {
+.c6 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c8 .image-button-wrapper img {
+.c6 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c7 .exercise-context .os-title {
+.c8 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
 
-.c7 .exercise-context .os-subtitle {
+.c5 .exercise-context .os-subtitle {
   margin: var(--spacing,0.8rem) 0;
 }
 
-.c7 .exercise-context figure {
+.c5 .exercise-context figure {
   float: left;
   margin: 0;
 }
 
-.c7 .exercise-context img {
+.c5 .exercise-context img {
   max-width: 16rem;
 }
 
-.c7 .exercise-context p:last-child {
+.c5 .exercise-context p:last-child {
   margin-bottom: 0;
 }
 
-.c7 .question-info,
-.c7 .exercise-context {
+.c5 .question-info,
+.c5 .exercise-context {
   line-height: 2rem;
 }
 
+.c7 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+}
+
+.c7.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c1 {
-  --spacing: 0.8rem;
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 0;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1962,11 +1935,21 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   overflow: hidden;
 }
 
+.c1.c1 {
+  --spacing: 0.8rem;
+  --step-card-gutter: var(--spacing);
+  --step-card-gutter-top: var(--spacing);
+  --step-card-gutter-bottom: var(--spacing);
+  --step-card-surface: #ffffff;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
 .c0 {
   padding: 2rem;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1989,7 +1972,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   letter-spacing: -0.72px;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2003,126 +1986,80 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   text-transform: uppercase;
 }
 
-.c4 h2.question-info .question-id {
+.c3 h2.question-info .question-id {
   font-weight: normal;
 }
 
-.c4 h2.question-info .ox-icon-lock {
+.c3 h2.question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
-.c4 .num-questions,
-.c4 .points {
+.c3 .num-questions,
+.c3 .points {
   display: none;
 }
 
-.c4 .exercise-id,
-.c4 .separator {
+.c3 .exercise-id,
+.c3 .separator {
   font-weight: normal;
 }
 
-.c4 .separator {
+.c3 .separator {
   margin: 0 0.4rem;
 }
 
-.c4 .exercise-id {
+.c3 .exercise-id {
   height: 28px;
 }
 
-.c4 button {
+.c3 button {
   color: #5e5e5e;
 }
 
-.c4 .scoring {
+.c3 .scoring {
   margin-left: auto;
   margin-right: 1rem;
 }
 
-.c4 .scoring span {
+.c3 .scoring span {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.c4 .openstax-exercise-badges {
+.c3 .openstax-exercise-badges {
   margin: 0;
   line-height: 2rem;
 }
 
-.c4 .openstax-exercise-badges svg {
+.c3 .openstax-exercise-badges svg {
   display: block;
 }
 
-.c4 .openstax-exercise-badges svg:not(.interactive) {
+.c3 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
 }
 
-.c4.c4 {
+.c3.c3 {
   background-color: #ffffff;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
 }
 
-.c4 .question-id {
+.c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
 }
 
-.c6 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c6 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6.c6 .step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-.c6 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c6.exercise-context,
-.c6.exercise-stimulus,
-.c6.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c5 {
-  padding: 0;
-}
-
-.c6.c6.c6 .openstax-has-html .splash .frame-wrapper {
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
-}
-
-.c2 {
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
 }
 
 .c11 {
@@ -2139,15 +2076,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c10 {
   width: 100%;
-}
-
-.c9.step-card-body {
-  padding: 4.8rem 14rem 0;
-}
-
-.c9.openstax-question {
-  border-top: 1px solid #d5d5d5;
-  font-size: calc(1.8rem * var(--content-text-scale));
 }
 
 .c9.openstax-question .detailed-solution {
@@ -2451,13 +2379,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   border-top: 1px solid #d5d5d5;
   margin: 10px 0;
   padding: 6px 8px;
-}
-
-.c9.c9.c9.step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
 }
 
 .c9.c9.c9.openstax-question .answers-table {
@@ -2511,31 +2432,47 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   display: flex;
 }
 
-.c3 {
+.c2 {
   margin: 0 auto auto auto !important;
 }
 
-.c3 .step-card-footer {
+.c2 .step-card-footer {
   display: none;
 }
 
-.c3 .answer-answer {
+.c2 .answer-answer {
   font-weight: normal;
 }
 
-.c3.is-selected {
+.c2.is-selected {
   background-color: #daf3f8;
   border-width: 0.2rem;
 }
 
-.c3.is-selected .step-card-footer,
-.c3.is-selected .step-card-body,
-.c3.is-selected .step-card-header {
+.c2.is-selected .step-card-footer,
+.c2.is-selected .step-card-body,
+.c2.is-selected .step-card-header {
   background-color: #daf3f8 !important;
 }
 
-.c3.is-selected .openstax-question {
-  border-width: 0.2rem !important;
+.c2.is-selected .step-card-question {
+  border-top-width: 0.2rem;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+    --step-card-gutter-bottom: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+    --step-card-gutter-bottom: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -2551,109 +2488,78 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 @media (min-width:1000px) {
-  .c4 button.ox-icon-angle-left,
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
     display: none;
   }
 }
 
 @media (max-width:999px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2.5rem;
   }
 
-  .c4 svg.ox-icon {
+  .c3 svg.ox-icon {
     display: inherit;
     margin: 0;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 24px;
   }
 
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-right {
     margin-left: 24px;
   }
 
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     display: none;
   }
 
-  .c4 .num-questions,
-  .c4 points {
+  .c3 .num-questions,
+  .c3 points {
     display: inherit;
   }
 
-  .c4 .exercise-id {
+  .c3 .exercise-id {
     display: none;
   }
 
-  .c4 button[class^='ox-icon-angle']:hover {
+  .c3 button[class^='ox-icon-angle']:hover {
     box-shadow: none;
   }
 }
 
 @media (max-width:600px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2rem;
     padding: 10px 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c6 .step-card-body {
-    padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c6 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c6.c6 .question-feedback {
+  .c4.c4 .question-feedback {
     margin-left: 0;
   }
 
-  .c6.c6 .question-feedback .arrow {
+  .c4.c4 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c5 .openstax-exercise-badges,
-  .interactive-step .c6 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c6 .openstax-exercise-badges svg {
+  .c4 .openstax-exercise-badges svg {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c9.step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c9.step-card-body {
-    padding: calc(8px * 2) 8px;
   }
 }
 
@@ -2665,7 +2571,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="c1 c2 exercise-step c3 preview-card is-selected"
+      className="c1 exercise-step c2 preview-card is-selected"
     >
       <div
         onBlur={[Function]}
@@ -2677,7 +2583,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
           className="step-card"
         >
           <div
-            className="c4 step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -2701,13 +2607,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
             </div>
           </div>
           <div
-            className="c5 c6"
+            className="c4"
           >
             <div
-              className="c7"
+              className="c5"
             >
               <div
-                className="c8 step-card-body exercise-context"
+                className="c6 c7 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -2715,7 +2621,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 }
               />
               <div
-                className="c8 step-card-body exercise-stimulus"
+                className="c6 c7 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -2726,105 +2632,109 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="c9 openstax-question step-card-body"
-                  data-question-number={1}
-                  data-test-id="question"
+                  className="c8 step-card-question step-card-body step-card-question"
                 >
                   <div
-                    className="c10"
+                    className="c9 openstax-question"
+                    data-question-number={1}
+                    data-test-id="question"
                   >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
+                    <div
+                      className="c10"
+                    >
+                      <div>
                         <div
-                          className="openstax-answer"
+                          className="answers-table"
                         >
                           <div
-                            className="answers-answer disabled"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
+                            <div
+                              className="answers-answer disabled"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-0"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice A:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-0"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="A"
+                                  data-test-id="answer-choice-A"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice A:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "True",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
-                        </div>
-                        <div
-                          className="openstax-answer"
-                        >
                           <div
-                            className="answers-answer disabled"
+                            className="openstax-answer"
                           >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
+                            <div
+                              className="answers-answer disabled"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-1"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice B:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-1"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="B"
+                                  data-test-id="answer-choice-B"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice B:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "False",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2842,7 +2752,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 `;
 
 exports[`ExercisePreview using step data matches snapshot without overlay 1`] = `
-.c8 .image-button-wrapper {
+.c6 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -2851,46 +2761,79 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   cursor: pointer;
 }
 
-.c8 .image-button-wrapper:focus {
+.c6 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c8 .image-button-wrapper img {
+.c6 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c7 .exercise-context .os-title {
+.c8 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+.c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
 
-.c7 .exercise-context .os-subtitle {
+.c5 .exercise-context .os-subtitle {
   margin: var(--spacing,0.8rem) 0;
 }
 
-.c7 .exercise-context figure {
+.c5 .exercise-context figure {
   float: left;
   margin: 0;
 }
 
-.c7 .exercise-context img {
+.c5 .exercise-context img {
   max-width: 16rem;
 }
 
-.c7 .exercise-context p:last-child {
+.c5 .exercise-context p:last-child {
   margin-bottom: 0;
 }
 
-.c7 .question-info,
-.c7 .exercise-context {
+.c5 .question-info,
+.c5 .exercise-context {
   line-height: 2rem;
 }
 
+.c7 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+}
+
+.c7.exercise-stimulus {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .c1 {
-  --spacing: 0.8rem;
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 0;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2909,11 +2852,21 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   overflow: hidden;
 }
 
+.c1.c1 {
+  --spacing: 0.8rem;
+  --step-card-gutter: var(--spacing);
+  --step-card-gutter-top: var(--spacing);
+  --step-card-gutter-bottom: var(--spacing);
+  --step-card-surface: #ffffff;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
 .c0 {
   padding: 2rem;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2936,7 +2889,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   letter-spacing: -0.72px;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2950,126 +2903,80 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   text-transform: uppercase;
 }
 
-.c4 h2.question-info .question-id {
+.c3 h2.question-info .question-id {
   font-weight: normal;
 }
 
-.c4 h2.question-info .ox-icon-lock {
+.c3 h2.question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
-.c4 .num-questions,
-.c4 .points {
+.c3 .num-questions,
+.c3 .points {
   display: none;
 }
 
-.c4 .exercise-id,
-.c4 .separator {
+.c3 .exercise-id,
+.c3 .separator {
   font-weight: normal;
 }
 
-.c4 .separator {
+.c3 .separator {
   margin: 0 0.4rem;
 }
 
-.c4 .exercise-id {
+.c3 .exercise-id {
   height: 28px;
 }
 
-.c4 button {
+.c3 button {
   color: #5e5e5e;
 }
 
-.c4 .scoring {
+.c3 .scoring {
   margin-left: auto;
   margin-right: 1rem;
 }
 
-.c4 .scoring span {
+.c3 .scoring span {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.c4 .openstax-exercise-badges {
+.c3 .openstax-exercise-badges {
   margin: 0;
   line-height: 2rem;
 }
 
-.c4 .openstax-exercise-badges svg {
+.c3 .openstax-exercise-badges svg {
   display: block;
 }
 
-.c4 .openstax-exercise-badges svg:not(.interactive) {
+.c3 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
 }
 
-.c4.c4 {
+.c3.c3 {
   background-color: #ffffff;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
 }
 
-.c4 h2.question-info {
+.c3 h2.question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
 }
 
-.c4 .question-id {
+.c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
 }
 
-.c6 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c6 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c6.c6 .step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-.c6 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c6.exercise-context,
-.c6.exercise-stimulus,
-.c6.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c5 {
-  padding: 0;
-}
-
-.c6.c6.c6 .openstax-has-html .splash .frame-wrapper {
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
-}
-
-.c2 {
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
 }
 
 .c11 {
@@ -3086,15 +2993,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c10 {
   width: 100%;
-}
-
-.c9.step-card-body {
-  padding: 4.8rem 14rem 0;
-}
-
-.c9.openstax-question {
-  border-top: 1px solid #d5d5d5;
-  font-size: calc(1.8rem * var(--content-text-scale));
 }
 
 .c9.openstax-question .detailed-solution {
@@ -3398,13 +3296,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   border-top: 1px solid #d5d5d5;
   margin: 10px 0;
   padding: 6px 8px;
-}
-
-.c9.c9.c9.step-card-body {
-  background-color: #ffffff;
-  padding: var(--spacing,0.8rem);
-  font-size: 1.6rem;
-  line-height: 2rem;
 }
 
 .c9.c9.c9.openstax-question .answers-table {
@@ -3478,7 +3369,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c12 {
-  padding: 4.8rem 14rem 0;
+  padding: var(--step-card-gutter-top) var(--step-card-gutter);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3553,38 +3444,54 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c12.c12 {
-  padding: 0 var(--spacing,0.8rem) var(--spacing,0.8rem);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
 }
 
 .c12 .step-card-footer-inner {
   padding-top: var(--spacing,0.8rem);
 }
 
-.c3 {
+.c2 {
   margin: 0 auto auto auto !important;
 }
 
-.c3 .step-card-footer {
+.c2 .step-card-footer {
   display: none;
 }
 
-.c3 .answer-answer {
+.c2 .answer-answer {
   font-weight: normal;
 }
 
-.c3.is-selected {
+.c2.is-selected {
   background-color: #daf3f8;
   border-width: 0.2rem;
 }
 
-.c3.is-selected .step-card-footer,
-.c3.is-selected .step-card-body,
-.c3.is-selected .step-card-header {
+.c2.is-selected .step-card-footer,
+.c2.is-selected .step-card-body,
+.c2.is-selected .step-card-header {
   background-color: #daf3f8 !important;
 }
 
-.c3.is-selected .openstax-question {
-  border-width: 0.2rem !important;
+.c2.is-selected .step-card-question {
+  border-top-width: 0.2rem;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+    --step-card-gutter-bottom: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+    --step-card-gutter-bottom: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -3600,121 +3507,78 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 @media (min-width:1000px) {
-  .c4 button.ox-icon-angle-left,
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-left,
+  .c3 button.ox-icon-angle-right {
     display: none;
   }
 }
 
 @media (max-width:999px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2.5rem;
   }
 
-  .c4 svg.ox-icon {
+  .c3 svg.ox-icon {
     display: inherit;
     margin: 0;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 24px;
   }
 
-  .c4 button.ox-icon-angle-right {
+  .c3 button.ox-icon-angle-right {
     margin-left: 24px;
   }
 
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     display: none;
   }
 
-  .c4 .num-questions,
-  .c4 points {
+  .c3 .num-questions,
+  .c3 points {
     display: inherit;
   }
 
-  .c4 .exercise-id {
+  .c3 .exercise-id {
     display: none;
   }
 
-  .c4 button[class^='ox-icon-angle']:hover {
+  .c3 button[class^='ox-icon-angle']:hover {
     box-shadow: none;
   }
 }
 
 @media (max-width:600px) {
-  .c4 {
+  .c3 {
     font-size: 1.6rem;
     line-height: 2rem;
     padding: 10px 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
   }
 
-  .c4 button.ox-icon-angle-left {
+  .c3 button.ox-icon-angle-left {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c6 .step-card-body {
-    padding: 24px 24px;
   }
 }
 
 @media (max-width:600px) {
-  .c6 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c6.c6 .question-feedback {
+  .c4.c4 .question-feedback {
     margin-left: 0;
   }
 
-  .c6.c6 .question-feedback .arrow {
+  .c4.c4 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c5 .openstax-exercise-badges,
-  .interactive-step .c6 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c6 .openstax-exercise-badges svg {
+  .c4 .openstax-exercise-badges svg {
     margin-right: 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c9.step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c9.step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:999px) {
-  .c12 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c12 {
-    padding: calc(8px * 2) 8px;
   }
 }
 
@@ -3728,7 +3592,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 @media (min-width:1000px) {
   .c12 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -3747,14 +3611,14 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id="0"
   >
     <div
-      className="c1 c2 exercise-step c3 preview-card "
+      className="c1 exercise-step c2 preview-card "
     >
       <div>
         <div
           className="step-card"
         >
           <div
-            className="c4 step-card-header"
+            className="c3 step-card-header"
           >
             <div>
               <h2
@@ -3778,13 +3642,13 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
             </div>
           </div>
           <div
-            className="c5 c6"
+            className="c4"
           >
             <div
-              className="c7"
+              className="c5"
             >
               <div
-                className="c8 step-card-body exercise-context"
+                className="c6 c7 step-card-body exercise-context"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "Context",
@@ -3792,7 +3656,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 }
               />
               <div
-                className="c8 step-card-body exercise-stimulus"
+                className="c6 c7 step-card-body exercise-stimulus"
                 dangerouslySetInnerHTML={
                   Object {
                     "__html": "<b>Stimulus HTML</b>",
@@ -3803,125 +3667,129 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                 data-test-id="student-exercise-question"
               >
                 <div
-                  className="c9 openstax-question step-card-body has-correct-answer"
-                  data-question-number={1}
-                  data-test-id="question"
+                  className="c8 step-card-question step-card-body step-card-question"
                 >
                   <div
-                    className="c10"
+                    className="c9 openstax-question has-correct-answer"
+                    data-question-number={1}
+                    data-test-id="question"
                   >
-                    <div>
-                      <div
-                        className="answers-table"
-                      >
+                    <div
+                      className="c10"
+                    >
+                      <div>
                         <div
-                          className="openstax-answer"
+                          className="answers-table"
                         >
                           <div
-                            className="answers-answer disabled answer-correct"
+                            className="openstax-answer"
                           >
-                            <input
-                              aria-details="feedback-1234@5-0"
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-0"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-0"
-                            >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="A"
-                                data-test-id="answer-choice-A"
-                              />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice A:
-                              </span>
-                              <div
-                                className="answer-answer"
-                              >
-                                <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "True",
-                                    }
-                                  }
-                                />
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                        <aside
-                          className="question-feedback bottom"
-                          id="feedback-1234@5-0"
-                        >
-                          <div
-                            aria-label="Answer Feedback"
-                            className="arrow"
-                          />
-                          <aside>
                             <div
-                              className="c8 question-feedback-content has-html"
-                              dangerouslySetInnerHTML={
-                                Object {
-                                  "__html": "Feedback",
-                                }
-                              }
-                            />
-                          </aside>
-                        </aside>
-                        <div
-                          className="openstax-answer"
-                        >
-                          <div
-                            className="answers-answer disabled"
-                          >
-                            <input
-                              checked={false}
-                              className="answer-input-box"
-                              disabled={true}
-                              id="1234@5-option-1"
-                              name="1234@5-options"
-                              onChange={[Function]}
-                              type="radio"
-                            />
-                            <label
-                              className="answer-label"
-                              htmlFor="1234@5-option-1"
+                              className="answers-answer disabled answer-correct"
                             >
-                              <span
-                                aria-hidden="true"
-                                className="answer-letter-wrapper"
-                                data-answer-choice="B"
-                                data-test-id="answer-choice-B"
+                              <input
+                                aria-details="feedback-1234@5-0"
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-0"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
                               />
-                              <span
-                                className="c11 answer-choice-label"
-                              >
-                                Choice B:
-                              </span>
-                              <div
-                                className="answer-answer"
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-0"
                               >
                                 <span
-                                  className="c8 answer-content"
-                                  dangerouslySetInnerHTML={
-                                    Object {
-                                      "__html": "False",
-                                    }
-                                  }
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="A"
+                                  data-test-id="answer-choice-A"
                                 />
-                              </div>
-                            </label>
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice A:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "True",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                          <aside
+                            className="question-feedback bottom"
+                            id="feedback-1234@5-0"
+                          >
+                            <div
+                              aria-label="Answer Feedback"
+                              className="arrow"
+                            />
+                            <aside>
+                              <div
+                                className="c6 question-feedback-content has-html"
+                                dangerouslySetInnerHTML={
+                                  Object {
+                                    "__html": "Feedback",
+                                  }
+                                }
+                              />
+                            </aside>
+                          </aside>
+                          <div
+                            className="openstax-answer"
+                          >
+                            <div
+                              className="answers-answer disabled"
+                            >
+                              <input
+                                checked={false}
+                                className="answer-input-box"
+                                disabled={true}
+                                id="1234@5-option-1"
+                                name="1234@5-options"
+                                onChange={[Function]}
+                                type="radio"
+                              />
+                              <label
+                                className="answer-label"
+                                htmlFor="1234@5-option-1"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  className="answer-letter-wrapper"
+                                  data-answer-choice="B"
+                                  data-test-id="answer-choice-B"
+                                />
+                                <span
+                                  className="c11 answer-choice-label"
+                                >
+                                  Choice B:
+                                </span>
+                                <div
+                                  className="answer-answer"
+                                >
+                                  <span
+                                    className="c6 answer-content"
+                                    dangerouslySetInnerHTML={
+                                      Object {
+                                        "__html": "False",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -3950,7 +3818,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                             Detailed solution:
                           </div>
                           <div
-                            className="c8 solution"
+                            className="c6 solution"
                             dangerouslySetInnerHTML={
                               Object {
                                 "__html": "<span data-math='e^{\\\\text{Blue}}'></span>",

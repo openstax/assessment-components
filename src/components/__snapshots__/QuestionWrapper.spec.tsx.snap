@@ -2,8 +2,19 @@
 
 exports[`QuestionWrapper the left region announces the attempts remaining 1`] = `
 Array [
-  <div>
-    body
+  .c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+<div
+    className="c0 step-card-question step-card-body step-card-question"
+  >
+    <div>
+      body
+    </div>
   </div>,
   .c1 {
   background-color: #D4450C;
@@ -50,7 +61,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: var(--step-card-gutter-top) var(--step-card-gutter);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -124,18 +135,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -146,7 +145,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;

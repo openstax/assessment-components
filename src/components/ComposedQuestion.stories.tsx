@@ -5,6 +5,7 @@ import { ExerciseWrapper } from './ExerciseWrapper';
 import { QuestionBody } from './QuestionBody';
 import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 import { QuestionWrapper } from './QuestionWrapper';
+import { StepCardBody } from './StepCardBody';
 
 /**
  * The inversion these components exist for: an embedding app owns the chrome, this library
@@ -133,12 +134,15 @@ export const HostDrivenSubmit = () => {
   return (
     <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="composed@1">
       <ExerciseBody>
-        <QuestionBody
-          question={multipleChoice}
-          state={host.state}
-          onAnswerChange={host.onAnswerChange}
-          registerSubmit={(fn) => { submit.current = fn; }}
-        />
+        {/* without a QuestionWrapper, the host frames the body in a card section itself */}
+        <StepCardBody divided>
+          <QuestionBody
+            question={multipleChoice}
+            state={host.state}
+            onAnswerChange={host.onAnswerChange}
+            registerSubmit={(fn) => { submit.current = fn; }}
+          />
+        </StepCardBody>
         <div style={{ padding: '2rem' }}>
           <button
             onClick={() => {

@@ -1,14 +1,48 @@
 import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
-import { breakpoints, colors, layouts, mixins } from "../theme";
+import { breakpoints, colors, layouts } from "../theme";
 import { AvailablePoints, ExerciseScoringData, StepBase } from "../types";
 import styled, { css } from "styled-components";
 import cn from "classnames";
 import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from "./compactDisplay";
 
 export const InnerStepCard = styled.div<CompactDisplayProps>`
-  ${props => props.compactDisplay && css`
-    --spacing: 0.8rem;
+  /* the card's gutter, read by every section inside it: the preamble, each question's body
+     and its footer. A host's own content can use them to line up with, or bleed past, the
+     card's padding. */
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 0;
+  --step-card-surface: ${colors.card.body.background};
+
+  ${breakpoints.tablet`
+    --step-card-gutter: ${breakpoints.margins.tablet};
+    --step-card-gutter-top: ${breakpoints.margins.tablet};
+    --step-card-gutter-bottom: ${breakpoints.margins.tablet};
   `}
+
+  ${breakpoints.mobile`
+    --step-card-gutter: ${breakpoints.margins.mobile};
+    --step-card-gutter-top: calc(${breakpoints.margins.mobile} * 2);
+    --step-card-gutter-bottom: calc(${breakpoints.margins.mobile} * 2);
+  `}
+
+  font-size: calc(1.8rem * var(--content-text-scale));
+  line-height: calc(2.8rem * var(--content-text-scale));
+  color: ${colors.palette.neutralDarker};
+
+  /* doubled so it outranks the breakpoints above, which are emitted after it */
+  ${props => props.compactDisplay && css`
+    && {
+      --spacing: 0.8rem;
+      --step-card-gutter: var(--spacing);
+      --step-card-gutter-top: var(--spacing);
+      --step-card-gutter-bottom: var(--spacing);
+      --step-card-surface: ${colors.palette.white};
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  `}
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -201,53 +235,12 @@ const StyledUngraded = styled.div`
 
 StepCardHeader.displayName = 'StepCardHeader';
 
-const StepCardQuestion = styled.div<CompactDisplayProps>`
-  .step-card-body {
-    ${mixins.stepCardPadding()}
-    overflow: auto;
-    background: ${colors.card.body.background};
-
-    &.exercise-stimulus {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  ${props => props.compactDisplay && css`
-    && .step-card-body {
-      background-color: ${colors.palette.white};
-      padding: var(--spacing, 0.8rem);
-      font-size: 1.6rem;
-      line-height: 2rem;
-    }
-  `}
-
-    & + div .step-card-body {
-        padding-top: 0;
-    }
-
-    &.exercise-context, &.exercise-stimulus, &.exercise-stem {
-        padding-bottom: 0;
-    }
-
+const StepCardQuestion = styled.div`
     ${breakpoints.only.mobile`
         && .question-feedback {
             margin-left: 0;
 
            .arrow { margin-left: 12px; }
-        }
-    `}
-
-    .reading-step & {
-        padding: 0;
-    }
-
-    ${breakpoints.desktop`
-        .video-step &, .interactive-step & {
-            .openstax-exercise-badges {
-              margin-right: 3.8rem;
-            }
         }
     `}
 
@@ -404,7 +397,7 @@ const StepCard = ({
                 </div> : null}
               </StepCardHeader>
             }
-            <StepCardQuestion compactDisplay={compact}>{children}</StepCardQuestion>
+            <StepCardQuestion>{children}</StepCardQuestion>
           </div>
         </div>
       </InnerStepCard>

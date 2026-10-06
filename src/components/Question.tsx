@@ -12,14 +12,7 @@ const StyledBodyContainer = styled.div`
 `;
 
 const StyledQuestion = styled.div<CompactDisplayProps>`
-&.step-card-body {
-  ${mixins.stepCardPadding()};
-}
-
 &.openstax-question {
-  border-top: 1px solid ${colors.palette.pale};
-  font-size: calc(1.8rem * var(--content-text-scale));
-
   .detailed-solution {
     margin-bottom: 1rem;
     .header {
@@ -203,13 +196,6 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
 }
 
 ${props => props.compactDisplay && css`
-  &&&.step-card-body {
-    background-color: ${colors.palette.white};
-    padding: var(--spacing, 0.8rem);
-    font-size: 1.6rem;
-    line-height: 2rem;
-  }
-
   &&&.openstax-question {
     .answers-table {
       margin: 0;
@@ -273,7 +259,7 @@ export interface QuestionProps {
   hidePreambles?: boolean,
   exercise_uid?: string;
   displayFormats: boolean,
-  className: string;
+  className?: string;
   questionNumber: number;
   /**
    * @deprecated The detailed solution is composed in rather than rendered from the question.

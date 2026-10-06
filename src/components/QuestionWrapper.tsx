@@ -4,6 +4,7 @@ import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
 import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { StepCardBody } from './StepCardBody';
 import { StepCardFooter } from './StepCardFooter';
 
 export const SaveButton = (props: {
@@ -108,9 +109,10 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
 }
 
 /**
- * The controls around a question: the footer, its buttons and the attempts notice. Which of
- * the three arrangements applies follows from `canAnswer` and `is_completed` alone, so this
- * knows nothing about the format of the question it wraps.
+ * The frame around a question: the padded, divided body section its content sits in, and the
+ * footer with its buttons and the attempts notice. The footer is left out when it would be
+ * empty. Which of the three arrangements of buttons applies follows from `canAnswer` and
+ * `is_completed` alone, so this knows nothing about the format of the question it wraps.
  */
 export const QuestionWrapper = ({
   is_completed,
@@ -202,13 +204,17 @@ export const QuestionWrapper = ({
 
   return (
     <CompactDisplayProvider compactDisplay={compact}>
-      {children}
-      <StepCardFooter className="step-card-footer" compactDisplay={compact}>
-        <div className="step-card-footer-inner">
-          {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-          {showControls ? <div className="controls">{controls()}</div> : null}
-        </div>
-      </StepCardFooter>
+      <StepCardBody className="step-card-question" divided>
+        {children}
+      </StepCardBody>
+      {leftRegion || showControls ? (
+        <StepCardFooter className="step-card-footer" compactDisplay={compact}>
+          <div className="step-card-footer-inner">
+            {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
+            {showControls ? <div className="controls">{controls()}</div> : null}
+          </div>
+        </StepCardFooter>
+      ) : null}
     </CompactDisplayProvider>
   );
 };

@@ -4,6 +4,7 @@ import { typesetMath } from '../helpers/mathjax';
 import { TypesetMathContext } from '../hooks/useTypesetMath';
 import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
 import { Content } from './Content';
+import { stepCardSection } from './StepCardBody';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -39,14 +40,24 @@ const StyledExerciseBody = styled.div<CompactDisplayProps>`
   `}
 `;
 
+const PreambleSection = styled(Content)`
+  ${stepCardSection}
+
+  &.exercise-stimulus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 const Preamble = ({ context, stimulus_html }: Pick<ExerciseBodyProps, 'context' | 'stimulus_html'>) => (
   <>
     {context &&
-      <Content className="step-card-body exercise-context"
+      <PreambleSection className="step-card-body exercise-context"
         block html={context} />}
 
     {stimulus_html &&
-      <Content className="step-card-body exercise-stimulus"
+      <PreambleSection className="step-card-body exercise-stimulus"
         block html={stimulus_html} />}
   </>
 );

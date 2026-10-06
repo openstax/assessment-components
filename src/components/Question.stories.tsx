@@ -1,4 +1,19 @@
+import type { ComponentType } from 'react';
+import { ExerciseBody } from './ExerciseBody';
+import { ExerciseWrapper } from './ExerciseWrapper';
 import { Question, QuestionProps } from './Question';
+import { StepCardBody } from './StepCardBody';
+
+/** rendered inside the card and body it is designed for, which supply its gutter, type and text scale */
+export default {
+  decorators: [(Component: ComponentType) => (
+    <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="1@1">
+      <ExerciseBody>
+        <StepCardBody divided><Component /></StepCardBody>
+      </ExerciseBody>
+    </ExerciseWrapper>
+  )],
+};
 
 const props: QuestionProps = {
   question: {

@@ -195,17 +195,6 @@ export const mixins = {
     white-space: normal;
     line-break: auto;
   `,
-  stepCardPadding: () => css`
-    padding: 4.8rem 14rem 0;
-
-    ${breakpoints.tablet`
-      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.mobile`
-      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
-    `}
-  `,
   popover: () => css`
     ${mixins.resetText()}
 

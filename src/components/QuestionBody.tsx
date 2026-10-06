@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { colors, mixins } from '../theme';
+import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
 import { countWords, formatTimestamp, numberfyId } from '../utils';
 import { CompactDisplayProps, useCompactDisplay } from './compactDisplay';
@@ -13,23 +13,11 @@ const RESPONSE_SIZE_WORD_LIMITS: Record<string, number> = { short: 30, medium: 1
 const DEFAULT_WORD_LIMIT = 100;
 
 export const StyledFreeResponse = styled.div<CompactDisplayProps>`
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid ${colors.palette.pale};
-
-  .step-card-body {
-    ${mixins.stepCardPadding()}
+  ${props => !props.compactDisplay && css`
     padding-bottom: 1rem;
-  }
+  `}
 
   ${props => props.compactDisplay && css`
-    && .step-card-body {
-      background-color: ${colors.palette.white};
-      padding: var(--spacing, 0.8rem);
-      font-size: 1.6rem;
-      line-height: 2rem;
-    }
-
     && .question-stem {
       color: ${colors.palette.neutralDarker};
       font-weight: bold;
@@ -399,24 +387,22 @@ const FreeResponseBody = React.forwardRef((
   if (isPostReview) {
     return (
       <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
-        <div className="step-card-body">
-          {stem}
-          {!previewMode && <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>}
-          {previewMode && onGradingSave ? (
-            <ResponseGradingLayout>
-              <ResponseColumn>
-                {submittedResponse}
-                {feedback}
-              </ResponseColumn>
-              {gradingWidget}
-            </ResponseGradingLayout>
-          ) : (
-            <>
+        {stem}
+        {!previewMode && <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>}
+        {previewMode && onGradingSave ? (
+          <ResponseGradingLayout>
+            <ResponseColumn>
               {submittedResponse}
               {feedback}
-            </>
-          )}
-        </div>
+            </ResponseColumn>
+            {gradingWidget}
+          </ResponseGradingLayout>
+        ) : (
+          <>
+            {submittedResponse}
+            {feedback}
+          </>
+        )}
       </StyledFreeResponse>
     );
   }
@@ -425,14 +411,12 @@ const FreeResponseBody = React.forwardRef((
   if (isUpdateMode) {
     return (
       <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
-        <div className="step-card-body">
-          {editableNotice}
-          {stem}
-          {textarea}
-          {validationMessage}
-          {infoRow}
-          {feedback}
-        </div>
+        {editableNotice}
+        {stem}
+        {textarea}
+        {validationMessage}
+        {infoRow}
+        {feedback}
       </StyledFreeResponse>
     );
   }
@@ -440,25 +424,23 @@ const FreeResponseBody = React.forwardRef((
   // Initial state, not submitted yet
   return (
     <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
-      <div className="step-card-body">
-        {editableNotice}
-        {stem}
-        {previewMode ? (
-          onGradingSave ? (
-            <ResponseGradingLayout>
-              <ResponseColumn>
-                <UnansweredText>Unanswered</UnansweredText>
-              </ResponseColumn>
-              {gradingWidget}
-            </ResponseGradingLayout>
-          ) : (
-            <UnansweredText>Unanswered</UnansweredText>
-          )
-        ) : textarea}
-        {validationMessage}
-        {infoRow}
-        {feedback}
-      </div>
+      {editableNotice}
+      {stem}
+      {previewMode ? (
+        onGradingSave ? (
+          <ResponseGradingLayout>
+            <ResponseColumn>
+              <UnansweredText>Unanswered</UnansweredText>
+            </ResponseColumn>
+            {gradingWidget}
+          </ResponseGradingLayout>
+        ) : (
+          <UnansweredText>Unanswered</UnansweredText>
+        )
+      ) : textarea}
+      {validationMessage}
+      {infoRow}
+      {feedback}
     </StyledFreeResponse>
   );
 });
@@ -518,7 +500,6 @@ const MultipleChoiceBody = React.forwardRef((
       correct_answer_feedback_html={correct_answer_feedback_html}
       correct_answer_id={is_completed ? (correct_answer_id ?? null) : null}
       incorrectAnswerId={incorrectAnswerId as ID}
-      className="step-card-body"
       hideAnswers={false}
       displayFormats={false}
       displaySolution={false}
