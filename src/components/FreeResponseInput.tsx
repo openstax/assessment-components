@@ -14,6 +14,7 @@ export interface FreeResponseProps extends CompactDisplayProps {
   needsSaved: boolean;
   apiIsPending: boolean;
   free_response: string;
+  submittedResponse?: string;
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
   onAnswerSave: (question_id: number) => void;
   onNextStep: (currentIndex: number) => void;
@@ -29,6 +30,7 @@ export interface FreeResponseProps extends CompactDisplayProps {
   score?: { raw?: number; max?: number };
   feedback_html?: string;
   submissionTimestamp?: string | number;
+  draftTimestamp?: string | number;
   cancelHandler?: MouseEventHandler<HTMLButtonElement>;
   previewMode?: boolean;
   canUpdateCurrentStep?: boolean;
@@ -48,7 +50,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     is_completed, canAnswer, needsSaved, apiIsPending, free_response, onAnswerChange,
     onAnswerSave, onNextStep, questionNumber, question, responseSize, score, feedback_html,
-    submissionTimestamp, cancelHandler, previewMode = false, onGradingSave, gradingTimestamp, wordLimit,
+    submissionTimestamp, draftTimestamp, submittedResponse, cancelHandler, previewMode = false, onGradingSave,
+    gradingTimestamp, wordLimit,
     canUpdateCurrentStep = false, hasUnlimitedAttempts, hasFeedback, compactDisplay,
   } = props;
 
@@ -62,6 +65,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     score,
     feedback_html,
     submissionTimestamp,
+    draftTimestamp,
+    submittedResponse,
     gradingTimestamp,
   };
 
