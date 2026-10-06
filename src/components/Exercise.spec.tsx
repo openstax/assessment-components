@@ -163,6 +163,28 @@ describe('Exercise', () => {
       expect(tree).toMatchSnapshot();
     });
 
+    it('shows only the detailed solution from the definition, not the others it carries', () => {
+      props.exercise.questions[0].collaborator_solutions = [
+        { solution_type: 'summary', content_html: 'Summary solution' },
+        { solution_type: 'detailed', content_html: 'Detailed solution' },
+      ];
+      const tree = renderer.create(<Exercise {...props} previewMode />);
+      const text = JSON.stringify(tree.toJSON());
+
+      expect(text).toContain('Detailed solution');
+      expect(text).not.toContain('Summary solution');
+    });
+
+    it('shows no solution from a definition with no detailed solution', () => {
+      props.exercise.questions[0].collaborator_solutions = [
+        { solution_type: 'summary', content_html: 'Summary solution' },
+      ];
+      const tree = renderer.create(<Exercise {...props} previewMode />);
+
+      expect(JSON.stringify(tree.toJSON())).not.toContain('Summary solution');
+      expect(tree.root.findAllByProps({ className: 'detailed-solution' })).toHaveLength(0);
+    });
+
     it('shows a detailed solution without controls in preview mode', () => {
       props.questionStates['1'] = {
         ...props.questionStates['1'],
