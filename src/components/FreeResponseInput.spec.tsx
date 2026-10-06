@@ -207,11 +207,22 @@ describe('Free Response Input', () => {
       expect(button(tree, 'update-answer-btn')?.props.disabled).toBe(true);
     });
 
-    it('restores the submitted response and tells the host when Cancel is pressed', () => {
+    it('lets the learner cancel an edit, restoring the submitted response', () => {
       const tree = render(editable);
+      const cancel = () => buttons(tree)[0];
       const event = { type: 'click' };
 
-      renderer.act(() => { buttons(tree)[0].props.onClick(event); });
+      // nothing to cancel until the host applies an edit
+      expect(cancel().props.disabled).toBe(true);
+
+      renderer.act(() => {
+        tree.update(
+          <FreeResponseInput {...baseProps} {...editable} needsSaved={true} free_response="An edited answer" />
+        );
+      });
+      expect(cancel().props.disabled).toBe(false);
+
+      renderer.act(() => { cancel().props.onClick(event); });
 
       expect(baseProps.onAnswerChange).toHaveBeenCalledWith(
         expect.objectContaining({ free_response: 'Previously submitted answer' })
