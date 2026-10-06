@@ -1,4 +1,4 @@
-import { isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
+import { formatTimestamp, isAnswerChecked, isAnswerCorrect, isAnswerIncorrect, numberfyId } from './utils';
 import { Answer } from './types';
 
 describe('isAnswerCorrect', () => {
@@ -84,5 +84,21 @@ describe('numberfyId', () => {
   it('converts an ID string to a number or returns the value', () => {
     expect(numberfyId('1')).toBe(1);
     expect(numberfyId(1)).toBe(1);
+  });
+});
+
+describe('formatTimestamp', () => {
+  const julyMorning = new Date(2024, 6, 26, 9, 0);
+
+  it('formats a numeric timestamp', () => {
+    expect(formatTimestamp(julyMorning.getTime())).toBe('Jul 26, 2024, 9:00 AM');
+  });
+
+  it('formats an ISO string', () => {
+    expect(formatTimestamp(julyMorning.toISOString())).toBe('Jul 26, 2024, 9:00 AM');
+  });
+
+  it('formats afternoon times in 12 hour time', () => {
+    expect(formatTimestamp(new Date(2024, 0, 5, 15, 7).getTime())).toBe('Jan 5, 2024, 3:07 PM');
   });
 });

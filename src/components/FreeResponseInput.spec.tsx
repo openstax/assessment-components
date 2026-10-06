@@ -144,4 +144,111 @@ describe('Free Response Input', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  describe('reverting a restored draft', () => {
+    const SUBMITTED = 'my submitted answer';
+    const DRAFT = 'an abandoned revision';
+
+    // the Cancel button carries no data-test-id, so it is matched on its label
+    const findCancel = (tree: renderer.ReactTestRenderer) =>
+      tree.root.findAllByType('button').filter(node => node.props.children === 'Cancel')[0];
+
+    const findUpdate = (tree: renderer.ReactTestRenderer) =>
+      tree.root.findAllByType('button').filter(node => node.props['data-test-id'] === 'update-answer-btn')[0];
+
+    let draftProps: FreeResponseProps;
+
+    beforeEach(() => {
+      draftProps = {
+        ...baseProps,
+        is_completed: true,
+        canAnswer: true,
+        needsSaved: true,
+        free_response: DRAFT,
+        submittedResponse: SUBMITTED,
+      };
+    });
+
+    it('enables Update when a restored draft differs from the submitted answer', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} />);
+
+      expect(findUpdate(tree).props.disabled).toBe(false);
+    });
+
+    it('reverts to the submitted answer rather than the draft', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} />);
+
+      renderer.act(() => { findCancel(tree).props.onClick({}); });
+
+      expect(draftProps.onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: SUBMITTED })
+      );
+      expect(draftProps.cancelHandler).toHaveBeenCalled();
+    });
+
+    // the component mounts before the question state hash is populated, so the submitted text
+    // arrives on a later render. a baseline cached at mount would be stuck on the empty value.
+    it('reverts to the submitted answer when it arrives after mount', () => {
+      const tree = renderer.create(
+        <FreeResponseInput
+          {...draftProps}
+          is_completed={undefined as unknown as boolean}
+          canAnswer={undefined as unknown as boolean}
+          free_response={undefined as unknown as string}
+          submittedResponse={undefined}
+          needsSaved={undefined as unknown as boolean}
+        />
+      );
+
+      renderer.act(() => { tree.update(<FreeResponseInput {...draftProps} />); });
+      renderer.act(() => { findCancel(tree).props.onClick({}); });
+
+      expect(draftProps.onAnswerChange).toHaveBeenCalledWith(
+        expect.objectContaining({ free_response: SUBMITTED })
+      );
+    });
+
+    it('disables Update when the text matches what was submitted', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} free_response={SUBMITTED} />);
+
+      expect(findUpdate(tree).props.disabled).toBe(true);
+    });
+
+    it('falls back to free_response as the baseline when no submitted text is given', () => {
+      const tree = renderer.create(<FreeResponseInput {...draftProps} submittedResponse={undefined} />);
+
+      expect(findUpdate(tree).props.disabled).toBe(true);
+    });
+  });
+
+  describe('status line', () => {
+    const SUBMITTED_AT = '2024-10-03T10:00:00.000Z';
+    const DRAFT_SAVED_AT = '2024-10-03T10:55:00.000Z';
+
+    const statusText = (props: Partial<FreeResponseProps>) => JSON.stringify(
+      renderer.create(<FreeResponseInput {...baseProps} free_response="a partial thought" {...props} />).toJSON()
+    );
+
+    it('shows nothing when the response has never been submitted or autosaved', () => {
+      const text = statusText({});
+
+      expect(text).not.toContain('Draft last saved');
+      expect(text).not.toContain('Last submitted on');
+    });
+
+    it('shows the draft time when nothing has been submitted yet', () => {
+      expect(statusText({ draftTimestamp: DRAFT_SAVED_AT })).toContain('Draft last saved');
+    });
+
+    it('shows the submitted time when there is no draft', () => {
+      expect(statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT })).toContain('Last submitted on');
+    });
+
+    it('shows the draft time when there is a draft of a submitted response', () => {
+      const text = statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT, draftTimestamp: DRAFT_SAVED_AT });
+
+      expect(text).toContain('Draft last saved');
+      expect(text).not.toContain('Last submitted on');
+    });
+  });
 });
