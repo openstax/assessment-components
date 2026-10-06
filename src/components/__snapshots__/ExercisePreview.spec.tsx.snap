@@ -535,6 +535,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   margin-top: 20px;
 }
 
+.c9.c9.c9.openstax-question .answers-table + * {
+  margin-top: var(--spacing,0.8rem);
+}
+
 .c9.c9.c9.openstax-question .question-stem {
   color: #424242;
   font-weight: bold;
@@ -1434,6 +1438,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c9.openstax-question .answers-table + * {
   margin-top: 20px;
+}
+
+.c9.c9.c9.openstax-question .answers-table + * {
+  margin-top: var(--spacing,0.8rem);
 }
 
 .c9.c9.c9.openstax-question .question-stem {
@@ -2337,6 +2345,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   margin-top: 20px;
 }
 
+.c9.c9.c9.openstax-question .answers-table + * {
+  margin-top: var(--spacing,0.8rem);
+}
+
 .c9.c9.c9.openstax-question .question-stem {
   color: #424242;
   font-weight: bold;
@@ -3236,6 +3248,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c9.openstax-question .answers-table + * {
   margin-top: 20px;
+}
+
+.c9.c9.c9.openstax-question .answers-table + * {
+  margin-top: var(--spacing,0.8rem);
 }
 
 .c9.c9.c9.openstax-question .question-stem {

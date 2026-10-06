@@ -190,6 +190,10 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
 
 ${props => props.compactDisplay && css`
   &&&.openstax-question {
+    .answers-table + * {
+      margin-top: var(--spacing, 0.8rem);
+    }
+
     .question-stem {
       color: ${colors.palette.neutralDarker};
       font-weight: bold;

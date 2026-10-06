@@ -934,6 +934,19 @@ export const PreviewCardWithoutScore = () => {
   );
 };
 
+/** A compact card whose question carries a detailed solution in its definition, rendered in the body. */
+export const CompactWithDefinitionSolution = () => {
+  const props = exerciseWithQuestionStatesProps();
+  const questions = props.exercise.questions.map((question) => ({
+    ...question,
+    collaborator_solutions: [{
+      solution_type: 'detailed',
+      content_html: 'A detailed solution from the exercise definition.',
+    }],
+  }));
+  return <Exercise {...props} exercise={{ ...props.exercise, questions }} compactDisplay previewMode />;
+};
+
 export const OverlayCard = () => {
   const randomlyCorrectAnswer = Math.floor(Math.random() * 3) + 1;
   const props1: ExerciseWithQuestionStatesProps = {
