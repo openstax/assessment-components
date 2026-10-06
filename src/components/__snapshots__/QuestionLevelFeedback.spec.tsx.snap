@@ -77,14 +77,7 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
       Feedback:
     </span>
      
-    <span
-      className="c3"
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "Good work overall.",
-        }
-      }
-    />
+    Good work overall.
   </div>
   <div
     className="detailed-solution"

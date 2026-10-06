@@ -286,7 +286,7 @@ export const PreviewModeWithAnswerNoGrading = () => {
       free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
       score={{ raw: 8, max: 10 }}
-      feedback_html="<p>Good explanation with clear details.</p>"
+      feedback_html="Good explanation with clear details."
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}
