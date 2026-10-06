@@ -172,7 +172,11 @@ export const Exercise = ({
       overlayChildren={overlayChildren}
       compactDisplay={compactDisplay}
     >
-      <ExerciseBody context={exercise.context} stimulus_html={exercise.stimulus_html}>
+      <ExerciseBody
+        context={exercise.context}
+        stimulus_html={exercise.stimulus_html}
+        compactDisplay={compactDisplay}
+      >
         {exercise.questions.map((q, i) => {
           const state = { ...props.questionStates[q.id] };
           const status = statuses[q.id] || {};
@@ -222,6 +226,7 @@ export const Exercise = ({
               onStatusChange={(next) => onStatusChange(q.id, next)}
               registerCancel={(cancel) => { cancelHandles.current[q.id] = cancel; }}
               feedback={bodyFeedback}
+              compactDisplay={compactDisplay}
             />
           );
 
@@ -259,6 +264,7 @@ export const Exercise = ({
               onNextStep={() => props.onNextStep(questionNumber + i - 1)}
               onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
               footerChildren={footerFeedback}
+              compactDisplay={compactDisplay}
             >
               {body}
             </QuestionWrapper>

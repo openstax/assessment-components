@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { StepCardBody } from './StepCardBody';
 import { StepCardFooter } from './StepCardFooter';
 
@@ -143,8 +143,6 @@ export const QuestionWrapper = ({
   compactDisplay,
   children,
 }: QuestionWrapperProps) => {
-  const compact = useCompactDisplay(compactDisplay);
-
   // holds Submit in its waiting state after a click until the response lands, then advances.
   // Deprecated along with `hasFeedback`: a host that omits it drives navigation itself.
   const [shouldContinue, setShouldContinue] = React.useState(false);
@@ -213,19 +211,19 @@ export const QuestionWrapper = ({
   const leftRegion = attempts || footerChildren;
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
-      <QuestionBodySection className="step-card-question" divided compactDisplay={compact}>
+    <>
+      <QuestionBodySection className="step-card-question" divided compactDisplay={compactDisplay}>
         {children}
       </QuestionBodySection>
       {leftRegion || showControls ? (
-        <StepCardFooter className="step-card-footer" compactDisplay={compact}>
+        <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
             {showControls ? <div className="controls">{controls()}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}
-    </CompactDisplayProvider>
+    </>
   );
 };
 

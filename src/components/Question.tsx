@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { Answer as AnswerType, ID, ExerciseQuestionData } from '../types';
@@ -13,21 +13,6 @@ const StyledBodyContainer = styled.div`
 
 const StyledQuestion = styled.div<CompactDisplayProps>`
 &.openstax-question {
-  .detailed-solution {
-    margin-bottom: 1rem;
-    .header {
-      display: inline;
-      margin-right: 0.5rem;
-      color: #5e6062;
-      font-weight: bold;
-      flex-basis: 0;
-    }
-    .solution {
-      display: inline;
-      color: #6f6f6f;
-    }
-  }
-
   img {
     display: block;
     margin: auto;
@@ -296,8 +281,6 @@ export const Question = React.forwardRef((
     context, hidePreambles
   } = props;
 
-  const compact = useCompactDisplay(props.compactDisplay);
-
   const { stem_html, formats, stimulus_html } = question;
 
   const hasCorrectAnswer = !!correct_answer_id;
@@ -317,13 +300,12 @@ export const Question = React.forwardRef((
   }
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
     <StyledQuestion
       ref={ref}
       className={classes}
       data-question-number={questionNumber}
       data-test-id="question"
-      compactDisplay={compact}
+      compactDisplay={props.compactDisplay}
     >
       <StyledBodyContainer>
         <div>
@@ -344,7 +326,6 @@ export const Question = React.forwardRef((
         </div>
       </StyledBodyContainer>
     </StyledQuestion>
-    </CompactDisplayProvider>
   );
 });
 

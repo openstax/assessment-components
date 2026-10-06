@@ -3,7 +3,7 @@ import { breakpoints, colors, layouts } from "../theme";
 import { AvailablePoints, ExerciseScoringData, StepBase } from "../types";
 import styled, { css } from "styled-components";
 import cn from "classnames";
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from "./compactDisplay";
+import { CompactDisplayProps } from "./compactDisplay";
 
 export const InnerStepCard = styled.div<CompactDisplayProps>`
   /* the card's gutter, read by every section inside it: the preamble, each question's body
@@ -311,7 +311,6 @@ const StepCard = ({
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
-  const compact = useCompactDisplay(compactDisplay);
 
   const formattedQuestionNumber = numberOfQuestions > 1
     ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
@@ -351,10 +350,9 @@ const StepCard = ({
   }, [overlayChildren, overlayRef, handleOverlayFocus, hideFocusableElements]);
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard className={className} compactDisplay={compact}>
+      <InnerStepCard className={className} compactDisplay={compactDisplay}>
         <div
           ref={overlayRef}
           {
@@ -375,7 +373,7 @@ const StepCard = ({
           }
           <div className="step-card">
             {questionNumber &&
-              <StepCardHeader className="step-card-header" compactDisplay={compact}>
+              <StepCardHeader className="step-card-header" compactDisplay={compactDisplay}>
                 <div>
                   {leftHeaderChildren}
                   <h2 className="question-info">
@@ -403,7 +401,6 @@ const StepCard = ({
         </div>
       </InnerStepCard>
     </OuterStepCard>
-    </CompactDisplayProvider>
   )
 };
 StepCard.displayName = 'OSStepCard';

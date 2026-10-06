@@ -234,25 +234,6 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   width: 100%;
 }
 
-.c8.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c8.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c8.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
-}
-
 .c8.openstax-question img {
   display: block;
   margin: auto;
@@ -1159,25 +1140,6 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   width: 100%;
 }
 
-.c8.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c8.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c8.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
-}
-
 .c8.openstax-question img {
   display: block;
   margin: auto;
@@ -2009,25 +1971,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 
 .c9 {
   width: 100%;
-}
-
-.c8.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c8.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c8.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
 }
 
 .c8.openstax-question img {
@@ -3158,25 +3101,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
 
 .c15 {
   width: 100%;
-}
-
-.c14.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c14.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c14.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
 }
 
 .c14.openstax-question img {
@@ -4518,25 +4442,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
   width: 100%;
 }
 
-.c14.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c14.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c14.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
-}
-
 .c14.openstax-question img {
   display: block;
   margin: auto;
@@ -5729,25 +5634,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 
 .c9 {
   width: 100%;
-}
-
-.c8.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c8.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c8.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
 }
 
 .c8.openstax-question img {

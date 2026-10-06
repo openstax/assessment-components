@@ -38,25 +38,6 @@ exports[`Question matches snapshot 1`] = `
   width: 100%;
 }
 
-.c0.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c0.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c0.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
-}
-
 .c0.openstax-question img {
   display: block;
   margin: auto;

@@ -87,6 +87,7 @@ const ComposedExercise = ({ question, compactDisplay }: {
       <ExerciseBody
         context="<b>Context</b> supplied by the host, not by an exercise."
         stimulus_html="Some shared stimulus."
+        compactDisplay={compactDisplay}
       >
         <QuestionWrapper
           question_id={question.id}
@@ -99,6 +100,7 @@ const ComposedExercise = ({ question, compactDisplay }: {
           canUpdateCurrentStep={false}
           onAnswerSave={host.onAnswerSave}
           onNextStep={() => window.alert('the host navigates')}
+          compactDisplay={compactDisplay}
         >
           <QuestionBody
             question={question}
@@ -108,6 +110,7 @@ const ComposedExercise = ({ question, compactDisplay }: {
             responseSize="short"
             onAnswerChange={host.onAnswerChange}
             onStatusChange={host.setStatus}
+            compactDisplay={compactDisplay}
             feedback={host.state.is_completed
               ? <QuestionLevelFeedback
                   score={host.state.score}
@@ -178,6 +181,7 @@ const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }
       canUpdateCurrentStep={false}
       onAnswerSave={() => window.alert('the host submits')}
       onNextStep={() => undefined}
+      compactDisplay={compactDisplay}
     >
       <p>Markup from some other item format, styled only by what it inherits from the card.</p>
       <label><input type="checkbox" /> An interaction the host renders itself</label>

@@ -49,6 +49,10 @@ Array [
   white-space: pre-wrap;
 }
 
+.c5:last-child {
+  margin-bottom: 0;
+}
+
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
   background: var(--step-card-surface);
@@ -776,6 +780,10 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   white-space: pre-wrap;
 }
 
+.c4:last-child {
+  margin-bottom: 0;
+}
+
 .c6 {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
@@ -1067,6 +1075,10 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
+}
+
+.c6:last-child {
+  margin-bottom: 0;
 }
 
 .c4 {

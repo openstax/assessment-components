@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
 import { countWords, formatTimestamp, numberfyId } from '../utils';
-import { CompactDisplayProps, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { FreeResponseGrading } from './FreeResponseGrading';
 import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
 import { Question, QuestionHtml } from './Question';
@@ -94,6 +94,11 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   font-size: calc(1.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
+
+  /* ends flush when nothing follows it: the frame adds the space below */
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   ${({ expanded, isOverflowing }) =>
     !expanded && isOverflowing
@@ -227,7 +232,6 @@ const FreeResponseBody = React.forwardRef((
     submittedResponse, gradingTimestamp,
   } = state;
 
-  const compact = useCompactDisplay(compactDisplay);
   const wordLimit = props.wordLimit
     ?? ((responseSize && RESPONSE_SIZE_WORD_LIMITS[responseSize]) || DEFAULT_WORD_LIMIT);
 
@@ -396,7 +400,7 @@ const FreeResponseBody = React.forwardRef((
   // Post-review state (read-only)
   if (isPostReview) {
     return (
-      <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
+      <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compactDisplay}>
         {stem}
         {!previewMode && <ReviewAnswerLabel>Your answer</ReviewAnswerLabel>}
         {previewMode && onGradingSave ? (
@@ -420,7 +424,7 @@ const FreeResponseBody = React.forwardRef((
   // Update mode (submitted, still editable)
   if (isUpdateMode) {
     return (
-      <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
+      <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compactDisplay}>
         {editableNotice}
         {stem}
         {textarea}
@@ -433,7 +437,7 @@ const FreeResponseBody = React.forwardRef((
 
   // Initial state, not submitted yet
   return (
-    <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compact}>
+    <StyledFreeResponse ref={ref} data-test-id="student-free-response" compactDisplay={compactDisplay}>
       {editableNotice}
       {stem}
       {previewMode ? (

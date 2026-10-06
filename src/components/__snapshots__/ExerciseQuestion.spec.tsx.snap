@@ -82,25 +82,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   width: 100%;
 }
 
-.c2.openstax-question .detailed-solution {
-  margin-bottom: 1rem;
-}
-
-.c2.openstax-question .detailed-solution .header {
-  display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
-  font-weight: bold;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-}
-
-.c2.openstax-question .detailed-solution .solution {
-  display: inline;
-  color: #6f6f6f;
-}
-
 .c2.openstax-question img {
   display: block;
   margin: auto;
