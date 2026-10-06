@@ -1,7 +1,7 @@
 import { Exercise, ExerciseWithQuestionStatesProps, OverlayProps } from './Exercise';
 import renderer from 'react-test-renderer';
 import React from 'react';
-import { byClass, findAllNodes, findNode, textOf } from '../test/utils';
+import { byClass, findAllNodes, findNode, isJson, textOf } from '../test/utils';
 
 describe('Exercise', () => {
   describe('with question state data', () => {
@@ -260,18 +260,19 @@ describe('Exercise', () => {
       const render = (exerciseIcons: ExerciseWithQuestionStatesProps['exerciseIcons']) =>
         renderer.create(<Exercise {...props} exerciseIcons={exerciseIcons} />).toJSON();
 
-      const hrefsLabelled = (tree: ReturnType<typeof render>, label: string) => [...new Set(
-        findAllNodes(tree, node => node.type === 'a' && node.props['aria-label'] === label)
-          .map(node => node.props.href)
-      )];
+      // The toolbar renders links with the same labels and URLs, so only the card header counts.
+      const headerLinks = (tree: ReturnType<typeof render>) =>
+        findAllNodes(findNode(tree, byClass('step-card-header')) || null, node => node.type === 'a');
 
-      it('links to the topic and the errata form, in a new tab', () => {
+      const hrefsLabelled = (tree: ReturnType<typeof render>, label: string) =>
+        headerLinks(tree).filter(node => node.props['aria-label'] === label).map(node => node.props.href);
+
+      it('links to the topic and the errata form from the header, in a new tab', () => {
         const tree = render(links);
 
         expect(hrefsLabelled(tree, 'View topic in textbook')).toEqual(['https://openstax.org/topic']);
         expect(hrefsLabelled(tree, 'Suggest a correction')).toEqual(['https://openstax.org/errata']);
-        expect(findAllNodes(tree, node => node.type === 'a' && node.props.target === '_blank').length)
-          .toBeGreaterThanOrEqual(2);
+        expect(headerLinks(tree).map(node => node.props.target)).toEqual(['_blank', '_blank']);
       });
 
       it('shows only the icons that are configured', () => {
@@ -391,12 +392,21 @@ describe('Exercise', () => {
       expect(textOf(tree.toJSON())).not.toContain('Overlay');
     });
 
+    // the card's outer container is the element that holds the step card, and is the one that takes focus
+    const cardContainer = (tree: renderer.ReactTestRenderer) => findNode(
+      tree.toJSON(),
+      node => node.type === 'div' && (node.children || []).some(child => isJson(child) && byClass('step-card')(child))
+    );
+
     it('makes the card focusable only when there is an overlay', () => {
       const withOverlay = renderer.create(<Exercise {...props} show_all_feedback />);
       const without = renderer.create(<Exercise {...props} overlayChildren={undefined} show_all_feedback />);
 
-      expect(overlayCard(withOverlay).props.tabIndex).toBe(0);
-      expect(without.root.findAll(node => typeof node.props.onMouseOver === 'function')).toHaveLength(0);
+      expect(cardContainer(withOverlay)?.props.tabIndex).toBe(0);
+
+      expect(cardContainer(without)).toBeDefined();
+      expect(cardContainer(without)?.props.tabIndex).toBeUndefined();
+      expect(cardContainer(without)?.props.onMouseOver).toBeUndefined();
     });
 
     it('matches snapshot with previewMode', () => {

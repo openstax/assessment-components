@@ -207,6 +207,13 @@ describe('Free Response Input', () => {
       expect(button(tree, 'update-answer-btn')?.props.disabled).toBe(true);
     });
 
+    // the host applies an edit: the text changes and the response is marked as needing a save
+    const applyEdit = (tree: renderer.ReactTestRenderer) => renderer.act(() => {
+      tree.update(
+        <FreeResponseInput {...baseProps} {...editable} needsSaved={true} free_response="An edited answer" />
+      );
+    });
+
     it('lets the learner cancel an edit, restoring the submitted response', () => {
       const tree = render(editable);
       const cancel = () => buttons(tree)[0];
@@ -215,11 +222,7 @@ describe('Free Response Input', () => {
       // nothing to cancel until the host applies an edit
       expect(cancel().props.disabled).toBe(true);
 
-      renderer.act(() => {
-        tree.update(
-          <FreeResponseInput {...baseProps} {...editable} needsSaved={true} free_response="An edited answer" />
-        );
-      });
+      applyEdit(tree);
       expect(cancel().props.disabled).toBe(false);
 
       renderer.act(() => { cancel().props.onClick(event); });
@@ -228,6 +231,19 @@ describe('Free Response Input', () => {
         expect.objectContaining({ free_response: 'Previously submitted answer' })
       );
       expect(baseProps.cancelHandler).toHaveBeenCalledWith(event);
+    });
+
+    it('lets the learner save an edit with Update, handing the question id to the host', () => {
+      const tree = render(editable);
+      const update = () => button(tree, 'update-answer-btn');
+
+      expect(update()?.props.disabled).toBe(true);
+
+      applyEdit(tree);
+      expect(update()?.props.disabled).toBe(false);
+
+      renderer.act(() => { update()?.props.onClick(); });
+      expect(baseProps.onAnswerSave).toHaveBeenCalledWith(1);
     });
   });
 
@@ -241,6 +257,7 @@ describe('Free Response Input', () => {
     });
 
     it('shows the grading form instead of the feedback block when grading is possible', () => {
+      const onGradingSave = jest.fn();
       const tree = render({
         is_completed: true,
         canAnswer: false,
@@ -248,11 +265,11 @@ describe('Free Response Input', () => {
         free_response: 'Photosynthesis converts sunlight into chemical energy.',
         score: { raw: 9, max: 10 },
         feedback_html: 'Good work overall.',
-        onGradingSave: jest.fn(),
+        onGradingSave,
       });
 
       expect(tree.root.findByType(FreeResponseGrading).props).toMatchObject({
-        questionId: '1', maxScore: 10, score: 9, comment: 'Good work overall.',
+        questionId: '1', maxScore: 10, score: 9, comment: 'Good work overall.', onSave: onGradingSave,
       });
       expect(findAllNodes(tree.toJSON(), node => node.type === 'button')).toHaveLength(1);
       expect(text(tree)).not.toContain('Feedback:');
