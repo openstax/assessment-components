@@ -1,6 +1,7 @@
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { QuestionWrapper, QuestionWrapperProps } from './QuestionWrapper';
+import { byClass, findNode, textOf as renderedText } from '../test/utils';
 import { colors } from '../theme';
 
 const props: QuestionWrapperProps = {
@@ -77,7 +78,12 @@ describe('QuestionWrapper', () => {
       const tree = renderer.create(<QuestionWrapper {...props} attemptsRemaining={2} />);
       const region = tree.root.findByProps({ className: 'attempts-left' });
       expect(region.props.role).toEqual('status');
-      expect(tree.toJSON()).toMatchSnapshot();
+      expect(renderedText(findNode(tree.toJSON(), byClass('attempts-left')) || null)).toBe('2 attempts left');
+    });
+
+    it('uses the singular for a single attempt', () => {
+      const tree = renderer.create(<QuestionWrapper {...props} attemptsRemaining={1} />);
+      expect(renderedText(findNode(tree.toJSON(), byClass('attempts-left')) || null)).toBe('1 attempt left');
     });
 
     it('tells a learner about unlimited quiz attempts, whatever the format', () => {

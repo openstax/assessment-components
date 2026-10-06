@@ -1,6 +1,7 @@
 import renderer from 'react-test-renderer';
 import { NeedsGradingQuestion } from './NeedsGradingQuestion';
 import { NeedsGradingStudentRow } from './NeedsGradingStudentRow';
+import { findNode, textOf } from '../test/utils';
 
 const onSave = jest.fn();
 
@@ -24,17 +25,6 @@ const students = [
 ];
 
 describe('NeedsGradingQuestion', () => {
-  it('matches snapshot with mixed graded and ungraded students', () => {
-    const tree = renderer.create(
-      <NeedsGradingQuestion
-        questionNumber={1}
-        questionStemHtml="<p>Describe Newton's first law.</p>"
-        students={students}
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('expands all rows when "Expand all answers" is clicked', () => {
     const tree = renderer.create(
       <NeedsGradingQuestion
@@ -89,14 +79,88 @@ describe('NeedsGradingQuestion', () => {
     expect(tree.root.findAllByType(NeedsGradingStudentRow)[1].props.expanded).toBe(rows[1].props.expanded);
   });
 
-  it('matches snapshot with all graded students', () => {
-    const tree = renderer.create(
+  describe('the header', () => {
+    const render = (props: Partial<React.ComponentProps<typeof NeedsGradingQuestion>> = {}) => renderer.create(
       <NeedsGradingQuestion
-        questionNumber={2}
+        questionNumber={1}
         questionStemHtml="<p>Describe Newton's first law.</p>"
-        students={students.map(s => ({ ...s, score: 8 }))}
+        students={students}
+        {...props}
       />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+    );
+
+    const cardHeader = (tree: renderer.ReactTestRenderer) => tree.root.findAll(
+      n => n.type === 'button' && n.props['aria-expanded'] !== undefined
+    )[0];
+
+    // the card body is the first element that hides itself with an inline display style
+    const isBodyHidden = (tree: renderer.ReactTestRenderer) => findNode(
+      tree.toJSON(), n => n.type === 'div' && n.props.style && 'display' in n.props.style
+    )?.props.style.display === 'none';
+
+    it('counts the students that have been graded', () => {
+      expect(textOf(render().toJSON())).toContain('1/2 Graded');
+      expect(textOf(render({ students: students.map(s => ({ ...s, score: 8 })) }).toJSON()))
+        .toContain('2/2 Graded');
+    });
+
+    it('shows the question number, and its id when it has one', () => {
+      expect(textOf(render({ questionNumber: 2 }).toJSON())).toContain('Question 2');
+      expect(textOf(render().toJSON())).not.toContain('ID:');
+      expect(textOf(render({ questionId: '4652@7' }).toJSON())).toContain('ID: 4652@7');
+    });
+
+    it('shows the question stem', () => {
+      expect(textOf(render().toJSON())).toContain('Describe Newton\'s first law.');
+    });
+
+    it('collapses and re-opens the whole card from its header', () => {
+      const tree = render();
+      expect(cardHeader(tree).props['aria-expanded']).toBe(true);
+      expect(isBodyHidden(tree)).toBe(false);
+
+      renderer.act(() => { cardHeader(tree).props.onClick(); });
+      expect(cardHeader(tree).props['aria-expanded']).toBe(false);
+      expect(isBodyHidden(tree)).toBe(true);
+    });
+  });
+
+  describe('which rows start expanded', () => {
+    const expandedRows = (tree: renderer.ReactTestRenderer) =>
+      tree.root.findAllByType(NeedsGradingStudentRow).map(row => row.props.expanded);
+
+    it('opens only the ungraded rows', () => {
+      const tree = renderer.create(
+        <NeedsGradingQuestion questionNumber={1} questionStemHtml="<p>Stem</p>" students={students} />
+      );
+
+      expect(expandedRows(tree)).toEqual([true, false]);
+    });
+
+    it('opens nothing when every row is graded, and offers to expand them all', () => {
+      const tree = renderer.create(
+        <NeedsGradingQuestion
+          questionNumber={2}
+          questionStemHtml="<p>Stem</p>"
+          students={students.map(s => ({ ...s, score: 8 }))}
+        />
+      );
+
+      expect(expandedRows(tree)).toEqual([false, false]);
+      expect(textOf(tree.toJSON())).toContain('Expand all answers');
+    });
+
+    it('offers to collapse them all once every row is open', () => {
+      const tree = renderer.create(
+        <NeedsGradingQuestion
+          questionNumber={1}
+          questionStemHtml="<p>Stem</p>"
+          students={students.map(s => ({ ...s, score: undefined }))}
+        />
+      );
+
+      expect(expandedRows(tree)).toEqual([true, true]);
+      expect(textOf(tree.toJSON())).toContain('Collapse all answers');
+    });
   });
 });
