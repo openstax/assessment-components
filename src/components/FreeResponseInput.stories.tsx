@@ -91,7 +91,7 @@ export const DraftSaved = () => {
   );
 };
 
-export const DraftNewerThanSubmission = () => {
+export const DraftAfterSubmission = () => {
   const [freeResponse, setFreeResponse] = useState('An edit made after submitting, autosaved.');
 
   return (
@@ -105,25 +105,6 @@ export const DraftNewerThanSubmission = () => {
       submittedResponse="The originally submitted answer."
       submissionTimestamp="2024-10-03T14:00:00.000Z"
       draftTimestamp="2024-10-03T15:55:00.000Z"
-      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
-      onAnswerSave={() => console.log('Save')}
-      onNextStep={() => console.log('Next')}
-    />
-  );
-};
-
-export const DraftOlderThanSubmission = () => {
-  const [freeResponse, setFreeResponse] = useState('The submitted answer.');
-
-  return (
-    <FreeResponseInput
-      {...baseQuestionState}
-      is_completed={true}
-      canAnswer={true}
-      apiIsPending={false}
-      free_response={freeResponse}
-      submissionTimestamp="2024-10-03T15:55:00.000Z"
-      draftTimestamp="2024-10-03T14:00:00.000Z"
       onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}

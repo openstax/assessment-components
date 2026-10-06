@@ -223,8 +223,7 @@ describe('Free Response Input', () => {
 
   describe('status line', () => {
     const SUBMITTED_AT = '2024-10-03T10:00:00.000Z';
-    const DRAFT_NEWER = '2024-10-03T10:55:00.000Z';
-    const DRAFT_OLDER = '2024-10-03T09:00:00.000Z';
+    const DRAFT_SAVED_AT = '2024-10-03T10:55:00.000Z';
 
     const statusText = (props: Partial<FreeResponseProps>) => JSON.stringify(
       renderer.create(<FreeResponseInput {...baseProps} free_response="a partial thought" {...props} />).toJSON()
@@ -238,25 +237,18 @@ describe('Free Response Input', () => {
     });
 
     it('shows the draft time when nothing has been submitted yet', () => {
-      expect(statusText({ draftTimestamp: DRAFT_NEWER })).toContain('Draft last saved');
+      expect(statusText({ draftTimestamp: DRAFT_SAVED_AT })).toContain('Draft last saved');
     });
 
     it('shows the submitted time when there is no draft', () => {
       expect(statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT })).toContain('Last submitted on');
     });
 
-    it('prefers the draft when it is newer than the submission', () => {
-      const text = statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT, draftTimestamp: DRAFT_NEWER });
+    it('shows the draft time when there is a draft of a submitted response', () => {
+      const text = statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT, draftTimestamp: DRAFT_SAVED_AT });
 
       expect(text).toContain('Draft last saved');
       expect(text).not.toContain('Last submitted on');
-    });
-
-    it('prefers the submission when the draft is older', () => {
-      const text = statusText({ is_completed: true, submissionTimestamp: SUBMITTED_AT, draftTimestamp: DRAFT_OLDER });
-
-      expect(text).toContain('Last submitted on');
-      expect(text).not.toContain('Draft last saved');
     });
   });
 });

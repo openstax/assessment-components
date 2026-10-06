@@ -92,7 +92,7 @@ describe('QuestionBody', () => {
     const SUBMITTED = '2024-10-03T10:00:00.000Z';
     const DRAFT = '2024-10-03T10:55:00.000Z';
 
-    it('shows the draft time when the draft is newer than the submission', () => {
+    it('shows the draft time when there is a draft of a submitted response', () => {
       const tree = renderer.create(
         <QuestionBody
           question={freeResponse}

@@ -116,7 +116,10 @@ export type QuestionBodyState = {
   score?: { raw?: number; max?: number };
   /** Raw timestamp of the last submission, formatted by the component */
   submissionTimestamp?: string | number;
-  /** Raw timestamp of the last autosaved free response draft, formatted by the component */
+  /**
+   * Raw timestamp of the last autosaved free response draft, formatted by the component.
+   * Set only while an unsubmitted draft exists; clear it when the response is submitted.
+   */
   draftTimestamp?: string | number;
   /** The last submitted free response, used as the baseline when free_response holds a draft */
   submittedResponse?: string;

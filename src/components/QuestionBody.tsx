@@ -361,11 +361,7 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
-  const showDraft = draftTimestamp !== undefined
-    && (submissionTimestamp === undefined
-      || new Date(draftTimestamp).getTime() > new Date(submissionTimestamp).getTime());
-
-  const responseStatus = showDraft
+  const responseStatus = draftTimestamp !== undefined
     ? `Draft last saved ${formatTimestamp(draftTimestamp)}`
     : submissionTimestamp !== undefined
       ? `Last submitted on ${formatTimestamp(submissionTimestamp)}`
