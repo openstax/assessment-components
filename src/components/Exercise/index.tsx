@@ -225,7 +225,9 @@ export const Exercise = ({
             />
           );
 
-          // preview renders no controls, so its footer only appears when it carries feedback
+          // preview renders no controls, so its footer only appears when it carries feedback;
+          // attempts are left out too, or they would bring back a footer with nothing else in it
+          const attemptsShown = !previewMode || !!footerFeedback;
           const wrapped = (
             <QuestionWrapper
               question_id={q.id}
@@ -242,8 +244,9 @@ export const Exercise = ({
                   ? props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
               }
               attempt_number={isFreeResponse ? undefined : state.attempt_number}
-              attemptsRemaining={props.hasMultipleAttempts && !isFreeResponse ? state.attempts_remaining : undefined}
-              hasUnlimitedAttempts={props.hasUnlimitedAttempts}
+              attemptsRemaining={attemptsShown && props.hasMultipleAttempts && !isFreeResponse
+                ? state.attempts_remaining : undefined}
+              hasUnlimitedAttempts={attemptsShown && props.hasUnlimitedAttempts}
               /*
                * Free response has always advanced after a submission whatever the assignment's
                * feedback setting says, and multiple choice has always read an absent

@@ -97,6 +97,14 @@ describe('ExerciseQuestion', () => {
     expect(attemptsText(render({ hasMultipleAttempts: false, attempts_remaining: 2 }))).toBe('');
   });
 
+  it('frames a preview without a solution in a body section, with no footer', () => {
+    const tree = renderer.create(
+      <ExerciseQuestion {...props} previewMode hasMultipleAttempts hasUnlimitedAttempts />
+    );
+    expect(tree.root.findAllByProps({ className: 'step-card-question' })).not.toHaveLength(0);
+    expect(tree.root.findAllByProps({ className: 'step-card-footer' })).toHaveLength(0);
+  });
+
   it('renders unlimited attempts', () => {
     expect(attemptsText(render({ hasUnlimitedAttempts: true }))).toBe('Unlimited quiz attempts left');
   });

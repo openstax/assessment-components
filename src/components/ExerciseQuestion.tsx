@@ -89,29 +89,31 @@ export const ExerciseQuestion = React.forwardRef((
     ? <QuestionLevelFeedback detailedSolution={detailedSolution} />
     : undefined;
 
+  // a preview without a solution has nothing for the footer, so it renders the body alone
+  const footerShown = !previewMode || !!detailedSolution;
+
   return (
     <div data-test-id="student-exercise-question">
-      {(previewMode && detailedSolution) || !previewMode ?
-        <QuestionWrapper
-          question_id={question.id}
-          questionIndex={questionNumber - 1}
-          is_completed={is_completed}
-          canAnswer={canAnswer}
-          canSubmit={!!answer_id}
-          apiIsPending={apiIsPending}
-          canUpdateCurrentStep={canUpdateCurrentStep}
-          attempt_number={attempt_number}
-          attemptsRemaining={hasMultipleAttempts ? attempts_remaining : undefined}
-          hasUnlimitedAttempts={hasUnlimitedAttempts}
-          hasFeedback={hasFeedback ?? false}
-          onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
-          onNextStep={() => onNextStep(questionNumber - 1)}
-          footerChildren={footerChildren}
-          compactDisplay={compactDisplay}
-        >
-          {body}
-        </QuestionWrapper>
-        : body}
+      <QuestionWrapper
+        question_id={question.id}
+        questionIndex={questionNumber - 1}
+        is_completed={is_completed}
+        canAnswer={canAnswer}
+        canSubmit={!!answer_id}
+        apiIsPending={apiIsPending}
+        canUpdateCurrentStep={canUpdateCurrentStep}
+        attempt_number={attempt_number}
+        attemptsRemaining={footerShown && hasMultipleAttempts ? attempts_remaining : undefined}
+        hasUnlimitedAttempts={footerShown && hasUnlimitedAttempts}
+        hasFeedback={hasFeedback ?? false}
+        showControls={footerShown}
+        onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
+        onNextStep={() => onNextStep(questionNumber - 1)}
+        footerChildren={footerChildren}
+        compactDisplay={compactDisplay}
+      >
+        {body}
+      </QuestionWrapper>
     </div>
   );
 })
