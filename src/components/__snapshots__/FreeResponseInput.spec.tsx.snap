@@ -2,7 +2,7 @@
 
 exports[`Free Response Input matches snapshot - completed state 1`] = `
 Array [
-  .c3 .image-button-wrapper {
+  .c2 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -11,32 +11,32 @@ Array [
   cursor: pointer;
 }
 
-.c3 .image-button-wrapper:focus {
+.c2 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c3 .image-button-wrapper img {
+.c2 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c2 {
+.c1 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c4 {
+.c3 {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #6f6f6f;
   margin: 2.5rem 0 1rem 0;
 }
 
-.c5 {
+.c4 {
   border-left: 16px solid #f1f1f1;
   padding-left: 1.6rem;
   margin: 1rem 0 1rem 1rem;
@@ -49,7 +49,7 @@ Array [
   white-space: pre-wrap;
 }
 
-.c5:last-child {
+.c4:last-child {
   margin-bottom: 0;
 }
 
@@ -60,22 +60,18 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <div
-          className="c3 question-stem"
+          className="c2 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -84,12 +80,12 @@ Array [
         />
       </div>
       <div
-        className="c4"
+        className="c3"
       >
         Your answer
       </div>
       <div
-        className="c5"
+        className="c4"
       >
         Photosynthesis is the process by which plants convert light energy into chemical energy.
       </div>
@@ -317,7 +313,7 @@ Array [
 
 exports[`Free Response Input matches snapshot - initial state 1`] = `
 Array [
-  .c4 .image-button-wrapper {
+  .c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -326,25 +322,25 @@ Array [
   cursor: pointer;
 }
 
-.c4 .image-button-wrapper:focus {
+.c3 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c4 .image-button-wrapper img {
+.c3 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c3 {
+.c2 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c6 {
+.c5 {
   margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -358,29 +354,29 @@ Array [
   color: #6f6f6f;
 }
 
-.c6:not(:last-child) {
+.c5:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.c6 .word-limit-error-info,
-.c6 .words-remaining-negative {
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
   color: #c2002f;
 }
 
-.c6 div > span {
+.c5 div > span {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
-.c6 div > span + span {
+.c5 div > span + span {
   margin-left: 1rem;
 }
 
-.c6 .last-submitted + * {
+.c5 .last-submitted + * {
   margin-top: 0.8rem;
 }
 
-.c5 {
+.c4 {
   display: block;
   font-family: inherit;
   font-size: calc(1.8rem * var(--content-text-scale,1));
@@ -393,7 +389,7 @@ Array [
   color: #424242;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -415,19 +411,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <svg
           fill="none"
@@ -469,10 +461,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4 question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -482,7 +474,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="c5"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -490,7 +482,7 @@ Array [
         value=""
       />
       <div
-        className="c6"
+        className="c5"
       >
         <div>
           <span>
@@ -667,7 +659,7 @@ Array [
 `;
 
 exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
-.c3 .image-button-wrapper {
+.c2 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -676,25 +668,25 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   cursor: pointer;
 }
 
-.c3 .image-button-wrapper:focus {
+.c2 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c3 .image-button-wrapper img {
+.c2 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c2 {
+.c1 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c4 {
+.c3 {
   font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #6f6f6f;
   margin: 0;
@@ -707,22 +699,18 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-  className="c0 c1 step-card-question step-card-body"
+  className="c0 step-card-question step-card-body"
 >
   <div
     className=""
     data-test-id="student-free-response"
   >
     <div
-      className="c2"
+      className="c1"
     >
       <div
-        className="c3 question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -731,7 +719,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
       />
     </div>
     <p
-      className="c4"
+      className="c3"
     >
       Unanswered
     </p>
@@ -740,7 +728,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
-.c3 .image-button-wrapper {
+.c2 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -749,25 +737,25 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   cursor: pointer;
 }
 
-.c3 .image-button-wrapper:focus {
+.c2 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c3 .image-button-wrapper img {
+.c2 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c2 {
+.c1 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c4 {
+.c3 {
   border-left: 16px solid #f1f1f1;
   padding-left: 1.6rem;
   margin: 1rem 0 1rem 1rem;
@@ -780,28 +768,28 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   white-space: pre-wrap;
 }
 
-.c4:last-child {
+.c3:last-child {
   margin-bottom: 0;
 }
 
-.c6 {
+.c5 {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
-.c7 {
+.c6 {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
 
-.c7 .feedback-label {
+.c6 .feedback-label {
   color: #424242;
   font-weight: bold;
 }
 
-.c5 .detailed-solution .header {
+.c4 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -811,7 +799,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   flex-basis: 0;
 }
 
-.c5 .detailed-solution .solution {
+.c4 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
 }
@@ -823,22 +811,18 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-  className="c0 c1 step-card-question step-card-body"
+  className="c0 step-card-question step-card-body"
 >
   <div
     className=""
     data-test-id="student-free-response"
   >
     <div
-      className="c2"
+      className="c1"
     >
       <div
-        className="c3 question-stem"
+        className="c2 question-stem"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Explain the process of photosynthesis.",
@@ -847,22 +831,22 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       />
     </div>
     <div
-      className="c4"
+      className="c3"
     >
       Photosynthesis converts sunlight into chemical energy.
     </div>
     <div
-      className="c5"
+      className="c4"
       role="status"
     >
       <div
-        className="c6"
+        className="c5"
       >
         Score: 
         9/10
       </div>
       <div
-        className="c7"
+        className="c6"
       >
         <span
           className="feedback-label"
@@ -878,7 +862,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 `;
 
 exports[`Free Response Input matches snapshot - preview mode with grading 1`] = `
-.c14 {
+.c13 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -906,23 +890,23 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c14:not([disabled]) {
+.c13:not([disabled]) {
   cursor: pointer;
 }
 
-.c14:not([disabled]):hover {
+.c13:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c14:not([disabled]):active {
+.c13:not([disabled]):active {
   background: #C5400B;
 }
 
-.c14:disabled {
+.c13:disabled {
   opacity: 0.4;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -936,7 +920,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   min-width: 300px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -947,13 +931,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   gap: 0.8rem;
 }
 
-.c10 {
+.c9 {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -966,7 +950,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
-.c11 {
+.c10 {
   width: 6rem;
   padding: 0.8rem;
   font-size: calc(1.6rem * var(--content-text-scale,1));
@@ -975,28 +959,49 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   text-align: center;
 }
 
-.c11::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c11::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c11:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
 }
 
-.c11::placeholder {
+.c10::placeholder {
   color: #6F6F6F;
   text-align: center;
   line-height: normal;
+}
+
+.c10:focus {
+  outline: none;
+  border-color: #007da4;
+}
+
+.c10:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+.c11 {
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-family: inherit;
+  border: 1px solid #818181;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .c11:focus {
@@ -1010,34 +1015,186 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 }
 
 .c12 {
-  width: 100%;
-  min-height: 12rem;
-  padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale,1));
-  font-family: inherit;
-  border: 1px solid #818181;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-.c12:focus {
-  outline: none;
-  border-color: #007da4;
-}
-
-.c12:disabled {
-  background-color: #f1f1f1;
-  cursor: not-allowed;
-}
-
-.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c3 .image-button-wrapper {
+.c2 .image-button-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.c2 .image-button-wrapper:focus {
+  outline: 1px solid Highlight;
+  outline: 1px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+.c2 .image-button-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.c1 {
+  font-size: calc(2rem * var(--content-text-scale,1));
+  line-height: 1.68em;
+  position: relative;
+}
+
+.c5 {
+  border-left: 16px solid #f1f1f1;
+  padding-left: 1.6rem;
+  margin: 1rem 0 1rem 1rem;
+  max-height: 16.8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.6;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  color: #5f6163;
+  white-space: pre-wrap;
+}
+
+.c5:last-child {
+  margin-bottom: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin-top: 2.5rem;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
+}
+
+<div
+  className="c0 step-card-question step-card-body"
+>
+  <div
+    className=""
+    data-test-id="student-free-response"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2 question-stem"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Explain the process of photosynthesis.",
+          }
+        }
+      />
+    </div>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          Photosynthesis converts sunlight into chemical energy.
+        </div>
+      </div>
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            <label
+              className="c9"
+              htmlFor="frg-0-score"
+            >
+              Points
+            </label>
+            <input
+              aria-label="Score"
+              className="c10"
+              disabled={false}
+              id="frg-0-score"
+              max={10}
+              min={0}
+              onChange={[Function]}
+              placeholder="--"
+              step={1}
+              type="number"
+              value="9"
+            />
+            <span>
+              out of 
+              10
+            </span>
+          </div>
+        </div>
+        <div
+          className="c7"
+        >
+          <label
+            className="c9"
+            htmlFor="frg-0-comment"
+          >
+            Comment
+          </label>
+          <textarea
+            aria-label="Comment"
+            className="c11"
+            disabled={false}
+            id="frg-0-comment"
+            onChange={[Function]}
+            placeholder="Enter feedback for the student..."
+            value="Good work overall."
+          />
+        </div>
+        <div
+          className="c12"
+        >
+          <button
+            className="c13"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Free Response Input matches snapshot - saving state 1`] = `
+Array [
+  .c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -1064,184 +1221,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   position: relative;
 }
 
-.c6 {
-  border-left: 16px solid #f1f1f1;
-  padding-left: 1.6rem;
-  margin: 1rem 0 1rem 1rem;
-  max-height: 16.8rem;
-  overflow: hidden;
-  position: relative;
-  line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale,1));
-  color: #5f6163;
-  white-space: pre-wrap;
-}
-
-.c6:last-child {
-  margin-bottom: 0;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 2rem;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  margin-top: 2.5rem;
-}
-
 .c5 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
-  overflow: auto;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c1 {
-  padding-bottom: 2rem;
-}
-
-<div
-  className="c0 c1 step-card-question step-card-body"
->
-  <div
-    className=""
-    data-test-id="student-free-response"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3 question-stem"
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Explain the process of photosynthesis.",
-          }
-        }
-      />
-    </div>
-    <div
-      className="c4"
-    >
-      <div
-        className="c5"
-      >
-        <div
-          className="c6"
-        >
-          Photosynthesis converts sunlight into chemical energy.
-        </div>
-      </div>
-      <div
-        className="c7"
-      >
-        <div
-          className="c8"
-        >
-          <div
-            className="c9"
-          >
-            <label
-              className="c10"
-              htmlFor="frg-0-score"
-            >
-              Points
-            </label>
-            <input
-              aria-label="Score"
-              className="c11"
-              disabled={false}
-              id="frg-0-score"
-              max={10}
-              min={0}
-              onChange={[Function]}
-              placeholder="--"
-              step={1}
-              type="number"
-              value="9"
-            />
-            <span>
-              out of 
-              10
-            </span>
-          </div>
-        </div>
-        <div
-          className="c8"
-        >
-          <label
-            className="c10"
-            htmlFor="frg-0-comment"
-          >
-            Comment
-          </label>
-          <textarea
-            aria-label="Comment"
-            className="c12"
-            disabled={false}
-            id="frg-0-comment"
-            onChange={[Function]}
-            placeholder="Enter feedback for the student..."
-            value="Good work overall."
-          />
-        </div>
-        <div
-          className="c13"
-        >
-          <button
-            className="c14"
-            disabled={true}
-            onClick={[Function]}
-          >
-            Update
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Free Response Input matches snapshot - saving state 1`] = `
-Array [
-  .c4 .image-button-wrapper {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background: none;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.c4 .image-button-wrapper:focus {
-  outline: 1px solid Highlight;
-  outline: 1px solid -webkit-focus-ring-color;
-  outline-offset: 2px;
-}
-
-.c4 .image-button-wrapper img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.c3 {
-  font-size: calc(2rem * var(--content-text-scale,1));
-  line-height: 1.68em;
-  position: relative;
-}
-
-.c6 {
   margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1255,29 +1235,29 @@ Array [
   color: #6f6f6f;
 }
 
-.c6:not(:last-child) {
+.c5:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.c6 .word-limit-error-info,
-.c6 .words-remaining-negative {
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
   color: #c2002f;
 }
 
-.c6 div > span {
+.c5 div > span {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
-.c6 div > span + span {
+.c5 div > span + span {
   margin-left: 1rem;
 }
 
-.c6 .last-submitted + * {
+.c5 .last-submitted + * {
   margin-top: 0.8rem;
 }
 
-.c5 {
+.c4 {
   display: block;
   font-family: inherit;
   font-size: calc(1.8rem * var(--content-text-scale,1));
@@ -1290,7 +1270,7 @@ Array [
   color: #424242;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1312,19 +1292,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <svg
           fill="none"
@@ -1366,10 +1342,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4 question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -1379,7 +1355,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="c5"
+        className="c4"
         data-test-id="free-response-box"
         disabled={true}
         onChange={[Function]}
@@ -1387,7 +1363,7 @@ Array [
         value="This is being saved"
       />
       <div
-        className="c6"
+        className="c5"
       >
         <div>
           <span>
@@ -1565,7 +1541,7 @@ Array [
 
 exports[`Free Response Input matches snapshot - update mode 1`] = `
 Array [
-  .c4 .image-button-wrapper {
+  .c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -1574,25 +1550,25 @@ Array [
   cursor: pointer;
 }
 
-.c4 .image-button-wrapper:focus {
+.c3 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c4 .image-button-wrapper img {
+.c3 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c3 {
+.c2 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c6 {
+.c5 {
   margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1606,29 +1582,29 @@ Array [
   color: #6f6f6f;
 }
 
-.c6:not(:last-child) {
+.c5:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.c6 .word-limit-error-info,
-.c6 .words-remaining-negative {
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
   color: #c2002f;
 }
 
-.c6 div > span {
+.c5 div > span {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
-.c6 div > span + span {
+.c5 div > span + span {
   margin-left: 1rem;
 }
 
-.c6 .last-submitted + * {
+.c5 .last-submitted + * {
   margin-top: 0.8rem;
 }
 
-.c5 {
+.c4 {
   display: block;
   font-family: inherit;
   font-size: calc(1.8rem * var(--content-text-scale,1));
@@ -1641,7 +1617,7 @@ Array [
   color: #424242;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1663,19 +1639,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <svg
           fill="none"
@@ -1717,10 +1689,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4 question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -1730,7 +1702,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="c5"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -1738,7 +1710,7 @@ Array [
         value="Previously submitted answer"
       />
       <div
-        className="c6"
+        className="c5"
       >
         <div>
           <span
@@ -1950,7 +1922,7 @@ Array [
 
 exports[`Free Response Input matches snapshot - with free response text 1`] = `
 Array [
-  .c4 .image-button-wrapper {
+  .c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -1959,25 +1931,25 @@ Array [
   cursor: pointer;
 }
 
-.c4 .image-button-wrapper:focus {
+.c3 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c4 .image-button-wrapper img {
+.c3 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c3 {
+.c2 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c6 {
+.c5 {
   margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1991,29 +1963,29 @@ Array [
   color: #6f6f6f;
 }
 
-.c6:not(:last-child) {
+.c5:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.c6 .word-limit-error-info,
-.c6 .words-remaining-negative {
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
   color: #c2002f;
 }
 
-.c6 div > span {
+.c5 div > span {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
-.c6 div > span + span {
+.c5 div > span + span {
   margin-left: 1rem;
 }
 
-.c6 .last-submitted + * {
+.c5 .last-submitted + * {
   margin-top: 0.8rem;
 }
 
-.c5 {
+.c4 {
   display: block;
   font-family: inherit;
   font-size: calc(1.8rem * var(--content-text-scale,1));
@@ -2026,7 +1998,7 @@ Array [
   color: #424242;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2048,19 +2020,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <svg
           fill="none"
@@ -2102,10 +2070,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4 question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -2115,7 +2083,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="c5"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -2123,7 +2091,7 @@ Array [
         value="Photosynthesis converts light energy into chemical energy."
       />
       <div
-        className="c6"
+        className="c5"
       >
         <div>
           <span>
@@ -2301,7 +2269,7 @@ Array [
 
 exports[`Free Response Input matches snapshot - with submission info 1`] = `
 Array [
-  .c4 .image-button-wrapper {
+  .c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -2310,25 +2278,25 @@ Array [
   cursor: pointer;
 }
 
-.c4 .image-button-wrapper:focus {
+.c3 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c4 .image-button-wrapper img {
+.c3 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c3 {
+.c2 {
   font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
-.c6 {
+.c5 {
   margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2342,29 +2310,29 @@ Array [
   color: #6f6f6f;
 }
 
-.c6:not(:last-child) {
+.c5:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.c6 .word-limit-error-info,
-.c6 .words-remaining-negative {
+.c5 .word-limit-error-info,
+.c5 .words-remaining-negative {
   color: #c2002f;
 }
 
-.c6 div > span {
+.c5 div > span {
   font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
-.c6 div > span + span {
+.c5 div > span + span {
   margin-left: 1rem;
 }
 
-.c6 .last-submitted + * {
+.c5 .last-submitted + * {
   margin-top: 0.8rem;
 }
 
-.c5 {
+.c4 {
   display: block;
   font-family: inherit;
   font-size: calc(1.8rem * var(--content-text-scale,1));
@@ -2377,7 +2345,7 @@ Array [
   color: #424242;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2399,19 +2367,15 @@ Array [
   border-top: 1px solid #d5d5d5;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
       className=""
       data-test-id="student-free-response"
     >
       <div
-        className="c2"
+        className="c1"
       >
         <svg
           fill="none"
@@ -2453,10 +2417,10 @@ Array [
         You can come back and edit your response until it has been graded.
       </div>
       <div
-        className="c3"
+        className="c2"
       >
         <div
-          className="c4 question-stem"
+          className="c3 question-stem"
           dangerouslySetInnerHTML={
             Object {
               "__html": "Explain the process of photosynthesis.",
@@ -2466,7 +2430,7 @@ Array [
       </div>
       <textarea
         aria-label="question response text box"
-        className="c5"
+        className="c4"
         data-test-id="free-response-box"
         disabled={false}
         onChange={[Function]}
@@ -2474,7 +2438,7 @@ Array [
         value=""
       />
       <div
-        className="c6"
+        className="c5"
       >
         <div>
           <span

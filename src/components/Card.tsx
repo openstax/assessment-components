@@ -11,20 +11,18 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
      card's padding. */
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  /* with a unit, so a host can use it inside calc() */
-  --step-card-gutter-bottom: 0px;
+  /* the same at every width, so every section ends with the same room above the next */
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: ${colors.card.body.background};
 
   ${breakpoints.tablet`
     --step-card-gutter: ${breakpoints.margins.tablet};
     --step-card-gutter-top: ${breakpoints.margins.tablet};
-    --step-card-gutter-bottom: ${breakpoints.margins.tablet};
   `}
 
   ${breakpoints.mobile`
     --step-card-gutter: ${breakpoints.margins.mobile};
     --step-card-gutter-top: calc(${breakpoints.margins.mobile} * 2);
-    --step-card-gutter-bottom: calc(${breakpoints.margins.mobile} * 2);
   `}
 
   font-size: calc(1.8rem * var(--content-text-scale, 1));

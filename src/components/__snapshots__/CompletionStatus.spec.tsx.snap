@@ -4,7 +4,7 @@ exports[`CompletionStatus matches snapshot 1`] = `
 .c0 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -108,7 +108,6 @@ exports[`CompletionStatus matches snapshot 1`] = `
   .c0 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -116,7 +115,6 @@ exports[`CompletionStatus matches snapshot 1`] = `
   .c0 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
@@ -155,7 +153,7 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 .c0 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -259,7 +257,6 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
   .c0 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -267,7 +264,6 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
   .c0 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
@@ -306,7 +302,7 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 .c0 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -410,7 +406,6 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
   .c0 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -418,7 +413,6 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
   .c0 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 

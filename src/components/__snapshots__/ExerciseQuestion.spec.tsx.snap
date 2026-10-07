@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExerciseQuestion matches snapshot 1`] = `
-.c7 {
+.c6 {
   background-color: #D4450C;
   color: #ffffff;
   font-size: 1.6rem;
@@ -29,23 +29,23 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c7:not([disabled]) {
+.c6:not([disabled]) {
   cursor: pointer;
 }
 
-.c7:not([disabled]):hover {
+.c6:not([disabled]):hover {
   background: #E74B0D;
 }
 
-.c7:not([disabled]):active {
+.c6:not([disabled]):active {
   background: #C5400B;
 }
 
-.c7:disabled {
+.c6:disabled {
   opacity: 0.4;
 }
 
-.c4 .image-button-wrapper {
+.c3 .image-button-wrapper {
   border: none;
   padding: 0;
   margin: 0;
@@ -54,19 +54,19 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   cursor: pointer;
 }
 
-.c4 .image-button-wrapper:focus {
+.c3 .image-button-wrapper:focus {
   outline: 1px solid Highlight;
   outline: 1px solid -webkit-focus-ring-color;
   outline-offset: 2px;
 }
 
-.c4 .image-button-wrapper img {
+.c3 .image-button-wrapper img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-.c5 {
+.c4 {
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -78,26 +78,26 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   width: 1px;
 }
 
-.c3 {
+.c2 {
   width: 100%;
 }
 
-.c2.openstax-question img {
+.c1.openstax-question img {
   display: block;
   margin: auto;
   max-width: 100%;
 }
 
-.c2.openstax-question .question-stem {
+.c1.openstax-question .question-stem {
   margin-bottom: 0;
 }
 
-.c2.openstax-question .answers-table {
+.c1.openstax-question .answers-table {
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
 }
 
-.c2.openstax-question .instructions {
+.c1.openstax-question .instructions {
   font-size: 1.4rem;
   font-style: italic;
   margin-top: 10px;
@@ -105,38 +105,38 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   margin: 0;
 }
 
-.c2.openstax-question .instructions i {
+.c1.openstax-question .instructions i {
   margin-left: 5px;
 }
 
-.c2.openstax-question .instructions .text-info {
+.c1.openstax-question .instructions .text-info {
   color: #0dc0dc;
   padding-left: 5px;
   cursor: pointer;
   font-style: normal;
 }
 
-.c2.openstax-question .multiple-choice-prompt {
+.c1.openstax-question .multiple-choice-prompt {
   font-weight: 600;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answers-answer {
+.c1.openstax-question:not(.openstax-question-preview) .answers-answer {
   width: initial;
   color: #424242;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
+.c1.openstax-question:not(.openstax-question-preview) .answers-answer.answer-selected {
   font-weight: bold;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
+.c1.openstax-question:not(.openstax-question-preview) .answers-answer .answer-label {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview) .answers-answer .answer-letter-wrapper::before {
   width: 3.6rem;
   height: 3.6rem;
   min-width: 3.6rem;
@@ -154,7 +154,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   font-weight: normal;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-answer {
+.c1.openstax-question:not(.openstax-question-preview) .answer-answer {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -172,11 +172,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   margin-left: 1rem;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-answer * {
+.c1.openstax-question:not(.openstax-question-preview) .answer-answer * {
   margin: 0;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview) .answer-letter-wrapper::before {
   content: attr(data-answer-choice);
   text-align: center;
   padding: 0;
@@ -195,7 +195,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   align-items: center;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-label {
+.c1.openstax-question:not(.openstax-question-preview) .answer-label {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -207,20 +207,20 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   transition: color 0.1s ease-in-out;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
+.c1.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label {
   cursor: pointer;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
+.c1.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover {
   font-weight: bold;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview) .answer-input-box:not([disabled]) ~ .answer-label:hover .answer-letter-wrapper::before {
   color: #026AA1;
   border-color: #026AA1;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .answer-input-box {
+.c1.openstax-question:not(.openstax-question-preview) .answer-input-box {
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -232,57 +232,57 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   width: 1px;
 }
 
-.c2.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
-.c2.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label .answer-letter-wrapper::before,
+.c1.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:checked + .answer-label:hover .answer-letter-wrapper::before {
   color: #fff;
   border-color: #026AA1;
   background-color: #026AA1;
 }
 
-.c2.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-input-box:focus-visible + .answer-label .answer-letter-wrapper::before {
   outline-style: solid;
   outline-width: 2px;
   outline-offset: 2px;
   outline-color: #026AA1;
 }
 
-.c2.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
-.c2.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label .answer-letter-wrapper::before,
+.c1.openstax-question:not(.openstax-question-preview):not(.has-correct-answer) .answer-selected .answer-label:hover .answer-letter-wrapper::before {
   color: #fff;
   border-color: #026AA1;
   background-color: #026AA1;
 }
 
-.c2.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected:not(.answer-correct) .answer-label .answer-letter-wrapper::before {
   color: #fff;
   border-color: #C22032;
   background-color: #C22032;
 }
 
-.c2.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-selected.answer-correct .answer-label .answer-letter-wrapper::before {
   color: #fff;
   border-color: #0D7741;
   background-color: #0D7741;
 }
 
-.c2.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview).has-correct-answer .answer-correct:not(.answer-selected) .answer-label .answer-letter-wrapper::before {
   color: #0D7741;
   border-color: #0D7741;
 }
 
-.c2.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
-.c2.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label .answer-letter-wrapper::before,
+.c1.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect .answer-label:hover .answer-letter-wrapper::before {
   color: #C22032;
   border-color: #C22032;
 }
 
-.c2.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
+.c1.openstax-question:not(.openstax-question-preview).has-incorrect-answer .answer-incorrect.answer-selected.answer-incorrect .answer-letter-wrapper::before {
   color: #fff;
   border-color: #C22032;
   background-color: #C22032;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback {
   font-family: "Neue Helvetica W01",Helvetica,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
@@ -314,7 +314,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   max-width: 370px;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .arrow {
   position: absolute;
   display: block;
   width: 16px;
@@ -323,8 +323,8 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   top: calc(8px * -1);
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before,
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
   position: absolute;
   display: block;
   content: "";
@@ -333,43 +333,43 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   border-width: 0 calc(16px / 2) 8px calc(16px / 2);
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::before {
   top: 0;
   border-bottom-color: rgba(0,0,0,0.2);
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .arrow::after {
   top: 1px;
   border-bottom-color: #ffffff;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback.right {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback.right {
   right: calc(-9px - 1px);
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback.right .arrow {
   right: 9px;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback > .content {
   padding: 1rem 0.8rem;
 }
 
-.c2.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
+.c1.openstax-question:not(.openstax-question-preview) .question-feedback .question-feedback-content {
   padding: 0.9rem 1.1rem;
 }
 
-.c2.openstax-question .openstax-answer {
+.c1.openstax-question .openstax-answer {
   border-top: 1px solid #d5d5d5;
   margin: 10px 0;
   padding: 6px 8px;
 }
 
-.c2.openstax-question .answers-table > :last-child {
+.c1.openstax-question .answers-table > :last-child {
   margin-bottom: 0;
 }
 
-.c2.openstax-question .answers-table + * {
+.c1.openstax-question .answers-table + * {
   margin-top: 20px;
 }
 
@@ -380,7 +380,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   border-top: 1px solid #d5d5d5;
 }
 
-.c6 {
+.c5 {
   padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -400,19 +400,19 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   overflow: auto;
 }
 
-.c6 > * {
+.c5 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c6 button {
+.c5 button {
   width: 160px;
   height: 48px;
 }
 
-.c6 .step-card-footer-inner {
+.c5 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -425,12 +425,12 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   gap: 1.6rem;
 }
 
-.c6 .points .attempts-left {
+.c5 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c6 .controls {
+.c5 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -446,8 +446,8 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   margin-left: auto;
 }
 
-.c6 .controls button:has(~ button),
-.c6 .controls button + button {
+.c5 .controls button:has(~ button),
+.c5 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -455,12 +455,8 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   width: 100px;
 }
 
-.c1 {
-  padding-bottom: 2rem;
-}
-
 @media (max-width:600px) {
-  .c6 .step-card-footer-inner {
+  .c5 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -468,14 +464,14 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
 }
 
 @media (min-width:1000px) {
-  .c6 {
+  .c5 {
     padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c6 .points {
+  .c5 .points {
     max-width: 400px;
   }
 }
@@ -484,19 +480,19 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   data-test-id="student-exercise-question"
 >
   <div
-    className="c0 c1 step-card-question step-card-body"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="c2 openstax-question"
+      className="c1 openstax-question"
       data-question-number={1}
       data-test-id="question"
     >
       <div
-        className="c3"
+        className="c2"
       >
         <div>
           <div
-            className="c4 question-stem"
+            className="c3 question-stem"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "Is this a question?",
@@ -535,7 +531,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                     data-test-id="answer-choice-A"
                   />
                   <span
-                    className="c5 answer-choice-label"
+                    className="c4 answer-choice-label"
                   >
                     Choice A:
                   </span>
@@ -549,7 +545,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                       role="status"
                     />
                     <span
-                      className="c4 answer-content"
+                      className="c3 answer-content"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "True",
@@ -586,7 +582,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                     data-test-id="answer-choice-B"
                   />
                   <span
-                    className="c5 answer-choice-label"
+                    className="c4 answer-choice-label"
                   >
                     Choice B:
                   </span>
@@ -600,7 +596,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                       role="status"
                     />
                     <span
-                      className="c4 answer-content"
+                      className="c3 answer-content"
                       dangerouslySetInnerHTML={
                         Object {
                           "__html": "False",
@@ -617,7 +613,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="c6 step-card-footer"
+    className="c5 step-card-footer"
   >
     <div
       className="step-card-footer-inner"
@@ -626,7 +622,7 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
         className="controls"
       >
         <button
-          className="c7"
+          className="c6"
           data-test-id="continue-btn"
           onClick={[Function]}
         >

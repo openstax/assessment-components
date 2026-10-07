@@ -78,7 +78,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -617,7 +617,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   .c1 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -625,7 +624,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   .c1 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
@@ -983,7 +981,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -1522,7 +1520,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   .c1 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -1530,7 +1527,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   .c1 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
@@ -1888,7 +1884,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -2427,7 +2423,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   .c1 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -2435,7 +2430,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   .c1 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
@@ -2793,7 +2787,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 .c1 {
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  --step-card-gutter-bottom: 0px;
+  --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
@@ -3430,7 +3424,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   .c1 {
     --step-card-gutter: 24px;
     --step-card-gutter-top: 24px;
-    --step-card-gutter-bottom: 24px;
   }
 }
 
@@ -3438,7 +3431,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   .c1 {
     --step-card-gutter: 8px;
     --step-card-gutter-top: calc(8px * 2);
-    --step-card-gutter-bottom: calc(8px * 2);
   }
 }
 
