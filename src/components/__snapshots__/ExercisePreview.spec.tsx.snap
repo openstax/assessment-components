@@ -24,9 +24,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 .c8 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 .exercise-context .os-title {
@@ -57,7 +56,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 .c7 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -80,6 +78,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -97,7 +96,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
 }
 
@@ -109,6 +108,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   --step-card-surface: #ffffff;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -207,7 +212,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 }
 
 .c3.c3 {
-  background-color: #ffffff;
+  background-color: transparent;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
@@ -596,21 +601,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 
 .c2 .answer-answer {
   font-weight: normal;
-}
-
-.c2.is-selected {
-  background-color: #daf3f8;
-  border-width: 0.2rem;
-}
-
-.c2.is-selected .step-card-footer,
-.c2.is-selected .step-card-body,
-.c2.is-selected .step-card-header {
-  background-color: #daf3f8 !important;
-}
-
-.c2.is-selected .step-card-question {
-  border-top-width: 0.2rem;
 }
 
 @media (max-width:999px) {
@@ -927,9 +917,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c8 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 .exercise-context .os-title {
@@ -960,7 +949,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c7 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -983,6 +971,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -1000,7 +989,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
 }
 
@@ -1012,6 +1001,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #ffffff;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -1110,7 +1105,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 .c3.c3 {
-  background-color: #ffffff;
+  background-color: transparent;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
@@ -1501,21 +1496,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   font-weight: normal;
 }
 
-.c2.is-selected {
-  background-color: #daf3f8;
-  border-width: 0.2rem;
-}
-
-.c2.is-selected .step-card-footer,
-.c2.is-selected .step-card-body,
-.c2.is-selected .step-card-header {
-  background-color: #daf3f8 !important;
-}
-
-.c2.is-selected .step-card-question {
-  border-top-width: 0.2rem;
-}
-
 @media (max-width:999px) {
   .c1 {
     --step-card-gutter: 24px;
@@ -1626,7 +1606,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
     data-task-step-id="0"
   >
     <div
-      className="c1 exercise-step c2 preview-card "
+      className="c1 exercise-step c2 preview-card"
     >
       <div
         onBlur={[Function]}
@@ -1830,9 +1810,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c8 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 .exercise-context .os-title {
@@ -1863,7 +1842,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c7 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -1886,6 +1864,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -1903,7 +1882,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
 }
 
@@ -1915,6 +1894,12 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #ffffff;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -2013,7 +1998,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 .c3.c3 {
-  background-color: #ffffff;
+  background-color: transparent;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
@@ -2402,21 +2387,6 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 
 .c2 .answer-answer {
   font-weight: normal;
-}
-
-.c2.is-selected {
-  background-color: #daf3f8;
-  border-width: 0.2rem;
-}
-
-.c2.is-selected .step-card-footer,
-.c2.is-selected .step-card-body,
-.c2.is-selected .step-card-header {
-  background-color: #daf3f8 !important;
-}
-
-.c2.is-selected .step-card-question {
-  border-top-width: 0.2rem;
 }
 
 @media (max-width:999px) {
@@ -2733,9 +2703,8 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c8 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 .exercise-context .os-title {
@@ -2766,7 +2735,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c7 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -2789,6 +2757,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -2806,7 +2775,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
 }
 
@@ -2818,6 +2787,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   --step-card-surface: #ffffff;
   font-size: 1.6rem;
   line-height: 2rem;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -2916,7 +2891,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c3.c3 {
-  background-color: #ffffff;
+  background-color: transparent;
   padding: var(--spacing,0.8rem);
   font-size: 1.6rem;
   line-height: 2rem;
@@ -3326,7 +3301,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -3403,21 +3377,6 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c2 .answer-answer {
   font-weight: normal;
-}
-
-.c2.is-selected {
-  background-color: #daf3f8;
-  border-width: 0.2rem;
-}
-
-.c2.is-selected .step-card-footer,
-.c2.is-selected .step-card-body,
-.c2.is-selected .step-card-header {
-  background-color: #daf3f8 !important;
-}
-
-.c2.is-selected .step-card-question {
-  border-top-width: 0.2rem;
 }
 
 @media (max-width:999px) {
@@ -3551,7 +3510,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
     data-task-step-id="0"
   >
     <div
-      className="c1 exercise-step c2 preview-card "
+      className="c1 exercise-step c2 preview-card"
     >
       <div>
         <div

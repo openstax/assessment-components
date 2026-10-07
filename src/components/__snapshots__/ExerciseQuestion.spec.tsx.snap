@@ -375,9 +375,8 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 {
@@ -396,7 +395,6 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 

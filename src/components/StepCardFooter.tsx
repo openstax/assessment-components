@@ -12,7 +12,6 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
     justify-content: space-between;
     font-size: calc(1.6rem * var(--content-text-scale, 1));
     line-height: calc(2rem * var(--content-text-scale, 1));
-    background: ${colors.card.body.background};
     overflow: auto;
 
     > * {
