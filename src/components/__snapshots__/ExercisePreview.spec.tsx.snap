@@ -3317,7 +3317,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c12 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;

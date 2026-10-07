@@ -58,7 +58,7 @@ const CancelButton = (props: {
  */
 const QuestionBodySection = styled(StepCardBody)<CompactDisplayProps>`
   ${props => !props.compactDisplay && css`
-    padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+    padding-bottom: 2rem;
   `}
 `;
 

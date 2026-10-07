@@ -61,7 +61,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -172,7 +172,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -416,7 +416,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -548,7 +548,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -708,7 +708,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -824,7 +824,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -1108,7 +1108,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -1313,7 +1313,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -1445,7 +1445,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1664,7 +1664,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -1803,7 +1803,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2049,7 +2049,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -2181,7 +2181,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2400,7 +2400,7 @@ Array [
 }
 
 .c1 {
-  padding-bottom: calc(var(--step-card-gutter-bottom) + 2rem);
+  padding-bottom: 2rem;
 }
 
 <div
@@ -2539,7 +2539,7 @@ Array [
 }
 
 .c0 {
-  padding: var(--step-card-gutter-top) var(--step-card-gutter);
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;

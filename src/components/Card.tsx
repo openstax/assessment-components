@@ -11,7 +11,7 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
      card's padding. */
   --step-card-gutter: 14rem;
   --step-card-gutter-top: 4.8rem;
-  /* with a unit, so the variable still works inside calc() */
+  /* with a unit, so a host can use it inside calc() */
   --step-card-gutter-bottom: 0px;
   --step-card-surface: ${colors.card.body.background};
 

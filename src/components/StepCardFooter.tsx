@@ -3,8 +3,9 @@ import styled, { css } from "styled-components";
 import { CompactDisplayProps } from "./compactDisplay";
 
 export const StepCardFooter = styled.div<CompactDisplayProps>`
-    /* the gutter comes from the card, see InnerStepCard */
-    padding: var(--step-card-gutter-top) var(--step-card-gutter);
+    /* the gutter comes from the card, see InnerStepCard. No top padding: the space above the
+       buttons is the inner row's, the same at every width. */
+    padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
