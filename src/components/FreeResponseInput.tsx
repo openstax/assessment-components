@@ -102,8 +102,6 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   // a preview renders no controls and no attempts notice, so its footer is left out
   return (
     <QuestionWrapper
-      question_id={question.id}
-      questionIndex={questionNumber - 1}
       is_completed={is_completed}
       canAnswer={canAnswer}
       canSubmit={status.canSubmit}

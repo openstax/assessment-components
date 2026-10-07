@@ -95,8 +95,6 @@ export const ExerciseQuestion = React.forwardRef((
   return (
     <div data-test-id="student-exercise-question">
       <QuestionWrapper
-        question_id={question.id}
-        questionIndex={questionNumber - 1}
         is_completed={is_completed}
         canAnswer={canAnswer}
         canSubmit={!!answer_id}

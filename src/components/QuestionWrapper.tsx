@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
 import { CompactDisplayProps } from './compactDisplay';
@@ -75,9 +74,6 @@ const UnlimitedAttempts = () => {
 }
 
 export interface QuestionWrapperProps extends CompactDisplayProps {
-  question_id: ID;
-  questionIndex: number;
-
   // lifecycle, from the item
   is_completed: boolean;
   canAnswer: boolean;

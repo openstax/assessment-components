@@ -2,8 +2,6 @@ import renderer from 'react-test-renderer';
 import { QuestionWrapper, QuestionWrapperProps } from './QuestionWrapper';
 
 const props: QuestionWrapperProps = {
-  question_id: '1',
-  questionIndex: 0,
   is_completed: false,
   canAnswer: true,
   apiIsPending: false,

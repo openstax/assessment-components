@@ -235,8 +235,6 @@ export const Exercise = ({
           const attemptsShown = !previewMode || !!footerFeedback;
           const wrapped = (
             <QuestionWrapper
-              question_id={q.id}
-              questionIndex={questionNumber + i - 1}
               is_completed={state.is_completed}
               canAnswer={state.canAnswer}
               canSubmit={status.canSubmit}

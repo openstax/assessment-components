@@ -92,8 +92,6 @@ const ComposedExercise = ({ question, compactDisplay, hostNavigates }: {
         compactDisplay={compactDisplay}
       >
         <QuestionWrapper
-          question_id={question.id}
-          questionIndex={0}
           is_completed={host.state.is_completed}
           canAnswer={host.state.canAnswer}
           canSubmit={host.status.canSubmit}
@@ -177,8 +175,6 @@ const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }
     compactDisplay={compactDisplay}
   >
     <QuestionWrapper
-      question_id="foreign"
-      questionIndex={0}
       is_completed={false}
       canAnswer={true}
       apiIsPending={false}
