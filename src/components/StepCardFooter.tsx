@@ -1,15 +1,17 @@
-import { colors, breakpoints, mixins } from "../theme";
+import { colors, breakpoints } from "../theme";
 import styled, { css } from "styled-components";
 import { CompactDisplayProps } from "./compactDisplay";
 
 export const StepCardFooter = styled.div<CompactDisplayProps>`
-    ${mixins.stepCardPadding()}
+    /* the gutter comes from the card, see InnerStepCard. No top padding: the space above the
+       buttons is the inner row's, the same at every width. */
+    padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
     border-top: 1px solid ${colors.palette.pale};
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: calc(1.6rem * var(--content-text-scale));
-    line-height: calc(2rem * var(--content-text-scale));
+    font-size: calc(1.6rem * var(--content-text-scale, 1));
+    line-height: calc(2rem * var(--content-text-scale, 1));
     background: ${colors.card.body.background};
     overflow: auto;
 
@@ -58,7 +60,7 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
     }
 
     ${breakpoints.desktop`
-        padding: 0 140px 32px 140px;
+        padding: 0 var(--step-card-gutter) 32px;
         flex-wrap: nowrap;
 
         .points {
@@ -68,7 +70,7 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
 
     ${props => props.compactDisplay && css`
         && {
-            padding: 0 var(--spacing, 0.8rem) var(--spacing, 0.8rem);
+            padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
         }
 
         .step-card-footer-inner {

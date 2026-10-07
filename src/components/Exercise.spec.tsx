@@ -199,6 +199,14 @@ describe('Exercise', () => {
       expect(tree.root.findAllByType('button')).toHaveLength(0);
     });
 
+    it('shows no footer in a preview with nothing but attempts to put in it', () => {
+      const tree = renderer.create(
+        <Exercise {...props} previewMode hasMultipleAttempts hasUnlimitedAttempts />
+      );
+      expect(tree.root.findAllByProps({ className: 'step-card-question' })).not.toHaveLength(0);
+      expect(tree.root.findAllByProps({ className: 'step-card-footer' })).toHaveLength(0);
+    });
+
     it('shows a continue button when completed if there is another question', () => {
       props.exercise.questions.push({
         id: 2,

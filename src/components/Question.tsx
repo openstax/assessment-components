@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { mixins, colors, layouts, transitions } from '../theme';
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { AnswersTable } from './AnswersTable';
 import classnames from 'classnames';
 import { Answer as AnswerType, ID, ExerciseQuestionData } from '../types';
@@ -12,29 +12,7 @@ const StyledBodyContainer = styled.div`
 `;
 
 const StyledQuestion = styled.div<CompactDisplayProps>`
-&.step-card-body {
-  ${mixins.stepCardPadding()};
-}
-
 &.openstax-question {
-  border-top: 1px solid ${colors.palette.pale};
-  font-size: calc(1.8rem * var(--content-text-scale));
-
-  .detailed-solution {
-    margin-bottom: 1rem;
-    .header {
-      display: inline;
-      margin-right: 0.5rem;
-      color: #5e6062;
-      font-weight: bold;
-      flex-basis: 0;
-    }
-    .solution {
-      display: inline;
-      color: #6f6f6f;
-    }
-  }
-
   img {
     display: block;
     margin: auto;
@@ -46,9 +24,8 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
   }
 
   .answers-table {
-    margin-bottom: 20px;
-    font-size: calc(1.6rem * var(--content-text-scale));
-    line-height: calc(2rem * var(--content-text-scale));
+    font-size: calc(1.6rem * var(--content-text-scale, 1));
+    line-height: calc(2rem * var(--content-text-scale, 1));
   }
 
   .instructions {
@@ -200,19 +177,21 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
     margin: 10px 0;
     padding: 6px 8px;
   }
+
+  /* the last answer, or the feedback under it, ends flush: the frame adds the space below */
+  .answers-table > :last-child {
+    margin-bottom: 0;
+  }
+
+  .answers-table + * {
+    margin-top: 20px;
+  }
 }
 
 ${props => props.compactDisplay && css`
-  &&&.step-card-body {
-    background-color: ${colors.palette.white};
-    padding: var(--spacing, 0.8rem);
-    font-size: 1.6rem;
-    line-height: 2rem;
-  }
-
   &&&.openstax-question {
-    .answers-table {
-      margin: 0;
+    .answers-table + * {
+      margin-top: var(--spacing, 0.8rem);
     }
 
     .question-stem {
@@ -273,7 +252,7 @@ export interface QuestionProps {
   hidePreambles?: boolean,
   exercise_uid?: string;
   displayFormats: boolean,
-  className: string;
+  className?: string;
   questionNumber: number;
   /**
    * @deprecated The detailed solution is composed in rather than rendered from the question.
@@ -306,8 +285,6 @@ export const Question = React.forwardRef((
     context, hidePreambles
   } = props;
 
-  const compact = useCompactDisplay(props.compactDisplay);
-
   const { stem_html, formats, stimulus_html } = question;
 
   const hasCorrectAnswer = !!correct_answer_id;
@@ -327,13 +304,12 @@ export const Question = React.forwardRef((
   }
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
     <StyledQuestion
       ref={ref}
       className={classes}
       data-question-number={questionNumber}
       data-test-id="question"
-      compactDisplay={compact}
+      compactDisplay={props.compactDisplay}
     >
       <StyledBodyContainer>
         <div>
@@ -354,7 +330,6 @@ export const Question = React.forwardRef((
         </div>
       </StyledBodyContainer>
     </StyledQuestion>
-    </CompactDisplayProvider>
   );
 });
 

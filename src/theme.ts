@@ -195,17 +195,6 @@ export const mixins = {
     white-space: normal;
     line-break: auto;
   `,
-  stepCardPadding: () => css`
-    padding: 4.8rem 14rem 0;
-
-    ${breakpoints.tablet`
-      padding: ${breakpoints.margins.tablet} ${breakpoints.margins.tablet};
-    `}
-
-    ${breakpoints.mobile`
-      padding: calc(${breakpoints.margins.mobile} * 2) ${breakpoints.margins.mobile};
-    `}
-  `,
   popover: () => css`
     ${mixins.resetText()}
 
@@ -218,7 +207,7 @@ export const mixins = {
     margin: calc(${layouts.popover.arrow.height} - 14px) 0 ${layouts.answer.horizontalSpacing} 8px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     color: ${colors.palette.neutralThin};
-    font-size: calc(1.4rem * var(--content-text-scale));
+    font-size: calc(1.4rem * var(--content-text-scale, 1));
 
     .arrow {
       position: absolute;

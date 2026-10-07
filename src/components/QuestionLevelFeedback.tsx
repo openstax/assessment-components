@@ -3,13 +3,13 @@ import { colors } from '../theme';
 import { Content } from './Content';
 
 export const ReviewScoreText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   font-weight: bold;
   color: ${colors.palette.neutralDarker};
 `;
 
 export const FeedbackText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDarker};
   white-space: pre-wrap;
 
@@ -26,8 +26,6 @@ export const FeedbackText = styled.div`
  */
 const StyledQuestionLevelFeedback = styled.div`
   .detailed-solution {
-    margin-bottom: 1rem;
-
     .header {
       display: inline;
       margin-right: 0.5rem;

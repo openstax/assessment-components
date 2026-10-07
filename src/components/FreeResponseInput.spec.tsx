@@ -103,6 +103,14 @@ describe('Free Response Input', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('frames a preview in a body section, with no footer', () => {
+    const tree = renderer.create(
+      <FreeResponseInput {...baseProps} previewMode={true} hasUnlimitedAttempts={true} />
+    );
+    expect(tree.root.findAllByProps({ className: 'step-card-question' })).not.toHaveLength(0);
+    expect(tree.root.findAllByProps({ className: 'step-card-footer' })).toHaveLength(0);
+  });
+
   it('matches snapshot - preview mode with answer', () => {
     const tree = renderer.create(
       <FreeResponseInput

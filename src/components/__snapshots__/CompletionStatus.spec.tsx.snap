@@ -2,6 +2,13 @@
 
 exports[`CompletionStatus matches snapshot 1`] = `
 .c0 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -66,8 +73,8 @@ exports[`CompletionStatus matches snapshot 1`] = `
 
 .c1 {
   padding: 88px 72px;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(3rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(3rem * var(--content-text-scale,1));
   display: block;
 }
 
@@ -80,7 +87,7 @@ exports[`CompletionStatus matches snapshot 1`] = `
 }
 
 .c2 {
-  font-size: calc(2.4rem * var(--content-text-scale));
+  font-size: calc(2.4rem * var(--content-text-scale,1));
   margin: 0;
 }
 
@@ -95,6 +102,20 @@ exports[`CompletionStatus matches snapshot 1`] = `
 
 .c3 button {
   height: 48px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -130,6 +151,13 @@ exports[`CompletionStatus matches snapshot 1`] = `
 
 exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 .c0 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -194,8 +222,8 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 
 .c1 {
   padding: 88px 72px;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(3rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(3rem * var(--content-text-scale,1));
   display: block;
 }
 
@@ -208,7 +236,7 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 }
 
 .c2 {
-  font-size: calc(2.4rem * var(--content-text-scale));
+  font-size: calc(2.4rem * var(--content-text-scale,1));
   margin: 0;
 }
 
@@ -223,6 +251,20 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 
 .c3 button {
   height: 48px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -258,6 +300,13 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 
 exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 .c0 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -322,8 +371,8 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 
 .c1 {
   padding: 88px 72px;
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(3rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(3rem * var(--content-text-scale,1));
   display: block;
 }
 
@@ -336,7 +385,7 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 }
 
 .c2 {
-  font-size: calc(2.4rem * var(--content-text-scale));
+  font-size: calc(2.4rem * var(--content-text-scale,1));
   margin: 0;
 }
 
@@ -351,6 +400,20 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 
 .c3 button {
   height: 48px;
+}
+
+@media (max-width:999px) {
+  .c0 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c0 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {

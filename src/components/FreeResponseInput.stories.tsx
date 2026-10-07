@@ -1,5 +1,16 @@
 import { useState } from 'react';
+import type { ComponentType } from 'react';
+import { ExerciseWrapper } from './ExerciseWrapper';
 import { FreeResponseInput } from './FreeResponseInput';
+
+/** rendered inside the card it is designed for, which supplies its gutter and type */
+export default {
+  decorators: [(Component: ComponentType) => (
+    <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="1@1">
+      <Component />
+    </ExerciseWrapper>
+  )],
+};
 
 const mockQuestion = {
   id: '1',

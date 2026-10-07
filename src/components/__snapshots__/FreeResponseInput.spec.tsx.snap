@@ -23,30 +23,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #6f6f6f;
   margin: 2.5rem 0 1rem 0;
@@ -60,29 +44,28 @@ Array [
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
+.c4:last-child {
+  margin-bottom: 0;
 }
 
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -153,13 +136,13 @@ Array [
 }
 
 .c2 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
@@ -167,10 +150,6 @@ Array [
 .c3 .feedback-label {
   color: #424242;
   font-weight: bold;
-}
-
-.c1 .detailed-solution {
-  margin-bottom: 1rem;
 }
 
 .c1 .detailed-solution .header {
@@ -189,7 +168,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -202,8 +181,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -263,18 +242,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -285,7 +252,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -367,30 +334,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c5 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -403,13 +354,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c5:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c5 .word-limit-error-info,
 .c5 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -424,7 +379,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -446,27 +401,22 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -590,7 +540,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -603,8 +553,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -664,18 +614,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -686,7 +624,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -742,52 +680,31 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c3 {
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #6f6f6f;
   margin: 0;
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-  className="c0"
-  data-test-id="student-free-response"
+  className="c0 step-card-question step-card-body"
 >
   <div
-    className="step-card-body"
+    className=""
+    data-test-id="student-free-response"
   >
     <div
       className="c1"
@@ -832,24 +749,8 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
@@ -862,19 +763,23 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
 
+.c3:last-child {
+  margin-bottom: 0;
+}
+
 .c5 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c6 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
@@ -882,10 +787,6 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 .c6 .feedback-label {
   color: #424242;
   font-weight: bold;
-}
-
-.c4 .detailed-solution {
-  margin-bottom: 1rem;
 }
 
 .c4 .detailed-solution .header {
@@ -903,24 +804,19 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   color: #6f6f6f;
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-  className="c0"
-  data-test-id="student-free-response"
+  className="c0 step-card-question step-card-body"
 >
   <div
-    className="step-card-body"
+    className=""
+    data-test-id="student-free-response"
   >
     <div
       className="c1"
@@ -1036,7 +932,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 }
 
 .c9 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -1051,13 +947,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c10 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -1101,7 +997,7 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -1146,24 +1042,8 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
@@ -1176,9 +1056,13 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
+}
+
+.c5:last-child {
+  margin-bottom: 0;
 }
 
 .c3 {
@@ -1200,24 +1084,19 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
   flex: 1;
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-  className="c0"
-  data-test-id="student-free-response"
+  className="c0 step-card-question step-card-body"
 >
   <div
-    className="step-card-body"
+    className=""
+    data-test-id="student-free-response"
   >
     <div
       className="c1"
@@ -1336,30 +1215,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c5 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1372,13 +1235,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c5:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c5 .word-limit-error-info,
 .c5 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -1393,7 +1260,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -1415,27 +1282,22 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -1559,7 +1421,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1572,8 +1434,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -1633,18 +1495,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -1655,7 +1505,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -1712,30 +1562,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c5 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1748,13 +1582,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c5:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c5 .word-limit-error-info,
 .c5 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -1769,7 +1607,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -1791,27 +1629,22 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -1942,7 +1775,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1955,8 +1788,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -2028,18 +1861,6 @@ Array [
   background-color: #5f6163;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -2050,7 +1871,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -2122,30 +1943,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c5 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2158,13 +1963,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c5:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c5 .word-limit-error-info,
 .c5 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -2179,7 +1988,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -2201,27 +2010,22 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -2345,7 +2149,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2358,8 +2162,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -2419,18 +2223,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -2441,7 +2233,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
@@ -2498,30 +2290,14 @@ Array [
   height: auto;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-top: 1px solid #d5d5d5;
-}
-
-.c0 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  padding-bottom: 1rem;
-}
-
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale));
+  font-size: calc(2rem * var(--content-text-scale,1));
   line-height: 1.68em;
   position: relative;
 }
 
 .c5 {
-  margin: 8px 0;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2534,13 +2310,17 @@ Array [
   color: #6f6f6f;
 }
 
+.c5:not(:last-child) {
+  margin-bottom: 8px;
+}
+
 .c5 .word-limit-error-info,
 .c5 .words-remaining-negative {
   color: #c2002f;
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   line-height: 16px;
 }
 
@@ -2555,7 +2335,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale));
+  font-size: calc(1.8rem * var(--content-text-scale,1));
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -2577,27 +2357,22 @@ Array [
   gap: 0.5rem;
   background-color: #FFF5E0;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
-@media (max-width:999px) {
-  .c0 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
+.c0 {
+  padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
+  background: var(--step-card-surface);
+  overflow: auto;
+  border-top: 1px solid #d5d5d5;
 }
 
 <div
-    className="c0"
-    data-test-id="student-free-response"
+    className="c0 step-card-question step-card-body"
   >
     <div
-      className="step-card-body"
+      className=""
+      data-test-id="student-free-response"
     >
       <div
         className="c1"
@@ -2728,7 +2503,7 @@ Array [
 }
 
 .c0 {
-  padding: 4.8rem 14rem 0;
+  padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2741,8 +2516,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale));
-  line-height: calc(2rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
+  line-height: calc(2rem * var(--content-text-scale,1));
   background: #fdfdfd;
   overflow: auto;
 }
@@ -2802,18 +2577,6 @@ Array [
   width: 100px;
 }
 
-@media (max-width:999px) {
-  .c0 {
-    padding: 24px 24px;
-  }
-}
-
-@media (max-width:600px) {
-  .c0 {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
 @media (max-width:600px) {
   .c0 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
@@ -2824,7 +2587,7 @@ Array [
 
 @media (min-width:1000px) {
   .c0 {
-    padding: 0 140px 32px 140px;
+    padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;

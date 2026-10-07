@@ -71,7 +71,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -86,13 +86,13 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c4 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -136,7 +136,7 @@ exports[`FreeResponseGrading matches snapshot 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -298,7 +298,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -313,13 +313,13 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c4 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -363,7 +363,7 @@ exports[`FreeResponseGrading matches snapshot when disabled 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -525,7 +525,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -540,13 +540,13 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c4 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -590,7 +590,7 @@ exports[`FreeResponseGrading matches snapshot with high max score 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -752,7 +752,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -767,13 +767,13 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c4 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -817,7 +817,7 @@ exports[`FreeResponseGrading matches snapshot with initial score 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -979,7 +979,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
 }
 
 .c3 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -994,13 +994,13 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c4 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -1044,7 +1044,7 @@ exports[`FreeResponseGrading matches snapshot with score and comment 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;

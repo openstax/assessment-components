@@ -15,7 +15,7 @@ const StyledChoiceLabel = styled.span`
 const StyledAnswerIndicator = styled.div<{ state: boolean }>`
   color: ${props => props.state ? colors.answer.correct : colors.answer.incorrect};
   text-transform: uppercase;
-  font-size: calc(1.1rem * var(--content-text-scale));
+  font-size: calc(1.1rem * var(--content-text-scale, 1));
   font-weight: bold;
 `;
 

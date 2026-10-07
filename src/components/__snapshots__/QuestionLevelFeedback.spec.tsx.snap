@@ -23,13 +23,13 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
 }
 
 .c1 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c2 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
 }
@@ -37,10 +37,6 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
 .c2 .feedback-label {
   color: #424242;
   font-weight: bold;
-}
-
-.c0 .detailed-solution {
-  margin-bottom: 1rem;
 }
 
 .c0 .detailed-solution .header {

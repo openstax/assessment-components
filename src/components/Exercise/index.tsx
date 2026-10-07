@@ -172,7 +172,11 @@ export const Exercise = ({
       overlayChildren={overlayChildren}
       compactDisplay={compactDisplay}
     >
-      <ExerciseBody context={exercise.context} stimulus_html={exercise.stimulus_html}>
+      <ExerciseBody
+        context={exercise.context}
+        stimulus_html={exercise.stimulus_html}
+        compactDisplay={compactDisplay}
+      >
         {exercise.questions.map((q, i) => {
           const state = { ...props.questionStates[q.id] };
           const status = statuses[q.id] || {};
@@ -222,46 +226,47 @@ export const Exercise = ({
               onStatusChange={(next) => onStatusChange(q.id, next)}
               registerCancel={(cancel) => { cancelHandles.current[q.id] = cancel; }}
               feedback={bodyFeedback}
+              compactDisplay={compactDisplay}
             />
           );
 
-          // preview renders no controls, so the footer only survives when it carries feedback
-          const wrapped = previewMode && !footerFeedback
-            ? body
-            : (
-              <QuestionWrapper
-                question_id={q.id}
-                questionIndex={questionNumber + i - 1}
-                is_completed={state.is_completed}
-                canAnswer={state.canAnswer}
-                canSubmit={status.canSubmit}
-                dirty={status.dirty}
-                apiIsPending={state.apiIsPending}
-                canUpdateCurrentStep={
-                  // misleading prop name, we want to show a continue button for completed questions
-                  // that aren't the last question, which requires this prop to be true
-                  props.canUpdateCurrentStep !== undefined
-                    ? props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
-                }
-                attempt_number={isFreeResponse ? undefined : state.attempt_number}
-                attemptsRemaining={props.hasMultipleAttempts && !isFreeResponse ? state.attempts_remaining : undefined}
-                hasUnlimitedAttempts={props.hasUnlimitedAttempts}
-                /*
-                 * Free response has always advanced after a submission whatever the assignment's
-                 * feedback setting says, and multiple choice has always read an absent
-                 * `hasFeedback` as "advance". `QuestionWrapper` knows nothing about formats, so
-                 * this entry point — the one with the standing contract — holds both.
-                 */
-                hasFeedback={isFreeResponse ? false : (props.hasFeedback ?? false)}
-                showControls={!previewMode}
-                onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
-                onNextStep={() => props.onNextStep(questionNumber + i - 1)}
-                onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
-                footerChildren={footerFeedback}
-              >
-                {body}
-              </QuestionWrapper>
-            );
+          // preview renders no controls, so its footer only appears when it carries feedback;
+          // attempts are left out too, or they would bring back a footer with nothing else in it
+          const attemptsShown = !previewMode || !!footerFeedback;
+          const wrapped = (
+            <QuestionWrapper
+              is_completed={state.is_completed}
+              canAnswer={state.canAnswer}
+              canSubmit={status.canSubmit}
+              dirty={status.dirty}
+              apiIsPending={state.apiIsPending}
+              canUpdateCurrentStep={
+                // misleading prop name, we want to show a continue button for completed questions
+                // that aren't the last question, which requires this prop to be true
+                props.canUpdateCurrentStep !== undefined
+                  ? props.canUpdateCurrentStep : !(i + 1 === exercise.questions.length)
+              }
+              attempt_number={isFreeResponse ? undefined : state.attempt_number}
+              attemptsRemaining={attemptsShown && props.hasMultipleAttempts && !isFreeResponse
+                ? state.attempts_remaining : undefined}
+              hasUnlimitedAttempts={attemptsShown && props.hasUnlimitedAttempts}
+              /*
+               * Free response has always advanced after a submission whatever the assignment's
+               * feedback setting says, and multiple choice has always read an absent
+               * `hasFeedback` as "advance". `QuestionWrapper` knows nothing about formats, so
+               * this entry point — the one with the standing contract — holds both.
+               */
+              hasFeedback={isFreeResponse ? false : (props.hasFeedback ?? false)}
+              showControls={!previewMode}
+              onAnswerSave={() => props.onAnswerSave(numberfyId(q.id))}
+              onNextStep={() => props.onNextStep(questionNumber + i - 1)}
+              onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
+              footerChildren={footerFeedback}
+              compactDisplay={compactDisplay}
+            >
+              {body}
+            </QuestionWrapper>
+          );
 
           return isFreeResponse
             ? <React.Fragment key={q.id}>{wrapped}</React.Fragment>

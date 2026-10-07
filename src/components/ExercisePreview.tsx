@@ -33,8 +33,8 @@ const StyledExercise = styled(Exercise)<{
       background-color: ${colors.card.header.background} !important;
     }
 
-    .openstax-question {
-      border-width: 0.2rem !important;
+    .step-card-question {
+      border-top-width: 0.2rem;
     }
   }
 `;

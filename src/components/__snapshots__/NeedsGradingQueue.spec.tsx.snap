@@ -14,7 +14,7 @@ exports[`NeedsGradingQueue matches snapshot when empty 1`] = `
 .c1 {
   padding: 4rem 0;
   text-align: center;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #6f6f6f;
 }
 
@@ -100,7 +100,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 }
 
 .c24 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -115,13 +115,13 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c25 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -165,7 +165,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -213,7 +213,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -229,7 +229,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 }
 
 .c17 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -279,7 +279,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -347,14 +347,14 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 }
 
 .c6 {
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
   margin: 0;
 }
 
 .c7 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #ffffff;
   background-color: #757575;
@@ -366,7 +366,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   background: none;
   border: none;
   cursor: pointer;
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale,1));
   color: #007da4;
   padding: 0;
   -webkit-text-decoration: underline;
@@ -383,7 +383,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
 }
 
 .c9 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -414,7 +414,7 @@ exports[`NeedsGradingQueue matches snapshot with questions 1`] = `
   padding: 1rem;
   margin-bottom: 2rem;
   line-height: 1.5;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
 }
 
 <div

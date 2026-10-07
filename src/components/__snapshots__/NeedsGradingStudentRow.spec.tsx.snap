@@ -71,7 +71,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
 }
 
 .c13 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -86,13 +86,13 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c14 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -136,7 +136,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -184,7 +184,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -200,7 +200,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
 }
 
 .c4 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -250,7 +250,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -260,7 +260,7 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
 }
 
 .c9 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
@@ -463,7 +463,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 }
 
 .c14 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -478,13 +478,13 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c15 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -528,7 +528,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -553,7 +553,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 }
 
 .c19 {
-  font-size: calc(1.2rem * var(--content-text-scale));
+  font-size: calc(1.2rem * var(--content-text-scale,1));
   color: #6f6f6f;
 }
 
@@ -581,7 +581,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -597,7 +597,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 }
 
 .c4 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -647,7 +647,7 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }
@@ -657,13 +657,13 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 }
 
 .c9 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: bold;
   color: #424242;
 }
 
 .c10 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
   white-space: pre-wrap;
   margin-top: 0.4rem;
@@ -888,7 +888,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
 }
 
 .c11 {
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-weight: 600;
   color: #424242;
 }
@@ -903,13 +903,13 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
   -ms-flex-align: center;
   align-items: center;
   gap: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
 }
 
 .c12 {
   width: 6rem;
   padding: 0.8rem;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   border: 1px solid #818181;
   border-radius: 4px;
   text-align: center;
@@ -953,7 +953,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
   width: 100%;
   min-height: 12rem;
   padding: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   font-family: inherit;
   border: 1px solid #818181;
   border-radius: 4px;
@@ -1001,7 +1001,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
   cursor: pointer;
   gap: 1rem;
   text-align: left;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale,1));
   color: #424242;
 }
 
@@ -1017,7 +1017,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
 }
 
 .c4 {
-  font-size: calc(1.3rem * var(--content-text-scale));
+  font-size: calc(1.3rem * var(--content-text-scale,1));
   color: #6f6f6f;
   white-space: nowrap;
 }
@@ -1067,7 +1067,7 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
 }

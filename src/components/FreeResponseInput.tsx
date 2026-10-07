@@ -99,22 +99,18 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     />
   );
 
-  if (previewMode) {
-    return body;
-  }
-
+  // a preview renders no controls and no attempts notice, so its footer is left out
   return (
     <QuestionWrapper
-      question_id={question.id}
-      questionIndex={questionNumber - 1}
       is_completed={is_completed}
       canAnswer={canAnswer}
       canSubmit={status.canSubmit}
       dirty={status.dirty}
       apiIsPending={apiIsPending}
       canUpdateCurrentStep={canUpdateCurrentStep}
-      hasUnlimitedAttempts={hasUnlimitedAttempts}
+      hasUnlimitedAttempts={!previewMode && hasUnlimitedAttempts}
       hasFeedback={hasFeedback}
+      showControls={!previewMode}
       onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
       onNextStep={() => onNextStep(questionNumber - 1)}
       onCancel={(event) => {
