@@ -106,7 +106,11 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
   showControls?: boolean;
 
   onAnswerSave: () => void;
-  onNextStep: () => void;
+  /**
+   * Omit for a host that navigates on its own: no Next button is rendered, and once the
+   * question can no longer be answered its place is held by a disabled Submit.
+   */
+  onNextStep?: () => void;
   /** receives the Cancel button's own click event */
   onCancel?: React.MouseEventHandler<HTMLButtonElement>;
 
@@ -148,12 +152,13 @@ export const QuestionWrapper = ({
   const [shouldContinue, setShouldContinue] = React.useState(false);
   // only an explicit `false` opts into the deprecated auto-advance; omitting it leaves
   // navigation to the host, which is what a new consumer gets
-  const willContinue = hasFeedback === false;
+  // with no `onNextStep` there is nowhere to continue to, so the deprecated mode stays off
+  const willContinue = hasFeedback === false && onNextStep !== undefined;
 
   React.useEffect(() => {
     if (shouldContinue && is_completed && !apiIsPending) {
       setShouldContinue(false);
-      onNextStep();
+      onNextStep?.();
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
@@ -196,13 +201,17 @@ export const QuestionWrapper = ({
           >
             Update
           </Button>
-          <NextButton
+          {onNextStep && <NextButton
             disabled={apiIsPending || dirty === true}
             onClick={onNextStep}
             canUpdateCurrentStep={false}
-          />
+          />}
         </>
       );
+    }
+
+    if (!onNextStep) {
+      return <SaveButton disabled isWaiting={false} attempt_number={attempt_number} willContinue={false} />;
     }
 
     return <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;

@@ -141,6 +141,54 @@ describe('QuestionWrapper', () => {
     });
   });
 
+  describe('without onNextStep, for a host that navigates on its own', () => {
+    const withoutNext: QuestionWrapperProps = { ...props, onNextStep: undefined };
+
+    it('holds the place of Next with a disabled Submit once the question cannot be answered', () => {
+      const tree = renderer.create(<QuestionWrapper {...withoutNext} canAnswer={false} />);
+      expect(tree.root.findAllByProps({ 'data-test-id': 'continue-btn' })).toHaveLength(0);
+      const submit = tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' });
+      expect(submit.props.children).toEqual('Submit');
+      expect(submit.props.disabled).toBe(true);
+    });
+
+    it('labels the disabled button Re-submit once an attempt has been made', () => {
+      const tree = renderer.create(
+        <QuestionWrapper {...withoutNext} canAnswer={false} attempt_number={1} />
+      );
+      expect(textOf(tree, 'submit-answer-btn')).toEqual('Re-submit');
+    });
+
+    it('renders only Cancel and Update when a completed question is still answerable', () => {
+      const tree = renderer.create(<QuestionWrapper {...withoutNext} is_completed={true} />);
+      expect(tree.root.findAllByProps({ 'data-test-id': 'update-answer-btn' })).not.toHaveLength(0);
+      expect(tree.root.findAllByProps({ 'data-test-id': 'continue-btn' })).toHaveLength(0);
+      expect(tree.root.findAllByType('button')).toHaveLength(2);
+    });
+
+    it('renders an enabled Submit while the question is answerable', () => {
+      const tree = renderer.create(<QuestionWrapper {...withoutNext} />);
+      const submit = tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' });
+      expect(submit.props.children).toEqual('Submit');
+      expect(submit.props.disabled).toBe(false);
+    });
+
+    it('does not offer to continue when hasFeedback is false, since there is nowhere to go', () => {
+      const onAnswerSave = jest.fn();
+      const tree = renderer.create(
+        <QuestionWrapper {...withoutNext} hasFeedback={false} onAnswerSave={onAnswerSave} />
+      );
+      expect(textOf(tree, 'submit-answer-btn')).toEqual('Submit');
+
+      renderer.act(() => {
+        tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.onClick();
+      });
+      expect(onAnswerSave).toHaveBeenCalled();
+      // not held waiting for an advance that will never come
+      expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.isWaiting).toBe(false);
+    });
+  });
+
   describe('navigation', () => {
     it('advances by itself while hasFeedback is false', () => {
       const onNextStep = jest.fn();

@@ -70,9 +70,11 @@ const useHost = (initial: Partial<QuestionBodyState> = {}) => {
   return { state, needsSaved, status, setStatus, apiIsPending, onAnswerChange, onAnswerSave };
 };
 
-const ComposedExercise = ({ question, compactDisplay }: {
+const ComposedExercise = ({ question, compactDisplay, hostNavigates }: {
   question: ExerciseQuestionData;
   compactDisplay?: boolean;
+  /** the host moves between questions itself, so the footer offers no Next */
+  hostNavigates?: boolean;
 }) => {
   const host = useHost();
 
@@ -99,7 +101,7 @@ const ComposedExercise = ({ question, compactDisplay }: {
           apiIsPending={host.apiIsPending}
           canUpdateCurrentStep={false}
           onAnswerSave={host.onAnswerSave}
-          onNextStep={() => window.alert('the host navigates')}
+          onNextStep={hostNavigates ? undefined : () => window.alert('the host navigates')}
           compactDisplay={compactDisplay}
         >
           <QuestionBody
@@ -128,6 +130,8 @@ const ComposedExercise = ({ question, compactDisplay }: {
 export const MultipleChoice = () => <ComposedExercise question={multipleChoice} />;
 export const FreeResponse = () => <ComposedExercise question={freeResponse} />;
 export const Compact = () => <ComposedExercise question={multipleChoice} compactDisplay />;
+/** Without `onNextStep`: no Next, and a disabled Submit once the question is closed. */
+export const WithoutNext = () => <ComposedExercise question={multipleChoice} hostNavigates />;
 
 /** The body validates and reports, the host owns the button that asks it to. */
 export const HostDrivenSubmit = () => {
