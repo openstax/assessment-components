@@ -1,5 +1,7 @@
+import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { QuestionWrapper, QuestionWrapperProps } from './QuestionWrapper';
+import { colors } from '../theme';
 
 const props: QuestionWrapperProps = {
   is_completed: false,
@@ -184,6 +186,38 @@ describe('QuestionWrapper', () => {
       expect(onAnswerSave).toHaveBeenCalled();
       // not held waiting for an advance that will never come
       expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.isWaiting).toBe(false);
+    });
+  });
+
+  describe('footer button colours', () => {
+    const buttonJson = (label: string) => {
+      const tree = renderer.create(<QuestionWrapper {...props} is_completed={true} dirty={true} />);
+      const search = (node: renderer.ReactTestRendererNode | null): renderer.ReactTestRendererJSON | undefined => {
+        if (!node || typeof node === 'string') return undefined;
+        if (node.type === 'button' && node.children?.includes(label)) return node;
+        return node.children?.map(search).find(Boolean);
+      };
+      const json = tree.toJSON();
+      return (Array.isArray(json) ? json : [json]).map(search).find(Boolean);
+    };
+
+    it('colours Cancel from the secondary set in each state', () => {
+      const cancel = buttonJson('Cancel');
+
+      expect(cancel).toHaveStyleRule('background-color', colors.button.secondary.background);
+      expect(cancel).toHaveStyleRule(
+        'background-color', colors.button.secondary.backgroundHover, { modifier: ':hover:not(:disabled)' }
+      );
+      expect(cancel).toHaveStyleRule(
+        'background-color', colors.button.secondary.backgroundActive, { modifier: ':active:not(:disabled)' }
+      );
+    });
+
+    it('colours Update from the primary set in each state', () => {
+      const update = buttonJson('Update');
+
+      expect(update).toHaveStyleRule('background', colors.button.backgroundHover, { modifier: ':not([disabled]):hover' });
+      expect(update).toHaveStyleRule('background', colors.button.backgroundActive, { modifier: ':not([disabled]):active' });
     });
   });
 

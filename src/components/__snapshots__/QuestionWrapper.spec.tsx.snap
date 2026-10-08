@@ -49,11 +49,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {

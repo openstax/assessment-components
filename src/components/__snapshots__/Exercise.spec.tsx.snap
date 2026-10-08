@@ -207,11 +207,11 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 }
 
 .c11:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c11:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c11:disabled {
@@ -1934,11 +1934,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 }
 
 .c11:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c11:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c11:disabled {
@@ -3058,11 +3058,11 @@ exports[`Exercise with question state data renders header icons with multiple ch
 }
 
 .c17:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c17:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c17:disabled {
@@ -4391,11 +4391,11 @@ exports[`Exercise with question state data renders header icons with two-step ex
 }
 
 .c17:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c17:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c17:disabled {
@@ -5579,11 +5579,11 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 }
 
 .c12:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c12:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c12:disabled {

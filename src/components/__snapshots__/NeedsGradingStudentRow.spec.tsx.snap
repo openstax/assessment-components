@@ -34,11 +34,11 @@ exports[`NeedsGradingStudentRow matches snapshot in controlled expanded state 1`
 }
 
 .c17:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c17:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c17:disabled {
@@ -426,11 +426,11 @@ exports[`NeedsGradingStudentRow matches snapshot when graded (collapsed by defau
 }
 
 .c18:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c18:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c18:disabled {
@@ -851,11 +851,11 @@ exports[`NeedsGradingStudentRow matches snapshot when ungraded (expanded by defa
 }
 
 .c15:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c15:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c15:disabled {
