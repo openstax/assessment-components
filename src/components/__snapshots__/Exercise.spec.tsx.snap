@@ -517,7 +517,9 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c7.openstax-question .answers-table > :last-child {
+.c7.openstax-question .answers-table > :last-child,
+.c7.openstax-question .answers-table > :last-child > .question-feedback,
+.c7.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -1427,7 +1429,9 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   padding: 6px 8px;
 }
 
-.c7.openstax-question .answers-table > :last-child {
+.c7.openstax-question .answers-table > :last-child,
+.c7.openstax-question .answers-table > :last-child > .question-feedback,
+.c7.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -2264,7 +2268,9 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c7.openstax-question .answers-table > :last-child {
+.c7.openstax-question .answers-table > :last-child,
+.c7.openstax-question .answers-table > :last-child > .question-feedback,
+.c7.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -3398,7 +3404,9 @@ exports[`Exercise with question state data renders header icons with multiple ch
   padding: 6px 8px;
 }
 
-.c13.openstax-question .answers-table > :last-child {
+.c13.openstax-question .answers-table > :last-child,
+.c13.openstax-question .answers-table > :last-child > .question-feedback,
+.c13.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -4741,7 +4749,9 @@ exports[`Exercise with question state data renders header icons with two-step ex
   padding: 6px 8px;
 }
 
-.c13.openstax-question .answers-table > :last-child {
+.c13.openstax-question .answers-table > :last-child,
+.c13.openstax-question .answers-table > :last-child > .question-feedback,
+.c13.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -5939,7 +5949,9 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   padding: 6px 8px;
 }
 
-.c7.openstax-question .answers-table > :last-child {
+.c7.openstax-question .answers-table > :last-child,
+.c7.openstax-question .answers-table > :last-child > .question-feedback,
+.c7.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 

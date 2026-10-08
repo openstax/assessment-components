@@ -365,7 +365,9 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c1.openstax-question .answers-table > :last-child {
+.c1.openstax-question .answers-table > :last-child,
+.c1.openstax-question .answers-table > :last-child > .question-feedback,
+.c1.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 

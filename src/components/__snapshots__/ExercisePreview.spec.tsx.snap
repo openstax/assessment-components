@@ -527,7 +527,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -1440,7 +1442,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -2353,7 +2357,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -3278,7 +3284,9 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 

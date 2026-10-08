@@ -321,7 +321,9 @@ exports[`Question matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c0.openstax-question .answers-table > :last-child {
+.c0.openstax-question .answers-table > :last-child,
+.c0.openstax-question .answers-table > :last-child > .question-feedback,
+.c0.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 

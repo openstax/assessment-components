@@ -5,7 +5,7 @@ import { act } from 'react-dom/test-utils';
 import { answerContent } from '../test/fixtures';
 import { Answer } from './Answer';
 import { Feedback } from './Feedback';
-import { byClass, findAllNodes, findNode, textOf } from '../test/utils';
+import { byClass, findAllNodes, findNode, isJson, textOf } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -244,6 +244,17 @@ describe('AnswersTable', () => {
 
   it('renders no feedback by default', () => {
     expect(feedbackByAnswer(render())).toEqual([null, null]);
+  });
+
+  it('follows every answer with its live region, so a live region always closes the table', () => {
+    // the spacing rules in Question find the last answer and its feedback by this shape
+    const table = findNode(render(), byClass('answers-table'));
+    const kinds = (table?.children || []).map(child => (
+      isJson(child) && byClass('question-feedback-live-region')(child) ? 'live-region'
+        : isJson(child) && byClass('openstax-answer')(child) ? 'answer' : 'other'
+    ));
+
+    expect(kinds).toEqual(['answer', 'live-region', 'answer', 'live-region']);
   });
 
   it('hides answers', () => {
