@@ -225,24 +225,12 @@ ${props => props.compactDisplay && css`
       }
 
       .answer-letter-wrapper {
-        .answer-answer {
-          margin-left: var(--spacing, 0.8rem);
-        }
-
         &::before {
           min-width: 2.3rem;
           min-height: 2.3rem;
           width: 2.3rem;
           height: 2.3rem;
         }
-      }
-
-      .answer-letter {
-        min-width: 2.8rem;
-        min-height: 2.8rem;
-        width: 2.8rem;
-        height: 2.8rem;
-        display: flex;
       }
     }
   }
