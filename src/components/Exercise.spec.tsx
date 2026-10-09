@@ -1,6 +1,7 @@
 import { Exercise, ExerciseWithQuestionStatesProps, OverlayProps } from './Exercise';
 import renderer from 'react-test-renderer';
 import React from 'react';
+import { byClass, findAllNodes, findNode, isJson, textOf } from '../test/utils';
 
 describe('Exercise', () => {
   describe('with question state data', () => {
@@ -155,12 +156,14 @@ describe('Exercise', () => {
       expect(onNextStep).not.toHaveBeenCalled();
     });
 
-    it('shows a detailed solution', () => {
+    it('shows a detailed solution in the footer', () => {
       props.questionStates['1'].solution = { content_html: 'Detailed solution', solution_type: 'detailed' };
-      const tree = renderer.create(
-        <Exercise {...props} />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+      const tree = renderer.create(<Exercise {...props} />).toJSON();
+      const footer = findNode(tree, byClass('step-card-footer'));
+      const solution = findNode(footer || null, byClass('detailed-solution'));
+
+      expect(solution).toBeDefined();
+      expect(textOf(findNode(solution || null, byClass('solution')) || null)).toBe('Detailed solution');
     });
 
     it('shows only the detailed solution from the definition, not the others it carries', () => {
@@ -247,72 +250,56 @@ describe('Exercise', () => {
       expect(tree.root.findAllByProps({ "data-test-id": "continue-btn" })[0].props['children']).toContain('Continue');
     });
 
-    it('renders header icons with multiple choice explanation', () => {
-      const tree = renderer.create(
-        <Exercise
-          {...props}
-          exerciseIcons={{
-            errata: {
-              url: 'https://openstax.org',
-              location: {
-                header: {
-                  mobile: true,
-                  desktop: true
-                }
-              }
-            },
-            topic: {
-              url: 'https://openstax.org',
-              location: {
-                header: {
-                  mobile: true,
-                  desktop: true
-                }
-              }
-            }
-          }}
-        />
-      );
-      expect(tree.toJSON()).toMatchSnapshot();
-    });
+    describe('header icons', () => {
+      const location = { header: { mobile: true, desktop: true } };
+      const links = {
+        errata: { url: 'https://openstax.org/errata', location },
+        topic: { url: 'https://openstax.org/topic', location },
+      };
 
-    it('renders header icons with two-step explanation', () => {
-      props.exercise.questions[0].formats.push('free-response');
-      const tree = renderer.create(
-        <Exercise
-          {...props}
-          exerciseIcons={{
-            errata: {
-              url: 'https://openstax.org',
-              location: {
-                header: {
-                  mobile: true,
-                  desktop: true
-                }
-              }
-            },
-            topic: {
-              url: 'https://openstax.org',
-              location: {
-                header: {
-                  mobile: true,
-                  desktop: true
-                }
-              }
-            },
-            info: {
-              type: 'two-step',
-              location: {
-                header: {
-                  mobile: true,
-                  desktop: true
-                }
-              }
-            }
-          }}
-        />
-      );
-      expect(tree.toJSON()).toMatchSnapshot();
+      const render = (exerciseIcons: ExerciseWithQuestionStatesProps['exerciseIcons']) =>
+        renderer.create(<Exercise {...props} exerciseIcons={exerciseIcons} />).toJSON();
+
+      // The toolbar renders links with the same labels and URLs, so only the card header counts.
+      const headerLinks = (tree: ReturnType<typeof render>) =>
+        findAllNodes(findNode(tree, byClass('step-card-header')) || null, node => node.type === 'a');
+
+      const hrefsLabelled = (tree: ReturnType<typeof render>, label: string) =>
+        headerLinks(tree).filter(node => node.props['aria-label'] === label).map(node => node.props.href);
+
+      it('links to the topic and the errata form from the header, in a new tab', () => {
+        const tree = render(links);
+
+        expect(hrefsLabelled(tree, 'View topic in textbook')).toEqual(['https://openstax.org/topic']);
+        expect(hrefsLabelled(tree, 'Suggest a correction')).toEqual(['https://openstax.org/errata']);
+        expect(headerLinks(tree).map(node => node.props.target)).toEqual(['_blank', '_blank']);
+      });
+
+      it('shows only the icons that are configured', () => {
+        const tree = render({ topic: links.topic });
+
+        expect(hrefsLabelled(tree, 'View topic in textbook')).toEqual(['https://openstax.org/topic']);
+        expect(hrefsLabelled(tree, 'Suggest a correction')).toEqual([]);
+      });
+
+      it('explains a multiple-choice question', () => {
+        expect(textOf(render({ info: { type: 'multiple-choice', location } })))
+          .toContain('Select the best answer from the given list of distractors.');
+      });
+
+      it('explains a two-step question', () => {
+        expect(textOf(render({ info: { type: 'two-step', location } })))
+          .toContain('In a two-step question, OpenStax asks for your own answer first');
+      });
+
+      it('shows no icons or explanations when none are configured', () => {
+        const text = textOf(render(undefined));
+
+        expect(text).not.toContain('View topic in textbook');
+        expect(text).not.toContain('Suggest a correction');
+        expect(text).not.toContain('Select the best answer');
+        expect(text).not.toContain('In a two-step question');
+      });
     });
   });
 
@@ -390,11 +377,36 @@ describe('Exercise', () => {
       }
     });
 
-    it('matches snapshot', () => {
-      const tree = renderer.create(
-        <Exercise {...props} show_all_feedback />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+    const overlayCard = (tree: renderer.ReactTestRenderer) =>
+      tree.root.find(node => node.type === 'div' && typeof node.props.onMouseOver === 'function');
+
+    it('keeps the overlay out of sight until the card is hovered', () => {
+      const tree = renderer.create(<Exercise {...props} show_all_feedback />);
+
+      expect(textOf(tree.toJSON())).not.toContain('Overlay');
+
+      renderer.act(() => { overlayCard(tree).props.onMouseOver(); });
+      expect(textOf(tree.toJSON())).toContain('Overlay');
+
+      renderer.act(() => { overlayCard(tree).props.onMouseLeave(); });
+      expect(textOf(tree.toJSON())).not.toContain('Overlay');
+    });
+
+    // the card's outer container is the element that holds the step card, and is the one that takes focus
+    const cardContainer = (tree: renderer.ReactTestRenderer) => findNode(
+      tree.toJSON(),
+      node => node.type === 'div' && (node.children || []).some(child => isJson(child) && byClass('step-card')(child))
+    );
+
+    it('makes the card focusable only when there is an overlay', () => {
+      const withOverlay = renderer.create(<Exercise {...props} show_all_feedback />);
+      const without = renderer.create(<Exercise {...props} overlayChildren={undefined} show_all_feedback />);
+
+      expect(cardContainer(withOverlay)?.props.tabIndex).toBe(0);
+
+      expect(cardContainer(without)).toBeDefined();
+      expect(cardContainer(without)?.props.tabIndex).toBeUndefined();
+      expect(cardContainer(without)?.props.onMouseOver).toBeUndefined();
     });
 
     it('matches snapshot with previewMode', () => {
