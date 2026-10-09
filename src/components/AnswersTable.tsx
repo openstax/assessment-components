@@ -37,8 +37,6 @@ export const AnswersTable = (props: AnswersTableProps) => {
 
   const { id } = question;
 
-  const feedback: { index: number, html: string, id: string }[] = [];
-
   const questionAnswerProps = {
     qid: id || `auto-${idCounter++}`,
     answerId: answer_id,
@@ -54,7 +52,7 @@ export const AnswersTable = (props: AnswersTableProps) => {
     onKeyPress
   };
 
-  const answersHtml = question.answers.map((answer, i) => {
+  const answersHtml = question.answers.flatMap((answer, i) => {
     const additionalProps: { answer: AnswerType, iter: number, key: string }
       = {
       answer: {
@@ -66,7 +64,6 @@ export const AnswersTable = (props: AnswersTableProps) => {
     };
     const answerProps = Object.assign({}, additionalProps, questionAnswerProps);
     let html: string | undefined;
-    let feedbackId: string | undefined;
 
     if (show_all_feedback && answer.feedback_html) {
       html = answer.feedback_html;
@@ -76,23 +73,24 @@ export const AnswersTable = (props: AnswersTableProps) => {
       html = correct_answer_feedback_html;
     }
 
-    if (html) {
-      feedbackId = `feedback-${questionAnswerProps.qid}-${i}`
-      feedback.push({ index: i, html, id: feedbackId });
-    }
+    const feedbackId = `feedback-${questionAnswerProps.qid}-${i}`;
 
-    return (
-      <Answer feedbackId={feedbackId} {...answerProps} />
-    );
-  });
-
-  feedback.forEach((item, i) => {
-    const spliceIndex = item.index + i + 1;
-    answersHtml.splice(spliceIndex, 0, (
-      <Feedback id={item.id} key={spliceIndex} contentRenderer={props.contentRenderer}>
-        {item.html}
-      </Feedback>
-    ));
+    return [
+      <Answer feedbackId={html ? feedbackId : undefined} {...answerProps} />,
+      // The live region must already be in the document (and empty) before the feedback
+      // is injected into it, otherwise screen readers do not announce the feedback that
+      // appears after the answer is submitted.
+      <div
+        key={`${feedbackId}-live-region`}
+        className="question-feedback-live-region"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {html
+          ? <Feedback id={feedbackId} contentRenderer={props.contentRenderer}>{html}</Feedback>
+          : null}
+      </div>,
+    ];
   });
 
   return (

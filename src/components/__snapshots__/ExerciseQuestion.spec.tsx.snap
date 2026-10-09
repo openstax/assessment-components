@@ -365,7 +365,9 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   padding: 6px 8px;
 }
 
-.c1.openstax-question .answers-table > :last-child {
+.c1.openstax-question .answers-table > :last-child,
+.c1.openstax-question .answers-table > :last-child > .question-feedback,
+.c1.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -557,6 +559,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
               </div>
             </div>
             <div
+              aria-atomic="true"
+              aria-live="polite"
+              className="question-feedback-live-region"
+            />
+            <div
               className="openstax-answer"
             >
               <div
@@ -607,6 +614,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
                 </label>
               </div>
             </div>
+            <div
+              aria-atomic="true"
+              aria-live="polite"
+              className="question-feedback-live-region"
+            />
           </div>
         </div>
       </div>
