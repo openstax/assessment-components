@@ -566,26 +566,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   padding-top: var(--spacing,0.8rem);
 }
 
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper .answer-answer {
-  margin-left: var(--spacing,0.8rem);
-}
-
 .c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper::before {
   min-width: 2.3rem;
   min-height: 2.3rem;
   width: 2.3rem;
   height: 2.3rem;
-}
-
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter {
-  min-width: 2.8rem;
-  min-height: 2.8rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -1481,26 +1466,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding-top: var(--spacing,0.8rem);
 }
 
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper .answer-answer {
-  margin-left: var(--spacing,0.8rem);
-}
-
 .c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper::before {
   min-width: 2.3rem;
   min-height: 2.3rem;
   width: 2.3rem;
   height: 2.3rem;
-}
-
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter {
-  min-width: 2.8rem;
-  min-height: 2.8rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -2396,26 +2366,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding-top: var(--spacing,0.8rem);
 }
 
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper .answer-answer {
-  margin-left: var(--spacing,0.8rem);
-}
-
 .c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper::before {
   min-width: 2.3rem;
   min-height: 2.3rem;
   width: 2.3rem;
   height: 2.3rem;
-}
-
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter {
-  min-width: 2.8rem;
-  min-height: 2.8rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c2 {
@@ -3323,26 +3278,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   padding-top: var(--spacing,0.8rem);
 }
 
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper .answer-answer {
-  margin-left: var(--spacing,0.8rem);
-}
-
 .c9.c9.c9.openstax-question .openstax-answer .answer-letter-wrapper::before {
   min-width: 2.3rem;
   min-height: 2.3rem;
   width: 2.3rem;
   height: 2.3rem;
-}
-
-.c9.c9.c9.openstax-question .openstax-answer .answer-letter {
-  min-width: 2.8rem;
-  min-height: 2.8rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .c14 .detailed-solution .header {
