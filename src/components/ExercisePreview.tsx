@@ -2,14 +2,13 @@ import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "../types";
 import { Exercise } from "./Exercise";
 import styled from "styled-components";
-import { colors } from "../theme";
 
 const StyledExercise = styled(Exercise)<{
   showAllFeedback?: boolean;
   showCorrectAnswer?: boolean;
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
 }>`
-  /* a parent positioning one card out of a list, and marking the one that is selected */
+  /* a parent positioning one card out of a list */
   margin: 0 auto auto auto !important;
 
   .step-card-footer {
@@ -20,23 +19,6 @@ const StyledExercise = styled(Exercise)<{
       font-weight: normal;
     }
   `}
-
-  &.is-selected {
-    background-color: ${colors.card.header.background};
-    border-width: 0.2rem;
-
-    /* the card and question set these backgrounds themselves, so reaching down from the
-       container is always racing them */
-    .step-card-footer,
-    .step-card-body,
-    .step-card-header {
-      background-color: ${colors.card.header.background} !important;
-    }
-
-    .step-card-question {
-      border-top-width: 0.2rem;
-    }
-  }
 `;
 
 export interface ExercisePreviewProps {
@@ -144,7 +126,8 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
   return (
     <StyledExercise
       exercise={showAllFeedback ? exercise : hideAnswerFeedback(exercise)}
-      className={`preview-card ${selected ? 'is-selected' : ''}`}
+      className="preview-card"
+      selected={selected}
       compactDisplay
       displaySolution={false}
       previewMode

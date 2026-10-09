@@ -54,6 +54,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   totalScoring?: ExerciseScoringData;
   exerciseIcons?: ExerciseIcons;
   overlayChildren?: React.ReactNode;
+  /** marks the card as the chosen one out of a list, such as a question picker's */
+  selected?: boolean;
   className?: string;
   children: React.ReactNode;
 }

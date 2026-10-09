@@ -55,9 +55,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -183,7 +182,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -406,9 +404,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -555,7 +552,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -694,9 +690,8 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -806,9 +801,8 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -1086,9 +1080,8 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -1287,9 +1280,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -1436,7 +1428,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -1634,9 +1625,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -1790,7 +1780,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -2015,9 +2004,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -2164,7 +2152,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -2362,9 +2349,8 @@ Array [
 
 .c0 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 <div
@@ -2518,7 +2504,6 @@ Array [
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
