@@ -123,11 +123,11 @@ Array [
 }
 
 .c4:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c4:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c4:disabled {
@@ -525,11 +525,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {
@@ -889,11 +889,11 @@ exports[`Free Response Input matches snapshot - preview mode with grading 1`] = 
 }
 
 .c13:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c13:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c13:disabled {
@@ -1401,11 +1401,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {
@@ -1753,11 +1753,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {
@@ -1843,11 +1843,11 @@ Array [
 }
 
 .c2:hover:not(:disabled) {
-  background-color: #818181;
+  background-color: #646464;
 }
 
 .c2:active:not(:disabled) {
-  background-color: #5f6163;
+  background-color: #4C4C4C;
 }
 
 @media (max-width:600px) {
@@ -2125,11 +2125,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {
@@ -2477,11 +2477,11 @@ Array [
 }
 
 .c1:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c1:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c1:disabled {

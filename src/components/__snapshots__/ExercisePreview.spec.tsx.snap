@@ -532,7 +532,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -834,6 +836,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -878,6 +885,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -1425,7 +1437,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -1727,6 +1741,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -1771,6 +1790,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2318,7 +2342,9 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -2620,6 +2646,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                             </div>
                           </div>
                           <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
+                          <div
                             className="openstax-answer"
                           >
                             <div
@@ -2664,6 +2695,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2913,6 +2949,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c11 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.c12 {
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -3211,7 +3259,9 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   padding: 6px 8px;
 }
 
-.c9.openstax-question .answers-table > :last-child {
+.c9.openstax-question .answers-table > :last-child,
+.c9.openstax-question .answers-table > :last-child > .question-feedback,
+.c9.openstax-question .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
   margin-bottom: 0;
 }
 
@@ -3270,7 +3320,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   display: flex;
 }
 
-.c13 .detailed-solution .header {
+.c14 .detailed-solution .header {
   display: inline;
   margin-right: 0.5rem;
   color: #5e6062;
@@ -3280,12 +3330,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   flex-basis: 0;
 }
 
-.c13 .detailed-solution .solution {
+.c14 .detailed-solution .solution {
   display: inline;
   color: #6f6f6f;
 }
 
-.c12 {
+.c13 {
   padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;
   display: -webkit-box;
@@ -3304,19 +3354,19 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   overflow: auto;
 }
 
-.c12 > * {
+.c13 > * {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
-.c12 button {
+.c13 button {
   width: 160px;
   height: 48px;
 }
 
-.c12 .step-card-footer-inner {
+.c13 .step-card-footer-inner {
   padding-top: 32px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3329,12 +3379,12 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   gap: 1.6rem;
 }
 
-.c12 .points .attempts-left {
+.c13 .points .attempts-left {
   color: #B03808;
   font-weight: bold;
 }
 
-.c12 .controls {
+.c13 .controls {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3350,8 +3400,8 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   margin-left: auto;
 }
 
-.c12 .controls button:has(~ button),
-.c12 .controls button + button {
+.c13 .controls button:has(~ button),
+.c13 .controls button + button {
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -3359,11 +3409,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   width: 100px;
 }
 
-.c12.c12 {
+.c13.c13 {
   padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
 }
 
-.c12 .step-card-footer-inner {
+.c13 .step-card-footer-inner {
   padding-top: var(--spacing,0.8rem);
 }
 
@@ -3482,7 +3532,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 @media (max-width:600px) {
-  .c12 .step-card-footer-inner {
+  .c13 .step-card-footer-inner {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -3490,14 +3540,14 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 @media (min-width:1000px) {
-  .c12 {
+  .c13 {
     padding: 0 var(--step-card-gutter) 32px;
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
 
-  .c12 .points {
+  .c13 .points {
     max-width: 400px;
   }
 }
@@ -3626,25 +3676,36 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               </label>
                             </div>
                           </div>
-                          <aside
-                            className="question-feedback bottom"
-                            id="feedback-1234@5-0"
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
                           >
-                            <div
-                              aria-label="Answer Feedback"
-                              className="arrow"
-                            />
-                            <aside>
+                            <aside
+                              className="question-feedback bottom"
+                              id="feedback-1234@5-0"
+                            >
                               <div
-                                className="c6 question-feedback-content has-html"
-                                dangerouslySetInnerHTML={
-                                  Object {
-                                    "__html": "Feedback",
-                                  }
-                                }
+                                aria-hidden="true"
+                                className="arrow"
                               />
+                              <span
+                                className="c12"
+                              >
+                                Answer feedback:
+                              </span>
+                              <aside>
+                                <div
+                                  className="c6 question-feedback-content has-html"
+                                  dangerouslySetInnerHTML={
+                                    Object {
+                                      "__html": "Feedback",
+                                    }
+                                  }
+                                />
+                              </aside>
                             </aside>
-                          </aside>
+                          </div>
                           <div
                             className="openstax-answer"
                           >
@@ -3690,13 +3751,18 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                               </label>
                             </div>
                           </div>
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            className="question-feedback-live-region"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  className="c12 step-card-footer"
+                  className="c13 step-card-footer"
                 >
                   <div
                     className="step-card-footer-inner"
@@ -3705,7 +3771,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                       className="points"
                     >
                       <div
-                        className="c13"
+                        className="c14"
                         role="status"
                       >
                         <div

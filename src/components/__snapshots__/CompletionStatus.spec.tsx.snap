@@ -67,11 +67,11 @@ exports[`CompletionStatus matches snapshot 1`] = `
 }
 
 .c4:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c4:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c4:disabled {
@@ -223,11 +223,11 @@ exports[`CompletionStatus matches snapshot with all questions completed 1`] = `
 }
 
 .c4:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c4:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c4:disabled {
@@ -379,11 +379,11 @@ exports[`CompletionStatus matches snapshot with some questions completed 1`] = `
 }
 
 .c4:not([disabled]):hover {
-  background: #E74B0D;
+  background: #BE3C08;
 }
 
 .c4:not([disabled]):active {
-  background: #C5400B;
+  background: #B03808;
 }
 
 .c4:disabled {

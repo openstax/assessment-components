@@ -32,14 +32,14 @@ export const NextButton = (props: {
 }
 
 const StyledCancelButton = styled(Button)`
-  background-color: ${colors.palette.darkGray};
+  background-color: ${colors.button.secondary.background};
 
   &:hover:not(:disabled) {
-    background-color: ${colors.palette.neutral};
+    background-color: ${colors.button.secondary.backgroundHover};
   }
 
   &:active:not(:disabled) {
-    background-color: ${colors.palette.neutralDark};
+    background-color: ${colors.button.secondary.backgroundActive};
   }
 `;
 

@@ -178,8 +178,14 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
     padding: 6px 8px;
   }
 
-  /* the last answer, or the feedback under it, ends flush: the frame adds the space below */
-  .answers-table > :last-child {
+  /*
+   * The last answer, or the feedback under it, ends flush: the frame adds the space below.
+   * Every answer is followed by its live region, so the last child is that region: the
+   * feedback sits one level down, and the last answer has to be found by what follows it.
+   */
+  .answers-table > :last-child,
+  .answers-table > :last-child > .question-feedback,
+  .answers-table > .openstax-answer:has(+ .question-feedback-live-region:last-child:empty) {
     margin-bottom: 0;
   }
 
