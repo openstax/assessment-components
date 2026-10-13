@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ID } from '../types';
 import { colors } from '../theme';
 import Button from './Button';
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
+import { StepCardBody } from './StepCardBody';
 import { StepCardFooter } from './StepCardFooter';
 
 export const SaveButton = (props: {
@@ -32,14 +32,14 @@ export const NextButton = (props: {
 }
 
 const StyledCancelButton = styled(Button)`
-  background-color: ${colors.palette.darkGray};
+  background-color: ${colors.button.secondary.background};
 
   &:hover:not(:disabled) {
-    background-color: ${colors.palette.neutral};
+    background-color: ${colors.button.secondary.backgroundHover};
   }
 
   &:active:not(:disabled) {
-    background-color: ${colors.palette.neutralDark};
+    background-color: ${colors.button.secondary.backgroundActive};
   }
 `;
 
@@ -64,9 +64,6 @@ const UnlimitedAttempts = () => {
 }
 
 export interface QuestionWrapperProps extends CompactDisplayProps {
-  question_id: ID;
-  questionIndex: number;
-
   // lifecycle, from the item
   is_completed: boolean;
   canAnswer: boolean;
@@ -91,9 +88,15 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
    * footer advances by itself once the response lands. Omitting it means the host navigates.
    */
   hasFeedback?: boolean;
+  /** `false` renders the footer without its buttons, e.g. for a read-only preview. */
+  showControls?: boolean;
 
   onAnswerSave: () => void;
-  onNextStep: () => void;
+  /**
+   * Omit for a host that navigates on its own: no Next button is rendered, and once the
+   * question can no longer be answered its place is held by a disabled Submit.
+   */
+  onNextStep?: () => void;
   /** receives the Cancel button's own click event */
   onCancel?: React.MouseEventHandler<HTMLButtonElement>;
 
@@ -106,9 +109,10 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
 }
 
 /**
- * The controls around a question: the footer, its buttons and the attempts notice. Which of
- * the three arrangements applies follows from `canAnswer` and `is_completed` alone, so this
- * knows nothing about the format of the question it wraps.
+ * The frame around a question: the padded, divided body section its content sits in, and the
+ * footer with its buttons and the attempts notice. The footer is left out when it would be
+ * empty. Which of the three arrangements of buttons applies follows from `canAnswer` and
+ * `is_completed` alone, so this knows nothing about the format of the question it wraps.
  */
 export const QuestionWrapper = ({
   is_completed,
@@ -121,6 +125,7 @@ export const QuestionWrapper = ({
   attemptsRemaining,
   hasUnlimitedAttempts,
   hasFeedback,
+  showControls = true,
   onAnswerSave,
   onNextStep,
   onCancel,
@@ -128,19 +133,18 @@ export const QuestionWrapper = ({
   compactDisplay,
   children,
 }: QuestionWrapperProps) => {
-  const compact = useCompactDisplay(compactDisplay);
-
   // holds Submit in its waiting state after a click until the response lands, then advances.
   // Deprecated along with `hasFeedback`: a host that omits it drives navigation itself.
   const [shouldContinue, setShouldContinue] = React.useState(false);
   // only an explicit `false` opts into the deprecated auto-advance; omitting it leaves
   // navigation to the host, which is what a new consumer gets
-  const willContinue = hasFeedback === false;
+  // with no `onNextStep` there is nowhere to continue to, so the deprecated mode stays off
+  const willContinue = hasFeedback === false && onNextStep !== undefined;
 
   React.useEffect(() => {
     if (shouldContinue && is_completed && !apiIsPending) {
       setShouldContinue(false);
-      onNextStep();
+      onNextStep?.();
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
@@ -183,13 +187,17 @@ export const QuestionWrapper = ({
           >
             Update
           </Button>
-          <NextButton
+          {onNextStep && <NextButton
             disabled={apiIsPending || dirty === true}
             onClick={onNextStep}
             canUpdateCurrentStep={false}
-          />
+          />}
         </>
       );
+    }
+
+    if (!onNextStep) {
+      return <SaveButton disabled isWaiting={false} attempt_number={attempt_number} willContinue={false} />;
     }
 
     return <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;
@@ -198,17 +206,19 @@ export const QuestionWrapper = ({
   const leftRegion = attempts || footerChildren;
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
-      {children}
-      <StepCardFooter className="step-card-footer" compactDisplay={compact}>
-        <div className="step-card-footer-inner">
-          {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-          <div className="controls">
-            {controls()}
+    <>
+      <StepCardBody className="step-card-question" divided>
+        {children}
+      </StepCardBody>
+      {leftRegion || showControls ? (
+        <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
+          <div className="step-card-footer-inner">
+            {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
+            {showControls ? <div className="controls">{controls()}</div> : null}
           </div>
-        </div>
-      </StepCardFooter>
-    </CompactDisplayProvider>
+        </StepCardFooter>
+      ) : null}
+    </>
   );
 };
 

@@ -2,6 +2,13 @@
 
 exports[`StepCard matches snapshot 1`] = `
 .c1 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -115,42 +122,22 @@ exports[`StepCard matches snapshot 1`] = `
   margin: 0 0 0 6px !important;
 }
 
-.c4 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c4 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c4.exercise-context,
-.c4.exercise-stimulus,
-.c4.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c3 {
-  padding: 0;
-}
-
-.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+.c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -225,37 +212,18 @@ exports[`StepCard matches snapshot 1`] = `
   }
 }
 
-@media (max-width:999px) {
-  .c4 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c4.c4 .question-feedback {
+  .c3.c3 .question-feedback {
     margin-left: 0;
   }
 
-  .c4.c4 .question-feedback .arrow {
+  .c3.c3 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c3 .openstax-exercise-badges,
-  .interactive-step .c4 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     margin-right: 8px;
   }
 }
@@ -303,7 +271,7 @@ exports[`StepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c3 c4"
+          className="c3"
         >
           Question content
         </div>
@@ -315,6 +283,13 @@ exports[`StepCard matches snapshot 1`] = `
 
 exports[`StepCard matches snapshot with more than one question 1`] = `
 .c1 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -428,42 +403,22 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   margin: 0 0 0 6px !important;
 }
 
-.c4 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c4 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c4.exercise-context,
-.c4.exercise-stimulus,
-.c4.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c3 {
-  padding: 0;
-}
-
-.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+.c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -538,37 +493,18 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   }
 }
 
-@media (max-width:999px) {
-  .c4 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c4.c4 .question-feedback {
+  .c3.c3 .question-feedback {
     margin-left: 0;
   }
 
-  .c4.c4 .question-feedback .arrow {
+  .c3.c3 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c3 .openstax-exercise-badges,
-  .interactive-step .c4 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     margin-right: 8px;
   }
 }
@@ -616,7 +552,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
           </div>
         </div>
         <div
-          className="c3 c4"
+          className="c3"
         >
           Question content
         </div>
@@ -628,6 +564,13 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
 
 exports[`TaskStepCard matches snapshot 1`] = `
 .c1 {
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: #fdfdfd;
+  font-size: calc(1.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8rem * var(--content-text-scale,1));
+  color: #424242;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -741,42 +684,22 @@ exports[`TaskStepCard matches snapshot 1`] = `
   margin: 0 0 0 6px !important;
 }
 
-.c4 .step-card-body {
-  padding: 4.8rem 14rem 0;
-  overflow: auto;
-  background: #fdfdfd;
-}
-
-.c4 .step-card-body.exercise-stimulus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 + div .step-card-body {
-  padding-top: 0;
-}
-
-.c4.exercise-context,
-.c4.exercise-stimulus,
-.c4.exercise-stem {
-  padding-bottom: 0;
-}
-
-.reading-step .c3 {
-  padding: 0;
-}
-
-.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
+.c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
+}
+
+@media (max-width:999px) {
+  .c1 {
+    --step-card-gutter: 24px;
+    --step-card-gutter-top: 24px;
+  }
+}
+
+@media (max-width:600px) {
+  .c1 {
+    --step-card-gutter: 8px;
+    --step-card-gutter-top: calc(8px * 2);
+  }
 }
 
 @media (min-width:1000px) {
@@ -851,37 +774,18 @@ exports[`TaskStepCard matches snapshot 1`] = `
   }
 }
 
-@media (max-width:999px) {
-  .c4 .step-card-body {
-    padding: 24px 24px;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .step-card-body {
-    padding: calc(8px * 2) 8px;
-  }
-}
-
-@media (max-width:600px) {
-  .c4.c4 .question-feedback {
+  .c3.c3 .question-feedback {
     margin-left: 0;
   }
 
-  .c4.c4 .question-feedback .arrow {
+  .c3.c3 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
-@media (min-width:1000px) {
-  .video-step .c3 .openstax-exercise-badges,
-  .interactive-step .c4 .openstax-exercise-badges {
-    margin-right: 3.8rem;
-  }
-}
-
 @media (max-width:600px) {
-  .c4 .openstax-exercise-badges svg {
+  .c3 .openstax-exercise-badges svg {
     margin-right: 8px;
   }
 }
@@ -922,7 +826,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c3 c4"
+          className="c3"
         />
       </div>
     </div>

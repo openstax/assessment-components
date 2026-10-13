@@ -1,4 +1,5 @@
 import renderer from 'react-test-renderer';
+import { Content } from './Content';
 import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 
 jest.mock('../hooks/useTypesetMath', () => ({
@@ -24,6 +25,13 @@ describe('QuestionLevelFeedback', () => {
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  it('renders the grading comment as plain text, not through Content', () => {
+    const tree = renderer.create(<QuestionLevelFeedback gradingComments='<b>2 < 3</b>' />);
+    expect(tree.root.findAllByType(Content)).toHaveLength(0);
+    expect(tree.root.findByProps({ className: 'feedback-label' }).parent?.props.children)
+      .toContain('<b>2 < 3</b>');
   });
 
   it('renders no score until both halves of it are known', () => {

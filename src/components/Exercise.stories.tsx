@@ -362,121 +362,126 @@ export const IncorrectWithFeedbackAndSolutionWrappingText = () => {
   );
 };
 
-export const MultiPartHalfComplete = () => {
-  const props: ExerciseWithQuestionStatesProps = {
-    exercise: {
-      uid: '1@1',
-      uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
-      group_uuid: '20e82bf6-232e-40c8-ba68-2d22c6498f69',
-      number: 1,
-      version: 1,
-      published_at: '2022-09-06T20:32:21.981Z',
-      context: 'Context',
-      stimulus_html: '<b>Stimulus HTML</b>',
-      tags: [],
-      authors: [{ user_id: 1, name: 'OpenStax' }],
-      copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
-      derived_from: [],
-      is_vocab: false,
-      solutions_are_public: false,
-      versions: [1],
-      questions: [
-        {
-          id: 1,
-          collaborator_solutions: [],
-          formats: ['true-false'],
-          stimulus_html: '',
-          stem_html: '',
-          is_answer_order_important: false,
-          answers: [
-            {
-              id: '1',
-              correctness: undefined,
-              content_html: 'True',
-            },
-            {
-              id: '2',
-              correctness: undefined,
-              content_html: 'False',
-            },
-          ],
-        },
-        {
-          id: 2,
-          collaborator_solutions: [],
-          formats: ['true-false'],
-          stimulus_html: '',
-          stem_html: '',
-          is_answer_order_important: false,
-          answers: [
-            {
-              id: '1',
-              correctness: undefined,
-              content_html: 'True',
-            },
-            {
-              id: '2',
-              correctness: undefined,
-              content_html: 'False',
-            },
-          ],
-        },
-      ],
-    },
-    questionNumber: 1,
-    numberOfQuestions: 2,
-    hasMultipleAttempts: false,
-    hasUnlimitedAttempts: false,
-    onAnswerChange: () => null,
-    onAnswerSave: () => null,
-    onNextStep: () => null,
-    step: {
-      id: 1,
-      uid: '1234@5',
+const multiPartHalfCompleteProps: ExerciseWithQuestionStatesProps = {
+  exercise: {
+    uid: '1@1',
+    uuid: 'e4e27897-4abc-40d3-8565-5def31795edc',
+    group_uuid: '20e82bf6-232e-40c8-ba68-2d22c6498f69',
+    number: 1,
+    version: 1,
+    published_at: '2022-09-06T20:32:21.981Z',
+    context: 'Context',
+    stimulus_html: '<b>Stimulus HTML</b>',
+    tags: [],
+    authors: [{ user_id: 1, name: 'OpenStax' }],
+    copyright_holders: [{ user_id: 1, name: 'OpenStax' }],
+    derived_from: [],
+    is_vocab: false,
+    solutions_are_public: false,
+    versions: [1],
+    questions: [
+      {
+        id: 1,
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: '',
+        is_answer_order_important: false,
+        answers: [
+          {
+            id: '1',
+            correctness: undefined,
+            content_html: 'True',
+          },
+          {
+            id: '2',
+            correctness: undefined,
+            content_html: 'False',
+          },
+        ],
+      },
+      {
+        id: 2,
+        collaborator_solutions: [],
+        formats: ['true-false'],
+        stimulus_html: '',
+        stem_html: '',
+        is_answer_order_important: false,
+        answers: [
+          {
+            id: '1',
+            correctness: undefined,
+            content_html: 'True',
+          },
+          {
+            id: '2',
+            correctness: undefined,
+            content_html: 'False',
+          },
+        ],
+      },
+    ],
+  },
+  questionNumber: 1,
+  numberOfQuestions: 2,
+  hasMultipleAttempts: false,
+  hasUnlimitedAttempts: false,
+  onAnswerChange: () => null,
+  onAnswerSave: () => null,
+  onNextStep: () => null,
+  step: {
+    id: 1,
+    uid: '1234@5',
+    available_points: '1.0',
+  },
+  questionStates: {
+    '1': {
       available_points: '1.0',
+      is_completed: true,
+      answer_id_order: ['1', '2'],
+      answer_id: 1,
+      free_response: '',
+      feedback_html: '',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 0,
+      incorrectAnswerId: 0,
+      canAnswer: false,
+      needsSaved: false,
+      apiIsPending: false,
     },
-    questionStates: {
-      '1': {
-        available_points: '1.0',
-        is_completed: true,
-        answer_id_order: ['1', '2'],
-        answer_id: 1,
-        free_response: '',
-        feedback_html: '',
-        correct_answer_id: '',
-        correct_answer_feedback_html: '',
-        attempts_remaining: 0,
-        attempt_number: 0,
-        incorrectAnswerId: 0,
-        canAnswer: false,
-        needsSaved: false,
-        apiIsPending: false,
-      },
-      '2': {
-        available_points: '1.0',
-        is_completed: false,
-        answer_id_order: ['1', '2'],
-        answer_id: 0,
-        free_response: '',
-        feedback_html: '',
-        correct_answer_id: '',
-        correct_answer_feedback_html: '',
-        attempts_remaining: 0,
-        attempt_number: 0,
-        incorrectAnswerId: 0,
-        canAnswer: true,
-        needsSaved: true,
-        apiIsPending: false,
-      },
+    '2': {
+      available_points: '1.0',
+      is_completed: false,
+      answer_id_order: ['1', '2'],
+      answer_id: 0,
+      free_response: '',
+      feedback_html: '',
+      correct_answer_id: '',
+      correct_answer_feedback_html: '',
+      attempts_remaining: 0,
+      attempt_number: 0,
+      incorrectAnswerId: 0,
+      canAnswer: true,
+      needsSaved: true,
+      apiIsPending: false,
     },
-  };
-
-  return (
-    <TextResizerProvider>
-      <Exercise {...props} />
-    </TextResizerProvider>
-  );
+  },
 };
+
+export const MultiPartHalfComplete = () => (
+  <TextResizerProvider>
+    <Exercise {...multiPartHalfCompleteProps} />
+  </TextResizerProvider>
+);
+
+/** A compact multi-part card, as a preview: the footers drop out, so the question bodies stack. */
+export const MultiPartCompact = () => (
+  <TextResizerProvider>
+    <Exercise {...multiPartHalfCompleteProps} compactDisplay previewMode />
+  </TextResizerProvider>
+);
 
 export const Icons = () => {
   const location = {
@@ -932,6 +937,19 @@ export const PreviewCardWithoutScore = () => {
       showScoring
     />
   );
+};
+
+/** A compact card whose question carries a detailed solution in its definition, rendered in the body. */
+export const CompactWithDefinitionSolution = () => {
+  const props = exerciseWithQuestionStatesProps();
+  const questions = props.exercise.questions.map((question) => ({
+    ...question,
+    collaborator_solutions: [{
+      solution_type: 'detailed',
+      content_html: 'A detailed solution from the exercise definition.',
+    }],
+  }));
+  return <Exercise {...props} exercise={{ ...props.exercise, questions }} compactDisplay previewMode />;
 };
 
 export const OverlayCard = () => {

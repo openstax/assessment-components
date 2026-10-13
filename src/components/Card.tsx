@@ -1,14 +1,47 @@
 import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
-import { breakpoints, colors, layouts, mixins } from "../theme";
+import { breakpoints, colors, layouts } from "../theme";
 import { AvailablePoints, ExerciseScoringData, StepBase } from "../types";
 import styled, { css } from "styled-components";
 import cn from "classnames";
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from "./compactDisplay";
+import { CompactDisplayProps } from "./compactDisplay";
 
 export const InnerStepCard = styled.div<CompactDisplayProps>`
-  ${props => props.compactDisplay && css`
-    --spacing: 0.8rem;
+  /* the card's gutter, read by every section inside it: the preamble, each question's body
+     and its footer. A host's own content can use them to line up with, or bleed past, the
+     card's padding. */
+  --step-card-gutter: 14rem;
+  --step-card-gutter-top: 4.8rem;
+  /* the same at every width, so every section ends with the same room above the next */
+  --step-card-gutter-bottom: 2rem;
+  --step-card-surface: ${colors.card.body.background};
+
+  ${breakpoints.tablet`
+    --step-card-gutter: ${breakpoints.margins.tablet};
+    --step-card-gutter-top: ${breakpoints.margins.tablet};
   `}
+
+  ${breakpoints.mobile`
+    --step-card-gutter: ${breakpoints.margins.mobile};
+    --step-card-gutter-top: calc(${breakpoints.margins.mobile} * 2);
+  `}
+
+  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  line-height: calc(2.8rem * var(--content-text-scale, 1));
+  color: ${colors.palette.neutralDarker};
+
+  /* doubled so it outranks the breakpoints above, which are emitted after it */
+  ${props => props.compactDisplay && css`
+    && {
+      --spacing: 0.8rem;
+      --step-card-gutter: var(--spacing);
+      --step-card-gutter-top: var(--spacing);
+      --step-card-gutter-bottom: var(--spacing);
+      --step-card-surface: ${colors.palette.white};
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  `}
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -201,53 +234,12 @@ const StyledUngraded = styled.div`
 
 StepCardHeader.displayName = 'StepCardHeader';
 
-const StepCardQuestion = styled.div<CompactDisplayProps>`
-  .step-card-body {
-    ${mixins.stepCardPadding()}
-    overflow: auto;
-    background: ${colors.card.body.background};
-
-    &.exercise-stimulus {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  ${props => props.compactDisplay && css`
-    && .step-card-body {
-      background-color: ${colors.palette.white};
-      padding: var(--spacing, 0.8rem);
-      font-size: 1.6rem;
-      line-height: 2rem;
-    }
-  `}
-
-    & + div .step-card-body {
-        padding-top: 0;
-    }
-
-    &.exercise-context, &.exercise-stimulus, &.exercise-stem {
-        padding-bottom: 0;
-    }
-
+const StepCardQuestion = styled.div`
     ${breakpoints.only.mobile`
         && .question-feedback {
             margin-left: 0;
 
            .arrow { margin-left: 12px; }
-        }
-    `}
-
-    .reading-step & {
-        padding: 0;
-    }
-
-    ${breakpoints.desktop`
-        .video-step &, .interactive-step & {
-            .openstax-exercise-badges {
-              margin-right: 3.8rem;
-            }
         }
     `}
 
@@ -317,7 +309,6 @@ const StepCard = ({
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
-  const compact = useCompactDisplay(compactDisplay);
 
   const formattedQuestionNumber = numberOfQuestions > 1
     ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
@@ -357,10 +348,9 @@ const StepCard = ({
   }, [overlayChildren, overlayRef, handleOverlayFocus, hideFocusableElements]);
 
   return (
-    <CompactDisplayProvider compactDisplay={compact}>
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard className={className} compactDisplay={compact}>
+      <InnerStepCard className={className} compactDisplay={compactDisplay}>
         <div
           ref={overlayRef}
           {
@@ -381,7 +371,7 @@ const StepCard = ({
           }
           <div className="step-card">
             {questionNumber &&
-              <StepCardHeader className="step-card-header" compactDisplay={compact}>
+              <StepCardHeader className="step-card-header" compactDisplay={compactDisplay}>
                 <div>
                   {leftHeaderChildren}
                   <h2 className="question-info">
@@ -404,12 +394,11 @@ const StepCard = ({
                 </div> : null}
               </StepCardHeader>
             }
-            <StepCardQuestion compactDisplay={compact}>{children}</StepCardQuestion>
+            <StepCardQuestion>{children}</StepCardQuestion>
           </div>
         </div>
       </InnerStepCard>
     </OuterStepCard>
-    </CompactDisplayProvider>
   )
 };
 StepCard.displayName = 'OSStepCard';

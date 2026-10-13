@@ -17,7 +17,7 @@ const QueueWrapper = styled.div`
 const EmptyState = styled.div`
   padding: 4rem 0;
   text-align: center;
-  font-size: calc(1.6rem * var(--content-text-scale));
+  font-size: calc(1.6rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralThin};
 `;
 
@@ -28,7 +28,7 @@ const StyledGradingNotice = styled.div`
   padding: 1rem;
   margin-bottom: 2rem;
   line-height: 1.5;
-  font-size: calc(1.4rem * var(--content-text-scale));
+  font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;
 
 export const GradingNotice = () => (

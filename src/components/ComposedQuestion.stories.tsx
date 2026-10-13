@@ -5,6 +5,7 @@ import { ExerciseWrapper } from './ExerciseWrapper';
 import { QuestionBody } from './QuestionBody';
 import { QuestionLevelFeedback } from './QuestionLevelFeedback';
 import { QuestionWrapper } from './QuestionWrapper';
+import { StepCardBody } from './StepCardBody';
 
 /**
  * The inversion these components exist for: an embedding app owns the chrome, this library
@@ -69,9 +70,11 @@ const useHost = (initial: Partial<QuestionBodyState> = {}) => {
   return { state, needsSaved, status, setStatus, apiIsPending, onAnswerChange, onAnswerSave };
 };
 
-const ComposedExercise = ({ question, compactDisplay }: {
+const ComposedExercise = ({ question, compactDisplay, hostNavigates }: {
   question: ExerciseQuestionData;
   compactDisplay?: boolean;
+  /** the host moves between questions itself, so the footer offers no Next */
+  hostNavigates?: boolean;
 }) => {
   const host = useHost();
 
@@ -86,10 +89,9 @@ const ComposedExercise = ({ question, compactDisplay }: {
       <ExerciseBody
         context="<b>Context</b> supplied by the host, not by an exercise."
         stimulus_html="Some shared stimulus."
+        compactDisplay={compactDisplay}
       >
         <QuestionWrapper
-          question_id={question.id}
-          questionIndex={0}
           is_completed={host.state.is_completed}
           canAnswer={host.state.canAnswer}
           canSubmit={host.status.canSubmit}
@@ -97,7 +99,8 @@ const ComposedExercise = ({ question, compactDisplay }: {
           apiIsPending={host.apiIsPending}
           canUpdateCurrentStep={false}
           onAnswerSave={host.onAnswerSave}
-          onNextStep={() => window.alert('the host navigates')}
+          onNextStep={hostNavigates ? undefined : () => window.alert('the host navigates')}
+          compactDisplay={compactDisplay}
         >
           <QuestionBody
             question={question}
@@ -107,6 +110,7 @@ const ComposedExercise = ({ question, compactDisplay }: {
             responseSize="short"
             onAnswerChange={host.onAnswerChange}
             onStatusChange={host.setStatus}
+            compactDisplay={compactDisplay}
             feedback={host.state.is_completed
               ? <QuestionLevelFeedback
                   score={host.state.score}
@@ -124,6 +128,8 @@ const ComposedExercise = ({ question, compactDisplay }: {
 export const MultipleChoice = () => <ComposedExercise question={multipleChoice} />;
 export const FreeResponse = () => <ComposedExercise question={freeResponse} />;
 export const Compact = () => <ComposedExercise question={multipleChoice} compactDisplay />;
+/** Without `onNextStep`: no Next, and a disabled Submit once the question is closed. */
+export const WithoutNext = () => <ComposedExercise question={multipleChoice} hostNavigates />;
 
 /** The body validates and reports, the host owns the button that asks it to. */
 export const HostDrivenSubmit = () => {
@@ -133,12 +139,15 @@ export const HostDrivenSubmit = () => {
   return (
     <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="composed@1">
       <ExerciseBody>
-        <QuestionBody
-          question={multipleChoice}
-          state={host.state}
-          onAnswerChange={host.onAnswerChange}
-          registerSubmit={(fn) => { submit.current = fn; }}
-        />
+        {/* without a QuestionWrapper, the host frames the body in a card section itself */}
+        <StepCardBody divided>
+          <QuestionBody
+            question={multipleChoice}
+            state={host.state}
+            onAnswerChange={host.onAnswerChange}
+            registerSubmit={(fn) => { submit.current = fn; }}
+          />
+        </StepCardBody>
         <div style={{ padding: '2rem' }}>
           <button
             onClick={() => {
@@ -153,3 +162,32 @@ export const HostDrivenSubmit = () => {
     </ExerciseWrapper>
   );
 };
+
+/**
+ * The contract a host rendering its own item format relies on: only the two wrappers, with no
+ * `ExerciseBody` and no legacy question components. The card supplies the gutter and the type.
+ */
+const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }) => (
+  <ExerciseWrapper
+    questionNumber={1}
+    numberOfQuestions={1}
+    questionId="foreign@1"
+    compactDisplay={compactDisplay}
+  >
+    <QuestionWrapper
+      is_completed={false}
+      canAnswer={true}
+      apiIsPending={false}
+      canUpdateCurrentStep={false}
+      onAnswerSave={() => window.alert('the host submits')}
+      onNextStep={() => undefined}
+      compactDisplay={compactDisplay}
+    >
+      <p>Markup from some other item format, styled only by what it inherits from the card.</p>
+      <label><input type="checkbox" /> An interaction the host renders itself</label>
+    </QuestionWrapper>
+  </ExerciseWrapper>
+);
+
+export const ForeignContent = () => <ForeignContentExercise />;
+export const ForeignContentCompact = () => <ForeignContentExercise compactDisplay />;

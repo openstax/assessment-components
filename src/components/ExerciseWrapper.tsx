@@ -2,15 +2,13 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { AvailablePoints, ExerciseScoringData } from '../types';
 import { InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
-import { CompactDisplayProps, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { ExerciseHeaderIcons, ExerciseIcons } from './ExerciseHeaderIcons';
 import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
 import { breakpoints } from '../theme';
 
-const StyledStepCard = styled(StepCard)`
-  font-size: calc(1.8rem * var(--content-text-scale));
-  line-height: calc(2.8rem * var(--content-text-scale));
-`;
+// typography and the gutter belong to the card itself; this exists to be selected below
+const StyledStepCard = styled(StepCard)``;
 
 const ToolbarWrapper = styled.div<{
   desktopToolbarEnabled: boolean;
@@ -70,14 +68,12 @@ export const ExerciseWrapper = ({
   children,
   ...props
 }: ExerciseWrapperProps) => {
-  const compact = useCompactDisplay(compactDisplay);
-
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
   const cardProps: StepCardProps = {
     ...props,
-    compactDisplay: compact,
+    compactDisplay,
     rightHeaderChildren: exerciseIcons ? <ExerciseHeaderIcons icons={exerciseIcons} /> : null,
   };
 

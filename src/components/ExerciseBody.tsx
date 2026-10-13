@@ -1,15 +1,10 @@
 import React from 'react';
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { typesetMath } from '../helpers/mathjax';
 import { TypesetMathContext } from '../hooks/useTypesetMath';
-import { CompactDisplayProps, CompactDisplayProvider, useCompactDisplay } from './compactDisplay';
+import { CompactDisplayProps } from './compactDisplay';
 import { Content } from './Content';
-
-const GlobalStyle = createGlobalStyle`
-  :root {
-    --content-text-scale: 1;
-  }
-`;
+import { stepCardSection } from './StepCardBody';
 
 const StyledExerciseBody = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
@@ -39,14 +34,24 @@ const StyledExerciseBody = styled.div<CompactDisplayProps>`
   `}
 `;
 
+const PreambleSection = styled(Content)`
+  ${stepCardSection}
+
+  &.exercise-stimulus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 const Preamble = ({ context, stimulus_html }: Pick<ExerciseBodyProps, 'context' | 'stimulus_html'>) => (
   <>
     {context &&
-      <Content className="step-card-body exercise-context"
+      <PreambleSection className="step-card-body exercise-context"
         block html={context} />}
 
     {stimulus_html &&
-      <Content className="step-card-body exercise-stimulus"
+      <PreambleSection className="step-card-body exercise-stimulus"
         block html={stimulus_html} />}
   </>
 );
@@ -68,7 +73,6 @@ export interface ExerciseBodyProps extends CompactDisplayProps {
  */
 export const ExerciseBody = ({ context, stimulus_html, children, compactDisplay }: ExerciseBodyProps) => {
   const container = React.useRef<HTMLDivElement>(null);
-  const compact = useCompactDisplay(compactDisplay);
 
   const typesetExercise = React.useCallback(() => {
     if (container.current) {
@@ -78,13 +82,10 @@ export const ExerciseBody = ({ context, stimulus_html, children, compactDisplay 
 
   return (
     <TypesetMathContext.Provider value={typesetExercise}>
-      <GlobalStyle />
-      <CompactDisplayProvider compactDisplay={compact}>
-        <StyledExerciseBody ref={container} compactDisplay={compact}>
-          <Preamble context={context} stimulus_html={stimulus_html} />
-          {children}
-        </StyledExerciseBody>
-      </CompactDisplayProvider>
+      <StyledExerciseBody ref={container} compactDisplay={compactDisplay}>
+        <Preamble context={context} stimulus_html={stimulus_html} />
+        {children}
+      </StyledExerciseBody>
     </TypesetMathContext.Provider>
   );
 };

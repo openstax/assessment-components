@@ -11,6 +11,7 @@ export * from './components/ExerciseWrapper';
 export * from './components/ExerciseQuestion';
 export * from './components/QuestionBody';
 export * from './components/QuestionWrapper';
+export * from './components/StepCardBody';
 export * from './components/QuestionLevelFeedback';
 export * from './components/compactDisplay';
 export * from './components/ProgressBar';

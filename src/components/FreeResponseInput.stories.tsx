@@ -1,5 +1,16 @@
 import { useState } from 'react';
+import type { ComponentType } from 'react';
+import { ExerciseWrapper } from './ExerciseWrapper';
 import { FreeResponseInput } from './FreeResponseInput';
+
+/** rendered inside the card it is designed for, which supplies its gutter and type */
+export default {
+  decorators: [(Component: ComponentType) => (
+    <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="1@1">
+      <Component />
+    </ExerciseWrapper>
+  )],
+};
 
 const mockQuestion = {
   id: '1',
@@ -65,6 +76,45 @@ export const SubmittedDate = () => {
       apiIsPending={false}
       free_response={freeResponse}
       submissionTimestamp="2024-07-26T16:00:00.000Z"
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerSave={() => console.log('Save')}
+      onNextStep={() => console.log('Next')}
+    />
+  );
+};
+
+export const DraftSaved = () => {
+  const [freeResponse, setFreeResponse] = useState('A partial thought, autosaved but not submitted.');
+
+  return (
+    <FreeResponseInput
+      {...baseQuestionState}
+      is_completed={false}
+      canAnswer={true}
+      apiIsPending={false}
+      free_response={freeResponse}
+      draftTimestamp="2024-10-03T15:55:00.000Z"
+      onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
+      onAnswerSave={() => console.log('Save')}
+      onNextStep={() => console.log('Next')}
+    />
+  );
+};
+
+export const DraftAfterSubmission = () => {
+  const [freeResponse, setFreeResponse] = useState('An edit made after submitting, autosaved.');
+
+  return (
+    <FreeResponseInput
+      {...baseQuestionState}
+      is_completed={true}
+      canAnswer={true}
+      needsSaved={true}
+      apiIsPending={false}
+      free_response={freeResponse}
+      submittedResponse="The originally submitted answer."
+      submissionTimestamp="2024-10-03T14:00:00.000Z"
+      draftTimestamp="2024-10-03T15:55:00.000Z"
       onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
@@ -285,7 +335,7 @@ export const PreviewModeWithAnswerNoGrading = () => {
       free_response="Photosynthesis is the process by which plants convert light energy into chemical energy, producing oxygen and glucose from carbon dioxide and water. This is crucial for the ecosystem as it provides oxygen for other organisms and forms the base of most food chains."
       previewMode={true}
       score={{ raw: 8, max: 10 }}
-      feedback_html="<p>Good explanation with clear details.</p>"
+      feedback_html="Good explanation with clear details."
       onAnswerChange={() => undefined}
       onAnswerSave={() => undefined}
       onNextStep={() => undefined}

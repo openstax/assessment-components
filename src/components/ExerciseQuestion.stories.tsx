@@ -1,4 +1,15 @@
+import type { ComponentType } from 'react';
 import { ExerciseQuestion } from './ExerciseQuestion';
+import { ExerciseWrapper } from './ExerciseWrapper';
+
+/** rendered inside the card it is designed for, which supplies its gutter and type */
+export default {
+  decorators: [(Component: ComponentType) => (
+    <ExerciseWrapper questionNumber={1} numberOfQuestions={1} questionId="1@1">
+      <Component />
+    </ExerciseWrapper>
+  )],
+};
 
 const props = {
   question: {

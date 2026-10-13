@@ -14,6 +14,7 @@ export interface FreeResponseProps extends CompactDisplayProps {
   needsSaved: boolean;
   apiIsPending: boolean;
   free_response: string;
+  submittedResponse?: string;
   onAnswerChange: (answer: Omit<Answer, 'id'> & { id: number, question_id: number }) => void;
   onAnswerSave: (question_id: number) => void;
   onNextStep: (currentIndex: number) => void;
@@ -28,6 +29,7 @@ export interface FreeResponseProps extends CompactDisplayProps {
   score?: { raw?: number; max?: number };
   feedback_html?: string;
   submissionTimestamp?: string | number;
+  draftTimestamp?: string | number;
   cancelHandler?: MouseEventHandler<HTMLButtonElement>;
   previewMode?: boolean;
   canUpdateCurrentStep?: boolean;
@@ -47,7 +49,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
   const {
     is_completed, canAnswer, needsSaved, apiIsPending, free_response, onAnswerChange,
     onAnswerSave, onNextStep, questionNumber, question, responseSize, score, feedback_html,
-    submissionTimestamp, cancelHandler, previewMode = false, onGradingSave, gradingTimestamp, characterLimitByResponseSize,
+    submissionTimestamp, draftTimestamp, submittedResponse, cancelHandler, previewMode = false, onGradingSave,
+    gradingTimestamp, characterLimitByResponseSize,
     canUpdateCurrentStep = false, hasUnlimitedAttempts, hasFeedback, compactDisplay,
   } = props;
 
@@ -61,6 +64,8 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     score,
     feedback_html,
     submissionTimestamp,
+    draftTimestamp,
+    submittedResponse,
     gradingTimestamp,
   };
 
@@ -93,22 +98,18 @@ export const FreeResponseInput = (props: FreeResponseProps) => {
     />
   );
 
-  if (previewMode) {
-    return body;
-  }
-
+  // a preview renders no controls and no attempts notice, so its footer is left out
   return (
     <QuestionWrapper
-      question_id={question.id}
-      questionIndex={questionNumber - 1}
       is_completed={is_completed}
       canAnswer={canAnswer}
       canSubmit={status.canSubmit}
       dirty={status.dirty}
       apiIsPending={apiIsPending}
       canUpdateCurrentStep={canUpdateCurrentStep}
-      hasUnlimitedAttempts={hasUnlimitedAttempts}
+      hasUnlimitedAttempts={!previewMode && hasUnlimitedAttempts}
       hasFeedback={hasFeedback}
+      showControls={!previewMode}
       onAnswerSave={() => onAnswerSave(numberfyId(question.id))}
       onNextStep={() => onNextStep(questionNumber - 1)}
       onCancel={(event) => {
