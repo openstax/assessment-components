@@ -78,6 +78,8 @@ export interface ExerciseWithQuestionStatesProps extends ExerciseBaseProps {
 
 export interface OverlayProps {
   overlayChildren?: React.ReactNode;
+  /** marks the card as the chosen one out of a list, such as a question picker's */
+  selected?: boolean;
 }
 
 type QuestionStatus = { canSubmit?: boolean; dirty?: boolean };
@@ -98,6 +100,7 @@ export const Exercise = ({
   scrollToQuestion,
   exerciseIcons,
   overlayChildren,
+  selected,
   labelAnswers = true,
   displaySolution = true,
   previewMode = false,
@@ -170,6 +173,7 @@ export const Exercise = ({
       isGraded={isGraded}
       totalScoring={totalScoring}
       overlayChildren={overlayChildren}
+      selected={selected}
       compactDisplay={compactDisplay}
     >
       <ExerciseBody

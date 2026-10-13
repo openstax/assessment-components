@@ -14,6 +14,8 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
   /* the same at every width, so every section ends with the same room above the next */
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: ${colors.card.body.background};
+  /* the rules dividing the card's sections, which a selected card thickens to match its border */
+  --step-card-rule-width: 1px;
 
   ${breakpoints.tablet`
     --step-card-gutter: ${breakpoints.margins.tablet};
@@ -42,6 +44,13 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
     }
   `}
 
+  /* after compact, which it outranks */
+  &&.is-selected {
+    --step-card-surface: ${colors.card.header.background};
+    --step-card-rule-width: 0.2rem;
+    border-width: 0.2rem;
+  }
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -49,7 +58,8 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
   margin: 0 auto 5rem auto;
   border: 0.1rem solid ${colors.palette.pale};
   border-radius: 0.25rem;
-  background-color: white;
+  /* the one surface every section of the card shows through, a multipart's questions included */
+  background-color: var(--step-card-surface);
   overflow: hidden;
 
   ${breakpoints.desktop`
@@ -195,7 +205,7 @@ const StepCardHeader = styled.div<CompactDisplayProps>`
 
   ${props => props.compactDisplay && css`
     && {
-      background-color: ${colors.palette.white};
+      background-color: transparent;
       padding: var(--spacing, 0.8rem);
       font-size: 1.6rem;
       line-height: 2rem;
@@ -284,6 +294,8 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
   questionId?: string;
   multipartBadge?: ReactNode;
   overlayChildren?: React.ReactNode;
+  /** marks the card as the chosen one out of a list, such as a question picker's */
+  selected?: boolean;
   totalScoring?: ExerciseScoringData;
   showScoring?: boolean;
   isGraded?: boolean;
@@ -302,6 +314,7 @@ const StepCard = ({
   rightHeaderChildren,
   headerTitleChildren,
   overlayChildren,
+  selected,
   showScoring,
   totalScoring,
   isGraded,
@@ -350,7 +363,7 @@ const StepCard = ({
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard className={className} compactDisplay={compactDisplay}>
+      <InnerStepCard className={cn(className, { 'is-selected': selected })} compactDisplay={compactDisplay}>
         <div
           ref={overlayRef}
           {

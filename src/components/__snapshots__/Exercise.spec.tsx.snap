@@ -24,14 +24,12 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
 
 .c6 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -54,6 +52,7 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -71,8 +70,14 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -543,7 +548,6 @@ exports[`Exercise with overlay rendering matches snapshot 1`] = `
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -980,14 +984,12 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
 
 .c6 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -1010,6 +1012,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -1027,8 +1030,14 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -1775,14 +1784,12 @@ exports[`Exercise with question state data matches snapshot 1`] = `
 
 .c6 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -1805,6 +1812,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -1822,8 +1830,14 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -2294,7 +2308,6 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -2726,14 +2739,12 @@ exports[`Exercise with question state data renders header icons with multiple ch
 
 .c12 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c11 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -2756,6 +2767,7 @@ exports[`Exercise with question state data renders header icons with multiple ch
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -2773,8 +2785,14 @@ exports[`Exercise with question state data renders header icons with multiple ch
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c2.c2.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c1 {
@@ -3430,7 +3448,6 @@ exports[`Exercise with question state data renders header icons with multiple ch
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -4071,14 +4088,12 @@ exports[`Exercise with question state data renders header icons with two-step ex
 
 .c12 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c11 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -4101,6 +4116,7 @@ exports[`Exercise with question state data renders header icons with two-step ex
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -4118,8 +4134,14 @@ exports[`Exercise with question state data renders header icons with two-step ex
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c2.c2.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c1 {
@@ -4775,7 +4797,6 @@ exports[`Exercise with question state data renders header icons with two-step ex
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 
@@ -5456,14 +5477,12 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
 
 .c6 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
-  border-top: 1px solid #d5d5d5;
+  border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
-  background: var(--step-card-surface);
   overflow: auto;
 }
 
@@ -5486,6 +5505,7 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -5503,8 +5523,14 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -5990,7 +6016,6 @@ exports[`Exercise with question state data shows a detailed solution 1`] = `
   justify-content: space-between;
   font-size: calc(1.6rem * var(--content-text-scale,1));
   line-height: calc(2rem * var(--content-text-scale,1));
-  background: #fdfdfd;
   overflow: auto;
 }
 

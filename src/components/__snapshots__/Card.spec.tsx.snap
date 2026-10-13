@@ -6,6 +6,7 @@ exports[`StepCard matches snapshot 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -23,8 +24,14 @@ exports[`StepCard matches snapshot 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -287,6 +294,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -304,8 +312,14 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
@@ -568,6 +582,7 @@ exports[`TaskStepCard matches snapshot 1`] = `
   --step-card-gutter-top: 4.8rem;
   --step-card-gutter-bottom: 2rem;
   --step-card-surface: #fdfdfd;
+  --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
   line-height: calc(2.8rem * var(--content-text-scale,1));
   color: #424242;
@@ -585,8 +600,14 @@ exports[`TaskStepCard matches snapshot 1`] = `
   margin: 0 auto 5rem auto;
   border: 0.1rem solid #d5d5d5;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: var(--step-card-surface);
   overflow: hidden;
+}
+
+.c1.c1.is-selected {
+  --step-card-surface: #daf3f8;
+  --step-card-rule-width: 0.2rem;
+  border-width: 0.2rem;
 }
 
 .c0 {
