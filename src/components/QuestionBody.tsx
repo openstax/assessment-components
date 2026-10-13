@@ -239,7 +239,7 @@ const FreeResponseBody = React.forwardRef((
   } = state;
 
   const characterLimit = (responseSize && characterLimitByResponseSize[responseSize])
-    || characterLimitByResponseSize.default;
+    ?? characterLimitByResponseSize.default;
 
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);
