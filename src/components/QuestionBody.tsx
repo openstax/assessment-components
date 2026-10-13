@@ -2,15 +2,20 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
-import { countWords, formatTimestamp, numberfyId } from '../utils';
+import { countCharacters, formatTimestamp, numberfyId } from '../utils';
 import { CompactDisplayProps } from './compactDisplay';
 import { FreeResponseGrading } from './FreeResponseGrading';
 import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
 import { Question, QuestionHtml } from './Question';
 import ExclamationCircle from '../assets/exclamation-circle';
 
-const RESPONSE_SIZE_WORD_LIMITS: Record<string, number> = { short: 30, medium: 100, long: 1000 };
-const DEFAULT_WORD_LIMIT = 100;
+/** exercises are tagged `small` today, but may switch to `short` */
+export type ResponseSize = 'short' | 'small' | 'medium' | 'long';
+/** `default` applies when a question has no response size, or one not listed here */
+export type CharacterLimitByResponseSize = Partial<Record<ResponseSize, number>> & { default: number };
+export const DEFAULT_CHARACTER_LIMIT_BY_RESPONSE_SIZE: CharacterLimitByResponseSize = {
+  long: 10000, default: 4000,
+};
 
 export const StyledFreeResponse = styled.div<CompactDisplayProps>`
   ${props => props.compactDisplay && css`
@@ -39,8 +44,8 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
     margin-bottom: 8px;
   }
 
-  .word-limit-error-info,
-  .words-remaining-negative {
+  .character-limit-error-info,
+  .characters-remaining-negative {
     color: ${colors.palette.danger};
   }
 
@@ -166,7 +171,7 @@ const ValidationMessage = styled.div`
 const VALIDATION_MESSAGES = {
   'no-answer-selected': 'Select an answer before submitting.',
   'no-response-entered': 'Enter a response before submitting.',
-  'over-word-limit': 'Shorten your response to the word limit before submitting.',
+  'over-character-limit': 'Shorten your response to the character limit before submitting.',
 };
 
 type ValidationKey = keyof typeof VALIDATION_MESSAGES;
@@ -202,10 +207,10 @@ export interface QuestionBodyProps extends CompactDisplayProps {
    * mount and whenever either changes; the same values ride along on `onAnswerChange`.
    */
   onStatusChange?: (status: { canSubmit?: boolean; dirty?: boolean }) => void;
-  /** how long an answer this question expects. The word count behind it stays internal. */
-  responseSize?: 'short' | 'medium' | 'long';
-  /** @deprecated Pass the semantic `responseSize` instead; this overrides it while it is passed. */
-  wordLimit?: number;
+  /** how long an answer this question expects; picks the character limit from `characterLimitByResponseSize` */
+  responseSize?: ResponseSize;
+  /** defaults to `DEFAULT_CHARACTER_LIMIT_BY_RESPONSE_SIZE` */
+  characterLimitByResponseSize?: CharacterLimitByResponseSize;
   questionNumber?: number;
   /** render as instructor-facing content: answers and solutions visible, learner controls absent */
   previewMode?: boolean;
@@ -226,14 +231,15 @@ const FreeResponseBody = React.forwardRef((
   const {
     question, state, apiIsPending = false, needsSaved = false, onAnswerChange, onGradingSave,
     registerSubmit, registerCancel, responseSize, previewMode = false, feedback, compactDisplay,
+    characterLimitByResponseSize = DEFAULT_CHARACTER_LIMIT_BY_RESPONSE_SIZE,
   } = props;
   const {
     is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, draftTimestamp,
     submittedResponse, gradingTimestamp,
   } = state;
 
-  const wordLimit = props.wordLimit
-    ?? ((responseSize && RESPONSE_SIZE_WORD_LIMITS[responseSize]) || DEFAULT_WORD_LIMIT);
+  const characterLimit = (responseSize && characterLimitByResponseSize[responseSize])
+    ?? characterLimitByResponseSize.default;
 
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);
@@ -263,11 +269,11 @@ const FreeResponseBody = React.forwardRef((
 
   const textHasChanged = needsSaved && (free_response || '') !== originalSubmittedValue;
 
-  const wordCount = countWords(free_response || '');
-  const remainingWords = wordLimit - wordCount;
-  const isOverWordLimit = remainingWords < 0;
+  const characterCount = countCharacters(free_response || '');
+  const remainingCharacters = characterLimit - characterCount;
+  const isOverCharacterLimit = remainingCharacters < 0;
   const isEmpty = (free_response || '').trim().length === 0;
-  const canSubmit = !isOverWordLimit && !isEmpty;
+  const canSubmit = !isOverCharacterLimit && !isEmpty;
 
   const { onStatusChange } = props;
   React.useLayoutEffect(() => {
@@ -287,12 +293,12 @@ const FreeResponseBody = React.forwardRef((
     if (!registerSubmit) { return; }
     registerSubmit(() => {
       if (isEmpty) { setValidation('no-response-entered'); return null; }
-      if (isOverWordLimit) { setValidation('over-word-limit'); return null; }
+      if (isOverCharacterLimit) { setValidation('over-character-limit'); return null; }
       setValidation(null);
       return answerFor(free_response || '');
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [registerSubmit, isEmpty, isOverWordLimit, free_response, question.id]);
+  }, [registerSubmit, isEmpty, isOverCharacterLimit, free_response, question.id]);
 
   React.useEffect(() => {
     if (!registerCancel) { return; }
@@ -318,10 +324,10 @@ const FreeResponseBody = React.forwardRef((
   }, [free_response, isPostReview, expanded]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
-    // Students may type or paste past the word limit; submission is blocked instead of truncating
+    // Students may type or paste past the character limit; submission is blocked instead of truncating
     const value = e.target.value;
     const valueIsEmpty = value.trim().length === 0;
-    const valueIsOverLimit = wordLimit - countWords(value) < 0;
+    const valueIsOverLimit = countCharacters(value) > characterLimit;
 
     if (validation) { setValidation(null); }
 
@@ -363,8 +369,8 @@ const FreeResponseBody = React.forwardRef((
     <InfoRow hasChildren={!!responseStatus}>
       {responseStatus && <div><span className="last-submitted">{responseStatus}</span></div>}
       <div>
-        {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
-        <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
+        {characterCount >= characterLimit && <span className="character-limit-error-info">Character limit reached</span>}
+        <span> Remaining characters: <span className={isOverCharacterLimit ? 'characters-remaining-negative' : undefined}>{remainingCharacters}</span></span>
       </div>
     </InfoRow>
   );
