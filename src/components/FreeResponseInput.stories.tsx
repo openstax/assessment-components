@@ -49,7 +49,7 @@ export const CharacterLimitExceeded = () => {
       onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
-      characterLimitByResponseSize={{ short: 20, medium: 20, long: 20, default: 20 }}
+      characterLimitByResponseSize={{ default: 20 }}
     />
   );
 };

@@ -9,19 +9,12 @@ import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
 import { Question, QuestionHtml } from './Question';
 import ExclamationCircle from '../assets/exclamation-circle';
 
-/** `small` is another name for `short`: exercises are tagged `small` today, but may switch to `short` */
+/** exercises are tagged `small` today, but may switch to `short` */
 export type ResponseSize = 'short' | 'small' | 'medium' | 'long';
 /** `default` applies when a question has no response size, or one not listed here */
-export type CharacterLimitByResponseSize = Record<Exclude<ResponseSize, 'small'> | 'default', number>;
+export type CharacterLimitByResponseSize = Partial<Record<ResponseSize, number>> & { default: number };
 export const DEFAULT_CHARACTER_LIMIT_BY_RESPONSE_SIZE: CharacterLimitByResponseSize = {
-  short: 800, medium: 4000, long: 6000, default: 4000,
-};
-
-const characterLimitFor = (
-  characterLimitByResponseSize: CharacterLimitByResponseSize, responseSize?: ResponseSize
-) => {
-  const size = responseSize === 'small' ? 'short' : responseSize;
-  return (size && characterLimitByResponseSize[size]) || characterLimitByResponseSize.default;
+  long: 10000, default: 4000,
 };
 
 export const StyledFreeResponse = styled.div<CompactDisplayProps>`
@@ -252,7 +245,8 @@ const FreeResponseBody = React.forwardRef((
   } = state;
 
   const compact = useCompactDisplay(compactDisplay);
-  const characterLimit = characterLimitFor(characterLimitByResponseSize, responseSize);
+  const characterLimit = (responseSize && characterLimitByResponseSize[responseSize])
+    || characterLimitByResponseSize.default;
 
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);

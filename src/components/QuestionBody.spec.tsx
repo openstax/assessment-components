@@ -108,14 +108,14 @@ describe('QuestionBody', () => {
         <QuestionBody
           question={freeResponse}
           state={{ is_completed: false, canAnswer: true, free_response: 'café 😀' }}
-          responseSize="short"
+          responseSize="long"
           onAnswerChange={() => undefined}
         />
       );
-      expect(remainingCharactersIn(tree)).toEqual(`${800 - 7}`);
+      expect(remainingCharactersIn(tree)).toEqual(`${10000 - 7}`);
     });
 
-    it('gives a small response size the short limit', () => {
+    it('uses the default limit for a response size without its own limit', () => {
       const tree = renderWithEffects(
         <QuestionBody
           question={freeResponse}
@@ -124,7 +124,7 @@ describe('QuestionBody', () => {
           onAnswerChange={() => undefined}
         />
       );
-      expect(remainingCharactersIn(tree)).toEqual('800');
+      expect(remainingCharactersIn(tree)).toEqual('4000');
     });
 
     it('uses the default limit when the question has no response size', () => {
@@ -145,7 +145,7 @@ describe('QuestionBody', () => {
         <QuestionBody
           question={freeResponse}
           state={{ is_completed: false, canAnswer: true, free_response: 'eight ch' }}
-          characterLimitByResponseSize={{ short: 5, medium: 5, long: 5, default: 5 }}
+          characterLimitByResponseSize={{ default: 5 }}
           onAnswerChange={() => undefined}
           onStatusChange={onStatusChange}
           registerSubmit={(fn) => { submit = fn; }}
