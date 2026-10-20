@@ -122,6 +122,35 @@ describe('NeedsGradingStudentRow', () => {
     it('shows no score before grading', () => {
       expect(textOf(render().toJSON())).not.toContain('Score:');
     });
+
+    it('re-checks whether it needs "read more" when the window resizes', () => {
+      // jsdom has no layout, so the answer's height is set by hand: 400px overflows, 100px fits
+      const answerNode = document.createElement('div');
+      Object.defineProperty(answerNode, 'scrollHeight', { writable: true, value: 400 });
+      const resizeTo = (height: number) => renderer.act(() => {
+        Object.defineProperty(answerNode, 'scrollHeight', { writable: true, value: height });
+        window.dispatchEvent(new Event('resize'));
+      });
+
+      let tree!: renderer.ReactTestRenderer;
+      renderer.act(() => {
+        tree = renderer.create(
+          <NeedsGradingStudentRow {...baseProps} />,
+          { createNodeMock: () => answerNode },
+        );
+      });
+      const readMore = () => tree.root.findAll(
+        node => node.type === 'button' && /read (more|less)/.test(String(node.props.children))
+      )[0];
+
+      renderer.act(() => readMore().props.onClick());
+      resizeTo(100);
+      renderer.act(() => readMore().props.onClick());
+      expect(readMore()).toBeUndefined();
+
+      resizeTo(400);
+      expect(readMore().props.children).toBe('read more');
+    });
   });
 
   describe('the grading form', () => {
