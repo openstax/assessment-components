@@ -381,9 +381,14 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
+  const answerId = `free-response-answer-${question.id}`;
+  const readMoreLabel = `${expanded ? 'Read less' : 'Read more'} of your answer`
+    + (props.questionNumber === undefined ? '' : ` to question ${props.questionNumber}`);
+
   const reviewAnswer = (
     <>
       <ReviewAnswerText
+        id={answerId}
         ref={textRef}
         expanded={expanded}
         isOverflowing={isOverflowing}
@@ -391,7 +396,12 @@ const FreeResponseBody = React.forwardRef((
         {free_response || ''}
       </ReviewAnswerText>
       {(isOverflowing || expanded) && (
-        <ReadMoreButton onClick={() => setExpanded(!expanded)}>
+        <ReadMoreButton
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={answerId}
+          aria-label={readMoreLabel}
+        >
           {expanded ? 'read less' : 'read more'}
         </ReadMoreButton>
       )}

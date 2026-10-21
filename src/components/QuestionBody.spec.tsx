@@ -1,4 +1,6 @@
 import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import { QuestionBody } from './QuestionBody';
 import { ExerciseQuestionData } from '../types';
 
@@ -129,6 +131,104 @@ describe('QuestionBody', () => {
       expect(onAnswerChange).toHaveBeenCalledWith(
         expect.objectContaining({ free_response: 'the submitted answer' })
       );
+    });
+  });
+
+  describe('the read more control', () => {
+    const originalHeight = Object.getOwnPropertyDescriptor(Element.prototype, 'scrollHeight');
+
+    // jsdom does no layout, so make the answer look taller than its collapsed height
+    beforeEach(() => {
+      Object.defineProperty(Element.prototype, 'scrollHeight', { configurable: true, get: () => 1000 });
+    });
+
+    afterEach(() => {
+      if (originalHeight) { Object.defineProperty(Element.prototype, 'scrollHeight', originalHeight); }
+      else { Reflect.deleteProperty(Element.prototype, 'scrollHeight'); }
+    });
+
+    const mount = (props: Partial<React.ComponentProps<typeof QuestionBody>> = {}) => {
+      const container = document.createElement('div');
+      document.body.appendChild(container);
+      act(() => {
+        ReactDOM.render(
+          <QuestionBody
+            question={freeResponse}
+            state={{ is_completed: true, canAnswer: false, free_response: 'A long answer' }}
+            onAnswerChange={() => undefined}
+            {...props}
+          />,
+          container
+        );
+      });
+      return {
+        container,
+        button: () => container.querySelector('button') as HTMLButtonElement,
+        cleanup: () => { act(() => { ReactDOM.unmountComponentAtNode(container); }); container.remove(); },
+      };
+    };
+
+    it('says whether the answer is expanded', () => {
+      const { button, cleanup } = mount();
+
+      expect(button().getAttribute('aria-expanded')).toBe('false');
+      act(() => { button().click(); });
+      expect(button().getAttribute('aria-expanded')).toBe('true');
+      act(() => { button().click(); });
+      expect(button().getAttribute('aria-expanded')).toBe('false');
+      cleanup();
+    });
+
+    it('points at the answer text it expands', () => {
+      const { container, button, cleanup } = mount();
+      const target = container.querySelector(`#${button().getAttribute('aria-controls')}`);
+
+      expect(target?.textContent).toBe('A long answer');
+      cleanup();
+    });
+
+    it('keeps the visible words in its name and says which question it belongs to', () => {
+      const { button, cleanup } = mount({ questionNumber: 2 });
+
+      expect(button().textContent).toBe('read more');
+      expect(button().getAttribute('aria-label')).toBe('Read more of your answer to question 2');
+      act(() => { button().click(); });
+      expect(button().textContent).toBe('read less');
+      expect(button().getAttribute('aria-label')).toBe('Read less of your answer to question 2');
+      cleanup();
+    });
+
+    it('still has a name when the question number is not known', () => {
+      const { button, cleanup } = mount();
+
+      expect(button().getAttribute('aria-label')).toBe('Read more of your answer');
+      cleanup();
+    });
+  });
+
+  describe('the notice icon', () => {
+    const editable = (question: ExerciseQuestionData) => (
+      <QuestionBody
+        question={question}
+        state={{ is_completed: false, canAnswer: true }}
+        onAnswerChange={() => undefined}
+      />
+    );
+
+    it('is hidden from assistive technology', () => {
+      const tree = renderer.create(editable(freeResponse));
+      const icons = tree.root.findAll(node => node.type === 'svg');
+
+      expect(icons).toHaveLength(1);
+      expect(icons[0].props['aria-hidden']).toBe('true');
+    });
+
+    it('carries no ids, so several can share a page', () => {
+      const tree = renderer.create(<>{editable(freeResponse)}{editable({ ...freeResponse, id: '2' })}</>);
+      const icons = tree.root.findAll(node => node.type === 'svg');
+
+      expect(icons).toHaveLength(2);
+      icons.forEach(icon => expect(icon.findAll(node => node.props.id !== undefined)).toHaveLength(0));
     });
   });
 });
