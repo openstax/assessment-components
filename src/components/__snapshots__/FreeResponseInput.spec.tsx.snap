@@ -161,7 +161,8 @@ Array [
         />
       </div>
       <textarea
-        aria-label="question response text box"
+        aria-describedby="free-response-count-1"
+        aria-label="Your response to question 1"
         className="c4"
         data-test-id="free-response-box"
         disabled={false}
@@ -172,7 +173,9 @@ Array [
       <div
         className="c5"
       >
-        <div>
+        <div
+          id="free-response-count-1"
+        >
           <span>
              Remaining words: 
             <span>

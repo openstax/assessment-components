@@ -226,6 +226,7 @@ const FreeResponseBody = React.forwardRef((
   const {
     question, state, apiIsPending = false, needsSaved = false, onAnswerChange, onGradingSave,
     registerSubmit, registerCancel, responseSize, previewMode = false, feedback, compactDisplay,
+    questionNumber,
   } = props;
   const {
     is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, draftTimestamp,
@@ -243,6 +244,10 @@ const FreeResponseBody = React.forwardRef((
 
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
+
+  // Built from the question id, which is unique on the page: React 17 has no useId.
+  const countId = `free-response-count-${question.id}`;
+  const errorId = `free-response-error-${question.id}`;
 
   const editableNotice = !previewMode ? (
     <EditableNotice>
@@ -339,7 +344,7 @@ const FreeResponseBody = React.forwardRef((
   );
 
   const validationMessage = validation
-    ? <ValidationMessage role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
+    ? <ValidationMessage id={errorId} role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
     : null;
 
   const textarea = (
@@ -348,7 +353,9 @@ const FreeResponseBody = React.forwardRef((
       onChange={handleChange}
       data-test-id="free-response-box"
       placeholder="Enter your response..."
-      aria-label="question response text box"
+      aria-label={questionNumber === undefined ? 'Your response' : `Your response to question ${questionNumber}`}
+      aria-describedby={validation ? `${errorId} ${countId}` : countId}
+      aria-invalid={validation ? true : undefined}
       disabled={previewMode || apiIsPending || !canAnswer}
     />
   );
@@ -362,7 +369,7 @@ const FreeResponseBody = React.forwardRef((
   const infoRow = !previewMode && (
     <InfoRow hasChildren={!!responseStatus}>
       {responseStatus && <div><span className="last-submitted">{responseStatus}</span></div>}
-      <div>
+      <div id={countId}>
         {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
         <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
       </div>
