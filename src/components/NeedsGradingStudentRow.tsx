@@ -191,18 +191,20 @@ export const NeedsGradingStudentRow = ({
   const expanded = isControlled ? controlledExpanded : internalExpanded;
 
   useLayoutEffect(() => {
+    const textElement = textRef.current;
+    if (!textElement) { return; }
+
     const checkOverflow = () => {
-      if (textRef.current) {
-        const overflows = !textExpanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
-        setIsOverflowing(overflows);
-      }
+      const overflows = !textExpanded && textElement.scrollHeight > COLLAPSED_HEIGHT * 10; // px
+      setIsOverflowing(overflows);
     };
 
     checkOverflow();
 
-    // Re-check on window resize
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
+    // Re-check on resize, including when a collapsed question card is reopened
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(textElement);
+    return () => observer.disconnect();
   }, [freeResponse, textExpanded, expanded]);
 
   const handleToggle = () => {
