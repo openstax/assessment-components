@@ -202,6 +202,7 @@ export const NeedsGradingStudentRow = ({
     checkOverflow();
 
     // Re-check on resize, including when a collapsed question card is reopened
+    if (typeof ResizeObserver === 'undefined') { return; }
     const observer = new ResizeObserver(checkOverflow);
     observer.observe(textElement);
     return () => observer.disconnect();
