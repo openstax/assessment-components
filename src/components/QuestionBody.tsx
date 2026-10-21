@@ -382,7 +382,7 @@ const FreeResponseBody = React.forwardRef((
   );
 
   const answerId = `free-response-answer-${question.id}`;
-  const readMoreLabel = `${expanded ? 'Read less' : 'Read more'} of your answer`
+  const readMoreLabel = `${expanded ? 'Read less' : 'Read more'} of ${previewMode ? 'the answer' : 'your answer'}`
     + (props.questionNumber === undefined ? '' : ` to question ${props.questionNumber}`);
 
   const reviewAnswer = (
