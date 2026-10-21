@@ -204,6 +204,24 @@ describe('QuestionBody', () => {
       expect(button().getAttribute('aria-label')).toBe('Read more of your answer');
       cleanup();
     });
+
+    describe('in an instructor preview', () => {
+      it('does not call the response the viewer\'s own answer', () => {
+        const { button, cleanup } = mount({ previewMode: true, questionNumber: 2 });
+
+        expect(button().getAttribute('aria-label')).toBe('Read more of the answer to question 2');
+        act(() => { button().click(); });
+        expect(button().getAttribute('aria-label')).toBe('Read less of the answer to question 2');
+        cleanup();
+      });
+
+      it('still has a name when the question number is not known', () => {
+        const { button, cleanup } = mount({ previewMode: true });
+
+        expect(button().getAttribute('aria-label')).toBe('Read more of the answer');
+        cleanup();
+      });
+    });
   });
 
   describe('the notice icon', () => {
