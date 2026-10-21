@@ -347,6 +347,10 @@ const FreeResponseBody = React.forwardRef((
     ? <ValidationMessage id={errorId} role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
     : null;
 
+  // a preview draws no count line, so there is nothing to point at
+  const describedBy = [validation ? errorId : undefined, previewMode ? undefined : countId]
+    .filter(Boolean).join(' ') || undefined;
+
   const textarea = (
     <FreeResponseTextArea
       value={free_response || ''}
@@ -354,7 +358,7 @@ const FreeResponseBody = React.forwardRef((
       data-test-id="free-response-box"
       placeholder="Enter your response..."
       aria-label={questionNumber === undefined ? 'Your response' : `Your response to question ${questionNumber}`}
-      aria-describedby={validation ? `${errorId} ${countId}` : countId}
+      aria-describedby={describedBy}
       aria-invalid={validation ? true : undefined}
       disabled={previewMode || apiIsPending || !canAnswer}
     />

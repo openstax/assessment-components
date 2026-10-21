@@ -135,6 +135,32 @@ describe('QuestionBody', () => {
         expect(textOfId(tree, box(tree).props['aria-describedby'])).toContain('Word limit reached');
       });
 
+      describe('where the count is not shown', () => {
+        const answerable = { is_completed: true, canAnswer: true, free_response: 'A response' };
+
+        // a preview draws no count line, but a completed, answerable question still gets a box
+        it('is left out of a preview, rather than pointing at nothing', () => {
+          const tree = render({ previewMode: true, state: answerable });
+
+          expect(box(tree).props['aria-describedby']).toBeUndefined();
+        });
+
+        it('only ever points at elements that are on the page', () => {
+          const cases = [
+            {},
+            { state: answerable },
+            { previewMode: true, state: answerable },
+          ];
+
+          cases.forEach((props) => {
+            const tree = render(props);
+            const ids = String(box(tree).props['aria-describedby'] ?? '').split(' ').filter(Boolean);
+
+            ids.forEach(id => expect(findNode(tree.toJSON() as never, node => node.props?.id === id)).toBeDefined());
+          });
+        });
+      });
+
       it('is different for each question on the page', () => {
         let tree!: renderer.ReactTestRenderer;
         renderer.act(() => {
