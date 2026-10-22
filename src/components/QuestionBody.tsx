@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
-import { countWords, formatTimestamp, numberfyId } from '../utils';
+import { countWords, formatTimestamp, numberfyId, showMoreLabel } from '../utils';
 import { CompactDisplayProps } from './compactDisplay';
 import { FreeResponseGrading } from './FreeResponseGrading';
 import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
@@ -384,8 +384,9 @@ const FreeResponseBody = React.forwardRef((
   );
 
   const answerId = `free-response-answer-${question.id}`;
-  const readMoreLabel = `${expanded ? 'Show less' : 'Show more'} of the answer`
-    + (props.questionNumber === undefined ? '' : ` for question ${props.questionNumber}`);
+  const readMoreLabel = showMoreLabel(
+    expanded, props.questionNumber === undefined ? undefined : `for question ${props.questionNumber}`
+  );
 
   const reviewAnswer = (
     <>
@@ -544,7 +545,12 @@ const MultipleChoiceBody = React.forwardRef((
         </>
       }
     >
-      <FreeResponseReview free_response={free_response} previewMode={previewMode} />
+      <FreeResponseReview
+        id={`free-response-review-${question.id}`}
+        free_response={free_response}
+        previewMode={previewMode}
+        questionNumber={questionNumber}
+      />
     </Question>
   );
 });
