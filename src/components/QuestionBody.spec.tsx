@@ -180,8 +180,8 @@ describe('QuestionBody', () => {
     });
 
     it('points at the answer text it expands', () => {
-      const { container, button, cleanup } = mount();
-      const target = container.querySelector(`#${button().getAttribute('aria-controls')}`);
+      const { button, cleanup } = mount({ question: { ...freeResponse, id: 'exercise@1.2:3' } });
+      const target = document.getElementById(button().getAttribute('aria-controls') as string);
 
       expect(target?.textContent).toBe('A long answer');
       cleanup();
