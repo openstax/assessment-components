@@ -28,15 +28,17 @@ const StyledQuestionLevelFeedback = styled.div`
   .detailed-solution {
     .header {
       display: inline;
-      margin-right: 0.5rem;
-      color: #5e6062;
+      margin: 0 0.5rem 0 0;
+      padding: 0;
+      font: inherit;
       font-weight: bold;
+      color: ${colors.palette.neutralDark};
       flex-basis: 0;
     }
 
     .solution {
       display: inline;
-      color: #6f6f6f;
+      color: ${colors.palette.neutralDark};
     }
   }
 `;
@@ -79,9 +81,9 @@ export const QuestionLevelFeedback = (props: QuestionLevelFeedbackProps) => {
         </FeedbackText>}
       {detailedSolution &&
         <div className="detailed-solution">
-          <div className="header">
+          <h3 className="header">
             Detailed solution:
-          </div>
+          </h3>
           <Content className="solution" block={true} html={detailedSolution} />
         </div>}
     </StyledQuestionLevelFeedback>
