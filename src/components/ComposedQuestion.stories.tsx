@@ -143,7 +143,6 @@ const HostDrivenSubmitExercise = ({ question }: { question: ExerciseQuestionData
           <QuestionBody
             question={question}
             state={host.state}
-            questionNumber={1}
             responseSize="short"
             onAnswerChange={host.onAnswerChange}
             registerSubmit={(fn) => { submit.current = fn; }}
