@@ -17,7 +17,7 @@ describe('FreeResponseReview', () => {
   it('renders the free response text in preview mode with "show more" link if overflowing', () => {
     const longText = exampleText.repeat(2000); // Make it long enough to overflow
     const tree = renderer.create(
-      <FreeResponseReview free_response={longText} previewMode />
+      <FreeResponseReview id="review-text" free_response={longText} previewMode />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -74,6 +74,13 @@ describe('FreeResponseReview show more button', () => {
     act(() => { button().click(); });
     expect(button().textContent).toBe('show less');
     expect(button().getAttribute('aria-expanded')).toBe('true');
+    cleanup();
+  });
+
+  it('points at the answer even when the caller gives no id', () => {
+    const { button, cleanup } = mount({ id: undefined });
+
+    expect(document.getElementById(button().getAttribute('aria-controls') as string)?.textContent).toBe('A long answer');
     cleanup();
   });
 

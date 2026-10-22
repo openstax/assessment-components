@@ -18,6 +18,8 @@ const FreeResponseContainer = (
     );
   };
 
+let reviewCount = 0;
+
 export const FreeResponseReview = ({ id, free_response, previewMode, questionNumber }: {
   id?: string;
   free_response?: string;
@@ -25,6 +27,9 @@ export const FreeResponseReview = ({ id, free_response, previewMode, questionNum
   questionNumber?: number;
 }) => {
 
+  // React 17 has no useId: a caller that gives no id still gets one the button can point at
+  const [generatedId] = React.useState(() => `free-response-review-${++reviewCount}`);
+  const textId = id ?? generatedId;
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);
   const textRef = React.useRef<HTMLDivElement>(null);
@@ -44,7 +49,7 @@ export const FreeResponseReview = ({ id, free_response, previewMode, questionNum
     <FreeResponseContainer previewMode={previewMode}>
       {previewMode 
         ? <FreeResponseText
-            id={id}
+            id={textId}
             ref={textRef}
             expanded={expanded}
             isOverflowing={isOverflowing}
@@ -58,7 +63,7 @@ export const FreeResponseReview = ({ id, free_response, previewMode, questionNum
           type="button"
           onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
-          aria-controls={id}
+          aria-controls={textId}
           aria-label={showMoreLabel(expanded, questionNumber === undefined ? undefined : `for question ${questionNumber}`)}
         >
           {expanded ? "show less" : "show more"}
