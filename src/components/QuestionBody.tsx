@@ -113,7 +113,9 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
       : ''}
 `;
 
-const ReadMoreButton = styled.button`
+const ReadMoreButton = styled.button.attrs({
+  type: 'button'
+})`
   display: inline;
   background: none;
   border: none;
