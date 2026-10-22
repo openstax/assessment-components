@@ -226,7 +226,6 @@ const FreeResponseBody = React.forwardRef((
   const {
     question, state, apiIsPending = false, needsSaved = false, onAnswerChange, onGradingSave,
     registerSubmit, registerCancel, responseSize, previewMode = false, feedback, compactDisplay,
-    questionNumber,
   } = props;
   const {
     is_completed, canAnswer, free_response = '', score, feedback_html, submissionTimestamp, draftTimestamp,
@@ -246,6 +245,7 @@ const FreeResponseBody = React.forwardRef((
   const isPostReview = is_completed && !canAnswer;
 
   // Built from the question id, which is unique on the page: React 17 has no useId.
+  const stemId = `free-response-stem-${question.id}`;
   const countId = `free-response-count-${question.id}`;
   const errorId = `free-response-error-${question.id}`;
 
@@ -337,7 +337,7 @@ const FreeResponseBody = React.forwardRef((
   };
 
   const stem = (
-    <StyledQuestionStem>
+    <StyledQuestionStem id={stemId}>
       {question.stem_html &&
         <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
     </StyledQuestionStem>
@@ -357,7 +357,8 @@ const FreeResponseBody = React.forwardRef((
       onChange={handleChange}
       data-test-id="free-response-box"
       placeholder="Enter your response..."
-      aria-label={questionNumber === undefined ? 'Your response' : `Your response to question ${questionNumber}`}
+      aria-labelledby={question.stem_html ? stemId : undefined}
+      aria-label={question.stem_html ? undefined : 'Your response'}
       aria-describedby={describedBy}
       aria-invalid={validation ? true : undefined}
       disabled={previewMode || apiIsPending || !canAnswer}

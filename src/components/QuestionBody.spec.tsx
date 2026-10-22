@@ -145,7 +145,7 @@ describe('QuestionBody', () => {
           expect(box(tree).props['aria-describedby']).toBeUndefined();
         });
 
-        it('only ever points at elements that are on the page', () => {
+        it('only ever points at elements that are on the page, for its label as well', () => {
           const cases = [
             {},
             { state: answerable },
@@ -154,7 +154,8 @@ describe('QuestionBody', () => {
 
           cases.forEach((props) => {
             const tree = render(props);
-            const ids = String(box(tree).props['aria-describedby'] ?? '').split(' ').filter(Boolean);
+            const ids = `${box(tree).props['aria-describedby'] ?? ''} ${box(tree).props['aria-labelledby'] ?? ''}`
+              .split(' ').filter(Boolean);
 
             ids.forEach(id => expect(findNode(tree.toJSON() as never, node => node.props?.id === id)).toBeDefined());
           });
@@ -182,13 +183,36 @@ describe('QuestionBody', () => {
     });
 
     describe('its name', () => {
-      it('says which question it answers', () => {
-        expect(box(render({ questionNumber: 3 })).props['aria-label']).toBe('Your response to question 3');
-        expect(box(render({ questionNumber: 4 })).props['aria-label']).toBe('Your response to question 4');
+      it('is the question it answers', () => {
+        const tree = render({ question: { ...freeResponse, stem_html: 'Why is eleven prime?' } });
+        const id = box(tree).props['aria-labelledby'];
+
+        expect(id).toBeDefined();
+        expect(textOfId(tree, id)).toBe('Why is eleven prime?');
+        expect(box(tree).props['aria-label']).toBeUndefined();
       });
 
-      it('still has a name when the question number is not known', () => {
-        expect(box(render()).props['aria-label']).toBe('Your response');
+      it('is different for each question on the page', () => {
+        let tree!: renderer.ReactTestRenderer;
+        renderer.act(() => {
+          tree = renderer.create(
+            <>
+              <QuestionBody question={{ ...freeResponse, stem_html: 'First question' }} state={{ is_completed: false, canAnswer: true }} onAnswerChange={() => undefined} />
+              <QuestionBody question={{ ...second, stem_html: 'Second question' }} state={{ is_completed: false, canAnswer: true }} onAnswerChange={() => undefined} />
+            </>
+          );
+        });
+        const boxes = tree.root.findAllByProps({ 'data-test-id': 'free-response-box' })
+          .filter(node => typeof node.type !== 'string');
+
+        expect(boxes.map(node => textOfId(tree, node.props['aria-labelledby']))).toEqual(['First question', 'Second question']);
+      });
+
+      it('falls back to a plain name when the question has no stem', () => {
+        const tree = render({ question: { ...freeResponse, stem_html: '' } });
+
+        expect(box(tree).props['aria-labelledby']).toBeUndefined();
+        expect(box(tree).props['aria-label']).toBe('Your response');
       });
     });
 
