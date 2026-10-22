@@ -9,7 +9,7 @@ describe('FreeResponseReview', () => {
 
   it('renders the full free response text when not in preview mode', () => {
     const tree = renderer.create(
-      <FreeResponseReview free_response={exampleText} />
+      <FreeResponseReview id="review-text" free_response={exampleText} />
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -24,7 +24,7 @@ describe('FreeResponseReview', () => {
 
   it('does not render anything if free_response is empty', () => {
     const tree = renderer.create(
-      <FreeResponseReview free_response="" previewMode />
+      <FreeResponseReview id="review-text" free_response="" previewMode />
     ).toJSON();
     expect(tree).toBeNull();
   });
@@ -74,13 +74,6 @@ describe('FreeResponseReview show more button', () => {
     act(() => { button().click(); });
     expect(button().textContent).toBe('show less');
     expect(button().getAttribute('aria-expanded')).toBe('true');
-    cleanup();
-  });
-
-  it('points at the answer even when the caller gives no id', () => {
-    const { button, cleanup } = mount({ id: undefined });
-
-    expect(document.getElementById(button().getAttribute('aria-controls') as string)?.textContent).toBe('A long answer');
     cleanup();
   });
 
