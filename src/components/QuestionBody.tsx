@@ -382,8 +382,8 @@ const FreeResponseBody = React.forwardRef((
   );
 
   const answerId = `free-response-answer-${question.id}`;
-  const readMoreLabel = `${expanded ? 'Read less' : 'Read more'} of ${previewMode ? 'the answer' : 'your answer'}`
-    + (props.questionNumber === undefined ? '' : ` to question ${props.questionNumber}`);
+  const readMoreLabel = `${expanded ? 'Show less' : 'Show more'} of the answer`
+    + (props.questionNumber === undefined ? '' : ` for question ${props.questionNumber}`);
 
   const reviewAnswer = (
     <>
@@ -402,7 +402,7 @@ const FreeResponseBody = React.forwardRef((
           aria-controls={answerId}
           aria-label={readMoreLabel}
         >
-          {expanded ? 'read less' : 'read more'}
+          {expanded ? 'show less' : 'show more'}
         </ReadMoreButton>
       )}
     </>

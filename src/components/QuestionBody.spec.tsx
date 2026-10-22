@@ -190,37 +190,19 @@ describe('QuestionBody', () => {
     it('keeps the visible words in its name and says which question it belongs to', () => {
       const { button, cleanup } = mount({ questionNumber: 2 });
 
-      expect(button().textContent).toBe('read more');
-      expect(button().getAttribute('aria-label')).toBe('Read more of your answer to question 2');
+      expect(button().textContent).toBe('show more');
+      expect(button().getAttribute('aria-label')).toBe('Show more of the answer for question 2');
       act(() => { button().click(); });
-      expect(button().textContent).toBe('read less');
-      expect(button().getAttribute('aria-label')).toBe('Read less of your answer to question 2');
+      expect(button().textContent).toBe('show less');
+      expect(button().getAttribute('aria-label')).toBe('Show less of the answer for question 2');
       cleanup();
     });
 
     it('still has a name when the question number is not known', () => {
       const { button, cleanup } = mount();
 
-      expect(button().getAttribute('aria-label')).toBe('Read more of your answer');
+      expect(button().getAttribute('aria-label')).toBe('Show more of the answer');
       cleanup();
-    });
-
-    describe('in an instructor preview', () => {
-      it('does not call the response the viewer\'s own answer', () => {
-        const { button, cleanup } = mount({ previewMode: true, questionNumber: 2 });
-
-        expect(button().getAttribute('aria-label')).toBe('Read more of the answer to question 2');
-        act(() => { button().click(); });
-        expect(button().getAttribute('aria-label')).toBe('Read less of the answer to question 2');
-        cleanup();
-      });
-
-      it('still has a name when the question number is not known', () => {
-        const { button, cleanup } = mount({ previewMode: true });
-
-        expect(button().getAttribute('aria-label')).toBe('Read more of the answer');
-        cleanup();
-      });
     });
   });
 
