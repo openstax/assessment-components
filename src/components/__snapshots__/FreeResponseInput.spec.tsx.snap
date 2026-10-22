@@ -452,6 +452,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   font-size: calc(1.8rem * var(--content-text-scale,1));
   color: #5f6163;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .c3:last-child {
