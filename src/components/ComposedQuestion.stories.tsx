@@ -131,8 +131,7 @@ export const Compact = () => <ComposedExercise question={multipleChoice} compact
 /** Without `onNextStep`: no Next, and a disabled Submit once the question is closed. */
 export const WithoutNext = () => <ComposedExercise question={multipleChoice} hostNavigates />;
 
-/** The body validates and reports, the host owns the button that asks it to. */
-export const HostDrivenSubmit = () => {
+const HostDrivenSubmitExercise = ({ question }: { question: ExerciseQuestionData }) => {
   const host = useHost();
   const submit = React.useRef<(() => Answer | null) | undefined>();
 
@@ -142,8 +141,9 @@ export const HostDrivenSubmit = () => {
         {/* without a QuestionWrapper, the host frames the body in a card section itself */}
         <StepCardBody divided>
           <QuestionBody
-            question={multipleChoice}
+            question={question}
             state={host.state}
+            responseSize="short"
             onAnswerChange={host.onAnswerChange}
             registerSubmit={(fn) => { submit.current = fn; }}
           />
@@ -152,7 +152,7 @@ export const HostDrivenSubmit = () => {
           <button
             onClick={() => {
               const response = submit.current?.();
-              if (response) { window.alert(`the host posts ${JSON.stringify(response.id)}`); }
+              if (response) { window.alert(`the host posts ${JSON.stringify(response.free_response ?? response.id)}`); }
             }}
           >
             The host&apos;s own submit button
@@ -162,6 +162,12 @@ export const HostDrivenSubmit = () => {
     </ExerciseWrapper>
   );
 };
+
+/** The body validates and reports, the host owns the button that asks it to. */
+export const HostDrivenSubmit = () => <HostDrivenSubmitExercise question={multipleChoice} />;
+
+/** The same for free response, where the button can ask for an empty or over-long response (30 words). */
+export const HostDrivenSubmitFreeResponse = () => <HostDrivenSubmitExercise question={freeResponse} />;
 
 /**
  * The contract a host rendering its own item format relies on: only the two wrappers, with no

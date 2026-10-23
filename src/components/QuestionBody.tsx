@@ -248,6 +248,11 @@ const FreeResponseBody = React.forwardRef((
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
 
+  // Built from the question id, which is unique on the page: React 17 has no useId.
+  const stemId = `free-response-stem-${question.id}`;
+  const countId = `free-response-count-${question.id}`;
+  const errorId = `free-response-error-${question.id}`;
+
   const editableNotice = !previewMode ? (
     <EditableNotice>
       <ExclamationCircle />
@@ -336,15 +341,19 @@ const FreeResponseBody = React.forwardRef((
   };
 
   const stem = (
-    <StyledQuestionStem>
+    <StyledQuestionStem id={stemId}>
       {question.stem_html &&
         <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
     </StyledQuestionStem>
   );
 
   const validationMessage = validation
-    ? <ValidationMessage role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
+    ? <ValidationMessage id={errorId} role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
     : null;
+
+  // a preview draws no count line, so there is nothing to point at
+  const describedBy = [validation ? errorId : undefined, previewMode ? undefined : countId]
+    .filter(Boolean).join(' ') || undefined;
 
   const textarea = (
     <FreeResponseTextArea
@@ -352,7 +361,10 @@ const FreeResponseBody = React.forwardRef((
       onChange={handleChange}
       data-test-id="free-response-box"
       placeholder="Enter your response..."
-      aria-label="question response text box"
+      aria-labelledby={question.stem_html ? stemId : undefined}
+      aria-label={question.stem_html ? undefined : 'Your response'}
+      aria-describedby={describedBy}
+      aria-invalid={validation ? true : undefined}
       disabled={previewMode || apiIsPending || !canAnswer}
     />
   );
@@ -366,7 +378,7 @@ const FreeResponseBody = React.forwardRef((
   const infoRow = !previewMode && (
     <InfoRow hasChildren={!!responseStatus}>
       {responseStatus && <div><span className="last-submitted">{responseStatus}</span></div>}
-      <div>
+      <div id={countId}>
         {wordCount >= wordLimit && <span className="word-limit-error-info">Word limit reached</span>}
         <span> Remaining words: <span className={isOverWordLimit ? 'words-remaining-negative' : undefined}>{remainingWords}</span></span>
       </div>
