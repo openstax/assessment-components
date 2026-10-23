@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
-import { countWords, formatTimestamp, numberfyId } from '../utils';
+import { countWords, formatTimestamp, numberfyId, showMoreLabel } from '../utils';
 import { CompactDisplayProps } from './compactDisplay';
 import { FreeResponseGrading } from './FreeResponseGrading';
 import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
@@ -113,7 +113,9 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
       : ''}
 `;
 
-const ReadMoreButton = styled.button`
+const ReadMoreButton = styled.button.attrs({
+  type: 'button'
+})`
   display: inline;
   background: none;
   border: none;
@@ -152,6 +154,7 @@ const EditableNotice = styled.div`
   align-items: center;
   gap: 0.5rem;
   background-color: ${colors.notice.background};
+  color: ${colors.palette.neutralDarker};
   padding-left: 1rem;
   font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;
@@ -393,9 +396,15 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
+  const answerId = `free-response-answer-${question.id}`;
+  const readMoreLabel = showMoreLabel(
+    expanded, props.questionNumber === undefined ? undefined : `for question ${props.questionNumber}`
+  );
+
   const reviewAnswer = (
     <>
       <ReviewAnswerText
+        id={answerId}
         ref={textRef}
         expanded={expanded}
         isOverflowing={isOverflowing}
@@ -403,8 +412,13 @@ const FreeResponseBody = React.forwardRef((
         {free_response || ''}
       </ReviewAnswerText>
       {(isOverflowing || expanded) && (
-        <ReadMoreButton onClick={() => setExpanded(!expanded)}>
-          {expanded ? 'read less' : 'read more'}
+        <ReadMoreButton
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={answerId}
+          aria-label={readMoreLabel}
+        >
+          {expanded ? 'show less' : 'show more'}
         </ReadMoreButton>
       )}
     </>
@@ -544,7 +558,12 @@ const MultipleChoiceBody = React.forwardRef((
         </>
       }
     >
-      <FreeResponseReview free_response={free_response} previewMode={previewMode} />
+      <FreeResponseReview
+        id={`free-response-review-${question.id}`}
+        free_response={free_response}
+        previewMode={previewMode}
+        questionNumber={questionNumber}
+      />
     </Question>
   );
 });

@@ -32,6 +32,10 @@ export function countWords(text: string) {
 
 export const numberfyId = (id: ID) => typeof id === 'string' ? parseInt(id, 10) : id;
 
+/** Name for a button that expands or collapses an answer; `context` says which one, such as "for question 2". */
+export const showMoreLabel = (expanded: boolean, context?: string) =>
+  `${expanded ? 'Show less' : 'Show more'} of the answer${context ? ` ${context}` : ''}`;
+
 export const formatTimestamp = (timestamp: string | number) => new Date(timestamp).toLocaleString('en-US', {
   month: 'short',
   day: 'numeric',
