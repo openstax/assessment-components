@@ -10,15 +10,18 @@ const exampleText =
 
 export const Default = () => 
   <FreeResponseReview 
+    id="story-answer"
     free_response="This is an example free response answer. It can be short or long, and it will display in full." 
   />;
 export const PreviewMode = () => 
   <FreeResponseReview 
+    id="story-answer"
     free_response={exampleText + exampleText} 
     previewMode
   />;
 
 export const NoResponse = () => 
   <FreeResponseReview 
+    id="story-answer"
     free_response="" 
   />;

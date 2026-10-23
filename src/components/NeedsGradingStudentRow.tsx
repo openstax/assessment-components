@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { FreeResponseGrading, FreeResponseGradingProps } from './FreeResponseGrading';
 import { ID } from '../types';
+import { showMoreLabel } from '../utils';
 
 export interface NeedsGradingStudentData {
   name: string;
@@ -208,6 +209,8 @@ export const NeedsGradingStudentRow = ({
     return () => observer.disconnect();
   }, [freeResponse, textExpanded, expanded]);
 
+  const answerId = `needs-grading-answer-${questionId}-${student.userId}`;
+
   const handleToggle = () => {
     if (isControlled) {
       onToggle?.();
@@ -233,6 +236,7 @@ export const NeedsGradingStudentRow = ({
               ? (
                 <>
                   <AnswerText
+                    id={answerId}
                     ref={textRef}
                     expanded={textExpanded}
                     isOverflowing={isOverflowing}
@@ -240,8 +244,14 @@ export const NeedsGradingStudentRow = ({
                     {freeResponse}
                   </AnswerText>
                   {(isOverflowing || textExpanded) && (
-                    <ReadMoreButton type="button" onClick={() => setTextExpanded(prev => !prev)}>
-                      {textExpanded ? 'read less' : 'read more'}
+                    <ReadMoreButton
+                      type="button"
+                      onClick={() => setTextExpanded(prev => !prev)}
+                      aria-expanded={textExpanded}
+                      aria-controls={answerId}
+                      aria-label={showMoreLabel(textExpanded, `from ${student.name}`)}
+                    >
+                      {textExpanded ? 'show less' : 'show more'}
                     </ReadMoreButton>
                   )}
                 </>
