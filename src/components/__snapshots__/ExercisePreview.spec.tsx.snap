@@ -3262,9 +3262,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c14 .detailed-solution .header {
   display: inline;
-  margin-right: 0.5rem;
-  color: #5e6062;
+  margin: 0 0.5rem 0 0;
+  padding: 0;
+  font: inherit;
   font-weight: bold;
+  color: #5f6163;
   -webkit-flex-basis: 0;
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
@@ -3272,7 +3274,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 
 .c14 .detailed-solution .solution {
   display: inline;
-  color: #6f6f6f;
+  color: #5f6163;
 }
 
 .c13 {
@@ -3717,11 +3719,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
                         <div
                           className="detailed-solution"
                         >
-                          <div
+                          <h3
                             className="header"
                           >
                             Detailed solution:
-                          </div>
+                          </h3>
                           <div
                             className="c6 solution"
                             dangerouslySetInnerHTML={
