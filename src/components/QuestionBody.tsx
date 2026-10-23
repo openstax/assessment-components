@@ -94,6 +94,7 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   font-size: calc(1.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 
   /* ends flush when nothing follows it: the frame adds the space below */
   &:last-child {

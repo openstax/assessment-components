@@ -109,6 +109,7 @@ const AnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean }>`
   font-size: calc(1.6rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 
   ${({ expanded, isOverflowing }) =>
     !expanded && isOverflowing
@@ -190,10 +191,21 @@ export const NeedsGradingStudentRow = ({
   const expanded = isControlled ? controlledExpanded : internalExpanded;
 
   useLayoutEffect(() => {
-    if (textRef.current) {
-      const overflows = !textExpanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
+    const textElement = textRef.current;
+    if (!textElement) { return; }
+
+    const checkOverflow = () => {
+      const overflows = !textExpanded && textElement.scrollHeight > COLLAPSED_HEIGHT * 10; // px
       setIsOverflowing(overflows);
-    }
+    };
+
+    checkOverflow();
+
+    // Re-check on resize, including when a collapsed question card is reopened
+    if (typeof ResizeObserver === 'undefined') { return; }
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(textElement);
+    return () => observer.disconnect();
   }, [freeResponse, textExpanded, expanded]);
 
   const handleToggle = () => {

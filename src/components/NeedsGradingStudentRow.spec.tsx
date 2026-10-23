@@ -122,6 +122,61 @@ describe('NeedsGradingStudentRow', () => {
     it('shows no score before grading', () => {
       expect(textOf(render().toJSON())).not.toContain('Score:');
     });
+
+    describe('when the answer changes size', () => {
+      // jsdom has no layout or ResizeObserver, so the answer's height is set by hand and the
+      // observer is fired by hand: 400px overflows, 100px fits, 0px is hidden under display: none
+      let observers: Set<() => void>;
+      let answerNode: HTMLDivElement;
+      let tree: renderer.ReactTestRenderer;
+
+      const resizeTo = (height: number) => renderer.act(() => {
+        Object.defineProperty(answerNode, 'scrollHeight', { configurable: true, value: height });
+        observers.forEach(callback => callback());
+      });
+      const readMore = () => tree.root.findAll(
+        node => node.type === 'button' && /read (more|less)/.test(String(node.props.children))
+      )[0];
+
+      beforeEach(() => {
+        observers = new Set();
+        global.ResizeObserver = class {
+          constructor(private callback: () => void) {}
+          observe() { observers.add(this.callback); }
+          unobserve() { observers.delete(this.callback); }
+          disconnect() { observers.delete(this.callback); }
+        } as unknown as typeof ResizeObserver;
+
+        answerNode = document.createElement('div');
+        Object.defineProperty(answerNode, 'scrollHeight', { configurable: true, value: 400 });
+        renderer.act(() => {
+          tree = renderer.create(
+            <NeedsGradingStudentRow {...baseProps} />,
+            { createNodeMock: () => answerNode },
+          );
+        });
+      });
+
+      it('shows "read more" again when the window is narrowed after "read less"', () => {
+        renderer.act(() => readMore().props.onClick()); // read more
+        resizeTo(100); // the window is widened
+        renderer.act(() => readMore().props.onClick()); // read less
+        expect(readMore()).toBeUndefined();
+
+        resizeTo(400); // the window is narrowed
+        expect(readMore().props.children).toBe('read more');
+      });
+
+      it('brings "read more" back when a card collapsed during a resize is reopened', () => {
+        expect(readMore().props.children).toBe('read more');
+
+        resizeTo(0); // the card is collapsed, then the window is resized
+        expect(readMore()).toBeUndefined();
+
+        resizeTo(400); // the card is reopened
+        expect(readMore().props.children).toBe('read more');
+      });
+    });
   });
 
   describe('the grading form', () => {
