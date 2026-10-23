@@ -154,6 +154,7 @@ const EditableNotice = styled.div`
   align-items: center;
   gap: 0.5rem;
   background-color: ${colors.notice.background};
+  color: ${colors.palette.neutralDarker};
   padding-left: 1rem;
   font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;

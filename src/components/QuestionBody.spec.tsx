@@ -1,8 +1,11 @@
+import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { QuestionBody } from './QuestionBody';
 import { ExerciseQuestionData } from '../types';
+import { colors } from '../theme';
+import { findNode } from '../test/utils';
 
 jest.mock('../hooks/useTypesetMath', () => ({
   useTypesetMath: () => jest.fn(),
@@ -221,6 +224,22 @@ describe('QuestionBody', () => {
 
       expect(icons).toHaveLength(1);
       expect(icons[0].props['aria-hidden']).toBe('true');
+    });
+
+    it('sets its own text colour, readable on its own background', () => {
+      const tree = renderer.create(editable(freeResponse)).toJSON() as renderer.ReactTestRendererJSON;
+      const notice = findNode(tree, node => !!node.children?.some(child => typeof child === 'string' && child.startsWith('You can come back')));
+      const luminance = (hex: string) => {
+        const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255)
+          .map(c => c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      };
+      const [lighter, darker] = [colors.notice.background, colors.palette.neutralDarker]
+        .map(luminance).sort((x, y) => y - x);
+
+      expect(notice).toHaveStyleRule('color', colors.palette.neutralDarker);
+      expect(notice).toHaveStyleRule('background-color', colors.notice.background);
+      expect((lighter + 0.05) / (darker + 0.05)).toBeGreaterThanOrEqual(4.5);
     });
 
     it('carries no ids, so several can share a page', () => {
