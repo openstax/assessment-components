@@ -137,7 +137,7 @@ describe('NeedsGradingStudentRow', () => {
         observers.forEach(callback => callback());
       });
       const readMore = () => tree.root.findAll(
-        node => node.type === 'button' && /read (more|less)/.test(String(node.props.children))
+        node => node.type === 'button' && /show (more|less)/.test(String(node.props.children))
       )[0];
 
       beforeEach(() => {
@@ -159,24 +159,24 @@ describe('NeedsGradingStudentRow', () => {
         });
       });
 
-      it('shows "read more" again when the window is narrowed after "read less"', () => {
-        renderer.act(() => readMore().props.onClick()); // read more
+      it('shows "show more" again when the window is narrowed after "show less"', () => {
+        renderer.act(() => readMore().props.onClick()); // show more
         resizeTo(100); // the window is widened
-        renderer.act(() => readMore().props.onClick()); // read less
+        renderer.act(() => readMore().props.onClick()); // show less
         expect(readMore()).toBeUndefined();
 
         resizeTo(400); // the window is narrowed
-        expect(readMore().props.children).toBe('read more');
+        expect(readMore().props.children).toBe('show more');
       });
 
-      it('brings "read more" back when a card collapsed during a resize is reopened', () => {
-        expect(readMore().props.children).toBe('read more');
+      it('brings "show more" back when a card collapsed during a resize is reopened', () => {
+        expect(readMore().props.children).toBe('show more');
 
         resizeTo(0); // the card is collapsed, then the window is resized
         expect(readMore()).toBeUndefined();
 
         resizeTo(400); // the card is reopened
-        expect(readMore().props.children).toBe('read more');
+        expect(readMore().props.children).toBe('show more');
       });
     });
   });
