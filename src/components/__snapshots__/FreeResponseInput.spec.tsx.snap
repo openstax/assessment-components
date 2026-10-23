@@ -150,6 +150,7 @@ Array [
       </div>
       <div
         className="c2"
+        id="free-response-stem-1"
       >
         <div
           className="c3 question-stem"
@@ -161,7 +162,8 @@ Array [
         />
       </div>
       <textarea
-        aria-label="question response text box"
+        aria-describedby="free-response-count-1"
+        aria-labelledby="free-response-stem-1"
         className="c4"
         data-test-id="free-response-box"
         disabled={false}
@@ -172,7 +174,9 @@ Array [
       <div
         className="c5"
       >
-        <div>
+        <div
+          id="free-response-count-1"
+        >
           <span>
              Remaining words: 
             <span>
@@ -394,6 +398,7 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   >
     <div
       className="c1"
+      id="free-response-stem-1"
     >
       <div
         className="c2 question-stem"
@@ -506,6 +511,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   >
     <div
       className="c1"
+      id="free-response-stem-1"
     >
       <div
         className="c2 question-stem"
