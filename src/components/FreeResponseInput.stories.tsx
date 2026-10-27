@@ -25,7 +25,6 @@ const mockQuestion = {
 const baseQuestionState = {
   questionNumber: 1,
   question: mockQuestion,
-  wordLimit: 50,
   needsSaved: false,
   cancelHandler: () => null,
 };
@@ -47,9 +46,9 @@ export const Default = () => {
   );
 };
 
-export const WordLimitExceeded = () => {
-  // 10 words against a limit of 5, so "Remaining words: -5" shows in red
-  const [freeResponse, setFreeResponse] = useState('this response goes well over the limit by five words');
+export const CharacterLimitExceeded = () => {
+  // 25 characters against a limit of 20, so "Remaining characters: -5" shows in red
+  const [freeResponse, setFreeResponse] = useState('this goes five over limit');
 
   return (
     <FreeResponseInput
@@ -61,7 +60,7 @@ export const WordLimitExceeded = () => {
       onAnswerChange={(answer) => setFreeResponse(answer.free_response ?? '')}
       onAnswerSave={() => console.log('Save')}
       onNextStep={() => console.log('Next')}
-      wordLimit={5}
+      characterLimitByResponseSize={{ default: 20 }}
     />
   );
 };

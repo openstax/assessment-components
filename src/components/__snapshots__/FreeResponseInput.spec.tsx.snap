@@ -47,8 +47,8 @@ Array [
   margin-bottom: 8px;
 }
 
-.c5 .word-limit-error-info,
-.c5 .words-remaining-negative {
+.c5 .character-limit-error-info,
+.c5 .characters-remaining-negative {
   color: #c2002f;
 }
 
@@ -158,9 +158,9 @@ Array [
           id="free-response-count-1"
         >
           <span>
-             Remaining words: 
+             Remaining characters: 
             <span>
-              50
+              4000
             </span>
           </span>
         </div>

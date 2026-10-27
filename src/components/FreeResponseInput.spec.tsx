@@ -34,7 +34,6 @@ describe('Free Response Input', () => {
         answers: [],
         is_answer_order_important: false,
       },
-      wordLimit: 50,
       needsSaved: false,
       cancelHandler: jest.fn(),
     };
@@ -108,9 +107,9 @@ describe('Free Response Input', () => {
       expect(textarea(tree).props.value).toBe('Photosynthesis converts light energy into chemical energy.');
     });
 
-    it('counts the words remaining', () => {
-      expect(text(render())).toContain('Remaining words: 50');
-      expect(text(render({ free_response: 'one two three' }))).toContain('Remaining words: 47');
+    it('counts the characters remaining', () => {
+      expect(text(render())).toContain('Remaining characters: 4000');
+      expect(text(render({ free_response: 'one two three' }))).toContain('Remaining characters: 3987');
     });
 
     it('says when the response was last submitted', () => {
