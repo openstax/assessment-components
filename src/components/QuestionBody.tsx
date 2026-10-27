@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { Answer as AnswerData, ExerciseQuestionData, ID, QuestionBodyState } from '../types';
-import { countCharacters, formatTimestamp, numberfyId } from '../utils';
+import { countCharacters, formatTimestamp, numberfyId, showMoreLabel } from '../utils';
 import { CompactDisplayProps } from './compactDisplay';
 import { FreeResponseGrading } from './FreeResponseGrading';
 import { FreeResponseReview } from './FreeResponseReview/FreeResponseReview';
@@ -99,6 +99,7 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   font-size: calc(1.8rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 
   /* ends flush when nothing follows it: the frame adds the space below */
   &:last-child {
@@ -117,7 +118,9 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
       : ''}
 `;
 
-const ReadMoreButton = styled.button`
+const ReadMoreButton = styled.button.attrs({
+  type: 'button'
+})`
   display: inline;
   background: none;
   border: none;
@@ -156,6 +159,7 @@ const EditableNotice = styled.div`
   align-items: center;
   gap: 0.5rem;
   background-color: ${colors.notice.background};
+  color: ${colors.palette.neutralDarker};
   padding-left: 1rem;
   font-size: calc(1.4rem * var(--content-text-scale, 1));
 `;
@@ -250,6 +254,11 @@ const FreeResponseBody = React.forwardRef((
   const isUpdateMode = is_completed && canAnswer;
   const isPostReview = is_completed && !canAnswer;
 
+  // Built from the question id, which is unique on the page: React 17 has no useId.
+  const stemId = `free-response-stem-${question.id}`;
+  const countId = `free-response-count-${question.id}`;
+  const errorId = `free-response-error-${question.id}`;
+
   const editableNotice = !previewMode ? (
     <EditableNotice>
       <ExclamationCircle />
@@ -338,15 +347,19 @@ const FreeResponseBody = React.forwardRef((
   };
 
   const stem = (
-    <StyledQuestionStem>
+    <StyledQuestionStem id={stemId}>
       {question.stem_html &&
         <QuestionHtml type="stem" html={question.stem_html} hidden={false} />}
     </StyledQuestionStem>
   );
 
   const validationMessage = validation
-    ? <ValidationMessage role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
+    ? <ValidationMessage id={errorId} role="alert" className="validation-message">{VALIDATION_MESSAGES[validation]}</ValidationMessage>
     : null;
+
+  // a preview draws no count line, so there is nothing to point at
+  const describedBy = [validation ? errorId : undefined, previewMode ? undefined : countId]
+    .filter(Boolean).join(' ') || undefined;
 
   const textarea = (
     <FreeResponseTextArea
@@ -354,7 +367,10 @@ const FreeResponseBody = React.forwardRef((
       onChange={handleChange}
       data-test-id="free-response-box"
       placeholder="Enter your response..."
-      aria-label="question response text box"
+      aria-labelledby={question.stem_html ? stemId : undefined}
+      aria-label={question.stem_html ? undefined : 'Your response'}
+      aria-describedby={describedBy}
+      aria-invalid={validation ? true : undefined}
       disabled={previewMode || apiIsPending || !canAnswer}
     />
   );
@@ -368,7 +384,7 @@ const FreeResponseBody = React.forwardRef((
   const infoRow = !previewMode && (
     <InfoRow hasChildren={!!responseStatus}>
       {responseStatus && <div><span className="last-submitted">{responseStatus}</span></div>}
-      <div>
+      <div id={countId}>
         {characterCount >= characterLimit && <span className="character-limit-error-info">Character limit reached</span>}
         <span> Remaining characters: <span className={isOverCharacterLimit ? 'characters-remaining-negative' : undefined}>{remainingCharacters}</span></span>
       </div>
@@ -386,9 +402,15 @@ const FreeResponseBody = React.forwardRef((
     />
   );
 
+  const answerId = `free-response-answer-${question.id}`;
+  const readMoreLabel = showMoreLabel(
+    expanded, props.questionNumber === undefined ? undefined : `for question ${props.questionNumber}`
+  );
+
   const reviewAnswer = (
     <>
       <ReviewAnswerText
+        id={answerId}
         ref={textRef}
         expanded={expanded}
         isOverflowing={isOverflowing}
@@ -396,8 +418,13 @@ const FreeResponseBody = React.forwardRef((
         {free_response || ''}
       </ReviewAnswerText>
       {(isOverflowing || expanded) && (
-        <ReadMoreButton onClick={() => setExpanded(!expanded)}>
-          {expanded ? 'read less' : 'read more'}
+        <ReadMoreButton
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={answerId}
+          aria-label={readMoreLabel}
+        >
+          {expanded ? 'show less' : 'show more'}
         </ReadMoreButton>
       )}
     </>
@@ -537,7 +564,12 @@ const MultipleChoiceBody = React.forwardRef((
         </>
       }
     >
-      <FreeResponseReview free_response={free_response} previewMode={previewMode} />
+      <FreeResponseReview
+        id={`free-response-review-${question.id}`}
+        free_response={free_response}
+        previewMode={previewMode}
+        questionNumber={questionNumber}
+      />
     </Question>
   );
 });

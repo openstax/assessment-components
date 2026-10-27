@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { colors } from '../theme';
 import { FreeResponseGrading, FreeResponseGradingProps } from './FreeResponseGrading';
 import { ID } from '../types';
+import { showMoreLabel } from '../utils';
 
 export interface NeedsGradingStudentData {
   name: string;
@@ -109,6 +110,7 @@ const AnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean }>`
   font-size: calc(1.6rem * var(--content-text-scale, 1));
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 
   ${({ expanded, isOverflowing }) =>
     !expanded && isOverflowing
@@ -190,11 +192,24 @@ export const NeedsGradingStudentRow = ({
   const expanded = isControlled ? controlledExpanded : internalExpanded;
 
   useLayoutEffect(() => {
-    if (textRef.current) {
-      const overflows = !textExpanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10; // px
+    const textElement = textRef.current;
+    if (!textElement) { return; }
+
+    const checkOverflow = () => {
+      const overflows = !textExpanded && textElement.scrollHeight > COLLAPSED_HEIGHT * 10; // px
       setIsOverflowing(overflows);
-    }
+    };
+
+    checkOverflow();
+
+    // Re-check on resize, including when a collapsed question card is reopened
+    if (typeof ResizeObserver === 'undefined') { return; }
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(textElement);
+    return () => observer.disconnect();
   }, [freeResponse, textExpanded, expanded]);
+
+  const answerId = `needs-grading-answer-${questionId}-${student.userId}`;
 
   const handleToggle = () => {
     if (isControlled) {
@@ -221,6 +236,7 @@ export const NeedsGradingStudentRow = ({
               ? (
                 <>
                   <AnswerText
+                    id={answerId}
                     ref={textRef}
                     expanded={textExpanded}
                     isOverflowing={isOverflowing}
@@ -228,8 +244,14 @@ export const NeedsGradingStudentRow = ({
                     {freeResponse}
                   </AnswerText>
                   {(isOverflowing || textExpanded) && (
-                    <ReadMoreButton type="button" onClick={() => setTextExpanded(prev => !prev)}>
-                      {textExpanded ? 'read less' : 'read more'}
+                    <ReadMoreButton
+                      type="button"
+                      onClick={() => setTextExpanded(prev => !prev)}
+                      aria-expanded={textExpanded}
+                      aria-controls={answerId}
+                      aria-label={showMoreLabel(textExpanded, `from ${student.name}`)}
+                    >
+                      {textExpanded ? 'show less' : 'show more'}
                     </ReadMoreButton>
                   )}
                 </>

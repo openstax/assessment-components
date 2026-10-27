@@ -1,4 +1,5 @@
 import React from "react";
+import { showMoreLabel } from "../../utils";
 import { 
   FreeResponseDefaultContainer, 
   FreeResponseExpandedContainer, 
@@ -17,9 +18,11 @@ const FreeResponseContainer = (
     );
   };
 
-export const FreeResponseReview = ({ free_response, previewMode }: {
+export const FreeResponseReview = ({ id, free_response, previewMode, questionNumber }: {
+  id: string;
   free_response?: string;
   previewMode?: boolean;
+  questionNumber?: number;
 }) => {
 
   const [expanded, setExpanded] = React.useState(false);
@@ -41,6 +44,7 @@ export const FreeResponseReview = ({ free_response, previewMode }: {
     <FreeResponseContainer previewMode={previewMode}>
       {previewMode 
         ? <FreeResponseText
+            id={id}
             ref={textRef}
             expanded={expanded}
             isOverflowing={isOverflowing}
@@ -50,8 +54,14 @@ export const FreeResponseReview = ({ free_response, previewMode }: {
         : free_response
       }
       {previewMode && (isOverflowing || expanded) && (
-        <ReadMoreLink onClick={() => setExpanded(!expanded)}>
-          {expanded ? "show less" : "read more"}
+        <ReadMoreLink
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls={id}
+          aria-label={showMoreLabel(expanded, questionNumber === undefined ? undefined : `for question ${questionNumber}`)}
+        >
+          {expanded ? "show less" : "show more"}
         </ReadMoreLink>
       )}
     </FreeResponseContainer>
