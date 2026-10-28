@@ -1,7 +1,10 @@
 import { Exercise, ExerciseWithQuestionStatesProps, OverlayProps } from './Exercise';
 import renderer from 'react-test-renderer';
 import React from 'react';
-import { byClass, findAllNodes, findNode, isJson, textOf } from '../test/utils';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import { ExerciseQuestionData, QuestionState } from '../types';
+import { byClass, findAllNodes, findNode, inAssessmentSection, isJson, textOf } from '../test/utils';
 
 describe('Exercise', () => {
   describe('with question state data', () => {
@@ -314,14 +317,17 @@ describe('Exercise', () => {
       });
     });
 
-    it('gives each question the DOM id an assessment navigates to, and only when asked', () => {
-      const withIds = renderer.create(<Exercise {...props} questionDomId={id => `item-${id}`} />);
-      const groups = withIds.root.findAll(node => node.type === 'div' && node.props.role === 'group');
-      expect(groups.map(node => [node.props.id, node.props['aria-label']]))
-        .toEqual(props.exercise.questions.map((q, i) => [`item-${q.id}`, `Question ${props.questionNumber + i}`]));
+    it('marks its body and each question for an assessment to move focus to, only when drawn in one', () => {
+      const numbers = Object.fromEntries(props.exercise.questions.map((q, i) => [q.id, 4 + i]));
+      const inside = renderer.create(inAssessmentSection(<Exercise {...props} />, numbers));
+      const groups = inside.root.findAll(node => node.type === 'div' && node.props.role === 'group');
+      expect(groups.map(node => [node.props.id, node.props['aria-label']])).toEqual([
+        ['section', expect.stringMatching(/^Question/)],
+        ...props.exercise.questions.map((q, i) => [`item-${q.id}`, `Question ${4 + i}`]),
+      ]);
 
-      const without = renderer.create(<Exercise {...props} />);
-      expect(without.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
+      const outside = renderer.create(<Exercise {...props} />);
+      expect(outside.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
     });
   });
 
@@ -437,5 +443,66 @@ describe('Exercise', () => {
       ).toJSON();
       expect(tree).toMatchSnapshot();
     });
+  });
+});
+
+describe('Exercise focus, once an updated free response is saved', () => {
+  const question: ExerciseQuestionData = {
+    id: 1,
+    formats: ['free-response'],
+    is_answer_order_important: false,
+    stimulus_html: '',
+    stem_html: 'Explain why eleven is prime.',
+    collaborator_solutions: [],
+    answers: [],
+  };
+  const exercise = {
+    uid: '1@1', uuid: 'exercise', group_uuid: 'exercise', number: 1, version: 1,
+    published_at: '2026-10-28T00:00:00.000Z', context: '', stimulus_html: '', tags: [], authors: [],
+    copyright_holders: [], derived_from: [], is_vocab: false, solutions_are_public: false, versions: [1],
+    questions: [question],
+  };
+  const saved: QuestionState = {
+    available_points: '1.0', is_completed: true, canAnswer: true, needsSaved: false, apiIsPending: false,
+    free_response: 'It has no divisors.', feedback_html: '', correct_answer_id: '', correct_answer_feedback_html: '',
+    attempts_remaining: 0, attempt_number: 1, incorrectAnswerId: '',
+  };
+  let container: HTMLDivElement;
+
+  const draw = (state: Partial<QuestionState>) => act(() => {
+    ReactDOM.render(<Exercise
+      exercise={exercise}
+      questionNumber={1}
+      numberOfQuestions={1}
+      questionStates={{ 1: { ...saved, ...state } }}
+      hasMultipleAttempts={false}
+      hasUnlimitedAttempts={false}
+      onAnswerChange={() => undefined}
+      onAnswerSave={() => undefined}
+      onNextStep={() => undefined}
+    />, container);
+  });
+  const button = (testId: string) => container.querySelector(`button[data-test-id=${testId}]`) as HTMLButtonElement;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  });
+
+  afterEach(() => {
+    ReactDOM.unmountComponentAtNode(container);
+    container.remove();
+  });
+
+  it('moves on to Next, though the body reports nothing left to save a render after the save lands', () => {
+    draw({});
+    draw({ free_response: 'It has no divisors but one and itself.', needsSaved: true });
+    act(() => { button('update-answer-btn').focus(); button('update-answer-btn').click(); });
+
+    draw({ free_response: 'It has no divisors but one and itself.', needsSaved: true, apiIsPending: true });
+    expect(document.activeElement).toBe(button('update-answer-btn'));
+
+    draw({ free_response: 'It has no divisors but one and itself.' });
+    expect(document.activeElement).toBe(button('continue-btn'));
   });
 });

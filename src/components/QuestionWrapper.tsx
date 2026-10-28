@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useAssessmentSection } from '../hooks/useAssessmentSection';
 import { colors } from '../theme';
+import { ID } from '../types';
 import Button from './Button';
 import { CompactDisplayProps } from './compactDisplay';
 import { StepCardBody } from './StepCardBody';
@@ -63,7 +65,7 @@ const UnlimitedAttempts = () => {
   );
 }
 
-interface QuestionWrapperBaseProps extends CompactDisplayProps {
+export interface QuestionWrapperProps extends CompactDisplayProps {
   // lifecycle, from the item
   is_completed: boolean;
   canAnswer: boolean;
@@ -105,22 +107,13 @@ interface QuestionWrapperBaseProps extends CompactDisplayProps {
    * New consumers render feedback in the body instead and omit this.
    */
   footerChildren?: React.ReactNode;
+  /**
+   * The item this frames, as an `Assessment` knows it. Drawn in an assessment's section, the
+   * question's body is then where focus goes when the learner moves to it, named by its number.
+   */
+  itemId?: ID;
   children: React.ReactNode;
 }
-
-export type QuestionWrapperProps = QuestionWrapperBaseProps & ({
-  /**
-   * The DOM id an `Assessment` navigates to (its `itemDomId`). Given one, the question's body
-   * takes focus when a learner moves to it, so a screen reader lands on the question rather
-   * than staying on the navigation.
-   */
-  id: string;
-  /** Names the focused question for assistive technology, as "Question n". */
-  questionNumber: number;
-} | {
-  id?: undefined;
-  questionNumber?: number;
-});
 
 /**
  * The frame around a question: the padded, divided body section its content sits in, and the
@@ -144,11 +137,11 @@ export const QuestionWrapper = ({
   onNextStep,
   onCancel,
   footerChildren,
-  id,
-  questionNumber,
+  itemId,
   compactDisplay,
   children,
 }: QuestionWrapperProps) => {
+  const section = useAssessmentSection();
   // holds Submit in its waiting state after a click until the response lands, then advances.
   // Deprecated along with `hasFeedback`: a host that omits it drives navigation itself.
   const [shouldContinue, setShouldContinue] = React.useState(false);
@@ -167,10 +160,14 @@ export const QuestionWrapper = ({
   /*
    * A save the learner pressed keeps focus while it is pending. When it lands, the button they
    * pressed may be gone (Submit, replaced by Next) or unavailable (Update, with nothing left to
-   * save), so focus moves on to the control the footer now offers, which announces itself. A
-   * learner who moved elsewhere in the meantime is left where they are.
+   * save), so focus moves on to the control the footer now offers, which announces itself.
+   *
+   * The footer can take more than one render to settle after a save, as the body reports that
+   * nothing is left to save, so this stays ready while focus is still in the footer. It is done
+   * once focus has moved, here or by a learner who moved elsewhere, who is left where they are.
    */
   const saving = React.useRef(false);
+  const controlsRef = React.useRef<HTMLDivElement>(null);
   const nextRef = React.useRef<HTMLButtonElement>(null);
   const updateRef = React.useRef<HTMLButtonElement>(null);
   const save = () => {
@@ -180,14 +177,20 @@ export const QuestionWrapper = ({
 
   React.useEffect(() => {
     if (!saving.current || apiIsPending) { return; }
-    saving.current = false;
 
-    const focusLost = !document.activeElement || document.activeElement === document.body;
-    const updateAvailable = updateRef.current && !updateRef.current.disabled;
-    if (focusLost || (document.activeElement === updateRef.current && !updateAvailable)) {
-      (nextRef.current ?? (updateAvailable ? updateRef.current : null))?.focus();
+    const active = document.activeElement;
+    const lost = !active || active === document.body
+      || (active instanceof HTMLButtonElement && active.disabled && !!controlsRef.current?.contains(active));
+
+    if (lost) {
+      // Next while the footer settles may still be unavailable, so Update stands in until it is
+      const target = [nextRef.current, updateRef.current].find(button => button !== null && !button.disabled);
+      target?.focus();
+      saving.current = target !== undefined && target === updateRef.current;
+    } else if (!controlsRef.current?.contains(active)) {
+      saving.current = false;
     }
-  }, [apiIsPending, is_completed, canAnswer, dirty]);
+  }, [apiIsPending, is_completed, canAnswer, canSubmit, dirty]);
 
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
@@ -254,8 +257,9 @@ export const QuestionWrapper = ({
   };
 
   const leftRegion = attempts || footerChildren;
-  const focusTarget = id !== undefined
-    ? { id, tabIndex: -1, role: 'group', 'aria-label': `Question ${questionNumber}` }
+  const number = itemId !== undefined ? section?.itemNumber(itemId) : undefined;
+  const focusTarget = section !== undefined && itemId !== undefined && number !== undefined
+    ? { id: section.itemDomId(itemId), tabIndex: -1, role: 'group', 'aria-label': `Question ${number}` }
     : {};
 
   return (
@@ -271,7 +275,7 @@ export const QuestionWrapper = ({
         <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-            {showControls ? <div className="controls">{controls()}</div> : null}
+            {showControls ? <div className="controls" ref={controlsRef}>{controls()}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}

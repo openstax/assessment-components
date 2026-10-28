@@ -45,13 +45,6 @@ export interface ExerciseBaseProps {
   displaySolution?: boolean;
   /** The question number to scroll into view when the component renders. */
   scrollToQuestion?: number;
-  /**
-   * The DOM id for each question, for an `Assessment` to navigate to — pass its `itemDomId`.
-   * Omitted, the questions carry no ids, so the same exercise can render more than once.
-   */
-  questionDomId?: (questionId: ID) => string;
-  /** The DOM id for the exercise's card body, for an `Assessment` to navigate to — pass its `sectionDomId`. */
-  id?: string;
   /** An object containing data for how to render the following icons:
    * - An errata icon linking to the errata/feedback form
    * - An info icon describing the exercise type (multiple-choice, two-step, etc.)
@@ -110,8 +103,6 @@ export const Exercise = ({
   exercise,
   show_all_feedback,
   scrollToQuestion,
-  questionDomId,
-  id,
   exerciseIcons,
   overlayChildren,
   selected,
@@ -179,7 +170,6 @@ export const Exercise = ({
 
   return (
     <ExerciseWrapper
-      id={id}
       questionNumber={questionNumber}
       numberOfQuestions={exercise.questions.length}
       questionId={questionId ?? step?.uid}
@@ -283,8 +273,7 @@ export const Exercise = ({
               onNextStep={() => props.onNextStep(questionNumber + i - 1)}
               onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
               footerChildren={footerFeedback}
-              id={questionDomId?.(q.id)}
-              questionNumber={questionNumber + i}
+              itemId={q.id}
               compactDisplay={compactDisplay}
             >
               {body}

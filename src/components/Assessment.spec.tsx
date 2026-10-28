@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
+import { useAssessmentSection } from '../hooks/useAssessmentSection';
 import { Assessment, AssessmentItem, AssessmentProps, AssessmentSectionProps } from './Assessment';
 
 jest.mock('scroll-to-element', () => jest.fn());
@@ -13,17 +14,22 @@ const items: AssessmentItem[] = [
 ];
 
 /**
- * A host section: the section itself and each of its items carry the ids the shell gives it, and
- * it reports itself ready only when the test says so — the way a host that loads its section does.
+ * A host section: the section itself and each of its items carry the ids the assessment gives
+ * them, as `ExerciseWrapper` and `QuestionWrapper` do, and it reports itself ready only when the
+ * test says so — the way a host that loads its section does.
  */
+const SectionHost = ({ sectionId }: { sectionId: string }) => {
+  const section = useAssessmentSection();
+  return <div data-section={sectionId} id={section?.sectionDomId} tabIndex={-1} aria-label={`section ${sectionId}`}>
+    {items.filter(item => item.section === sectionId).map(item =>
+      <div key={item.id} id={section?.itemDomId(item.id)} tabIndex={-1}>item {item.id}</div>
+    )}
+  </div>;
+};
 const sections: Record<string, AssessmentSectionProps> = {};
 const renderSection = (props: AssessmentSectionProps) => {
   sections[props.sectionId] = props;
-  return <div data-section={props.sectionId} id={props.sectionDomId} tabIndex={-1} aria-label={`section ${props.sectionId}`}>
-    {items.filter(item => item.section === props.sectionId).map(item =>
-      <div key={item.id} id={props.itemDomId(item.id)} tabIndex={-1}>item {item.id}</div>
-    )}
-  </div>;
+  return <SectionHost sectionId={props.sectionId} />;
 };
 
 describe('Assessment', () => {
@@ -124,7 +130,7 @@ describe('Assessment', () => {
 
       act(() => { jest.advanceTimersByTime(10); });
       expect(focusedText()).toBe('section c');
-      expect(document.activeElement?.id).toBe(sections.c.sectionDomId);
+      expect(document.activeElement?.getAttribute('data-section')).toBe('c');
     });
 
     it('warns when nothing carries the section id while it loads', () => {
@@ -134,7 +140,7 @@ describe('Assessment', () => {
       click(navButtons()[3]);
       act(() => { jest.advanceTimersByTime(10); });
 
-      expect(warn).toHaveBeenCalledWith(expect.stringContaining('sectionDomId'));
+      expect(warn).toHaveBeenCalledWith(expect.stringContaining('ExerciseWrapper'));
       warn.mockRestore();
     });
   });
@@ -308,20 +314,67 @@ describe('Assessment', () => {
     warn.mockRestore();
   });
 
-  it('gives each assessment on the page its own item ids', () => {
+  it('gives each assessment on the page its own ids', () => {
     const ids: string[] = [];
+    const Collect = () => {
+      const section = useAssessmentSection();
+      if (section) { ids.push(section.sectionDomId, section.itemDomId(2)); }
+      return null;
+    };
     act(() => {
       ReactDOM.render(<>
-        {[0, 1].map(key => <Assessment
-          key={key}
-          items={items}
-          renderSection={props => { ids.push(props.itemDomId(2)); return null; }}
-          completion={{}}
-        />)}
+        {[0, 1].map(key => <Assessment key={key} items={items} renderSection={() => <Collect />} completion={{}} />)}
       </>, container);
     });
 
-    expect(new Set(ids).size).toBe(2);
+    expect(new Set(ids).size).toBe(4);
+  });
+
+  it('numbers each item within the whole assessment', () => {
+    const numbers: Array<number | undefined> = [];
+    const Collect = () => {
+      const section = useAssessmentSection();
+      numbers.push(section?.itemNumber(3), section?.itemNumber('missing'));
+      return null;
+    };
+    render({ renderSection: () => <Collect /> });
+
+    expect(numbers.slice(-2)).toEqual([3, undefined]);
+  });
+
+  it('keeps the readiness of the drawing on show when an earlier one reports late', () => {
+    render();
+    ready('b');
+    click(navButtons()[3]);
+    const stale = sections.c.onReady;
+    click(navButtons()[0]);
+    ready('a');
+    click(navButtons()[3]);
+    ready('c');
+
+    act(() => stale());
+    click(navButtons()[3]);
+    expect(focusedText()).toBe('section c');
+  });
+
+  it('takes focus to a new attempt whose items arrive after it does', () => {
+    const done = items.map(item => ({ ...item, isCompleted: true, editable: false }));
+    render({ items: done, attemptId: '1' });
+    render({ items: [], attemptId: '2' });
+
+    render({ items: done, attemptId: '2' });
+    expect(focusedText()).toBe('You are done.');
+  });
+
+  it('ignores a score reported for an attempt since replaced', () => {
+    const done = items.map(item => ({ ...item, isCompleted: true, editable: false }));
+    const completion = { onRetry: jest.fn(), score: { current: '0/4', saved: '0/4' } };
+    render({ items, attemptId: '1', completion });
+    const report = sections.b.onScoreAssessment;
+
+    render({ items: done, attemptId: '2', completion });
+    act(() => report({ current: '4/4', saved: '4/4' }));
+    expect(container.textContent).toContain('Current Score: 0/4');
   });
 
   describe('the completion step', () => {

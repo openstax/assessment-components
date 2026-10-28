@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { QuestionWrapper, QuestionWrapperProps } from './QuestionWrapper';
-import { byClass, findNode, textOf as renderedText } from '../test/utils';
+import { byClass, findNode, inAssessmentSection, textOf as renderedText } from '../test/utils';
 import { colors } from '../theme';
 
 const props: QuestionWrapperProps = {
@@ -287,8 +287,8 @@ describe('QuestionWrapper', () => {
   });
 
   describe('as an assessment navigates to it', () => {
-    it('is a focusable, named group when it has an id', () => {
-      const tree = renderer.create(<QuestionWrapper {...props} id="item-1" questionNumber={3} />);
+    it('is a focusable group named by its number when drawn in an assessment\'s section', () => {
+      const tree = renderer.create(inAssessmentSection(<QuestionWrapper {...props} itemId={1} />, { 1: 3 }));
       const body = tree.root.find(node => node.type === 'div' && node.props.id === 'item-1');
 
       expect(body.props.tabIndex).toBe(-1);
@@ -296,8 +296,12 @@ describe('QuestionWrapper', () => {
       expect(body.props['aria-label']).toBe('Question 3');
     });
 
-    it('is a plain body section without one', () => {
-      const tree = renderer.create(<QuestionWrapper {...props} questionNumber={3} />);
+    it.each([
+      ['outside an assessment', <QuestionWrapper key="q" {...props} itemId={1} />],
+      ['without an item id', inAssessmentSection(<QuestionWrapper {...props} />, { 1: 3 })],
+      ['for an item the assessment does not have', inAssessmentSection(<QuestionWrapper {...props} itemId={2} />, { 1: 3 })],
+    ])('is a plain body section %s', (_, element) => {
+      const tree = renderer.create(element);
 
       expect(tree.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
     });
@@ -348,6 +352,19 @@ describe('QuestionWrapper', () => {
       press('update-answer-btn');
 
       draw({ is_completed: true, dirty: true, apiIsPending: true });
+      expect(document.activeElement).toBe(button('update-answer-btn'));
+
+      draw({ is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
+    it('moves from Submit on to Next when Next becomes available only a render after the save lands', () => {
+      draw({});
+      press('submit-answer-btn');
+      draw({ apiIsPending: true });
+
+      // an editable response: the body still reports its edit as unsaved, so Next is unavailable
+      draw({ is_completed: true, dirty: true });
       expect(document.activeElement).toBe(button('update-answer-btn'));
 
       draw({ is_completed: true, dirty: false });

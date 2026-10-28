@@ -186,11 +186,10 @@ const useLoadedSection = (sectionId: string, onReady: () => void) => {
 /** The legacy host: one `Exercise` per section, the way assessments draws an attempt today. */
 const LegacySection = ({ host, section }: { host: Host; section: AssessmentSectionProps }) => {
   const loaded = useLoadedSection(section.sectionId, section.onReady);
-  if (!loaded) { return <Loader id={section.sectionDomId} />; }
+  if (!loaded) { return <Loader />; }
 
   return (
     <Exercise
-      id={section.sectionDomId}
       exercise={loaded}
       questionId={loaded.uid}
       questionNumber={section.firstItemNumber}
@@ -204,49 +203,72 @@ const LegacySection = ({ host, section }: { host: Host; section: AssessmentSecti
       // the exercise reports the index of the question whose Next was clicked, counted from
       // `questionNumber` — which is the section's first item number, so it indexes `items`
       onNextStep={index => section.onNext(host.items[index].id)}
-      questionDomId={section.itemDomId}
     />
+  );
+};
+
+/**
+ * One question in a composed host: the body reports whether its response can be submitted and
+ * whether it differs from the one saved, and hands over its Cancel, which the footer acts on.
+ */
+const ComposedQuestion = ({ host, section, question, number, isLast }: {
+  host: Host;
+  section: AssessmentSectionProps;
+  question: ExerciseQuestionData;
+  number: number;
+  isLast: boolean;
+}) => {
+  const state = host.states[question.id];
+  const [status, setStatus] = React.useState<{ canSubmit?: boolean; dirty?: boolean }>({});
+  const cancel = React.useRef<() => void>();
+
+  return (
+    <QuestionWrapper
+      itemId={question.id}
+      is_completed={state.is_completed}
+      canAnswer={state.canAnswer}
+      canSubmit={status.canSubmit}
+      dirty={status.dirty}
+      apiIsPending={state.apiIsPending}
+      canUpdateCurrentStep={!isLast}
+      onAnswerSave={() => host.onAnswerSave(question.id, section.onScoreAssessment)}
+      onNextStep={() => section.onNext(question.id)}
+      onCancel={() => cancel.current?.()}
+    >
+      <QuestionBody
+        question={question}
+        state={state}
+        needsSaved={state.needsSaved}
+        apiIsPending={state.apiIsPending}
+        questionNumber={number}
+        onAnswerChange={answer => host.onAnswerChange({ ...answer, question_id: question.id })}
+        onStatusChange={setStatus}
+        registerCancel={handle => { cancel.current = handle; }}
+      />
+    </QuestionWrapper>
   );
 };
 
 /** A composed host: its own chrome around each question, the way the display package is hosted. */
 const ComposedSection = ({ host, section }: { host: Host; section: AssessmentSectionProps }) => {
   const loaded = useLoadedSection(section.sectionId, section.onReady);
-  if (!loaded) { return <Loader id={section.sectionDomId} />; }
+  if (!loaded) { return <Loader />; }
 
   return (
     <ExerciseWrapper
-      id={section.sectionDomId}
       questionNumber={section.firstItemNumber}
       numberOfQuestions={loaded.questions.length}
       questionId={loaded.uid}
     >
       <ExerciseBody stimulus_html={loaded.stimulus_html}>
-        {loaded.questions.map((q, i) => {
-          const state = host.states[q.id];
-          return (
-            <QuestionWrapper
-              key={q.id}
-              id={section.itemDomId(q.id)}
-              questionNumber={section.firstItemNumber + i}
-              is_completed={state.is_completed}
-              canAnswer={state.canAnswer}
-              apiIsPending={state.apiIsPending}
-              canUpdateCurrentStep={i + 1 < loaded.questions.length}
-              onAnswerSave={() => host.onAnswerSave(q.id, section.onScoreAssessment)}
-              onNextStep={() => section.onNext(q.id)}
-            >
-              <QuestionBody
-                question={q}
-                state={state}
-                needsSaved={state.needsSaved}
-                apiIsPending={state.apiIsPending}
-                questionNumber={section.firstItemNumber + i}
-                onAnswerChange={answer => host.onAnswerChange({ ...answer, question_id: q.id })}
-              />
-            </QuestionWrapper>
-          );
-        })}
+        {loaded.questions.map((q, i) => <ComposedQuestion
+          key={q.id}
+          host={host}
+          section={section}
+          question={q}
+          number={section.firstItemNumber + i}
+          isLast={i + 1 === loaded.questions.length}
+        />)}
       </ExerciseBody>
     </ExerciseWrapper>
   );

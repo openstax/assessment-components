@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { useAssessmentSection } from '../hooks/useAssessmentSection';
 import { AvailablePoints, ExerciseScoringData } from '../types';
 import { InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
 import { CompactDisplayProps } from './compactDisplay';
@@ -57,14 +58,14 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
   className?: string;
-  /** The DOM id an `Assessment` moves focus to when a learner enters this section (its `sectionDomId`). */
-  id?: string;
   children: React.ReactNode;
 }
 
 /**
  * The chrome around an exercise: the card, its header and the toolbar. Takes no exercise and
  * no step, so a host can render it around question content of any format.
+ *
+ * Drawn as an `Assessment`'s section, its body is where focus goes when a learner enters it.
  */
 export const ExerciseWrapper = ({
   exerciseIcons,
@@ -75,8 +76,11 @@ export const ExerciseWrapper = ({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
+  const section = useAssessmentSection();
+
   const cardProps: StepCardProps = {
     ...props,
+    id: section?.sectionDomId,
     compactDisplay,
     rightHeaderChildren: exerciseIcons ? <ExerciseHeaderIcons icons={exerciseIcons} /> : null,
   };

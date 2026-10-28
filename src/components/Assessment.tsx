@@ -1,5 +1,6 @@
 import React from 'react';
 import scrollToElement from 'scroll-to-element';
+import { AssessmentSection, AssessmentSectionContext } from '../hooks/useAssessmentSection';
 import { ID } from '../types';
 import { CompletionStatus, Score } from './CompletionStatus';
 import { ProgressBar, ProgressBarItemVariant } from './ProgressBar';
@@ -24,22 +25,12 @@ export interface AssessmentSectionProps {
   sectionId: string;
   /** The number of the section's first item within the whole assessment, for its header. */
   firstItemNumber: number;
-  /**
-   * The DOM id the host puts on the section itself, both while it loads (on its `Loader`) and
-   * once it has (on its `ExerciseWrapper`). Entering a section moves focus here, so the learner
-   * starts at the top of it.
-   */
-  sectionDomId: string;
-  /**
-   * The DOM id the host's chrome puts on each item. Moving to an item after a section's first
-   * moves focus here.
-   */
-  itemDomId: (itemId: ID) => string;
   /** The item's Next button: moves on from that item. */
   onNext: (itemId: ID) => void;
   /**
    * Reports the assessment's score, as it comes back from answering an item, for the completion
-   * step to show. The shell keeps the latest, so the host need not hold it above its sections.
+   * step to show. The shell keeps the latest, so the host need not hold it above its sections. A
+   * report made for an earlier attempt is ignored.
    */
   onScoreAssessment: (score: Score) => void;
   /**
@@ -62,9 +53,10 @@ export interface AssessmentProps {
   /** In the order they are taken. Until there are any, nothing is drawn. */
   items: AssessmentItem[];
   /**
-   * Draws the current section and the chrome around each of its items, or its `Loader` while it
-   * loads. Remounted for every section, so a host can load a section's content when it is drawn
-   * and report it ready.
+   * Draws the current section, in an `ExerciseWrapper` with a `QuestionWrapper` (given its
+   * `itemId`) around each item, or a `Loader` while it loads. Those take the ids that focus moves
+   * to from the assessment, so the host has none to wire. Remounted for every section, so a host
+   * can load a section's content when it is drawn and report it ready.
    */
   renderSection: (props: AssessmentSectionProps) => React.ReactNode;
   completion: AssessmentCompletion;
@@ -103,8 +95,9 @@ const startingPosition = (items: AssessmentItem[]): Position => {
  * every response; this holds only where the learner is.
  *
  * Moving to an item moves focus to it, and moving to the completion step moves focus there, so
- * a keyboard or screen reader user follows the navigation instead of being left on it. Focus is
- * never moved on the first render.
+ * a keyboard or screen reader user follows the navigation instead of being left on it. Entering a
+ * section by its first item focuses the section, so it is read from its top; a section still
+ * loading has focus wait on its loader. Focus is never moved on the first render.
  *
  * Where the assessment opens is decided once, when it first has items, and again for every new
  * `attemptId`.
@@ -152,6 +145,7 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
     setFocusRequest(focusRequest + 1);
   }
   const [reportedScore, setReportedScore] = React.useState<Score | undefined>(undefined);
+  const hasItems = items.length > 0;
 
   // a new attempt opens afresh, and the learner is taken to where it opens
   const [attempt, setAttempt] = React.useState(attemptId);
@@ -166,6 +160,9 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
   // read by the focus effect, which runs for a navigation and not for every new `items`
   const latest = React.useRef({ items, index, currentItem });
   latest.current = { items, index, currentItem };
+  // read by the score reports handed to sections, which a host may call after a retry
+  const currentAttempt = React.useRef(attempt);
+  currentAttempt.current = attempt;
 
   const goTo = React.useCallback((next: number) => {
     const nextItem = items[next];
@@ -176,6 +173,8 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
   React.useEffect(() => {
     if (focusHandled.current === focusRequest) { return; }
     const { items, index, currentItem } = latest.current;
+    // a new attempt whose items have not arrived yet has nowhere to take focus until they do
+    if (items.length === 0) { return; }
 
     if (currentItem === undefined) {
       focusHandled.current = focusRequest;
@@ -191,10 +190,10 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
     const focus = (id: string, scroll: (element: HTMLElement) => void) => {
       const element = document.getElementById(id);
       if (!element) {
-        console.warn(`Assessment: no element with id "${id}" to move focus to. Put the ` +
+        console.warn(`Assessment: no element with id "${id}" to move focus to. ` +
           (id === sectionDomId
-            ? '`sectionDomId` on the section, e.g. `ExerciseWrapper`\'s `id`, and on its `Loader` while it loads.'
-            : '`itemDomId` on the item\'s chrome, e.g. `QuestionWrapper`\'s `id`.'));
+            ? 'Draw the section in an `ExerciseWrapper`, and a `Loader` while it loads.'
+            : 'Draw the item in a `QuestionWrapper` given its `itemId`.'));
         return;
       }
       scroll(element);
@@ -210,9 +209,26 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
     // a section that is not ready straight away is loading: wait on its loader, which has its id
     const waiting = window.setTimeout(() => focus(sectionDomId, () => window.scrollTo(0, 0)), LOADING_DELAY);
     return () => window.clearTimeout(waiting);
-  }, [completionDomId, focusRequest, itemDomId, mount, readyMount, sectionDomId]);
+  }, [completionDomId, focusRequest, hasItems, itemDomId, mount, readyMount, sectionDomId]);
 
-  const onReady = React.useCallback(() => setReadyMount(mount), [mount]);
+  // mounts only ever increase, so a late report from a drawing since left never undoes a later one
+  const onReady = React.useCallback(
+    () => setReadyMount(current => current !== undefined && current > mount ? current : mount),
+    [mount]
+  );
+
+  const onScoreAssessment = React.useCallback((score: Score) => {
+    if (currentAttempt.current === attempt) { setReportedScore(score); }
+  }, [attempt]);
+
+  const section: AssessmentSection = React.useMemo(() => ({
+    sectionDomId,
+    itemDomId,
+    itemNumber: (itemId: ID) => {
+      const found = items.findIndex(item => item.id === itemId);
+      return found === -1 ? undefined : found + 1;
+    },
+  }), [itemDomId, items, sectionDomId]);
 
   const onNext = React.useCallback((itemId: ID) => {
     const index = items.findIndex(item => item.id === itemId);
@@ -236,17 +252,15 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
       />
 
       {sectionId !== undefined
-        ? <React.Fragment key={mount}>
+        ? <AssessmentSectionContext.Provider key={mount} value={section}>
           {renderSection({
             sectionId,
-            sectionDomId,
             firstItemNumber: items.findIndex(item => item.section === sectionId) + 1,
-            itemDomId,
             onNext,
             onReady,
-            onScoreAssessment: setReportedScore,
+            onScoreAssessment,
           })}
-        </React.Fragment>
+        </AssessmentSectionContext.Provider>
         : <CompletionStatus
           id={completionDomId}
           numberOfQuestions={items.length}

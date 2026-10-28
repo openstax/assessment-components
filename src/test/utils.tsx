@@ -1,3 +1,4 @@
+import { AssessmentSectionContext } from '../hooks/useAssessmentSection';
 import renderer from 'react-test-renderer';
 
 export const findByTestId = (instance: renderer.ReactTestInstance, id: string) =>
@@ -55,3 +56,16 @@ export const textOfTestId = (tree: Rendered, id: string): string | undefined => 
   const node = findNode(tree, byTestId(id));
   return node && textOf(node);
 };
+
+/**
+ * Draws an element as part of an `Assessment`'s section, with ids formatted plainly so a test can
+ * name them: `section`, and `item-<id>` numbered from `numbers`.
+ */
+export const inAssessmentSection = (element: JSX.Element, numbers: Record<string, number> = {}) =>
+  <AssessmentSectionContext.Provider value={{
+    sectionDomId: 'section',
+    itemDomId: id => `item-${id}`,
+    itemNumber: id => numbers[id],
+  }}>
+    {element}
+  </AssessmentSectionContext.Provider>;
