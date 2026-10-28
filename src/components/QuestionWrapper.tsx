@@ -174,6 +174,13 @@ export const QuestionWrapper = ({
     saving.current = true;
     onAnswerSave();
   };
+  // a learner who moves on, to another question's controls say, while this save is pending is
+  // left there when it lands; the button they pressed going away moves focus to nothing, and does not count
+  const leaveControls = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) {
+      saving.current = false;
+    }
+  };
 
   React.useEffect(() => {
     if (!saving.current || apiIsPending) { return; }
@@ -275,7 +282,7 @@ export const QuestionWrapper = ({
         <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-            {showControls ? <div className="controls" ref={controlsRef}>{controls()}</div> : null}
+            {showControls ? <div className="controls" ref={controlsRef} onBlur={leaveControls}>{controls()}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}

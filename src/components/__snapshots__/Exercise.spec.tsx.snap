@@ -1735,6 +1735,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                   >
                     <div
                       className="controls"
+                      onBlur={[Function]}
                     >
                       <button
                         className="c11"

@@ -371,6 +371,27 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(button('continue-btn'));
     });
 
+    it('moves on from the question the learner last saved when two saves land together', () => {
+      const drawBoth = (first: Partial<QuestionWrapperProps>, second: Partial<QuestionWrapperProps>) => act(() => {
+        ReactDOM.render(<>
+          <div data-question="1"><QuestionWrapper {...props} {...first as QuestionWrapperProps} /></div>
+          <div data-question="2"><QuestionWrapper {...props} {...second as QuestionWrapperProps} /></div>
+        </>, container);
+      });
+      const inQuestion = (n: number, testId: string) =>
+        container.querySelector(`[data-question="${n}"] button[data-test-id=${testId}]`) as HTMLButtonElement;
+      const pressIn = (n: number) => act(() => { inQuestion(n, 'submit-answer-btn').focus(); inQuestion(n, 'submit-answer-btn').click(); });
+
+      drawBoth({}, {});
+      pressIn(1);
+      drawBoth({ apiIsPending: true }, {});
+      pressIn(2);
+      drawBoth({ apiIsPending: true }, { apiIsPending: true });
+
+      drawBoth({ is_completed: true, canAnswer: false }, { is_completed: true, canAnswer: false });
+      expect(document.activeElement).toBe(inQuestion(2, 'continue-btn'));
+    });
+
     it('leaves a learner who moved elsewhere where they are', () => {
       const elsewhere = document.createElement('input');
       document.body.appendChild(elsewhere);

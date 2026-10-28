@@ -315,6 +315,7 @@ Array [
     >
       <div
         className="controls"
+        onBlur={[Function]}
       >
         <button
           className="c1"
