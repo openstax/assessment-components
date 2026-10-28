@@ -313,6 +313,16 @@ describe('Exercise', () => {
         expect(text).not.toContain('In a two-step question');
       });
     });
+
+    it('gives each question the DOM id an assessment navigates to, and only when asked', () => {
+      const withIds = renderer.create(<Exercise {...props} questionDomId={id => `item-${id}`} />);
+      const groups = withIds.root.findAll(node => node.type === 'div' && node.props.role === 'group');
+      expect(groups.map(node => [node.props.id, node.props['aria-label']]))
+        .toEqual(props.exercise.questions.map((q, i) => [`item-${q.id}`, `Question ${props.questionNumber + i}`]));
+
+      const without = renderer.create(<Exercise {...props} />);
+      expect(without.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
+    });
   });
 
   describe('with overlay rendering', () => {

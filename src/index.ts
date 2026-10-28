@@ -15,6 +15,7 @@ export * from './components/StepCardBody';
 export * from './components/QuestionLevelFeedback';
 export * from './components/compactDisplay';
 export * from './components/ProgressBar';
+export * from './components/Assessment';
 export * from './components/Loader';
 export * from './components/ExerciseToolbar';
 export * from './components/IncludeRemoveQuestion';

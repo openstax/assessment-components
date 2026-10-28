@@ -299,6 +299,12 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
   totalScoring?: ExerciseScoringData;
   showScoring?: boolean;
   isGraded?: boolean;
+  /**
+   * The DOM id an `Assessment` moves focus to when a learner enters the card's section. It goes on
+   * the card's body, below the header, which is then a focusable group named by its question
+   * numbers.
+   */
+  id?: string;
 }
 
 const StepCard = ({
@@ -318,6 +324,7 @@ const StepCard = ({
   showScoring,
   totalScoring,
   isGraded,
+  id,
   ...otherProps }: StepCardProps) => {
 
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -326,6 +333,10 @@ const StepCard = ({
   const formattedQuestionNumber = numberOfQuestions > 1
     ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
     : `Question ${questionNumber}`;
+
+  const focusTarget = id !== undefined
+    ? { id, tabIndex: -1, role: 'group', 'aria-label': formattedQuestionNumber }
+    : {};
 
   const handleOverlayBlur = (event: React.FocusEvent<HTMLDivElement>) => {
     if (overlayRef.current && !overlayRef.current.contains(event.relatedTarget as Node)) {
@@ -407,7 +418,7 @@ const StepCard = ({
                 </div> : null}
               </StepCardHeader>
             }
-            <StepCardQuestion>{children}</StepCardQuestion>
+            <StepCardQuestion {...focusTarget}>{children}</StepCardQuestion>
           </div>
         </div>
       </InnerStepCard>

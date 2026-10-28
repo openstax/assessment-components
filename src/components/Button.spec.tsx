@@ -28,11 +28,28 @@ describe('Button', () => {
     expect(render(<Button disabled>Click Me</Button>).props.disabled).toBe(true);
   });
 
-  it('shows the waiting text and disables itself while waiting', () => {
-    const tree = render(<Button isWaiting={true} waitingText="Submitting...">Click Me</Button>);
+  it('shows the waiting text and is unavailable while waiting, without giving up focus', () => {
+    const onClick = jest.fn();
+    const tree = render(<Button isWaiting={true} waitingText="Submitting..." onClick={onClick}>Click Me</Button>);
 
     expect(textOf(tree)).toBe('Submitting...');
-    expect(tree.props.disabled).toBe(true);
+    expect(tree.props['aria-disabled']).toBe(true);
+    expect(tree.props.disabled).toBeFalsy();
+
+    const event = { preventDefault: jest.fn() };
+    tree.props.onClick(event);
+    expect(onClick).not.toHaveBeenCalled();
+    expect(event.preventDefault).toHaveBeenCalled();
+  });
+
+  it('is unavailable but focusable when passed aria-disabled', () => {
+    const onClick = jest.fn();
+    const tree = render(<Button aria-disabled onClick={onClick}>Click Me</Button>);
+
+    expect(tree.props['aria-disabled']).toBe(true);
+    expect(tree.props.disabled).toBeFalsy();
+    tree.props.onClick({ preventDefault: () => undefined });
+    expect(onClick).not.toHaveBeenCalled();
   });
 
   it('shows its children when it is not waiting', () => {
@@ -46,7 +63,7 @@ describe('Button', () => {
     const tree = render(<Button>Click Me</Button>);
 
     expect(tree).toHaveStyleRule('background-color', colors.button.background);
-    expect(tree).toHaveStyleRule('background', colors.button.backgroundHover, { modifier: ':not([disabled]):hover' });
-    expect(tree).toHaveStyleRule('background', colors.button.backgroundActive, { modifier: ':not([disabled]):active' });
+    expect(tree).toHaveStyleRule('background', colors.button.backgroundHover, { modifier: ':not([disabled]):not([aria-disabled="true"]):hover' });
+    expect(tree).toHaveStyleRule('background', colors.button.backgroundActive, { modifier: ':not([disabled]):not([aria-disabled="true"]):active' });
   });
 });

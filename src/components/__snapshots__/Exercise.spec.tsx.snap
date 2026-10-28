@@ -1007,19 +1007,20 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c11:not([disabled]) {
+.c11:not([disabled]):not([aria-disabled="true"]) {
   cursor: pointer;
 }
 
-.c11:not([disabled]):hover {
+.c11:not([disabled]):not([aria-disabled="true"]):hover {
   background: #BE3C08;
 }
 
-.c11:not([disabled]):active {
+.c11:not([disabled]):not([aria-disabled="true"]):active {
   background: #B03808;
 }
 
-.c11:disabled {
+.c11:disabled,
+.c11[aria-disabled="true"] {
   opacity: 0.4;
 }
 

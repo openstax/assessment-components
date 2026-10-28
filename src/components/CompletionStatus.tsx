@@ -12,12 +12,18 @@ export interface CompletionStatusProps {
   numberOfQuestions: number;
   numberCompleted: number;
   handleContinue: () => void;
-  handleNext: () => void;
+  /** Leaves the assessment. Omit when there is nowhere to go after it, and no Next is offered. */
+  handleNext?: () => void;
   className?: string;
   score?: Score;
   handleRetry?: () => void;
   isRetrying?: boolean;
   handleEditResponses?: () => void;
+  /**
+   * The DOM id an `Assessment` moves focus to. Given one, the heading takes focus, so arriving
+   * announces where the learner is rather than everything on the card.
+   */
+  id?: string;
 }
 
 const CompletionStatusCard = styled(InnerStepCard)`
@@ -86,14 +92,16 @@ export const CompletionStatus = styled(({
   handleRetry,
   isRetrying,
   handleEditResponses,
+  id,
 }: CompletionStatusProps) => {
+  const focusTarget = id !== undefined ? { id, tabIndex: -1 } : {};
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
 
   if (handleEditResponses) {
     return (
       <CompletionStatusCard className={className}>
-        <CompletionHeader>
+        <CompletionHeader {...focusTarget}>
           {allCompleted
             ? 'You are done.'
             : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
@@ -129,12 +137,14 @@ export const CompletionStatus = styled(({
               Retry Quiz
             </RetryResumeButton>
           ) : null}
-          <Button
-            data-test-id="next-btn"
-            onClick={handleNext}
-          >
-            Next
-          </Button>
+          {handleNext ? (
+            <Button
+              data-test-id="next-btn"
+              onClick={handleNext}
+            >
+              Next
+            </Button>
+          ) : null}
         </ButtonGroup>
       </CompletionStatusCard>
     );
@@ -161,7 +171,7 @@ export const CompletionStatus = styled(({
 
   return (
     <CompletionStatusCard className={className}>
-      <CompletionHeader>
+      <CompletionHeader {...focusTarget}>
         {allCompleted
           ? 'You are done.'
           : (someCompleted ? 'Quiz is partially complete.' : 'No questions have been answered.')}
@@ -197,12 +207,14 @@ export const CompletionStatus = styled(({
           </RetryResumeButton>
         ) : null}
 
-        <Button
-          data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
-          onClick={onNextContinueClick}
-        >
-          {buttonText}
-        </Button>
+        {onNextContinueClick ? (
+          <Button
+            data-test-id={`${buttonText.split(' ')[0].toLowerCase()}-btn`}
+            onClick={onNextContinueClick}
+          >
+            {buttonText}
+          </Button>
+        ) : null}
       </ButtonGroup>
     </CompletionStatusCard>
   );

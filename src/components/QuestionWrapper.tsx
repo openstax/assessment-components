@@ -21,15 +21,15 @@ export const SaveButton = (props: {
   </Button>
 );
 
-export const NextButton = (props: {
+export const NextButton = React.forwardRef<HTMLButtonElement, {
   canUpdateCurrentStep: boolean,
-} & React.ComponentPropsWithoutRef<'button'>) => {
-  return (
-    <Button {...props} data-test-id="continue-btn">
-      {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
-    </Button>
-  );
-}
+} & React.ComponentPropsWithoutRef<'button'>>(({ canUpdateCurrentStep, ...props }, ref) => (
+  <Button {...props} ref={ref} data-test-id="continue-btn">
+    {canUpdateCurrentStep ? 'Continue' : 'Next'}
+  </Button>
+));
+
+NextButton.displayName = 'OSNextButton';
 
 const StyledCancelButton = styled(Button)`
   background-color: ${colors.button.secondary.background};
@@ -63,7 +63,7 @@ const UnlimitedAttempts = () => {
   );
 }
 
-export interface QuestionWrapperProps extends CompactDisplayProps {
+interface QuestionWrapperBaseProps extends CompactDisplayProps {
   // lifecycle, from the item
   is_completed: boolean;
   canAnswer: boolean;
@@ -108,6 +108,20 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
   children: React.ReactNode;
 }
 
+export type QuestionWrapperProps = QuestionWrapperBaseProps & ({
+  /**
+   * The DOM id an `Assessment` navigates to (its `itemDomId`). Given one, the question's body
+   * takes focus when a learner moves to it, so a screen reader lands on the question rather
+   * than staying on the navigation.
+   */
+  id: string;
+  /** Names the focused question for assistive technology, as "Question n". */
+  questionNumber: number;
+} | {
+  id?: undefined;
+  questionNumber?: number;
+});
+
 /**
  * The frame around a question: the padded, divided body section its content sits in, and the
  * footer with its buttons and the attempts notice. The footer is left out when it would be
@@ -130,6 +144,8 @@ export const QuestionWrapper = ({
   onNextStep,
   onCancel,
   footerChildren,
+  id,
+  questionNumber,
   compactDisplay,
   children,
 }: QuestionWrapperProps) => {
@@ -148,6 +164,31 @@ export const QuestionWrapper = ({
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
+  /*
+   * A save the learner pressed keeps focus while it is pending. When it lands, the button they
+   * pressed may be gone (Submit, replaced by Next) or unavailable (Update, with nothing left to
+   * save), so focus moves on to the control the footer now offers, which announces itself. A
+   * learner who moved elsewhere in the meantime is left where they are.
+   */
+  const saving = React.useRef(false);
+  const nextRef = React.useRef<HTMLButtonElement>(null);
+  const updateRef = React.useRef<HTMLButtonElement>(null);
+  const save = () => {
+    saving.current = true;
+    onAnswerSave();
+  };
+
+  React.useEffect(() => {
+    if (!saving.current || apiIsPending) { return; }
+    saving.current = false;
+
+    const focusLost = !document.activeElement || document.activeElement === document.body;
+    const updateAvailable = updateRef.current && !updateRef.current.disabled;
+    if (focusLost || (document.activeElement === updateRef.current && !updateAvailable)) {
+      (nextRef.current ?? (updateAvailable ? updateRef.current : null))?.focus();
+    }
+  }, [apiIsPending, is_completed, canAnswer, dirty]);
+
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
         {attemptsRemaining !== undefined && attemptsRemaining > 0 &&
@@ -164,7 +205,7 @@ export const QuestionWrapper = ({
           isWaiting={apiIsPending || shouldContinue}
           attempt_number={attempt_number}
           onClick={() => {
-            onAnswerSave();
+            save();
             if (willContinue) {
               setShouldContinue(true);
             }
@@ -179,15 +220,17 @@ export const QuestionWrapper = ({
         <>
           <CancelButton disabled={dirty === false || apiIsPending} onClick={onCancel} />
           <Button
+            ref={updateRef}
             data-test-id="update-answer-btn"
             disabled={dirty === false || apiIsPending || canSubmit === false}
             isWaiting={apiIsPending}
             waitingText="Saving…"
-            onClick={onAnswerSave}
+            onClick={save}
           >
             Update
           </Button>
           {onNextStep && <NextButton
+            ref={nextRef}
             disabled={apiIsPending || dirty === true}
             onClick={onNextStep}
             canUpdateCurrentStep={false}
@@ -196,18 +239,32 @@ export const QuestionWrapper = ({
       );
     }
 
+    // the same element as the Submit it follows, unavailable but still holding the focus it had
     if (!onNextStep) {
-      return <SaveButton disabled isWaiting={false} attempt_number={attempt_number} willContinue={false} />;
+      return <SaveButton
+        disabled={false}
+        aria-disabled
+        isWaiting={false}
+        attempt_number={attempt_number}
+        willContinue={false}
+      />;
     }
 
-    return <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;
+    return <NextButton ref={nextRef} onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;
   };
 
   const leftRegion = attempts || footerChildren;
+  const focusTarget = id !== undefined
+    ? { id, tabIndex: -1, role: 'group', 'aria-label': `Question ${questionNumber}` }
+    : {};
 
   return (
     <>
-      <StepCardBody className="step-card-question" divided>
+      <StepCardBody
+        className="step-card-question"
+        divided
+        {...focusTarget}
+      >
         {children}
       </StepCardBody>
       {leftRegion || showControls ? (

@@ -1,5 +1,7 @@
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import { QuestionWrapper, QuestionWrapperProps } from './QuestionWrapper';
 import { byClass, findNode, textOf as renderedText } from '../test/utils';
 import { colors } from '../theme';
@@ -150,12 +152,12 @@ describe('QuestionWrapper', () => {
   describe('without onNextStep, for a host that navigates on its own', () => {
     const withoutNext: QuestionWrapperProps = { ...props, onNextStep: undefined };
 
-    it('holds the place of Next with a disabled Submit once the question cannot be answered', () => {
+    it('holds the place of Next with an unavailable Submit once the question cannot be answered', () => {
       const tree = renderer.create(<QuestionWrapper {...withoutNext} canAnswer={false} />);
       expect(tree.root.findAllByProps({ 'data-test-id': 'continue-btn' })).toHaveLength(0);
-      const submit = tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' });
+      const submit = tree.root.find(node => node.type === 'button' && node.props['data-test-id'] === 'submit-answer-btn');
       expect(submit.props.children).toEqual('Submit');
-      expect(submit.props.disabled).toBe(true);
+      expect(submit.props['aria-disabled']).toBe(true);
     });
 
     it('labels the disabled button Re-submit once an attempt has been made', () => {
@@ -222,8 +224,8 @@ describe('QuestionWrapper', () => {
     it('colours Update from the primary set in each state', () => {
       const update = buttonJson('Update');
 
-      expect(update).toHaveStyleRule('background', colors.button.backgroundHover, { modifier: ':not([disabled]):hover' });
-      expect(update).toHaveStyleRule('background', colors.button.backgroundActive, { modifier: ':not([disabled]):active' });
+      expect(update).toHaveStyleRule('background', colors.button.backgroundHover, { modifier: ':not([disabled]):not([aria-disabled="true"]):hover' });
+      expect(update).toHaveStyleRule('background', colors.button.backgroundActive, { modifier: ':not([disabled]):not([aria-disabled="true"]):active' });
     });
   });
 
@@ -281,6 +283,88 @@ describe('QuestionWrapper', () => {
 
       expect(onAnswerSave).toHaveBeenCalled();
       expect(onNextStep).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('as an assessment navigates to it', () => {
+    it('is a focusable, named group when it has an id', () => {
+      const tree = renderer.create(<QuestionWrapper {...props} id="item-1" questionNumber={3} />);
+      const body = tree.root.find(node => node.type === 'div' && node.props.id === 'item-1');
+
+      expect(body.props.tabIndex).toBe(-1);
+      expect(body.props.role).toBe('group');
+      expect(body.props['aria-label']).toBe('Question 3');
+    });
+
+    it('is a plain body section without one', () => {
+      const tree = renderer.create(<QuestionWrapper {...props} questionNumber={3} />);
+
+      expect(tree.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
+    });
+  });
+
+  describe('focus, once a save the learner pressed lands', () => {
+    let container: HTMLDivElement;
+    const draw = (overrides: Partial<QuestionWrapperProps>) => act(() => {
+      ReactDOM.render(<QuestionWrapper {...props} {...overrides as QuestionWrapperProps} />, container);
+    });
+    const button = (testId: string) => container.querySelector(`button[data-test-id=${testId}]`) as HTMLButtonElement;
+    const press = (testId: string) => act(() => { button(testId).focus(); button(testId).click(); });
+
+    beforeEach(() => {
+      container = document.createElement('div');
+      document.body.appendChild(container);
+    });
+
+    afterEach(() => {
+      ReactDOM.unmountComponentAtNode(container);
+      container.remove();
+    });
+
+    it('stays on Submit while it is pending, then moves on to Next', () => {
+      draw({});
+      press('submit-answer-btn');
+
+      draw({ apiIsPending: true });
+      expect(document.activeElement).toBe(button('submit-answer-btn'));
+
+      draw({ is_completed: true, canAnswer: false });
+      expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
+    it('stays on the Submit that holds the place of Next, for a host that navigates on its own', () => {
+      draw({ onNextStep: undefined });
+      press('submit-answer-btn');
+      const submit = button('submit-answer-btn');
+
+      draw({ onNextStep: undefined, apiIsPending: true });
+      draw({ onNextStep: undefined, is_completed: true, canAnswer: false });
+      expect(button('submit-answer-btn')).toBe(submit);
+      expect(document.activeElement).toBe(submit);
+    });
+
+    it('moves on from Update to Next once there is nothing left to save', () => {
+      draw({ is_completed: true, dirty: true });
+      press('update-answer-btn');
+
+      draw({ is_completed: true, dirty: true, apiIsPending: true });
+      expect(document.activeElement).toBe(button('update-answer-btn'));
+
+      draw({ is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
+    it('leaves a learner who moved elsewhere where they are', () => {
+      const elsewhere = document.createElement('input');
+      document.body.appendChild(elsewhere);
+      draw({});
+      press('submit-answer-btn');
+      draw({ apiIsPending: true });
+      elsewhere.focus();
+
+      draw({ is_completed: true, canAnswer: false });
+      expect(document.activeElement).toBe(elsewhere);
+      elsewhere.remove();
     });
   });
 });

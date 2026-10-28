@@ -133,11 +133,12 @@ describe('Free Response Input', () => {
   });
 
   describe('while the response is being saved', () => {
-    it('shows Saving… on a disabled button and locks the response box', () => {
+    it('shows Saving… on an unavailable button that keeps focus, and locks the response box', () => {
       const tree = render({ apiIsPending: true, free_response: 'This is being saved' });
 
       expect(labels(tree)).toEqual(['Saving…']);
-      expect(button(tree, 'submit-answer-btn')?.props.disabled).toBe(true);
+      expect(button(tree, 'submit-answer-btn')?.props['aria-disabled']).toBe(true);
+      expect(button(tree, 'submit-answer-btn')?.props.disabled).toBeFalsy();
       expect(textarea(tree).props.disabled).toBe(true);
     });
   });

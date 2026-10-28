@@ -57,6 +57,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
   className?: string;
+  /** The DOM id an `Assessment` moves focus to when a learner enters this section (its `sectionDomId`). */
+  id?: string;
   children: React.ReactNode;
 }
 

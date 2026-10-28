@@ -50,6 +50,24 @@ describe('StepCard', () => {
     ).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('makes its body a focusable group named by its questions when it has an id', () => {
+    const tree = renderer.create(
+      <StepCard {...props} id="section" questionNumber={2} numberOfQuestions={2}>Question content</StepCard>
+    );
+    const body = tree.root.find(node => typeof node.type === 'string' && node.props.id === 'section');
+
+    expect(body.props.tabIndex).toBe(-1);
+    expect(body.props.role).toBe('group');
+    expect(body.props['aria-label']).toBe('Questions 2 - 3');
+    expect(body.props.children).toBe('Question content');
+  });
+
+  it('puts no id or focus target anywhere without one', () => {
+    const tree = renderer.create(<StepCard {...props}>Question content</StepCard>);
+
+    expect(tree.root.findAll(node => typeof node.type === 'string' && node.props.role === 'group')).toHaveLength(0);
+  });
 });
 
 // Tests for StepCard scoring display logic
