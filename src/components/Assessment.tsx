@@ -25,7 +25,7 @@ export interface AssessmentSectionProps {
   sectionId: string;
   /** The number of the section's first item within the whole assessment, for its header. */
   firstItemNumber: number;
-  /** The item's Next button: moves on from that item. */
+  /** The item's Next button: moves on from that item. A Next made for an earlier attempt is ignored. */
   onNext: (itemId: ID) => void;
   /**
    * Reports the assessment's score, as it comes back from answering an item, for the completion
@@ -230,10 +230,12 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
     },
   }), [itemDomId, items, sectionDomId]);
 
+  // like a score report, a Next a host holds across a retry belongs to the attempt it came from
   const onNext = React.useCallback((itemId: ID) => {
+    if (currentAttempt.current !== attempt) { return; }
     const index = items.findIndex(item => item.id === itemId);
     if (index !== -1) { goTo(index + 1); }
-  }, [goTo, items]);
+  }, [attempt, goTo, items]);
 
   const firstIncomplete = firstIndex(items, item => !item.isCompleted);
   const firstEditable = firstIndex(items, item => item.isCompleted && item.editable === true);

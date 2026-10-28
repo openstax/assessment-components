@@ -366,6 +366,17 @@ describe('Assessment', () => {
     expect(focusedText()).toBe('You are done.');
   });
 
+  it('ignores a Next made for an attempt since replaced', () => {
+    const fresh = items.map(item => ({ ...item, isCompleted: false, state: 'isIncomplete' as const }));
+    render({ items, attemptId: '1' });
+    click(navButtons()[3]);
+    const next = sections.c.onNext;
+
+    render({ items: fresh, attemptId: '2' });
+    act(() => next(4));
+    expect(navButtons()[0].getAttribute('aria-current')).toBe('location');
+  });
+
   it('ignores a score reported for an attempt since replaced', () => {
     const done = items.map(item => ({ ...item, isCompleted: true, editable: false }));
     const completion = { onRetry: jest.fn(), score: { current: '0/4', saved: '0/4' } };
