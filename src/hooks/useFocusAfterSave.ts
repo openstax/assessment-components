@@ -1,5 +1,9 @@
 import React from 'react';
 
+/** Whether a control can be used: neither disabled nor marked unavailable, which keeps focus. */
+const isAvailable = (button: HTMLButtonElement) =>
+  !button.disabled && button.getAttribute('aria-disabled') !== 'true';
+
 /**
  * Moves focus on from a save the learner pressed, once it lands. A save keeps focus while it is
  * pending; when it lands, the button they pressed may be gone (Submit, replaced by Next) or
@@ -52,11 +56,12 @@ export const useFocusAfterSave = ({ apiIsPending, onAnswerSave, moveTo }: {
     if (!owesFocus.current || apiIsPending) { return; }
 
     const active = document.activeElement;
+    // on nothing, or on a control of the footer that can no longer be used
     const lost = !active || active === document.body
-      || (active instanceof HTMLButtonElement && active.disabled && !!controlsRef.current?.contains(active));
+      || (active instanceof HTMLButtonElement && !isAvailable(active) && !!controlsRef.current?.contains(active));
 
     if (lost) {
-      const target = moveTo.map(ref => ref.current).find(button => button !== null && !button.disabled);
+      const target = moveTo.map(ref => ref.current).find(button => button !== null && isAvailable(button));
       target?.focus();
       owesFocus.current = target !== undefined && target !== moveTo[0].current;
     } else if (!controlsRef.current?.contains(active)) {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { findItemIndex, Move, startingPosition, useAssessmentPosition } from '../hooks/useAssessmentPosition';
+import { useAssessmentFocus } from '../hooks/useAssessmentFocus';
+import { useAssessmentIds } from '../hooks/useAssessmentIds';
+import { findItemIndex, startingPosition, useAssessmentPosition } from '../hooks/useAssessmentPosition';
 import { AssessmentSection, AssessmentSectionContext } from '../hooks/useAssessmentSection';
-import { FocusRequest, FocusTarget, useFocusHandoff } from '../hooks/useFocusHandoff';
-import { useInstanceId } from '../hooks/useInstanceId';
 import { useSectionDrawing } from '../hooks/useSectionDrawing';
 import { ID } from '../types';
 import { CompletionStatus, Score } from './CompletionStatus';
@@ -75,28 +75,6 @@ export interface AssessmentProps {
   attemptId?: string;
 }
 
-const SECTION_HINT = 'Draw the section in an `ExerciseWrapper`, and a `Loader` while it loads.';
-const ITEM_HINT = 'Draw the item in a `QuestionWrapper` given its `itemId`.';
-const COMPLETION_HINT = 'Draw the completion step in a `CompletionStatus` given its `id`.';
-
-interface AssessmentTarget extends FocusTarget {
-  /** How to draw what carries the id, for the warning when nothing does. */
-  hint: string;
-}
-
-const warnMissing = ({ id, hint }: AssessmentTarget) =>
-  console.warn(`Assessment: no element with id "${id}" to move focus to. ${hint}`);
-
-/**
- * The focus move a move of the learner asks for. Every move the learner asks for takes focus with
- * them. The assessment opening takes it only for an attempt they retried into: one first drawn
- * leaves focus wherever the page has it. Falling back from an item the host dropped takes it only
- * from nowhere, as when it was in what was dropped.
- */
-const focusRequestFor = (move: Move | undefined, isRetry: boolean): FocusRequest | undefined =>
-  move === undefined || (move.cause === 'open' && !isRetry) ? undefined
-    : { seq: move.seq, takeFrom: move.cause === 'fallback' ? 'nowhere' : 'active' };
-
 /**
  * Counts the attempts an assessment has had, so each can be drawn afresh. An attempt is new when
  * `attemptId` moves on from one it had to another: the first one given is the attempt already
@@ -124,8 +102,8 @@ const useAttemptCount = (attemptId: string | undefined) => {
  * loading has focus wait on its loader. Focus is not moved when the assessment is first drawn,
  * only by moves after that and by a new attempt.
  *
- * Where focus goes is scrolled to only when its top is off screen, as it may not be when the
- * assessment is part of a longer page. A section is scrolled to by its card, header included, and
+ * Where focus goes is scrolled to only when its top is outside the top half of what can be seen,
+ * as it may not be when the assessment is part of a longer page. A section is scrolled to by its card, header included, and
  * it and the completion step are left a rem of room above.
  *
  * Where the assessment opens is decided once, when it first has items, and again for every new
@@ -149,45 +127,24 @@ Assessment.displayName = 'OSAssessment';
 const AssessmentAttempt = ({ items, renderSection, completion, isRetry }: Omit<AssessmentProps, 'attemptId'> & {
   isRetry: boolean;
 }) => {
-  const prefix = `assessment-${useInstanceId()}`;
-  const itemDomId = React.useCallback((itemId: ID) => `${prefix}-item-${itemId}`, [prefix]);
-  const sectionDomId = `${prefix}-section`;
-  const sectionScrollTargetId = `${prefix}-section-scroll-target`;
-  const completionDomId = `${prefix}-completion`;
-
+  const ids = useAssessmentIds();
   const { position, index, lastMove, goTo, goToIndex, next } = useAssessmentPosition(items);
-  const currentItem = position === 'completion' ? undefined : items[index];
-  const sectionId = currentItem?.section;
+  const sectionId = position === 'completion' ? undefined : items[index]?.section;
   const drawing = useSectionDrawing(sectionId);
-
-  const sectionTarget: AssessmentTarget = { id: sectionDomId, scrollTargetId: sectionScrollTargetId, hint: SECTION_HINT };
-  // a section's first item is reached by its top, and the items after it by their own
-  const destination: AssessmentTarget | undefined = position === undefined ? undefined
-    : currentItem === undefined ? { id: completionDomId, hint: COMPLETION_HINT }
-    : items[index - 1]?.section !== currentItem.section ? sectionTarget
-    : { id: itemDomId(currentItem.id), hint: ITEM_HINT };
-  useFocusHandoff({
-    request: focusRequestFor(lastMove, isRetry),
-    destination,
-    ready: currentItem === undefined || drawing.ready,
-    reportedReady: drawing.reportedReady,
-    // a section that is not ready straight away is loading: focus waits on its loader, which has its id
-    waitOn: sectionTarget,
-    onMissing: warnMissing,
-  });
+  useAssessmentFocus({ ids, items, position, index, lastMove, isRetry, section: drawing });
 
   // the attempt's own, dropped with it when a new one is drawn
   const [reportedScore, setReportedScore] = React.useState<Score>();
 
   const section: AssessmentSection = React.useMemo(() => ({
-    sectionDomId,
-    sectionScrollTargetId,
-    itemDomId,
+    sectionDomId: ids.sectionDomId,
+    sectionScrollTargetId: ids.sectionScrollTargetId,
+    itemDomId: ids.itemDomId,
     itemNumber: (itemId: ID) => {
       const found = findItemIndex(items, itemId);
       return found === undefined ? undefined : found + 1;
     },
-  }), [itemDomId, items, sectionDomId, sectionScrollTargetId]);
+  }), [ids, items]);
 
   const firstEditable = items.find(item => item.isCompleted && item.editable === true);
 
@@ -215,7 +172,7 @@ const AssessmentAttempt = ({ items, renderSection, completion, isRetry }: Omit<A
           })}
         </AssessmentSectionContext.Provider>
         : <CompletionStatus
-          id={completionDomId}
+          id={ids.completionDomId}
           numberOfQuestions={items.length}
           numberCompleted={items.filter(item => item.isCompleted).length}
           score={reportedScore ?? completion.score}

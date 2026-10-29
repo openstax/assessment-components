@@ -639,6 +639,35 @@ describe('Assessment', () => {
       expect(scrollIntoView).not.toHaveBeenCalled();
     });
 
+    it('judges by every panel it scrolls within, where one is inside another', () => {
+      const outer = document.createElement('div');
+      document.body.appendChild(outer);
+      outer.appendChild(container);
+      try {
+        [[outer, 'outer panel'], [container, 'inner panel']].forEach(([panel, name]) => {
+          (panel as HTMLElement).setAttribute('aria-label', name as string);
+          (panel as HTMLElement).style.overflowY = 'auto';
+          Object.defineProperty(panel, 'scrollHeight', { value: 2000 });
+          Object.defineProperty(panel, 'clientHeight', { value: 200 });
+        });
+        tops['inner panel'] = 100;
+        bottoms['inner panel'] = 700;
+        tops['outer panel'] = 400;
+        bottoms['outer panel'] = 500;
+        render();
+        ready('b');
+
+        // in the top half of the inner panel, but above what the outer one shows of it
+        tops['card c'] = 300;
+        click(navButtons()[3]);
+        ready('c');
+        expect(scrolledTo()).toEqual([['card c', smoothly]]);
+      } finally {
+        document.body.appendChild(container);
+        outer.remove();
+      }
+    });
+
     it('leaves a section on screen where it is', () => {
       render();
       ready('b');

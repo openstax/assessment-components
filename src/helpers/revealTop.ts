@@ -4,40 +4,39 @@ const prefersReducedMotion = () =>
 /** The room an element scrolled within keeps clear at its top, as for a sticky header, by its `scroll-padding-top`. */
 const scrollPaddingTop = (scroller: Element) => parseFloat(getComputedStyle(scroller).scrollPaddingTop) || 0;
 
-/** The nearest ancestor an element scrolls within, short of the page itself. */
-const scrollingAncestor = (element: HTMLElement) => {
+/** Every ancestor an element scrolls within, short of the page itself, nearest first. */
+const scrollingAncestors = (element: HTMLElement) => {
+  const found: HTMLElement[] = [];
   for (let parent = element.parentElement; parent && parent !== document.body; parent = parent.parentElement) {
     const { overflowY } = getComputedStyle(parent);
     if ((overflowY === 'auto' || overflowY === 'scroll') && parent.scrollHeight > parent.clientHeight) {
-      return parent;
+      found.push(parent);
     }
   }
-  return undefined;
+  return found;
 };
 
 /**
- * Where the element can be seen, top to bottom on screen: the part of its scrolling ancestor on
- * screen, or else the window, less the room either keeps clear at its top.
+ * Where the element can be seen, top to bottom on screen: the part of the window that every
+ * ancestor it scrolls within shows, less the room each keeps clear at its top. Empty, with its
+ * top at or below its bottom, when one of them has scrolled it out of sight.
  */
-const visibleArea = (element: HTMLElement) => {
-  const scroller = scrollingAncestor(element);
-  if (!scroller) {
-    return { top: scrollPaddingTop(document.documentElement), bottom: window.innerHeight };
-  }
+const visibleArea = (element: HTMLElement) => scrollingAncestors(element).reduce((area, scroller) => {
   const { top, bottom } = scroller.getBoundingClientRect();
-  return { top: Math.max(top, 0) + scrollPaddingTop(scroller), bottom: Math.min(bottom, window.innerHeight) };
-};
+  return { top: Math.max(area.top, top + scrollPaddingTop(scroller)), bottom: Math.min(area.bottom, bottom) };
+}, { top: scrollPaddingTop(document.documentElement), bottom: window.innerHeight });
 
 /**
  * Brings an element's top into view, unless it is already where the learner is looking: what it
  * belongs to may be anywhere on the page, so nothing scrolls that need not. Its top is where they
- * are looking when it is in the top half of what they can see of where it scrolls, so a top near
- * the bottom, with little of the element shown under it, is scrolled to. A top under the
- * `scroll-padding-top` of where it scrolls, as behind a sticky header, is scrolled to as well.
+ * are looking when it is in the top half of what they can see of it, through every panel it
+ * scrolls within, so a top near the bottom, with little of the element shown under it, is
+ * scrolled to. A top under the `scroll-padding-top` of the page or a panel, as behind a sticky
+ * header, is scrolled to as well.
  *
  * The scroll is the browser's own, smooth unless the learner prefers reduced motion, whatever the
  * page's own `scroll-behavior`. It lands by the element's `scroll-margin-top` and the
- * `scroll-padding-top` of where it scrolls, and gives way to the learner scrolling themselves. One
+ * `scroll-padding-top` of what it scrolls within, and gives way to the learner scrolling themselves. One
  * asked for while another is under way takes its place.
  *
  * `always` scrolls even to an element on screen, for one judged while a scroll is under way: where

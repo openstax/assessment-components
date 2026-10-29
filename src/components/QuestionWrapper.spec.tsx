@@ -104,21 +104,21 @@ describe('QuestionWrapper', () => {
   describe('the disabled conditions', () => {
     it('leaves controls enabled when the body reports nothing', () => {
       const tree = renderer.create(<QuestionWrapper {...props} hasFeedback={true} />);
-      expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.disabled).toBe(false);
+      expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props['aria-disabled']).toBeFalsy();
     });
 
-    it('disables Submit when the body says the response is not submittable', () => {
+    it('makes Submit unavailable, but focusable, when the body says the response is not submittable', () => {
       const tree = renderer.create(
         <QuestionWrapper {...props} hasFeedback={true} canSubmit={false} />
       );
-      expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props.disabled).toBe(true);
+      expect(tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' }).props['aria-disabled']).toBe(true);
     });
 
-    it('disables Cancel and Update until the response differs from the last submission', () => {
+    it('makes Cancel disabled and Update unavailable until the response differs from the last submission', () => {
       const tree = renderer.create(
         <QuestionWrapper {...props} is_completed={true} dirty={false} />
       );
-      expect(tree.root.findByProps({ 'data-test-id': 'update-answer-btn' }).props.disabled).toBe(true);
+      expect(tree.root.findByProps({ 'data-test-id': 'update-answer-btn' }).props['aria-disabled']).toBe(true);
       expect(tree.root.findByProps({ 'data-test-id': 'continue-btn' }).props.disabled).toBe(false);
     });
 
@@ -178,7 +178,7 @@ describe('QuestionWrapper', () => {
       const tree = renderer.create(<QuestionWrapper {...withoutNext} />);
       const submit = tree.root.findByProps({ 'data-test-id': 'submit-answer-btn' });
       expect(submit.props.children).toEqual('Submit');
-      expect(submit.props.disabled).toBe(false);
+      expect(submit.props['aria-disabled']).toBeFalsy();
     });
 
     it('does not offer to continue when hasFeedback is false, since there is nowhere to go', () => {
@@ -356,6 +356,16 @@ describe('QuestionWrapper', () => {
 
       draw({ is_completed: true, dirty: false });
       expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
+    it('stays on Update once there is nothing left to save, for a host that navigates on its own', () => {
+      draw({ onNextStep: undefined, is_completed: true, dirty: true });
+      press('update-answer-btn');
+      draw({ onNextStep: undefined, is_completed: true, dirty: true, apiIsPending: true });
+
+      draw({ onNextStep: undefined, is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(button('update-answer-btn'));
+      expect(button('update-answer-btn').getAttribute('aria-disabled')).toBe('true');
     });
 
     it('moves from Submit on to Next when Next becomes available only a render after the save lands', () => {

@@ -10,11 +10,16 @@ import { CompactDisplayProps } from './compactDisplay';
 import { StepCardBody } from './StepCardBody';
 import { StepCardFooter } from './StepCardFooter';
 
-export const SaveButton = (props: {
+/**
+ * `disabled` makes it unavailable rather than natively disabled: it stays focusable, so a screen
+ * reader user can find it and hear that it is unavailable, and keeps the focus of whoever pressed it.
+ */
+export const SaveButton = ({ disabled, ...props }: {
   disabled: boolean, isWaiting: boolean, attempt_number?: number, willContinue: boolean
 } & React.ComponentPropsWithoutRef<'button'>) => (
   <Button
     {...props}
+    aria-disabled={disabled || props['aria-disabled']}
     waitingText="Saving…"
     isWaiting={props.isWaiting}
     data-test-id="submit-answer-btn"
@@ -202,7 +207,8 @@ export const QuestionWrapper = ({
           <Button
             ref={updateRef}
             data-test-id="update-answer-btn"
-            disabled={dirty === false || apiIsPending || canSubmit === false}
+            // unavailable rather than disabled, as Submit is, so it keeps focus once nothing is left to save
+            aria-disabled={dirty === false || apiIsPending || canSubmit === false}
             isWaiting={apiIsPending}
             waitingText="Saving…"
             onClick={save}
@@ -222,8 +228,7 @@ export const QuestionWrapper = ({
     // the same element as the Submit it follows, unavailable but still holding the focus it had
     if (!onNextStep) {
       return <SaveButton
-        disabled={false}
-        aria-disabled
+        disabled
         isWaiting={false}
         attempt_number={attempt_number}
         willContinue={false}

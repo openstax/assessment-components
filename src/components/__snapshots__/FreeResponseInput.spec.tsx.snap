@@ -322,9 +322,9 @@ Array [
         onBlur={[Function]}
       >
         <button
+          aria-disabled={true}
           className="c1"
           data-test-id="submit-answer-btn"
-          disabled={true}
           onClick={[Function]}
         >
           Submit
