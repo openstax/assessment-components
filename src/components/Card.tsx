@@ -305,6 +305,8 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
    * numbers.
    */
   id?: string;
+  /** The DOM id an `Assessment` scrolls to when a learner enters the card's section: the card, header included. */
+  scrollTargetId?: string;
 }
 
 const StepCard = ({
@@ -325,6 +327,7 @@ const StepCard = ({
   totalScoring,
   isGraded,
   id,
+  scrollTargetId,
   ...otherProps }: StepCardProps) => {
 
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -374,7 +377,7 @@ const StepCard = ({
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard className={cn(className, { 'is-selected': selected })} compactDisplay={compactDisplay}>
+      <InnerStepCard id={scrollTargetId} className={cn(className, { 'is-selected': selected })} compactDisplay={compactDisplay}>
         <div
           ref={overlayRef}
           {

@@ -1,5 +1,5 @@
 import React from 'react';
-import scrollToElement from 'scroll-to-element';
+import scrollToElement, { ScrollTween } from 'scroll-to-element';
 import { AssessmentSection, AssessmentSectionContext } from '../hooks/useAssessmentSection';
 import { ID } from '../types';
 import { CompletionStatus, Score } from './CompletionStatus';
@@ -80,6 +80,47 @@ const firstIndex = (items: AssessmentItem[], test: (item: AssessmentItem) => boo
 /** How long a section has to report ready before focus waits on its loader instead. */
 const LOADING_DELAY = 10;
 
+/**
+ * Room left above a section or the completion step scrolled to, in rem, so the window does not
+ * cut along its border.
+ */
+const SCROLL_MARGIN = 1;
+
+const remToPixels = (rem: number) => rem * (parseFloat(getComputedStyle(document.documentElement).fontSize) || 16);
+
+/** A scroll under way, and the `scrollY` it lands on. */
+type Scroll = { tween: ScrollTween; destination: number };
+
+/** The `scrollY` `scrollToElement` lands on for an element at `documentTop`: short of the bottom of the page. */
+const scrollDestination = (documentTop: number, offset: number) => {
+  const { body, documentElement: html } = document;
+  const documentHeight = Math.max(body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight);
+  return Math.min(documentTop + offset, documentHeight - html.clientHeight);
+};
+
+/**
+ * Brings an element's top into view, unless it is already on screen: the assessment may be
+ * anywhere on the page, so nothing scrolls that need not. A negative `offset` leaves that many
+ * pixels above it.
+ *
+ * The scroll is animated, so another can be asked for while one is under way, as when a section
+ * loads in place of its loader. The element is judged by where it will be once that one lands,
+ * and when that is off screen the scroll under way is stopped for one to the element instead.
+ */
+const revealTop = (element: HTMLElement, scrolling: React.MutableRefObject<Scroll | undefined>, offset = 0) => {
+  const documentTop = element.getBoundingClientRect().top + window.scrollY;
+  const top = documentTop - (scrolling.current?.destination ?? window.scrollY);
+  if (top >= 0 && top <= window.innerHeight) { return; }
+
+  scrolling.current?.tween.stop();
+  const tween = scrollToElement(element, { offset });
+  scrolling.current = tween && { tween, destination: scrollDestination(documentTop, offset) };
+  tween?.on('end', () => {
+    if (scrolling.current?.tween === tween) { scrolling.current = undefined; }
+  });
+};
+
 /** Where the learner is: an item, by id, so that it survives the host reordering its items. */
 type Position = { item: ID } | 'completion';
 
@@ -99,6 +140,10 @@ const startingPosition = (items: AssessmentItem[]): Position => {
  * section by its first item focuses the section, so it is read from its top; a section still
  * loading has focus wait on its loader. Focus is never moved on the first render.
  *
+ * Where focus goes is scrolled to only when its top is off screen, as it may not be when the
+ * assessment is part of a longer page. A section is scrolled to by its card, header included, and
+ * it and the completion step are left a rem of room above.
+ *
  * Where the assessment opens is decided once, when it first has items, and again for every new
  * `attemptId`.
  */
@@ -106,6 +151,7 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
   const prefix = `assessment-${useInstanceId()}`;
   const itemDomId = React.useCallback((itemId: ID) => `${prefix}-item-${itemId}`, [prefix]);
   const sectionDomId = `${prefix}-section`;
+  const sectionScrollTargetId = `${prefix}-section-scroll-target`;
   const completionDomId = `${prefix}-completion`;
 
   const [chosen, setChosen] = React.useState<Position | undefined>(undefined);
@@ -164,6 +210,10 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
   const currentAttempt = React.useRef(attempt);
   currentAttempt.current = attempt;
 
+  const scrolling = React.useRef<Scroll>();
+  // a scroll still under way when the assessment goes is left where it is
+  React.useEffect(() => () => scrolling.current?.tween.stop(), []);
+
   const goTo = React.useCallback((next: number) => {
     const nextItem = items[next];
     setChosen(nextItem ? { item: nextItem.id } : 'completion');
@@ -178,14 +228,24 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
 
     if (currentItem === undefined) {
       focusHandled.current = focusRequest;
-      window.scrollTo(0, 0);
-      document.getElementById(completionDomId)?.focus({ preventScroll: true });
+      const completion = document.getElementById(completionDomId);
+      if (completion) {
+        revealTop(completion, scrolling, -remToPixels(SCROLL_MARGIN));
+        completion.focus({ preventScroll: true });
+      }
       return;
     }
 
     // a section's first item is reached by its top, and the items after it by their own
     const opensSection = items[index - 1]?.section !== currentItem.section;
     const target = opensSection ? sectionDomId : itemDomId(currentItem.id);
+
+    // a section shows its header, and some room above it, which its focused body comes after
+    const revealSection = (element: HTMLElement) => revealTop(
+      document.getElementById(sectionScrollTargetId) ?? element,
+      scrolling,
+      -remToPixels(SCROLL_MARGIN)
+    );
 
     const focus = (id: string, scroll: (element: HTMLElement) => void) => {
       const element = document.getElementById(id);
@@ -202,14 +262,14 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
 
     if (readyMount === mount) {
       focusHandled.current = focusRequest;
-      focus(target, opensSection ? () => window.scrollTo(0, 0) : scrollToElement);
+      focus(target, opensSection ? revealSection : element => revealTop(element, scrolling));
       return;
     }
 
     // a section that is not ready straight away is loading: wait on its loader, which has its id
-    const waiting = window.setTimeout(() => focus(sectionDomId, () => window.scrollTo(0, 0)), LOADING_DELAY);
+    const waiting = window.setTimeout(() => focus(sectionDomId, revealSection), LOADING_DELAY);
     return () => window.clearTimeout(waiting);
-  }, [completionDomId, focusRequest, hasItems, itemDomId, mount, readyMount, sectionDomId]);
+  }, [completionDomId, focusRequest, hasItems, itemDomId, mount, readyMount, sectionDomId, sectionScrollTargetId]);
 
   // mounts only ever increase, so a late report from a drawing since left never undoes a later one
   const onReady = React.useCallback(
@@ -223,12 +283,13 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
 
   const section: AssessmentSection = React.useMemo(() => ({
     sectionDomId,
+    sectionScrollTargetId,
     itemDomId,
     itemNumber: (itemId: ID) => {
       const found = items.findIndex(item => item.id === itemId);
       return found === -1 ? undefined : found + 1;
     },
-  }), [itemDomId, items, sectionDomId]);
+  }), [itemDomId, items, sectionDomId, sectionScrollTargetId]);
 
   // like a score report, a Next a host holds across a retry belongs to the attempt it came from
   const onNext = React.useCallback((itemId: ID) => {

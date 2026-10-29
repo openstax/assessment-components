@@ -81,6 +81,7 @@ export const ExerciseWrapper = ({
   const cardProps: StepCardProps = {
     ...props,
     id: section?.sectionDomId,
+    scrollTargetId: section?.sectionScrollTargetId,
     compactDisplay,
     rightHeaderChildren: exerciseIcons ? <ExerciseHeaderIcons icons={exerciseIcons} /> : null,
   };

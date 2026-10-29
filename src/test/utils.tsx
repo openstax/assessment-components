@@ -59,11 +59,12 @@ export const textOfTestId = (tree: Rendered, id: string): string | undefined => 
 
 /**
  * Draws an element as part of an `Assessment`'s section, with ids formatted plainly so a test can
- * name them: `section`, and `item-<id>` numbered from `numbers`.
+ * name them: `section`, `section-scroll-target`, and `item-<id>` numbered from `numbers`.
  */
 export const inAssessmentSection = (element: JSX.Element, numbers: Record<string, number> = {}) =>
   <AssessmentSectionContext.Provider value={{
     sectionDomId: 'section',
+    sectionScrollTargetId: 'section-scroll-target',
     itemDomId: id => `item-${id}`,
     itemNumber: id => numbers[id],
   }}>

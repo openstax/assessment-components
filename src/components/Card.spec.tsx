@@ -63,6 +63,16 @@ describe('StepCard', () => {
     expect(body.props.children).toBe('Question content');
   });
 
+  it('puts its scroll target id on the card, around the header', () => {
+    const tree = renderer.create(
+      <StepCard {...props} id="section" scrollTargetId="card" questionNumber={2} numberOfQuestions={2}>Question content</StepCard>
+    );
+    const card = tree.root.find(node => typeof node.type === 'string' && node.props.id === 'card');
+
+    expect(card.findAll(node => node.props.className === 'step-card-header' || String(node.props.className).includes('step-card-header')).length).toBeGreaterThan(0);
+    expect(card.findAll(node => typeof node.type === 'string' && node.props.id === 'section')).toHaveLength(1);
+  });
+
   it('puts no id or focus target anywhere without one', () => {
     const tree = renderer.create(<StepCard {...props}>Question content</StepCard>);
 

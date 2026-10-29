@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { useAssessmentSection } from '../hooks/useAssessmentSection';
+import scrollToElement from 'scroll-to-element';
 import { Assessment, AssessmentItem, AssessmentProps, AssessmentSectionProps } from './Assessment';
 
 jest.mock('scroll-to-element', () => jest.fn());
@@ -14,16 +15,18 @@ const items: AssessmentItem[] = [
 ];
 
 /**
- * A host section: the section itself and each of its items carry the ids the assessment gives
- * them, as `ExerciseWrapper` and `QuestionWrapper` do, and it reports itself ready only when the
- * test says so — the way a host that loads its section does.
+ * A host section: its card, the section itself and each of its items carry the ids the assessment
+ * gives them, as `ExerciseWrapper` and `QuestionWrapper` do, and it reports itself ready only when
+ * the test says so — the way a host that loads its section does.
  */
 const SectionHost = ({ sectionId }: { sectionId: string }) => {
   const section = useAssessmentSection();
-  return <div data-section={sectionId} id={section?.sectionDomId} tabIndex={-1} aria-label={`section ${sectionId}`}>
-    {items.filter(item => item.section === sectionId).map(item =>
-      <div key={item.id} id={section?.itemDomId(item.id)} tabIndex={-1}>item {item.id}</div>
-    )}
+  return <div id={section?.sectionScrollTargetId} data-card={sectionId}>
+    <div data-section={sectionId} id={section?.sectionDomId} tabIndex={-1} aria-label={`section ${sectionId}`}>
+      {items.filter(item => item.section === sectionId).map(item =>
+        <div key={item.id} id={section?.itemDomId(item.id)} tabIndex={-1}>item {item.id}</div>
+      )}
+    </div>
   </div>;
 };
 const sections: Record<string, AssessmentSectionProps> = {};
@@ -50,7 +53,7 @@ describe('Assessment', () => {
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
-    window.scrollTo = jest.fn();
+    (scrollToElement as jest.Mock).mockClear();
     Object.keys(sections).forEach(key => delete sections[key]);
   });
 
@@ -87,7 +90,6 @@ describe('Assessment', () => {
 
     ready('c');
     expect(focusedText()).toBe('section c');
-    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
 
   it('focuses an item after the first, in a section entered by it, once it reports ready', () => {
@@ -386,6 +388,152 @@ describe('Assessment', () => {
     render({ items: done, attemptId: '2', completion });
     act(() => report({ current: '4/4', saved: '4/4' }));
     expect(container.textContent).toContain('Current Score: 0/4');
+  });
+
+  describe('scrolling to where focus goes', () => {
+    // where each element's top is, by its text or label; anything not named is on screen
+    let tops: Record<string, number> = {};
+    beforeEach(() => {
+      tops = {};
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+        const name = this.getAttribute('data-card') ? `card ${this.getAttribute('data-card')}` : this.getAttribute('aria-label') ?? this.textContent ?? '';
+        return { top: tops[name] ?? 0 } as DOMRect;
+      });
+    });
+    afterEach(() => { jest.restoreAllMocks(); });
+    const scrolledTo = () => (scrollToElement as jest.Mock).mock.calls.map(([element, options]) =>
+      [element.getAttribute('data-card') ? `card ${element.getAttribute('data-card')}` : element.textContent, options]);
+
+    it('scrolls to a section off screen by its card, leaving a rem above it', () => {
+      render();
+      ready('b');
+      tops['card c'] = -800;
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(focusedText()).toBe('section c');
+      expect(scrolledTo()).toEqual([['card c', { offset: -16 }]]);
+    });
+
+    it('scrolls to a section below the screen', () => {
+      render();
+      ready('b');
+      tops['card c'] = window.innerHeight + 1;
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(scrolledTo()).toEqual([['card c', { offset: -16 }]]);
+    });
+
+    it('leaves a section on screen where it is', () => {
+      render();
+      ready('b');
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(focusedText()).toBe('section c');
+      expect(scrollToElement).not.toHaveBeenCalled();
+    });
+
+    it('scrolls to an item after the first off screen by itself, with no room above it', () => {
+      render();
+      ready('b');
+      tops['item 3'] = -200;
+
+      act(() => sections.b.onNext(2));
+      expect(focusedText()).toBe('item 3');
+      expect(scrolledTo()).toEqual([['item 3', { offset: 0 }]]);
+    });
+
+    it('scrolls to the completion step off screen by its heading, leaving a rem above it', () => {
+      render();
+      click(navButtons()[3]);
+      ready('c');
+      tops['Quiz is partially complete.'] = -300;
+
+      act(() => sections.c.onNext(4));
+      expect(scrolledTo()).toEqual([['Quiz is partially complete.', { offset: -16 }]]);
+    });
+
+    describe('while a scroll to its loader is under way', () => {
+      // the card is drawn a little above where its loader was, as it is on a narrow screen
+      const loaded: Record<string, boolean> = {};
+      const Loading = () => {
+        const section = useAssessmentSection();
+        return <div id={section?.sectionDomId} tabIndex={-1} aria-label="Loading" />;
+      };
+      const loadingSection = (props: AssessmentSectionProps) => {
+        sections[props.sectionId] = props;
+        return loaded[props.sectionId] ? <SectionHost sectionId={props.sectionId} /> : <Loading />;
+      };
+      // each test's own, as React 17 stops the last test's when it unmounts, after this one starts
+      let tween: { stop: jest.Mock; on: jest.Mock };
+
+      beforeEach(() => {
+        jest.useFakeTimers();
+        Object.keys(loaded).forEach(key => delete loaded[key]);
+        tween = { stop: jest.fn(), on: jest.fn() };
+        (scrollToElement as jest.Mock).mockReturnValue(tween);
+        jest.spyOn(document.body, 'scrollHeight', 'get').mockReturnValue(10000);
+      });
+      afterEach(() => {
+        jest.useRealTimers();
+        (scrollToElement as jest.Mock).mockReset();
+      });
+
+      const enterLoadingSection = () => {
+        render({ renderSection: loadingSection });
+        loaded.b = true;
+        ready('b');
+        tops.Loading = 2000;
+        click(navButtons()[3]);
+        act(() => { jest.advanceTimersByTime(10); });
+        expect(focusedText()).toBe('Loading');
+      };
+
+      it('stops it for the section, when it would land with the section off screen', () => {
+        enterLoadingSection();
+        tops['card c'] = 1960;
+
+        loaded.c = true;
+        ready('c');
+        expect(focusedText()).toBe('section c');
+        expect(tween.stop).toHaveBeenCalledTimes(1);
+        expect(scrolledTo()).toEqual([['', { offset: -16 }], ['card c', { offset: -16 }]]);
+      });
+
+      it('lets it land, when it would land with the section on screen', () => {
+        enterLoadingSection();
+        tops['card c'] = 1990;
+
+        loaded.c = true;
+        ready('c');
+        expect(focusedText()).toBe('section c');
+        expect(tween.stop).not.toHaveBeenCalled();
+        expect(scrolledTo()).toHaveLength(1);
+      });
+    });
+
+    it('scrolls to the section itself when nothing carries its scroll target', () => {
+      jest.useFakeTimers();
+      try {
+        const Loading = () => {
+          const section = useAssessmentSection();
+          return <div id={section?.sectionDomId} tabIndex={-1} aria-label="Loading" />;
+        };
+        render({ renderSection: props => { sections[props.sectionId] = props; return <Loading />; } });
+        ready('b');
+        tops.Loading = -500;
+
+        click(navButtons()[3]);
+        act(() => { jest.advanceTimersByTime(10); });
+        expect(focusedText()).toBe('Loading');
+        expect((scrollToElement as jest.Mock).mock.calls.map(([element, options]) =>
+          [element.getAttribute('aria-label'), options])).toEqual([['Loading', { offset: -16 }]]);
+      } finally {
+        jest.useRealTimers();
+      }
+    });
   });
 
   describe('the completion step', () => {
