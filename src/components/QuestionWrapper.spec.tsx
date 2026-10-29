@@ -303,7 +303,8 @@ describe('QuestionWrapper', () => {
     ])('is a plain body section %s', (_, element) => {
       const tree = renderer.create(element);
 
-      expect(tree.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
+      const groups = tree.root.findAll(node => node.type === 'div' && node.props.role === 'group');
+      expect(groups.map(node => node.props.className)).toEqual(['controls']);
     });
   });
 
@@ -336,15 +337,43 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(button('continue-btn'));
     });
 
-    it('stays on the Submit that holds the place of Next, for a host that navigates on its own', () => {
+    const controls = () => container.querySelector('.controls') as HTMLDivElement;
+
+    it('moves to the controls, which say none can be used, when only the Submit holding Next\'s place is left', () => {
       draw({ onNextStep: undefined });
       press('submit-answer-btn');
-      const submit = button('submit-answer-btn');
 
       draw({ onNextStep: undefined, apiIsPending: true });
       draw({ onNextStep: undefined, is_completed: true, canAnswer: false });
-      expect(button('submit-answer-btn')).toBe(submit);
-      expect(document.activeElement).toBe(submit);
+      expect(document.activeElement).toBe(controls());
+      expect(controls().getAttribute('aria-label')).toBe('No actions available');
+    });
+
+    it('moves to the controls, which say none can be used, after a first save that leaves nothing to do', () => {
+      draw({ onNextStep: undefined });
+      press('submit-answer-btn');
+
+      draw({ onNextStep: undefined, apiIsPending: true });
+      draw({ onNextStep: undefined, is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(controls());
+      expect(controls().getAttribute('aria-label')).toBe('No actions available');
+    });
+
+    it('names the controls by the question number in an assessment, and for whether any can be used', () => {
+      act(() => {
+        ReactDOM.render(inAssessmentSection(<QuestionWrapper {...props} itemId={1} />, { 1: 3 }), container);
+      });
+      expect(controls().getAttribute('aria-label')).toBe('Question 3 actions');
+
+      act(() => {
+        ReactDOM.render(inAssessmentSection(<QuestionWrapper {...props} itemId={1} canSubmit={false} />, { 1: 3 }), container);
+      });
+      expect(controls().getAttribute('aria-label')).toBe('Question 3, no actions available');
+    });
+
+    it('is not reached by tabbing, only moved to', () => {
+      draw({});
+      expect(controls().tabIndex).toBe(-1);
     });
 
     it('moves on from Update to Next once there is nothing left to save', () => {
@@ -358,14 +387,14 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(button('continue-btn'));
     });
 
-    it('stays on Update once there is nothing left to save, for a host that navigates on its own', () => {
+    it('moves from Update to the controls once there is nothing left to save, for a host that navigates on its own', () => {
       draw({ onNextStep: undefined, is_completed: true, dirty: true });
       press('update-answer-btn');
       draw({ onNextStep: undefined, is_completed: true, dirty: true, apiIsPending: true });
 
       draw({ onNextStep: undefined, is_completed: true, dirty: false });
-      expect(document.activeElement).toBe(button('update-answer-btn'));
-      expect(button('update-answer-btn').getAttribute('aria-disabled')).toBe('true');
+      expect(document.activeElement).toBe(controls());
+      expect(controls().getAttribute('aria-label')).toBe('No actions available');
     });
 
     it('moves from Submit on to Next when Next becomes available only a render after the save lands', () => {

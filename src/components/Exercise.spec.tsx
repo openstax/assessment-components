@@ -321,14 +321,17 @@ describe('Exercise', () => {
     it('marks its body and each question for an assessment to move focus to, only when drawn in one', () => {
       const numbers = Object.fromEntries(props.exercise.questions.map((q, i) => [q.id, 4 + i]));
       const inside = renderer.create(inAssessmentSection(<Exercise {...props} />, numbers));
-      const groups = inside.root.findAll(node => node.type === 'div' && node.props.role === 'group');
+      // the groups focus is moved to, by their ids; each question's controls are a group of their own
+      const targets = (tree: renderer.ReactTestRenderer) =>
+        tree.root.findAll(node => node.type === 'div' && node.props.role === 'group' && node.props.id !== undefined);
+      const groups = targets(inside);
       expect(groups.map(node => [node.props.id, node.props['aria-label'] ?? node.props['aria-labelledby']])).toEqual([
         ['section', 'section-title'],
         ...props.exercise.questions.map((q, i) => [`item-${q.id}`, `Question ${4 + i}`]),
       ]);
 
       const outside = renderer.create(<Exercise {...props} />);
-      expect(outside.root.findAll(node => node.type === 'div' && node.props.role === 'group')).toHaveLength(0);
+      expect(targets(outside)).toHaveLength(0);
     });
   });
 

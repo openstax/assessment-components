@@ -3402,6 +3402,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   margin-left: auto;
 }
 
+.c13 .controls:focus-visible {
+  outline-offset: -2px;
+}
+
 .c13 .controls button:has(~ button),
 .c13 .controls button + button {
   -webkit-flex-shrink: 1;

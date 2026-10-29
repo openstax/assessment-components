@@ -164,12 +164,7 @@ export const QuestionWrapper = ({
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
-  const nextRef = React.useRef<HTMLButtonElement>(null);
-  const updateRef = React.useRef<HTMLButtonElement>(null);
-  // Next while the footer settles may still be unavailable, so Update stands in until it is
-  const { controlsRef, save, onControlsBlur } = useFocusAfterSave({
-    apiIsPending, onAnswerSave, moveTo: [nextRef, updateRef],
-  });
+  const { controlsRef, save, onControlsBlur } = useFocusAfterSave({ apiIsPending, onAnswerSave });
 
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
@@ -179,11 +174,14 @@ export const QuestionWrapper = ({
       </span>
     : null;
 
-  const controls = () => {
+  /** The footer's controls, for the arrangement that applies, and whether any of them can be used. */
+  const controls = (): { buttons: React.ReactNode; anyAvailable: boolean } => {
     if ((canAnswer && !is_completed) || shouldContinue) {
-      return (
-        <SaveButton
-          disabled={apiIsPending || canSubmit === false || shouldContinue}
+      const submitUnavailable = apiIsPending || canSubmit === false || shouldContinue;
+      return {
+        anyAvailable: !submitUnavailable,
+        buttons: <SaveButton
+          disabled={submitUnavailable}
           isWaiting={apiIsPending || shouldContinue}
           attempt_number={attempt_number}
           onClick={() => {
@@ -196,19 +194,22 @@ export const QuestionWrapper = ({
             }
           }}
           willContinue={willContinue}
-        />
-      );
+        />,
+      };
     }
 
     if (canAnswer && is_completed) {
-      return (
-        <>
-          <CancelButton disabled={dirty === false || apiIsPending} onClick={onCancel} />
+      const cancelUnavailable = dirty === false || apiIsPending;
+      const updateUnavailable = dirty === false || apiIsPending || canSubmit === false;
+      const nextUnavailable = onNextStep === undefined || apiIsPending || dirty === true;
+      return {
+        anyAvailable: !cancelUnavailable || !updateUnavailable || !nextUnavailable,
+        buttons: <>
+          <CancelButton disabled={cancelUnavailable} onClick={onCancel} />
           <Button
-            ref={updateRef}
             data-test-id="update-answer-btn"
-            // unavailable rather than disabled, as Submit is, so it keeps focus once nothing is left to save
-            aria-disabled={dirty === false || apiIsPending || canSubmit === false}
+            // unavailable rather than disabled, as Submit is, so it stays where a learner can find it
+            aria-disabled={updateUnavailable}
             isWaiting={apiIsPending}
             waitingText="Saving…"
             onClick={save}
@@ -216,30 +217,40 @@ export const QuestionWrapper = ({
             Update
           </Button>
           {onNextStep && <NextButton
-            ref={nextRef}
-            disabled={apiIsPending || dirty === true}
+            disabled={nextUnavailable}
             onClick={onNextStep}
             canUpdateCurrentStep={false}
           />}
-        </>
-      );
+        </>,
+      };
     }
 
-    // the same element as the Submit it follows, unavailable but still holding the focus it had
+    // holds the place of Next, for a host that navigates on its own
     if (!onNextStep) {
-      return <SaveButton
-        disabled
-        isWaiting={false}
-        attempt_number={attempt_number}
-        willContinue={false}
-      />;
+      return {
+        anyAvailable: false,
+        buttons: <SaveButton
+          disabled
+          isWaiting={false}
+          attempt_number={attempt_number}
+          willContinue={false}
+        />,
+      };
     }
 
-    return <NextButton ref={nextRef} onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;
+    return {
+      anyAvailable: true,
+      buttons: <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />,
+    };
   };
 
   const leftRegion = attempts || footerChildren;
   const number = itemId !== undefined ? section?.itemNumber(itemId) : undefined;
+  const { buttons, anyAvailable } = controls();
+  // named for what it offers, as focus lands on it after a save when none of its controls can be used
+  const controlsLabel = anyAvailable
+    ? (number === undefined ? 'Question actions' : `Question ${number} actions`)
+    : (number === undefined ? 'No actions available' : `Question ${number}, no actions available`);
   const focusTarget = section !== undefined && itemId !== undefined && number !== undefined
     ? focusTargetProps(section.itemDomId(itemId), { role: 'group', 'aria-label': `Question ${number}` })
     : {};
@@ -257,7 +268,14 @@ export const QuestionWrapper = ({
         <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-            {showControls ? <div className="controls" ref={controlsRef} onBlur={onControlsBlur}>{controls()}</div> : null}
+            {showControls ? <div
+              className="controls"
+              ref={controlsRef}
+              onBlur={onControlsBlur}
+              role="group"
+              aria-label={controlsLabel}
+              tabIndex={-1}
+            >{buttons}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}

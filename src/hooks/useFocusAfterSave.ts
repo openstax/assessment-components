@@ -1,25 +1,26 @@
 import React from 'react';
 
-/** Whether a control can be used: neither disabled nor marked unavailable, which keeps focus. */
+/** Whether a control can be used: neither disabled nor marked unavailable. */
 const isAvailable = (button: HTMLButtonElement) =>
   !button.disabled && button.getAttribute('aria-disabled') !== 'true';
 
 /**
- * Moves focus on from a save the learner pressed, once it lands. A save keeps focus while it is
- * pending; when it lands, the button they pressed may be gone (Submit, replaced by Next) or
- * unavailable (Update, with nothing left to save), so focus moves on to the first of `moveTo`
- * that is available, which announces itself.
+ * Moves focus on from a save the learner pressed, once it lands, so it is never left on nothing.
+ * A save keeps focus while it is pending; when it lands, the control they pressed may be gone, as
+ * Submit replaced by Next, or no longer usable, as Update with nothing left to save. Focus then
+ * moves to the footer's last control that can be used, its main action, or to the footer itself
+ * when none can, which says so. Nothing here knows which controls the footer has.
  *
  * The footer can take more than one render to settle after a save, as the body reports that
- * nothing is left to save, so a later one of `moveTo` stands in for the first until it is
- * available. This is done once focus is on the first, or a learner has moved it elsewhere, who is
- * left where they are.
+ * nothing is left to save, so focus follows it until it is on the footer's last control. A
+ * learner who moves focus elsewhere in the meantime is left where they are.
+ *
+ * `controlsRef` goes on the footer's controls, which are made focusable by script, and named by
+ * the caller for whether any can be used.
  */
-export const useFocusAfterSave = ({ apiIsPending, onAnswerSave, moveTo }: {
+export const useFocusAfterSave = ({ apiIsPending, onAnswerSave }: {
   apiIsPending: boolean;
   onAnswerSave: () => void;
-  /** Where focus moves on to, in order of preference. */
-  moveTo: Array<React.RefObject<HTMLButtonElement>>;
 }) => {
   const owesFocus = React.useRef(false);
   const controlsRef = React.useRef<HTMLDivElement>(null);
@@ -53,18 +54,20 @@ export const useFocusAfterSave = ({ apiIsPending, onAnswerSave, moveTo }: {
 
   // after every render: any of them can be the one the footer settles in
   React.useEffect(() => {
-    if (!owesFocus.current || apiIsPending) { return; }
+    const controls = controlsRef.current;
+    if (!owesFocus.current || apiIsPending || !controls) { return; }
 
     const active = document.activeElement;
     // on nothing, or on a control of the footer that can no longer be used
     const lost = !active || active === document.body
-      || (active instanceof HTMLButtonElement && !isAvailable(active) && !!controlsRef.current?.contains(active));
+      || (active instanceof HTMLButtonElement && controls.contains(active) && !isAvailable(active));
 
     if (lost) {
-      const target = moveTo.map(ref => ref.current).find(button => button !== null && isAvailable(button));
-      target?.focus();
-      owesFocus.current = target !== undefined && target !== moveTo[0].current;
-    } else if (!controlsRef.current?.contains(active)) {
+      const buttons = Array.from(controls.querySelectorAll('button'));
+      const main = buttons.filter(isAvailable).pop();
+      (main ?? controls).focus();
+      owesFocus.current = main !== undefined && main !== buttons[buttons.length - 1];
+    } else if (!controls.contains(active)) {
       owesFocus.current = false;
     }
   });

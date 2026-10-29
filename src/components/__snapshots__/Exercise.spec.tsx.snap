@@ -1428,6 +1428,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   margin-left: auto;
 }
 
+.c10 .controls:focus-visible {
+  outline-offset: -2px;
+}
+
 .c10 .controls button:has(~ button),
 .c10 .controls button + button {
   -webkit-flex-shrink: 1;
@@ -1764,8 +1768,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                     className="step-card-footer-inner"
                   >
                     <div
+                      aria-label="Question actions"
                       className="controls"
                       onBlur={[Function]}
+                      role="group"
+                      tabIndex={-1}
                     >
                       <button
                         className="c11"

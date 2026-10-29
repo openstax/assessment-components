@@ -50,6 +50,11 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
            hold the right-hand edge themselves rather than relying on a spacer */
         margin-left: auto;
 
+        /* focused after a save when none of its controls can be used; drawn inside, as the card clips around it */
+        &:focus-visible {
+            outline-offset: -2px;
+        }
+
         button:has(~ button),
         button + button {
             flex-shrink: 1;

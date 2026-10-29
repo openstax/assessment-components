@@ -451,6 +451,10 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   margin-left: auto;
 }
 
+.c5 .controls:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 .controls button:has(~ button),
 .c5 .controls button + button {
   -webkit-flex-shrink: 1;
@@ -634,8 +638,11 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
       className="step-card-footer-inner"
     >
       <div
+        aria-label="Question actions"
         className="controls"
         onBlur={[Function]}
+        role="group"
+        tabIndex={-1}
       >
         <button
           className="c6"

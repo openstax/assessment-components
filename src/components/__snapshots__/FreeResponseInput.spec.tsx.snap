@@ -281,6 +281,10 @@ Array [
   margin-left: auto;
 }
 
+.c0 .controls:focus-visible {
+  outline-offset: -2px;
+}
+
 .c0 .controls button:has(~ button),
 .c0 .controls button + button {
   -webkit-flex-shrink: 1;
@@ -318,8 +322,11 @@ Array [
       className="step-card-footer-inner"
     >
       <div
+        aria-label="No actions available"
         className="controls"
         onBlur={[Function]}
+        role="group"
+        tabIndex={-1}
       >
         <button
           aria-disabled={true}
