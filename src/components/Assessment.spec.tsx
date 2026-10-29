@@ -553,20 +553,27 @@ describe('Assessment', () => {
       ? `card ${element.getAttribute('data-card')}`
       : nameOf(element);
     let scrollIntoView: jest.Mock;
+    // what is drawn at a point is what was last measured, unless something is laid over it
+    const measured: { last: Element | null } = { last: null };
+    let covering: Element | undefined;
     beforeEach(() => {
       tops = {};
       bottoms = {};
+      covering = undefined;
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+        measured.last = this;
         const name = scrollName(this);
-        return { top: tops[name] ?? 0, bottom: bottoms[name] ?? window.innerHeight } as DOMRect;
+        return { top: tops[name] ?? 0, bottom: bottoms[name] ?? window.innerHeight, left: 0, right: 100 } as DOMRect;
       });
-      // jsdom has no scrolling of its own
+      // jsdom has no layout, so no scrolling and nothing drawn anywhere of its own
       scrollIntoView = jest.fn();
       Element.prototype.scrollIntoView = scrollIntoView;
+      document.elementFromPoint = jest.fn(() => covering ?? measured.last);
     });
     afterEach(() => {
       jest.restoreAllMocks();
       delete (Element.prototype as Partial<Element>).scrollIntoView;
+      delete (document as Partial<Document>).elementFromPoint;
     });
     const scrolledTo = () => scrollIntoView.mock.instances.map((element: Element, call) =>
       [scrollName(element), scrollIntoView.mock.calls[call][0]]);
@@ -714,19 +721,22 @@ describe('Assessment', () => {
       }
     });
 
-    it('counts a top behind what the page keeps clear above, as a sticky header, as off screen', () => {
-      const getComputedStyle = window.getComputedStyle;
-      jest.spyOn(window, 'getComputedStyle').mockImplementation(element =>
-        element === document.documentElement
-          ? { scrollPaddingTop: '50px' } as CSSStyleDeclaration
-          : getComputedStyle(element));
-      render();
-      ready('b');
-      tops['card c'] = 40;
+    it('scrolls to a section whose top is covered, as by a sticky header', () => {
+      const header = document.createElement('header');
+      document.body.appendChild(header);
+      try {
+        render();
+        ready('b');
+        tops['card c'] = 40;
+        covering = header;
 
-      click(navButtons()[3]);
-      ready('c');
-      expect(scrolledTo()).toEqual([['card c', smoothly]]);
+        click(navButtons()[3]);
+        ready('c');
+        expect(scrolledTo()).toEqual([['card c', smoothly]]);
+        expect(document.elementFromPoint).toHaveBeenCalledWith(50, 41);
+      } finally {
+        header.remove();
+      }
     });
 
     describe('a section that loads while its loader is scrolled to', () => {

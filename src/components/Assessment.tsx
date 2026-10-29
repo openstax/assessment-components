@@ -102,9 +102,13 @@ const useAttemptCount = (attemptId: string | undefined) => {
  * loading has focus wait on its loader. Focus is not moved when the assessment is first drawn,
  * only by moves after that and by a new attempt.
  *
- * Where focus goes is scrolled to only when its top is outside the top half of what can be seen,
- * as it may not be when the assessment is part of a longer page. A section is scrolled to by its card, header included, and
- * it and the completion step are left a rem of room above.
+ * Where focus goes is scrolled to only when its top is covered or outside the top half of what can
+ * be seen, as it may not be when the assessment is part of a longer page. A section is scrolled to
+ * by its card, header included, and it and the completion step are left a rem of room above.
+ *
+ * Where a scroll lands is the browser's, by the host's `scroll-padding-top`. A host with a sticky
+ * header sets it to the header's height, on the page or the panel the assessment scrolls in;
+ * without it, what is scrolled to lands under the header.
  *
  * Where the assessment opens is decided once, when it first has items, and again for every new
  * `attemptId`.
