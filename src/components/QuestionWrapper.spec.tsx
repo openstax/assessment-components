@@ -410,6 +410,20 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(button('continue-btn'));
     });
 
+    it('leaves a learner who moved to another of its controls where they are', () => {
+      const cancel = () => Array.from(container.querySelectorAll('button')).find(b => b.textContent === 'Cancel') as HTMLButtonElement;
+      draw({});
+      press('submit-answer-btn');
+      draw({ apiIsPending: true });
+      // Next is unavailable while the edit is unsaved, so Update stands in for it
+      draw({ is_completed: true, dirty: true });
+      expect(document.activeElement).toBe(button('update-answer-btn'));
+
+      act(() => { cancel().focus(); });
+      draw({ is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(cancel());
+    });
+
     it('moves on from the question the learner last saved when two saves land together', () => {
       const drawBoth = (first: Partial<QuestionWrapperProps>, second: Partial<QuestionWrapperProps>) => act(() => {
         ReactDOM.render(<>

@@ -12,8 +12,9 @@ const isAvailable = (button: HTMLButtonElement) =>
  * when none can, which says so. Nothing here knows which controls the footer has.
  *
  * The footer can take more than one render to settle after a save, as the body reports that
- * nothing is left to save, so focus follows it until it is on the footer's last control. A
- * learner who moves focus elsewhere in the meantime is left where they are.
+ * nothing is left to save, so focus follows it until it is on the footer's last control. Focus is
+ * moved only until the learner moves it themselves, anywhere, the footer included: they are then
+ * left where they are.
  *
  * `controlsRef` goes on the footer's controls, which are made focusable by script, and named by
  * the caller for whether any can be used.
@@ -31,9 +32,10 @@ export const useFocusAfterSave = ({ apiIsPending, onAnswerSave }: {
   };
 
   /*
-   * A learner who moves focus out of the footer has let go of the save, and is left where they are
-   * when it lands: on another question's controls, say, or on nothing, having clicked off a
-   * control that is still there, as after a save that did not land. The control they pressed
+   * A learner who moves focus has let go of the save, and is left where they are when it lands: on
+   * another of the footer's controls, on another question's, or on nothing, having clicked off a
+   * control that is still there, as after a save that did not land. Focus moved here moves before
+   * the save's hold on it is settled, so it does not count. The control they pressed
    * going away or becoming unavailable also moves focus to nothing, and does not count; whether it
    * did is known once the render doing it is done. Nor does the window losing focus, which leaves
    * the control focused for when it comes back.
@@ -41,7 +43,7 @@ export const useFocusAfterSave = ({ apiIsPending, onAnswerSave }: {
   const onControlsBlur = (event: React.FocusEvent<HTMLDivElement>) => {
     const { relatedTarget, target } = event;
     if (relatedTarget instanceof Node) {
-      if (!event.currentTarget.contains(relatedTarget)) { owesFocus.current = false; }
+      owesFocus.current = false;
       return;
     }
     queueMicrotask(() => {

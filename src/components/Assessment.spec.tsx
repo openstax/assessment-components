@@ -41,14 +41,19 @@ const nameOf = (element: Element) => {
   return element.getAttribute('aria-label') ?? (label ? readText(label) : element.textContent ?? '').replace(/\s+/g, ' ').trim();
 };
 
-/** Runs what updates the state of an attempt since replaced, which React 17 warns of; later ones do not. */
-const expectingUnmountedUpdate = (run: () => void) => {
-  const error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
+/**
+ * Runs what updates the state of an attempt since replaced, without the warning React 17 gives of
+ * it, once a run, whichever test is first; later Reacts give none. Anything else is let through.
+ */
+const silencingUnmountedUpdate = (run: () => void) => {
+  const error = console.error;
+  const spy = jest.spyOn(console, 'error').mockImplementation((message, ...rest) => {
+    if (!String(message).includes('unmounted component')) { error(message, ...rest); }
+  });
   try {
     run();
-    expect(error.mock.calls.some(([message]) => String(message).includes('unmounted component'))).toBe(true);
   } finally {
-    error.mockRestore();
+    spy.mockRestore();
   }
 };
 
@@ -425,7 +430,7 @@ describe('Assessment', () => {
     const next = sections.c.onNext;
 
     render({ items: fresh, attemptId: '2' });
-    act(() => next(4));
+    silencingUnmountedUpdate(() => act(() => next(4)));
     expect(navButtons()[0].getAttribute('aria-current')).toBe('location');
   });
 
@@ -436,7 +441,7 @@ describe('Assessment', () => {
     const report = sections.b.onScoreAssessment;
 
     render({ items: done, attemptId: '2', completion });
-    expectingUnmountedUpdate(() => act(() => report({ current: '4/4', saved: '4/4' })));
+    silencingUnmountedUpdate(() => act(() => report({ current: '4/4', saved: '4/4' })));
     expect(container.textContent).toContain('Current Score: 0/4');
   });
 
