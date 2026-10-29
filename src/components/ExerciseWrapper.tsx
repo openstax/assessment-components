@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { AssessmentSectionContext, useAssessmentSection } from '../hooks/useAssessmentSection';
 import { AvailablePoints, ExerciseScoringData } from '../types';
 import { InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
 import { CompactDisplayProps } from './compactDisplay';
@@ -63,6 +64,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
 /**
  * The chrome around an exercise: the card, its header and the toolbar. Takes no exercise and
  * no step, so a host can render it around question content of any format.
+ *
+ * Drawn as an `Assessment`'s section, its body is where focus goes when a learner enters it.
  */
 export const ExerciseWrapper = ({
   exerciseIcons,
@@ -73,8 +76,17 @@ export const ExerciseWrapper = ({
   const desktopToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.desktop);
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
+  const section = useAssessmentSection();
+  // the section's ids are this card's: what is drawn inside it is in the section, but is not it
+  const inside = React.useMemo(
+    () => section && { ...section, sectionDomId: undefined, sectionScrollTargetId: undefined },
+    [section]
+  );
+
   const cardProps: StepCardProps = {
     ...props,
+    focusTargetId: section?.sectionDomId,
+    scrollTargetId: section?.sectionScrollTargetId,
     compactDisplay,
     rightHeaderChildren: exerciseIcons ? <ExerciseHeaderIcons icons={exerciseIcons} /> : null,
   };
@@ -86,7 +98,9 @@ export const ExerciseWrapper = ({
     >
       <ExerciseToolbar icons={exerciseIcons} />
       <StyledStepCard {...cardProps}>
-        {children}
+        <AssessmentSectionContext.Provider value={inside}>
+          {children}
+        </AssessmentSectionContext.Provider>
       </StyledStepCard>
     </ToolbarWrapper>
   );

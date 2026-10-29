@@ -1,4 +1,6 @@
 import { BulletList } from "react-content-loader";
+import { focusTargetProps } from "../helpers/focusTarget";
+import { useAssessmentSection } from "../hooks/useAssessmentSection";
 import { colors } from "../theme";
 import styled from "styled-components";
 
@@ -22,4 +24,13 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Loader = () => <Wrapper><BulletList uniqueKey="OSLoader" /></Wrapper>;
+/**
+ * Drawn in place of an `Assessment`'s section while it loads, the loader is where focus waits,
+ * and announces itself as loading.
+ */
+export const Loader = () => {
+  const section = useAssessmentSection();
+  const focusTarget = focusTargetProps(section?.sectionDomId, { role: 'progressbar', 'aria-label': 'Loading' });
+
+  return <Wrapper {...focusTarget}><BulletList uniqueKey="OSLoader" /></Wrapper>;
+};

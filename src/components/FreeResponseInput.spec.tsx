@@ -118,10 +118,10 @@ describe('Free Response Input', () => {
       expect(text(render())).not.toContain('Last submitted');
     });
 
-    it('offers only Submit, which stays disabled until there is a response', () => {
+    it('offers only Submit, which stays unavailable until there is a response', () => {
       expect(labels(render())).toEqual(['Submit']);
-      expect(button(render(), 'submit-answer-btn')?.props.disabled).toBe(true);
-      expect(button(render({ free_response: 'An answer' }), 'submit-answer-btn')?.props.disabled).toBe(false);
+      expect(button(render(), 'submit-answer-btn')?.props['aria-disabled']).toBe(true);
+      expect(button(render({ free_response: 'An answer' }), 'submit-answer-btn')?.props['aria-disabled']).toBeFalsy();
     });
 
     it('hands the question id to the host when Submit is pressed', () => {
@@ -133,11 +133,12 @@ describe('Free Response Input', () => {
   });
 
   describe('while the response is being saved', () => {
-    it('shows Saving… on a disabled button and locks the response box', () => {
+    it('shows Saving… on an unavailable button that keeps focus, and locks the response box', () => {
       const tree = render({ apiIsPending: true, free_response: 'This is being saved' });
 
       expect(labels(tree)).toEqual(['Saving…']);
-      expect(button(tree, 'submit-answer-btn')?.props.disabled).toBe(true);
+      expect(button(tree, 'submit-answer-btn')?.props['aria-disabled']).toBe(true);
+      expect(button(tree, 'submit-answer-btn')?.props.disabled).toBeFalsy();
       expect(textarea(tree).props.disabled).toBe(true);
     });
   });
@@ -203,7 +204,7 @@ describe('Free Response Input', () => {
 
       expect(labels(tree)).toEqual(['Cancel', 'Update', 'Next']);
       expect(buttons(tree)[0].props.disabled).toBe(true);
-      expect(button(tree, 'update-answer-btn')?.props.disabled).toBe(true);
+      expect(button(tree, 'update-answer-btn')?.props['aria-disabled']).toBe(true);
     });
 
     // the host applies an edit: the text changes and the response is marked as needing a save
@@ -236,10 +237,10 @@ describe('Free Response Input', () => {
       const tree = render(editable);
       const update = () => button(tree, 'update-answer-btn');
 
-      expect(update()?.props.disabled).toBe(true);
+      expect(update()?.props['aria-disabled']).toBe(true);
 
       applyEdit(tree);
-      expect(update()?.props.disabled).toBe(false);
+      expect(update()?.props['aria-disabled']).toBeFalsy();
 
       renderer.act(() => { update()?.props.onClick(); });
       expect(baseProps.onAnswerSave).toHaveBeenCalledWith(1);
@@ -302,7 +303,7 @@ describe('Free Response Input', () => {
     it('enables Update when a restored draft differs from the submitted answer', () => {
       const tree = renderer.create(<FreeResponseInput {...draftProps} />);
 
-      expect(findUpdate(tree).props.disabled).toBe(false);
+      expect(findUpdate(tree).props['aria-disabled']).toBeFalsy();
     });
 
     it('reverts to the submitted answer rather than the draft', () => {
@@ -338,16 +339,16 @@ describe('Free Response Input', () => {
       );
     });
 
-    it('disables Update when the text matches what was submitted', () => {
+    it('makes Update unavailable when the text matches what was submitted', () => {
       const tree = renderer.create(<FreeResponseInput {...draftProps} free_response={SUBMITTED} />);
 
-      expect(findUpdate(tree).props.disabled).toBe(true);
+      expect(findUpdate(tree).props['aria-disabled']).toBe(true);
     });
 
     it('falls back to free_response as the baseline when no submitted text is given', () => {
       const tree = renderer.create(<FreeResponseInput {...draftProps} submittedResponse={undefined} />);
 
-      expect(findUpdate(tree).props.disabled).toBe(true);
+      expect(findUpdate(tree).props['aria-disabled']).toBe(true);
     });
   });
 

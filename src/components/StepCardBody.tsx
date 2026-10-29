@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { focusTargetStyles } from '../helpers/focusTarget';
 import { colors } from '../theme';
 
 /**
@@ -13,6 +14,7 @@ export const stepCardSection = css`
 
 export const StepCardBody = styled.div.attrs({ className: 'step-card-body' as string })<{ divided?: boolean }>`
   ${stepCardSection}
+  ${focusTargetStyles}
 
   ${props => props.divided && css`
     border-top: var(--step-card-rule-width) solid ${colors.palette.pale};

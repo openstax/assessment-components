@@ -1,16 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { focusTargetProps } from '../helpers/focusTarget';
+import { useAssessmentSection } from '../hooks/useAssessmentSection';
+import { useFocusAfterSave } from '../hooks/useFocusAfterSave';
 import { colors } from '../theme';
+import { ID } from '../types';
 import Button from './Button';
 import { CompactDisplayProps } from './compactDisplay';
 import { StepCardBody } from './StepCardBody';
 import { StepCardFooter } from './StepCardFooter';
 
-export const SaveButton = (props: {
+/**
+ * `disabled` makes it unavailable rather than natively disabled: it stays focusable, so a screen
+ * reader user can find it and hear that it is unavailable, and keeps the focus of whoever pressed it.
+ */
+export const SaveButton = ({ disabled, ...props }: {
   disabled: boolean, isWaiting: boolean, attempt_number?: number, willContinue: boolean
 } & React.ComponentPropsWithoutRef<'button'>) => (
   <Button
     {...props}
+    aria-disabled={disabled || props['aria-disabled']}
     waitingText="Saving…"
     isWaiting={props.isWaiting}
     data-test-id="submit-answer-btn"
@@ -21,15 +30,15 @@ export const SaveButton = (props: {
   </Button>
 );
 
-export const NextButton = (props: {
+export const NextButton = React.forwardRef<HTMLButtonElement, {
   canUpdateCurrentStep: boolean,
-} & React.ComponentPropsWithoutRef<'button'>) => {
-  return (
-    <Button {...props} data-test-id="continue-btn">
-      {props.canUpdateCurrentStep ? 'Continue' : 'Next'}
-    </Button>
-  );
-}
+} & React.ComponentPropsWithoutRef<'button'>>(({ canUpdateCurrentStep, ...props }, ref) => (
+  <Button {...props} ref={ref} data-test-id="continue-btn">
+    {canUpdateCurrentStep ? 'Continue' : 'Next'}
+  </Button>
+));
+
+NextButton.displayName = 'OSNextButton';
 
 const StyledCancelButton = styled(Button)`
   background-color: ${colors.button.secondary.background};
@@ -105,6 +114,11 @@ export interface QuestionWrapperProps extends CompactDisplayProps {
    * New consumers render feedback in the body instead and omit this.
    */
   footerChildren?: React.ReactNode;
+  /**
+   * The item this frames, as an `Assessment` knows it. Drawn in an assessment's section, the
+   * question's body is then where focus goes when the learner moves to it, named by its number.
+   */
+  itemId?: ID;
   children: React.ReactNode;
 }
 
@@ -130,9 +144,11 @@ export const QuestionWrapper = ({
   onNextStep,
   onCancel,
   footerChildren,
+  itemId,
   compactDisplay,
   children,
 }: QuestionWrapperProps) => {
+  const section = useAssessmentSection();
   // holds Submit in its waiting state after a click until the response lands, then advances.
   // Deprecated along with `hasFeedback`: a host that omits it drives navigation itself.
   const [shouldContinue, setShouldContinue] = React.useState(false);
@@ -148,6 +164,8 @@ export const QuestionWrapper = ({
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
+  const { controlsRef, save, onControlsBlur } = useFocusAfterSave({ apiIsPending, onAnswerSave });
+
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
         {attemptsRemaining !== undefined && attemptsRemaining > 0 &&
@@ -156,65 +174,108 @@ export const QuestionWrapper = ({
       </span>
     : null;
 
-  const controls = () => {
+  /** The footer's controls, for the arrangement that applies, and whether any of them can be used. */
+  const controls = (): { buttons: React.ReactNode; anyAvailable: boolean } => {
     if ((canAnswer && !is_completed) || shouldContinue) {
-      return (
-        <SaveButton
-          disabled={apiIsPending || canSubmit === false || shouldContinue}
+      const submitUnavailable = apiIsPending || canSubmit === false || shouldContinue;
+      return {
+        anyAvailable: !submitUnavailable,
+        buttons: <SaveButton
+          disabled={submitUnavailable}
           isWaiting={apiIsPending || shouldContinue}
           attempt_number={attempt_number}
           onClick={() => {
-            onAnswerSave();
+            // continuing moves the learner on, and focus with them, so nothing is left here to move
             if (willContinue) {
+              onAnswerSave();
               setShouldContinue(true);
+            } else {
+              save();
             }
           }}
           willContinue={willContinue}
-        />
-      );
+        />,
+      };
     }
 
     if (canAnswer && is_completed) {
-      return (
-        <>
-          <CancelButton disabled={dirty === false || apiIsPending} onClick={onCancel} />
+      const cancelUnavailable = dirty === false || apiIsPending;
+      const updateUnavailable = dirty === false || apiIsPending || canSubmit === false;
+      const nextUnavailable = onNextStep === undefined || apiIsPending || dirty === true;
+      return {
+        anyAvailable: !cancelUnavailable || !updateUnavailable || !nextUnavailable,
+        buttons: <>
+          <CancelButton disabled={cancelUnavailable} onClick={onCancel} />
           <Button
             data-test-id="update-answer-btn"
-            disabled={dirty === false || apiIsPending || canSubmit === false}
+            // unavailable rather than disabled, as Submit is, so it stays where a learner can find it
+            aria-disabled={updateUnavailable}
             isWaiting={apiIsPending}
             waitingText="Saving…"
-            onClick={onAnswerSave}
+            onClick={save}
           >
             Update
           </Button>
           {onNextStep && <NextButton
-            disabled={apiIsPending || dirty === true}
+            disabled={nextUnavailable}
             onClick={onNextStep}
             canUpdateCurrentStep={false}
           />}
-        </>
-      );
+        </>,
+      };
     }
 
+    // holds the place of Next, for a host that navigates on its own
     if (!onNextStep) {
-      return <SaveButton disabled isWaiting={false} attempt_number={attempt_number} willContinue={false} />;
+      return {
+        anyAvailable: false,
+        buttons: <SaveButton
+          disabled
+          isWaiting={false}
+          attempt_number={attempt_number}
+          willContinue={false}
+        />,
+      };
     }
 
-    return <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />;
+    return {
+      anyAvailable: true,
+      buttons: <NextButton onClick={onNextStep} canUpdateCurrentStep={canUpdateCurrentStep} />,
+    };
   };
 
   const leftRegion = attempts || footerChildren;
+  const number = itemId !== undefined ? section?.itemNumber(itemId) : undefined;
+  const { buttons, anyAvailable } = controls();
+  // named for what it offers, as focus lands on it after a save when none of its controls can be used
+  const controlsLabel = anyAvailable
+    ? (number === undefined ? 'Question actions' : `Question ${number} actions`)
+    : (number === undefined ? 'No actions available' : `Question ${number}, no actions available`);
+  const focusTarget = section !== undefined && itemId !== undefined && number !== undefined
+    ? focusTargetProps(section.itemDomId(itemId), { role: 'group', 'aria-label': `Question ${number}` })
+    : {};
 
   return (
     <>
-      <StepCardBody className="step-card-question" divided>
+      <StepCardBody
+        className="step-card-question"
+        divided
+        {...focusTarget}
+      >
         {children}
       </StepCardBody>
       {leftRegion || showControls ? (
         <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-            {showControls ? <div className="controls">{controls()}</div> : null}
+            {showControls ? <div
+              className="controls"
+              ref={controlsRef}
+              onBlur={onControlsBlur}
+              role="group"
+              aria-label={controlsLabel}
+              tabIndex={-1}
+            >{buttons}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}

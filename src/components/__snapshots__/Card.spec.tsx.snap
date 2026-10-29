@@ -34,6 +34,13 @@ exports[`StepCard matches snapshot 1`] = `
   border-width: 0.2rem;
 }
 
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
+}
+
 .c0 {
   padding: 2rem;
 }
@@ -127,6 +134,10 @@ exports[`StepCard matches snapshot 1`] = `
 
 .c2 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
+}
+
+.c3:focus-visible {
+  outline-offset: -2px;
 }
 
 .c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
@@ -322,6 +333,13 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   border-width: 0.2rem;
 }
 
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
+}
+
 .c0 {
   padding: 2rem;
 }
@@ -417,8 +435,24 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
   margin: 0 0 0 6px !important;
 }
 
-.c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
+.c4:focus-visible {
+  outline-offset: -2px;
+}
+
+.c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
+}
+
+.c3 {
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 @media (max-width:999px) {
@@ -508,17 +542,17 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
 }
 
 @media (max-width:600px) {
-  .c3.c3 .question-feedback {
+  .c4.c4 .question-feedback {
     margin-left: 0;
   }
 
-  .c3.c3 .question-feedback .arrow {
+  .c4.c4 .question-feedback .arrow {
     margin-left: 12px;
   }
 }
 
 @media (max-width:600px) {
-  .c3 .openstax-exercise-badges svg {
+  .c4 .openstax-exercise-badges svg {
     margin-right: 8px;
   }
 }
@@ -542,7 +576,21 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
               className="question-info"
             >
               <span>
-                Questions 1 - 3
+                Questions 
+                1
+                 
+                <span
+                  aria-hidden="true"
+                >
+                  -
+                </span>
+                <span
+                  className="c3"
+                >
+                  through
+                </span>
+                 
+                3
               </span>
               <span
                 className="separator"
@@ -566,7 +614,7 @@ exports[`StepCard matches snapshot with more than one question 1`] = `
           </div>
         </div>
         <div
-          className="c3"
+          className="c4"
         >
           Question content
         </div>
@@ -608,6 +656,13 @@ exports[`TaskStepCard matches snapshot 1`] = `
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -703,6 +758,10 @@ exports[`TaskStepCard matches snapshot 1`] = `
 
 .c2 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
+}
+
+.c3:focus-visible {
+  outline-offset: -2px;
 }
 
 .c3.c3.c3 .openstax-has-html .splash .frame-wrapper {

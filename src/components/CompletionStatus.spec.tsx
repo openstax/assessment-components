@@ -113,10 +113,14 @@ describe('CompletionStatus', () => {
       expect(props.handleContinue).not.toHaveBeenCalled();
     });
 
-    it('disables the retry button while a retry is starting', () => {
+    it('makes the retry button unavailable while a retry is starting, keeping the focus of whoever pressed it', () => {
       const tree = render({ numberCompleted: 15, handleRetry, isRetrying: true });
 
-      expect(button(tree, 'retry-resume-btn')?.props.disabled).toBe(true);
+      expect(button(tree, 'retry-resume-btn')?.props.disabled).toBeFalsy();
+      expect(button(tree, 'retry-resume-btn')?.props['aria-disabled']).toBe(true);
+      expect(labelOf(button(tree, 'retry-resume-btn'))).toBe('Retrying…');
+      button(tree, 'retry-resume-btn')?.props.onClick({ preventDefault: () => undefined });
+      expect(handleRetry).not.toHaveBeenCalled();
       expect(button(tree, 'next-btn')?.props.disabled).toBeFalsy();
     });
 
@@ -164,6 +168,17 @@ describe('CompletionStatus', () => {
       expect(handleRetry).toHaveBeenCalledTimes(1);
     });
 
+    it('makes that retry unavailable while a retry is starting, keeping the focus of whoever pressed it', () => {
+      const handleRetry = jest.fn();
+      const tree = render({ numberCompleted: 15, handleEditResponses, handleRetry, isRetrying: true });
+
+      expect(button(tree, 'retry-btn')?.props.disabled).toBeFalsy();
+      expect(button(tree, 'retry-btn')?.props['aria-disabled']).toBe(true);
+      expect(labelOf(button(tree, 'retry-btn'))).toBe('Retrying…');
+      button(tree, 'retry-btn')?.props.onClick({ preventDefault: () => undefined });
+      expect(handleRetry).not.toHaveBeenCalled();
+    });
+
     it('offers to continue a quiz that is part done', () => {
       const tree = render({ numberCompleted: 5, handleEditResponses });
 
@@ -182,6 +197,46 @@ describe('CompletionStatus', () => {
 
       click(tree, 'next-btn');
       expect(props.handleNext).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('as an assessment navigates to it', () => {
+    const card = (tree: renderer.ReactTestRenderer) =>
+      findAllNodes(tree.toJSON(), node => node.type === 'h2')[0];
+
+    it.each([
+      ['the edit-responses card', { numberCompleted: 15, handleEditResponses: jest.fn() }],
+      ['the plain card', {}],
+    ])('makes the heading of %s focusable when it has an id', (_, overrides) => {
+      const found = card(render({ ...overrides, id: 'done' }));
+
+      expect(found?.props.id).toBe('done');
+      expect(found?.props.tabIndex).toBe(-1);
+    });
+
+    it('is not focusable without one', () => {
+      expect(card(render())?.props.tabIndex).toBeUndefined();
+    });
+  });
+
+  describe('without a next step', () => {
+    const buttons = (tree: renderer.ReactTestRenderer) =>
+      findAllNodes(tree.toJSON(), node => node.type === 'button').map(node => textOf(node));
+
+    it.each([
+      ['done', { numberCompleted: 15 }, []],
+      ['done, with retry', { numberCompleted: 15, handleRetry: jest.fn() }, ['Retry Quiz']],
+      ['partway, with retry', { numberCompleted: 3, handleRetry: jest.fn() }, ['Resume Quiz']],
+      ['done, with edits', { numberCompleted: 15, handleEditResponses: jest.fn() }, ['Edit responses']],
+    ] as [string, Partial<CompletionStatusProps>, string[]][])('offers no Next when %s', (_, overrides, expected) => {
+      expect(buttons(render({ ...overrides, handleNext: undefined }))).toEqual(expected);
+    });
+
+    it.each([
+      ['a partway', 3, 'Continue'],
+      ['an unstarted', 0, 'Start'],
+    ] as [string, number, string][])('still offers %s assessment its %s button', (_, numberCompleted, label) => {
+      expect(buttons(render({ numberCompleted, handleNext: undefined }))).toEqual([label]);
     });
   });
 });

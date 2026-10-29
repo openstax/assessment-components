@@ -28,6 +28,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c8:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
@@ -114,6 +118,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -227,6 +238,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 .c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.c4:focus-visible {
+  outline-offset: -2px;
 }
 
 .c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
@@ -918,6 +933,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c8:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
@@ -1004,6 +1023,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -1117,6 +1143,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 .c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.c4:focus-visible {
+  outline-offset: -2px;
 }
 
 .c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
@@ -1808,6 +1838,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c8:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
@@ -1894,6 +1928,13 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -2007,6 +2048,10 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 .c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.c4:focus-visible {
+  outline-offset: -2px;
 }
 
 .c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
@@ -2698,6 +2743,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c8:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 .exercise-context .os-title {
   margin: 0 0 var(--spacing,0.8rem);
 }
@@ -2784,6 +2833,13 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -2897,6 +2953,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 .c3 .question-id {
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.c4:focus-visible {
+  outline-offset: -2px;
 }
 
 .c4.c4.c4 .openstax-has-html .splash .frame-wrapper {
@@ -3340,6 +3400,10 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   justify-content: flex-end;
   gap: 0.8rem;
   margin-left: auto;
+}
+
+.c13 .controls:focus-visible {
+  outline-offset: -2px;
 }
 
 .c13 .controls button:has(~ button),

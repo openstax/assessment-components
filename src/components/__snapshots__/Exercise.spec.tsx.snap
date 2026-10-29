@@ -28,6 +28,10 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c6:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
   overflow: auto;
@@ -78,6 +82,13 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -173,6 +184,10 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
 
 .c2 .openstax-exercise-badges svg:not(.interactive) {
   margin: 0 0 0 6px !important;
+}
+
+.c3:focus-visible {
+  outline-offset: -2px;
 }
 
 .c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
@@ -828,6 +843,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c6:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 {
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
   overflow: auto;
@@ -878,6 +897,13 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   --step-card-surface: #daf3f8;
   --step-card-rule-width: 0.2rem;
   border-width: 0.2rem;
+}
+
+.c1[id] {
+  -webkit-scroll-margin-top: 1rem;
+  -moz-scroll-margin-top: 1rem;
+  -ms-scroll-margin-top: 1rem;
+  scroll-margin-top: 1rem;
 }
 
 .c0 {
@@ -975,6 +1001,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   margin: 0 0 0 6px !important;
 }
 
+.c3:focus-visible {
+  outline-offset: -2px;
+}
+
 .c3.c3.c3 .openstax-has-html .splash .frame-wrapper {
   margin-top: 0;
 }
@@ -1007,19 +1037,20 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
 
-.c11:not([disabled]) {
+.c11:not([disabled]):not([aria-disabled="true"]) {
   cursor: pointer;
 }
 
-.c11:not([disabled]):hover {
+.c11:not([disabled]):not([aria-disabled="true"]):hover {
   background: #BE3C08;
 }
 
-.c11:not([disabled]):active {
+.c11:not([disabled]):not([aria-disabled="true"]):active {
   background: #B03808;
 }
 
-.c11:disabled {
+.c11:disabled,
+.c11[aria-disabled="true"] {
   opacity: 0.4;
 }
 
@@ -1397,6 +1428,10 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   margin-left: auto;
 }
 
+.c10 .controls:focus-visible {
+  outline-offset: -2px;
+}
+
 .c10 .controls button:has(~ button),
 .c10 .controls button + button {
   -webkit-flex-shrink: 1;
@@ -1733,7 +1768,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
                     className="step-card-footer-inner"
                   >
                     <div
+                      aria-label="Question actions"
                       className="controls"
+                      onBlur={[Function]}
+                      role="group"
+                      tabIndex={-1}
                     >
                       <button
                         className="c11"

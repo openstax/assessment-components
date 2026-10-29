@@ -43,7 +43,11 @@ export interface ExerciseBaseProps {
   show_all_feedback?: boolean;
   /** Whether the detailed solution from the exercise definition is rendered. Defaults to true. */
   displaySolution?: boolean;
-  /** The question number to scroll into view when the component renders. */
+  /**
+   * The question number to scroll into view when the component renders. Leave it out when drawn
+   * in an `Assessment`, which scrolls to where the learner moves itself, and whose scroll this
+   * would fight.
+   */
   scrollToQuestion?: number;
   /** An object containing data for how to render the following icons:
    * - An errata icon linking to the errata/feedback form
@@ -273,6 +277,7 @@ export const Exercise = ({
               onNextStep={() => props.onNextStep(questionNumber + i - 1)}
               onCancel={() => cancelHandles.current[q.id] && cancelHandles.current[q.id]()}
               footerChildren={footerFeedback}
+              itemId={q.id}
               compactDisplay={compactDisplay}
             >
               {body}
