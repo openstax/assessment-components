@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useAssessmentSection } from '../hooks/useAssessmentSection';
+import { AssessmentSectionContext, useAssessmentSection } from '../hooks/useAssessmentSection';
 import { AvailablePoints, ExerciseScoringData } from '../types';
 import { InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
 import { CompactDisplayProps } from './compactDisplay';
@@ -77,10 +77,15 @@ export const ExerciseWrapper = ({
   const mobileToolbarEnabled = Object.values(exerciseIcons || {}).some(({ location }) => location?.toolbar?.mobile);
 
   const section = useAssessmentSection();
+  // the section's ids are this card's: what is drawn inside it is in the section, but is not it
+  const inside = React.useMemo(
+    () => section && { ...section, sectionDomId: undefined, sectionScrollTargetId: undefined },
+    [section]
+  );
 
   const cardProps: StepCardProps = {
     ...props,
-    id: section?.sectionDomId,
+    focusTargetId: section?.sectionDomId,
     scrollTargetId: section?.sectionScrollTargetId,
     compactDisplay,
     rightHeaderChildren: exerciseIcons ? <ExerciseHeaderIcons icons={exerciseIcons} /> : null,
@@ -93,7 +98,9 @@ export const ExerciseWrapper = ({
     >
       <ExerciseToolbar icons={exerciseIcons} />
       <StyledStepCard {...cardProps}>
-        {children}
+        <AssessmentSectionContext.Provider value={inside}>
+          {children}
+        </AssessmentSectionContext.Provider>
       </StyledStepCard>
     </ToolbarWrapper>
   );

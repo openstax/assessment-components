@@ -113,10 +113,14 @@ describe('CompletionStatus', () => {
       expect(props.handleContinue).not.toHaveBeenCalled();
     });
 
-    it('disables the retry button while a retry is starting', () => {
+    it('makes the retry button unavailable while a retry is starting, keeping the focus of whoever pressed it', () => {
       const tree = render({ numberCompleted: 15, handleRetry, isRetrying: true });
 
-      expect(button(tree, 'retry-resume-btn')?.props.disabled).toBe(true);
+      expect(button(tree, 'retry-resume-btn')?.props.disabled).toBeFalsy();
+      expect(button(tree, 'retry-resume-btn')?.props['aria-disabled']).toBe(true);
+      expect(labelOf(button(tree, 'retry-resume-btn'))).toBe('Retrying…');
+      button(tree, 'retry-resume-btn')?.props.onClick({ preventDefault: () => undefined });
+      expect(handleRetry).not.toHaveBeenCalled();
       expect(button(tree, 'next-btn')?.props.disabled).toBeFalsy();
     });
 
@@ -162,6 +166,17 @@ describe('CompletionStatus', () => {
         .toEqual(['edit-responses-btn', 'retry-btn', 'next-btn']);
       click(tree, 'retry-btn');
       expect(handleRetry).toHaveBeenCalledTimes(1);
+    });
+
+    it('makes that retry unavailable while a retry is starting, keeping the focus of whoever pressed it', () => {
+      const handleRetry = jest.fn();
+      const tree = render({ numberCompleted: 15, handleEditResponses, handleRetry, isRetrying: true });
+
+      expect(button(tree, 'retry-btn')?.props.disabled).toBeFalsy();
+      expect(button(tree, 'retry-btn')?.props['aria-disabled']).toBe(true);
+      expect(labelOf(button(tree, 'retry-btn'))).toBe('Retrying…');
+      button(tree, 'retry-btn')?.props.onClick({ preventDefault: () => undefined });
+      expect(handleRetry).not.toHaveBeenCalled();
     });
 
     it('offers to continue a quiz that is part done', () => {

@@ -443,6 +443,30 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(button('continue-btn'));
     });
 
+    it('moves on still when the window loses focus while the save is pending', async () => {
+      draw({});
+      press('submit-answer-btn');
+      draw({ apiIsPending: true });
+
+      // switching windows blurs the button, naming nothing, but leaves it the active element
+      await act(async () => {
+        button('submit-answer-btn').dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: null }));
+      });
+      draw({ is_completed: true, canAnswer: false });
+      expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
+    it('leaves focus to the continuing, when the deprecated hasFeedback={false} continues by itself', () => {
+      const onNextStep = jest.fn();
+      draw({ hasFeedback: false, onNextStep });
+      press('submit-answer-btn');
+      draw({ hasFeedback: false, onNextStep, apiIsPending: true });
+
+      draw({ hasFeedback: false, onNextStep, is_completed: true, canAnswer: false });
+      expect(onNextStep).toHaveBeenCalled();
+      expect(document.activeElement).not.toBe(button('continue-btn'));
+    });
+
     it('leaves a learner who moved elsewhere where they are', () => {
       const elsewhere = document.createElement('input');
       document.body.appendChild(elsewhere);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Answer, ExerciseData, ExerciseQuestionData, ID, QuestionState } from '../types';
+import { exercise, freeResponse, trueFalse } from '../test/fixtures';
 import { Assessment, AssessmentItem, AssessmentSectionProps } from './Assessment';
 import { Score } from './CompletionStatus';
 import { Exercise } from './Exercise';
@@ -8,48 +9,6 @@ import { ExerciseWrapper } from './ExerciseWrapper';
 import { Loader } from './Loader';
 import { QuestionBody } from './QuestionBody';
 import { QuestionWrapper } from './QuestionWrapper';
-
-const trueFalse = (id: number, stem: string): ExerciseQuestionData => ({
-  id,
-  formats: ['multiple-choice'],
-  is_answer_order_important: false,
-  stimulus_html: '',
-  stem_html: stem,
-  collaborator_solutions: [],
-  answers: [
-    { id: id * 10 + 1, content_html: 'True' },
-    { id: id * 10 + 2, content_html: 'False' },
-  ],
-});
-
-const freeResponse = (id: number, stem: string): ExerciseQuestionData => ({
-  id,
-  formats: ['free-response'],
-  is_answer_order_important: false,
-  stimulus_html: '',
-  stem_html: stem,
-  collaborator_solutions: [],
-  answers: [],
-});
-
-const exercise = (uuid: string, questions: ExerciseQuestionData[], context = ''): ExerciseData => ({
-  uid: `${uuid}@1`,
-  uuid,
-  group_uuid: uuid,
-  number: 1,
-  version: 1,
-  published_at: '2026-10-28T00:00:00.000Z',
-  context,
-  stimulus_html: questions.length > 1 ? 'The questions below share this stimulus.' : '',
-  tags: [],
-  authors: [],
-  copyright_holders: [],
-  derived_from: [],
-  is_vocab: false,
-  solutions_are_public: false,
-  versions: [1],
-  questions,
-});
 
 /** Three sections: a single question, a multi-part exercise, and a free response. */
 const exercises = [
@@ -93,6 +52,7 @@ const useHost = (initial: (id: ID) => Partial<QuestionState> = () => ({})) => {
   );
   const [states, setStates] = React.useState<Record<string, QuestionState>>(() => blankStates(initial));
   const [attemptId, setAttemptId] = React.useState(1);
+  const [isRetrying, setIsRetrying] = React.useState(false);
 
   // the "server's" account of the assessment's score, which comes back with every answer
   const graded = React.useRef<Record<string, number>>({});
@@ -157,13 +117,17 @@ const useHost = (initial: (id: ID) => Partial<QuestionState> = () => ({})) => {
   }));
 
   // a new attempt: every response cleared, after the "server" has started it
-  const retry = () => delay(500).then(() => {
-    graded.current = {};
-    setStates(blankStates(() => ({})));
-    setAttemptId(current => current + 1);
-  });
+  const retry = () => {
+    setIsRetrying(true);
+    return delay(500).then(() => {
+      graded.current = {};
+      setStates(blankStates(() => ({})));
+      setAttemptId(current => current + 1);
+      setIsRetrying(false);
+    });
+  };
 
-  return { states, items, attemptId: `${attemptId}`, onAnswerChange, onAnswerSave, retry };
+  return { states, items, attemptId: `${attemptId}`, isRetrying, onAnswerChange, onAnswerSave, retry };
 };
 
 type Host = ReturnType<typeof useHost>;
@@ -292,6 +256,7 @@ const Story = ({ Section, initial, retry, leaves = true }: {
       completion={{
         score: { current: `0/${scorable}`, saved: `0/${scorable}` },
         onRetry: retry ? host.retry : undefined,
+        isRetrying: host.isRetrying,
         onNext: leaves ? () => window.alert('the host leaves the assessment') : undefined,
       }}
     />

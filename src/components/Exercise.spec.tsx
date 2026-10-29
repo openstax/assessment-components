@@ -3,7 +3,8 @@ import renderer from 'react-test-renderer';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import { ExerciseQuestionData, QuestionState } from '../types';
+import { QuestionState } from '../types';
+import { exercise as exerciseData, freeResponse } from '../test/fixtures';
 import { byClass, findAllNodes, findNode, inAssessmentSection, isJson, textOf } from '../test/utils';
 
 describe('Exercise', () => {
@@ -321,8 +322,8 @@ describe('Exercise', () => {
       const numbers = Object.fromEntries(props.exercise.questions.map((q, i) => [q.id, 4 + i]));
       const inside = renderer.create(inAssessmentSection(<Exercise {...props} />, numbers));
       const groups = inside.root.findAll(node => node.type === 'div' && node.props.role === 'group');
-      expect(groups.map(node => [node.props.id, node.props['aria-label']])).toEqual([
-        ['section', expect.stringMatching(/^Question/)],
+      expect(groups.map(node => [node.props.id, node.props['aria-label'] ?? node.props['aria-labelledby']])).toEqual([
+        ['section', 'section-title'],
         ...props.exercise.questions.map((q, i) => [`item-${q.id}`, `Question ${4 + i}`]),
       ]);
 
@@ -447,21 +448,8 @@ describe('Exercise', () => {
 });
 
 describe('Exercise focus, once an updated free response is saved', () => {
-  const question: ExerciseQuestionData = {
-    id: 1,
-    formats: ['free-response'],
-    is_answer_order_important: false,
-    stimulus_html: '',
-    stem_html: 'Explain why eleven is prime.',
-    collaborator_solutions: [],
-    answers: [],
-  };
-  const exercise = {
-    uid: '1@1', uuid: 'exercise', group_uuid: 'exercise', number: 1, version: 1,
-    published_at: '2026-10-28T00:00:00.000Z', context: '', stimulus_html: '', tags: [], authors: [],
-    copyright_holders: [], derived_from: [], is_vocab: false, solutions_are_public: false, versions: [1],
-    questions: [question],
-  };
+  const question = freeResponse(1, 'Explain why eleven is prime.');
+  const exercise = exerciseData('exercise', [question]);
   const saved: QuestionState = {
     available_points: '1.0', is_completed: true, canAnswer: true, needsSaved: false, apiIsPending: false,
     free_response: 'It has no divisors.', feedback_html: '', correct_answer_id: '', correct_answer_feedback_html: '',

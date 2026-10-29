@@ -1,9 +1,10 @@
 import { ReactNode, useState, useRef, useEffect, useCallback } from "react";
-import { breakpoints, colors, layouts } from "../theme";
+import { breakpoints, colors, layouts, mixins } from "../theme";
 import { AvailablePoints, ExerciseScoringData, StepBase } from "../types";
 import styled, { css } from "styled-components";
 import cn from "classnames";
 import { CompactDisplayProps } from "./compactDisplay";
+import { focusTargetProps, focusTargetStyles, scrollTargetStyles } from "../helpers/focusTarget";
 
 export const InnerStepCard = styled.div<CompactDisplayProps>`
   /* the card's gutter, read by every section inside it: the preamble, each question's body
@@ -50,6 +51,8 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
     --step-card-rule-width: 0.2rem;
     border-width: 0.2rem;
   }
+
+  ${scrollTargetStyles}
 
   position: relative;
   display: flex;
@@ -245,6 +248,8 @@ const StyledUngraded = styled.div`
 StepCardHeader.displayName = 'StepCardHeader';
 
 const StepCardQuestion = styled.div`
+    ${focusTargetStyles}
+
     ${breakpoints.only.mobile`
         && .question-feedback {
             margin-left: 0;
@@ -262,6 +267,10 @@ const StepCardQuestion = styled.div`
     &&& {
         .openstax-has-html .splash .frame-wrapper { margin-top: 0; }
     }
+`;
+
+const VisuallyHidden = styled.span`
+  ${mixins.visuallyHidden()}
 `;
 
 export const StyledOverlay = styled.div`
@@ -301,11 +310,14 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
   isGraded?: boolean;
   /**
    * The DOM id an `Assessment` moves focus to when a learner enters the card's section. It goes on
-   * the card's body, below the header, which is then a focusable group named by its question
-   * numbers.
+   * the card's body, below the header, which is then a focusable group named by the header's
+   * question numbers; each question names itself within it.
    */
-  id?: string;
-  /** The DOM id an `Assessment` scrolls to when a learner enters the card's section: the card, header included. */
+  focusTargetId?: string;
+  /**
+   * The DOM id an `Assessment` scrolls to when a learner enters the card's section: the card,
+   * header included, with a rem of room left above it.
+   */
   scrollTargetId?: string;
 }
 
@@ -326,20 +338,26 @@ const StepCard = ({
   showScoring,
   totalScoring,
   isGraded,
-  id,
+  focusTargetId,
   scrollTargetId,
   ...otherProps }: StepCardProps) => {
 
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
+  // the range is read "through", where its dash would be read "minus"
   const formattedQuestionNumber = numberOfQuestions > 1
-    ? `Questions ${questionNumber} - ${questionNumber + numberOfQuestions - 1}`
+    ? <>
+      Questions {questionNumber} <span aria-hidden="true">-</span><VisuallyHidden>through</VisuallyHidden> {questionNumber + numberOfQuestions - 1}
+    </>
     : `Question ${questionNumber}`;
 
-  const focusTarget = id !== undefined
-    ? { id, tabIndex: -1, role: 'group', 'aria-label': formattedQuestionNumber }
-    : {};
+  // named by the header's question numbers, which focus lands below
+  const titleId = focusTargetId === undefined ? undefined : `${focusTargetId}-title`;
+  const focusTarget = focusTargetProps(focusTargetId, {
+    role: 'group',
+    'aria-labelledby': questionNumber ? titleId : undefined,
+  });
 
   const handleOverlayBlur = (event: React.FocusEvent<HTMLDivElement>) => {
     if (overlayRef.current && !overlayRef.current.contains(event.relatedTarget as Node)) {
@@ -403,7 +421,7 @@ const StepCard = ({
                   {leftHeaderChildren}
                   <h2 className="question-info">
                     {headerTitleChildren}
-                    <span>{formattedQuestionNumber}</span>
+                    <span id={titleId}>{formattedQuestionNumber}</span>
                     <span className="separator">|</span>
                     <span className="question-id">ID: {questionId}</span>
                   </h2>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { focusTargetProps } from '../helpers/focusTarget';
 import { useAssessmentSection } from '../hooks/useAssessmentSection';
 import { useFocusAfterSave } from '../hooks/useFocusAfterSave';
 import { colors } from '../theme';
@@ -158,7 +159,12 @@ export const QuestionWrapper = ({
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
-  const { controlsRef, nextRef, updateRef, save, onControlsBlur } = useFocusAfterSave({ apiIsPending, onAnswerSave });
+  const nextRef = React.useRef<HTMLButtonElement>(null);
+  const updateRef = React.useRef<HTMLButtonElement>(null);
+  // Next while the footer settles may still be unavailable, so Update stands in until it is
+  const { controlsRef, save, onControlsBlur } = useFocusAfterSave({
+    apiIsPending, onAnswerSave, moveTo: [nextRef, updateRef],
+  });
 
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
@@ -176,9 +182,12 @@ export const QuestionWrapper = ({
           isWaiting={apiIsPending || shouldContinue}
           attempt_number={attempt_number}
           onClick={() => {
-            save();
+            // continuing moves the learner on, and focus with them, so nothing is left here to move
             if (willContinue) {
+              onAnswerSave();
               setShouldContinue(true);
+            } else {
+              save();
             }
           }}
           willContinue={willContinue}
@@ -227,7 +236,7 @@ export const QuestionWrapper = ({
   const leftRegion = attempts || footerChildren;
   const number = itemId !== undefined ? section?.itemNumber(itemId) : undefined;
   const focusTarget = section !== undefined && itemId !== undefined && number !== undefined
-    ? { id: section.itemDomId(itemId), tabIndex: -1, role: 'group', 'aria-label': `Question ${number}` }
+    ? focusTargetProps(section.itemDomId(itemId), { role: 'group', 'aria-label': `Question ${number}` })
     : {};
 
   return (

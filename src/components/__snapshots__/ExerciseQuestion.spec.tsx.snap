@@ -382,6 +382,10 @@ exports[`ExerciseQuestion matches snapshot 1`] = `
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c0:focus-visible {
+  outline-offset: -2px;
+}
+
 .c5 {
   padding: 0 var(--step-card-gutter) var(--step-card-gutter-bottom);
   border-top: 1px solid #d5d5d5;

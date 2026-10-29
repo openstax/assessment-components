@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { unstable_batchedUpdates } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { useAssessmentSection } from '../hooks/useAssessmentSection';
-import scrollToElement from 'scroll-to-element';
 import { Assessment, AssessmentItem, AssessmentProps, AssessmentSectionProps } from './Assessment';
-
-jest.mock('scroll-to-element', () => jest.fn());
+import { ExerciseWrapper } from './ExerciseWrapper';
+import { Loader } from './Loader';
+import { QuestionWrapper } from './QuestionWrapper';
 
 const items: AssessmentItem[] = [
   { id: 1, section: 'a', state: 'isCorrect', isCompleted: true },
@@ -23,13 +23,38 @@ const SectionHost = ({ sectionId }: { sectionId: string }) => {
   const section = useAssessmentSection();
   return <div id={section?.sectionScrollTargetId} data-card={sectionId}>
     <div data-section={sectionId} id={section?.sectionDomId} tabIndex={-1} aria-label={`section ${sectionId}`}>
-      {items.filter(item => item.section === sectionId).map(item =>
+      {hostItems.filter(item => item.section === sectionId).map(item =>
         <div key={item.id} id={section?.itemDomId(item.id)} tabIndex={-1}>item {item.id}</div>
       )}
     </div>
   </div>;
 };
+/** An element's text, as read: what is hidden from screen readers is left out. */
+const readText = (element: Element): string => Array.from(element.childNodes).map(node =>
+  node instanceof Element ? (node.getAttribute('aria-hidden') === 'true' ? '' : readText(node)) : node.textContent ?? ''
+).join('');
+
+/** What an element is called: its label, what labels it, or else its text. */
+const nameOf = (element: Element) => {
+  const labelledBy = element.getAttribute('aria-labelledby');
+  const label = labelledBy ? document.getElementById(labelledBy) : null;
+  return element.getAttribute('aria-label') ?? (label ? readText(label) : element.textContent ?? '').replace(/\s+/g, ' ').trim();
+};
+
+/** Runs what updates the state of an attempt since replaced, which React 17 warns of; later ones do not. */
+const expectingUnmountedUpdate = (run: () => void) => {
+  const error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
+  try {
+    run();
+    expect(error.mock.calls.some(([message]) => String(message).includes('unmounted component'))).toBe(true);
+  } finally {
+    error.mockRestore();
+  }
+};
+
 const sections: Record<string, AssessmentSectionProps> = {};
+// the items the host draws, which a test that drops one from the assessment drops from here too
+let hostItems = items;
 const renderSection = (props: AssessmentSectionProps) => {
   sections[props.sectionId] = props;
   return <SectionHost sectionId={props.sectionId} />;
@@ -48,13 +73,13 @@ describe('Assessment', () => {
   const click = (element: Element | null) => act(() => { (element as HTMLElement).click(); });
   const ready = (sectionId: string) => act(() => sections[sectionId].onReady());
   // what has focus: a section by its label, anything else by its text
-  const focusedText = () => document.activeElement?.getAttribute('aria-label') ?? document.activeElement?.textContent;
+  const focusedText = () => document.activeElement ? nameOf(document.activeElement) : undefined;
 
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
-    (scrollToElement as jest.Mock).mockClear();
     Object.keys(sections).forEach(key => delete sections[key]);
+    hostItems = items;
   });
 
   afterEach(() => {
@@ -114,14 +139,39 @@ describe('Assessment', () => {
       ready('a');
       click(navButtons()[2]);
 
-      act(() => { jest.advanceTimersByTime(9); });
       expect(document.activeElement).toBe(document.body);
 
-      act(() => { jest.advanceTimersByTime(1); });
+      act(() => { jest.runOnlyPendingTimers(); });
       expect(focusedText()).toBe('section b');
 
       ready('b');
       expect(focusedText()).toBe('item 3');
+    });
+
+    it('is not waited on when it reports ready before the render that shows it', () => {
+      const visits: string[] = [];
+      const recordFocus = (event: FocusEvent) => visits.push(nameOf(event.target as Element));
+      document.addEventListener('focusin', recordFocus);
+      const loads: Record<string, () => void> = {};
+      const Loading = ({ props }: { props: AssessmentSectionProps }) => {
+        const section = useAssessmentSection();
+        const [loaded, setLoaded] = React.useState(false);
+        loads[props.sectionId] = () => { setLoaded(true); props.onReady(); };
+        return loaded
+          ? <SectionHost sectionId={props.sectionId} />
+          : <div id={section?.sectionDomId} tabIndex={-1} aria-label="Loading" />;
+      };
+      render({ renderSection: props => { sections[props.sectionId] = props; return <Loading props={props} />; } });
+      act(() => loads.b());
+      click(navButtons()[3]);
+
+      // the report is held back from rendering while the wait runs out, as a later React may batch it
+      act(() => unstable_batchedUpdates(() => {
+        loads.c();
+        jest.runOnlyPendingTimers();
+      }));
+      document.removeEventListener('focusin', recordFocus);
+      expect(visits).toEqual(['section c']);
     });
 
     it('is not waited on when it reports ready in time', () => {
@@ -130,7 +180,7 @@ describe('Assessment', () => {
       click(navButtons()[3]);
       ready('c');
 
-      act(() => { jest.advanceTimersByTime(10); });
+      act(() => { jest.runOnlyPendingTimers(); });
       expect(focusedText()).toBe('section c');
       expect(document.activeElement?.getAttribute('data-section')).toBe('c');
     });
@@ -140,7 +190,7 @@ describe('Assessment', () => {
       render({ renderSection: props => { sections[props.sectionId] = props; return null; } });
 
       click(navButtons()[3]);
-      act(() => { jest.advanceTimersByTime(10); });
+      act(() => { jest.runOnlyPendingTimers(); });
 
       expect(warn).toHaveBeenCalledWith(expect.stringContaining('ExerciseWrapper'));
       warn.mockRestore();
@@ -320,7 +370,7 @@ describe('Assessment', () => {
     const ids: string[] = [];
     const Collect = () => {
       const section = useAssessmentSection();
-      if (section) { ids.push(section.sectionDomId, section.itemDomId(2)); }
+      if (section) { ids.push(section.sectionDomId ?? "", section.itemDomId(2)); }
       return null;
     };
     act(() => {
@@ -386,25 +436,143 @@ describe('Assessment', () => {
     const report = sections.b.onScoreAssessment;
 
     render({ items: done, attemptId: '2', completion });
-    act(() => report({ current: '4/4', saved: '4/4' }));
+    expectingUnmountedUpdate(() => act(() => report({ current: '4/4', saved: '4/4' })));
     expect(container.textContent).toContain('Current Score: 0/4');
   });
 
+  it('keeps the attempt, and the learner on their item, when the attempt id goes undefined and comes back', () => {
+    render({ items, attemptId: 'a' });
+    ready('b');
+    click(navButtons()[2]);
+
+    render({ items, attemptId: undefined });
+    render({ items, attemptId: 'a' });
+    expect(navButtons()[2].getAttribute('aria-current')).toBe('location');
+  });
+
+  it('opens a new attempt when the attempt id goes undefined and comes back as another', () => {
+    const fresh = items.map(item => ({ ...item, isCompleted: false, state: 'isIncomplete' as const }));
+    render({ items, attemptId: 'a' });
+    click(navButtons()[3]);
+
+    render({ items, attemptId: undefined });
+    render({ items: fresh, attemptId: 'b' });
+    expect(navButtons()[0].getAttribute('aria-current')).toBe('location');
+  });
+
+  it('does not bring back the score of an attempt returned to', () => {
+    const done = items.map(item => ({ ...item, isCompleted: true, editable: false }));
+    const completion = { onRetry: jest.fn(), score: { current: '0/4', saved: '0/4' } };
+    render({ items, attemptId: 'a', completion });
+    act(() => sections.b.onScoreAssessment({ current: '4/4', saved: '4/4' }));
+
+    render({ items: done, attemptId: 'b', completion });
+    render({ items: done, attemptId: 'a', completion });
+    expect(container.textContent).toContain('Current Score: 0/4');
+  });
+
+  it('does not move focus when the attempt is first known after the assessment is drawn', () => {
+    render({ items: [] });
+    render({ items: [], attemptId: '1' });
+    render({ items, attemptId: '1' });
+    ready('b');
+
+    expect(document.activeElement).toBe(document.body);
+  });
+
+  it('moves on from an item whose id the host gives as a string where its items have a number', () => {
+    render();
+    ready('b');
+
+    act(() => (sections.b.onNext as (itemId: string) => void)('2'));
+    expect(focusedText()).toBe('item 3');
+  });
+
+  it('warns of a Next for an item it does not have', () => {
+    const warn = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    render();
+
+    act(() => sections.b.onNext('missing'));
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining('"missing"'));
+    expect(navButtons()[1].getAttribute('aria-current')).toBe('location');
+    warn.mockRestore();
+  });
+
+  describe('a learner who moves focus elsewhere before it gets there', () => {
+    let elsewhere: HTMLInputElement;
+    beforeEach(() => {
+      jest.useFakeTimers();
+      elsewhere = document.createElement('input');
+      document.body.appendChild(elsewhere);
+    });
+    afterEach(() => {
+      jest.useRealTimers();
+      elsewhere.remove();
+    });
+
+    it('is left there when the section they were moved to finishes loading', () => {
+      render();
+      ready('b');
+      click(navButtons()[3]);
+      act(() => { jest.runOnlyPendingTimers(); });
+      expect(focusedText()).toBe('section c');
+
+      elsewhere.focus();
+      ready('c');
+      expect(document.activeElement).toBe(elsewhere);
+    });
+
+    it('is left there by the host dropping the item they were on', () => {
+      render();
+      ready('b');
+      click(navButtons()[2]);
+      elsewhere.focus();
+
+      render({ items: items.filter(item => item.id !== 3) });
+      expect(navButtons()[1].getAttribute('aria-current')).toBe('location');
+      expect(document.activeElement).toBe(elsewhere);
+    });
+  });
+
+  it('takes focus where the assessment falls back to when the host drops the item that had it', () => {
+    render();
+    ready('b');
+    click(navButtons()[2]);
+    expect(focusedText()).toBe('item 3');
+
+    hostItems = items.filter(item => item.id !== 3);
+    render({ items: hostItems });
+    expect(focusedText()).toBe('section b');
+  });
+
   describe('scrolling to where focus goes', () => {
-    // where each element's top is, by its text or label; anything not named is on screen
+    // where each element's top is, by its text or label; anything not named is at the top of the screen
     let tops: Record<string, number> = {};
+    let bottoms: Record<string, number> = {};
+    const scrollName = (element: Element) => element.getAttribute('data-card')
+      ? `card ${element.getAttribute('data-card')}`
+      : nameOf(element);
+    let scrollIntoView: jest.Mock;
     beforeEach(() => {
       tops = {};
+      bottoms = {};
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
-        const name = this.getAttribute('data-card') ? `card ${this.getAttribute('data-card')}` : this.getAttribute('aria-label') ?? this.textContent ?? '';
-        return { top: tops[name] ?? 0 } as DOMRect;
+        const name = scrollName(this);
+        return { top: tops[name] ?? 0, bottom: bottoms[name] ?? window.innerHeight } as DOMRect;
       });
+      // jsdom has no scrolling of its own
+      scrollIntoView = jest.fn();
+      Element.prototype.scrollIntoView = scrollIntoView;
     });
-    afterEach(() => { jest.restoreAllMocks(); });
-    const scrolledTo = () => (scrollToElement as jest.Mock).mock.calls.map(([element, options]) =>
-      [element.getAttribute('data-card') ? `card ${element.getAttribute('data-card')}` : element.textContent, options]);
+    afterEach(() => {
+      jest.restoreAllMocks();
+      delete (Element.prototype as Partial<Element>).scrollIntoView;
+    });
+    const scrolledTo = () => scrollIntoView.mock.instances.map((element: Element, call) =>
+      [scrollName(element), scrollIntoView.mock.calls[call][0]]);
+    const smoothly = { block: 'start', behavior: 'smooth' };
 
-    it('scrolls to a section off screen by its card, leaving a rem above it', () => {
+    it('scrolls to a section above the screen by its card', () => {
       render();
       ready('b');
       tops['card c'] = -800;
@@ -412,7 +580,7 @@ describe('Assessment', () => {
       click(navButtons()[3]);
       ready('c');
       expect(focusedText()).toBe('section c');
-      expect(scrolledTo()).toEqual([['card c', { offset: -16 }]]);
+      expect(scrolledTo()).toEqual([['card c', smoothly]]);
     });
 
     it('scrolls to a section below the screen', () => {
@@ -422,7 +590,53 @@ describe('Assessment', () => {
 
       click(navButtons()[3]);
       ready('c');
-      expect(scrolledTo()).toEqual([['card c', { offset: -16 }]]);
+      expect(scrolledTo()).toEqual([['card c', smoothly]]);
+    });
+
+    it('scrolls to a section whose top is in the bottom half of the screen', () => {
+      render();
+      ready('b');
+      tops['card c'] = window.innerHeight * 0.6;
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(scrolledTo()).toEqual([['card c', smoothly]]);
+    });
+
+    it('leaves a section whose top is in the top half of the screen where it is', () => {
+      render();
+      ready('b');
+      tops['card c'] = window.innerHeight * 0.4;
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(scrollIntoView).not.toHaveBeenCalled();
+    });
+
+    it('judges by the panel the host scrolls the assessment in, where it has one', () => {
+      container.setAttribute('aria-label', 'panel');
+      container.style.overflowY = 'auto';
+      Object.defineProperty(container, 'scrollHeight', { value: 2000 });
+      Object.defineProperty(container, 'clientHeight', { value: 200 });
+      render();
+      ready('b');
+      const screenMiddle = window.innerHeight / 2;
+
+      // in the bottom half of the panel, though in the top half of the screen
+      tops.panel = screenMiddle - 300;
+      bottoms.panel = screenMiddle - 100;
+      tops['card c'] = screenMiddle - 150;
+      click(navButtons()[3]);
+      ready('c');
+      expect(scrolledTo()).toEqual([['card c', smoothly]]);
+
+      // in the top half of the panel, though in the bottom half of the screen
+      scrollIntoView.mockClear();
+      tops.panel = screenMiddle + 100;
+      bottoms.panel = screenMiddle + 300;
+      tops['card c'] = screenMiddle + 150;
+      click(navButtons()[3]);
+      expect(scrollIntoView).not.toHaveBeenCalled();
     });
 
     it('leaves a section on screen where it is', () => {
@@ -432,31 +646,61 @@ describe('Assessment', () => {
       click(navButtons()[3]);
       ready('c');
       expect(focusedText()).toBe('section c');
-      expect(scrollToElement).not.toHaveBeenCalled();
+      expect(scrollIntoView).not.toHaveBeenCalled();
     });
 
-    it('scrolls to an item after the first off screen by itself, with no room above it', () => {
+    it('scrolls to an item after the first by itself', () => {
       render();
       ready('b');
       tops['item 3'] = -200;
 
       act(() => sections.b.onNext(2));
       expect(focusedText()).toBe('item 3');
-      expect(scrolledTo()).toEqual([['item 3', { offset: 0 }]]);
+      expect(scrolledTo()).toEqual([['item 3', smoothly]]);
     });
 
-    it('scrolls to the completion step off screen by its heading, leaving a rem above it', () => {
+    it('scrolls to the completion step by its heading', () => {
       render();
       click(navButtons()[3]);
       ready('c');
       tops['Quiz is partially complete.'] = -300;
 
       act(() => sections.c.onNext(4));
-      expect(scrolledTo()).toEqual([['Quiz is partially complete.', { offset: -16 }]]);
+      expect(scrolledTo()).toEqual([['Quiz is partially complete.', smoothly]]);
     });
 
-    describe('while a scroll to its loader is under way', () => {
-      // the card is drawn a little above where its loader was, as it is on a narrow screen
+    it('scrolls without animating for a learner who prefers reduced motion', () => {
+      window.matchMedia = jest.fn().mockImplementation((query: string) =>
+        ({ matches: query === '(prefers-reduced-motion: reduce)' }));
+      try {
+        render();
+        ready('b');
+        tops['card c'] = -800;
+
+        click(navButtons()[3]);
+        ready('c');
+        expect(scrolledTo()).toEqual([['card c', { block: 'start', behavior: 'instant' }]]);
+      } finally {
+        delete (window as Partial<Window>).matchMedia;
+      }
+    });
+
+    it('counts a top behind what the page keeps clear above, as a sticky header, as off screen', () => {
+      const getComputedStyle = window.getComputedStyle;
+      jest.spyOn(window, 'getComputedStyle').mockImplementation(element =>
+        element === document.documentElement
+          ? { scrollPaddingTop: '50px' } as CSSStyleDeclaration
+          : getComputedStyle(element));
+      render();
+      ready('b');
+      tops['card c'] = 40;
+
+      click(navButtons()[3]);
+      ready('c');
+      expect(scrolledTo()).toEqual([['card c', smoothly]]);
+    });
+
+    describe('a section that loads while its loader is scrolled to', () => {
       const loaded: Record<string, boolean> = {};
       const Loading = () => {
         const section = useAssessmentSection();
@@ -466,51 +710,37 @@ describe('Assessment', () => {
         sections[props.sectionId] = props;
         return loaded[props.sectionId] ? <SectionHost sectionId={props.sectionId} /> : <Loading />;
       };
-      // each test's own, as React 17 stops the last test's when it unmounts, after this one starts
-      let tween: { stop: jest.Mock; on: jest.Mock };
-
       beforeEach(() => {
         jest.useFakeTimers();
         Object.keys(loaded).forEach(key => delete loaded[key]);
-        tween = { stop: jest.fn(), on: jest.fn() };
-        (scrollToElement as jest.Mock).mockReturnValue(tween);
-        jest.spyOn(document.body, 'scrollHeight', 'get').mockReturnValue(10000);
       });
-      afterEach(() => {
-        jest.useRealTimers();
-        (scrollToElement as jest.Mock).mockReset();
-      });
+      afterEach(() => { jest.useRealTimers(); });
 
-      const enterLoadingSection = () => {
+      it('is scrolled to though it is on screen, as that scroll may not have landed', () => {
         render({ renderSection: loadingSection });
         loaded.b = true;
         ready('b');
-        tops.Loading = 2000;
+        tops.Loading = -500;
         click(navButtons()[3]);
-        act(() => { jest.advanceTimersByTime(10); });
-        expect(focusedText()).toBe('Loading');
-      };
-
-      it('stops it for the section, when it would land with the section off screen', () => {
-        enterLoadingSection();
-        tops['card c'] = 1960;
+        act(() => { jest.runOnlyPendingTimers(); });
 
         loaded.c = true;
         ready('c');
         expect(focusedText()).toBe('section c');
-        expect(tween.stop).toHaveBeenCalledTimes(1);
-        expect(scrolledTo()).toEqual([['', { offset: -16 }], ['card c', { offset: -16 }]]);
+        expect(scrolledTo()).toEqual([['Loading', smoothly], ['card c', smoothly]]);
       });
 
-      it('lets it land, when it would land with the section on screen', () => {
-        enterLoadingSection();
-        tops['card c'] = 1990;
+      it('is left where it is when its loader was on screen, and not scrolled to', () => {
+        render({ renderSection: loadingSection });
+        loaded.b = true;
+        ready('b');
+        click(navButtons()[3]);
+        act(() => { jest.runOnlyPendingTimers(); });
 
         loaded.c = true;
         ready('c');
         expect(focusedText()).toBe('section c');
-        expect(tween.stop).not.toHaveBeenCalled();
-        expect(scrolledTo()).toHaveLength(1);
+        expect(scrollIntoView).not.toHaveBeenCalled();
       });
     });
 
@@ -526,10 +756,9 @@ describe('Assessment', () => {
         tops.Loading = -500;
 
         click(navButtons()[3]);
-        act(() => { jest.advanceTimersByTime(10); });
+        act(() => { jest.runOnlyPendingTimers(); });
         expect(focusedText()).toBe('Loading');
-        expect((scrollToElement as jest.Mock).mock.calls.map(([element, options]) =>
-          [element.getAttribute('aria-label'), options])).toEqual([['Loading', { offset: -16 }]]);
+        expect(scrolledTo()).toEqual([['Loading', smoothly]]);
       } finally {
         jest.useRealTimers();
       }
@@ -592,6 +821,94 @@ describe('Assessment', () => {
       click(container.querySelector('[data-test-id=next-btn]'));
       expect(onRetry).toHaveBeenCalled();
       expect(onNext).toHaveBeenCalled();
+    });
+  });
+
+  describe('drawn with the components made for it', () => {
+    // a host that loads each section when it is drawn, in an ExerciseWrapper with a QuestionWrapper per item
+    const loads: Record<string, () => void> = {};
+    const Section = ({ sectionId, firstItemNumber, onNext, onReady, readyOnMount }: AssessmentSectionProps & { readyOnMount?: boolean }) => {
+      const [loaded, setLoaded] = React.useState(readyOnMount ?? false);
+      loads[sectionId] = () => setLoaded(true);
+      React.useEffect(() => { if (loaded) { onReady(); } }, [loaded, onReady]);
+      const sectionItems = items.filter(item => item.section === sectionId);
+
+      if (!loaded) { return <Loader />; }
+      return <ExerciseWrapper questionNumber={firstItemNumber} numberOfQuestions={sectionItems.length}>
+        {sectionItems.map(item => <QuestionWrapper
+          key={item.id}
+          itemId={item.id}
+          is_completed={item.isCompleted}
+          canAnswer={false}
+          apiIsPending={false}
+          canUpdateCurrentStep={false}
+          onAnswerSave={jest.fn()}
+          onNextStep={() => onNext(item.id)}
+        >item {item.id}</QuestionWrapper>)}
+      </ExerciseWrapper>;
+    };
+    let focused: string[];
+    const recordFocus = (event: FocusEvent) => focused.push(nameOf(event.target as Element));
+    beforeEach(() => {
+      focused = [];
+      document.addEventListener('focusin', recordFocus);
+    });
+    afterEach(() => { document.removeEventListener('focusin', recordFocus); });
+
+    it('has focus wait on the loader, then takes it to the section and on through its questions', () => {
+      jest.useFakeTimers();
+      try {
+        render({ renderSection: props => <Section {...props} /> });
+        act(() => loads.b());
+
+        click(navButtons()[0]);
+        act(() => { jest.runOnlyPendingTimers(); });
+        expect(focusedText()).toBe('Loading');
+
+        act(() => loads.a());
+        expect(focusedText()).toBe('Question 1');
+
+        click(container.querySelector('[data-test-id=continue-btn]'));
+        act(() => { jest.runOnlyPendingTimers(); });
+        act(() => loads.b());
+        expect(focusedText()).toBe('Questions 2 through 3');
+
+        click(container.querySelectorAll('[data-test-id=continue-btn]')[0]);
+        expect(focusedText()).toBe('Question 3');
+
+        click(container.querySelectorAll('[data-test-id=continue-btn]')[1]);
+        act(() => { jest.runOnlyPendingTimers(); });
+        act(() => loads.c());
+        click(container.querySelector('[data-test-id=continue-btn]'));
+        expect(document.activeElement?.tagName).toBe('H2');
+      } finally {
+        jest.useRealTimers();
+      }
+    });
+
+    it('never has focus visit the loader of a section ready as soon as it is drawn', () => {
+      jest.useFakeTimers();
+      try {
+        render({ renderSection: props => <Section {...props} readyOnMount /> });
+        click(navButtons()[0]);
+        click(navButtons()[2]);
+        act(() => { jest.runOnlyPendingTimers(); });
+
+        expect(focused).toEqual(['Question 1', 'Question 3']);
+      } finally {
+        jest.useRealTimers();
+      }
+    });
+
+    it('keeps the section id off a loader drawn inside the section, as while a question loads', () => {
+      render({
+        renderSection: ({ firstItemNumber }) =>
+          <ExerciseWrapper questionNumber={firstItemNumber} numberOfQuestions={2}><Loader /></ExerciseWrapper>,
+      });
+
+      const carriers = container.querySelectorAll('[id$="-section"]');
+      expect(carriers).toHaveLength(1);
+      expect(carriers[0].getAttribute('role')).toBe('group');
     });
   });
 });

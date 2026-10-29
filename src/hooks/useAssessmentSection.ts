@@ -9,13 +9,17 @@ import { ID } from "../types";
  * Absent outside an assessment, where those components carry no ids and take no focus.
  */
 export interface AssessmentSection {
-  sectionDomId: string;
+  /**
+   * Absent inside the section's own `ExerciseWrapper`, which has taken it, so a `Loader` drawn
+   * inside it, as while a question loads, does not take it again.
+   */
+  sectionDomId?: string;
   /**
    * What is scrolled into view when the section is entered, where that is more than the element
    * that takes focus: the whole card, header included, around the body `ExerciseWrapper` focuses.
    * Without it the section's own element is scrolled to.
    */
-  sectionScrollTargetId: string;
+  sectionScrollTargetId?: string;
   itemDomId: (itemId: ID) => string;
   /** The item's number in the whole assessment, or undefined for an item the assessment does not have. */
   itemNumber: (itemId: ID) => number | undefined;

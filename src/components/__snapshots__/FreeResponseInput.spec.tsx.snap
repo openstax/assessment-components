@@ -100,6 +100,10 @@ Array [
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c0:focus-visible {
+  outline-offset: -2px;
+}
+
 <div
     className="c0 step-card-question step-card-body"
   >
@@ -371,6 +375,10 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
   border-top: var(--step-card-rule-width) solid #d5d5d5;
 }
 
+.c0:focus-visible {
+  outline-offset: -2px;
+}
+
 <div
   className="c0 step-card-question step-card-body"
 >
@@ -484,6 +492,10 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   padding: var(--step-card-gutter-top) var(--step-card-gutter) var(--step-card-gutter-bottom);
   overflow: auto;
   border-top: var(--step-card-rule-width) solid #d5d5d5;
+}
+
+.c0:focus-visible {
+  outline-offset: -2px;
 }
 
 <div

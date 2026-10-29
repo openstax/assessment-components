@@ -1,4 +1,5 @@
 import { BulletList } from "react-content-loader";
+import { focusTargetProps } from "../helpers/focusTarget";
 import { useAssessmentSection } from "../hooks/useAssessmentSection";
 import { colors } from "../theme";
 import styled from "styled-components";
@@ -29,9 +30,7 @@ const Wrapper = styled.div`
  */
 export const Loader = () => {
   const section = useAssessmentSection();
-  const focusTarget = section !== undefined
-    ? { id: section.sectionDomId, tabIndex: -1, role: 'progressbar', 'aria-label': 'Loading', 'aria-busy': true }
-    : {};
+  const focusTarget = focusTargetProps(section?.sectionDomId, { role: 'progressbar', 'aria-label': 'Loading' });
 
   return <Wrapper {...focusTarget}><BulletList uniqueKey="OSLoader" /></Wrapper>;
 };

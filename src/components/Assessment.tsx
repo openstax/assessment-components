@@ -1,8 +1,7 @@
 import React from 'react';
-import { useAssessmentPosition } from '../hooks/useAssessmentPosition';
+import { findItemIndex, Move, startingPosition, useAssessmentPosition } from '../hooks/useAssessmentPosition';
 import { AssessmentSection, AssessmentSectionContext } from '../hooks/useAssessmentSection';
-import { useAttemptGuard } from '../hooks/useAttemptGuard';
-import { FocusTarget, useFocusHandoff } from '../hooks/useFocusHandoff';
+import { FocusRequest, FocusTarget, useFocusHandoff } from '../hooks/useFocusHandoff';
 import { useInstanceId } from '../hooks/useInstanceId';
 import { useSectionDrawing } from '../hooks/useSectionDrawing';
 import { ID } from '../types';
@@ -29,12 +28,12 @@ export interface AssessmentSectionProps {
   sectionId: string;
   /** The number of the section's first item within the whole assessment, for its header. */
   firstItemNumber: number;
-  /** The item's Next button: moves on from that item. A Next made for an earlier attempt is ignored. */
+  /** The item's Next button: moves on from that item. A Next made for an attempt since replaced is ignored. */
   onNext: (itemId: ID) => void;
   /**
    * Reports the assessment's score, as it comes back from answering an item, for the completion
    * step to show. The shell keeps the latest, so the host need not hold it above its sections. A
-   * report made for an earlier attempt is ignored.
+   * report made for an attempt since replaced is ignored.
    */
   onScoreAssessment: (score: Score) => void;
   /**
@@ -65,30 +64,65 @@ export interface AssessmentProps {
   renderSection: (props: AssessmentSectionProps) => React.ReactNode;
   completion: AssessmentCompletion;
   /**
-   * The attempt the items belong to. When it changes, as it does on a retry, the assessment opens
-   * afresh: where the learner is and the score reported so far are both dropped.
+   * The attempt the items belong to. When it moves on from one it had, as on a retry, the
+   * assessment opens afresh, as though newly drawn: where the learner is, the score reported so
+   * far and every section are dropped, and the learner is taken to where the new attempt opens.
+   *
+   * The new attempt opens on the items it is given with its id, so change it together with its
+   * items, or with none until they arrive; never before them, or it opens on the old attempt's.
+   * An id going undefined, as while a host refetches, is not a new attempt, nor is it coming back.
    */
   attemptId?: string;
 }
-
-const firstIndex = (items: AssessmentItem[], test: (item: AssessmentItem) => boolean) => {
-  const found = items.findIndex(test);
-  return found === -1 ? undefined : found;
-};
 
 const SECTION_HINT = 'Draw the section in an `ExerciseWrapper`, and a `Loader` while it loads.';
 const ITEM_HINT = 'Draw the item in a `QuestionWrapper` given its `itemId`.';
 const COMPLETION_HINT = 'Draw the completion step in a `CompletionStatus` given its `id`.';
 
+interface AssessmentTarget extends FocusTarget {
+  /** How to draw what carries the id, for the warning when nothing does. */
+  hint: string;
+}
+
+const warnMissing = ({ id, hint }: AssessmentTarget) =>
+  console.warn(`Assessment: no element with id "${id}" to move focus to. ${hint}`);
+
+/**
+ * The focus move a move of the learner asks for. Every move the learner asks for takes focus with
+ * them. The assessment opening takes it only for an attempt they retried into: one first drawn
+ * leaves focus wherever the page has it. Falling back from an item the host dropped takes it only
+ * from nowhere, as when it was in what was dropped.
+ */
+const focusRequestFor = (move: Move | undefined, isRetry: boolean): FocusRequest | undefined =>
+  move === undefined || (move.cause === 'open' && !isRetry) ? undefined
+    : { seq: move.seq, takeFrom: move.cause === 'fallback' ? 'nowhere' : 'active' };
+
+/**
+ * Counts the attempts an assessment has had, so each can be drawn afresh. An attempt is new when
+ * `attemptId` moves on from one it had to another: the first one given is the attempt already
+ * drawn, not a new one, and an id going undefined and coming back is the same attempt.
+ */
+const useAttemptCount = (attemptId: string | undefined) => {
+  const [seen, setSeen] = React.useState({ attemptId, count: 0 });
+  const isNew = attemptId !== undefined && seen.attemptId !== undefined && seen.attemptId !== attemptId;
+  const count = isNew ? seen.count + 1 : seen.count;
+  // counted while rendering, so the render with the new attempt already draws it afresh
+  if (attemptId !== undefined && seen.attemptId !== attemptId) {
+    setSeen({ attemptId, count });
+  }
+  return count;
+};
+
 /**
  * An assessment's progression: the navigation, which section is drawn, the completion step,
  * and where focus goes as a learner moves through it. The host draws each section and holds
- * every response; this holds only where the learner is.
+ * every response; this holds where the learner is, and the latest score its sections report.
  *
  * Moving to an item moves focus to it, and moving to the completion step moves focus there, so
  * a keyboard or screen reader user follows the navigation instead of being left on it. Entering a
  * section by its first item focuses the section, so it is read from its top; a section still
- * loading has focus wait on its loader. Focus is never moved on the first render.
+ * loading has focus wait on its loader. Focus is not moved when the assessment is first drawn,
+ * only by moves after that and by a new attempt.
  *
  * Where focus goes is scrolled to only when its top is off screen, as it may not be when the
  * assessment is part of a longer page. A section is scrolled to by its card, header included, and
@@ -100,61 +134,62 @@ const COMPLETION_HINT = 'Draw the completion step in a `CompletionStatus` given 
  * Its DOM ids come from `React.useId` where the host's React has it. Before React 18 they are
  * counted instead, and are not stable across server and client renders.
  */
-export const Assessment = ({ items, renderSection, completion, attemptId }: AssessmentProps) => {
+export const Assessment = ({ attemptId, ...props }: AssessmentProps) => {
+  const attempt = useAttemptCount(attemptId);
+  // every attempt is drawn afresh, by a component of its own that knows nothing of the others.
+  // This is done here, from `attemptId`, rather than by the host giving the assessment a new
+  // `key`: the host's remount could not tell a new attempt from a first draw, and only a new
+  // attempt takes focus to where it opens. Keep it here.
+  return <AssessmentAttempt key={attempt} {...props} isRetry={attempt > 0} />;
+};
+
+Assessment.displayName = 'OSAssessment';
+
+/** One attempt at an assessment. One the learner retried into takes them to where it opens. */
+const AssessmentAttempt = ({ items, renderSection, completion, isRetry }: Omit<AssessmentProps, 'attemptId'> & {
+  isRetry: boolean;
+}) => {
   const prefix = `assessment-${useInstanceId()}`;
   const itemDomId = React.useCallback((itemId: ID) => `${prefix}-item-${itemId}`, [prefix]);
   const sectionDomId = `${prefix}-section`;
   const sectionScrollTargetId = `${prefix}-section-scroll-target`;
   const completionDomId = `${prefix}-completion`;
 
-  const { position, index, moves, goTo } = useAssessmentPosition(items, attemptId);
+  const { position, index, lastMove, goTo, goToIndex, next } = useAssessmentPosition(items);
   const currentItem = position === 'completion' ? undefined : items[index];
   const sectionId = currentItem?.section;
-  const drawing = useSectionDrawing(sectionId, attemptId);
+  const drawing = useSectionDrawing(sectionId);
 
-  const sectionTarget: FocusTarget = {
-    id: sectionDomId, scrollTargetId: sectionScrollTargetId, margin: true, hint: SECTION_HINT,
-  };
+  const sectionTarget: AssessmentTarget = { id: sectionDomId, scrollTargetId: sectionScrollTargetId, hint: SECTION_HINT };
   // a section's first item is reached by its top, and the items after it by their own
-  const destination: FocusTarget | undefined = position === undefined ? undefined
-    : currentItem === undefined ? { id: completionDomId, margin: true, hint: COMPLETION_HINT }
+  const destination: AssessmentTarget | undefined = position === undefined ? undefined
+    : currentItem === undefined ? { id: completionDomId, hint: COMPLETION_HINT }
     : items[index - 1]?.section !== currentItem.section ? sectionTarget
     : { id: itemDomId(currentItem.id), hint: ITEM_HINT };
   useFocusHandoff({
-    moves,
+    request: focusRequestFor(lastMove, isRetry),
     destination,
     ready: currentItem === undefined || drawing.ready,
+    reportedReady: drawing.reportedReady,
     // a section that is not ready straight away is loading: focus waits on its loader, which has its id
     waitOn: sectionTarget,
+    onMissing: warnMissing,
   });
 
-  // the callbacks a section is handed belong to the attempt it was drawn for
-  const forAttempt = useAttemptGuard(attemptId);
-
-  const [reported, setReported] = React.useState<{ attemptId: string | undefined; score: Score }>();
-  const reportedScore = reported !== undefined && reported.attemptId === attemptId ? reported.score : undefined;
-  const onScoreAssessment = React.useMemo(
-    () => forAttempt((score: Score) => setReported({ attemptId, score })),
-    [attemptId, forAttempt]
-  );
-
-  const onNext = React.useMemo(() => forAttempt((itemId: ID) => {
-    const itemIndex = items.findIndex(item => item.id === itemId);
-    if (itemIndex !== -1) { goTo(itemIndex + 1); }
-  }), [forAttempt, goTo, items]);
+  // the attempt's own, dropped with it when a new one is drawn
+  const [reportedScore, setReportedScore] = React.useState<Score>();
 
   const section: AssessmentSection = React.useMemo(() => ({
     sectionDomId,
     sectionScrollTargetId,
     itemDomId,
     itemNumber: (itemId: ID) => {
-      const found = items.findIndex(item => item.id === itemId);
-      return found === -1 ? undefined : found + 1;
+      const found = findItemIndex(items, itemId);
+      return found === undefined ? undefined : found + 1;
     },
   }), [itemDomId, items, sectionDomId, sectionScrollTargetId]);
 
-  const firstIncomplete = firstIndex(items, item => !item.isCompleted);
-  const firstEditable = firstIndex(items, item => item.isCompleted && item.editable === true);
+  const firstEditable = items.find(item => item.isCompleted && item.editable === true);
 
   if (position === undefined) { return null; }
 
@@ -162,7 +197,7 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
     <>
       <ProgressBar
         activeIndex={index}
-        goToStep={goTo}
+        goToStep={goToIndex}
         steps={[
           ...items.map(item => ({ variant: item.state, hasFeedback: item.hasFeedback ?? false })),
           { variant: 'isStatus' as const },
@@ -174,9 +209,9 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
           {renderSection({
             sectionId,
             firstItemNumber: items.findIndex(item => item.section === sectionId) + 1,
-            onNext,
+            onNext: next,
             onReady: drawing.onReady,
-            onScoreAssessment,
+            onScoreAssessment: setReportedScore,
           })}
         </AssessmentSectionContext.Provider>
         : <CompletionStatus
@@ -187,11 +222,9 @@ export const Assessment = ({ items, renderSection, completion, attemptId }: Asse
           handleRetry={completion.onRetry}
           isRetrying={completion.isRetrying}
           handleNext={completion.onNext}
-          handleContinue={() => { if (firstIncomplete !== undefined) { goTo(firstIncomplete); } }}
-          handleEditResponses={firstEditable !== undefined ? () => goTo(firstEditable) : undefined}
+          handleContinue={() => goTo(startingPosition(items))}
+          handleEditResponses={firstEditable ? () => goTo({ item: firstEditable.id }) : undefined}
         />}
     </>
   );
 };
-
-Assessment.displayName = 'OSAssessment';

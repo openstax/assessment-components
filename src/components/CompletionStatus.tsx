@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { InnerStepCard } from "./Card";
 import Button from "./Button";
 import { colors } from '../theme';
+import { focusTargetProps, scrollTargetStyles } from "../helpers/focusTarget";
 
 export interface Score {
   current?: string;
@@ -17,6 +18,7 @@ export interface CompletionStatusProps {
   className?: string;
   score?: Score;
   handleRetry?: () => void;
+  /** While a retry is starting: its button reads "Retrying…" and ignores clicks, keeping focus. */
   isRetrying?: boolean;
   handleEditResponses?: () => void;
   /**
@@ -44,6 +46,8 @@ const CompletionStatusCard = styled(InnerStepCard)`
 const CompletionHeader = styled.h2`
   font-size: calc(2.4rem * var(--content-text-scale, 1));
   margin: 0;
+
+  ${scrollTargetStyles}
 `;
 
 const ButtonGroup = styled.div`
@@ -94,7 +98,7 @@ export const CompletionStatus = styled(({
   handleEditResponses,
   id,
 }: CompletionStatusProps) => {
-  const focusTarget = id !== undefined ? { id, tabIndex: -1 } : {};
+  const focusTarget = focusTargetProps(id);
   const allCompleted = numberOfQuestions === numberCompleted;
   const someCompleted = numberCompleted > 0;
 
@@ -133,6 +137,8 @@ export const CompletionStatus = styled(({
             <RetryResumeButton
               data-test-id="retry-btn"
               onClick={handleRetry}
+              isWaiting={isRetrying ?? false}
+              waitingText="Retrying…"
             >
               Retry Quiz
             </RetryResumeButton>
@@ -201,7 +207,8 @@ export const CompletionStatus = styled(({
           <RetryResumeButton
             data-test-id="retry-resume-btn"
             onClick={onRetryResumeClick}
-            disabled={isRetrying}
+            isWaiting={isRetrying ?? false}
+            waitingText="Retrying…"
           >
             {retryOrResume}
           </RetryResumeButton>
