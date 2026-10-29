@@ -45,6 +45,10 @@ interface WaitingButtonProps extends React.ComponentPropsWithoutRef<'button'> {
  * While waiting the button is unavailable but keeps focus: it is marked `aria-disabled` and
  * ignores clicks, rather than being `disabled`, which would drop the focus of whoever pressed it.
  * The same goes for a button passed `aria-disabled` directly.
+ *
+ * Only `onClick` is held back while it is unavailable. Unlike a `disabled` one, it still gets
+ * every other event, so act on `onClick` alone: a handler for keys or pointers would act on a
+ * button that says it is unavailable.
  */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps | WaitingButtonProps>((props, ref) => {
   const { disabled, isWaiting, waitingText, children, onClick, ...otherProps } = props;
