@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAssessmentSection } from '../hooks/useAssessmentSection';
+import { useFocusAfterSave } from '../hooks/useFocusAfterSave';
 import { colors } from '../theme';
 import { ID } from '../types';
 import Button from './Button';
@@ -157,47 +158,7 @@ export const QuestionWrapper = ({
     }
   }, [shouldContinue, is_completed, apiIsPending, onNextStep]);
 
-  /*
-   * A save the learner pressed keeps focus while it is pending. When it lands, the button they
-   * pressed may be gone (Submit, replaced by Next) or unavailable (Update, with nothing left to
-   * save), so focus moves on to the control the footer now offers, which announces itself.
-   *
-   * The footer can take more than one render to settle after a save, as the body reports that
-   * nothing is left to save, so this stays ready while focus is still in the footer. It is done
-   * once focus has moved, here or by a learner who moved elsewhere, who is left where they are.
-   */
-  const saving = React.useRef(false);
-  const controlsRef = React.useRef<HTMLDivElement>(null);
-  const nextRef = React.useRef<HTMLButtonElement>(null);
-  const updateRef = React.useRef<HTMLButtonElement>(null);
-  const save = () => {
-    saving.current = true;
-    onAnswerSave();
-  };
-  // a learner who moves on, to another question's controls say, while this save is pending is
-  // left there when it lands; the button they pressed going away moves focus to nothing, and does not count
-  const leaveControls = (event: React.FocusEvent<HTMLDivElement>) => {
-    if (event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget)) {
-      saving.current = false;
-    }
-  };
-
-  React.useEffect(() => {
-    if (!saving.current || apiIsPending) { return; }
-
-    const active = document.activeElement;
-    const lost = !active || active === document.body
-      || (active instanceof HTMLButtonElement && active.disabled && !!controlsRef.current?.contains(active));
-
-    if (lost) {
-      // Next while the footer settles may still be unavailable, so Update stands in until it is
-      const target = [nextRef.current, updateRef.current].find(button => button !== null && !button.disabled);
-      target?.focus();
-      saving.current = target !== undefined && target === updateRef.current;
-    } else if (!controlsRef.current?.contains(active)) {
-      saving.current = false;
-    }
-  }, [apiIsPending, is_completed, canAnswer, canSubmit, dirty]);
+  const { controlsRef, nextRef, updateRef, save, onControlsBlur } = useFocusAfterSave({ apiIsPending, onAnswerSave });
 
   const attempts = (attemptsRemaining !== undefined && attemptsRemaining > 0) || hasUnlimitedAttempts
     ? <span className="attempts-left" role="status">
@@ -282,7 +243,7 @@ export const QuestionWrapper = ({
         <StepCardFooter className="step-card-footer" compactDisplay={compactDisplay}>
           <div className="step-card-footer-inner">
             {leftRegion ? <div className="points">{attempts}{footerChildren}</div> : null}
-            {showControls ? <div className="controls" ref={controlsRef} onBlur={leaveControls}>{controls()}</div> : null}
+            {showControls ? <div className="controls" ref={controlsRef} onBlur={onControlsBlur}>{controls()}</div> : null}
           </div>
         </StepCardFooter>
       ) : null}

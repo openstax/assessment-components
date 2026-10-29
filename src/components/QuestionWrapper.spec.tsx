@@ -392,6 +392,57 @@ describe('QuestionWrapper', () => {
       expect(document.activeElement).toBe(inQuestion(2, 'continue-btn'));
     });
 
+    /*
+     * Clicking empty page space moves focus to the body, as the button going away does, and in a
+     * browser the blur names nothing it moved to. jsdom names the document instead, so its blur
+     * is swallowed and a browser's dispatched in its place. Whether the learner let go is settled
+     * once the render, if any, is done, so this waits that long.
+     */
+    const clickAway = () => act(async () => {
+      const active = document.activeElement as HTMLElement;
+      const swallow = (event: Event) => event.stopImmediatePropagation();
+      window.addEventListener('focusout', swallow, true);
+      active.blur();
+      window.removeEventListener('focusout', swallow, true);
+      active.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: null }));
+    });
+
+    it('lets go once a Submit that did not save is left for nowhere', async () => {
+      draw({});
+      press('submit-answer-btn');
+      draw({ apiIsPending: true });
+      draw({});
+      expect(document.activeElement).toBe(button('submit-answer-btn'));
+
+      await clickAway();
+      draw({ is_completed: true, canAnswer: false });
+      expect(document.activeElement).toBe(document.body);
+    });
+
+    it('lets go once an Update that did not save is left for nowhere', async () => {
+      draw({ is_completed: true, dirty: true });
+      press('update-answer-btn');
+      draw({ is_completed: true, dirty: true, apiIsPending: true });
+      draw({ is_completed: true, dirty: true });
+      expect(document.activeElement).toBe(button('update-answer-btn'));
+
+      await clickAway();
+      draw({ is_completed: true, dirty: false });
+      expect(document.activeElement).toBe(document.body);
+    });
+
+    it('moves on still when the control pressed going unavailable blurs it, as a browser may', async () => {
+      draw({ is_completed: true, dirty: true });
+      press('update-answer-btn');
+      draw({ is_completed: true, dirty: true, apiIsPending: true });
+
+      await act(async () => {
+        ReactDOM.render(<QuestionWrapper {...props} is_completed dirty={false} />, container);
+        button('update-answer-btn').dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: null }));
+      });
+      expect(document.activeElement).toBe(button('continue-btn'));
+    });
+
     it('leaves a learner who moved elsewhere where they are', () => {
       const elsewhere = document.createElement('input');
       document.body.appendChild(elsewhere);
