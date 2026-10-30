@@ -12,7 +12,13 @@ export const stepCardSection = css`
   overflow: auto;
 `;
 
-export const StepCardBody = styled.div.attrs({ className: 'step-card-body' as string })<{ divided?: boolean }>`
+/*
+ * `divided` only styles the band, so it is kept off the `<div>`: passed through, React warns
+ * that it is not a boolean attribute the DOM knows.
+ */
+export const StepCardBody = styled.div.withConfig({
+  shouldForwardProp: (prop, defaultValidatorFn) => (prop as string) !== 'divided' && defaultValidatorFn(prop),
+}).attrs({ className: 'step-card-body' as string })<{ divided?: boolean }>`
   ${stepCardSection}
   ${focusTargetStyles}
 
