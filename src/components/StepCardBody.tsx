@@ -14,10 +14,11 @@ export const stepCardSection = css`
 
 /*
  * `divided` only styles the band, so it is kept off the `<div>`: passed through, React warns
- * that it is not a boolean attribute the DOM knows.
+ * that it is not a boolean attribute the DOM knows. Only the one argument is used: the second is
+ * a validator in styled-components 5 and the target element in 6, and hosts run either.
  */
 export const StepCardBody = styled.div.withConfig({
-  shouldForwardProp: (prop, defaultValidatorFn) => (prop as string) !== 'divided' && defaultValidatorFn(prop),
+  shouldForwardProp: prop => (prop as string) !== 'divided',
 }).attrs({ className: 'step-card-body' as string })<{ divided?: boolean }>`
   ${stepCardSection}
   ${focusTargetStyles}
