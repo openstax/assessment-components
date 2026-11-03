@@ -24,7 +24,7 @@ Array [
 }
 
 .c2 {
-  font-size: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(2em / 1.8);
   line-height: 1.68em;
   position: relative;
 }
@@ -53,7 +53,7 @@ Array [
 }
 
 .c5 div > span {
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.8);
   line-height: 16px;
 }
 
@@ -68,7 +68,7 @@ Array [
 .c4 {
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale,1));
+  font-size: inherit;
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -91,7 +91,7 @@ Array [
   background-color: #FFF5E0;
   color: #424242;
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.8);
 }
 
 .c0 {
@@ -230,8 +230,8 @@ Array [
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
   overflow: auto;
 }
 
@@ -365,13 +365,13 @@ exports[`Free Response Input matches snapshot - preview mode unanswered 1`] = `
 }
 
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(2em / 1.8);
   line-height: 1.68em;
   position: relative;
 }
 
 .c3 {
-  font-size: calc(1.8rem * var(--content-text-scale,1));
+  font-size: inherit;
   color: #6f6f6f;
   margin: 0;
 }
@@ -438,7 +438,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 }
 
 .c1 {
-  font-size: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(2em / 1.8);
   line-height: 1.68em;
   position: relative;
 }
@@ -451,7 +451,7 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale,1));
+  font-size: inherit;
   color: #5f6163;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -462,13 +462,13 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
 }
 
 .c5 {
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: inherit;
   font-weight: bold;
   color: #424242;
 }
 
 .c6 {
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: inherit;
   color: #424242;
   white-space: pre-wrap;
 }

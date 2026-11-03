@@ -3,13 +3,13 @@ import { colors } from '../theme';
 import { Content } from './Content';
 
 export const ReviewScoreText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale, 1));
+  font-size: inherit;
   font-weight: bold;
   color: ${colors.palette.neutralDarker};
 `;
 
 export const FeedbackText = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale, 1));
+  font-size: inherit;
   color: ${colors.palette.neutralDarker};
   white-space: pre-wrap;
 
