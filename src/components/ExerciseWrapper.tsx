@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { AssessmentSectionContext, useAssessmentSection } from '../hooks/useAssessmentSection';
 import { AvailablePoints, ExerciseScoringData } from '../types';
-import { InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
+import { CardHeadingLevel, InnerStepCard, OuterStepCard, StepCard, StepCardProps } from './Card';
 import { CompactDisplayProps } from './compactDisplay';
 import { ExerciseHeaderIcons, ExerciseIcons } from './ExerciseHeaderIcons';
 import { ExerciseToolbar, StyledToolbar } from './ExerciseToolbar';
@@ -57,6 +57,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   overlayChildren?: React.ReactNode;
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
+  /** the level of the card's heading; defaults to 2 */
+  headingLevel?: CardHeadingLevel;
   className?: string;
   children: React.ReactNode;
 }

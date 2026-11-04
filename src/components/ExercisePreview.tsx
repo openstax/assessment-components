@@ -1,6 +1,7 @@
 import React from "react";
 import { ExerciseData, ExerciseQuestionData, StepBase, QuestionState, ID } from "../types";
 import { Exercise } from "./Exercise";
+import { CardHeadingLevel } from "./Card";
 import styled from "styled-components";
 
 const StyledExercise = styled(Exercise)<{
@@ -30,6 +31,8 @@ export interface ExercisePreviewProps {
   showCorrectAnswer?: boolean;
   labelAnswers?: boolean;
   overlayChildren?: React.ReactNode;
+  /** the level of the card's heading, for a page that has headings of its own above the cards; defaults to 2 */
+  headingLevel?: CardHeadingLevel;
   questionStates?: { [key: ID]: QuestionState };
   showScoring?: boolean;
   onGradingSave?: (questionId: ID, data: { score: number; max: number; comment: string }) => Promise<void> | void;
@@ -44,6 +47,7 @@ export const ExercisePreview = ({
   labelAnswers = false,
   showScoring = false,
   overlayChildren,
+  headingLevel,
   questionStates,
   onGradingSave,
 }: ExercisePreviewProps) => {
@@ -133,6 +137,7 @@ const exercisePreviewProps = (exercise: ExerciseData) => {
       previewMode
       showScoring={showScoring}
       overlayChildren={overlayChildren}
+      headingLevel={headingLevel}
       {...exercisePreviewProps(exercise)}
       onGradingSave={onGradingSave}
     />

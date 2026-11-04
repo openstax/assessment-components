@@ -95,7 +95,7 @@ const StepCardHeader = styled.div<CompactDisplayProps>`
   line-height: 3rem;
   letter-spacing: -0.72px;
 
-  h2.question-info {
+  .question-info {
     display: flex;
     align-items: baseline;
     font-size: inherit;
@@ -214,7 +214,7 @@ const StepCardHeader = styled.div<CompactDisplayProps>`
       line-height: 2rem;
     }
 
-    h2.question-info {
+    .question-info {
       font-weight: bold;
       font-size: 1.2rem;
       line-height: 2rem;
@@ -288,6 +288,9 @@ export const StyledOverlay = styled.div`
     z-index: 2;
 `;
 
+/** The level of the heading that names a card, so it can sit under whatever heading the page has above it. */
+export type CardHeadingLevel = 2 | 3 | 4 | 5 | 6;
+
 interface SharedProps {
   questionNumber: number;
   numberOfQuestions: number;
@@ -305,6 +308,11 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
   overlayChildren?: React.ReactNode;
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
+  /**
+   * The level of the heading in the card's header ("Question 1 | ID: …"). Defaults to 2; a page that
+   * has headings of its own above the card sets the level below them (WCAG 1.3.1).
+   */
+  headingLevel?: CardHeadingLevel;
   totalScoring?: ExerciseScoringData;
   showScoring?: boolean;
   isGraded?: boolean;
@@ -335,6 +343,7 @@ const StepCard = ({
   headerTitleChildren,
   overlayChildren,
   selected,
+  headingLevel = 2,
   showScoring,
   totalScoring,
   isGraded,
@@ -342,6 +351,7 @@ const StepCard = ({
   scrollTargetId,
   ...otherProps }: StepCardProps) => {
 
+  const Heading = `h${headingLevel}` as `h${CardHeadingLevel}`;
   const overlayRef = useRef<HTMLDivElement>(null);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
@@ -419,12 +429,12 @@ const StepCard = ({
               <StepCardHeader className="step-card-header" compactDisplay={compactDisplay}>
                 <div>
                   {leftHeaderChildren}
-                  <h2 className="question-info">
+                  <Heading className="question-info">
                     {headerTitleChildren}
                     <span id={titleId}>{formattedQuestionNumber}</span>
                     <span className="separator">|</span>
                     <span className="question-id">ID: {questionId}</span>
-                  </h2>
+                  </Heading>
                 </div>
                 {showScoring &&
                   <div className="scoring">
