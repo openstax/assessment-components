@@ -34,11 +34,13 @@ export const IncludeRemoveQuestion = (
 
   return (
     <StyledContainer>
-      <StyledButton className={buttonVariant} onClick={() => onClickHandler(buttonVariant)} aria-label={buttonVariant}>
-        <StyledIcon className={buttonVariant} icon={buttonIcon} aria-label={buttonVariant + ' question'} border size="lg" />
+      {/* no aria-label: the visible text is the button's name, so speaking it works (WCAG 2.5.3), and
+          the icons are decorative (font-awesome hides them from assistive technology) */}
+      <StyledButton className={buttonVariant} onClick={() => onClickHandler(buttonVariant)}>
+        <StyledIcon className={buttonVariant} icon={buttonIcon} border size="lg" />
         <span>{generateButtonText(buttonVariant)}</span>
       </StyledButton>
-      <StyledButton className="details" aria-label="details" onClick={onClickDetails}>
+      <StyledButton className="details" onClick={onClickDetails}>
         <StyledIcon className="details" icon={faEllipsisH} border size="lg" />
         <span>Details</span>
       </StyledButton>
