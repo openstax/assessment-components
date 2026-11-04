@@ -60,11 +60,14 @@ describe('IncludeRemoveQuestion', () => {
       expect(textOf(button)).toBe('Details');
     });
 
-    it('leaves the icons without a name of their own', () => {
+    it('hides the icons from assistive technology and gives them no name', () => {
       const icons = findAllNodes(render('include'), node => node.type === 'svg');
 
       expect(icons).toHaveLength(2);
-      icons.forEach(icon => expect(icon.props['aria-label']).toBeUndefined());
+      icons.forEach(icon => {
+        expect(icon.props['aria-label']).toBeUndefined();
+        expect(icon.props['aria-hidden']).toBe('true');
+      });
     });
   });
 });
