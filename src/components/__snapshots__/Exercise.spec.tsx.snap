@@ -118,7 +118,7 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   letter-spacing: -0.72px;
 }
 
-.c2 h2.question-info {
+.c2 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -132,11 +132,11 @@ exports[`Exercise with overlay rendering matches snapshot with previewMode 1`] =
   text-transform: uppercase;
 }
 
-.c2 h2.question-info .question-id {
+.c2 .question-info .question-id {
   font-weight: normal;
 }
 
-.c2 h2.question-info .ox-icon-lock {
+.c2 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
@@ -933,7 +933,7 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   letter-spacing: -0.72px;
 }
 
-.c2 h2.question-info {
+.c2 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -947,11 +947,11 @@ exports[`Exercise with question state data matches snapshot 1`] = `
   text-transform: uppercase;
 }
 
-.c2 h2.question-info .question-id {
+.c2 .question-info .question-id {
   font-weight: normal;
 }
 
-.c2 h2.question-info .ox-icon-lock {
+.c2 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 

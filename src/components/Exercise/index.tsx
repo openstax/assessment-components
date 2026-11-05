@@ -4,6 +4,7 @@ import scrollToElement from 'scroll-to-element';
 import { Answer, ExerciseData, ID, QuestionState, StepBase } from '../../types';
 import { CompactDisplayProps } from '../compactDisplay';
 import { ExerciseBody } from '../ExerciseBody';
+import { CardHeadingLevel } from '../Card';
 import { ExerciseWrapper } from '../ExerciseWrapper';
 import { CharacterLimitByResponseSize, isFreeResponseQuestion, QuestionBody, ResponseSize } from '../QuestionBody';
 import { QuestionLevelFeedback } from '../QuestionLevelFeedback';
@@ -89,6 +90,8 @@ export interface OverlayProps {
   overlayChildren?: React.ReactNode;
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
+  /** the level of the card's heading; defaults to 2 */
+  headingLevel?: CardHeadingLevel;
 }
 
 type QuestionStatus = { canSubmit?: boolean; dirty?: boolean };
@@ -110,6 +113,7 @@ export const Exercise = ({
   exerciseIcons,
   overlayChildren,
   selected,
+  headingLevel,
   labelAnswers = true,
   displaySolution = true,
   previewMode = false,
@@ -184,6 +188,7 @@ export const Exercise = ({
       totalScoring={totalScoring}
       overlayChildren={overlayChildren}
       selected={selected}
+      headingLevel={headingLevel}
       compactDisplay={compactDisplay}
     >
       <ExerciseBody
