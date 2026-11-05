@@ -17,7 +17,14 @@ export const StyledButton = styled.button`
     &:hover {
       box-shadow: 0 0.1rem 0.4rem 0 #00000066;
     }
-    
+
+    /* The browser's default ring is dark, which is 1.89:1 on the details button (WCAG 1.4.11).
+       A white ring inside the button is 4.5:1 or better on all three fills. */
+    &:focus-visible {
+      outline: 0.3rem solid ${colors.palette.white};
+      outline-offset: -0.5rem;
+    }
+
     span {
         line-height: 1.3rem;
         font-size: 1.4rem;

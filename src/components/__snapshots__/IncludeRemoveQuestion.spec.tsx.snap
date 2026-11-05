@@ -22,6 +22,11 @@ exports[`IncludeRemoveQuestion matches snapshot 1`] = `
   box-shadow: 0 0.1rem 0.4rem 0 #00000066;
 }
 
+.c1:focus-visible {
+  outline: 0.3rem solid #ffffff;
+  outline-offset: -0.5rem;
+}
+
 .c1 span {
   line-height: 1.3rem;
   font-size: 1.4rem;
@@ -152,6 +157,11 @@ exports[`IncludeRemoveQuestion matches snapshot 2`] = `
 
 .c1:hover {
   box-shadow: 0 0.1rem 0.4rem 0 #00000066;
+}
+
+.c1:focus-visible {
+  outline: 0.3rem solid #ffffff;
+  outline-offset: -0.5rem;
 }
 
 .c1 span {
