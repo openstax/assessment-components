@@ -165,6 +165,8 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
 
     .question-feedback {
       ${mixins.popover()}
+      /* the mixin's size is fixed; this one is relative to the answers table, so it follows the card */
+      font-size: calc(1.4em / 1.6);
       max-width: ${layouts.answer.feedback.popover.maxWidth};
       .question-feedback-content {
         padding: ${layouts.answer.feedback.popover.verticalSpacing} ${layouts.answer.feedback.popover.horizontalSpacing};
