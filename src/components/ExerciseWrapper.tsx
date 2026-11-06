@@ -57,6 +57,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   overlayChildren?: React.ReactNode;
   /** marks the card as the chosen one out of a list, such as a question picker's */
   selected?: boolean;
+  /** the card's body text size in place of 1.8rem; see `StepCardProps.baseFontSize` */
+  baseFontSize?: string;
   className?: string;
   children: React.ReactNode;
 }

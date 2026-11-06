@@ -29,7 +29,7 @@ export const StyledFreeResponse = styled.div<CompactDisplayProps>`
 `;
 
 const StyledQuestionStem = styled.div`
-  font-size: calc(2rem * var(--content-text-scale, 1));
+  font-size: calc(2em / 1.8);
   line-height: 1.68em;
   position: relative;
 `;
@@ -50,7 +50,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
   }
 
   div > span {
-    font-size: calc(1.4rem * var(--content-text-scale, 1));
+    font-size: calc(1.4em / 1.8);
     line-height: 16px;
 
     + span {
@@ -68,7 +68,7 @@ const InfoRow = styled.div<{ hasChildren: boolean }>`
 export const FreeResponseTextArea = styled.textarea`
   display: block;
   font-family: inherit;
-  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  font-size: inherit;
   width: 100%;
   min-height: 10.5em;
   line-height: 1.5em;
@@ -82,7 +82,7 @@ FreeResponseTextArea.displayName = 'OSFreeResponseTextArea';
 const COLLAPSED_HEIGHT = 16.8; // rem
 
 const ReviewAnswerLabel = styled.div`
-  font-size: calc(1.4rem * var(--content-text-scale, 1));
+  font-size: calc(1.4em / 1.8);
   font-weight: 600;
   color: ${colors.palette.neutralThin};
   margin: 2.5rem 0 1rem 0;
@@ -96,7 +96,7 @@ const ReviewAnswerText = styled.div<{ expanded: boolean; isOverflowing: boolean 
   overflow: hidden;
   position: relative;
   line-height: 1.6;
-  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  font-size: inherit;
   color: ${colors.palette.neutralDark};
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -128,7 +128,7 @@ const ReadMoreButton = styled.button.attrs({
   padding: 0;
   margin: 0 0 0 1rem;
   cursor: pointer;
-  font-size: calc(1.3rem * var(--content-text-scale, 1));
+  font-size: calc(1.3em / 1.8);
   text-decoration: underline;
   white-space: nowrap;
 
@@ -149,7 +149,7 @@ const ResponseColumn = styled.div`
 `;
 
 const UnansweredText = styled.p`
-  font-size: calc(1.8rem * var(--content-text-scale, 1));
+  font-size: inherit;
   color: ${colors.palette.neutralThin};
   margin: 0;
 `;
@@ -161,12 +161,12 @@ const EditableNotice = styled.div`
   background-color: ${colors.notice.background};
   color: ${colors.palette.neutralDarker};
   padding-left: 1rem;
-  font-size: calc(1.4rem * var(--content-text-scale, 1));
+  font-size: calc(1.4em / 1.8);
 `;
 
 const ValidationMessage = styled.div`
   color: ${colors.palette.danger};
-  font-size: calc(1.4rem * var(--content-text-scale, 1));
+  font-size: calc(1.4em / 1.8);
   font-weight: bold;
   margin-top: 0.8rem;
 `;

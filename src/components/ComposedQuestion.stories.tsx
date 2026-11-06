@@ -173,12 +173,16 @@ export const HostDrivenSubmitFreeResponse = () => <HostDrivenSubmitExercise ques
  * The contract a host rendering its own item format relies on: only the two wrappers, with no
  * `ExerciseBody` and no legacy question components. The card supplies the gutter and the type.
  */
-const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }) => (
+const ForeignContentExercise = ({ compactDisplay, baseFontSize }: {
+  compactDisplay?: boolean;
+  baseFontSize?: string;
+}) => (
   <ExerciseWrapper
     questionNumber={1}
     numberOfQuestions={1}
     questionId="foreign@1"
     compactDisplay={compactDisplay}
+    baseFontSize={baseFontSize}
   >
     <QuestionWrapper
       is_completed={false}
@@ -195,5 +199,32 @@ const ForeignContentExercise = ({ compactDisplay }: { compactDisplay?: boolean }
   </ExerciseWrapper>
 );
 
-export const ForeignContent = () => <ForeignContentExercise />;
+const textScales = [0.75, 0.9, 1, 1.25, 1.5, 2];
+const baseFontSizes = ['1.4rem', '1.6rem', '1.8rem', '2rem'];
+
+/** The host's two levers on the card's type: its base size, and the text scale on top of it. */
+export const ForeignContent = () => {
+  const [textScale, setTextScale] = React.useState(1);
+  const [baseFontSize, setBaseFontSize] = React.useState('1.8rem');
+
+  return (
+    <div style={{ '--content-text-scale': textScale } as React.CSSProperties}>
+      <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '2rem', fontSize: '1.4rem' }}>
+        <label>
+          Base size{' '}
+          <select value={baseFontSize} onChange={(e) => setBaseFontSize(e.target.value)}>
+            {baseFontSizes.map((size) => <option key={size} value={size}>{size}</option>)}
+          </select>
+        </label>
+        <label>
+          Text scale{' '}
+          <select value={textScale} onChange={(e) => setTextScale(Number(e.target.value))}>
+            {textScales.map((scale) => <option key={scale} value={scale}>{scale}</option>)}
+          </select>
+        </label>
+      </div>
+      <ForeignContentExercise baseFontSize={baseFontSize} />
+    </div>
+  );
+};
 export const ForeignContentCompact = () => <ForeignContentExercise compactDisplay />;
