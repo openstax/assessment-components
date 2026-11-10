@@ -59,6 +59,8 @@ export interface ExerciseWrapperProps extends CompactDisplayProps {
   selected?: boolean;
   /** the level of the card's heading; defaults to 2 */
   headingLevel?: CardHeadingLevel;
+  /** the card's body text size in place of 1.8rem; see `StepCardProps.baseFontSize` */
+  baseFontSize?: string;
   className?: string;
   children: React.ReactNode;
 }

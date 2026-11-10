@@ -24,8 +24,8 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
   }
 
   .answers-table {
-    font-size: calc(1.6rem * var(--content-text-scale, 1));
-    line-height: calc(2rem * var(--content-text-scale, 1));
+    font-size: calc(1.6em / 1.8);
+    line-height: calc(2em / 1.6);
   }
 
   .instructions {
@@ -165,6 +165,8 @@ const StyledQuestion = styled.div<CompactDisplayProps>`
 
     .question-feedback {
       ${mixins.popover()}
+      /* the mixin's size is fixed; this one is relative to the answers table, so it follows the card */
+      font-size: calc(1.4em / 1.6);
       max-width: ${layouts.answer.feedback.popover.maxWidth};
       .question-feedback-content {
         padding: ${layouts.answer.feedback.popover.verticalSpacing} ${layouts.answer.feedback.popover.horizontalSpacing};

@@ -6,7 +6,14 @@ import cn from "classnames";
 import { CompactDisplayProps } from "./compactDisplay";
 import { focusTargetProps, focusTargetStyles, scrollTargetStyles } from "../helpers/focusTarget";
 
-export const InnerStepCard = styled.div<CompactDisplayProps>`
+/*
+ * Its props only style the card, so they are kept off the `<div>`. Only the one argument is
+ * used: the second is a validator in styled-components 5 and the target element in 6, and hosts
+ * run either.
+ */
+export const InnerStepCard = styled.div.withConfig({
+  shouldForwardProp: prop => !['baseFontSize', 'compactDisplay'].includes(prop as string),
+})<CompactDisplayProps & { baseFontSize?: string }>`
   /* the card's gutter, read by every section inside it: the preamble, each question's body
      and its footer. A host's own content can use them to line up with, or bleed past, the
      card's padding. */
@@ -28,8 +35,10 @@ export const InnerStepCard = styled.div<CompactDisplayProps>`
     --step-card-gutter-top: calc(${breakpoints.margins.mobile} * 2);
   `}
 
-  font-size: calc(1.8rem * var(--content-text-scale, 1));
-  line-height: calc(2.8rem * var(--content-text-scale, 1));
+  /* the one size the card's content is set in: everything inside inherits it, or sizes itself
+     as an em ratio of it */
+  font-size: calc(${props => props.baseFontSize ?? '1.8rem'} * var(--content-text-scale, 1));
+  line-height: calc(2.8em / 1.8);
   color: ${colors.palette.neutralDarker};
 
   /* doubled so it outranks the breakpoints above, which are emitted after it */
@@ -327,6 +336,11 @@ export interface StepCardProps extends SharedProps, CompactDisplayProps {
    * header included, with a rem of room left above it.
    */
   scrollTargetId?: string;
+  /**
+   * The size of the card's body text, as a CSS length, in place of 1.8rem. It is still
+   * multiplied by `--content-text-scale`, and the card's content is sized relative to it.
+   */
+  baseFontSize?: string;
 }
 
 const StepCard = ({
@@ -349,6 +363,7 @@ const StepCard = ({
   isGraded,
   focusTargetId,
   scrollTargetId,
+  baseFontSize,
   ...otherProps }: StepCardProps) => {
 
   const Heading = `h${headingLevel}` as `h${CardHeadingLevel}`;
@@ -405,7 +420,7 @@ const StepCard = ({
   return (
     <OuterStepCard {...otherProps}>
       {multipartBadge}
-      <InnerStepCard id={scrollTargetId} className={cn(className, { 'is-selected': selected })} compactDisplay={compactDisplay}>
+      <InnerStepCard id={scrollTargetId} className={cn(className, { 'is-selected': selected })} compactDisplay={compactDisplay} baseFontSize={baseFontSize}>
         <div
           ref={overlayRef}
           {

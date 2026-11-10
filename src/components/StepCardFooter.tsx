@@ -10,8 +10,8 @@ export const StepCardFooter = styled.div<CompactDisplayProps>`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: calc(1.6rem * var(--content-text-scale, 1));
-    line-height: calc(2rem * var(--content-text-scale, 1));
+    font-size: calc(1.6em / 1.8);
+    line-height: calc(2em / 1.6);
     overflow: auto;
 
     > * {

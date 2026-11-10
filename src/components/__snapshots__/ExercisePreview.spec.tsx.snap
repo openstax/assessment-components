@@ -84,7 +84,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   --step-card-surface: #fdfdfd;
   --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
-  line-height: calc(2.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8em / 1.8);
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -275,8 +275,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
 }
 
 .c9.openstax-question .answers-table {
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
 }
 
 .c9.openstax-question .instructions {
@@ -493,6 +493,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
   color: #6f6f6f;
   font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.6);
   max-width: 370px;
 }
 
@@ -989,7 +990,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #fdfdfd;
   --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
-  line-height: calc(2.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8em / 1.8);
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -1180,8 +1181,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 .c9.openstax-question .answers-table {
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
 }
 
 .c9.openstax-question .instructions {
@@ -1398,6 +1399,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
   color: #6f6f6f;
   font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.6);
   max-width: 370px;
 }
 
@@ -1894,7 +1896,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   --step-card-surface: #fdfdfd;
   --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
-  line-height: calc(2.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8em / 1.8);
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -2085,8 +2087,8 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
 }
 
 .c9.openstax-question .answers-table {
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
 }
 
 .c9.openstax-question .instructions {
@@ -2303,6 +2305,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
   color: #6f6f6f;
   font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.6);
   max-width: 370px;
 }
 
@@ -2799,7 +2802,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   --step-card-surface: #fdfdfd;
   --step-card-rule-width: 1px;
   font-size: calc(1.8rem * var(--content-text-scale,1));
-  line-height: calc(2.8rem * var(--content-text-scale,1));
+  line-height: calc(2.8em / 1.8);
   color: #424242;
   position: relative;
   display: -webkit-box;
@@ -3002,8 +3005,8 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
 }
 
 .c9.openstax-question .answers-table {
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
 }
 
 .c9.openstax-question .instructions {
@@ -3220,6 +3223,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
   color: #6f6f6f;
   font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: calc(1.4em / 1.6);
   max-width: 370px;
 }
 
@@ -3351,8 +3355,8 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: calc(1.6rem * var(--content-text-scale,1));
-  line-height: calc(2rem * var(--content-text-scale,1));
+  font-size: calc(1.6em / 1.8);
+  line-height: calc(2em / 1.6);
   overflow: auto;
 }
 

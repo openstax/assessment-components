@@ -23,13 +23,13 @@ exports[`QuestionLevelFeedback matches snapshot with everything it can render 1`
 }
 
 .c1 {
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: inherit;
   font-weight: bold;
   color: #424242;
 }
 
 .c2 {
-  font-size: calc(1.4rem * var(--content-text-scale,1));
+  font-size: inherit;
   color: #424242;
   white-space: pre-wrap;
 }
