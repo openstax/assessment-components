@@ -104,6 +104,22 @@ describe('StepCard', () => {
 });
 
 // Tests for StepCard scoring display logic
+describe('StepCard heading level', () => {
+  const props: StepCardProps = { availablePoints: '1.0', questionNumber: 1, numberOfQuestions: 1 };
+
+  const headings = (headingLevel?: StepCardProps['headingLevel']) => renderer
+    .create(<StepCard {...props} headingLevel={headingLevel}>Question content</StepCard>)
+    .root.findAll((node) => typeof node.type === 'string' && /\bquestion-info\b/.test(node.props.className ?? ''));
+
+  it('names the card with an h2 unless told otherwise', () => {
+    expect(headings().map((heading) => heading.type)).toEqual(['h2']);
+  });
+
+  it.each([3, 4, 5, 6] as const)('names the card with an h%d when asked', (level) => {
+    expect(headings(level).map((heading) => heading.type)).toEqual([`h${level}`]);
+  });
+});
+
 describe('StepCard scoring display', () => {
 
   it('shows score and maxScore when isGraded is true (singular)', () => {

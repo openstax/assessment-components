@@ -154,7 +154,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   letter-spacing: -0.72px;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,11 +168,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   text-transform: uppercase;
 }
 
-.c3 h2.question-info .question-id {
+.c3 .question-info .question-id {
   font-weight: normal;
 }
 
-.c3 h2.question-info .ox-icon-lock {
+.c3 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
@@ -229,7 +229,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and corre
   line-height: 2rem;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -1060,7 +1060,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   letter-spacing: -0.72px;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1074,11 +1074,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   text-transform: uppercase;
 }
 
-.c3 h2.question-info .question-id {
+.c3 .question-info .question-id {
   font-weight: normal;
 }
 
-.c3 h2.question-info .ox-icon-lock {
+.c3 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
@@ -1135,7 +1135,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   line-height: 2rem;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -1966,7 +1966,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   letter-spacing: -0.72px;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1980,11 +1980,11 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   text-transform: uppercase;
 }
 
-.c3 h2.question-info .question-id {
+.c3 .question-info .question-id {
   font-weight: normal;
 }
 
-.c3 h2.question-info .ox-icon-lock {
+.c3 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
@@ -2041,7 +2041,7 @@ exports[`ExercisePreview using step data matches snapshot with overlay and selec
   line-height: 2rem;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;
@@ -2872,7 +2872,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   letter-spacing: -0.72px;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2886,11 +2886,11 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   text-transform: uppercase;
 }
 
-.c3 h2.question-info .question-id {
+.c3 .question-info .question-id {
   font-weight: normal;
 }
 
-.c3 h2.question-info .ox-icon-lock {
+.c3 .question-info .ox-icon-lock {
   margin-right: 1rem;
 }
 
@@ -2947,7 +2947,7 @@ exports[`ExercisePreview using step data matches snapshot without overlay 1`] = 
   line-height: 2rem;
 }
 
-.c3 h2.question-info {
+.c3 .question-info {
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 2rem;

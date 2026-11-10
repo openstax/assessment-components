@@ -77,6 +77,27 @@ describe('ExercisePreview', () => {
     });
   });
 
+  describe('heading level', () => {
+    const cardHeadingTypes = (exercise: ExerciseData, headingLevel?: ExercisePreviewProps['headingLevel']) =>
+      renderer.create(<ExercisePreview exercise={exercise} headingLevel={headingLevel} />)
+        .root.findAll((node) => typeof node.type === 'string' && /\bquestion-info\b/.test(node.props.className ?? ''))
+        .map((heading) => heading.type);
+
+    const exercise = {
+      uid: '1@1', uuid: 'u', group_uuid: 'g', number: 1, version: 1, published_at: '2022-09-06T20:32:21.981Z',
+      context: '', stimulus_html: '', tags: [], authors: [], copyright_holders: [], derived_from: [],
+      is_vocab: false, solutions_are_public: false, versions: [1], questions: [],
+    } as unknown as ExerciseData;
+
+    it('puts the card heading at h2 unless told otherwise', () => {
+      expect(cardHeadingTypes(exercise)).toEqual(['h2']);
+    });
+
+    it('puts the card heading at the level a page asks for, to sit under its own headings', () => {
+      expect(cardHeadingTypes(exercise, 4)).toEqual(['h4']);
+    });
+  });
+
   describe('using questionStates', () => {
     let exercise: ExerciseData;
     let questionStates: { [key: string]: QuestionState };
