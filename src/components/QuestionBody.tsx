@@ -248,7 +248,8 @@ const FreeResponseBody = React.forwardRef((
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);
   const [validation, setValidation] = React.useState<ValidationKey | null>(null);
-  // state rather than a ref object, so the overflow check follows the answer if its element is replaced
+  // The answer's content, not the capped box around it, which stops growing at its cap.
+  // State rather than a ref object, so the check follows the content if its element is replaced.
   const [textNode, setTextNode] = React.useState<HTMLDivElement | null>(null);
   const [lastSettledValue, setLastSettledValue] = React.useState(free_response || '');
 
@@ -414,11 +415,10 @@ const FreeResponseBody = React.forwardRef((
     <>
       <ReviewAnswerText
         id={answerId}
-        ref={setTextNode}
         expanded={expanded}
         isOverflowing={isOverflowing}
       >
-        {free_response || ''}
+        <div ref={setTextNode}>{free_response || ''}</div>
       </ReviewAnswerText>
       {(isOverflowing || expanded) && (
         <ReadMoreButton

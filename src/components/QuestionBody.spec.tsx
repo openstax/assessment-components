@@ -448,10 +448,12 @@ describe('QuestionBody', () => {
       // is fired by hand: 400px overflows the collapsed height, 100px fits
       let height: number;
       let observers: Set<() => void>;
+      let observed: Element[];
 
       beforeEach(() => {
         height = 100;
         observers = new Set();
+        observed = [];
         // an element that has left the page has no height
         Object.defineProperty(Element.prototype, 'scrollHeight', {
           configurable: true,
@@ -459,7 +461,7 @@ describe('QuestionBody', () => {
         });
         global.ResizeObserver = class {
           constructor(private callback: () => void) {}
-          observe() { observers.add(this.callback); }
+          observe(node: Element) { observers.add(this.callback); observed.push(node); }
           unobserve() { observers.delete(this.callback); }
           disconnect() { observers.delete(this.callback); }
         } as unknown as typeof ResizeObserver;
@@ -532,6 +534,16 @@ describe('QuestionBody', () => {
         height = 400;
         act(() => { window.dispatchEvent(new Event('resize')); });
         expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('observes the answer\'s content, not the capped box around it, which stops growing at its cap', () => {
+        const { cleanup } = mount();
+        const answer = document.getElementById('free-response-answer-1') as HTMLElement;
+
+        expect(observed).toHaveLength(1);
+        expect(observed[0]).not.toBe(answer);
+        expect(observed[0].parentElement).toBe(answer);
         cleanup();
       });
 
