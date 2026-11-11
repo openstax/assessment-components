@@ -315,21 +315,21 @@ const FreeResponseBody = React.forwardRef((
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [registerCancel, originalSubmittedValue, onAnswerChange, question.id]);
 
-  // Check if the review answer text is overflowing
   React.useLayoutEffect(() => {
+    const text = textRef.current;
+    if (!isPostReview || !text) { return; }
+
     const checkOverflow = () => {
-      if (isPostReview && textRef.current) {
-        const isTextOverflowing =
-          !expanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10;
-        setIsOverflowing(isTextOverflowing);
-      }
+      setIsOverflowing(!expanded && text.scrollHeight > COLLAPSED_HEIGHT * 10);
     };
 
     checkOverflow();
 
-    // Re-check on window resize
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
+    // The answer's size also changes with the window width and the text size, not only its content.
+    if (typeof ResizeObserver === 'undefined') { return; }
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(text);
+    return () => observer.disconnect();
   }, [free_response, isPostReview, expanded]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {

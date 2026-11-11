@@ -442,6 +442,69 @@ describe('QuestionBody', () => {
       expect(button().getAttribute('aria-label')).toBe('Show more of the answer');
       cleanup();
     });
+
+    describe('when the answer changes size', () => {
+      // jsdom has no layout or ResizeObserver, so the height is set by hand and the observer
+      // is fired by hand: 400px overflows the collapsed height, 100px fits
+      let height: number;
+      let observers: Set<() => void>;
+
+      beforeEach(() => {
+        height = 100;
+        observers = new Set();
+        Object.defineProperty(Element.prototype, 'scrollHeight', { configurable: true, get: () => height });
+        global.ResizeObserver = class {
+          constructor(private callback: () => void) {}
+          observe() { observers.add(this.callback); }
+          unobserve() { observers.delete(this.callback); }
+          disconnect() { observers.delete(this.callback); }
+        } as unknown as typeof ResizeObserver;
+      });
+
+      afterEach(() => { Reflect.deleteProperty(global, 'ResizeObserver'); });
+
+      const resizeTo = (next: number) => act(() => {
+        height = next;
+        observers.forEach(callback => callback());
+      });
+
+      it('shows "show more" when the answer grows past the collapsed height', () => {
+        const { button, cleanup } = mount();
+        expect(button()).toBeNull();
+
+        resizeTo(400);
+        expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('hides "show more" when the answer shrinks to fit', () => {
+        height = 400;
+        const { button, cleanup } = mount();
+        expect(button().textContent).toBe('show more');
+
+        resizeTo(100);
+        expect(button()).toBeNull();
+        cleanup();
+      });
+
+      it('keeps "show less" while the answer is expanded', () => {
+        height = 400;
+        const { button, cleanup } = mount();
+        act(() => { button().click(); });
+
+        resizeTo(100);
+        expect(button().textContent).toBe('show less');
+        cleanup();
+      });
+
+      it('stops observing when the answer is removed', () => {
+        const { cleanup } = mount();
+        expect(observers.size).toBe(1);
+
+        cleanup();
+        expect(observers.size).toBe(0);
+      });
+    });
   });
 
   describe('the notice icon', () => {
