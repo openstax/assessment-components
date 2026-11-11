@@ -452,7 +452,11 @@ describe('QuestionBody', () => {
       beforeEach(() => {
         height = 100;
         observers = new Set();
-        Object.defineProperty(Element.prototype, 'scrollHeight', { configurable: true, get: () => height });
+        // an element that has left the page has no height
+        Object.defineProperty(Element.prototype, 'scrollHeight', {
+          configurable: true,
+          get(this: Element) { return this.isConnected ? height : 0; },
+        });
         global.ResizeObserver = class {
           constructor(private callback: () => void) {}
           observe() { observers.add(this.callback); }
@@ -494,6 +498,40 @@ describe('QuestionBody', () => {
 
         resizeTo(100);
         expect(button().textContent).toBe('show less');
+        cleanup();
+      });
+
+      it('follows the answer when its element is replaced by a change of layout', () => {
+        const { container, button, cleanup } = mount({ previewMode: true });
+        expect(button()).toBeNull();
+
+        // a grading widget switches the answer into a different parent, which remounts it
+        act(() => {
+          ReactDOM.render(
+            <QuestionBody
+              question={freeResponse}
+              state={{ is_completed: true, canAnswer: false, free_response: 'A long answer' }}
+              onAnswerChange={() => undefined}
+              previewMode
+              onGradingSave={() => undefined}
+            />,
+            container
+          );
+        });
+        resizeTo(400);
+
+        expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('rechecks on a window resize where ResizeObserver is not available', () => {
+        Reflect.deleteProperty(global, 'ResizeObserver');
+        const { button, cleanup } = mount();
+        expect(button()).toBeNull();
+
+        height = 400;
+        act(() => { window.dispatchEvent(new Event('resize')); });
+        expect(button().textContent).toBe('show more');
         cleanup();
       });
 
