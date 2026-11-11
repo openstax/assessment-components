@@ -1278,7 +1278,10 @@ export const FreeResponseUpdateMode = () => {
   );
 };
 
-export const FreeResponsePostReview = () => {
+const POST_REVIEW_LONG_ANSWER = 'DNA contains genetic information that is passed from parents to offspring through heredity. It acts as a blueprint for building proteins and determining traits. Mutations are changes in the DNA sequence that can occur naturally or due to environmental factors. These mutations can have various effects on organisms - some are beneficial and lead to adaptations, some are neutral with no noticeable effect, and others can be harmful, potentially causing genetic disorders or diseases.';
+const POST_REVIEW_SHORT_ANSWER = 'DNA carries the genetic information that parents pass to their offspring, and it is the blueprint for building proteins. A mutation is a change in that sequence. Some mutations are beneficial, some have no effect, and some cause disease.';
+
+const FreeResponsePostReviewExercise = ({ answer }: { answer: string }) => {
   const props: ExerciseWithQuestionStatesProps = {
     exercise: {
       uid: '3@1',
@@ -1326,7 +1329,7 @@ export const FreeResponsePostReview = () => {
         is_completed: true,
         answer_id_order: [],
         answer_id: undefined,
-        free_response: 'DNA contains genetic information that is passed from parents to offspring through heredity. It acts as a blueprint for building proteins and determining traits. Mutations are changes in the DNA sequence that can occur naturally or due to environmental factors. These mutations can have various effects on organisms - some are beneficial and lead to adaptations, some are neutral with no noticeable effect, and others can be harmful, potentially causing genetic disorders or diseases.',
+        free_response: answer,
         feedback_html: '<p>Excellent answer! You provided a clear explanation of DNA\'s role in heredity and thoroughly discussed the different types of mutations and their effects. Consider adding more specific examples of genetic disorders for an even stronger response.</p>',
         correct_answer_id: '',
         correct_answer_feedback_html: '',
@@ -1347,6 +1350,15 @@ export const FreeResponsePostReview = () => {
     </TextResizerProvider>
   );
 };
+
+export const FreeResponsePostReview = () => (
+  <FreeResponsePostReviewExercise answer={POST_REVIEW_LONG_ANSWER} />
+);
+
+/** Fits the collapsed height at the default text size: increase the size and "show more" appears. */
+export const FreeResponsePostReviewFitsUntilTextGrows = () => (
+  <FreeResponsePostReviewExercise answer={POST_REVIEW_SHORT_ANSWER} />
+);
 
 export const MultipleFreeResponseQuestions = () => {
   const [freeResponse1, setFreeResponse1] = useState<string>('');

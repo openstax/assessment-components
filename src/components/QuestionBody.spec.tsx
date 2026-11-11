@@ -442,6 +442,119 @@ describe('QuestionBody', () => {
       expect(button().getAttribute('aria-label')).toBe('Show more of the answer');
       cleanup();
     });
+
+    describe('when the answer changes size', () => {
+      // jsdom has no layout or ResizeObserver, so the height is set by hand and the observer
+      // is fired by hand: 400px overflows the collapsed height, 100px fits
+      let height: number;
+      let observers: Set<() => void>;
+      let observed: Element[];
+
+      beforeEach(() => {
+        height = 100;
+        observers = new Set();
+        observed = [];
+        // an element that has left the page has no height
+        Object.defineProperty(Element.prototype, 'scrollHeight', {
+          configurable: true,
+          get(this: Element) { return this.isConnected ? height : 0; },
+        });
+        global.ResizeObserver = class {
+          constructor(private callback: () => void) {}
+          observe(node: Element) { observers.add(this.callback); observed.push(node); }
+          unobserve() { observers.delete(this.callback); }
+          disconnect() { observers.delete(this.callback); }
+        } as unknown as typeof ResizeObserver;
+      });
+
+      afterEach(() => { Reflect.deleteProperty(global, 'ResizeObserver'); });
+
+      const resizeTo = (next: number) => act(() => {
+        height = next;
+        observers.forEach(callback => callback());
+      });
+
+      it('shows "show more" when the answer grows past the collapsed height', () => {
+        const { button, cleanup } = mount();
+        expect(button()).toBeNull();
+
+        resizeTo(400);
+        expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('hides "show more" when the answer shrinks to fit', () => {
+        height = 400;
+        const { button, cleanup } = mount();
+        expect(button().textContent).toBe('show more');
+
+        resizeTo(100);
+        expect(button()).toBeNull();
+        cleanup();
+      });
+
+      it('keeps "show less" while the answer is expanded', () => {
+        height = 400;
+        const { button, cleanup } = mount();
+        act(() => { button().click(); });
+
+        resizeTo(100);
+        expect(button().textContent).toBe('show less');
+        cleanup();
+      });
+
+      it('follows the answer when its element is replaced by a change of layout', () => {
+        const { container, button, cleanup } = mount({ previewMode: true });
+        expect(button()).toBeNull();
+
+        // a grading widget switches the answer into a different parent, which remounts it
+        act(() => {
+          ReactDOM.render(
+            <QuestionBody
+              question={freeResponse}
+              state={{ is_completed: true, canAnswer: false, free_response: 'A long answer' }}
+              onAnswerChange={() => undefined}
+              previewMode
+              onGradingSave={() => undefined}
+            />,
+            container
+          );
+        });
+        resizeTo(400);
+
+        expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('rechecks on a window resize where ResizeObserver is not available', () => {
+        Reflect.deleteProperty(global, 'ResizeObserver');
+        const { button, cleanup } = mount();
+        expect(button()).toBeNull();
+
+        height = 400;
+        act(() => { window.dispatchEvent(new Event('resize')); });
+        expect(button().textContent).toBe('show more');
+        cleanup();
+      });
+
+      it('observes the answer\'s content, not the capped box around it, which stops growing at its cap', () => {
+        const { cleanup } = mount();
+        const answer = document.getElementById('free-response-answer-1') as HTMLElement;
+
+        expect(observed).toHaveLength(1);
+        expect(observed[0]).not.toBe(answer);
+        expect(observed[0].parentElement).toBe(answer);
+        cleanup();
+      });
+
+      it('stops observing when the answer is removed', () => {
+        const { cleanup } = mount();
+        expect(observers.size).toBe(1);
+
+        cleanup();
+        expect(observers.size).toBe(0);
+      });
+    });
   });
 
   describe('the notice icon', () => {
