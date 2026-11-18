@@ -529,7 +529,9 @@ exports[`Free Response Input matches snapshot - preview mode with answer 1`] = `
       className="c3"
       id="free-response-answer-1"
     >
-      Photosynthesis converts sunlight into chemical energy.
+      <div>
+        Photosynthesis converts sunlight into chemical energy.
+      </div>
     </div>
     <div
       className="c4"

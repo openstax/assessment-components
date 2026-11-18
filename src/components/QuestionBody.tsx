@@ -248,7 +248,9 @@ const FreeResponseBody = React.forwardRef((
   const [expanded, setExpanded] = React.useState(false);
   const [isOverflowing, setIsOverflowing] = React.useState(false);
   const [validation, setValidation] = React.useState<ValidationKey | null>(null);
-  const textRef = React.useRef<HTMLDivElement>(null);
+  // The answer's content, not the capped box around it, which stops growing at its cap.
+  // State rather than a ref object, so the check follows the content if its element is replaced.
+  const [textNode, setTextNode] = React.useState<HTMLDivElement | null>(null);
   const [lastSettledValue, setLastSettledValue] = React.useState(free_response || '');
 
   const isUpdateMode = is_completed && canAnswer;
@@ -315,22 +317,24 @@ const FreeResponseBody = React.forwardRef((
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [registerCancel, originalSubmittedValue, onAnswerChange, question.id]);
 
-  // Check if the review answer text is overflowing
   React.useLayoutEffect(() => {
+    if (!isPostReview || !textNode) { return; }
+
     const checkOverflow = () => {
-      if (isPostReview && textRef.current) {
-        const isTextOverflowing =
-          !expanded && textRef.current.scrollHeight > COLLAPSED_HEIGHT * 10;
-        setIsOverflowing(isTextOverflowing);
-      }
+      setIsOverflowing(!expanded && textNode.scrollHeight > COLLAPSED_HEIGHT * 10);
     };
 
     checkOverflow();
 
-    // Re-check on window resize
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
-  }, [free_response, isPostReview, expanded]);
+    // The answer's size also changes with the window width and the text size, not only its content.
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', checkOverflow);
+      return () => window.removeEventListener('resize', checkOverflow);
+    }
+    const observer = new ResizeObserver(checkOverflow);
+    observer.observe(textNode);
+    return () => observer.disconnect();
+  }, [free_response, isPostReview, expanded, textNode]);
 
   const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
     // Students may type or paste past the character limit; submission is blocked instead of truncating
@@ -411,11 +415,10 @@ const FreeResponseBody = React.forwardRef((
     <>
       <ReviewAnswerText
         id={answerId}
-        ref={textRef}
         expanded={expanded}
         isOverflowing={isOverflowing}
       >
-        {free_response || ''}
+        <div ref={setTextNode}>{free_response || ''}</div>
       </ReviewAnswerText>
       {(isOverflowing || expanded) && (
         <ReadMoreButton
